@@ -17,7 +17,7 @@
 </script>
 
 <main
-	class="{currentTheme} min-h-screen text-light-txt-primary dark:text-dark-txt-primary overflow-x-hidden md:overflow-x-visible bg-light-bg-secondary dark:bg-dark-bg-secondary"
+	class="{currentTheme} min-h-screen text-light-gray-1000 dark:text-dark-gray-1000 overflow-x-hidden md:overflow-x-visible bg-light-bg-secondary dark:bg-dark-bg-secondary"
 >
 	{@render children()}
 </main>
