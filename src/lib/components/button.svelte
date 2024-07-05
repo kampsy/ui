@@ -1,12 +1,14 @@
 <script lang="ts">
 	import LoaderCircle from '$lib/icons/loader-circle.svelte';
-	import type { Snippet } from 'svelte';
+	import type { Snippet, SvelteComponent } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
 		class?: string;
 		size?: 'sm' | 'md' | 'lg';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		prefix?: Snippet | undefined;
+		suffix?: Snippet | undefined;
 		rounded?: boolean;
 		loading?: boolean;
 		disabled?: boolean;
@@ -17,6 +19,8 @@
 		class: klass = '',
 		size = 'md',
 		type = 'primary',
+		prefix = undefined,
+		suffix = undefined,
 		rounded = false,
 		loading = false,
 		disabled = false,
@@ -85,21 +89,35 @@
 </script>
 
 {#snippet spinner()}
-	<div class="relative {spinnerSize} animate-spin flex items-center justify-center">
-		<div transition:fade class="absolute w-full h-full">
-			<LoaderCircle />
+	{#if loading}
+		<div class="relative {spinnerSize} animate-spin flex items-center justify-center">
+			<div transition:fade class="absolute w-full h-full">
+				<LoaderCircle />
+			</div>
 		</div>
-	</div>
+	{/if}
+{/snippet}
+
+{#snippet prefixSnip()}
+	{#if prefix}
+		{@render prefix()}
+	{:else if loading}
+		{@render spinner()}
+	{/if}
+{/snippet}
+
+{#snippet suffixSnip()}
+	{#if suffix}
+		{@render suffix()}
+	{/if}
 {/snippet}
 
 <button type="button" {disabled} class="{buttonClass} ">
-	<div class="w-full h-full px-[6px] flex items-center gap-[6px]">
-		{#if loading}
-			<!-- {@render loading icon()} -->
-			{@render spinner()}
-		{/if}
+	<div class="w-full h-full px-[6px] flex items-center gap-[8px]">
+		{@render prefixSnip()}
 		<span class="font-medium first-letter:capitalize">
 			{@render children()}
 		</span>
+		{@render suffixSnip()}
 	</div>
 </button>
