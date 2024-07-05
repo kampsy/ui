@@ -1,13 +1,27 @@
 <script lang="ts">
+	import LoaderCircle from '$lib/icons/loader-circle.svelte';
 	import type { Snippet } from 'svelte';
+	import { fade } from 'svelte/transition';
 
 	type propsT = {
+		class?: string;
 		size?: 'sm' | 'md' | 'lg';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		rounded?: boolean;
+		loading?: boolean;
+		disabled?: boolean;
 		children: Snippet;
 	};
 
-	let { size = 'md', type = 'primary', children }: propsT = $props();
+	let {
+		class: klass = '',
+		size = 'md',
+		type = 'primary',
+		rounded = false,
+		loading = false,
+		disabled = false,
+		children
+	}: propsT = $props();
 
 	let sizeClass = $derived.by(() => {
 		switch (size) {
@@ -20,20 +34,72 @@
 		}
 	});
 
+	// The size of the spinner
+	let spinnerSize = $derived.by(() => {
+		switch (size) {
+			case 'sm':
+				return 'w-[16px] h-[16px]';
+			case 'md':
+				return 'w-[16px] h-[16px]';
+			case 'lg':
+				return 'w-[24px] h-[24px]';
+		}
+	});
+
 	let typeClass = $derived.by(() => {
 		switch (type) {
 			case 'primary':
-				return 'bg-light-gray-1000 dark:bg-dark-gray-1000 hover:bg-[#383838] hover:dark:bg-[#CCCCCC]';
+				return 'text-white dark:text-dark-bg bg-light-gray-1000 dark:bg-dark-gray-1000 hover:bg-[#383838] hover:dark:bg-[#CCCCCC]';
 			case 'secondary':
-				return 'border ';
+				return 'text-light-gray-1000 dark:text-dark-gray-1000 dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100';
 			case 'tertiary':
-				return '';
+				return 'text-light-gray-1000 dark:text-dark-gray-1000 hover:bg-light-gray-200 hover:dark:bg-[#202020]';
+			case 'error':
+				return 'text-[#F5F5F5] bg-light-red-800 dark:bg-dark-red-800 hover:bg-light-red-900 hover:dark:bg-dark-red-900 ';
+			case 'warning':
+				return 'text-light-gray-1000 bg-light-amber-700 dark:bg-dark-amber-700 hover:bg-light-amber-800 hover:dark:bg-dark-amber-800';
 		}
+	});
+
+	let roundedClass = $derived.by(() => {
+		if (rounded) {
+			return 'rounded-full';
+		}
+		return 'rounded-[6px]';
+	});
+
+	let loadingDisabledClass = $derived.by(() => {
+		if (disabled || loading) {
+			return 'cursor-not-allowed text-light-gray-700 dark:text-dark-gray-700  bg-light-gray-100 dark:bg-dark-gray-100 border border-light-gray-200 dark:border-dark-gray-400';
+		}
+		return '';
+	});
+
+	// The final styles for the button
+	let buttonClass = $derived.by(() => {
+		if (disabled || loading) {
+			return `${sizeClass} ${roundedClass} ${loadingDisabledClass} ${klass}`;
+		}
+		return `${sizeClass} ${typeClass} ${roundedClass} ${klass}`;
 	});
 </script>
 
-<button class="{sizeClass} rounded-[6px] {typeClass} first-letter:capitalize">
-	<span class="px-[6px] text-white dark:text-dark-bg font-medium">
-		{@render children()}
-	</span>
+{#snippet spinner()}
+	<div class="relative {spinnerSize} animate-spin flex items-center justify-center">
+		<div transition:fade class="absolute w-full h-full">
+			<LoaderCircle />
+		</div>
+	</div>
+{/snippet}
+
+<button type="button" {disabled} class="{buttonClass} ">
+	<div class="w-full h-full px-[6px] flex items-center gap-[6px]">
+		{#if loading}
+			<!-- {@render loading icon()} -->
+			{@render spinner()}
+		{/if}
+		<span class="font-medium first-letter:capitalize">
+			{@render children()}
+		</span>
+	</div>
 </button>

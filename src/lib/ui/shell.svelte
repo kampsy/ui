@@ -64,7 +64,7 @@
 		class=" bg-light-bg dark:bg-dark-bg w-full h-[64px] flex border-b border-r border-light-gray-200 dark:border-dark-gray-400"
 	>
 		<div
-			class="w-full max-w-[260px] h-full border-l border-r border-light-gray-100 dark:border-dark-gray-400"
+			class="w-full max-w-[260px] h-full border-l border-r border-light-gray-200 dark:border-dark-gray-400"
 		>
 			<!---->
 		</div>
