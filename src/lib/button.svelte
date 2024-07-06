@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LoaderCircle from '$lib/icons/loader-circle.svelte';
-	import type { Snippet, SvelteComponent } from 'svelte';
+	import type { Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
