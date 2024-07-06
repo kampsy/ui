@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import '../app.css';
-	import { scheme } from '$lib/utils/colorScheme.svelte.js';
+	import { scheme } from '../docs/utils/colorScheme.svelte.js';
 	import { browser } from '$app/environment';
 
 	let { children }: { children: Snippet } = $props();

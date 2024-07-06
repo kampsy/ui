@@ -2,7 +2,7 @@
 	import DeviceAlternative from '$lib/icons/device-alternate.svelte';
 	import Sun from '$lib/icons/sun.svelte';
 	import Moon from '$lib/icons/moon.svelte';
-	import { scheme } from '$lib/utils/colorScheme.svelte.js';
+	import { scheme } from '../utils/colorScheme.svelte.js';
 	import type { Snippet } from 'svelte';
 
     let { contSlot}: { contSlot: Snippet } = $props();

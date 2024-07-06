@@ -2,8 +2,8 @@
 	import Button from '$lib/components/button.svelte';
 	import ArrowLeft from '$lib/icons/arrow-left.svelte';
 	import ArrowRight from '$lib/icons/arrow-right.svelte';
-	import Row from '$lib/ui/row.svelte';
-	import Shell from '$lib/ui/shell.svelte';
+	import Row from '../../docs/ui/row.svelte';
+	import Shell from '../../docs/ui/shell.svelte';
 </script>
 
 {#snippet button()}
