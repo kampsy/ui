@@ -1,5 +1,5 @@
 {
-	"name": "scarab-ui",
+	"name": "kodo-ui",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
