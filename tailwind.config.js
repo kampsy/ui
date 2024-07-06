@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
+  darkMode: 'selector',
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/kodo-ui/src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
       colors: {
@@ -141,6 +142,6 @@ export default {
     },
   },
   plugins: [],
-  darkMode: 'selector'
+
 }
 
