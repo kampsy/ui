@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Button from '$lib/components/button.svelte';
+	import Button from '$lib/components/Button.svelte';
 	import ArrowLeft from '$lib/icons/arrow-left.svelte';
 	import ArrowRight from '$lib/icons/arrow-right.svelte';
 	import Row from '../../docs/ui/row.svelte';
