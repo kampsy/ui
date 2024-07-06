@@ -1,7 +1,7 @@
 {
 	"name": "kodo-ui",
 	"license": "MIT",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
