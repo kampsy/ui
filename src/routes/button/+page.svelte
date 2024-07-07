@@ -9,12 +9,12 @@
 {#snippet button()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[40px] font-semibold leading-[48px] tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			button
 		</h1>
 		<p
-			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[20px] font-normal leading-[30px] tracking-[-0.33px]"
+			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal  lg:tracking-[-0.33px]"
 		>
 			Trigger an action or event, such as submitting a form or displaying a dialog.
 		</p>
@@ -35,9 +35,9 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 justify-between">
 					<Button size="sm">upload</Button>
 					<Button>upload</Button>
 					<Button size="lg">upload</Button>
@@ -58,9 +58,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
 					<Button type="secondary">upload</Button>
 					<Button type="tertiary">upload</Button>
 					<Button type="error">upload</Button>
@@ -90,9 +90,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
 					<Button prefix={arrowLeft}>upload</Button>
 					<Button suffix={arrowRight}>upload</Button>
 					<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
@@ -128,9 +128,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
 					<Button size="sm" type="secondary" rounded>upload</Button>
 					<Button type="secondary" rounded>upload</Button>
 					<Button size="lg" type="secondary" rounded>upload</Button>
@@ -151,9 +151,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
 					<Button size="sm" loading>upload</Button>
 					<Button loading>upload</Button>
 					<Button size="lg" loading>upload</Button>
@@ -174,9 +174,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			<div
-				class="w-full p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
 			>
-				<div class="w-full flex justify-between">
+				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
 					<Button size="sm" disabled>upload</Button>
 					<Button disabled>upload</Button>
 					<Button size="lg" disabled>upload</Button>

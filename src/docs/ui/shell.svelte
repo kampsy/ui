@@ -130,6 +130,10 @@
 		</div>
 	</div>
 </header>
+<!--mobile only-->
+<div class="h-[64px] md:hidden">
+	<!---->
+</div>
 <main
 	class="sidebar -mx-px -mt-px flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >

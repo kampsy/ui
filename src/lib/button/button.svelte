@@ -4,6 +4,7 @@
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
+		onclick?: () => void;
 		class?: string;
 		size?: 'sm' | 'md' | 'lg';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
@@ -16,6 +17,7 @@
 	};
 
 	let {
+		onclick = undefined,
 		class: klass = '',
 		size = 'md',
 		type = 'primary',
@@ -112,7 +114,7 @@
 	{/if}
 {/snippet}
 
-<button type="button" {disabled} class="{buttonClass} ">
+<button {onclick} type="button" {disabled} class="{buttonClass} ">
 	<div class="w-full h-full px-[6px] flex items-center gap-[8px]">
 		{@render prefixSnip()}
 		<span class="font-medium first-letter:capitalize">
