@@ -4,8 +4,10 @@
 	import Moon from '$lib/icons/moon.svelte';
 	import { scheme } from '../utils/colorScheme.svelte.js';
 	import type { Snippet } from 'svelte';
+	import LogoGeist from '$lib/icons/logo-geist.svelte';
+	import TextGradient from '$lib/text/textGradient.svelte';
 
-    let { asideSlot,contSlot}: { asideSlot: Snippet, contSlot: Snippet } = $props();
+	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
 
 	let selected = $state('system');
 
@@ -64,13 +66,42 @@
 		class=" bg-light-bg dark:bg-dark-bg w-full h-[64px] flex border-b border-r border-light-gray-200 dark:border-dark-gray-400"
 	>
 		<div
-			class="w-full max-w-[260px] h-full border-l border-r border-light-gray-200 dark:border-dark-gray-400"
+			class="hidden lg:block w-full max-w-[260px] h-full border-l border-r border-light-gray-200 dark:border-dark-gray-400"
 		>
-			<!---->
+			<div class="hidden w-full h-full px-6 lg:flex items-center">
+				<a href="/#">
+					<div class="flex items-center gap-2">
+						<div class="w-[27px] h-[27px]">
+							<LogoGeist />
+						</div>
+						<div>
+							<TextGradient
+								text="Kodo Design System"
+								variant="ios"
+								class="text-base font-semibold leading-[24px]"
+							/>
+						</div>
+					</div>
+				</a>
+			</div>
 		</div>
 		<div class="w-full h-full">
 			<!---->
-			<div class="w-full h-full px-4 flex items-center justify-end">
+			<div class="w-full h-full px-4 flex items-center justify-between">
+				<div>
+					<div class="lg:hidden flex items-center gap-2">
+						<div class="w-[27px] h-[27px]">
+							<LogoGeist />
+						</div>
+						<div>
+							<TextGradient
+								text="Kodo Design System"
+								variant="ios"
+								class="text-base font-semibold leading-[24px]"
+							/>
+						</div>
+					</div>
+				</div>
 				<div
 					class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-light-gray-200 dark:border-dark-gray-400"
 				>
