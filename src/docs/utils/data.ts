@@ -6,7 +6,7 @@ export const asideData: Array<AsideT> = [
         ul: [
             {
                 name: 'introduction',
-                url: '/introduction'
+                url: '/'
             }
         ]
 
