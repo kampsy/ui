@@ -1,9 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/button/button.svelte';
-	import ArrowLeft from '$lib/icons/arrow-left.svelte';
-	import ArrowRight from '$lib/icons/arrow-right.svelte';
-	import Row from '../../docs/ui/row.svelte';
-	import Shell from '../../docs/ui/shell.svelte';
+	import { ArrowLeft, ArrowRight } from '$lib/icons/index.js';
+	import { Button } from '$lib/index.js';
+	import Aside from '$lib/../docs/ui/aside.svelte';
+	import Row from '$lib/../docs/ui/row.svelte';
+	import Shell from '$lib/../docs/ui/shell.svelte';
+	import { asideData } from '$lib/../docs/utils/data.js';
+
 </script>
 
 {#snippet button()}
@@ -14,7 +16,7 @@
 			button
 		</h1>
 		<p
-			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal  lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
 			Trigger an action or event, such as submitting a form or displaying a dialog.
 		</p>
@@ -100,6 +102,7 @@
 			</div>
 		</div>
 	</Row>
+
 {/snippet}
 
 {#snippet rounded()}
@@ -196,4 +199,8 @@
 	{@render disabled()}
 {/snippet}
 
-<Shell contSlot={cont} />
+{#snippet aside()}
+	<Aside asideDataList={asideData} />
+{/snippet}
+
+<Shell asideSlot={aside} contSlot={cont} />

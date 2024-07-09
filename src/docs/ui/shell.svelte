@@ -5,7 +5,7 @@
 	import { scheme } from '../utils/colorScheme.svelte.js';
 	import type { Snippet } from 'svelte';
 
-    let { contSlot}: { contSlot: Snippet } = $props();
+    let { asideSlot,contSlot}: { asideSlot: Snippet, contSlot: Snippet } = $props();
 
 	let selected = $state('system');
 
@@ -148,6 +148,6 @@
 		class="border-l border-r border-light-gray-200 dark:border-dark-gray-400 sticky bottom-0 top-[64px] order-1 hidden w-[260px] flex-col min-[1200px]:flex"
 		style="height:calc(100vh - 64px);"
 	>
-		<!---->
+		{@render asideSlot()}
 	</aside>
 </main>
