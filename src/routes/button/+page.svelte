@@ -58,12 +58,12 @@
 			The default size is medium.
 		</p>
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button size="sm">upload</Button>
 				<Button>upload</Button>
 				<Button size="lg">upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonSize)}
+			{@render demoAndCode(demo, buttonSize)}
 		</div>
 	</Row>
 {/snippet}
@@ -76,13 +76,13 @@
 			Types
 		</h2>
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button type="secondary">upload</Button>
 				<Button type="tertiary">upload</Button>
 				<Button type="error">upload</Button>
 				<Button type="warning">upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonTypes)}
+			{@render demoAndCode(demo, buttonTypes)}
 		</div>
 	</Row>
 {/snippet}
@@ -104,12 +104,12 @@
 		</h2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button prefix={arrowLeft}>upload</Button>
 				<Button suffix={arrowRight}>upload</Button>
 				<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonPrefixAndSuffix)}
+			{@render demoAndCode(demo, buttonPrefixAndSuffix)}
 		</div>
 	</Row>
 {/snippet}
@@ -139,12 +139,12 @@
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button size="sm" type="secondary" rounded>upload</Button>
 				<Button type="secondary" rounded>upload</Button>
 				<Button size="lg" type="secondary" rounded>upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonRounded)}
+			{@render demoAndCode(demo, buttonRounded)}
 		</div>
 	</Row>
 {/snippet}
@@ -159,12 +159,12 @@
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button size="sm" loading>upload</Button>
 				<Button loading>upload</Button>
 				<Button size="lg" loading>upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonLoading)}
+			{@render demoAndCode(demo, buttonLoading)}
 		</div>
 	</Row>
 {/snippet}
@@ -178,12 +178,12 @@
 		</h2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			{#snippet typesDemo()}
+			{#snippet demo()}
 				<Button size="sm" disabled>upload</Button>
 				<Button disabled>upload</Button>
 				<Button size="lg" disabled>upload</Button>
 			{/snippet}
-			{@render demoAndCode(typesDemo, buttonDisabled)}
+			{@render demoAndCode(demo, buttonDisabled)}
 		</div>
 	</Row>
 {/snippet}
