@@ -5,7 +5,16 @@
 	import Row from '$lib/../docs/ui/row.svelte';
 	import Shell from '$lib/../docs/ui/shell.svelte';
 	import { asideData } from '$lib/../docs/utils/data.js';
-
+	import CollapseCode from '$lib/collapse/collapseCode.svelte';
+	import {
+	buttonDisabled,
+	buttonLoading,
+		buttonPrefixAndSuffix,
+		buttonRounded,
+		buttonSize,
+		buttonTypes
+	} from '../../docs/utils/data/button.js';
+	import type { Snippet } from 'svelte';
 </script>
 
 {#snippet button()}
@@ -23,6 +32,19 @@
 	</Row>
 {/snippet}
 
+{#snippet demoAndCode(demo: Snippet, code: string)}
+	<div
+		class="bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg overflow-hidden"
+	>
+		<div class="w-full p-4 lg:p-6">
+			<div class="w-full flex flex-wrap gap-4 justify-between">
+				{@render demo()}
+			</div>
+		</div>
+		<CollapseCode {code} />
+	</div>
+{/snippet}
+
 {#snippet size()}
 	<Row>
 		<h2
@@ -36,15 +58,12 @@
 			The default size is medium.
 		</p>
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 justify-between">
-					<Button size="sm">upload</Button>
-					<Button>upload</Button>
-					<Button size="lg">upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button size="sm">upload</Button>
+				<Button>upload</Button>
+				<Button size="lg">upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonSize)}
 		</div>
 	</Row>
 {/snippet}
@@ -56,19 +75,14 @@
 		>
 			Types
 		</h2>
-
-		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
-					<Button type="secondary">upload</Button>
-					<Button type="tertiary">upload</Button>
-					<Button type="error">upload</Button>
-					<Button type="warning">upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button type="secondary">upload</Button>
+				<Button type="tertiary">upload</Button>
+				<Button type="error">upload</Button>
+				<Button type="warning">upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonTypes)}
 		</div>
 	</Row>
 {/snippet}
@@ -88,21 +102,16 @@
 		>
 			Prefix and Suffix
 		</h2>
-
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
-					<Button prefix={arrowLeft}>upload</Button>
-					<Button suffix={arrowRight}>upload</Button>
-					<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button prefix={arrowLeft}>upload</Button>
+				<Button suffix={arrowRight}>upload</Button>
+				<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonPrefixAndSuffix)}
 		</div>
 	</Row>
-
 {/snippet}
 
 {#snippet rounded()}
@@ -130,15 +139,12 @@
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
-					<Button size="sm" type="secondary" rounded>upload</Button>
-					<Button type="secondary" rounded>upload</Button>
-					<Button size="lg" type="secondary" rounded>upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button size="sm" type="secondary" rounded>upload</Button>
+				<Button type="secondary" rounded>upload</Button>
+				<Button size="lg" type="secondary" rounded>upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonRounded)}
 		</div>
 	</Row>
 {/snippet}
@@ -153,15 +159,12 @@
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
-					<Button size="sm" loading>upload</Button>
-					<Button loading>upload</Button>
-					<Button size="lg" loading>upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button size="sm" loading>upload</Button>
+				<Button loading>upload</Button>
+				<Button size="lg" loading>upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonLoading)}
 		</div>
 	</Row>
 {/snippet}
@@ -173,18 +176,14 @@
 		>
 			disabled
 		</h2>
-
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
-			<div
-				class="w-full p-4 lg:p-6 bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
-			>
-				<div class="w-full flex flex-wrap gap-4 lg:justify-between">
-					<Button size="sm" disabled>upload</Button>
-					<Button disabled>upload</Button>
-					<Button size="lg" disabled>upload</Button>
-				</div>
-			</div>
+			{#snippet typesDemo()}
+				<Button size="sm" disabled>upload</Button>
+				<Button disabled>upload</Button>
+				<Button size="lg" disabled>upload</Button>
+			{/snippet}
+			{@render demoAndCode(typesDemo, buttonDisabled)}
 		</div>
 	</Row>
 {/snippet}

@@ -54,8 +54,8 @@
 		"publint": "^0.1.16",
 		"svelte": "5.0.0-next.175",
 		"svelte-check": "^3.8.4",
-		"tslib": "^2.6.3",
 		"tailwindcss": "^3.4.4",
+		"tslib": "^2.6.3",
 		"typescript": "^5.5.3",
 		"typescript-eslint": "8.0.0-alpha.39",
 		"vite": "^5.3.3",
@@ -65,11 +65,14 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"keywords": [
-    "svelte",
-	"svelte 5",
-    "sveltekit",
-    "tailwindcss",
-    "ui",
-    "button"
-  ]
+		"svelte",
+		"svelte 5",
+		"sveltekit",
+		"tailwindcss",
+		"ui",
+		"button"
+	],
+	"dependencies": {
+		"highlight.js": "^11.10.0"
+	}
 }

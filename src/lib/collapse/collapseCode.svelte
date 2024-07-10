@@ -1,0 +1,61 @@
+<script lang="ts">
+	import hljs from 'highlight.js';
+	import 'highlight.js/styles/atom-one-light.css';
+
+	import { slide } from 'svelte/transition';
+	import ChevronRightSmall from '$lib/icons/chevron-right-small.svelte';
+
+    let {code}:{code:string}=$props()
+
+	let isActive = $state(false);
+
+	const toggleFunc = () => {
+		isActive = !isActive;
+	};
+
+	let rotate180 = $derived.by(() => {
+		if (isActive) {
+			return 'rotate-90';
+		}
+		return '';
+	});
+
+	let title = $derived.by(() => {
+		if (isActive) {
+			return 'Hide code';
+		}
+		return 'Show code';
+	});
+
+	let border = $derived.by(() => {
+		if (isActive) {
+			return 'border-y';
+		}
+		return 'border-t';
+	});
+
+	const highlightedCode = hljs.highlight(code, { language: 'tsx' }).value;
+</script>
+
+<button
+	onclick={toggleFunc}
+	class="w-full h-[48px] px-4 text-light-gray-900 dark:text-dark-gray-900 bg-light-bg-secondary dark:bg-dark-bg-secondary {border} border-light-gray-200 dark:border-dark-gray-400"
+>
+	<div class="flex items-center gap-x-2">
+		<div class="w-[16px] h-[16px]  {rotate180} transform-gpu duration-200">
+            <ChevronRightSmall/>
+		</div>
+		<span class="text-sm font-normal leading-[20px] first-letter:capitalize"> {title} </span>
+	</div>
+</button>
+{#if isActive}
+	<div class="w-full h-auto px-6 text-[13px] overflow-x-auto">
+		<div transition:slide>
+			<pre class="language-tsx">
+            <code class="language-tsx">
+                {@html highlightedCode}
+            </code>
+        </pre>
+		</div>
+	</div>
+{/if}
