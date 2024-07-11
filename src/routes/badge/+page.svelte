@@ -6,7 +6,8 @@
 	import Badge from '$lib/badge/badge.svelte';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { badgeVariants } from '$lib/../docs/data/badge.js';
+	import { badgeSize, badgeVariants, badgeWithIcon } from '$lib/../docs/data/badge.js';
+	import Shield from '$lib/icons/shield.svelte';
 </script>
 
 {#snippet badge()}
@@ -98,9 +99,139 @@
 	</Row>
 {/snippet}
 
+{#snippet size()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			Sizes
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="flex flex-col gap-2">
+					<div class="flex gap-1">
+						<Badge size="sm">small</Badge>
+					</div>
+
+					<div class="flex gap-1">
+						<Badge size="md">medium</Badge>
+					</div>
+
+					<div class="flex gap-1">
+						<Badge size="lg">large</Badge>
+					</div>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, badgeSize)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet icons()}
+	<!--icons-->
+	{#snippet shield()}
+		<Shield/>
+	{/snippet}
+
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			With Icons
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="gray">gray</Badge>
+						<Badge icon={shield} size="md" variant="gray" >gray</Badge>
+						<Badge icon={shield} size="sm" variant="gray">gray</Badge>
+						<Badge icon={shield} size="sm" variant="gray-subtle">gray</Badge>
+						<Badge icon={shield} size="md" variant="gray-subtle" >gray</Badge>
+						<Badge icon={shield} size="lg" variant="gray-subtle">gray</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="blue">blue</Badge>
+						<Badge icon={shield} size="md" variant="blue" >blue</Badge>
+						<Badge icon={shield} size="sm" variant="blue">blue</Badge>
+						<Badge icon={shield} size="sm" variant="blue-subtle">blue</Badge>
+						<Badge icon={shield} size="md" variant="blue-subtle" >blue</Badge>
+						<Badge icon={shield} size="lg" variant="blue-subtle">blue</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="purple">purple</Badge>
+						<Badge icon={shield} size="md" variant="purple" >purple</Badge>
+						<Badge icon={shield} size="sm" variant="purple">purple</Badge>
+						<Badge icon={shield} size="sm" variant="purple-subtle">purple</Badge>
+						<Badge icon={shield} size="md" variant="purple-subtle" >purple</Badge>
+						<Badge icon={shield} size="lg" variant="purple-subtle">purple</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="amber">amber</Badge>
+						<Badge icon={shield} size="md" variant="amber" >amber</Badge>
+						<Badge icon={shield} size="sm" variant="amber">amber</Badge>
+						<Badge icon={shield} size="sm" variant="amber-subtle">amber</Badge>
+						<Badge icon={shield} size="md" variant="amber-subtle" >amber</Badge>
+						<Badge icon={shield} size="lg" variant="amber-subtle">amber</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="red">red</Badge>
+						<Badge icon={shield} size="md" variant="red" >red</Badge>
+						<Badge icon={shield} size="sm" variant="red">red</Badge>
+						<Badge icon={shield} size="sm" variant="red-subtle">red</Badge>
+						<Badge icon={shield} size="md" variant="red-subtle" >red</Badge>
+						<Badge icon={shield} size="lg" variant="red-subtle">red</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="pink">pink</Badge>
+						<Badge icon={shield} size="md" variant="pink" >pink</Badge>
+						<Badge icon={shield} size="sm" variant="pink">pink</Badge>
+						<Badge icon={shield} size="sm" variant="pink-subtle">pink</Badge>
+						<Badge icon={shield} size="md" variant="pink-subtle" >pink</Badge>
+						<Badge icon={shield} size="lg" variant="pink-subtle">pink</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="green">green</Badge>
+						<Badge icon={shield} size="md" variant="green" >green</Badge>
+						<Badge icon={shield} size="sm" variant="green">green</Badge>
+						<Badge icon={shield} size="sm" variant="green-subtle">green</Badge>
+						<Badge icon={shield} size="md" variant="green-subtle" >green</Badge>
+						<Badge icon={shield} size="lg" variant="green-subtle">green</Badge>
+					</div>	
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="teal">teal</Badge>
+						<Badge icon={shield} size="md" variant="teal" >teal</Badge>
+						<Badge icon={shield} size="sm" variant="teal">teal</Badge>
+						<Badge icon={shield} size="sm" variant="teal-subtle">teal</Badge>
+						<Badge icon={shield} size="md" variant="teal-subtle" >teal</Badge>
+						<Badge icon={shield} size="lg" variant="teal-subtle">teal</Badge>
+					</div>
+
+					<div class="flex items-center gap-1">
+						<Badge icon={shield} size="lg" variant="inverted">inverted</Badge>
+						<Badge icon={shield} size="md" variant="inverted" >inverted</Badge>
+						<Badge icon={shield} size="sm" variant="inverted">inverted</Badge>
+					</div>
+
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, badgeWithIcon)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render badge()}
 	{@render variants()}
+	{@render size()}
+	{@render icons()}
 {/snippet}
 
 {#snippet aside()}
