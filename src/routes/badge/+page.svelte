@@ -30,7 +30,7 @@
 	<div
 		class="bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg overflow-hidden"
 	>
-		<div class="w-full p-4 lg:p-6">
+		<div class="w-full p-4 lg:p-6 overflow-x-auto">
 			<div class="w-full flex flex-wrap gap-4 justify-between">
 				{@render demo()}
 			</div>
