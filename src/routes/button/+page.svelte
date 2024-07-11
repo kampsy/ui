@@ -13,7 +13,7 @@
 		buttonRounded,
 		buttonSize,
 		buttonTypes
-	} from '../../docs/utils/data/button.js';
+	} from '../../docs/data/button.js';
 	import type { Snippet } from 'svelte';
 </script>
 

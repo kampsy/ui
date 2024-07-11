@@ -5,6 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        black: '#000000',
         light: {
           bg: {
             DEFAULT: '#FFFFFF',
