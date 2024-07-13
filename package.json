@@ -1,7 +1,7 @@
 {
 	"name": "kodo-ui",
 	"license": "MIT",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"author": {
 		"name": "Kampamba Chanda",
 		"email": "connect@codewithshin.com",
@@ -59,7 +59,8 @@
 		"typescript": "^5.5.3",
 		"typescript-eslint": "8.0.0-alpha.39",
 		"vite": "^5.3.3",
-		"vitest": "^1.6.0"
+		"vitest": "^1.6.0",
+		"highlight.js": "^11.10.0"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -71,8 +72,5 @@
 		"tailwindcss",
 		"ui",
 		"button"
-	],
-	"dependencies": {
-		"highlight.js": "^11.10.0"
-	}
+	]
 }
