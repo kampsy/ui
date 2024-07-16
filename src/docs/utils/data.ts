@@ -25,6 +25,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'button',
                 url: '/button'
+            },
+            {
+                name: 'error',
+                url: '/error'
             }
         ]
 
