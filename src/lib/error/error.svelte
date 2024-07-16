@@ -31,7 +31,7 @@
 </script>
 
 {#snippet childrenLabelSize()}
-	<div class="{sizeClass}">
+	<div class="space-x-1 {sizeClass}">
 		{#if label}
 			<span class="text-light-red-900 dark:text-dark-red-900 font-medium">
 				{label}:
