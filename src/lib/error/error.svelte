@@ -31,17 +31,17 @@
 </script>
 
 {#snippet childrenLabelSize()}
-	<div class="flex items-center gap-x-1 {sizeClass} ">
+	<div class="{sizeClass}">
 		{#if label}
-			<div class="text-light-red-900 dark:text-dark-red-900 font-medium">
+			<span class="text-light-red-900 dark:text-dark-red-900 font-medium">
 				{label}:
-			</div>
+			</span>
 		{/if}
 
 		{#if children}
-			<div class="text-light-red-900 dark:text-dark-red-900 font-normal">
+			<span class="text-light-red-900 dark:text-dark-red-900 font-normal">
 				{@render children()}
-			</div>
+			</span>	
 		{/if}
 	</div>
 {/snippet}
