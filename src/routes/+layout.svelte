@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, type Snippet } from 'svelte';
+	import { type Snippet } from 'svelte';
 	import '../app.css';
 	import { scheme } from '../docs/utils/colorScheme.svelte.js';
 	import { browser } from '$app/environment';
