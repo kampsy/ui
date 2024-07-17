@@ -64,9 +64,19 @@
 	</Row>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'error', href: '/error' }}
+			next={{ title: 'progress', href: '#/' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render pagination()}
 	{@render defaultComp()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}

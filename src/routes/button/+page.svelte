@@ -15,6 +15,7 @@
 		buttonTypes
 	} from '../../docs/data/button.js';
 	import type { Snippet } from 'svelte';
+	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
 
 {#snippet button()}
@@ -188,6 +189,15 @@
 	</Row>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'badge', href: '/badge' }}
+			next={{ title: 'error', href: '/error' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render button()}
 	{@render size()}
@@ -196,6 +206,7 @@
 	{@render rounded()}
 	{@render loading()}
 	{@render disabled()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}

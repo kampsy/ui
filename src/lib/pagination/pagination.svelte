@@ -47,7 +47,7 @@
 
 {#snippet nextSnip()}
 	{#if next}
-		<a href="{next.href}" class="group" aria-label="go to next page">
+		<a href={next.href} class="group" aria-label="go to next page">
 			<div class="flex items-center gap-x-2">
 				<div
 					class="mb-[2px] text-[13px] text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
@@ -60,7 +60,7 @@
 				<span
 					class="text-[16px] text-light-gray-1000 dark:text-dark-gray-1000 font-medium leading-[24px] capitalize"
 				>
-                    {next.title}
+					{next.title}
 				</span>
 				<div
 					class="w-[20px] h-[20px] flex items-center justify-center text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000"
@@ -76,7 +76,7 @@
 
 <section class="w-full">
 	<nav class="w-full flex items-center justify-between gap-x-4" aria-label="pagination">
-        {@render prevSnip()}
-        {@render nextSnip()}
-    </nav>
+		{@render prevSnip()}
+		{@render nextSnip()}
+	</nav>
 </section>

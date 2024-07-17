@@ -12,6 +12,7 @@
 		errorSize,
 		errorWithProp
 	} from '../../docs/data/error.js';
+	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
 
 {#snippet error()}
@@ -119,12 +120,22 @@
 	</Row>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'button', href: '/button' }}
+			next={{ title: 'pagination', href: '/pagination' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render error()}
 	{@render defaultErr()}
 	{@render customLabel()}
 	{@render size()}
     {@render withErrorProp()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}

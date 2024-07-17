@@ -1,9 +1,21 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	let { children }: { children: Snippet } = $props();
+	type propsT = {
+		bottomLine?: boolean;
+		children: Snippet;
+	};
+
+	let { bottomLine = true, children }: propsT = $props();
+
+	const bottomLineClass = $derived.by(() => {
+		if (bottomLine) {
+			return 'border-b border-light-gray-200 dark:border-dark-gray-400';
+		}
+		return '';
+	});
 </script>
 
-<section class="p-6 lg:p-12 border-b border-light-gray-200 dark:border-dark-gray-400">
+<section class="p-6 lg:p-12 {bottomLineClass} ">
 	{@render children()}
 </section>

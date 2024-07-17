@@ -8,6 +8,7 @@
 	import type { Snippet } from 'svelte';
 	import { badgeSize, badgeVariants, badgeWithIcon } from '$lib/../docs/data/badge.js';
 	import Shield from '$lib/icons/shield.svelte';
+	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
 
 {#snippet badge()}
@@ -227,11 +228,21 @@
 	</Row>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'avatar', href: '/avatar' }}
+			next={{ title: 'button', href: '/button' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render badge()}
 	{@render variants()}
 	{@render size()}
 	{@render icons()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}

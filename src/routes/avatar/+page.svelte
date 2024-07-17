@@ -8,8 +8,7 @@
 	import { avatarGroup } from '../../docs/data/avatar.js';
 	import Avatar from '$lib/avatar/avatar.svelte';
 	import AvatarGroup from '$lib/avatar/avatarGroup.svelte';
-
-	
+	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
 
 {#snippet avatar()}
@@ -50,7 +49,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
-					<AvatarGroup/>
+					<AvatarGroup />
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, avatarGroup)}
@@ -58,9 +57,19 @@
 	</Row>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'introduction', href: '/introduction' }}
+			next={{ title: 'badge', href: '/badge' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render avatar()}
 	{@render group()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}
