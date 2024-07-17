@@ -9,3 +9,9 @@ export * from './avatar/index.js';
 
 //Text
 export { default as TextGradient } from './text/textGradient.svelte';
+
+// Error
+export { default as Error } from './error/error.svelte';
+
+// Pagination
+export { default as Pagination } from './pagination/pagination.svelte';

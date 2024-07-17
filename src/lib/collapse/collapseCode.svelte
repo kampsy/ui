@@ -39,7 +39,7 @@
 
 <button
 	onclick={toggleFunc}
-	class="w-full h-[48px] px-4 text-light-gray-900 dark:text-dark-gray-900 bg-light-bg-secondary dark:bg-dark-bg-secondary {border} border-light-gray-200 dark:border-dark-gray-400"
+	class="w-full h-[48px] px-4 text-light-gray-900 hover:text-light-gray-1000 dark:text-dark-gray-900 hover:dark:text-dark-gray-1000 bg-light-bg-secondary dark:bg-dark-bg-secondary {border} border-light-gray-200 dark:border-dark-gray-400"
 >
 	<div class="flex items-center gap-x-2">
 		<div class="w-[16px] h-[16px]  {rotate180} transform-gpu duration-200">
