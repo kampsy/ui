@@ -5,10 +5,41 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { avatarGroup } from '../../docs/data/avatar.js';
-	import Avatar from '$lib/avatar/avatar.svelte';
+	import { avatarGroup, avatarPlaceholder } from '../../docs/data/avatar.js';
 	import AvatarGroup from '$lib/avatar/avatarGroup.svelte';
+	import Avatar from '$lib/avatar/avatar.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
+
+	const members = [
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+		},
+		{
+			name: 'Evil Rabbit',
+			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
+		}
+	];
 </script>
 
 {#snippet avatar()}
@@ -48,11 +79,34 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<AvatarGroup />
+				<div class="space-y-4">
+					<div>
+						<AvatarGroup  members={members.slice(0, 3)} size={32} />
+					</div>
+					<div>
+						<AvatarGroup limit={4} {members} size={32} />
+					</div>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, avatarGroup)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet placeholder()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			placeholder
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Avatar placeholder size={90} />
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, avatarPlaceholder)}
 		</div>
 	</Row>
 {/snippet}
@@ -69,6 +123,8 @@
 {#snippet cont()}
 	{@render avatar()}
 	{@render group()}
+	{@render placeholder()}
+
 	{@render prevAndNext()}
 {/snippet}
 

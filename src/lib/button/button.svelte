@@ -40,8 +40,8 @@
 		}
 	});
 
-	// The size of the spinner
-	let spinnerSize = $derived.by(() => {
+	// The size of the prefix, suffix and spinner
+	let iconSize = $derived.by(() => {
 		switch (size) {
 			case 'sm':
 				return 'w-[16px] h-[16px]';
@@ -92,7 +92,7 @@
 
 {#snippet spinner()}
 	{#if loading}
-		<div class="relative {spinnerSize} animate-spin flex items-center justify-center">
+		<div class="relative {iconSize} animate-spin flex items-center justify-center">
 			<div transition:fade class="absolute w-full h-full">
 				<LoaderCircle />
 			</div>
@@ -102,7 +102,9 @@
 
 {#snippet prefixSnip()}
 	{#if prefix}
-		{@render prefix()}
+		<div class="{iconSize} flex items-center justify-center">
+			{@render prefix()}
+		</div>
 	{:else if loading}
 		{@render spinner()}
 	{/if}
@@ -110,7 +112,9 @@
 
 {#snippet suffixSnip()}
 	{#if suffix}
-		{@render suffix()}
+		<div class="{iconSize} flex items-center justify-center">
+			{@render suffix()}
+		</div>
 	{/if}
 {/snippet}
 

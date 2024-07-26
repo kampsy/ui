@@ -1,4 +1,3 @@
-import { Pagination } from '$lib/index.js';
 import type { AsideT } from '../../docs/ui/types.ts';
 
 export const asideData: Array<AsideT> = [
@@ -28,8 +27,16 @@ export const asideData: Array<AsideT> = [
                 url: '/button'
             },
             {
+                name: 'calendar',
+                url: '/calendar'
+            },
+            {
                 name: 'error',
                 url: '/error'
+            },
+            {
+                name: 'modal',
+                url: '/modal'
             },
             {
                 name: 'pagination',
