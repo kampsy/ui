@@ -22,7 +22,7 @@
 			<div class="flex items-center gap-x-2">
 				<div class="w-[20px] h-[20px]"></div>
 				<div
-					class="w-full text-right mb-[2px] text-[13px] text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="mb-[2px] text-[13px] text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
 				>
 					previous
 				</div>
