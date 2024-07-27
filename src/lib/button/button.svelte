@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LoaderCircle from '$lib/icons/loader-circle.svelte';
-	import type { Snippet } from 'svelte';
+	import type { Component, Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
@@ -8,8 +8,8 @@
 		class?: string;
 		size?: 'sm' | 'md' | 'lg';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
-		prefix?: Snippet | undefined;
-		suffix?: Snippet | undefined;
+		prefix?: Component | undefined;
+		suffix?: Component | undefined;
 		rounded?: boolean;
 		loading?: boolean;
 		disabled?: boolean;
@@ -103,7 +103,7 @@
 {#snippet prefixSnip()}
 	{#if prefix}
 		<div class="{iconSize} flex items-center justify-center">
-			{@render prefix()}
+			<svelte:component this="{prefix}"/>
 		</div>
 	{:else if loading}
 		{@render spinner()}
@@ -113,7 +113,7 @@
 {#snippet suffixSnip()}
 	{#if suffix}
 		<div class="{iconSize} flex items-center justify-center">
-			{@render suffix()}
+			<svelte:component this="{suffix}"/>
 		</div>
 	{/if}
 {/snippet}

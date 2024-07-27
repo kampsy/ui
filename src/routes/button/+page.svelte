@@ -7,8 +7,8 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import {
-	buttonDisabled,
-	buttonLoading,
+		buttonDisabled,
+		buttonLoading,
 		buttonPrefixAndSuffix,
 		buttonRounded,
 		buttonSize,
@@ -89,14 +89,6 @@
 {/snippet}
 
 {#snippet prefixAndSuffix()}
-	<!--icons-->
-	{#snippet arrowLeft()}
-		<ArrowLeft />
-	{/snippet}
-
-	{#snippet arrowRight()}
-		<ArrowRight />
-	{/snippet}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -106,9 +98,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button prefix={arrowLeft}>upload</Button>
-				<Button suffix={arrowRight}>upload</Button>
-				<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
+				<Button prefix={ArrowLeft}>upload</Button>
+				<Button suffix={ArrowRight}>upload</Button>
+				<Button prefix={ArrowLeft} suffix={ArrowRight}>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonPrefixAndSuffix)}
 		</div>

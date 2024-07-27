@@ -23,18 +23,10 @@ export const buttonPrefixAndSuffix = `
 import { Button } from 'kodo-ui';
 import { ArrowLeft, ArrowRight } from 'kodo-ui/icons';
 
-{#snippet arrowLeft()}
-	<ArrowLeft />
-{/snippet}
-
-{#snippet arrowRight()}
-	<ArrowRight />
-{/snippet}
-
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button prefix={arrowLeft}>upload</Button>
-	<Button suffix={arrowRight}>upload</Button>
-	<Button prefix={arrowLeft} suffix={arrowRight}>upload</Button>
+	<Button prefix={ArrowLeft}>upload</Button>
+	<Button suffix={ArrowRight}>upload</Button>
+	<Button prefix={ArrowLeft} suffix={ArrowRight}>upload</Button>
 </div>`;
 
 export const buttonRounded = `
