@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Shield from '$lib/icons/shield.svelte';
-	import type { Snippet } from 'svelte';
+	import type { Component, Snippet } from 'svelte';
 
 	type propsT = {
 		class?: string;
@@ -23,7 +22,7 @@
 			| 'teal-subtle'
 			| 'inverted';
 		size?: 'sm' | 'md' | 'lg';
-		icon?: Snippet | undefined;
+		icon?: Component | undefined;
 		children: Snippet;
 	};
 
@@ -116,13 +115,17 @@
 	});
 </script>
 
+{#snippet iconSnip()}
+	{#if icon}
+		<span class={iconSizeClass}>
+			<svelte:component this={icon} />
+		</span>
+	{/if}
+{/snippet}
+
 <span class="flex items-center justify-center rounded-full {badgeClass} {klass}">
 	<span class="flex items-center {iconXGap} capitalize">
-		{#if icon}
-			<span class={iconSizeClass}>
-				{@render icon()}
-			</span>
-		{/if}
+		{@render iconSnip()}
 		{@render children()}
 	</span>
 </span>

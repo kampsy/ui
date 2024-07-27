@@ -9,7 +9,7 @@
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
 
-	let selected = $state('system');
+	let selected = $state(scheme.theme);
 
 	const onchange = (evt: any) => {
 		selected = evt.currentTarget.value;
