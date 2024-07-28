@@ -45,11 +45,6 @@
 {/snippet}
 
 {#snippet defaultComp()}
-	{#snippet iconCalendar()}
-		<div class="font-normal">
-            <Calendar />
-        </div>
-	{/snippet}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -58,7 +53,7 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button type="secondary" prefix={iconCalendar} class="capitalize">Select date range</Button>
+				<Button type="secondary" prefix={Calendar} class="capitalize">Select date range</Button>
 				<Portal>
 					<div>hello</div>
 				</Portal>

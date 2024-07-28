@@ -6,7 +6,9 @@
 	type propsT = {
 		onclick?: () => void;
 		class?: string;
-		size?: 'sm' | 'md' | 'lg';
+		'aria-label'?: string;
+		shape?: 'circle' | 'square' | undefined;
+		size?: 'tiny' | 'small' | 'medium' | 'large';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
 		prefix?: Component | undefined;
 		suffix?: Component | undefined;
@@ -19,7 +21,9 @@
 	let {
 		onclick = undefined,
 		class: klass = '',
-		size = 'md',
+		'aria-label': ariaLabel = undefined,
+		shape = undefined,
+		size = 'medium',
 		type = 'primary',
 		prefix = undefined,
 		suffix = undefined,
@@ -30,24 +34,39 @@
 	}: propsT = $props();
 
 	let sizeClass = $derived.by(() => {
-		switch (size) {
-			case 'sm':
-				return 'px-[6px] h-[32px] text-sm leading-4';
-			case 'md':
-				return 'px-[10px] h-[40px] text-sm leading-[20px]';
-			case 'lg':
-				return 'px-[14px] h-[48px] text-base leading-[24px]';
+		if (shape) {
+			switch (size) {
+				case 'tiny':
+					return 'w-[24px] h-[24px] text-xs leading-3';
+				case 'small':
+					return 'px-[6px] w-[32px] h-[32px] text-sm leading-4';
+				case 'medium':
+					return 'px-[10px] w-[40px] h-[40px] text-sm leading-[20px]';
+				case 'large':
+					return 'px-[14px] w-[48px] h-[48px] text-base leading-[24px]';
+			}
+		} else {
+			switch (size) {
+				case 'tiny':
+					return 'h-[24px] text-xs leading-3';
+				case 'small':
+					return 'px-[6px] h-[32px] text-sm leading-4';
+				case 'medium':
+					return 'px-[10px] h-[40px] text-sm leading-[20px]';
+				case 'large':
+					return 'px-[14px] h-[48px] text-base leading-[24px]';
+			}
 		}
 	});
 
 	// The size of the prefix, suffix and spinner
 	let iconSize = $derived.by(() => {
 		switch (size) {
-			case 'sm':
+			case 'small':
 				return 'w-[16px] h-[16px]';
-			case 'md':
+			case 'medium':
 				return 'w-[16px] h-[16px]';
-			case 'lg':
+			case 'large':
 				return 'w-[24px] h-[24px]';
 		}
 	});
@@ -67,11 +86,34 @@
 		}
 	});
 
-	let roundedClass = $derived.by(() => {
+	let roundedStyle = $derived.by(() => {
 		if (rounded) {
 			return 'rounded-full';
 		}
 		return 'rounded-[6px]';
+	});
+
+	let roundedWithShapeStyle = $derived.by(() => {
+		if (shape == 'circle') {
+			return 'rounded-full';
+		}
+		switch (size) {
+			case 'tiny':
+				return 'rounded-[4px]';
+			case 'small':
+				return 'rounded-[6px]';
+			case 'medium':
+				return 'rounded-[6px]';
+			case 'large':
+				return 'rounded-[8px]';
+		}
+	});
+
+	let radiusStyle = $derived.by(() => {
+		if (shape) {
+			return roundedWithShapeStyle;
+		}
+		return roundedStyle;
 	});
 
 	let loadingDisabledClass = $derived.by(() => {
@@ -84,9 +126,9 @@
 	// The final styles for the button
 	let buttonClass = $derived.by(() => {
 		if (disabled || loading) {
-			return `${sizeClass} ${roundedClass} ${loadingDisabledClass} ${klass}`;
+			return `${sizeClass} ${radiusStyle} ${loadingDisabledClass} ${klass}`;
 		}
-		return `${sizeClass} ${typeClass} ${roundedClass} ${klass}`;
+		return `${sizeClass} ${typeClass} ${radiusStyle} ${klass}`;
 	});
 </script>
 
@@ -103,7 +145,7 @@
 {#snippet prefixSnip()}
 	{#if prefix}
 		<div class="{iconSize} flex items-center justify-center">
-			<svelte:component this="{prefix}"/>
+			<svelte:component this={prefix} />
 		</div>
 	{:else if loading}
 		{@render spinner()}
@@ -113,17 +155,35 @@
 {#snippet suffixSnip()}
 	{#if suffix}
 		<div class="{iconSize} flex items-center justify-center">
-			<svelte:component this="{suffix}"/>
+			<svelte:component this={suffix} />
 		</div>
 	{/if}
 {/snippet}
 
-<button {onclick} type="button" {disabled} class="{buttonClass} ">
-	<div class="w-full h-full px-[6px] flex items-center gap-[8px]">
-		{@render prefixSnip()}
-		<span class="font-medium first-letter:capitalize">
-			{@render children()}
-		</span>
-		{@render suffixSnip()}
-	</div>
-</button>
+{#snippet mainButton()}
+	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} ">
+		<div class="w-full h-full px-[6px] flex items-center gap-[8px]">
+			{@render prefixSnip()}
+			<span class="font-medium first-letter:capitalize">
+				{@render children()}
+			</span>
+			{@render suffixSnip()}
+		</div>
+	</button>
+{/snippet}
+
+{#snippet withShape()}
+	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} ">
+		<div class="w-full h-full flex items-center justify-center">
+			<span class="font-medium first-letter:capitalize">
+				{@render children()}
+			</span>
+		</div>
+	</button>
+{/snippet}
+
+{#if shape}
+	{@render withShape()}
+{:else}
+	{@render mainButton()}
+{/if}

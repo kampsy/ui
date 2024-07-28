@@ -111,7 +111,7 @@
 					error={{
 						message: 'The request failed.',
 						action: 'Contact Us',
-						link: 'https://vercel.com/contact'
+						link: 'https://kodo.kampsy.xyz/error'
 					}}
 				/>
 			{/snippet}

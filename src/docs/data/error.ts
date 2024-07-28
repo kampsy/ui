@@ -15,9 +15,11 @@ import { Error } from 'kodo-ui';
 export const errorSize = `
 import { Error } from 'kodo-ui';
 
-<Error size="sm">This email is in use.</Error>
-<Error size="md">This email is in use.</Error>
-<Error size="lg">This email is in use.</Error>`;
+<div class="w-full flex flex-wrap gap-4">
+	<Error size="sm">This email is in use.</Error>
+	<Error size="md">This email is in use.</Error>
+	<Error size="lg">This email is in use.</Error>
+</div>`;
 
 export const errorWithProp = `
 import { Error } from 'kodo-ui';

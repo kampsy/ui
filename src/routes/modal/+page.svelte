@@ -54,7 +54,7 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="sm">Open Modal</Button>
+				<Button size="small">Open Modal</Button>
 				<Portal>
 					<div>hello</div>
 				</Portal>

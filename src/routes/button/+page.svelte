@@ -16,7 +16,12 @@
 	} from '../../docs/data/button.js';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import ArrowUp from '$lib/icons/arrow-up.svelte';
 </script>
+
+<svelte:head>
+	<title>Button - Kodo UI</title>
+</svelte:head>
 
 {#snippet button()}
 	<Row>
@@ -60,9 +65,9 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="sm">upload</Button>
+				<Button size="small">upload</Button>
 				<Button>upload</Button>
-				<Button size="lg">upload</Button>
+				<Button size="large">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonSize)}
 		</div>
@@ -82,6 +87,83 @@
 				<Button type="tertiary">upload</Button>
 				<Button type="error">upload</Button>
 				<Button type="warning">upload</Button>
+			{/snippet}
+			{@render demoAndCode(demo, buttonTypes)}
+		</div>
+	</Row>
+{/snippet}
+
+<!--Rounded content-->
+{#snippet roundedCode(rct)}
+	<code
+		class="px-2 py-[3.6px] rounded-[6px] text-xs text-light-gray-900 bg-light-gray-100 dark:bg-dark-gray-100 dark:text-dark-gray-900 border border-light-gray-200 dark:border-dark-gray-400"
+	>
+		{rct}
+	</code>
+{/snippet}
+
+{#snippet shapes()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			shapes
+		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+		Icon-only buttons should include the {@render roundedCode('shape')} prop and an
+			{@render roundedCode('aria-label')}.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Button aria-label="Upload" shape="square" size="tiny">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="square" size="small">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="square">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="square" size="large">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="circle" size="tiny">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="circle" size="small">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="circle">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
+
+				<Button aria-label="Upload" shape="circle" size="large">
+					<div class="w-[16px] h-[16px]">
+						<ArrowUp />
+					</div>
+				</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonTypes)}
 		</div>
@@ -108,14 +190,6 @@
 {/snippet}
 
 {#snippet rounded()}
-	<!--Rounded content-->
-	{#snippet roundedCode(rct)}
-		<code
-			class="px-2 py-[3.6px] rounded-[6px] text-xs text-light-gray-900 bg-light-gray-100 dark:bg-dark-gray-100 dark:text-dark-gray-900 border border-light-gray-200 dark:border-dark-gray-400"
-		>
-			{rct}
-		</code>
-	{/snippet}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -126,16 +200,16 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Combination of {@render roundedCode('shape="rounded"')} and the
+			Combination of {@render roundedCode('rounded')} and the
 			{@render roundedCode('shadow')} prop, often used on marketing pages.
 		</p>
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="sm" type="secondary" rounded>upload</Button>
+				<Button size="small" type="secondary" rounded>upload</Button>
 				<Button type="secondary" rounded>upload</Button>
-				<Button size="lg" type="secondary" rounded>upload</Button>
+				<Button size="large" type="secondary" rounded>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
 		</div>
@@ -153,9 +227,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="sm" loading>upload</Button>
+				<Button size="small" loading>upload</Button>
 				<Button loading>upload</Button>
-				<Button size="lg" loading>upload</Button>
+				<Button size="large" loading>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonLoading)}
 		</div>
@@ -172,9 +246,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="sm" disabled>upload</Button>
+				<Button size="small" disabled>upload</Button>
 				<Button disabled>upload</Button>
-				<Button size="lg" disabled>upload</Button>
+				<Button size="large" disabled>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonDisabled)}
 		</div>
@@ -194,6 +268,7 @@
 	{@render button()}
 	{@render size()}
 	{@render types()}
+	{@render shapes()}
 	{@render prefixAndSuffix()}
 	{@render rounded()}
 	{@render loading()}
