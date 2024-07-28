@@ -15,3 +15,7 @@ export { default as Error } from './error/error.svelte';
 
 // Pagination
 export { default as Pagination } from './pagination/pagination.svelte';
+
+
+// Tooltip
+export { default as Tooltip } from './tooltip/tooltip.svelte';

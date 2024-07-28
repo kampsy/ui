@@ -41,6 +41,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'pagination',
                 url: '/pagination'
+            },
+            {
+                name: 'tooltip',
+                url: '/tooltip'
             }
         ]
 
