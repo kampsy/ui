@@ -11,6 +11,7 @@
 		buttonLoading,
 		buttonPrefixAndSuffix,
 		buttonRounded,
+		buttonShapes,
 		buttonSize,
 		buttonTypes
 	} from '../../docs/data/button.js';
@@ -165,7 +166,7 @@
 					</div>
 				</Button>
 			{/snippet}
-			{@render demoAndCode(demo, buttonTypes)}
+			{@render demoAndCode(demo, buttonShapes)}
 		</div>
 	</Row>
 {/snippet}

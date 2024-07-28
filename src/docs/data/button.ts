@@ -9,6 +9,7 @@ import { Button } from 'kodo-ui';
 	<Button size="lg">upload</Button>
 </div>`;
 
+
 export const buttonTypes = `
 import { Button } from 'kodo-ui';
 
@@ -17,6 +18,59 @@ import { Button } from 'kodo-ui';
 	<Button type="tertiary">upload</Button>
 	<Button type="error">upload</Button>
 	<Button type="warning">upload</Button>
+</div>`;
+
+export const buttonShapes = `
+import { Button } from 'kodo-ui';
+
+<div class="w-full flex flex-wrap gap-4 justify-between">
+	<Button aria-label="Upload" shape="square" size="tiny">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="square" size="small">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="square">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="square" size="large">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="circle" size="tiny">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="circle" size="small">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="circle">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
+
+	<Button aria-label="Upload" shape="circle" size="large">
+		<div class="w-[16px] h-[16px]">
+			<ArrowUp />
+		</div>
+	</Button>
 </div>`;
 
 export const buttonPrefixAndSuffix = `
