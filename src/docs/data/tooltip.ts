@@ -49,3 +49,26 @@ import { Tooltip } from 'kodo-ui';
         </Tooltip>
 	</div>
 </div>`;
+
+export const tooltipComponents = `
+import { Tooltip } from 'kodo-ui';
+
+<div class="w-full flex flex-wrap gap-4 justify-between">
+  <div>
+	  <Tooltip position="bottom" text="The Evil Rabbit Jumped over the Fence">
+      <Button size="small">Bottom</Button>
+    </Tooltip>
+  </div>
+
+  <div>
+	  <Tooltip position="right" text="The Evil Rabbit Jumped over the Fence">
+      <Spinner />
+    </Tooltip>
+  </div>
+
+  <div>
+	  <Tooltip position="left" text="The Evil Rabbit Jumped over the Fence">
+      <Badge size="sm">LEFT</Badge>
+    </Tooltip>
+  </div>
+</div>`;

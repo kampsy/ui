@@ -6,7 +6,7 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import Spinner from '$lib/spinner/Spinner.svelte';
+	import Spinner from '$lib/spinner/spinner.svelte';
 	import { spinnerCustom, spinnerDefault } from '../../docs/data/spinner.js';
 </script>
 

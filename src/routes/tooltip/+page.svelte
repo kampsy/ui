@@ -7,7 +7,14 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import Tooltip from '$lib/tooltip/tooltip.svelte';
-	import { toolTipCustomeType, toolTipDefault } from '../../docs/data/tooltip.js';
+	import {
+		tooltipComponents,
+		toolTipCustomeType,
+		toolTipDefault
+	} from '../../docs/data/tooltip.js';
+	import Button from '$lib/button/button.svelte';
+	import { Badge } from '$lib/index.js';
+	import Spinner from '$lib/spinner/spinner.svelte';
 </script>
 
 <svelte:head>
@@ -39,7 +46,7 @@
 				{@render demo()}
 			</div>
 		</div>
-		<div class="overflow-hidden">
+		<div class="overflow-hidden rounded-b-lg">
 			<CollapseCode {code} />
 		</div>
 	</div>
@@ -56,24 +63,24 @@
 			{#snippet demo()}
 				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="top">
-                        <span>Top</span>
-                    </Tooltip>
+						<span>Top</span>
+					</Tooltip>
 				</div>
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="bottom">
-                        <span>Bottom</span>
-                    </Tooltip>
+						<span>Bottom</span>
+					</Tooltip>
 				</div>
 
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="right">
-                        <span>Right</span>
-                    </Tooltip>
+						<span>Right</span>
+					</Tooltip>
 				</div>
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="left">
-                        <span>Left</span>
-                    </Tooltip>
+						<span>Left</span>
+					</Tooltip>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, toolTipDefault)}
@@ -92,24 +99,24 @@
 			{#snippet demo()}
 				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="top" type="success">
-                        <span>Top</span>
-                    </Tooltip>
+						<span>Top</span>
+					</Tooltip>
 				</div>
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="bottom" type="error">
-                        <span>Bottom</span>
-                    </Tooltip>
+						<span>Bottom</span>
+					</Tooltip>
 				</div>
 
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="right" type="warning">
-                        <span>Right</span>
-                    </Tooltip>
+						<span>Right</span>
+					</Tooltip>
 				</div>
-                <div>
+				<div>
 					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="left" type="violet">
-                        <span>Left</span>
-                    </Tooltip>
+						<span>Left</span>
+					</Tooltip>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, toolTipCustomeType)}
@@ -117,11 +124,42 @@
 	</Row>
 {/snippet}
 
+{#snippet components()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">components</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Tooltip position="bottom" text="The Evil Rabbit Jumped over the Fence">
+						<Button size="small">Bottom</Button>
+					</Tooltip>
+				</div>
+
+				<div>
+					<Tooltip position="right" text="The Evil Rabbit Jumped over the Fence">
+						<Spinner />
+					</Tooltip>
+				</div>
+
+				<div>
+					<Tooltip position="left" text="The Evil Rabbit Jumped over the Fence">
+						<Badge size="sm">LEFT</Badge>
+					</Tooltip>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, tooltipComponents)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: 'spinner', href: '/spinner' }}
 		/>
 	</Row>
 {/snippet}
@@ -130,6 +168,7 @@
 	{@render tooltip()}
 	{@render defaultTooltip()}
 	{@render customeType()}
+	{@render components()}
 	{@render prevAndNext()}
 {/snippet}
 

@@ -110,13 +110,13 @@
 				after:border-t-transparent after:border-b-light-amber-700 after:dark:border-b-dark-amber-700 
 				after:border-x-transparent `;
 					case 'left':
-						return `w-[250px] top-[-40%] right-[120%] text-light-black 
+						return `w-[250px] top-[-50%] right-[120%] text-light-black 
 				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
 				after:border-y-transparent after:border-l-light-amber-700
 				after:dark:border-l-dark-amber-700 after:border-r-transparent`;
 					case 'right':
-						return `w-[250px] top-[-40%] left-[120%] text-light-black 
+						return `w-[250px] top-[-50%] left-[120%] text-light-black 
 				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
 				after:border-y-transparent after:border-l-transparent after:border-r-light-amber-700
