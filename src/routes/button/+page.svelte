@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-	<title>Button - Kodo UI</title>
+	<title>Button</title>
 </svelte:head>
 
 {#snippet button()}

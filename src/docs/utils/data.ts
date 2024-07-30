@@ -43,6 +43,10 @@ export const asideData: Array<AsideT> = [
                 url: '/pagination'
             },
             {
+                name: 'spinner',
+                url: '/spinner'
+            },
+            {
                 name: 'tooltip',
                 url: '/tooltip'
             }
