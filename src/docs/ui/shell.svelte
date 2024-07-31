@@ -69,7 +69,7 @@
 			class="hidden lg:block w-full max-w-[260px] h-full border-l border-r border-light-gray-200 dark:border-dark-gray-400"
 		>
 			<div class="hidden w-full h-full px-6 lg:flex items-center">
-				<a href="/#">
+				<a href="/">
 					<div class="flex items-center gap-2">
 						<div class="w-[27px] h-[27px]">
 							<LogoGeist />
