@@ -1,5 +1,5 @@
 {
-	"name": "kodo-ui",
+	"name": "kampsy-ui",
 	"license": "MIT",
 	"version": "0.0.9",
 	"author": {
@@ -7,7 +7,7 @@
 		"email": "connect@codewithshin.com",
 		"url": "https://string.kampsy.xyz/about"
 	},
-	"homepage": "https://kodo.kampsy.xyz",
+	"homepage": "https://ui.kampsy.xyz",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
