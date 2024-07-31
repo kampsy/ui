@@ -2,7 +2,7 @@
 
 Svelte 5 inspired by Vercel Geist. Free. Open Source. **Use this to build consistent and cohesive web experiences**.
 
-![hero](apps/www/public/og.jpg)
+![hero](src/docs/img.png)
 
 ## Documentation
 

@@ -76,7 +76,7 @@
 						</div>
 						<div>
 							<TextGradient
-								text="Kodo Design System"
+								text="kampsy-ui"
 								variant="ios"
 								class="text-base font-semibold leading-[24px]"
 							/>
