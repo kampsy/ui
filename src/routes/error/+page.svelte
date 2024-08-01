@@ -15,6 +15,10 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
 
+<svelte:head>
+    <title>Error</title>
+</svelte:head>
+
 {#snippet error()}
 	<Row>
 		<h1

@@ -42,6 +42,10 @@
 	];
 </script>
 
+<svelte:head>
+    <title>Avatar</title>
+</svelte:head>
+
 {#snippet avatar()}
 	<Row>
 		<h1

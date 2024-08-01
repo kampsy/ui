@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>Calendar - kampsy UI</title>
+	<title>Calendar</title>
 </svelte:head>
 
 {#snippet calendar()}

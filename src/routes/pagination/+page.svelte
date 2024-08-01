@@ -20,6 +20,10 @@
 	};
 </script>
 
+<svelte:head>
+    <title>Pagination</title>
+</svelte:head>
+
 {#snippet pagination()}
 	<Row>
 		<h1

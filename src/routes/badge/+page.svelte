@@ -10,6 +10,9 @@
 	import Shield from '$lib/icons/shield.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 </script>
+<svelte:head>
+    <title>Badge</title>
+</svelte:head>
 
 {#snippet badge()}
 	<Row>
