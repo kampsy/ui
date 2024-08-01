@@ -1,5 +1,5 @@
 export const toolTipDefault = `
-import { Tooltip } from 'kodo-ui';
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
     <div>
@@ -25,7 +25,7 @@ import { Tooltip } from 'kodo-ui';
 </div>`;
 
 export const toolTipCustomeType = `
-import { Tooltip } from 'kodo-ui';
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
     <div>
@@ -51,7 +51,7 @@ import { Tooltip } from 'kodo-ui';
 </div>`;
 
 export const tooltipComponents = `
-import { Tooltip } from 'kodo-ui';
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
   <div>

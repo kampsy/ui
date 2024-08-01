@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-    <title>Modal - Kodo UI</title>
+    <title>Modal - kampsy UI</title>
 </svelte:head>
 
 {#snippet modal()}

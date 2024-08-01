@@ -1,19 +1,19 @@
 export const textareaDefault = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <Error>
     This email address is already in use.
 </Error>`;
 
 export const textareaDisabled = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <Error label="Email Error">
     This email address is already in use.
 </Error>`;
 
 export const textareError = `
-import { Textarea } from 'kodo-ui';
+import { Textarea } from 'kampsy-ui';
 
 <div class="w-full space-y-6">
 	<Textarea

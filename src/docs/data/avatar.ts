@@ -1,5 +1,5 @@
 export const avatarGroup = `
-import { AvatarGroup } from 'kodo-ui';
+import { AvatarGroup } from 'kampsy-ui';
 
 const members = [
 	{
@@ -44,7 +44,7 @@ const members = [
 </div>`;
 
 export const avatarPlaceholder = `
-import { Avatar } from 'kodo-ui';
+import { Avatar } from 'kampsy-ui';
 
 <div>
 	<Avatar placeholder size={90} />

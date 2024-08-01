@@ -1,19 +1,19 @@
 export const errorDefault = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <Error>
     This email address is already in use.
 </Error>`;
 
 export const errorCustomLabel = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <Error label="Email Error">
     This email address is already in use.
 </Error>`;
 
 export const errorSize = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4">
 	<Error size="sm">This email is in use.</Error>
@@ -22,12 +22,12 @@ import { Error } from 'kodo-ui';
 </div>`;
 
 export const errorWithProp = `
-import { Error } from 'kodo-ui';
+import { Error } from 'kampsy-ui';
 
 <Error
 	error={{
 		message: 'The request failed.',
 		action: 'Contact Us',
-		link: 'https://kodo.kampsy.xyz/error'
+		link: 'https://kampsy.kampsy.xyz/error'
 	}}
 />`;

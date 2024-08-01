@@ -1,7 +1,7 @@
 //button
 
 export const buttonSize = `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="sm">upload</Button>
@@ -11,7 +11,7 @@ import { Button } from 'kodo-ui';
 
 
 export const buttonTypes = `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button type="secondary">upload</Button>
@@ -21,7 +21,7 @@ import { Button } from 'kodo-ui';
 </div>`;
 
 export const buttonShapes = `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button aria-label="Upload" shape="square" size="tiny">
@@ -74,8 +74,8 @@ import { Button } from 'kodo-ui';
 </div>`;
 
 export const buttonPrefixAndSuffix = `
-import { Button } from 'kodo-ui';
-import { ArrowLeft, ArrowRight } from 'kodo-ui/icons';
+import { Button } from 'kampsy-ui';
+import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button prefix={ArrowLeft}>upload</Button>
@@ -84,7 +84,7 @@ import { ArrowLeft, ArrowRight } from 'kodo-ui/icons';
 </div>`;
 
 export const buttonRounded = `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="sm" type="secondary" rounded>upload</Button>
@@ -93,7 +93,7 @@ import { Button } from 'kodo-ui';
 </div>`;
 
 export const buttonLoading= `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="sm" loading>upload</Button>
@@ -102,7 +102,7 @@ import { Button } from 'kodo-ui';
 </div>`;
 
 export const buttonDisabled= `
-import { Button } from 'kodo-ui';
+import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="sm" disabled>upload</Button>

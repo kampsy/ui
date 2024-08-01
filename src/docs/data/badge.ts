@@ -1,5 +1,5 @@
 export const badgeVariants = `
-import { Badge } from 'kodo-ui';
+import { Badge } from 'kampsy-ui';
 
 <div class="flex flex-col gap-2">
 	<div class="flex gap-1">
@@ -47,7 +47,7 @@ import { Badge } from 'kodo-ui';
 </div>`;
 
 export const badgeSize = `
-import { Badge } from 'kodo-ui';
+import { Badge } from 'kampsy-ui';
 
 <div class="flex flex-col gap-2">
 
@@ -65,8 +65,8 @@ import { Badge } from 'kodo-ui';
 </div>`;
 
 export const badgeWithIcon = `
-import { Badge } from 'kodo-ui';
-import { Shield } from 'kodo-ui/icons';
+import { Badge } from 'kampsy-ui';
+import { Shield } from 'kampsy-ui/icons';
 
 <div class="flex flex-col gap-2">
 

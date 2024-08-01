@@ -1,5 +1,5 @@
 export const paginationDefault = `
-import { Pagination } from 'kodo-ui';
+import { Pagination } from 'kampsy-ui';
 
 const prev = {
   title: 'Home',
