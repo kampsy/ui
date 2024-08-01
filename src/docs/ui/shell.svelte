@@ -77,7 +77,7 @@
 						<div>
 							<TextGradient
 								text="kampsy-ui"
-								variant="ios"
+								variant="vision"
 								class="text-base font-semibold leading-[24px]"
 							/>
 						</div>
@@ -95,8 +95,8 @@
 						</div>
 						<div>
 							<TextGradient
-								text="Kodo Design System"
-								variant="ios"
+								text="kampsy-ui"
+								variant="vision"
 								class="text-base font-semibold leading-[24px]"
 							/>
 						</div>
@@ -166,19 +166,18 @@
 	<!---->
 </div>
 <main
-	class="sidebar -mx-px -mt-px flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
+	class="flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >
-	<div class="order-2 grow">
+	<aside
+		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-light-gray-200 dark:border-dark-gray-400  bottom-0 top-[64px] order-1  flex-col min-[1200px]:flex"
+	>
+		{@render asideSlot()}
+	</aside>
+	<div class="order-2 grow overflow-x-hidden">
 		<div
 			class="relative border-r border-light-gray-200 dark:border-dark-gray-400 flex h-full w-full flex-col"
 		>
 			{@render contSlot()}
 		</div>
 	</div>
-	<aside
-		class="border-l border-r border-light-gray-200 dark:border-dark-gray-400 sticky bottom-0 top-[64px] order-1 hidden w-[260px] flex-col min-[1200px]:flex"
-		style="height:calc(100vh - 64px);"
-	>
-		{@render asideSlot()}
-	</aside>
 </main>

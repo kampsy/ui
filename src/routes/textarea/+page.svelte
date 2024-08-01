@@ -36,7 +36,7 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg"
+		class="bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg overflow-hidden"
 	>
 		<div class="p-4 lg:p-6">
 			<div class="flex flex-nowrap gap-4 justify-between">
