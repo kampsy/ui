@@ -39,6 +39,10 @@ export const asideData: Array<AsideT> = [
                 url: '/spinner'
             },
             {
+                name: 'status dot',
+                url: '/status-dot'
+            },
+            {
                 name: 'textarea',
                 url: '/textarea'
             },
