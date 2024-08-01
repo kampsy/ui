@@ -18,15 +18,14 @@
 
 	let { label, size = 'md', error = undefined, children }: propsT = $props();
 
+	const sizeObj = {
+		sm: 'text-[13px] leading-[20px]',
+		md: 'text-[14px] leading-[20px]',
+		lg: 'text-[16px] leading-[24px]'
+	}
+
 	let sizeClass = $derived.by(() => {
-		switch (size) {
-			case 'sm':
-				return 'text-[13px] leading-[20px]';
-			case 'md':
-				return 'text-[14px] leading-[20px]';
-			case 'lg':
-				return 'text-[16px] leading-[24px]';
-		}
+		return sizeObj[size]
 	});
 </script>
 

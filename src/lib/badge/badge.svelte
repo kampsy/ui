@@ -34,83 +34,68 @@
 		children
 	}: propsT = $props();
 
+	const variantObj = {
+		gray: 'bg-light-gray-700 text-light-bg dark:bg-dark-gray-700 dark:text-light-bg',
+		'gray-subtle':
+			'bg-light-gray-200 text-light-gray-1000 dark:bg-dark-gray-200 dark:text-dark-gray-1000',
+		blue: 'bg-light-blue-700 text-light-bg dark:bg-dark-blue-700 dark:text-light-bg',
+		'blue-subtle':
+			'bg-light-blue-200 text-light-blue-900 dark:bg-dark-blue-200 dark:text-dark-blue-900',
+		purple: 'bg-light-purple-700 text-light-bg dark:bg-dark-purple-700 dark:text-light-bg',
+		'purple-subtle':
+			'bg-light-purple-200 text-light-purple-900 dark:bg-dark-purple-200 dark:text-dark-purple-900',
+		amber: 'bg-light-amber-700 text-light-bg dark:bg-dark-amber-700 dark:text-black',
+		'amber-subtle':
+			'bg-light-amber-200 text-light-amber-900 dark:bg-dark-amber-200 dark:text-dark-amber-900',
+		red: 'bg-light-red-700 text-light-bg dark:bg-dark-red-700 dark:text-light-bg',
+		'red-subtle': 'bg-light-red-200 text-light-red-900 dark:bg-dark-red-200 dark:text-dark-red-900',
+		pink: 'bg-light-pink-700 text-light-bg dark:bg-dark-pink-700 dark:text-light-bg',
+		'pink-subtle':
+			'bg-light-pink-200 text-light-pink-900 dark:bg-dark-pink-200 dark:text-dark-pink-900',
+		green: 'bg-light-green-700 text-light-bg dark:bg-dark-green-700 dark:text-light-bg',
+		'green-subtle':
+			'bg-light-green-200 text-light-green-900 dark:bg-dark-green-200 dark:text-dark-green-900',
+		teal: 'bg-light-teal-700 text-light-bg dark:bg-dark-teal-700 dark:text-light-bg',
+		'teal-subtle':
+			'bg-light-teal-200 text-light-teal-900 dark:bg-dark-teal-200 dark:text-dark-teal-900',
+		inverted:
+			'bg-light-gray-1000 text-light-gray-100 dark:bg-dark-gray-1000 dark:text-dark-gray-100'
+	};
 	let variantClass = $derived.by(() => {
-		switch (variant) {
-			case 'gray':
-				return 'bg-light-gray-700 text-light-bg dark:bg-dark-gray-700 dark:text-light-bg';
-			case 'gray-subtle':
-				return 'bg-light-gray-200 text-light-gray-1000 dark:bg-dark-gray-200 dark:text-dark-gray-1000';
-			case 'blue':
-				return 'bg-light-blue-700 text-light-bg dark:bg-dark-blue-700 dark:text-light-bg';
-			case 'blue-subtle':
-				return 'bg-light-blue-200 text-light-blue-900 dark:bg-dark-blue-200 dark:text-dark-blue-900';
-			case 'purple':
-				return 'bg-light-purple-700 text-light-bg dark:bg-dark-purple-700 dark:text-light-bg';
-			case 'purple-subtle':
-				return 'bg-light-purple-200 text-light-purple-900 dark:bg-dark-purple-200 dark:text-dark-purple-900';
-			case 'amber':
-				return 'bg-light-amber-700 text-light-bg dark:bg-dark-amber-700 dark:text-black';
-			case 'amber-subtle':
-				return 'bg-light-amber-200 text-light-amber-900 dark:bg-dark-amber-200 dark:text-dark-amber-900';
-			case 'red':
-				return 'bg-light-red-700 text-light-bg dark:bg-dark-red-700 dark:text-light-bg';
-			case 'red-subtle':
-				return 'bg-light-red-200 text-light-red-900 dark:bg-dark-red-200 dark:text-dark-red-900';
-			case 'pink':
-				return 'bg-light-pink-700 text-light-bg dark:bg-dark-pink-700 dark:text-light-bg';
-			case 'pink-subtle':
-				return 'bg-light-pink-200 text-light-pink-900 dark:bg-dark-pink-200 dark:text-dark-pink-900';
-			case 'green':
-				return 'bg-light-green-700 text-light-bg dark:bg-dark-green-700 dark:text-light-bg';
-			case 'green-subtle':
-				return 'bg-light-green-200 text-light-green-900 dark:bg-dark-green-200 dark:text-dark-green-900';
-			case 'teal':
-				return 'bg-light-teal-700 text-light-bg dark:bg-dark-teal-700 dark:text-light-bg';
-			case 'teal-subtle':
-				return 'bg-light-teal-200 text-light-teal-900 dark:bg-dark-teal-200 dark:text-dark-teal-900';
-			case 'inverted':
-				return 'bg-light-gray-1000 text-light-gray-100 dark:bg-dark-gray-1000 dark:text-dark-gray-100';
-		}
+		return variantObj[variant];
 	});
 
+	const sizeObj = {
+		sm: 'h-[20px] px-[6px] py-0 text-[11px] text-wrap font-medium',
+		md: 'h-[24px] px-[10px] py-0 text-[12px] text-wrap font-medium',
+		lg: 'h-[32px] px-[12px] py-0 text-[14px] text-wrap font-medium'
+	};
 	let sizeClass = $derived.by(() => {
-		switch (size) {
-			case 'sm':
-				return 'h-[20px] px-[6px] py-0 text-[11px] text-wrap font-medium';
-			case 'md':
-				return 'h-[24px] px-[10px] py-0 text-[12px] text-wrap font-medium';
-			case 'lg':
-				return 'h-[32px] px-[12px] py-0 text-[14px] text-wrap font-medium';
-		}
+		return sizeObj[size];
 	});
 
+	const iconSizeObj = {
+		sm: 'w-[11px] h-[11px]',
+		md: 'w-[14px] h-[14px]',
+		lg: 'w-[16px] h-[16px]'
+	};
 	let iconSizeClass = $derived.by(() => {
-		switch (size) {
-			case 'sm':
-				return 'w-[11px] h-[11px]';
-			case 'md':
-				return 'w-[14px] h-[14px]';
-			case 'lg':
-				return 'w-[16px] h-[16px]';
-		}
+		return iconSizeObj[size];
 	});
 
+	const iconXGapObj = {
+		sm: 'first:gap-x-[3px]',
+		md: 'first:gap-x-[4px]',
+		lg: 'first:gap-x-[6px]'
+	};
 	let iconXGap = $derived.by(() => {
-		switch (size) {
-			case 'sm':
-				return 'first:gap-x-[3px]';
-			case 'md':
-				return 'first:gap-x-[4px]';
-			case 'lg':
-				return 'first:gap-x-[6px]';
-		}
+		return iconXGapObj[size];
 	});
 
 	let badgeClass = $derived.by(() => {
 		if (size) {
 			return `${variantClass} ${sizeClass}`;
 		}
-
 		return `${variantClass}`;
 	});
 </script>

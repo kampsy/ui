@@ -16,17 +16,15 @@
 		disabled = false
 	}: propT = $props();
 
+	const textObj = {
+		tiny: 'text-[12px] leading-[16px]',
+		small: 'text-[13px] leading-[20px]',
+		medium: 'text-[14px] leading-[20px]',
+		large: 'text-[16px] leading-[24px]'
+	};
+
 	let text = $derived.by(() => {
-		switch (size) {
-			case 'tiny':
-				return 'text-[12px] leading-[16px]';
-			case 'small':
-				return 'text-[13px] leading-[20px]';
-			case 'medium':
-				return 'text-[14px] leading-[20px]';
-			case 'large':
-				return 'text-[16px] leading-[24px]';
-		}
+		return textObj[size];
 	});
 
 	let background = $derived.by(() => {

@@ -33,57 +33,51 @@
 		children
 	}: propsT = $props();
 
+	const sizeObj = {
+		tiny: 'h-[24px] text-xs leading-3',
+		small: 'h-[32px] px-[6px] text-sm leading-4',
+		medium: 'h-[40px] px-[10px] text-sm leading-[20px]',
+		large: 'h-[48px] px-[14px] text-base leading-[24px]'
+	};
+	const shapeSizeObj = {
+		tiny: `w-[24px] ${sizeObj.tiny} `,
+		small: `w-[32px] ${sizeObj.small} `,
+		medium: `w-[40px] ${sizeObj.medium} `,
+		large: `w-[48px] ${sizeObj.large} `
+	};
 	let sizeClass = $derived.by(() => {
 		if (shape) {
-			switch (size) {
-				case 'tiny':
-					return 'w-[24px] h-[24px] text-xs leading-3';
-				case 'small':
-					return 'px-[6px] w-[32px] h-[32px] text-sm leading-4';
-				case 'medium':
-					return 'px-[10px] w-[40px] h-[40px] text-sm leading-[20px]';
-				case 'large':
-					return 'px-[14px] w-[48px] h-[48px] text-base leading-[24px]';
-			}
+			return shapeSizeObj[size];
 		} else {
-			switch (size) {
-				case 'tiny':
-					return 'h-[24px] text-xs leading-3';
-				case 'small':
-					return 'px-[6px] h-[32px] text-sm leading-4';
-				case 'medium':
-					return 'px-[10px] h-[40px] text-sm leading-[20px]';
-				case 'large':
-					return 'px-[14px] h-[48px] text-base leading-[24px]';
-			}
+			return sizeObj[size];
 		}
 	});
 
 	// The size of the prefix, suffix and spinner
+	const prefixSuffixSpinnerObj = {
+		tiny: 'w-[14px] h-[14px]',
+		small: 'w-[16px] h-[16px]',
+		medium: 'w-[16px] h-[16px]',
+		large: 'w-[24px] h-[24px]'
+	};
 	let iconSize = $derived.by(() => {
-		switch (size) {
-			case 'small':
-				return 'w-[16px] h-[16px]';
-			case 'medium':
-				return 'w-[16px] h-[16px]';
-			case 'large':
-				return 'w-[24px] h-[24px]';
-		}
+		return prefixSuffixSpinnerObj[size];
 	});
 
+	const typeObj = {
+		primary: `text-white dark:text-dark-bg bg-light-gray-1000 dark:bg-dark-gray-1000 
+		hover:bg-[#383838] hover:dark:bg-[#CCCCCC]`,
+		secondary: `text-light-gray-1000 dark:text-dark-gray-1000 dark:bg-dark-bg border 
+		border-light-gray-200 dark:border-dark-gray-400 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100`,
+		tertiary: `text-light-gray-1000 dark:text-dark-gray-1000 hover:bg-light-gray-200 
+		hover:dark:bg-[#202020]`,
+		error: `text-[#F5F5F5] bg-light-red-800 dark:bg-dark-red-800 hover:bg-light-red-900 
+		hover:dark:bg-dark-red-900 `,
+		warning: `text-light-gray-1000 bg-light-amber-700 dark:bg-dark-amber-700 
+		hover:bg-light-amber-800 hover:dark:bg-dark-amber-800`
+	};
 	let typeClass = $derived.by(() => {
-		switch (type) {
-			case 'primary':
-				return 'text-white dark:text-dark-bg bg-light-gray-1000 dark:bg-dark-gray-1000 hover:bg-[#383838] hover:dark:bg-[#CCCCCC]';
-			case 'secondary':
-				return 'text-light-gray-1000 dark:text-dark-gray-1000 dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100';
-			case 'tertiary':
-				return 'text-light-gray-1000 dark:text-dark-gray-1000 hover:bg-light-gray-200 hover:dark:bg-[#202020]';
-			case 'error':
-				return 'text-[#F5F5F5] bg-light-red-800 dark:bg-dark-red-800 hover:bg-light-red-900 hover:dark:bg-dark-red-900 ';
-			case 'warning':
-				return 'text-light-gray-1000 bg-light-amber-700 dark:bg-dark-amber-700 hover:bg-light-amber-800 hover:dark:bg-dark-amber-800';
-		}
+		return typeObj[type];
 	});
 
 	let roundedStyle = $derived.by(() => {
@@ -93,20 +87,17 @@
 		return 'rounded-[6px]';
 	});
 
+	const radiusObj = {
+		tiny: 'rounded-[4px]',
+		small: 'rounded-[6px]',
+		medium: 'rounded-[6px]',
+		large: 'rounded-[8px]'
+	};
 	let roundedWithShapeStyle = $derived.by(() => {
 		if (shape == 'circle') {
 			return 'rounded-full';
 		}
-		switch (size) {
-			case 'tiny':
-				return 'rounded-[4px]';
-			case 'small':
-				return 'rounded-[6px]';
-			case 'medium':
-				return 'rounded-[6px]';
-			case 'large':
-				return 'rounded-[8px]';
-		}
+		return radiusObj[size];
 	});
 
 	let radiusStyle = $derived.by(() => {
