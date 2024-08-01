@@ -72,8 +72,5 @@
 		"tailwindcss",
 		"ui",
 		"button"
-	],
-	"dependencies": {
-		"geist": "^1.3.1"
-	}
+	]
 }
