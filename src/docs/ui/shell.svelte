@@ -89,18 +89,20 @@
 			<!---->
 			<div class="w-full h-full px-4 flex items-center justify-between">
 				<div>
-					<div class="lg:hidden flex items-center gap-2">
-						<div class="w-[27px] h-[27px]">
-							<LogoGeist />
+					<a href="/">
+						<div class="lg:hidden flex items-center gap-2">
+							<div class="w-[27px] h-[27px]">
+								<LogoGeist />
+							</div>
+							<div>
+								<TextGradient
+									text="kampsy-ui"
+									variant="vision"
+									class="text-base font-semibold leading-[24px]"
+								/>
+							</div>
 						</div>
-						<div>
-							<TextGradient
-								text="kampsy-ui"
-								variant="vision"
-								class="text-base font-semibold leading-[24px]"
-							/>
-						</div>
-					</div>
+					</a>
 				</div>
 				<div
 					class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-light-gray-200 dark:border-dark-gray-400"
