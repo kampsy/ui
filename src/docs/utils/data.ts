@@ -27,16 +27,8 @@ export const asideData: Array<AsideT> = [
                 url: '/button'
             },
             {
-                name: 'calendar',
-                url: '/calendar'
-            },
-            {
                 name: 'error',
                 url: '/error'
-            },
-            {
-                name: 'modal',
-                url: '/modal'
             },
             {
                 name: 'pagination',
