@@ -4,6 +4,9 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         black: '#000000',
         light: {
@@ -239,6 +242,5 @@ export default {
     },
   },
   plugins: [],
-
 }
 
