@@ -133,23 +133,17 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<Tooltip position="bottom" text="The Evil Rabbit Jumped over the Fence">
-						<Button size="small">Bottom</Button>
-					</Tooltip>
-				</div>
+				<Tooltip position="bottom" text="The Evil Rabbit Jumped over the Fence">
+					<Button size="small">Bottom</Button>
+				</Tooltip>
 
-				<div>
-					<Tooltip position="right" text="The Evil Rabbit Jumped over the Fence">
-						<Spinner />
-					</Tooltip>
-				</div>
+				<Tooltip position="right" text="The Evil Rabbit Jumped over the Fence">
+					<Spinner />
+				</Tooltip>
 
-				<div>
-					<Tooltip position="left" text="The Evil Rabbit Jumped over the Fence">
-						<Badge size="sm">LEFT</Badge>
-					</Tooltip>
-				</div>
+				<Tooltip position="left" text="The Evil Rabbit Jumped over the Fence">
+					<Badge size="sm">LEFT</Badge>
+				</Tooltip>
 			{/snippet}
 			{@render demoAndCode(demo, tooltipComponents)}
 		</div>
@@ -158,9 +152,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination
-			previous={{ title: 'spinner', href: '/spinner' }}
-		/>
+		<Pagination previous={{ title: 'spinner', href: '/spinner' }} />
 	</Row>
 {/snippet}
 
