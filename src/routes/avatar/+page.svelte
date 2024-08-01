@@ -8,6 +8,7 @@
 	import { avatarGroup, avatarPlaceholder } from '../../docs/data/avatar.js';
 	import AvatarGroup from '$lib/avatar/avatarGroup.svelte';
 	import Avatar from '$lib/avatar/avatar.svelte';
+	import AvatarText from '$lib/avatar/avatarText.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 
 	const members = [
@@ -97,6 +98,24 @@
 	</Row>
 {/snippet}
 
+{#snippet text()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			avatar text
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<AvatarText size={40} />
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, avatarPlaceholder)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet placeholder()}
 	<Row>
 		<h2
@@ -127,6 +146,7 @@
 {#snippet cont()}
 	{@render avatar()}
 	{@render group()}
+	{@render text()}
 	{@render placeholder()}
 
 	{@render prevAndNext()}
