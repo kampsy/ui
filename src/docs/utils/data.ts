@@ -43,6 +43,10 @@ export const asideData: Array<AsideT> = [
                 url: '/status-dot'
             },
             {
+                name: 'switch',
+                url: '/switch'
+            },
+            {
                 name: 'textarea',
                 url: '/textarea'
             },

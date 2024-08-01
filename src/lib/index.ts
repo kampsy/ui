@@ -23,5 +23,9 @@ export { default as Spinner } from './spinner/spinner.svelte';
 export { default as StatusDot } from './statusDot/statusDot.svelte';
 
 
+// Switch
+export * as Switch from './switch/index.js';
+
+
 // Tooltip
 export { default as Tooltip } from './tooltip/tooltip.svelte';
