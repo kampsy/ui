@@ -1,10 +1,10 @@
 {
 	"name": "kampsy-ui",
 	"license": "MIT",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"author": {
 		"name": "Kampamba Chanda",
-		"email": "connect@codewithshin.com",
+		"email": "admin@kampsy.xyz",
 		"url": "https://string.kampsy.xyz/about"
 	},
 	"homepage": "https://ui.kampsy.xyz",
