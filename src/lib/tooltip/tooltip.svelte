@@ -160,7 +160,7 @@
 		{/if}
 		<div
 			style={widthClass}
-			class="invisible group-hover:visible absolute {tooltipStyle} px-3 py-2 text-xs text-center rounded-[4px] z-[1000]"
+			class="invisible group-hover:visible absolute {tooltipStyle} px-3 py-1.5 text-xs text-center rounded-[4px] z-[1000]"
 		>
 			{text || ''}
 		</div>
