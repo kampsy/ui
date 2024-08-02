@@ -6,3 +6,5 @@ export { default as Sun } from './sun.svelte';
 export { default as Shield } from './shield.svelte';
 export { default as Error } from './error.svelte';
 export { default as LoaderCircle } from './loader-circle.svelte'
+export { default as GridSquare } from './grid-square.svelte'
+export { default as ListUnordered } from './list-unordered.svelte'

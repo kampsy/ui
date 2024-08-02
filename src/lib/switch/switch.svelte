@@ -1,21 +1,61 @@
 <script lang="ts">
+	import { randomString } from '$lib/utils/random.js';
 	import type { Snippet } from 'svelte';
-	import { switchCont } from '$lib/switch/switch.svelte.js';
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
 
 	type propT = {
-		name: string;
+		value: string;
+		name?: string | undefined;
+		size?: 'small' | 'medium' | 'large' | undefined;
+		fullWidth?: boolean | undefined;
 		children?: Snippet | undefined;
 	};
-	let { name, children = undefined }: propT = $props();
+	let {
+		value = $bindable(''),
+		name = undefined,
+		size = 'medium',
+		fullWidth = false,
+		children = undefined
+	}: propT = $props();
 
-	// set the value of switchObj.name
-	switchCont.setName(name);
+	const switchProps = {
+		name: '',
+		size: size,
+		fullWidth: fullWidth
+	};
+
+	if (name) {
+		switchProps.name = name;
+	} else {
+		switchProps.name = randomString(8);
+	}
+
+	setContext('props', switchProps);
+
+	const selected = writable('');
+	setContext('switch', {
+		selected
+	});
+
+	let width = $derived.by(() => {
+		if (fullWidth) {
+			return 'w-full';
+		}
+		return '';
+	});
+
+	$effect(() => {
+		value = $selected;
+	});
 </script>
 
-<div
-	class="flex items-center p-1 rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400"
->
-	{#if children}
-		{@render children()}
-	{/if}
+<div class="{width}" >
+	<div
+		class="flex items-center p-1 rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400"
+	>
+		{#if children}
+			{@render children()}
+		{/if}
+	</div>
 </div>
