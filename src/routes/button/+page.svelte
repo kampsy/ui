@@ -95,7 +95,7 @@
 {/snippet}
 
 <!--Rounded content-->
-{#snippet roundedCode(rct)}
+{#snippet roundedCode(rct: string)}
 	<code
 		class="px-2 py-[3.6px] rounded-[6px] text-xs text-light-gray-900 bg-light-gray-100 dark:bg-dark-gray-100 dark:text-dark-gray-900 border border-light-gray-200 dark:border-dark-gray-400"
 	>
