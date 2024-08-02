@@ -1,4 +1,5 @@
 export { default as Root } from './table.svelte';
+export { default as Caption } from './caption.svelte';
 export { default as Colgroup } from './colgroup.svelte';
 export { default as Col } from './col.svelte';
 export { default as Header } from './header.svelte';
