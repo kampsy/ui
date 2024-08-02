@@ -12,7 +12,9 @@
 		switchDisabled,
 		switchFullWidth,
 		switchIcon,
-		switchSize
+		switchSize,
+		switchTooltip
+
 	} from '../../docs/data/switch.js';
 	import { GridSquare, ListUnordered } from '$lib/icons/index.js';
 
@@ -87,8 +89,8 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value>
-					<Switch.Control defaultChecked label="Source" value="source" />
-					<Switch.Control label="Output" value="output" />
+					<Switch.Control defaultChecked disabled label="Source" value="source" />
+					<Switch.Control label="Output" disabled value="output" />
 				</Switch.Root>
 			{/snippet}
 			{@render demoAndCode(demo, switchDisabled)}
@@ -96,12 +98,12 @@
 	</Row>
 {/snippet}
 
-{#snippet size()}
+{#snippet sizes()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">size</a>
+			<a href="#customelabel" id="default">sizes</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -154,7 +156,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value>
-					<Tooltip text="View Source and the rest of the ">
+					<Tooltip text="View Source">
 						<Switch.Control defaultChecked label="Source" value="source" />
 					</Tooltip>
 					<Tooltip text="View Output">
@@ -162,7 +164,7 @@
 					</Tooltip>
 				</Switch.Root>
 			{/snippet}
-			{@render demoAndCode(demo, switchDisabled)}
+			{@render demoAndCode(demo, switchTooltip)}
 		</div>
 	</Row>
 {/snippet}
@@ -199,8 +201,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: 'status dot', href: '/status-dot' }}
+			next={{ title: 'textarea', href: '/textarea' }}
 		/>
 	</Row>
 {/snippet}
@@ -209,7 +211,7 @@
 	{@render error()}
 	{@render defaultSwitch()}
 	{@render disabled()}
-	{@render size()}
+	{@render sizes()}
 	{@render fullWidth()}
 	{@render tooltip()}
 	{@render icon()}

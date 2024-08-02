@@ -80,7 +80,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'pagination', href: '/pagination' }}
-			next={{ title: 'tootip', href: '/tooltip' }}
+			next={{ title: 'status dot', href: '/status-dot' }}
 		/>
 	</Row>
 {/snippet}

@@ -50,14 +50,18 @@ let value = $state('');
 	<Switch.Control disabled label="Output" value="output" />
 </Switch.Root>`;
 
-export const switchTootip = `
-import { Switch } from 'kampsy-ui';
+export const switchTooltip = `
+import { Switch, Tooltip } from 'kampsy-ui';
 
 let value = $state('');
 
-<Switch.Root bind:value name="default">
-	<Switch.Control defaultChecked disabled label="Source" value="source" />
-	<Switch.Control disabled label="Output" value="output" />
+<Switch.Root bind:value>
+	<Tooltip text="View Source">
+		<Switch.Control defaultChecked label="Source" value="source" />
+	</Tooltip>
+	<Tooltip text="View Output">
+		<Switch.Control label="Output" value="output" />
+	</Tooltip>
 </Switch.Root>`;
 
 export const switchIcon = `

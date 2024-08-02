@@ -152,7 +152,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination previous={{ title: 'spinner', href: '/spinner' }} />
+		<Pagination previous={{ title: 'textarea', href: '/textarea' }} />
 	</Row>
 {/snippet}
 

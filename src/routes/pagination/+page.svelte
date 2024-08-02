@@ -72,7 +72,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'error', href: '/error' }}
-			next={{ title: 'progress', href: '#/' }}
+			next={{ title: 'spinner', href: '/spinner' }}
 		/>
 	</Row>
 {/snippet}

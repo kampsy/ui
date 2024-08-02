@@ -5,11 +5,12 @@
 
 	type propT = {
 		defaultChecked?: boolean | undefined;
+		disabled?: boolean | undefined;
 		label?: string | undefined;
 		icon?: Component | undefined;
 		value: string;
 	};
-	let { defaultChecked, label, icon = undefined, value }: propT = $props();
+	let { defaultChecked, disabled = undefined, label, icon = undefined, value }: propT = $props();
 
 	// Switch props, the parent component
 	type switchProps = {
@@ -65,21 +66,36 @@
 
 	// Wthen the selected value is the same as the value 
 	let selectedClass = $derived.by(() => {
+		// If the switch is disabled
+		if (disabled) {
+			if ($selected === value) {
+				return `text-light-gray-700 dark:text-dark-gray-700 bg-light-gray-100 dark:bg-dark-gray-100`;
+			}
+			return `text-light-gray-700 dark:text-dark-gray-700`;
+		}
+
 		if ($selected === value) {
 			return `text-light-gray-1000 dark:text-dark-gray-1000 bg-light-gray-100 dark:bg-dark-gray-100`;
 		}
 		return `text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 hover:dark:text-dark-gray-1000`;
 	})
+
+	let disabledClass = $derived.by(() => {
+		if (disabled) {
+			return `cursor-not-allowed`;
+		}
+		return 'cursor-pointer';
+	});
 	
 
 	let controlClass = $derived.by(() => {
 		if (fullWidth) {
 			if (icon) {
-				return `w-full ${iconSizeClass} ${selectedClass}`;
+				return `w-full ${disabledClass} ${iconSizeClass} ${selectedClass}`;
 			}
-			return `w-full ${sizeClass} ${selectedClass}`;
+			return `w-full ${disabledClass} ${sizeClass} ${selectedClass}`;
 		}
-		return `${sizeClass} ${selectedClass}`;
+		return `${disabledClass} ${sizeClass} ${selectedClass}`;
 	});
 </script>
 
@@ -101,7 +117,7 @@
 
 <label
 	for={unique}
-	class="{controlClass} flex items-center justify-center px-[12px] rounded-sm cursor-pointer"
+	class="{controlClass} flex items-center justify-center px-[12px] rounded-sm "
 >
 	<input
 		{onchange}
@@ -110,6 +126,7 @@
 		id={unique}
 		{name}
 		{value}
+		{disabled}
 		class="hidden"
 	/>
 	{@render withLabel()}
