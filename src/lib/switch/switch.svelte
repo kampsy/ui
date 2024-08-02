@@ -45,6 +45,14 @@
 		return '';
 	});
 
+	// Large size has a different border radius than other sizes
+	let borderRadius = $derived.by(() => {
+		if (size === 'large') {
+			return 'rounded-[8px]';
+		}
+		return 'rounded-[6px]';
+	})
+
 	$effect(() => {
 		value = $selected;
 	});
@@ -52,7 +60,7 @@
 
 <div class="{width}" >
 	<div
-		class="flex items-center p-1 rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400"
+		class="flex items-center p-1 {borderRadius} border border-light-gray-200 dark:border-dark-gray-400"
 	>
 		{#if children}
 			{@render children()}

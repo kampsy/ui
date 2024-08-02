@@ -36,9 +36,9 @@
 	const unique = `${randomString(4)}_${value}`;
 
 	const sizeObj = {
-		small: 'text-sm h-[24px]',
-		medium: 'text-sm h-[32px]',
-		large: 'text-base  h-[40px]'
+		small: 'text-sm h-[24px] px-[12px] rounded-sm',
+		medium: 'text-sm h-[32px] px-[12px] rounded-sm',
+		large: 'text-base  h-[40px] px-[12px] rounded-[4px]'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size];
@@ -46,9 +46,9 @@
 
 	// Seting the width and height values to the label
 	const iconSizeObj = {
-		small: 'w-[24px] h-[24px]',
-		medium: 'w-[32px] h-[32px]',
-		large: 'w-[40px] h-[40px]'
+		small: 'h-[24px] px-[8px] py-[4px] rounded-sm',
+		medium: 'h-[32px] px-[12px] py-[8px] rounded-sm',
+		large: 'w-[40px] h-[40px] p-[12px] rounded-[4px]'
 	};
 	let iconSizeClass = $derived.by(() => {
 		return iconSizeObj[size];
@@ -89,12 +89,18 @@
 	
 
 	let controlClass = $derived.by(() => {
+
 		if (fullWidth) {
 			if (icon) {
 				return `w-full ${disabledClass} ${iconSizeClass} ${selectedClass}`;
 			}
 			return `w-full ${disabledClass} ${sizeClass} ${selectedClass}`;
 		}
+
+		if (icon) {
+			return `${disabledClass} ${iconSizeClass} ${selectedClass}`;
+		}
+
 		return `${disabledClass} ${sizeClass} ${selectedClass}`;
 	});
 </script>
@@ -117,7 +123,7 @@
 
 <label
 	for={unique}
-	class="{controlClass} flex items-center justify-center px-[12px] rounded-sm "
+	class="{controlClass}  flex items-center justify-center "
 >
 	<input
 		{onchange}
