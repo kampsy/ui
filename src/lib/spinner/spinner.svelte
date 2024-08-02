@@ -13,8 +13,10 @@
 	});
 </script>
 
-<div style={sizeStyle} class="relative animate-spin flex items-center justify-center">
-	<div transition:fade class="absolute w-full h-full">
-		<LoaderCircle />
+<div>
+	<div style={sizeStyle} class="relative animate-spin flex items-center justify-center">
+		<div transition:fade class="absolute w-full h-full">
+			<LoaderCircle />
+		</div>
 	</div>
 </div>

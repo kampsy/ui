@@ -47,6 +47,10 @@ export const asideData: Array<AsideT> = [
                 url: '/switch'
             },
             {
+                name: 'table',
+                url: '/table'
+            },
+            {
                 name: 'textarea',
                 url: '/textarea'
             },
