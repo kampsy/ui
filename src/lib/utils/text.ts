@@ -8,7 +8,7 @@ import { browser } from "$app/environment";
  * @return {number} The width of the text in pixels. Returns 250 if context or the browser is not available.
  */
 
-export const getStringWidth = (text: string, font = '12px Inter'): number => {
+export const getStringWidth = (text: string, font: string = '12px Inter'): number => {
     if (browser) {
         // Create a temporary canvas element
         const canvas = document.createElement('canvas');
