@@ -66,11 +66,11 @@
 
 	const typeObj = {
 		primary: `text-white dark:text-dark-bg bg-light-gray-1000 dark:bg-dark-gray-1000 
-		hover:bg-[#383838] hover:dark:bg-[#CCCCCC]`,
+		hover:bg-light-gray-900 hover:dark:bg-dark-gray-900`,
 		secondary: `text-light-gray-1000 dark:text-dark-gray-1000 dark:bg-dark-bg border 
 		border-light-gray-200 dark:border-dark-gray-400 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100`,
 		tertiary: `text-light-gray-1000 dark:text-dark-gray-1000 hover:bg-light-gray-200 
-		hover:dark:bg-[#202020]`,
+		hover:dark:bg-dark-gray-200`,
 		error: `text-[#F5F5F5] bg-light-red-800 dark:bg-dark-red-800 hover:bg-light-red-900 
 		hover:dark:bg-dark-red-900 `,
 		warning: `text-light-gray-1000 bg-light-amber-700 dark:bg-dark-amber-700 

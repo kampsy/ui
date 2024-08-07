@@ -5,7 +5,6 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
 	import { Table } from '$lib/index.js';
 	import { tableDefault, tableStriped, tableInteractive, tableFull } from '$lib/../docs/data/table.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
@@ -248,7 +247,7 @@
 						</Table.Header>
 						<Table.Body interactive striped>
 							{#each items as item}
-								<Table.Row key={item.product}>
+								<Table.Row>
 									<Table.Cell>{item.product}</Table.Cell>
 									<Table.Cell>{item.usage}</Table.Cell>
 									<Table.Cell>{item.price}</Table.Cell>
@@ -258,10 +257,10 @@
 						</Table.Body>
 						<Table.Footer>
 							<Table.Row>
-								<Table.Cell class="text-gray-1000 font-medium">Subtotal</Table.Cell>
+								<Table.Cell class="text-light-gray-1000 dark:text-dark-gray-1000 font-medium">Subtotal</Table.Cell>
 								<Table.Cell></Table.Cell>
 								<Table.Cell></Table.Cell>
-								<Table.Cell class="text-gray-1000 font-medium">
+								<Table.Cell class="text-light-gray-1000 dark:text-dark-gray-1000 font-medium">
 									{formatCurrency(items.reduce((sum, val) => sum + val.charge, 0))}
 								</Table.Cell>
 							</Table.Row>

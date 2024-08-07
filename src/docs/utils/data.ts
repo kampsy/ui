@@ -25,6 +25,9 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'button',
                 url: '/button'
+            },{
+                name: 'choicebox',
+                url: '/choicebox'
             },
             {
                 name: 'error',
@@ -33,6 +36,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'pagination',
                 url: '/pagination'
+            },
+            {
+                name: 'radio',
+                url: '/radio'
             },
             {
                 name: 'spinner',

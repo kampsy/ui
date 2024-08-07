@@ -7,6 +7,9 @@ export { default as Badge } from './badge/badge.svelte';
 // Avatar
 export * from './avatar/index.js';
 
+// Choicebox
+export * as Choicebox from './choicebox/index.js'
+
 //Text
 export { default as TextGradient } from './text/textGradient.svelte';
 
