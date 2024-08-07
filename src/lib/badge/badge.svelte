@@ -40,7 +40,7 @@
 			'bg-light-gray-200 text-light-gray-1000 dark:bg-dark-gray-200 dark:text-dark-gray-1000',
 		blue: 'bg-light-blue-700 text-light-bg dark:bg-dark-blue-700 dark:text-light-bg',
 		'blue-subtle':
-			'bg-light-blue-200 text-light-blue-900 dark:bg-dark-blue-200 dark:text-dark-blue-900',
+			' text-light-blue-900 dark:text-dark-blue-900 bg-light-blue-200 dark:bg-dark-blue-200 ',
 		purple: 'bg-light-purple-700 text-light-bg dark:bg-dark-purple-700 dark:text-light-bg',
 		'purple-subtle':
 			'bg-light-purple-200 text-light-purple-900 dark:bg-dark-purple-200 dark:text-dark-purple-900',

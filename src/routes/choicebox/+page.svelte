@@ -5,19 +5,19 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
-	import { errorDefault, errorSize, errorWithProp } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Choicebox } from '$lib/index.js';
+	import { choiceboxDefault, choiceboxDisabled, choiceboxMultiselect } from '../../docs/data/choicebox.js';
 
 	let value = $state('');
+	let valueList = $state([]);
 </script>
 
 <svelte:head>
 	<title>Error</title>
 </svelte:head>
 
-{#snippet error()}
+{#snippet choicebox()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
@@ -45,7 +45,7 @@
 	</div>
 {/snippet}
 
-{#snippet defaultErr()}
+{#snippet defaultChoicebox()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -56,12 +56,43 @@
 			{#snippet demo()}
 				<div class="w-full">
 					<Choicebox.Group label="select a plan" type="radio" bind:value>
-						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
+						<Choicebox.Item
+							defaultChecked
+							description="Free for two weeks"
+							title="Pro Trial"
+							value="trial"
+						/>
 						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 					</Choicebox.Group>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, choiceboxDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet multiselect()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#size" id="default">multiselect</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<Choicebox.Group label="select a plan" type="checkbox" bind:value={valueList}>
+						<Choicebox.Item
+							defaultChecked
+							description="Free for two weeks"
+							title="Pro Trial"
+							value="trial"
+						/>
+						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
+					</Choicebox.Group>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, choiceboxMultiselect)}
 		</div>
 	</Row>
 {/snippet}
@@ -71,37 +102,27 @@
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#size" id="default">Radio disabled</a>
+			<a href="#size" id="default">disabled</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Error size="sm">This email is in use.</Error>
-				<Error size="md">This email is in use.</Error>
-				<Error size="lg">This email is in use.</Error>
+				<div class="w-full space-y-4">
+					<Choicebox.Group label="Choicebox group disabled" disabled type="radio" bind:value>
+						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
+						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
+					</Choicebox.Group>
+					<Choicebox.Group label="Single input disabled" type="checkbox" bind:value>
+						<Choicebox.Item
+							description="Free for two weeks"
+							disabled
+							title="Pro Trial"
+							value="trial"
+						/>
+						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
+					</Choicebox.Group>
+				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorSize)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet withErrorProp()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">With an error property</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error
-					error={{
-						message: 'The request failed.',
-						action: 'Contact Us',
-						link: 'https://kampsy.kampsy.xyz/error'
-					}}
-				/>
-			{/snippet}
-			{@render demoAndCode(demo, errorWithProp)}
+			{@render demoAndCode(demo, choiceboxDisabled)}
 		</div>
 	</Row>
 {/snippet}
@@ -116,10 +137,10 @@
 {/snippet}
 
 {#snippet cont()}
-	{@render error()}
-	{@render defaultErr()}
+	{@render choicebox()}
+	{@render defaultChoicebox()}
+	{@render multiselect()}
 	{@render disabled()}
-	{@render withErrorProp()}
 	{@render prevAndNext()}
 {/snippet}
 

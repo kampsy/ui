@@ -6,21 +6,36 @@
 	type propsT = {
 		type?: 'radio' | 'checkbox' | undefined;
 		label?: string | undefined;
-		value?: string | undefined;
+		value?: string | Array<string> | undefined;
+		disabled?: boolean | undefined;
 		children?: Snippet | undefined;
 	};
-	let { type = 'radio', label = undefined, value = $bindable(''), children = undefined }: propsT = $props();
+	let {
+		type = 'radio',
+		label = undefined,
+		value = $bindable(''),
+		disabled = undefined,
+		children = undefined
+	}: propsT = $props();
 
 	const switchProps = {
 		name: randomString(8),
+		disabledParent: disabled,
 		type: type
 	};
 
 	setContext('props', switchProps);
 
-	const selected = writable('');
+	const selected = writable<string | Array<string>>('');
 	setContext('choicebox', {
 		selected
+	});
+
+	let labelClass = $derived.by(() => {
+		if (disabled) {
+			return 'text-light-gray-900 dark:text-dark-gray-900';
+		}
+		return 'text-light-gray-1000 dark:text-dark-gray-1000';
 	});
 
 	$effect(() => {
@@ -30,11 +45,11 @@
 
 <div class="w-full">
 	{#if label}
-		<div class="text-[13px] first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000">
+		<div class="text-[13px] mb-[8px] first-letter:capitalize {labelClass} ">
 			{label}
 		</div>
 	{/if}
-	<div class="w-full mt-[8px] flex items-center gap-x-4">
+	<div class="w-full flex items-center gap-x-4">
 		{#if children}
 			{@render children()}
 		{/if}
