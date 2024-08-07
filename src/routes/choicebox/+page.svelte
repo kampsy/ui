@@ -7,7 +7,11 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Choicebox } from '$lib/index.js';
-	import { choiceboxDefault, choiceboxDisabled, choiceboxMultiselect } from '../../docs/data/choicebox.js';
+	import {
+		choiceboxDefault,
+		choiceboxDisabled,
+		choiceboxMultiselect
+	} from '../../docs/data/choicebox.js';
 
 	let value = $state('');
 	let valueList = $state([]);
@@ -82,12 +86,7 @@
 			{#snippet demo()}
 				<div class="w-full">
 					<Choicebox.Group label="select a plan" type="checkbox" bind:value={valueList}>
-						<Choicebox.Item
-							defaultChecked
-							description="Free for two weeks"
-							title="Pro Trial"
-							value="trial"
-						/>
+						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
 						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 					</Choicebox.Group>
 				</div>
