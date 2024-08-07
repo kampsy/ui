@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Check from '$lib/icons/check.svelte';
-import { randomString } from '$lib/utils/random.js';
+	import { randomString } from '$lib/utils/random.js';
 	import { getContext } from 'svelte';
 	import type { Writable } from 'svelte/store';
 
@@ -142,17 +142,21 @@ import { randomString } from '$lib/utils/random.js';
 		<div
 			class="w-[16px] h-[16px] p-[1px] rounded-full transition-colors ease-in flex items-center justify-center border {radioContClass} "
 		>
-			<input
-				{onchange}
-				{type}
-				checked={$selected == value}
-				id={unique}
-				{name}
-				{value}
-				{disabled}
-				class="hidden"
-			/>
-			<div class="w-[8px] h-[8px] bg-red rounded-full transition-colors ease-in {radioClass}"></div>
+			<div class="w-[16px] h-[16px] flex items-center justify-center">
+				<input
+					{onchange}
+					{type}
+					checked={$selected == value}
+					id={unique}
+					{name}
+					{value}
+					{disabled}
+					class="hidden"
+				/>
+				<div
+					class="w-[8px] h-[8px] bg-red rounded-full transition-colors ease-in {radioClass}"
+				></div>
+			</div>
 		</div>
 	{/if}
 {/snippet}
@@ -162,18 +166,20 @@ import { randomString } from '$lib/utils/random.js';
 		<div
 			class="w-[16px] h-[16px] p-[1px] rounded-[4px] transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
 		>
-			<input
-				{onchange}
-				{type}
-				checked={$selected.includes(value)}
-				id={unique}
-				{name}
-				{value}
-				{disabled}
-				class="hidden"
-			/>
-			<div class="w-[10px] h-[10px] transition-colors ease-in {checkboxClass}">
-				<Check/>
+			<div class="w-[16px] h-[16px] flex items-center justify-center">
+				<input
+					{onchange}
+					{type}
+					checked={$selected.includes(value)}
+					id={unique}
+					{name}
+					{value}
+					{disabled}
+					class="hidden"
+				/>
+				<div class="w-[10px] h-[10px] transition-colors ease-in {checkboxClass}">
+					<Check />
+				</div>
 			</div>
 		</div>
 	{/if}
