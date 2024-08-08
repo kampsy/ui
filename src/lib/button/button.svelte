@@ -66,7 +66,7 @@
 
 	const typeObj = {
 		primary: `text-white dark:text-dark-bg bg-light-gray-1000 dark:bg-dark-gray-1000 
-		hover:bg-light-gray-900 hover:dark:bg-dark-gray-900`,
+		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
 		secondary: `text-light-gray-1000 dark:text-dark-gray-1000 dark:bg-dark-bg border 
 		border-light-gray-200 dark:border-dark-gray-400 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100`,
 		tertiary: `text-light-gray-1000 dark:text-dark-gray-1000 hover:bg-light-gray-200 
