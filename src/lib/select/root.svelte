@@ -5,10 +5,11 @@
 
 	type propsT = {
 		value?: string;
+		size?: 'tiny' | 'small' | 'medium' | 'large' | undefined;
         class?: string;
 		children: Snippet;
 	};
-	let { value = $bindable(''), class: klass = '', children }: propsT = $props();
+	let { value = $bindable(''), size = 'medium', class: klass = '', children }: propsT = $props();
 
 	const selected = writable('');
 	const isActive = writable(false);
@@ -16,6 +17,7 @@
 	const contentPosition = writable('top-[112%]');
 	setContext('select', {
 		selected,
+		size: size,
 		isActive,
 		transY,
 		contentPosition

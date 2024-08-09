@@ -22,14 +22,14 @@
 			<div class="flex items-center gap-x-2">
 				<div class="w-[20px] h-[20px]"></div>
 				<div
-					class="mb-[2px] text-[13px] text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="mb-[2px] text-[13px] transition-colors text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
 				>
 					previous
 				</div>
 			</div>
 			<div class="flex items-center gap-x-2">
 				<div
-					class="w-[20px] h-[20px] flex items-center justify-center text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000"
+					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000"
 				>
 					<div class="w-[16px] h-[16px]">
 						<ChevronLeft />
@@ -50,7 +50,7 @@
 		<a href={next.href} class="group" aria-label="go to next page">
 			<div class="flex items-center gap-x-2">
 				<div
-					class="mb-[2px] text-[13px] text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="mb-[2px] text-[13px] transition-colors text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000 font-normal leading-[13px] capitalize"
 				>
 					next
 				</div>
@@ -63,7 +63,7 @@
 					{next.title}
 				</span>
 				<div
-					class="w-[20px] h-[20px] flex items-center justify-center text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000"
+					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-light-gray-900 group-hover:text-light-gray-1000 dark:text-dark-gray-900 group-hover:dark:text-dark-gray-1000"
 				>
 					<div class="w-[16px] h-[16px]">
 						<ChevronRight />

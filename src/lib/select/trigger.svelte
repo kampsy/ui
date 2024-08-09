@@ -10,7 +10,8 @@
 	let { class: klass = '', children }: propsT = $props();
 
 	// Get the select stores from the context
-	const { isActive, transY, contentPosition } = getContext<{
+	const {size, isActive, transY, contentPosition } = getContext<{
+		size: 'tiny' | 'small' | 'medium' | 'large';
 		isActive: Writable<boolean>;
 		transY: Writable<number>;
 		contentPosition: Writable<string>;
@@ -34,11 +35,21 @@
 		}
 		$isActive = !$isActive;
 	};
+
+	const sizeObj = {
+		tiny: 'h-[24px] text-xs leading-3',
+		small: 'h-[32px] px-[6px] text-sm leading-4',
+		medium: 'h-[40px] px-[10px] text-sm leading-[20px]',
+		large: 'h-[48px] px-[14px] text-base leading-[24px]'
+	};
+	let sizeClass = $derived.by(() => {
+		return sizeObj[size];
+	});
 </script>
 
 <button
 	onclick={toogle}
-	class="group px-3 py-2 flex items-center justify-between rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400 hover:border-light-gray-500 dark:hover:border-dark-gray-500 {klass} "
+	class="group {sizeClass} flex items-center justify-between rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400 hover:border-light-gray-500 dark:hover:border-dark-gray-500 {klass} "
 >
 	{@render children()}
 </button>
