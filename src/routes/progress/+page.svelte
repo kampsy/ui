@@ -5,7 +5,6 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { errorCustomLabel, errorDefault } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import Progress from '$lib/progress/progress.svelte';
 	import { progressDefault, progressDynamicColors, progressThemed } from '../../docs/data/progress.js';
@@ -15,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Error</title>
+	<title>Progess</title>
 </svelte:head>
 
 {#snippet progress()}

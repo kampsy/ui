@@ -43,6 +43,9 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'radio',
                 url: '/radio'
+            },{
+                name: 'select',
+                url: '/select'
             },
             {
                 name: 'spinner',
