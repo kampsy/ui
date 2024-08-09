@@ -20,3 +20,21 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+/*Scrollbar with transparent track and small size*/
+.ui-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.ui-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.ui-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-light-gray-200 dark:bg-dark-gray-400 rounded-full;
+}
+
+.ui-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-light-gray-300 dark:bg-dark-gray-500;
+}
+

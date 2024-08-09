@@ -16,7 +16,7 @@
 	};
 </script>
 
-<div class="w-full h-full px-4 pb-[14px] pt-4 overflow-y-auto">
+<div class="ui-scrollbar w-full h-full px-4 pb-[14px] pt-4 scroll-smooth overflow-y-auto">
 	{#if asideDataList}
 		{#each asideDataList as aisdeData}
 			<div>
