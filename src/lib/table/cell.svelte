@@ -3,7 +3,7 @@
 
 	type propsT = {
 		class?: string | undefined;
-		children: Snippet | undefined;
+		children?: Snippet | undefined;
 	};
 	let { class: klass = '', children = undefined }: propsT = $props();
 </script>

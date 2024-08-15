@@ -5,33 +5,34 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Choicebox } from '$lib/index.js';
+	import Error from '$lib/error/error.svelte';
 	import {
-		choiceboxDefault,
-		choiceboxDisabled,
-		choiceboxMultiselect
-	} from '../../docs/data/choicebox.js';
+		errorCustomLabel,
+		errorDefault,
+		errorSize,
+		errorWithProp
+	} from '../../docs/data/error.js';
+	import Pagination from '$lib/pagination/pagination.svelte';
+	import Toggle from '$lib/toggle/toggle.svelte';
 
-	let value = $state('');
-	let valueList = $state([]);
+	let value = $state(false);
 </script>
 
 <svelte:head>
-	<title>Error</title>
+	<title>Toggle</title>
 </svelte:head>
 
-{#snippet choicebox()}
+{#snippet toggle()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			choicebox
+			toggle
 		</h1>
 		<p
 			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A larger form of Radio or Checkbox, where the user has a larger tap target and more details.
+			Displays a boolean value.
 		</p>
 	</Row>
 {/snippet}
@@ -49,7 +50,7 @@
 	</div>
 {/snippet}
 
-{#snippet defaultChoicebox()}
+{#snippet defaultErr()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -58,70 +59,69 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full">
-					<Choicebox.Group label="select a plan" type="radio" bind:value>
-						<Choicebox.Item
-							defaultChecked
-							description="Free for two weeks"
-							title="Pro Trial"
-							value="trial"
-						/>
-						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
-					</Choicebox.Group>
+				<div>
+					<!---->
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, choiceboxDefault)}
+			{@render demoAndCode(demo, errorDefault)}
 		</div>
 	</Row>
 {/snippet}
 
-{#snippet multiselect()}
+{#snippet customLabel()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#size" id="default">multiselect</a>
+			<a href="#customelabel" id="default">custome label</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full">
-					<Choicebox.Group label="select a plan" type="checkbox" bind:value={valueList}>
-						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
-						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
-					</Choicebox.Group>
+				<div>
+					<Error label="Email Error">This email address is already in use.</Error>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, choiceboxMultiselect)}
+			{@render demoAndCode(demo, errorCustomLabel)}
 		</div>
 	</Row>
 {/snippet}
 
-{#snippet disabled()}
+{#snippet size()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#size" id="default">disabled</a>
+			<a href="#size" id="default">size</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full space-y-4">
-					<Choicebox.Group label="Choicebox group disabled" disabled type="radio" bind:value>
-						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
-						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
-					</Choicebox.Group>
-					<Choicebox.Group label="Single input disabled" type="checkbox" bind:value>
-						<Choicebox.Item
-							description="Free for two weeks"
-							disabled
-							title="Pro Trial"
-							value="trial"
-						/>
-						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
-					</Choicebox.Group>
-				</div>
+				<Error size="sm">This email is in use.</Error>
+				<Error size="md">This email is in use.</Error>
+				<Error size="lg">This email is in use.</Error>
 			{/snippet}
-			{@render demoAndCode(demo, choiceboxDisabled)}
+			{@render demoAndCode(demo, errorSize)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet withErrorProp()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#size" id="default">With an error property</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Error
+					error={{
+						message: 'The request failed.',
+						action: 'Contact Us',
+						link: 'https://kampsy.kampsy.xyz/error'
+					}}
+				/>
+			{/snippet}
+			{@render demoAndCode(demo, errorWithProp)}
 		</div>
 	</Row>
 {/snippet}
@@ -129,17 +129,18 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'error', href: '/error' }}
+			previous={{ title: 'textarea', href: '/textarea' }}
+			next={{ title: 'tooltip', href: '/tooltip' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render choicebox()}
-	{@render defaultChoicebox()}
-	{@render multiselect()}
-	{@render disabled()}
+	{@render toggle()}
+	{@render defaultErr()}
+	{@render customLabel()}
+	{@render size()}
+	{@render withErrorProp()}
 	{@render prevAndNext()}
 {/snippet}
 

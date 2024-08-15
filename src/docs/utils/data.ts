@@ -41,9 +41,6 @@ export const asideData: Array<AsideT> = [
                 url: '/progress'
             },
             {
-                name: 'radio',
-                url: '/radio'
-            },{
                 name: 'select',
                 url: '/select'
             },

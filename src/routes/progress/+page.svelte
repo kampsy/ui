@@ -122,7 +122,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'pagination', href: '/pagination' }}
-			next={{ title: 'radio', href: '/radio' }}
+			next={{ title: 'select', href: '/select' }}
 		/>
 	</Row>
 {/snippet}
