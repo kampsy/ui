@@ -24,7 +24,7 @@
 			{#each members as member}
 				<div
 					style={widthHeight}
-					class="rounded-full overflow-hidden border border-light-gray-200 dark:border-dark-gray-200 {klass}"
+					class="rounded-full overflow-hidden border border-kui-light-gray-200 dark:border-kui-dark-gray-200 {klass}"
 				>
 					<div style={widthHeight}>
 						<img
@@ -45,7 +45,7 @@
 				{#if index < limit}
 					<div
 						style={widthHeight}
-						class=" rounded-full overflow-hidden border border-light-gray-200 dark:border-dark-gray-200 {klass}"
+						class=" rounded-full overflow-hidden border border-kui-light-gray-200 dark:border-kui-dark-gray-200 {klass}"
 					>
 						<div style={widthHeight}>
 							<img
@@ -71,7 +71,7 @@
 		{#if limit && members.length > limit}
 			<div
 				style={widthHeight}
-				class="flex items-center justify-center rounded-full overflow-hidden text-[10px] font-semibold text-light-gray-1000 dark:text-dark-gray-1000 bg-light-gray-100 dark:bg-dark-gray-100 border border-light-gray-200 dark:border-dark-gray-400"
+				class="flex items-center justify-center rounded-full overflow-hidden text-[10px] font-semibold text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 			>
 				+{members.length - limit}
 			</div>

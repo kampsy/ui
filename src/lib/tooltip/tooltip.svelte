@@ -23,26 +23,26 @@
 	});
 
 	const positionObj = {
-		top: `bottom-[125%] left-[50%] translate-x-[-50%] text-dark-gray-1000 
-				dark:text-light-gray-1000 bg-light-gray-1000 dark:bg-dark-gray-1000 after:content-[' ']
+		top: `bottom-[125%] left-[50%] translate-x-[-50%] text-kui-dark-gray-1000 
+				dark:text-kui-light-gray-1000 bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 after:content-[' ']
 				after:absolute after:top-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px]
-				after:border-t-light-gray-1000 after:dark:border-t-dark-gray-1000 after:border-b-transparent
+				after:border-t-kui-light-gray-1000 after:dark:border-t-kui-dark-gray-1000 after:border-b-transparent
 				after:border-x-transparent `,
-		bottom: `top-[125%] left-[50%] translate-x-[-50%] text-dark-gray-1000 
-				dark:text-light-gray-1000 bg-light-gray-1000 dark:bg-dark-gray-1000 after:content-[' ']
+		bottom: `top-[125%] left-[50%] translate-x-[-50%] text-kui-dark-gray-1000 
+				dark:text-kui-light-gray-1000 bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 after:content-[' ']
 				after:absolute after:bottom-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px] 
-				after:border-t-transparent after:border-b-light-gray-1000 after:dark:border-b-dark-gray-1000 
+				after:border-t-transparent after:border-b-kui-light-gray-1000 after:dark:border-b-kui-dark-gray-1000 
 				after:border-x-transparent `,
-		left: `top-[50%] right-[125%] transform translate-y-[-50%] text-dark-gray-1000 
-				dark:text-light-gray-1000 bg-light-gray-1000 dark:bg-dark-gray-1000 after:content-[' ']
+		left: `top-[50%] right-[125%] transform translate-y-[-50%] text-kui-dark-gray-1000 
+				dark:text-kui-light-gray-1000 bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-light-gray-1000
-				after:dark:border-l-dark-gray-1000 after:border-r-transparent`,
-		right: `top-[50%] left-[125%] transform translate-y-[-50%] text-dark-gray-1000 
-				dark:text-light-gray-1000 bg-light-gray-1000 dark:bg-dark-gray-1000 after:content-[' '] 
+				after:border-y-transparent after:border-l-kui-light-gray-1000
+				after:dark:border-l-kui-dark-gray-1000 after:border-r-transparent`,
+		right: `top-[50%] left-[125%] transform translate-y-[-50%] text-kui-dark-gray-1000 
+				dark:text-kui-light-gray-1000 bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-transparent after:border-r-light-gray-1000
-				after:dark:border-r-dark-gray-1000`
+				after:border-y-transparent after:border-l-transparent after:border-r-kui-light-gray-1000
+				after:dark:border-r-kui-dark-gray-1000`
 	};
 	let positionStyle = $derived.by(() => {
 		return positionObj[position];
@@ -50,92 +50,92 @@
 
 	const typeObj = {
 		success: {
-			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-blue-700 dark:bg-dark-blue-700 after:content-[' ']
+			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 after:content-[' ']
 				after:absolute after:top-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px]
-				after:border-t-light-blue-700 after:dark:border-t-dark-blue-700 after:border-b-transparent
+				after:border-t-kui-light-blue-700 after:dark:border-t-kui-dark-blue-700 after:border-b-transparent
 				after:border-x-transparent `,
-			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-blue-700 dark:bg-dark-blue-700 after:content-[' ']
+			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 after:content-[' ']
 				after:absolute after:bottom-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px] 
-				after:border-t-transparent after:border-b-light-blue-700 after:dark:border-b-dark-blue-700 
+				after:border-t-transparent after:border-b-kui-light-blue-700 after:dark:border-b-kui-dark-blue-700 
 				after:border-x-transparent `,
-			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-blue-700 dark:bg-dark-blue-700 after:content-[' ']
+			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-light-blue-700
-				after:dark:border-l-dark-blue-700 after:border-r-transparent`,
-			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-blue-700 dark:bg-dark-blue-700 after:content-[' '] 
+				after:border-y-transparent after:border-l-kui-light-blue-700
+				after:dark:border-l-kui-dark-blue-700 after:border-r-transparent`,
+			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-transparent after:border-r-light-blue-700
-				after:dark:border-r-dark-blue-700`
+				after:border-y-transparent after:border-l-transparent after:border-r-kui-light-blue-700
+				after:dark:border-r-kui-dark-blue-700`
 		},
 		error: {
-			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-red-700 dark:bg-dark-red-700 after:content-[' ']
+			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-red-700 dark:bg-kui-dark-red-700 after:content-[' ']
 				after:absolute after:top-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px]
-				after:border-t-light-red-700 after:dark:border-t-dark-red-700 after:border-b-transparent
+				after:border-t-kui-light-red-700 after:dark:border-t-kui-dark-red-700 after:border-b-transparent
 				after:border-x-transparent `,
-			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-red-700 dark:bg-dark-red-700 after:content-[' ']
+			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-red-700 dark:bg-kui-dark-red-700 after:content-[' ']
 				after:absolute after:bottom-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px] 
-				after:border-t-transparent after:border-b-light-red-700 after:dark:border-b-dark-red-700 
+				after:border-t-transparent after:border-b-kui-light-red-700 after:dark:border-b-kui-dark-red-700 
 				after:border-x-transparent `,
-			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-red-700 dark:bg-dark-red-700 after:content-[' ']
+			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-red-700 dark:bg-kui-dark-red-700 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-light-red-700
-				after:dark:border-l-dark-red-700 after:border-r-transparent`,
-			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-red-700 dark:bg-dark-red-700 after:content-[' '] 
+				after:border-y-transparent after:border-l-kui-light-red-700
+				after:dark:border-l-kui-dark-red-700 after:border-r-transparent`,
+			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-red-700 dark:bg-kui-dark-red-700 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-transparent after:border-r-light-red-700
-				after:dark:border-r-dark-red-700`
+				after:border-y-transparent after:border-l-transparent after:border-r-kui-light-red-700
+				after:dark:border-r-kui-dark-red-700`
 		},
 		warning: {
-			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-light-black 
-				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' ']
+			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-kui-light-black 
+				dark:text-black bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 after:content-[' ']
 				after:absolute after:top-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px]
-				after:border-t-light-amber-700 after:dark:border-t-dark-amber-700 after:border-b-transparent
+				after:border-t-kui-light-amber-700 after:dark:border-t-kui-dark-amber-700 after:border-b-transparent
 				after:border-x-transparent `,
-			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-light-black 
-				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' ']
+			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-kui-light-black 
+				dark:text-black bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 after:content-[' ']
 				after:absolute after:bottom-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px] 
-				after:border-t-transparent after:border-b-light-amber-700 after:dark:border-b-dark-amber-700 
+				after:border-t-transparent after:border-b-kui-light-amber-700 after:dark:border-b-kui-dark-amber-700 
 				after:border-x-transparent `,
-			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-light-black 
-				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' ']
+			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-kui-light-black 
+				dark:text-black bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-light-amber-700
-				after:dark:border-l-dark-amber-700 after:border-r-transparent`,
-			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-light-black 
-				dark:text-black bg-light-amber-700 dark:bg-dark-amber-700 after:content-[' '] 
+				after:border-y-transparent after:border-l-kui-light-amber-700
+				after:dark:border-l-kui-dark-amber-700 after:border-r-transparent`,
+			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-kui-light-black 
+				dark:text-black bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-transparent after:border-r-light-amber-700
-				after:dark:border-r-dark-amber-700`
+				after:border-y-transparent after:border-l-transparent after:border-r-kui-light-amber-700
+				after:dark:border-r-kui-dark-amber-700`
 		},
 		violet: {
-			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-purple-700 dark:bg-dark-purple-700 after:content-[' ']
+			top: `bottom-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-purple-700 dark:bg-kui-dark-purple-700 after:content-[' ']
 				after:absolute after:top-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px]
-				after:border-t-light-purple-700 after:dark:border-t-dark-purple-700 after:border-b-transparent
+				after:border-t-kui-light-purple-700 after:dark:border-t-kui-dark-purple-700 after:border-b-transparent
 				after:border-x-transparent `,
-			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-purple-700 dark:bg-dark-purple-700 after:content-[' ']
+			bottom: `top-[125%] left-[50%] translate-x-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-purple-700 dark:bg-kui-dark-purple-700 after:content-[' ']
 				after:absolute after:bottom-[100%] after:left-[50%] after:ml-[-5px] after:border-[5px] 
-				after:border-t-transparent after:border-b-light-purple-700 after:dark:border-b-dark-purple-700 
+				after:border-t-transparent after:border-b-kui-light-purple-700 after:dark:border-b-kui-dark-purple-700 
 				after:border-x-transparent `,
-			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-purple-700 dark:bg-dark-purple-700 after:content-[' ']
+			left: `top-[50%] right-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-purple-700 dark:bg-kui-dark-purple-700 after:content-[' ']
 				after:absolute after:top-[50%] after:left-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-light-purple-700
-				after:dark:border-l-dark-purple-700 after:border-r-transparent`,
-			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-light-bg 
-				dark:text-light-bg bg-light-purple-700 dark:bg-dark-purple-700 after:content-[' '] 
+				after:border-y-transparent after:border-l-kui-light-purple-700
+				after:dark:border-l-kui-dark-purple-700 after:border-r-transparent`,
+			right: `top-[50%] left-[125%] transform translate-y-[-50%] text-kui-light-bg 
+				dark:text-kui-light-bg bg-kui-light-purple-700 dark:bg-kui-dark-purple-700 after:content-[' '] 
 				after:absolute after:top-[50%] after:right-[100%] after:mt-[-5px] after:border-[5px] 
-				after:border-y-transparent after:border-l-transparent after:border-r-light-purple-700
-				after:dark:border-r-dark-purple-700`
+				after:border-y-transparent after:border-l-transparent after:border-r-kui-light-purple-700
+				after:dark:border-r-kui-dark-purple-700`
 		}
 	};
 	let typeStyle = $derived.by(() => {

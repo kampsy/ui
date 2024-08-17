@@ -33,40 +33,40 @@
 		switch (selected) {
 			case 'system':
 				return [
-					'border border-light-gray-200 dark:border-dark-gray-400 text-light-gray-1000 dark:text-dark-gray-1000 ',
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000',
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000'
+					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 ',
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
 				];
 			case 'light':
 				return [
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000',
-					'border border-light-gray-200 dark:border-dark-gray-400 text-light-gray-1000 dark:text-dark-gray-1000',
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000'
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
+					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
 				];
 			case 'dark':
 				return [
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000',
-					'text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 dark:hover:text-dark-gray-1000',
-					'border border-light-gray-200 dark:border-dark-gray-400 text-light-gray-1000 dark:text-dark-gray-1000'
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
+					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
+					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000'
 				];
 			default:
 				return [
-					'border border-light-gray-200 dark:border-dark-gray-400 text-light-gray-1000 dark:text-dark-gray-1000',
-					'dark:text-dark-gray-900 hover:text-dark-gray-1000 dark:hover:text-dark-gray-1000',
-					'dark:text-dark-gray-900 hover:text-dark-gray-1000 dark:hover:text-dark-gray-1000'
+					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
+					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000',
+					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000'
 				];
 		}
 	});
 </script>
 
 <header
-	class="z-50 fixed top-0 mx-auto w-full max-w-[1220px] h-[64px] md:sticky bg-light-bg dark:bg-dark-bg"
+	class="z-50 fixed top-0 mx-auto w-full max-w-[1220px] h-[64px] md:sticky bg-kui-light-bg dark:bg-kui-dark-bg"
 >
 	<div
-		class=" bg-light-bg dark:bg-dark-bg w-full h-[64px] flex border-b border-r border-light-gray-200 dark:border-dark-gray-400"
+		class=" bg-kui-light-bg dark:bg-kui-dark-bg w-full h-[64px] flex border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	>
 		<div
-			class="hidden lg:block w-full max-w-[260px] h-full border-l border-r border-light-gray-200 dark:border-dark-gray-400"
+			class="hidden lg:block w-full max-w-[260px] h-full border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 		>
 			<div class="hidden w-full h-full px-6 lg:flex items-center">
 				<a href="/">
@@ -105,7 +105,7 @@
 					</a>
 				</div>
 				<div
-					class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-light-gray-200 dark:border-dark-gray-400"
+					class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 				>
 					<div class="w-[32px] h-[32px]">
 						<input
@@ -171,13 +171,13 @@
 	class="flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >
 	<aside
-		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-light-gray-200 dark:border-dark-gray-400  bottom-0 top-[64px] order-1  flex-col min-[1200px]:flex"
+		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400  bottom-0 top-[64px] order-1  flex-col min-[1200px]:flex"
 	>
 		{@render asideSlot()}
 	</aside>
 	<div class="order-2 grow overflow-x-hidden">
 		<div
-			class="relative border-r border-light-gray-200 dark:border-dark-gray-400 flex h-full w-full flex-col"
+			class="relative border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 flex h-full w-full flex-col"
 		>
 			{@render contSlot()}
 		</div>

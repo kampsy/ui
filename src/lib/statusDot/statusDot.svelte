@@ -6,11 +6,11 @@
 	let { label = false, state = 'QUEUED' }: propsT = $props();
 
 	const stateObj = {
-		QUEUED: 'bg-light-gray-600 dark:bg-dark-gray-600',
-		BUILDING: 'bg-light-amber-600 dark:bg-dark-amber-600',
-		ERROR: 'bg-light-red-600 dark:bg-dark-red-600',
-		READY: 'bg-light-green-600 dark:bg-dark-green-600',
-		CANCELED: 'bg-light-gray-600 dark:bg-dark-gray-600'
+		QUEUED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600',
+		BUILDING: 'bg-kui-light-amber-600 dark:bg-kui-dark-amber-600',
+		ERROR: 'bg-kui-light-red-600 dark:bg-kui-dark-red-600',
+		READY: 'bg-kui-light-green-600 dark:bg-kui-dark-green-600',
+		CANCELED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600'
 	};
 
 	let stateClass = $derived.by(() => {

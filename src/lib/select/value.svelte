@@ -15,7 +15,7 @@
 <span class="text-sm first-letter:capitalize">{$selected === '' ? placeholder : $selected}</span>
 <div class="w-[16px] h-[16px] flex items-center justify-center">
 	<div
-		class="w-[16px] h-[16px] text-light-gray-900 hover:text-light-gray-1000 dark:text-dark-gray-900 hover:dark:text-dark-gray-1000"
+		class="w-[16px] h-[16px] text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 hover:dark:text-kui-dark-gray-1000"
 	>
 		<ChevronDownSmall />
 	</div>

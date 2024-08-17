@@ -10,14 +10,14 @@
 
 	let stripedClass = $derived.by(() => {
 		if (striped) {
-			return `[&_tr:where(:nth-child(odd))]:bg-light-bg-secondary dark:[&_tr:where(:nth-child(odd))]:bg-dark-bg-secondary`;
+			return `[&_tr:where(:nth-child(odd))]:bg-kui-light-bg-secondary dark:[&_tr:where(:nth-child(odd))]:bg-kui-dark-bg-secondary`;
 		}
 		return '';
 	});
 
 	let interactiveClass = $derived.by(() => {
 		if (interactive) {
-			return `[&_tr:hover]:bg-light-gray-200 dark:[&_tr:hover]:bg-dark-gray-200`;
+			return `[&_tr:hover]:bg-kui-light-gray-200 dark:[&_tr:hover]:bg-kui-dark-gray-200`;
 		}
 		return '';
 	});

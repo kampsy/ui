@@ -21,13 +21,13 @@
 </script>
 
 <label for={unique} class="inline-flex items-center cursor-pointer gap-2 py-[3px]">
-	<span class="ms-3 text-xs font-medium text-light-gray-900 dark-text-dark-gray-900">Toggle me</span
+	<span class="ms-3 text-xs font-medium text-kui-light-gray-900 dark-text-kui-dark-gray-900">Toggle me</span
 	>
 	<input {onchange} type="radio" id={unique} {value} {disabled} class="hidden" />
 	<span
-		class="w-[28px] h-[14px] flex items-center bg-light-blue-700 dark:bg-dark-blue-700 rounded-full"
+		class="w-[28px] h-[14px] flex items-center bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 rounded-full"
 	>
-		<div class="w-[12px] h-[12px] bg-light-bg rounded-full">
+		<div class="w-[12px] h-[12px] bg-kui-light-bg rounded-full">
 			<!---->
 		</div>
 	</span>

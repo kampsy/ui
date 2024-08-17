@@ -18,7 +18,7 @@
 
 <div class="w-full h-full fixed top-0 overflow-y-auto">
 	<main
-		class="ui-scrollbar font-inter {currentTheme} min-h-screen text-light-gray-1000 dark:text-dark-gray-1000 overflow-x-hidden md:overflow-x-visible bg-light-bg-secondary dark:bg-dark-bg-secondary"
+		class="ui-scrollbar font-inter {currentTheme} min-h-screen text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 overflow-x-hidden md:overflow-x-visible bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
 	>
 		{@render children()}
 	</main>

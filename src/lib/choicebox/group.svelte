@@ -33,9 +33,9 @@
 
 	let labelClass = $derived.by(() => {
 		if (disabled) {
-			return 'text-light-gray-900 dark:text-dark-gray-900';
+			return 'text-kui-light-gray-900 dark:text-kui-dark-gray-900';
 		}
-		return 'text-light-gray-1000 dark:text-dark-gray-1000';
+		return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
 	});
 
 	$effect(() => {

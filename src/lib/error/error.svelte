@@ -32,13 +32,13 @@
 {#snippet childrenLabelSize()}
 	<div class="space-x-1 {sizeClass}">
 		{#if label}
-			<span class="text-light-red-900 dark:text-dark-red-900 font-medium">
+			<span class="text-kui-light-red-900 dark:text-kui-dark-red-900 font-medium">
 				{label}:
 			</span>
 		{/if}
 
 		{#if children}
-			<span class="text-light-red-900 dark:text-dark-red-900 font-normal">
+			<span class="text-kui-light-red-900 dark:text-kui-dark-red-900 font-normal">
 				{@render children()}
 			</span>	
 		{/if}
@@ -46,10 +46,10 @@
 {/snippet}
 
 {#snippet withErrorProp()}
-	<div class="flex items-center gap-1 text-[14px] text-light-red-900 dark:text-dark-red-900">
+	<div class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 		{error?.message || ''}
 		<div
-			class=" font-medium leading-[20px] capitalize border-b border-light-red-900 dark:border-dark-red-900 hover:text-light-red-600 hover:dark:text-dark-red-800 hover:border-light-red-600 hover:dark:border-dark-red-800"
+			class=" font-medium leading-[20px] capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 hover:dark:text-kui-dark-red-800 hover:border-kui-light-red-600 hover:dark:border-kui-dark-red-800"
 		>
 			<a href={error?.link || ''}>
 				<div class="flex items-center gap-1">
@@ -72,7 +72,7 @@
 {/snippet}
 
 <div class="flex items-center gap-[8px]">
-	<div class="w-[16px] h-[16px] text-light-red-900 dark:text-dark-red-900">
+	<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 		<Error />
 	</div>
 	<div>

@@ -24,7 +24,7 @@
 		$selected = value;
 		$isActive = false;
 	}}
-	class="relative w-full cursor-default transition-colors text-sm flex items-center rounded-sm py-1.5 pl-8 pr-2 hover:bg-light-gray-100 hover:dark:bg-dark-gray-100"
+	class="relative w-full cursor-default transition-colors text-sm flex items-center rounded-sm py-1.5 pl-8 pr-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
 >
 	{#if $selected === value}
 		<!--Icon-->

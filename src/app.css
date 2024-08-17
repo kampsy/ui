@@ -31,10 +31,10 @@
 }
 
 .ui-scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-light-gray-200 dark:bg-dark-gray-400 rounded-full;
+    @apply bg-kui-light-gray-200 dark:bg-kui-dark-gray-400 rounded-full;
 }
 
 .ui-scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-light-gray-300 dark:bg-dark-gray-500;
+    @apply bg-kui-light-gray-300 dark:bg-kui-dark-gray-500;
 }
 

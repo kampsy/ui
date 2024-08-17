@@ -66,12 +66,12 @@
 {#snippet table()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			table
 		</h1>
 		<p
-			class="first-letter:capitalize text-light-gray-900 dark:text-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
 			A semantic HTML table component
 		</p>
@@ -80,7 +80,7 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-light-bg dark:bg-dark-bg border border-light-gray-200 dark:border-dark-gray-400 rounded-lg overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-lg overflow-hidden"
 	>
 		<div class="w-full p-4 lg:p-6 overflow-x-auto">
 			<div class="w-full flex flex-wrap gap-4">
@@ -94,7 +94,7 @@
 {#snippet defaultTable()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">Basic table</a>
 		</h2>
@@ -137,7 +137,7 @@
 {#snippet striped()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">striped table</a>
 		</h2>
@@ -180,7 +180,7 @@
 {#snippet interactive()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">interactive table</a>
 		</h2>
@@ -223,7 +223,7 @@
 {#snippet full()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-light-gray-1000 dark:text-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">full featured table</a>
 		</h2>
@@ -257,10 +257,10 @@
 						</Table.Body>
 						<Table.Footer>
 							<Table.Row>
-								<Table.Cell class="text-light-gray-1000 dark:text-dark-gray-1000 font-medium">Subtotal</Table.Cell>
+								<Table.Cell class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium">Subtotal</Table.Cell>
 								<Table.Cell></Table.Cell>
 								<Table.Cell></Table.Cell>
-								<Table.Cell class="text-light-gray-1000 dark:text-dark-gray-1000 font-medium">
+								<Table.Cell class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium">
 									{formatCurrency(items.reduce((sum, val) => sum + val.charge, 0))}
 								</Table.Cell>
 							</Table.Row>

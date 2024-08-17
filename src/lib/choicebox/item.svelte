@@ -61,58 +61,58 @@
 	let labelClass = $derived.by(() => {
 		// it is desabled
 		if (disabled) {
-			return ` cursor-not-allowed border-light-gray-200 dark:border-dark-gray-400`;
+			return ` cursor-not-allowed border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
 		if ($selected === value || $selected.includes(value)) {
-			return `cursor-pointer bg-light-blue-200 dark:bg-dark-blue-200 border-light-blue-600  dark:border-dark-blue-600 
-			hover:border-light-blue-700 dark:hover:border-dark-blue-700`;
+			return `cursor-pointer bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border-kui-light-blue-600  dark:border-kui-dark-blue-600 
+			hover:border-kui-light-blue-700 dark:hover:border-kui-dark-blue-700`;
 		}
-		return `cursor-pointer hover:bg-light-gray-200 dark:hover:bg-dark-gray-200 border-light-gray-200 
-		dark:border-dark-gray-400 hover:border-light-gray-500 dark:hover:border-dark-gray-500`;
+		return `cursor-pointer hover:bg-kui-light-gray-200 dark:hover:bg-kui-dark-gray-200 border-kui-light-gray-200 
+		dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500`;
 	});
 
 	// Title text
 	let titleClass = $derived.by(() => {
 		// it is desabled
 		if (disabled) {
-			return `text-light-gray-500 dark:text-dark-gray-500`;
+			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`;
 		}
 		if ($selected === value || $selected.includes(value)) {
-			return `text-light-blue-900 dark:text-dark-blue-900`;
+			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`;
 		}
-		return `text-light-gray-1000 dark:text-dark-gray-1000`;
+		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`;
 	});
 
 	// Description text
 	let descriptionClass = $derived.by(() => {
 		// it is desabled
 		if (disabled) {
-			return `text-light-gray-500 dark:text-dark-gray-500`;
+			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`;
 		}
 		if ($selected === value || $selected.includes(value)) {
-			return `text-light-blue-900 dark:text-dark-blue-900`;
+			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`;
 		}
-		return `text-light-gray-900 dark:text-dark-gray-900`;
+		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900`;
 	});
 
 	// The rounded radio cont
 	let radioContClass = $derived.by(() => {
 		// it is desabled
 		if (disabled) {
-			return `border-light-gray-200 dark:border-dark-gray-400`;
+			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
 
 		if ($selected === value) {
-			return `border-light-blue-900  dark:border-dark-blue-900 `;
+			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 `;
 		}
-		return `border-light-gray-200 dark:border-dark-gray-200 group-hover:border-light-gray-500 
-		dark:group-hover:border-dark-gray-500 group-hover:bg-light-bg dark:group-hover:bg-dark-bg`;
+		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
+		dark:group-hover:border-kui-dark-gray-500 group-hover:bg-kui-light-bg dark:group-hover:bg-kui-dark-bg`;
 	});
 
 	// The radio cont
 	let radioClass = $derived.by(() => {
 		if ($selected === value) {
-			return `bg-light-blue-900  dark:bg-dark-blue-900 `;
+			return `bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `;
 		}
 		return ``;
 	});
@@ -121,13 +121,13 @@
 	let checkboxContClass = $derived.by(() => {
 		// it is desabled
 		if (disabled) {
-			return `border-light-gray-200 dark:border-dark-gray-400`;
+			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
 		if ($selected.includes(value)) {
-			return `border-light-blue-900  dark:border-dark-blue-900 bg-light-blue-900  dark:bg-dark-blue-900 `;
+			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `;
 		}
-		return `border-light-gray-200 dark:border-dark-gray-200 group-hover:border-light-gray-500 
-		dark:group-hover:border-dark-gray-500 group-hover:bg-light-bg dark:group-hover:bg-dark-bg`;
+		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
+		dark:group-hover:border-kui-dark-gray-500 group-hover:bg-kui-light-bg dark:group-hover:bg-kui-dark-bg`;
 	});
 	let checkboxClass = $derived.by(() => {
 		if ($selected.includes(value)) {

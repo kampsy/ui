@@ -8,8 +8,8 @@ export default {
         'inter': ['Inter', 'sans-serif'],
       },
       colors: {
-        black: '#000000',
-        light: {
+        'kui-black': '#000000',
+        'kui-light': {
           bg: {
             DEFAULT: '#FFFFFF',
             secondary: '#FAFAFA',
@@ -124,7 +124,7 @@ export default {
             1000: '#430A23',
           }
         },
-        dark: {
+        'kui-dark': {
           bg: {
             DEFAULT: '#0A0A0A',
             secondary: '#000000',

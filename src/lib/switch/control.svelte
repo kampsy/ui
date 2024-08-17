@@ -69,15 +69,15 @@
 		// If the switch is disabled
 		if (disabled) {
 			if ($selected === value) {
-				return `text-light-gray-700 dark:text-dark-gray-700 bg-light-gray-100 dark:bg-dark-gray-100`;
+				return `text-kui-light-gray-700 dark:text-kui-dark-gray-700 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 			}
-			return `text-light-gray-700 dark:text-dark-gray-700`;
+			return `text-kui-light-gray-700 dark:text-kui-dark-gray-700`;
 		}
 
 		if ($selected === value) {
-			return `text-light-gray-1000 dark:text-dark-gray-1000 bg-light-gray-100 dark:bg-dark-gray-100`;
+			return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 		}
-		return `text-light-gray-900 dark:text-dark-gray-900 hover:text-light-gray-1000 hover:dark:text-dark-gray-1000`;
+		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 hover:dark:text-kui-dark-gray-1000`;
 	})
 
 	let disabledClass = $derived.by(() => {

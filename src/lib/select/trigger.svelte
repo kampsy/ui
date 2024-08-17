@@ -49,7 +49,7 @@
 
 <button
 	onclick={toogle}
-	class="group {sizeClass} flex items-center justify-between rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400 hover:border-light-gray-500 dark:hover:border-dark-gray-500 {klass} "
+	class="group {sizeClass} flex items-center justify-between rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 {klass} "
 >
 	{@render children()}
 </button>

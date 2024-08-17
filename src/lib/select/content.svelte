@@ -24,7 +24,7 @@
 		class="absolute w-full {$contentPosition} z-[1000] {klass}"
 	>
 		<div
-			class="hide-scrollbar bg-light-bg dark:bg-dark-bg p-1 rounded-[6px] border border-light-gray-200 dark:border-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto  {klass}"
+			class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto  {klass}"
 		>
 			{@render children()}
 		</div>

@@ -35,31 +35,31 @@
 	}: propsT = $props();
 
 	const variantObj = {
-		gray: 'bg-light-gray-700 text-light-bg dark:bg-dark-gray-700 dark:text-light-bg',
+		gray: 'bg-kui-light-gray-700 text-kui-light-bg dark:bg-kui-dark-gray-700 dark:text-kui-light-bg',
 		'gray-subtle':
-			'bg-light-gray-200 text-light-gray-1000 dark:bg-dark-gray-200 dark:text-dark-gray-1000',
-		blue: 'bg-light-blue-700 text-light-bg dark:bg-dark-blue-700 dark:text-light-bg',
+			'bg-kui-light-gray-200 text-kui-light-gray-1000 dark:bg-kui-dark-gray-200 dark:text-kui-dark-gray-1000',
+		blue: 'bg-kui-light-blue-700 text-kui-light-bg dark:bg-kui-dark-blue-700 dark:text-kui-light-bg',
 		'blue-subtle':
-			' text-light-blue-900 dark:text-dark-blue-900 bg-light-blue-200 dark:bg-dark-blue-200 ',
-		purple: 'bg-light-purple-700 text-light-bg dark:bg-dark-purple-700 dark:text-light-bg',
+			' text-kui-light-blue-900 dark:text-kui-dark-blue-900 bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 ',
+		purple: 'bg-kui-light-purple-700 text-kui-light-bg dark:bg-kui-dark-purple-700 dark:text-kui-light-bg',
 		'purple-subtle':
-			'bg-light-purple-200 text-light-purple-900 dark:bg-dark-purple-200 dark:text-dark-purple-900',
-		amber: 'bg-light-amber-700 text-light-bg dark:bg-dark-amber-700 dark:text-black',
+			'bg-kui-light-purple-200 text-kui-light-purple-900 dark:bg-kui-dark-purple-200 dark:text-kui-dark-purple-900',
+		amber: 'bg-kui-light-amber-700 text-kui-light-bg dark:bg-kui-dark-amber-700 dark:text-black',
 		'amber-subtle':
-			'bg-light-amber-200 text-light-amber-900 dark:bg-dark-amber-200 dark:text-dark-amber-900',
-		red: 'bg-light-red-700 text-light-bg dark:bg-dark-red-700 dark:text-light-bg',
-		'red-subtle': 'bg-light-red-200 text-light-red-900 dark:bg-dark-red-200 dark:text-dark-red-900',
-		pink: 'bg-light-pink-700 text-light-bg dark:bg-dark-pink-700 dark:text-light-bg',
+			'bg-kui-light-amber-200 text-kui-light-amber-900 dark:bg-kui-dark-amber-200 dark:text-kui-dark-amber-900',
+		red: 'bg-kui-light-red-700 text-kui-light-bg dark:bg-kui-dark-red-700 dark:text-kui-light-bg',
+		'red-subtle': 'bg-kui-light-red-200 text-kui-light-red-900 dark:bg-kui-dark-red-200 dark:text-kui-dark-red-900',
+		pink: 'bg-kui-light-pink-700 text-kui-light-bg dark:bg-kui-dark-pink-700 dark:text-kui-light-bg',
 		'pink-subtle':
-			'bg-light-pink-200 text-light-pink-900 dark:bg-dark-pink-200 dark:text-dark-pink-900',
-		green: 'bg-light-green-700 text-light-bg dark:bg-dark-green-700 dark:text-light-bg',
+			'bg-kui-light-pink-200 text-kui-light-pink-900 dark:bg-kui-dark-pink-200 dark:text-kui-dark-pink-900',
+		green: 'bg-kui-light-green-700 text-kui-light-bg dark:bg-kui-dark-green-700 dark:text-kui-light-bg',
 		'green-subtle':
-			'bg-light-green-200 text-light-green-900 dark:bg-dark-green-200 dark:text-dark-green-900',
-		teal: 'bg-light-teal-700 text-light-bg dark:bg-dark-teal-700 dark:text-light-bg',
+			'bg-kui-light-green-200 text-kui-light-green-900 dark:bg-kui-dark-green-200 dark:text-kui-dark-green-900',
+		teal: 'bg-kui-light-teal-700 text-kui-light-bg dark:bg-kui-dark-teal-700 dark:text-kui-light-bg',
 		'teal-subtle':
-			'bg-light-teal-200 text-light-teal-900 dark:bg-dark-teal-200 dark:text-dark-teal-900',
+			'bg-kui-light-teal-200 text-kui-light-teal-900 dark:bg-kui-dark-teal-200 dark:text-kui-dark-teal-900',
 		inverted:
-			'bg-light-gray-1000 text-light-gray-100 dark:bg-dark-gray-1000 dark:text-dark-gray-100'
+			'bg-kui-light-gray-1000 text-kui-light-gray-100 dark:bg-kui-dark-gray-1000 dark:text-kui-dark-gray-100'
 	};
 	let variantClass = $derived.by(() => {
 		return variantObj[variant];
