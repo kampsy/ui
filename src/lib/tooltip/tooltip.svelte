@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import { getStringWidth } from '$lib/utils/text.js';
 	import type { Snippet } from 'svelte';
 
@@ -7,16 +6,16 @@
 		position?: 'top' | 'bottom' | 'left' | 'right';
 		text?: string;
 		type?: 'success' | 'error' | 'warning' | 'violet' | undefined;
+		class?: string | undefined
 		children?: Snippet;
 	};
-	let { position = 'top', text, type = undefined, children = undefined }: propsT = $props();
+	let { position = 'top', text, type = undefined, class: klass = '', children = undefined }: propsT = $props();
 
 	let widthClass = $derived.by(() => {
 		if (text) {
 			const num = getStringWidth(text);
 			if (num < 250) {
-				console.log(text, num);
-				return 'width:' + num + 'px';
+				return 'width:' + (num + 24) + 'px'; // 24 is for the left 12px and right 12px padding 
 			}
 		}
 		return 'width:250px';
@@ -154,13 +153,13 @@
 </script>
 
 <div>
-	<div class="group relative inline-block cursor-pointer">
+	<div class="group relative inline-block cursor-pointer {klass}">
 		{#if children}
 			{@render children()}
 		{/if}
 		<div
 			style={widthClass}
-			class="invisible group-hover:visible absolute {tooltipStyle} px-3 py-1.5 text-xs text-center rounded-[4px] z-[1000]"
+			class=" invisible group-hover:visible absolute {tooltipStyle} px-3 py-1.5 text-xs text-center rounded-[4px] z-[1000]"
 		>
 			{text || ''}
 		</div>

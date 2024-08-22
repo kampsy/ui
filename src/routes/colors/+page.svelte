@@ -3,20 +3,24 @@
 	import Row from '$lib/../docs/ui/row.svelte';
 	import Shell from '$lib/../docs/ui/shell.svelte';
 	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
-	import {
-		errorCustomLabel,
-		errorDefault,
-		errorSize,
-		errorWithProp
-	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import Tooltip from '$lib/tooltip/tooltip.svelte';
+
+	import {
+		gray,
+		grayAlpha,
+		blue,
+		red,
+		amber,
+		green,
+		teal,
+		purple,
+		pink
+	} from '../../docs/data/colors.js';
 </script>
 
 <svelte:head>
-    <title>Error</title>
+	<title>Colors</title>
 </svelte:head>
 
 {#snippet error()}
@@ -29,96 +33,89 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-        Learn how to work with our color system. Right click to copy raw values.
+			Learn how to work with our color system. Right click to copy raw values.
 		</p>
 	</Row>
 {/snippet}
 
-{#snippet demoAndCode(demo: Snippet, code: string)}
-	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
-	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4">
-				{@render demo()}
-			</div>
+{#snippet colSnip(title: string, colorList: string[])}
+	<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
+		<div class="w-[100px] flex-shrink-0">
+			<p
+				class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium first-letter:capitalize"
+			>
+				{title}
+			</p>
 		</div>
-		<CollapseCode {code} />
+
+		<ul class="flex w-full gap-1 md:gap-2">
+			{#each colorList as item}
+				<li class="w-full max-w-[68px]">
+					<Tooltip position="top" text="#FFFFFF" class="w-full h-full">
+						<div class="w-full h-full flex items-center">
+							<button class="w-full h-[34px] lg:h-[40px] rounded {item}"></button>
+						</div>
+					</Tooltip>
+				</li>
+			{/each}
+		</ul>
 	</div>
 {/snippet}
 
-{#snippet defaultErr()}
+{#snippet scales()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#default" id="default">default</a>
+			size
 		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div>
-					<Error>This email address is already in use.</Error>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			There are 10 color scales in the system. P3 colors are used on supported browsers and
+			displays.
+		</p>
+
+		<div class="mt-5 xl:mt-10 space-y-6">
+			<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
+				<div class="w-[100px] flex-shrink-0">
+					<p
+						class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium capitalize"
+					>
+						background
+					</p>
 				</div>
-			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
-		</div>
-	</Row>
-{/snippet}
+				<ul class="flex w-full gap-1 md:gap-2">
+					<li class="flex items-center w-[72px] gap-1 md:w-[152px] md:gap-2">
+						<ul class="flex items-center w-full gap-1 md:gap-2">
+							<li class="w-full max-w-[68px]">
+								<div class="w-full h-full flex items-center">
+									<button
+										class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-200 dark:border-kui-dark-gray-200 bg-kui-light-bg rounded dark:bg-kui-dark-bg"
+									></button>
+								</div>
+							</li>
+							<li class="w-full max-w-[68px]">
+								<div class="w-full h-full flex items-center">
+									<button
+										class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-200 dark:border-kui-dark-gray-200 rounded bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
+									></button>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 
-{#snippet customLabel()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customelabel" id="default">custome label</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div>
-					<Error label="Email Error">This email address is already in use.</Error>
-				</div>
-			{/snippet}
-			{@render demoAndCode(demo, errorCustomLabel)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet size()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">size</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error size="sm">This email is in use.</Error>
-				<Error size="md">This email is in use.</Error>
-				<Error size="lg">This email is in use.</Error>
-			{/snippet}
-			{@render demoAndCode(demo, errorSize)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet withErrorProp()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">With an error property</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error
-					error={{
-						message: 'The request failed.',
-						action: 'Contact Us',
-						link: 'https://kampsy.kampsy.xyz/error'
-					}}
-				/>
-			{/snippet}
-			{@render demoAndCode(demo, errorWithProp)}
+			{@render colSnip('gray', gray)}
+			{@render colSnip('gray alpha', grayAlpha)}
+			{@render colSnip('blue', blue)}
+			{@render colSnip('red', red)}
+			{@render colSnip('amber', amber)}
+			{@render colSnip('green', green)}
+			{@render colSnip('teal', teal)}
+			{@render colSnip('purple', purple)}
+			{@render colSnip('pink', pink)}
 		</div>
 	</Row>
 {/snippet}
@@ -126,18 +123,15 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: 'introduction', href: '/introduction' }}
+			next={{ title: 'avatar', href: '/avatar' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
 	{@render error()}
-	{@render defaultErr()}
-	{@render customLabel()}
-	{@render size()}
-    {@render withErrorProp()}
+	{@render scales()}
 	{@render prevAndNext()}
 {/snippet}
 
