@@ -49,11 +49,11 @@
 		</div>
 
 		<ul class="flex w-full gap-1 md:gap-2">
-			{#each colorList as item}
+			{#each colorList as item, index}
 				<li class="w-full max-w-[68px]">
-					<Tooltip position="top" text="#FFFFFF" class="w-full h-full">
+					<Tooltip position="top" text={item} class="w-full h-full">
 						<div class="w-full h-full flex items-center">
-							<button class="w-full h-[34px] lg:h-[40px] rounded {item}"></button>
+							<button class="border border-opacity-5 border-kui-light-gray-1000 dark:border-kui-dark-gray-500  w-full h-[34px] lg:h-[40px] rounded {item}"></button>
 						</div>
 					</Tooltip>
 				</li>

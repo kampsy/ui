@@ -1,8 +1,8 @@
 export const gray = [
-    'border border-kui-light-gray-100 dark:border-kui-dark-gray-100 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100',
-    'border border-kui-light-gray-300 dark:border-kui-dark-gray-300 bg-kui-light-gray-200 dark:bg-kui-dark-gray-200',
-    'border border-kui-light-gray-400 dark:border-kui-dark-gray-400 bg-kui-light-gray-200 bg-kui-light-gray-300 dark:bg-kui-dark-gray-300',
-    'border border-kui-light-gray-400 dark:border-kui-dark-gray-400 bg-kui-light-gray-200 bg-kui-light-gray-400 dark:bg-kui-dark-gray-400',
+    'bg-kui-light-gray-100 dark:bg-kui-dark-gray-100',
+    ' bg-kui-light-gray-200 dark:bg-kui-dark-gray-200',
+    ' bg-kui-light-gray-300 dark:bg-kui-dark-gray-300',
+    ' bg-kui-light-gray-400 dark:bg-kui-dark-gray-400',
     ' bg-kui-light-gray-500 dark:bg-kui-dark-gray-500',
     ' bg-kui-light-gray-600 dark:bg-kui-dark-gray-600',
     ' bg-kui-light-gray-700 dark:bg-kui-dark-gray-700',
