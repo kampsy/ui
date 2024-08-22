@@ -164,7 +164,7 @@ const items = [
         </Table.Header>
         <Table.Body interactive striped>
             {#each items as item}
-                <Table.Row key={item.product}>
+                <Table.Row>
                     <Table.Cell>{item.product}</Table.Cell>
                     <Table.Cell>{item.usage}</Table.Cell>
                     <Table.Cell>{item.price}</Table.Cell>
