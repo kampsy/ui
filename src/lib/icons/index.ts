@@ -16,4 +16,5 @@ export { default as GridSquare } from './grid-square.svelte'
 export { default as ListUnordered } from './list-unordered.svelte'
 export { default as Check } from './check.svelte'
 export { default as CheckSquare } from './check-square.svelte'
+export { default as Hook } from './hook.svelte'
 

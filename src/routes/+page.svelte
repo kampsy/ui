@@ -15,8 +15,8 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A Svelte 5 design system inspired by Vercel Geist design system, crafted to create consistent
-			and cohesive web experiences.
+			A Svelte 5 design system, inspired by Vercel's Geist, thoughtfully designed to deliver
+			consistent and cohesive web experiences.
 		</p>
 	</Row>
 {/snippet}
@@ -43,9 +43,7 @@
 				</div>
 			</a>
 		</div>
-		<div
-			class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400"
-		>
+		<div class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
 			<a
 				href="#/"
 				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"

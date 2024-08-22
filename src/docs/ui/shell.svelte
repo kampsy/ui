@@ -6,6 +6,7 @@
 	import type { Snippet } from 'svelte';
 	import LogoGeist from '$lib/icons/logo-geist.svelte';
 	import TextGradient from '$lib/text/textGradient.svelte';
+	import Hook from '$lib/icons/hook.svelte';
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
 
@@ -72,7 +73,7 @@
 				<a href="/">
 					<div class="flex items-center gap-2">
 						<div class="w-[27px] h-[27px]">
-							<LogoGeist />
+							<Hook/>
 						</div>
 						<div>
 							<TextGradient
@@ -87,12 +88,12 @@
 		</div>
 		<div class="w-full h-full">
 			<!---->
-			<div class="w-full h-full px-4 flex items-center justify-between">
+			<div class="w-full h-full px-6 flex items-center justify-between">
 				<div>
 					<a href="/">
 						<div class="lg:hidden flex items-center gap-2">
 							<div class="w-[27px] h-[27px]">
-								<LogoGeist />
+								<Hook/>
 							</div>
 							<div>
 								<TextGradient
