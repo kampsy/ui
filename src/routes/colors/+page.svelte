@@ -53,7 +53,7 @@
 				<li class="w-full max-w-[68px]">
 					<Tooltip position="top" text={item} class="w-full h-full">
 						<div class="w-full h-full flex items-center">
-							<button class="w-[34.6px] h-[34.6px] lg:w-full lg:h-[40px] border border-opacity-5 border-kui-light-gray-1000 dark:border-kui-dark-gray-500   rounded {item}"></button>
+							<button class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-1000 dark:border-kui-dark-gray-500  rounded {item}"></button>
 						</div>
 					</Tooltip>
 				</li>
