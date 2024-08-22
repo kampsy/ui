@@ -44,7 +44,7 @@
 		purple: 'bg-kui-light-purple-700 text-kui-light-bg dark:bg-kui-dark-purple-700 dark:text-kui-light-bg',
 		'purple-subtle':
 			'bg-kui-light-purple-200 text-kui-light-purple-900 dark:bg-kui-dark-purple-200 dark:text-kui-dark-purple-900',
-		amber: 'bg-kui-light-amber-700 text-kui-light-bg dark:bg-kui-dark-amber-700 dark:text-black',
+		amber: 'bg-kui-light-amber-700 text-black dark:bg-kui-dark-amber-700',
 		'amber-subtle':
 			'bg-kui-light-amber-200 text-kui-light-amber-900 dark:bg-kui-dark-amber-200 dark:text-kui-dark-amber-900',
 		red: 'bg-kui-light-red-700 text-kui-light-bg dark:bg-kui-dark-red-700 dark:text-kui-light-bg',
@@ -57,7 +57,7 @@
 			'bg-kui-light-green-200 text-kui-light-green-900 dark:bg-kui-dark-green-200 dark:text-kui-dark-green-900',
 		teal: 'bg-kui-light-teal-700 text-kui-light-bg dark:bg-kui-dark-teal-700 dark:text-kui-light-bg',
 		'teal-subtle':
-			'bg-kui-light-teal-200 text-kui-light-teal-900 dark:bg-kui-dark-teal-200 dark:text-kui-dark-teal-900',
+			'bg-kui-light-teal-300 text-kui-light-teal-900 dark:bg-kui-dark-teal-300 dark:text-kui-dark-teal-900',
 		inverted:
 			'bg-kui-light-gray-1000 text-kui-light-gray-100 dark:bg-kui-dark-gray-1000 dark:text-kui-dark-gray-100'
 	};

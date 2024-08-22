@@ -64,7 +64,7 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-lg overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
 	>
 		<div class="w-full p-4 lg:p-6 overflow-x-auto">
 			<div class="w-full flex flex-wrap gap-4 justify-between">

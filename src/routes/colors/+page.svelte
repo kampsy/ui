@@ -5,13 +5,18 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
+	import Error from '$lib/error/error.svelte';
+	import {
+		errorCustomLabel,
+		errorDefault,
+		errorSize,
+		errorWithProp
+	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import StatusDot from '$lib/statusDot/statusDot.svelte';
-	import { statusDotDefault, statusDotLabel } from '../../docs/data/status-dot.js';
 </script>
 
 <svelte:head>
-	<title>Status Dot</title>
+    <title>Error</title>
 </svelte:head>
 
 {#snippet error()}
@@ -19,12 +24,12 @@
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			Status Dot
+			colors
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Display an indicator of deployment status.
+        Learn how to work with our color system. Right click to copy raw values.
 		</p>
 	</Row>
 {/snippet}
@@ -51,15 +56,11 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="space-y-6">
-					<StatusDot state="QUEUED" />
-					<StatusDot state="BUILDING" />
-					<StatusDot state="ERROR" />
-					<StatusDot state="READY" />
-					<StatusDot state="CANCELED" />
+				<div>
+					<Error>This email address is already in use.</Error>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, statusDotDefault)}
+			{@render demoAndCode(demo, errorDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -69,19 +70,55 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">label</a>
+			<a href="#customelabel" id="default">custome label</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="space-y-6">
-					<StatusDot label state="QUEUED" />
-					<StatusDot label state="BUILDING" />
-					<StatusDot label state="ERROR" />
-					<StatusDot label state="READY" />
-					<StatusDot label state="CANCELED" />
+				<div>
+					<Error label="Email Error">This email address is already in use.</Error>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, statusDotLabel)}
+			{@render demoAndCode(demo, errorCustomLabel)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet size()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#size" id="default">size</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Error size="sm">This email is in use.</Error>
+				<Error size="md">This email is in use.</Error>
+				<Error size="lg">This email is in use.</Error>
+			{/snippet}
+			{@render demoAndCode(demo, errorSize)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet withErrorProp()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#size" id="default">With an error property</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Error
+					error={{
+						message: 'The request failed.',
+						action: 'Contact Us',
+						link: 'https://kampsy.kampsy.xyz/error'
+					}}
+				/>
+			{/snippet}
+			{@render demoAndCode(demo, errorWithProp)}
 		</div>
 	</Row>
 {/snippet}
@@ -89,8 +126,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'spinner', href: '/spinner' }}
-			next={{ title: 'switch', href: '/switch' }}
+			previous={{ title: 'button', href: '/button' }}
+			next={{ title: 'pagination', href: '/pagination' }}
 		/>
 	</Row>
 {/snippet}
@@ -99,6 +136,8 @@
 	{@render error()}
 	{@render defaultErr()}
 	{@render customLabel()}
+	{@render size()}
+    {@render withErrorProp()}
 	{@render prevAndNext()}
 {/snippet}
 
