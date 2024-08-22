@@ -6,14 +6,26 @@
 		previous?: {
 			title: string;
 			href: string;
-		};
+		} | undefined;
 		next?: {
 			title: string;
 			href: string;
-		};
+		} | undefined;
 	};
 
-	let { previous, next }: propsT = $props();
+	let { previous = undefined, next = undefined }: propsT = $props();
+
+	let paginationStyle = $derived.by(()=>{
+		if (previous && next) {
+			return 'justify-between';
+		} else if (previous) {
+			return 'justify-start';
+		} else if (next) {
+			return 'justify-end';
+		} else {
+			return '';
+		}
+	})
 </script>
 
 {#snippet prevSnip()}
@@ -75,7 +87,7 @@
 {/snippet}
 
 <section class="w-full">
-	<nav class="w-full flex items-center justify-between gap-x-4" aria-label="pagination">
+	<nav class="w-full flex items-center {paginationStyle} gap-x-4" aria-label="pagination">
 		{@render prevSnip()}
 		{@render nextSnip()}
 	</nav>

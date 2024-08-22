@@ -3,19 +3,24 @@
 	import Row from '$lib/../docs/ui/row.svelte';
 	import Shell from '$lib/../docs/ui/shell.svelte';
 	import { asideData } from '$lib/../docs/utils/data.js';
+	import { Pagination } from '$lib/index.js';
 </script>
+
+<svelte:head>
+    <title>Kampsy-ui</title>
+</svelte:head>
 
 {#snippet foundation()}
 	<Row>
 		<h1
 			class=" text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			kampsy-ui
+			Kampsy-ui
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A Svelte 5 design system, inspired by Vercel's Geist, thoughtfully designed to deliver
+			A Svelte 5 component library, inspired by Vercel's Geist, thoughtfully designed to deliver
 			consistent and cohesive web experiences.
 		</p>
 	</Row>
@@ -562,9 +567,18 @@
 	</section>
 {/snippet}
 
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			next={{ title: 'colors', href: '/colors' }}
+		/>
+	</Row>
+{/snippet}
+
 {#snippet cont()}
 	{@render foundation()}
 	{@render grid()}
+	{@render prevAndNext()}
 {/snippet}
 
 {#snippet aside()}
