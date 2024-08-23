@@ -3,19 +3,23 @@
 	import ChevronRight from '$lib/icons/chevron-right.svelte';
 
 	type propsT = {
-		previous?: {
-			title: string;
-			href: string;
-		} | undefined;
-		next?: {
-			title: string;
-			href: string;
-		} | undefined;
+		previous?:
+			| {
+					title: string;
+					href: string;
+			  }
+			| undefined;
+		next?:
+			| {
+					title: string;
+					href: string;
+			  }
+			| undefined;
 	};
 
 	let { previous = undefined, next = undefined }: propsT = $props();
 
-	let paginationStyle = $derived.by(()=>{
+	let paginationStyle = $derived.by(() => {
 		if (previous && next) {
 			return 'justify-between';
 		} else if (previous) {
@@ -25,12 +29,12 @@
 		} else {
 			return '';
 		}
-	})
+	});
 </script>
 
 {#snippet prevSnip()}
 	{#if previous}
-		<a href={previous.href} class="group" aria-label="go to previous page">
+		<a aria-label="go to previous page: {previous.title}" href={previous.href} class="group">
 			<div class="flex items-center gap-x-2">
 				<div class="w-[20px] h-[20px]"></div>
 				<div
@@ -59,7 +63,7 @@
 
 {#snippet nextSnip()}
 	{#if next}
-		<a href={next.href} class="group" aria-label="go to next page">
+		<a aria-label="go to next page: {next.title}" href={next.href} class="group">
 			<div class="flex items-center gap-x-2">
 				<div
 					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 group-hover:dark:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"

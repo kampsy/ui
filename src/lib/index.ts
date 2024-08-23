@@ -16,11 +16,14 @@ export { default as TextGradient } from './text/textGradient.svelte';
 // Error
 export { default as Error } from './error/error.svelte';
 
+// Input
+export { default as Input } from './input/input.svelte'
+
 // Pagination
 export { default as Pagination } from './pagination/pagination.svelte';
 
 // Progress
-export { default as Progress} from './progress/progress.svelte';
+export { default as Progress } from './progress/progress.svelte';
 
 // Select
 export * as Select from './select/index.js';
@@ -38,7 +41,7 @@ export * as Switch from './switch/index.js';
 export * as Table from './table/index.js';
 
 // Toggle
-export {default as Toggle} from './toggle/toggle.svelte';
+export { default as Toggle } from './toggle/toggle.svelte';
 
 // Tooltip
 export { default as Tooltip } from './tooltip/tooltip.svelte';

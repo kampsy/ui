@@ -23,11 +23,13 @@
 		{#snippet noLimit()}
 			{#each members as member}
 				<div
+					aria-label={member.name}
 					style={widthHeight}
 					class="rounded-full overflow-hidden border border-kui-light-gray-200 dark:border-kui-dark-gray-200 {klass}"
 				>
-					<div style={widthHeight}>
+					<div aria-label={member.name} style={widthHeight}>
 						<img
+							title={member.name}
 							src={member.imageLink}
 							alt="{member.name}'s avatar"
 							loading="eager"
@@ -44,11 +46,13 @@
 			{#each members as member, index}
 				{#if index < limit}
 					<div
+						aria-label={member.name}
 						style={widthHeight}
 						class=" rounded-full overflow-hidden border border-kui-light-gray-200 dark:border-kui-dark-gray-200 {klass}"
 					>
-						<div style={widthHeight}>
+						<div aria-label={member.name} style={widthHeight}>
 							<img
+								title={member.name}
 								src={member.imageLink}
 								alt="{member.name}'s avatar"
 								loading="eager"
