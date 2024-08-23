@@ -40,7 +40,7 @@
 				{@render demo()}
 			</div>
 		</div>
-		<div class="overflow-hidden rounded-b-lg">
+		<div class="overflow-hidden rounded-b-xl">
 			<CollapseCode {code} />
 		</div>
 	</div>

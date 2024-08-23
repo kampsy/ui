@@ -29,7 +29,12 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'button',
                 url: '/button'
-            },{
+            },
+            {
+                name: 'calendar',
+                url: '/calendar'
+            },
+            {
                 name: 'choicebox',
                 url: '/choicebox'
             },

@@ -1,11 +1,14 @@
-// Button
-export { default as Button } from './button/button.svelte';
+// Avatar
+export * from './avatar/index.js';
 
 // Badege 
 export { default as Badge } from './badge/badge.svelte';
 
-// Avatar
-export * from './avatar/index.js';
+// Button
+export { default as Button } from './button/button.svelte';
+
+// Calendar
+export { default as Calendar } from './calendar/calendar.svelte'
 
 // Choicebox
 export * as Choicebox from './choicebox/index.js'
