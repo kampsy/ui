@@ -10,7 +10,7 @@
 		prevMonth
 	} from '$lib/utils/calendar.js';
 	import { cubicInOut } from 'svelte/easing';
-	import { fade, fly } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 
 	const days = [
 		{
@@ -43,19 +43,21 @@
 		}
 	];
 
-	// todays date
-	const today = new Date();
-	// function returns the next month
+	let currentMonth = $state(new Date());
+	let calendarList: Array<Array<string>> = $state([[]]);
+	let monthAndYear = $state('');
 
-	let currentMonth = $state(today);
-	let dateHeading = $state('');
-	let calendarList: any = $state([]);
+	// Reset to trigger re-render on month change. Needed for transition to work
+	const reset = () => {
+		calendarList = [[]];
+		monthAndYear = '';
+	};
 
 	$effect(() => {
-		const [_, monthEnd] = getFirstAndLastDay(currentMonth);
+		const [,monthEnd] = getFirstAndLastDay(currentMonth);
 		let list = getMonthDateRange(currentMonth, monthEnd);
 		calendarList = generateCalendar(list);
-		dateHeading = `${currentMonth.toLocaleString('default', { month: 'long' })}
+		monthAndYear = `${currentMonth.toLocaleString('default', { month: 'long' })}
 						${currentMonth.getFullYear()}`;
 	});
 </script>
@@ -65,9 +67,9 @@
 		class="w-[250px] h-[40px] box-border px-[10px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm capitalize font-normal flex items-center rounded-[6px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400 transition-colors hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
 	>
 		<span class="w-[20px] h-[20px] flex items-center justify-center">
-			<div class="w-[16px] h-[16px]">
+			<span class="w-[16px] h-[16px]">
 				<Calendar />
-			</div>
+			</span>
 		</span>
 		<span class="px-[6px]"> select date range </span>
 	</button>
@@ -75,47 +77,45 @@
 	<div
 		in:fly={{ y: 10 }}
 		out:fly={{ y: -10 }}
-		class="fixed top-0 left-0 w-full h-full lg:absolute lg:top-[112%] lg:w-auto lg:h-[252px] z-[1000]"
+		class="bg-green-500 fixed top-0 left-0 w-full h-full lg:absolute lg:top-[112%] lg:w-auto lg:h-[252px] z-[1000]"
 	>
 		<div
 			class=" bg-kui-light-bg dark:bg-kui-dark-bg p-3 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto"
 		>
 			<div class="w-full h-[24px] flex items-center justify-between">
 				<div class="">
-					{#if dateHeading}
+					{#if monthAndYear}
 						<h2
-							in:fly|global={{ x: 10, duration: 300, easing: cubicInOut }}
-							out:fly|global={{ x: 10, duration: 300, easing: cubicInOut }}
+							in:fly|global={{ y: -10, duration: 300, easing: cubicInOut }}
+							out:fly|global={{ y: -10, duration: 300, easing: cubicInOut }}
 							class="text-sm font-normal capitalize"
 						>
-							{dateHeading}
+							{monthAndYear}
 						</h2>
 					{/if}
 				</div>
 				<div class="flex items-center justify-center h-full">
 					<button
 						onclick={() => {
-							dateHeading = ''
-							calendarList = [];
+							reset();
 							currentMonth = prevMonth(currentMonth);
 						}}
 						class="w-[24px] h-[24px] flex items-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
-						<div class="w-[16px] h-[16px]">
+						<span class="w-[16px] h-[16px]">
 							<ChevronLeft />
-						</div>
+						</span>
 					</button>
 					<button
 						onclick={() => {
-							dateHeading = ''
-							calendarList = [];
+							reset();
 							currentMonth = nextMonth(currentMonth);
 						}}
 						class="w-[24px] h-[24px] flex items-center justify-end transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
-						<div class="w-[16px] h-[16px]">
+						<span class="w-[16px] h-[16px]">
 							<ChevronRight />
-						</div>
+						</span>
 					</button>
 				</div>
 			</div>
@@ -144,12 +144,8 @@
 								in:fly|global={{ y: 10, duration: i * 300, easing: cubicInOut }}
 								out:fly|global={{ y: -10, duration: i * 300, easing: cubicInOut }}
 							>
-								{#each row as rowItem, i2}
-									<td
-										in:fly|global={{ y: 10, duration: i2 * 300, easing: cubicInOut }}
-										out:fly|global={{ y: -10, duration: i2 * 300, easing: cubicInOut }}
-										class="w-[32px] h-[32px]"
-									>
+								{#each row as rowItem}
+									<td class="w-[32px] h-[32px]">
 										<div class="my-1 w-[32px] h-[32px] flex items-center justify-center">
 											<span
 												class="text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900 font-normal tracking-[0.06px]"
