@@ -1,5 +1,51 @@
 import { describe, it, expect } from "vitest"
-import { getMonthDateRange, generateCalendar } from './calendar.js';
+import { nextMonth, prevMonth, getMonthDateRange, generateCalendar } from './calendar.js';
+
+
+describe("nextMonth", () => {
+  it("should return February for January", () => {
+    const date = new Date("2022-01-01T00:00:00.000Z");
+    const result = nextMonth(date);
+    expect(result.getMonth()).toBe(1); // February
+    expect(result.getDate()).toBe(1);
+  });
+
+  it("should return January for December", () => {
+    const date = new Date("2022-12-01T00:00:00.000Z");
+    const result = nextMonth(date);
+    expect(result.getFullYear()).toBe(2023); // Next year
+    expect(result.getMonth()).toBe(0); // January
+    expect(result.getDate()).toBe(1);
+  });
+
+  it("should return July for June", () => {
+    const date = new Date("2022-06-01T00:00:00.000Z");
+    const result = nextMonth(date);
+    expect(result.getMonth()).toBe(6); // July
+    expect(result.getDate()).toBe(1);
+  });
+});
+
+
+describe('prevMonth function', () => {
+  it('should return December for January', () => {
+    const date = new Date('2022-01-01T00:00:00.000Z');
+    const expectedDate = new Date('2021-12-01T00:00:00.000Z');
+    expect(prevMonth(date)).toEqual(expectedDate);
+  });
+
+  it('should return previous month for a random month', () => {
+    const date = new Date('2022-06-15T00:00:00.000Z');
+    const expectedDate = new Date('2022-05-01T00:00:00.000Z');
+    expect(prevMonth(date)).toEqual(expectedDate);
+  });
+
+  it('should return November for December', () => {
+    const date = new Date('2022-12-01T00:00:00.000Z');
+    const expectedDate = new Date('2022-11-01T00:00:00.000Z');
+    expect(prevMonth(date)).toEqual(expectedDate);
+  });
+});
 
 describe('getMonthDateRange', () => {
   it('should return 31 days for January', () => {

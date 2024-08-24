@@ -1,13 +1,4 @@
 
-/**
- * Returns a new Date object representing the month after the given date.
- *
- * @param {Date} fnDate - The date from which to calculate the next month.
- * @return {Date} A new Date object representing the first day of the next month.
- */
-export const nextMonth = (fnDate: Date): Date => {
-    return new Date(fnDate.setMonth(fnDate.getMonth() + 1));
-};
 
 /**
  * Returns a new Date object representing the month before the given date.
@@ -17,6 +8,16 @@ export const nextMonth = (fnDate: Date): Date => {
  */
 export const prevMonth = (fnDate: Date): Date => {
     return new Date(fnDate.setMonth(fnDate.getMonth() - 1));
+};
+
+/**
+ * Returns a new Date object representing the month after the given date.
+ *
+ * @param {Date} fnDate - The date from which to calculate the next month.
+ * @return {Date} A new Date object representing the first day of the next month.
+ */
+export const nextMonth = (fnDate: Date): Date => {
+    return new Date(fnDate.setMonth(fnDate.getMonth() + 1));
 };
 
 /**

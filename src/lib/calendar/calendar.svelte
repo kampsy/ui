@@ -2,8 +2,15 @@
 	import Calendar from '$lib/icons/calendar.svelte';
 	import { ChevronLeft } from '$lib/icons/index.js';
 	import { ChevronRight } from '$lib/icons/index.js';
-	import { generateCalendar, getFirstAndLastDay, getMonthDateRange } from '$lib/utils/calendar.js';
-	import { fly } from 'svelte/transition';
+	import {
+		generateCalendar,
+		getFirstAndLastDay,
+		getMonthDateRange,
+		nextMonth,
+		prevMonth
+	} from '$lib/utils/calendar.js';
+	import { cubicInOut } from 'svelte/easing';
+	import { fade, fly } from 'svelte/transition';
 
 	const days = [
 		{
@@ -39,15 +46,18 @@
 	// todays date
 	const today = new Date();
 	// function returns the next month
-	
 
-	const [_, monthEnd] = getFirstAndLastDay(today);
+	let currentMonth = $state(today);
+	let dateHeading = $state('');
+	let calendarList: any = $state([]);
 
-	let list = getMonthDateRange(today, monthEnd);
-
-	
-
-	console.log(generateCalendar(list), '<-----------');
+	$effect(() => {
+		const [_, monthEnd] = getFirstAndLastDay(currentMonth);
+		let list = getMonthDateRange(currentMonth, monthEnd);
+		calendarList = generateCalendar(list);
+		dateHeading = `${currentMonth.toLocaleString('default', { month: 'long' })}
+						${currentMonth.getFullYear()}`;
+	});
 </script>
 
 <div class="relative w-full inline-block">
@@ -62,16 +72,33 @@
 		<span class="px-[6px]"> select date range </span>
 	</button>
 
-	<div in:fly={{ y: 10 }} out:fly={{ y: -10 }} class="fixed top-0 left-0 w-full h-full lg:absolute lg:top-[112%] lg:w-auto lg:h-[252px] z-[1000]">
+	<div
+		in:fly={{ y: 10 }}
+		out:fly={{ y: -10 }}
+		class="fixed top-0 left-0 w-full h-full lg:absolute lg:top-[112%] lg:w-auto lg:h-[252px] z-[1000]"
+	>
 		<div
 			class=" bg-kui-light-bg dark:bg-kui-dark-bg p-3 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto"
 		>
 			<div class="w-full h-[24px] flex items-center justify-between">
 				<div class="">
-					<h2 class="text-sm font-normal capitalize">August 2024</h2>
+					{#if dateHeading}
+						<h2
+							in:fly|global={{ x: 10, duration: 300, easing: cubicInOut }}
+							out:fly|global={{ x: 10, duration: 300, easing: cubicInOut }}
+							class="text-sm font-normal capitalize"
+						>
+							{dateHeading}
+						</h2>
+					{/if}
 				</div>
 				<div class="flex items-center justify-center h-full">
 					<button
+						onclick={() => {
+							dateHeading = ''
+							calendarList = [];
+							currentMonth = prevMonth(currentMonth);
+						}}
 						class="w-[24px] h-[24px] flex items-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
 						<div class="w-[16px] h-[16px]">
@@ -79,6 +106,11 @@
 						</div>
 					</button>
 					<button
+						onclick={() => {
+							dateHeading = ''
+							calendarList = [];
+							currentMonth = nextMonth(currentMonth);
+						}}
 						class="w-[24px] h-[24px] flex items-center justify-end transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
 						<div class="w-[16px] h-[16px]">
@@ -107,10 +139,17 @@
 						</tr>
 					</thead>
 					<tbody>
-						{#each generateCalendar(list) as row}
-							<tr>
-								{#each row as rowItem}
-									<td class="w-[32px] h-[32px]">
+						{#each calendarList as row, i}
+							<tr
+								in:fly|global={{ y: 10, duration: i * 300, easing: cubicInOut }}
+								out:fly|global={{ y: -10, duration: i * 300, easing: cubicInOut }}
+							>
+								{#each row as rowItem, i2}
+									<td
+										in:fly|global={{ y: 10, duration: i2 * 300, easing: cubicInOut }}
+										out:fly|global={{ y: -10, duration: i2 * 300, easing: cubicInOut }}
+										class="w-[32px] h-[32px]"
+									>
 										<div class="my-1 w-[32px] h-[32px] flex items-center justify-center">
 											<span
 												class="text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900 font-normal tracking-[0.06px]"
