@@ -243,3 +243,5 @@ export default {
   plugins: [],
 }
 
+/*in:fly|global={{ y: 10, duration: i * 300, easing: cubicInOut }}
+								out:fly|global={{ y: -10, duration: i * 300, easing: cubicInOut }} */

@@ -74,46 +74,33 @@ export const getMonthDateRange = (dateProp: Date, monthEnd: Date) => {
 
 
 /**
- * Generates a 2D array representing a calendar, where each sub-array represents a week.
+ * Generates a calendar array based on the provided date list.
  *
- * @param {Object[]} dateList - An array of objects containing the day of the month and a corresponding date object.
- * @return {string[][]} A 2D array of strings, where each string represents a day of the month.
+ * @param {Array<Object>} dateList - A list of objects containing the day and date object.
+ * @return {Array<Object>} An array of objects representing the days in a calendar format.
  */
+
 export const generateCalendar = (
-    dateList: {
-        day: number;
-        dateObj: Date;
-    }[]
-): string[][] => {
-    // Extract the first date to determine the starting day of the week
+    dateList: { day: number; dateObj: Date }[]
+): Array<{ day: number | string; dateObj: Date | null }> => {
+    // Get the day of the week of the first date
     const firstDateObj = dateList[0].dateObj;
-    let firstDayOfWeek = firstDateObj.getDay(); // Sunday = 0, Saturday = 6
+    const firstDayOfWeek = firstDateObj.getDay(); // Sunday = 0, Saturday = 6
 
-    // Initialize the calendar with the days of the week header
-    const calendarRows: string[][] = [];
+    // Start filling the first week with empty objects until the first date
+    const currentRow: Array<{ day: number | string; dateObj: Date | null }> = new Array(firstDayOfWeek).fill({ day: '', dateObj: null });
 
-    // Start filling the first week with empty strings until the first date
-    let currentRow: string[] = new Array(firstDayOfWeek).fill('');
-
-    // Process the date list and add each date to the current row
+    // Fill the current row with the dates from the date list
     dateList.forEach((date) => {
-        const formattedDate = `${date.day}`; // ${date.dateObj.toLocaleString('default', { month: 'short' }).toLowerCase()}
-        currentRow.push(formattedDate);
-
-        // If the row is full (7 days), add it to the calendar and start a new row
-        if (currentRow.length === 7) {
-            calendarRows.push(currentRow);
-            currentRow = [];
-        }
+        currentRow.push({ day: date.day, dateObj: date.dateObj });
     });
 
-    // Append the last row if it's not empty and fill it with empty strings to complete the week
+    // Fill the rest of the rows with empty objects
     if (currentRow.length > 0) {
         while (currentRow.length < 7) {
-            currentRow.push('');
+            currentRow.push({ day: '', dateObj: null });
         }
-        calendarRows.push(currentRow);
     }
 
-    return calendarRows;
-}
+    return currentRow;
+};

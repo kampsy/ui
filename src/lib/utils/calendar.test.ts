@@ -79,56 +79,66 @@ describe('getMonthDateRange', () => {
 
 
 describe('generateCalendar', () => {
-  it('should return an empty calendar for an empty date list', () => {
+  it('should return a calendar with dates starting from Monday', () => {
+    const dateList = [
+      { day: 1, dateObj: new Date('2022-01-03') },
+      { day: 2, dateObj: new Date('2022-01-04') },
+      { day: 3, dateObj: new Date('2022-01-05') },
+    ];
+    expect(generateCalendar(dateList)).toEqual([
+      { day: '', dateObj: null },
+      { day: 1, dateObj: new Date('2022-01-03') },
+      { day: 2, dateObj: new Date('2022-01-04') },
+      { day: 3, dateObj: new Date('2022-01-05') },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+    ]);
+  });
+
+  it('should return an empty calendar with an empty date list', () => {
     const dateList: { day: number; dateObj: Date }[] = [];
     expect(generateCalendar(dateList)).toEqual([]);
   });
 
   it('should return a calendar with a single date', () => {
-    const dateList: { day: number; dateObj: Date }[] = [
-      { day: 1, dateObj: new Date('2022-01-01') },
+    const dateList = [
+      { day: 1, dateObj: new Date('2022-01-03') },
     ];
     expect(generateCalendar(dateList)).toEqual([
-      ['', '', '', '', '', '', '1'],
+      { day: '', dateObj: null },
+      { day: 1, dateObj: new Date('2022-01-03') },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
     ]);
   });
 
-  it('should return a calendar with multiple dates', () => {
-    const dateList: { day: number; dateObj: Date }[] = [
-      { day: 1, dateObj: new Date('2022-01-01') },
-      { day: 2, dateObj: new Date('2022-01-02') },
-      { day: 3, dateObj: new Date('2022-01-03') },
+  it('should return a calendar with multiple dates spanning multiple weeks', () => {
+    const dateList = [
+      { day: 1, dateObj: new Date('2022-01-03') },
+      { day: 2, dateObj: new Date('2022-01-04') },
+      { day: 3, dateObj: new Date('2022-01-05') },
+      { day: 8, dateObj: new Date('2022-01-10') },
+      { day: 9, dateObj: new Date('2022-01-11') },
+      { day: 10, dateObj: new Date('2022-01-12') },
     ];
     expect(generateCalendar(dateList)).toEqual([
-      ['', '', '', '', '', '', '1'],
-      ['', '', '', '', '', '2', '3'],
-    ]);
-  });
-
-  it('should return a calendar with dates spanning multiple weeks', () => {
-    const dateList: { day: number; dateObj: Date }[] = [
-      { day: 1, dateObj: new Date('2022-01-01') },
-      { day: 2, dateObj: new Date('2022-01-02') },
-      { day: 3, dateObj: new Date('2022-01-03') },
-      { day: 8, dateObj: new Date('2022-01-08') },
-      { day: 9, dateObj: new Date('2022-01-09') },
-    ];
-    expect(generateCalendar(dateList)).toEqual([
-      ['', '', '', '', '', '', '1'],
-      ['', '', '', '', '', '2', '3'],
-      ['', '', '', '', '', '', ''],
-      ['', '', '', '', '', '8', '9'],
-    ]);
-  });
-
-  it('should return a calendar with dates starting from different days of the week', () => {
-    const dateList: { day: number; dateObj: Date }[] = [
-      { day: 3, dateObj: new Date('2022-01-03') },
-      { day: 4, dateObj: new Date('2022-01-04') },
-      { day: 5, dateObj: new Date('2022-01-05') },
-    ];
-    expect(generateCalendar(dateList)).toEqual([
-      ['', '', '3', '4', '5', '', ''],
+      { day: '', dateObj: null },
+      { day: 1, dateObj: new Date('2022-01-03') },
+      { day: 2, dateObj: new Date('2022-01-04') },
+      { day: 3, dateObj: new Date('2022-01-05') },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: 8, dateObj: new Date('2022-01-10') },
+      { day: 9, dateObj: new Date('2022-01-11') },
+      { day: 10, dateObj: new Date('2022-01-12') },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
+      { day: '', dateObj: null },
     ]);
   });
 });
