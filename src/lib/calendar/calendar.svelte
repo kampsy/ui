@@ -12,6 +12,7 @@
 	} from '$lib/utils/calendar.js';
 	import { cubicInOut } from 'svelte/easing';
 	import { fly } from 'svelte/transition';
+	import Weekday from './weekday.svelte';
 
 	const days = [
 		{
@@ -82,10 +83,10 @@
 	>
 		<!--Is used on mobile-->
 		<div
-			class="w-full lg:w-auto fixed lg:relative bottom-0 left-0 rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent"
+			class="w-full lg:w-auto fixed lg:relative bottom-0 left-0 rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent"
 		>
 			<div
-				class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[10px] lg:rounded-[6px] border-b lg:border border-kui-light-gray-200 dark:border-kui-dark-gray-400 lg:shadow-sm scroll-smooth overflow-y-auto"
+				class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border border-kui-light-gray-400 dark:border-kui-dark-gray-400 lg:shadow-sm scroll-smooth overflow-y-auto"
 			>
 				<div class="grid grid-cols-7 gap-y-[5px] items-center">
 					<div>
@@ -159,17 +160,7 @@
 							out:fly|global={{ y: -10, duration: i * 50, easing: cubicInOut }}
 							class="flex items-center justify-center"
 						>
-							<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[0.01]">
-								<div class="w-full h-full flex justify-center">
-									<button class="w-full h-full rounded-sm flex items-center justify-center">
-										<span
-											class="text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900 font-normal tracking-[0.06px]"
-										>
-											{row.day}
-										</span>
-									</button>
-								</div>
-							</div>
+							<Weekday dayAndDateObj={row} />
 						</div>
 					{/each}
 				</div>
