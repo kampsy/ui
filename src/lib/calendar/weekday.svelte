@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getZeroDate, isZeroDate } from '$lib/utils/calendar.js';
+	import { getZeroDate, isInDateRange, isWeekend, isZeroDate } from '$lib/utils/calendar.js';
 
 	type propsT = {
 		dayAndDateObj: { day: number | string; dateObj: Date };
@@ -12,8 +12,6 @@
 		startDate = $bindable(getZeroDate()),
 		endDate = $bindable(getZeroDate())
 	}: propsT = $props();
-
-	
 
 	const isToday = (date: Date | null): boolean => {
 		if (date) {
@@ -46,7 +44,17 @@
 		return false;
 	};
 
-	let dayBg = $derived.by(() => {
+	const isRangeHighlighteble = (date: Date): boolean => {
+		if (!isZeroDate(dayAndDateObj.dateObj) && !isZeroDate(startDate) && !isZeroDate(endDate)) {
+			if (isInDateRange(dayAndDateObj.dateObj, startDate, endDate)) {
+				return true;
+			}
+		}
+		return false
+	}
+
+
+	const dayBg = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
 			return `rounded-[4px] bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`;
 		}
@@ -56,14 +64,28 @@
 		return '';
 	});
 
-	let dayText = $derived.by(() => {
+	const dayText = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
 			return `text-kui-light-bg dark:text-kui-dark-bg`;
 		}
 		if (isToday(dayAndDateObj.dateObj)) {
 			return `text-kui-light-bg dark:text-kui-dark-bg`;
 		}
-		return 'text-kui-light-gray-900 dark:text-kui-dark-gray-900';
+		if (isRangeHighlighteble(dayAndDateObj.dateObj) && !isWeekend(dayAndDateObj.dateObj)) {
+			return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
+		}
+		if (isWeekend(dayAndDateObj.dateObj)) {
+			return 'text-kui-light-gray-900 dark:text-kui-dark-gray-900';
+		}
+
+		return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
+	});
+
+	const rangeBg = $derived.by(() => {
+		if (isRangeHighlighteble(dayAndDateObj.dateObj)) {
+			return 'bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100';
+		}
+		return ''
 	});
 
 	const onclick = () => {
@@ -87,7 +109,9 @@
 	};
 </script>
 
-<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[0.01] transition-colors {dayBg}">
+<div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}">
+</div>
+<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[1] transition-colors {dayBg}">
 	<div class="w-full h-full flex justify-center">
 		<button {onclick} class="w-full h-full rounded-sm flex items-center justify-center">
 			<span class="text-xs transition-colors {dayText} font-normal tracking-[0.06px]">

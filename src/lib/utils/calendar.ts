@@ -123,3 +123,20 @@ export const generateCalendar = (
 
     return currentRow;
 };
+
+export const isTimeEqual = (first: Date, second: Date) => {
+    return first.getTime() == second.getTime()
+}
+
+
+
+export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
+    startDate.setUTCHours(0, 0, 0, 0)
+    endDate.setUTCHours(0, 0, 0, 0)
+    date.setUTCHours(0, 0, 0, 0)
+    return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
+}
+
+export const isWeekend = (date: Date) => {
+    return date.getDay() === 0 || date.getDay() === 6
+}
