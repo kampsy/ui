@@ -1,5 +1,21 @@
 
 
+export const getZeroDate = (): Date => {
+    return new Date(Date.UTC(1970, 0, 1));
+};
+
+
+
+/**
+ * Returns true if the given Date object represents the date 1970-01-01T00:00:00.000Z, false otherwise.
+ *
+ * @param {Date} date - The date to check.
+ * @return {boolean} True if the date is 1970-01-01T00:00:00.000Z, false otherwise.
+ */
+export const isZeroDate = (date: Date): boolean => {
+    return date.getUTCFullYear() === 1970 && date.getUTCMonth() === 0 && date.getUTCDate() === 1;
+};
+
 /**
  * Returns a new Date object representing the month before the given date.
  *
@@ -82,13 +98,16 @@ export const getMonthDateRange = (dateProp: Date, monthEnd: Date) => {
 
 export const generateCalendar = (
     dateList: { day: number; dateObj: Date }[]
-): Array<{ day: number | string; dateObj: Date | null }> => {
+): Array<{ day: number | string; dateObj: Date }> => {
     // Get the day of the week of the first date
     const firstDateObj = dateList[0].dateObj;
     const firstDayOfWeek = firstDateObj.getDay(); // Sunday = 0, Saturday = 6
 
+    // zero date
+    const zero = getZeroDate();
+
     // Start filling the first week with empty objects until the first date
-    const currentRow: Array<{ day: number | string; dateObj: Date | null }> = new Array(firstDayOfWeek).fill({ day: '', dateObj: null });
+    const currentRow: Array<{ day: number | string; dateObj: Date }> = new Array(firstDayOfWeek).fill({ day: '', dateObj: zero });
 
     // Fill the current row with the dates from the date list
     dateList.forEach((date) => {
@@ -98,7 +117,7 @@ export const generateCalendar = (
     // Fill the rest of the rows with empty objects
     if (currentRow.length > 0) {
         while (currentRow.length < 7) {
-            currentRow.push({ day: '', dateObj: null });
+            currentRow.push({ day: '', dateObj: zero });
         }
     }
 

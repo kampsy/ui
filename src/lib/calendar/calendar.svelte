@@ -7,6 +7,7 @@
 		generateCalendar,
 		getFirstAndLastDay,
 		getMonthDateRange,
+		getZeroDate,
 		nextMonth,
 		prevMonth
 	} from '$lib/utils/calendar.js';
@@ -46,8 +47,12 @@
 	];
 
 	let currentMonth = $state(new Date());
-	let calendarList: Array<{ day: number | string; dateObj: Date | null }> = $state([]);
+	let calendarList: Array<{ day: number | string; dateObj: Date}> = $state([]);
 	let monthAndYear = $state('');
+
+	// Selection
+	let startDate: Date = $state(getZeroDate());
+	let endDate: Date = $state(getZeroDate());
 
 	// Reset to trigger re-render on month change. Needed for transition to work
 	const reset = () => {
@@ -160,7 +165,7 @@
 							out:fly|global={{ y: -10, duration: i * 50, easing: cubicInOut }}
 							class="flex items-center justify-center"
 						>
-							<Weekday dayAndDateObj={row} />
+							<Weekday dayAndDateObj={row} bind:startDate bind:endDate />
 						</div>
 					{/each}
 				</div>

@@ -4,9 +4,7 @@
 	import Moon from '$lib/icons/moon.svelte';
 	import { scheme } from '../utils/colorScheme.svelte.js';
 	import type { Snippet } from 'svelte';
-	import LogoGeist from '$lib/icons/logo-geist.svelte';
 	import TextGradient from '$lib/text/textGradient.svelte';
-	import Hook from '$lib/icons/hook.svelte';
 	import Webhook from '$lib/icons/webhook.svelte';
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
