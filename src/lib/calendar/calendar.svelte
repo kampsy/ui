@@ -180,8 +180,8 @@
 
 						{#each calendarList as row, i}
 							<div
-								in:fly|global={{ y: 10, duration: i * 50, easing: cubicInOut }}
-								out:fly|global={{ y: -10, duration: i * 50, easing: cubicInOut }}
+								in:fly|local={{ y: 10, duration: i * 50, easing: cubicInOut }}
+								out:fly|local={{ y: -10, duration: i * 50, easing: cubicInOut }}
 								class="relative flex items-center justify-center"
 							>
 								<Weekday dayAndDateObj={row} bind:startDate bind:endDate />
