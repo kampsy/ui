@@ -4,10 +4,12 @@
 	import { ChevronRight } from '$lib/icons/index.js';
 	import { Button } from '$lib/index.js';
 	import {
+		formatDateRange,
 		generateCalendar,
 		getFirstAndLastDay,
 		getMonthDateRange,
 		getZeroDate,
+		isZeroDate,
 		nextMonth,
 		prevMonth
 	} from '$lib/utils/calendar.js';
@@ -47,8 +49,9 @@
 	];
 
 	let currentMonth = $state(new Date());
-	let calendarList: Array<{ day: number | string; dateObj: Date}> = $state([]);
+	let calendarList: Array<{ day: number | string; dateObj: Date }> = $state([]);
 	let monthAndYear = $state('');
+	let strValue = $state('select date range');
 
 	// Selection
 	let startDate: Date = $state(getZeroDate());
@@ -66,6 +69,10 @@
 		calendarList = generateCalendar(list);
 		monthAndYear = `${currentMonth.toLocaleString('default', { month: 'long' })}
 						${currentMonth.getFullYear()}`;
+
+		if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
+			strValue = formatDateRange(startDate, endDate);
+		}
 	});
 </script>
 
@@ -78,7 +85,7 @@
 				<Calendar />
 			</span>
 		</span>
-		<span class="px-[6px]"> select date range </span>
+		<span class="px-[6px]"> {strValue} </span>
 	</button>
 
 	<div

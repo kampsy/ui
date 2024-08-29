@@ -92,18 +92,15 @@
 		if (isZeroDate(startDate) && isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
 				startDate = dayAndDateObj.dateObj;
-				console.log(dayAndDateObj.dateObj, 'start date');
 			}
 		} else if (!isZeroDate(startDate) && isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
 				endDate = dayAndDateObj.dateObj;
-				console.log(dayAndDateObj.dateObj, 'end date');
 			}
 		} else if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
 				startDate = dayAndDateObj.dateObj;
 				endDate = getZeroDate();
-				console.log(dayAndDateObj.dateObj, 'start date');
 			}
 		}
 	};

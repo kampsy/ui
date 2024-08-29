@@ -1,9 +1,13 @@
 
 
+/**
+ * Returns a Date object representing 1970-01-01T00:00:00.000Z.
+ *
+ * @return {Date} A Date object representing 1970-01-01T00:00:00.000Z.
+ */
 export const getZeroDate = (): Date => {
     return new Date(Date.UTC(1970, 0, 1));
 };
-
 
 
 /**
@@ -60,7 +64,7 @@ export const getFirstAndLastDay = (date: Date): [Date, Date] => {
  * @param {number} [step=1] - The difference between each number in the range.
  * @return {number[]} An array of numbers from `start` to `end` with the specified `step`.
  */
-export const arrayRange = (start = 0, end = 0, step = 1) => {
+export const arrayRange = (start: number = 0, end: number = 0, step: number = 1): number[] => {
     end = Number(end) - 1;
 
     if (end < start) return [];
@@ -124,12 +128,27 @@ export const generateCalendar = (
     return currentRow;
 };
 
+/**
+ * Returns true if the given dates have the same time.
+ *
+ * @param first - The first date to compare.
+ * @param second - The second date to compare.
+ * @return True if the given dates have the same time, false otherwise.
+ */
 export const isTimeEqual = (first: Date, second: Date) => {
     return first.getTime() == second.getTime()
 }
 
 
-
+/**
+ * Returns true if the given date falls within the given start and end dates,
+ * ignoring the time component of the dates.
+ *
+ * @param date - The date to check.
+ * @param startDate - The start date of the range.
+ * @param endDate - The end date of the range.
+ * @return True if the given date is in the given range, false otherwise.
+ */
 export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
     startDate.setUTCHours(0, 0, 0, 0)
     endDate.setUTCHours(0, 0, 0, 0)
@@ -137,6 +156,44 @@ export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
     return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
 }
 
+/**
+ * Returns true if the given date is a Saturday or Sunday.
+ *
+ * @param date - The date to check.
+ * @returns True if the given date is a Saturday or Sunday.
+ */
 export const isWeekend = (date: Date) => {
     return date.getDay() === 0 || date.getDay() === 6
+}
+
+
+/**
+ * Formats a date range into a string, handling different cases for single day,
+ * same month, and different month/year.
+ *
+ * @param startDate - The start date of the range.
+ * @param endDate - The end date of the range.
+ * @return A string representing the date range.
+ */
+export const formatDateRange = (startDate: Date, endDate: Date): string => {
+    const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
+
+    const startDay = startDate.getDate();
+    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
+    const startYear = startDate.getFullYear();
+
+    const endDay = endDate.getDate();
+    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
+    const endYear = endDate.getFullYear();
+
+    if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
+        // Same day
+        return startDate.toLocaleDateString('en-US', { weekday: 'short', ...options });
+    } else if (startMonth === endMonth && startYear === endYear) {
+        // Same month and year
+        return `${startMonth} ${startDay} - ${endDay}`;
+    } else {
+        // Different month or year
+        return `${startMonth} ${startDay} - ${endMonth} ${endDay}`;
+    }
 }
