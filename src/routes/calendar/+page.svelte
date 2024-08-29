@@ -62,48 +62,12 @@
 	</Row>
 {/snippet}
 
-{#snippet customLabel()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customelabel" id="default">custome label</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div>
-					<Error label="Email Error">This email address is already in use.</Error>
-				</div>
-			{/snippet}
-			{@render demoAndCode(demo, errorCustomLabel)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet size()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">size</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error size="sm">This email is in use.</Error>
-				<Error size="md">This email is in use.</Error>
-				<Error size="lg">This email is in use.</Error>
-			{/snippet}
-			{@render demoAndCode(demo, errorSize)}
-		</div>
-	</Row>
-{/snippet}
-
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			next={{ title: 'checkbox', href: '/checkbox' }}
 		/>
 	</Row>
 {/snippet}
@@ -111,8 +75,6 @@
 {#snippet cont()}
 	{@render calendar()}
 	{@render defaultCalendar()}
-	{@render customLabel()}
-	{@render size()}
 	{@render prevAndNext()}
 {/snippet}
 
