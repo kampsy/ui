@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { clickOutside, stopPropagation } from '$lib/utils/event.js';
+	import { clickOutside, componentPosition } from '$lib/utils/event.js';
 	import Calendar from '$lib/icons/calendar.svelte';
 	import { ChevronLeft } from '$lib/icons/index.js';
 	import { ChevronRight } from '$lib/icons/index.js';
@@ -20,37 +20,38 @@
 
 	const days = [
 		{
-			short: 'S',
+			short: 'Su',
 			long: 'Sunday'
 		},
 		{
-			short: 'M',
+			short: 'Mo',
 			long: 'Monday'
 		},
 		{
-			short: 'T',
+			short: 'Tu',
 			long: 'Tuesday'
 		},
 		{
-			short: 'W',
+			short: 'We',
 			long: 'Wednesday'
 		},
 		{
-			short: 'T',
+			short: 'Th',
 			long: 'Thursday'
 		},
 		{
-			short: 'F',
+			short: 'Fr',
 			long: 'Friday'
 		},
 		{
-			short: 'S',
+			short: 'Sa',
 			long: 'Saturday'
 		}
 	];
 
 	let isActive = $state(false);
 	let isMobile = $state(false);
+	let desktopPosition = $state('top');
 
 	let currentMonth = $state(new Date());
 	let calendarList: Array<{ day: number | string; dateObj: Date }> = $state([]);
@@ -95,7 +96,8 @@
 		});
 	});
 
-	const toggle = () => {
+	const toggle = (evt: Event) => {
+		desktopPosition = componentPosition(evt);
 		isActive = !isActive;
 	};
 </script>
@@ -210,7 +212,7 @@
 		<div
 			in:fly|local={{ y: -10 }}
 			out:fly|local={{ y: -10 }}
-			class="absolute top-[112%] w-auto z-[1001]"
+			class="absolute {desktopPosition == 'top' ? 'top-[112%]' : 'bottom-[112%]'} z-[1001]"
 		>
 			{@render calendarSnip()}
 		</div>
@@ -226,9 +228,9 @@
 	></div>
 {/if}
 
-<div use:clickOutside={() => (isActive = false)} class="relative w-full inline-block">
+<div use:clickOutside={() => (isActive = false)} class="relative inline-block">
 	<button
-		onclick={stopPropagation(toggle)}
+		onclick={toggle}
 		class="w-[250px] h-[40px] box-border px-[10px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm capitalize font-normal flex items-center rounded-[6px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400 transition-colors hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
 	>
 		<span class="w-[20px] h-[20px] flex items-center justify-center">
