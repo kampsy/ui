@@ -7,7 +7,7 @@
  * @param {F} fn - The function to be triggered when a click occurs outside of the node.
  * @return {Object} An object with a `destroy` method to remove the event listener.
  */
-export const clickOutside = (node: HTMLElement,fn: Function): object => {
+export const clickOutside = (node: HTMLElement, fn: Function): object => {
     const isOutside = (e: Event) => {
         if (node && !node.contains(e.target as Node) && !e.defaultPrevented) {
             fn();
@@ -22,7 +22,7 @@ export const clickOutside = (node: HTMLElement,fn: Function): object => {
 };
 
 export function runOnce(fn: Function | null): (event: Event) => void {
-    return function(event: Event): void {
+    return function (event: Event): void {
         if (fn) {
             // @ts-ignore
             fn.call(this, event);
@@ -32,7 +32,7 @@ export function runOnce(fn: Function | null): (event: Event) => void {
 }
 
 export function preventDefault(fn: Function): (event: Event) => void {
-    return function(event: Event): void {
+    return function (event: Event): void {
         if (fn) {
             event.preventDefault();
             // @ts-ignore
@@ -41,8 +41,18 @@ export function preventDefault(fn: Function): (event: Event) => void {
     }
 }
 
-export function stopPropagation(fn: Function): (event: Event) => void {
-    return function(event: Event): void {
+export function stopPropagation<T extends Event>(fn?: (event: T) => void): (event: T) => void {
+    return function (event: T): void {
+        if (fn) {
+            event.stopPropagation();
+            fn(event);  // Directly calling `fn` without `call` since `this` is usually not needed.
+        }
+    };
+}
+
+
+export function stopPropagation2(fn: Function): (event: Event) => void {
+    return function (event: Event): void {
         if (fn) {
             event.stopPropagation();
             // @ts-ignore
