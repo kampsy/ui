@@ -13,17 +13,13 @@
 		endDate = $bindable(getZeroDate())
 	}: propsT = $props();
 
-	const isToday = (date: Date | null): boolean => {
-		if (date) {
-			const today = new Date();
-			return (
-				date.getDate() === today.getDate() &&
-				date.getMonth() === today.getMonth() &&
-				date.getFullYear() === today.getFullYear()
-			);
-		}
-
-		return false;
+	const isToday = (date: Date): boolean => {
+		const today = new Date();
+		return (
+			date.getDate() === today.getDate() &&
+			date.getMonth() === today.getMonth() &&
+			date.getFullYear() === today.getFullYear()
+		);
 	};
 
 	const isHighlighteble = (date: Date): boolean => {
@@ -50,9 +46,8 @@
 				return true;
 			}
 		}
-		return false
-	}
-
+		return false;
+	};
 
 	const dayBg = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
@@ -85,7 +80,7 @@
 		if (isRangeHighlighteble(dayAndDateObj.dateObj)) {
 			return 'bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100';
 		}
-		return ''
+		return '';
 	});
 
 	const onclick = () => {
@@ -106,8 +101,7 @@
 	};
 </script>
 
-<div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}">
-</div>
+<div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}"></div>
 <div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[1] transition-colors {dayBg}">
 	<div class="w-full h-full flex justify-center">
 		<button {onclick} class="w-full h-full rounded-sm flex items-center justify-center">

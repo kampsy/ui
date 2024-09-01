@@ -74,11 +74,13 @@
 		calendarList = generateCalendar(list);
 		monthAndYear = `${currentMonth.toLocaleString('default', { month: 'long' })}
 						${currentMonth.getFullYear()}`;
+	});
 
+	$effect(() => {
 		if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			strValue = formatDateRange(startDate, endDate);
 		}
-	});
+	})
 
 	$effect(() => {
 		if (window.innerWidth < 767) {
@@ -218,6 +220,7 @@
 		</div>
 	{/if}
 {/snippet}
+
 
 <!--Backgrop background on mobile only-->
 {#if isActive}

@@ -47,6 +47,23 @@ export const nextMonth = (fnDate: Date): Date => {
  * @return {[Date, Date]} An array containing the first and last day of the month.
  */
 export const getFirstAndLastDay = (date: Date): [Date, Date] => {
+    const year = date.getFullYear();
+    const month = date.getMonth();
+
+    const monthStart = new Date(year, month, 1);
+    const monthEnd = new Date(year, month + 1, 0);
+
+    return [monthStart, monthEnd];
+};
+
+
+/**
+ * Returns the first and last day of the month for a given date, using UTC date calculations.
+ *
+ * @param {Date} date - The date object from which to derive the month and year.
+ * @return {[Date, Date]} An array containing the first and last day of the month.
+ */
+export const getFirstAndLastDayUTC = (date: Date): [Date, Date] => {
     const year = date.getUTCFullYear();
     const month = date.getUTCMonth();
 
@@ -84,6 +101,24 @@ export const arrayRange = (start: number = 0, end: number = 0, step: number = 1)
  * @return {Object[]} An array of objects containing the day of the month and a corresponding date object.
  */
 export const getMonthDateRange = (dateProp: Date, monthEnd: Date) => {
+    const daysInMonth = monthEnd.getDate();
+
+    return arrayRange(1, daysInMonth + 1, 1).map((date) => ({
+        day: date,
+        dateObj: new Date(dateProp.getFullYear(), dateProp.getMonth(), date)
+    }));
+};
+
+
+
+/**
+ * Generates an array of objects representing the days in a month, using UTC date calculations.
+ *
+ * @param {Date} dateProp - The date object from which to derive the month and year.
+ * @param {Date} monthEnd - The date object representing the last day of the month.
+ * @return {Object[]} An array of objects containing the day of the month and a corresponding date object.
+ */
+export const getMonthDateRangeUTC = (dateProp: Date, monthEnd: Date): { day: number; dateObj: Date }[] => {
     const daysInMonth = monthEnd.getUTCDate();
 
     return arrayRange(1, daysInMonth + 1, 1).map((date) => ({
@@ -150,6 +185,22 @@ export const isTimeEqual = (first: Date, second: Date) => {
  * @return True if the given date is in the given range, false otherwise.
  */
 export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
+    startDate.setHours(0, 0, 0, 0)
+    endDate.setHours(0, 0, 0, 0)
+    date.setHours(0, 0, 0, 0)
+    return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
+}
+
+/**
+ * Returns true if the given date falls within the given start and end dates,
+ * ignoring the time component of the dates and using UTC date calculations.
+ *
+ * @param date - The date to check.
+ * @param startDate - The start date of the range.
+ * @param endDate - The end date of the range.
+ * @return True if the given date is in the given range, false otherwise.
+ */
+export const isInDateRangeUTC = (date: Date, startDate: Date, endDate: Date) => {
     startDate.setUTCHours(0, 0, 0, 0)
     endDate.setUTCHours(0, 0, 0, 0)
     date.setUTCHours(0, 0, 0, 0)
