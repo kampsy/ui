@@ -19,8 +19,11 @@
 		fullWidth: boolean;
 	};
 
-	const { name, size, fullWidth } = getContext<switchProps>('props');
-	const { selected } = getContext<{ selected: Writable<string> }>('switch');
+	const { compProps, selected } = getContext<{
+		compProps: switchProps;
+		selected: Writable<string>;
+	}>('switch');
+	const { name, size, fullWidth } = compProps;
 
 	// If defaultChecked is set and value
 	if (defaultChecked) {
@@ -64,7 +67,7 @@
 		return iconCont[size];
 	});
 
-	// Wthen the selected value is the same as the value 
+	// Wthen the selected value is the same as the value
 	let selectedClass = $derived.by(() => {
 		// If the switch is disabled
 		if (disabled) {
@@ -78,7 +81,7 @@
 			return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 		}
 		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 hover:dark:text-kui-dark-gray-1000`;
-	})
+	});
 
 	let disabledClass = $derived.by(() => {
 		if (disabled) {
@@ -86,10 +89,8 @@
 		}
 		return 'cursor-pointer';
 	});
-	
 
 	let controlClass = $derived.by(() => {
-
 		if (fullWidth) {
 			if (icon) {
 				return `w-full ${disabledClass} ${iconSizeClass} ${selectedClass}`;
@@ -121,10 +122,7 @@
 	{/if}
 {/snippet}
 
-<label
-	for={unique}
-	class="{controlClass}  flex items-center justify-center "
->
+<label for={unique} class="{controlClass}  flex items-center justify-center">
 	<input
 		{onchange}
 		type="radio"

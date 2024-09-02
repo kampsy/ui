@@ -31,10 +31,9 @@
 		switchProps.name = randomString(8);
 	}
 
-	setContext('props', switchProps);
-
 	const selected = writable('');
 	setContext('switch', {
+		compProps: switchProps,
 		selected
 	});
 

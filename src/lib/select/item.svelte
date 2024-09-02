@@ -17,14 +17,12 @@
 	}>('select');
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<div
+<button
 	onclick={() => {
 		$selected = value;
 		$isActive = false;
 	}}
-	class="relative w-full cursor-default transition-colors text-sm flex items-center rounded-sm py-1.5 pl-8 pr-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
+	class="relative w-full cursor-pointer transition-colors text-sm flex items-center rounded-sm py-1.5 pl-8 pr-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
 >
 	{#if $selected === value}
 		<!--Icon-->
@@ -39,4 +37,4 @@
 	<span class="first-letter:capitalize">
 		{@render children()}
 	</span>
-</div>
+</button>
