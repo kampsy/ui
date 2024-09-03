@@ -8,7 +8,7 @@
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>Kampsy UI</title>
+	<title>Kampsy UI | A Svelte 5 component library</title>
 	<meta name="title" content="Kampsy-ui | A Svelte 5 component library" />
 	<meta
 	  name="description"
