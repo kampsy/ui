@@ -39,6 +39,10 @@ export const asideData: Array<AsideT> = [
                 url: '/choicebox'
             },
             {
+                name: 'description',
+                url: '/description'
+            },
+            {
                 name: 'error',
                 url: '/error'
             },{
