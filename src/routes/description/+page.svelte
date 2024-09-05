@@ -11,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>description</title>
+	<title>Description</title>
 </svelte:head>
 
 {#snippet description()}

@@ -57,6 +57,10 @@ export const asideData: Array<AsideT> = [
                 url: '/progress'
             },
             {
+                name: 'project banner',
+                url: '/project-banner'
+            },
+            {
                 name: 'select',
                 url: '/select'
             },

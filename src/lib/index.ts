@@ -31,6 +31,9 @@ export { default as Pagination } from './pagination/pagination.svelte';
 // Progress
 export { default as Progress } from './progress/progress.svelte';
 
+// ProjectBanner
+export { default as ProjectBanner } from './projectBanner/banner.svelte';
+
 // Select
 export * as Select from './select/index.js';
 
