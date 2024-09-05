@@ -9,6 +9,8 @@ const ProjectBannerVariants: Array<'gray' | 'warning' | 'error' | 'success'> = [
 	'success'
 ];
 
+const labelStr = "This project was rolled back by @johnphamous";
+
 {#snippet labelSnip()}
 	This project was rolled back by
 	<Tooltip
@@ -29,7 +31,7 @@ const ProjectBannerVariants: Array<'gray' | 'warning' | 'error' | 'success'> = [
 						alert('Button clicked');
 					}
 				}}
-				label="This project was rolled back by @johnphamous"
+				label={labelStr}
 				{variant}
 			/>
 			<ProjectBanner

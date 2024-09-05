@@ -68,6 +68,7 @@
 			@johnphamous
 		</Tooltip>
 	{/snippet}
+	
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
