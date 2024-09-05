@@ -1,90 +1,46 @@
 
 export const projectBannerDefault = `
-import { ProjectBanner } from 'kampsy-ui';
+import { ProjectBanner, Tooltip } from 'kampsy-ui';
+
+const ProjectBannerVariants: Array<'gray' | 'warning' | 'error' | 'success'> = [
+	'gray',
+	'warning',
+	'error',
+	'success'
+];
+
+{#snippet labelSnip()}
+	This project was rolled back by
+	<Tooltip
+		class="underline decoration-dashed underline-offset-[5px]"
+		text="Yesterday for project marketing-website"
+	>
+		@johnphamous
+	</Tooltip>
+{/snippet}
 
 <div class="w-full space-y-6">
-    <div class="w-full space-y-2">
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'Undo Rollback',
-    			onClick: () => {
-    				alert('Button clicked');
-    			}
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='gray'
-    	/>
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'View Rollback',
-    			href: '/project-banner'
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='gray'
-    	/>
-    </div>
-
-    <div class="w-full space-y-2">
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'Undo Rollback',
-    			onClick: () => {
-    				alert('Button clicked');
-    			}
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='warning'
-    	/>
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'View Rollback',
-    			href: '/project-banner'
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='warning'
-    	/>
-    </div>
-
-    <div class="w-full space-y-2">
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'Undo Rollback',
-    			onClick: () => {
-    				alert('Button clicked');
-    			}
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='error'
-    	/>
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'View Rollback',
-    			href: '/project-banner'
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='error'
-    	/>
-    </div>
-
-    <div class="w-full space-y-2">
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'Undo Rollback',
-    			onClick: () => {
-    				alert('Button clicked');
-    			}
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='success'
-    	/>
-    	<ProjectBanner
-    		callToAction={{
-    			label: 'View Rollback',
-    			href: '/project-banner'
-    		}}
-    		label="This project was rolled back by @johnphamous"
-    		variant='success'
-    	/>
-    </div>
+	{#each ProjectBannerVariants as variant}
+		<div class="w-full space-y-2">
+			<ProjectBanner
+				callToAction={{
+					label: 'Undo Rollback',
+					onClick: () => {
+						alert('Button clicked');
+					}
+				}}
+				label="This project was rolled back by @johnphamous"
+				{variant}
+			/>
+			<ProjectBanner
+				callToAction={{
+					label: 'View Rollback',
+					href: '/project-banner'
+				}}
+				label={labelSnip}
+				{variant}
+			/>
+		</div>
+	{/each}
 </div>`;
 

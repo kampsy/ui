@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { RotateCounterClockWise } from '$lib/icons/index.js';
-	import { gray } from '../../docs/data/colors.js';
+	import type { Snippet } from 'svelte';
 
 	type propsT = {
 		callToAction?:
@@ -10,8 +10,8 @@
 					onClick?: () => void | undefined;
 			  }
 			| undefined;
-		label?: string | undefined;
-		variant?: 'gray' | 'warning' | 'error' | 'success' | undefined;
+		label?: string | Snippet | undefined;
+		variant: 'gray' | 'warning' | 'error' | 'success';
 	};
 	let { callToAction = undefined, label = undefined, variant = 'gray' }: propsT = $props();
 
@@ -65,6 +65,21 @@
 	});
 </script>
 
+<!--Label snippet-->
+{#snippet labelSnip()}
+	{#if label}
+		{#if typeof label === 'string'}
+			<p class="text-sm {labelClass}">
+				{label}
+			</p>
+		{:else if typeof label === 'function'}
+			<p class="text-sm {labelClass}">
+				{@render label()}
+			</p>
+		{/if}
+	{/if}
+{/snippet}
+
 <!--Call to action snippet-->
 {#snippet callToActionSnip()}
 	{#if callToAction}
@@ -103,11 +118,7 @@
 						</div>
 					</div>
 				</div>
-				{#if label}
-					<p class="text-sm {labelClass}">
-						{label}
-					</p>
-				{/if}
+				{@render labelSnip()}
 			</div>
 			{@render callToActionSnip()}
 		</div>

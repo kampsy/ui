@@ -6,8 +6,15 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { ProjectBanner } from '$lib/index.js';
+	import { ProjectBanner, Tooltip } from '$lib/index.js';
 	import { projectBannerDefault } from '../../docs/data/project-banner.js';
+
+	const ProjectBannerVariants: Array<'gray' | 'warning' | 'error' | 'success'> = [
+		'gray',
+		'warning',
+		'error',
+		'success'
+	];
 </script>
 
 <svelte:head>
@@ -42,99 +49,62 @@
 	</div>
 {/snippet}
 
+<!--Rounded content-->
+{#snippet roundedCode(rct: string)}
+	<code
+		class="px-2 py-[3.6px] rounded-[6px] text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+	>
+		{rct}
+	</code>
+{/snippet}
+
 {#snippet defaultProjectBanner()}
+	{#snippet labelSnip()}
+		This project was rolled back by
+		<Tooltip
+			class="underline decoration-dashed underline-offset-[5px]"
+			text="Yesterday for project marketing-website"
+		>
+			@johnphamous
+		</Tooltip>
+	{/snippet}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">default</a>
 		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			The {@render roundedCode('label')} prop accepts either a {@render roundedCode('string')} or a
+			{@render roundedCode('Snippet')}.
+		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
-					<div class="w-full space-y-2">
-						<ProjectBanner
-							callToAction={{
-								label: 'Undo Rollback',
-								onClick: () => {
-									alert('Button clicked');
-								}
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='gray'
-						/>
-						<ProjectBanner
-							callToAction={{
-								label: 'View Rollback',
-								href: '/project-banner'
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='gray'
-						/>
-					</div>
-
-					<div class="w-full space-y-2">
-						<ProjectBanner
-							callToAction={{
-								label: 'Undo Rollback',
-								onClick: () => {
-									alert('Button clicked');
-								}
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='warning'
-						/>
-						<ProjectBanner
-							callToAction={{
-								label: 'View Rollback',
-								href: '/project-banner'
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='warning'
-						/>
-					</div>
-
-					<div class="w-full space-y-2">
-						<ProjectBanner
-							callToAction={{
-								label: 'Undo Rollback',
-								onClick: () => {
-									alert('Button clicked');
-								}
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='error'
-						/>
-						<ProjectBanner
-							callToAction={{
-								label: 'View Rollback',
-								href: '/project-banner'
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='error'
-						/>
-					</div>
-
-					<div class="w-full space-y-2">
-						<ProjectBanner
-							callToAction={{
-								label: 'Undo Rollback',
-								onClick: () => {
-									alert('Button clicked');
-								}
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='success'
-						/>
-						<ProjectBanner
-							callToAction={{
-								label: 'View Rollback',
-								href: '/project-banner'
-							}}
-							label="This project was rolled back by @johnphamous"
-							variant='success'
-						/>
-					</div>
+					{#each ProjectBannerVariants as variant}
+						<div class="w-full space-y-2">
+							<ProjectBanner
+								callToAction={{
+									label: 'Undo Rollback',
+									onClick: () => {
+										alert('Button clicked');
+									}
+								}}
+								label="This project was rolled back by @johnphamous"
+								{variant}
+							/>
+							<ProjectBanner
+								callToAction={{
+									label: 'View Rollback',
+									href: '/project-banner'
+								}}
+								label={labelSnip}
+								{variant}
+							/>
+						</div>
+					{/each}
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, projectBannerDefault)}

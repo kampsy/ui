@@ -152,7 +152,7 @@
 	});
 </script>
 
-<div>
+<span>
 	<div class="group relative inline-block cursor-pointer {klass}">
 		{#if children}
 			{@render children()}
@@ -164,4 +164,4 @@
 			{text || ''}
 		</div>
 	</div>
-</div>
+</span>
