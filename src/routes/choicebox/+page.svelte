@@ -13,8 +13,8 @@
 		choiceboxMultiselect
 	} from '../../docs/data/choicebox.js';
 
-	let value = $state('');
-	let valueList = $state([]);
+	let value: string | string[] = $state('');
+	let value2: string | string[] = $state([]);
 </script>
 
 <svelte:head>
@@ -85,7 +85,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
-					<Choicebox.Group label="select a plan" type="checkbox" bind:value={valueList}>
+					<Choicebox.Group label="select a plan" type="checkbox" bind:value>
 						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
 						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 					</Choicebox.Group>
@@ -110,7 +110,7 @@
 						<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
 						<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 					</Choicebox.Group>
-					<Choicebox.Group label="Single input disabled" type="checkbox" bind:value>
+					<Choicebox.Group label="Single input disabled" type="checkbox" bind:value={value2}>
 						<Choicebox.Item
 							description="Free for two weeks"
 							disabled
@@ -130,7 +130,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'error', href: '/error' }}
+			next={{ title: 'description', href: '/description' }}
 		/>
 	</Row>
 {/snippet}
