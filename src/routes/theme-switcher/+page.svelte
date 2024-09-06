@@ -5,13 +5,6 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
-	import {
-		errorCustomLabel,
-		errorDefault,
-		errorSize,
-		errorWithProp
-	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ThemeSwitcher } from '$lib/index.js';
 	import { themeSwitcherDefault } from '../../docs/data/theme-switcher.js';
