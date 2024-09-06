@@ -45,13 +45,6 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'error',
                 url: '/error'
-            },{
-                name: 'feedback',
-                url: '/feedback'
-            },
-            {
-                name: 'input',
-                url: '/input'
             },
             {
                 name: 'pagination',
