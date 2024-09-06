@@ -1,62 +1,10 @@
 <script lang="ts">
-	import DeviceAlternative from '$lib/icons/device-alternate.svelte';
-	import Sun from '$lib/icons/sun.svelte';
-	import Moon from '$lib/icons/moon.svelte';
-	import { scheme } from '../utils/colorScheme.svelte.js';
 	import type { Snippet } from 'svelte';
 	import TextGradient from '$lib/text/textGradient.svelte';
 	import Webhook from '$lib/icons/webhook.svelte';
+	import { ThemeSwitcher } from '$lib/index.js';
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
-
-	let selected = $state(scheme.theme);
-
-	const onchange = (evt: any) => {
-		selected = evt.currentTarget.value;
-		scheme.setTheme(selected);
-	};
-
-	let contBorder = $derived.by(() => {
-		switch (selected) {
-			case 'system':
-				return 'border-r border-y';
-			case 'light':
-				return 'border';
-			case 'dark':
-				return 'border-l border-y';
-			default:
-				return 'border-r border-y';
-		}
-	});
-
-	let [system, light, dark] = $derived.by(() => {
-		switch (selected) {
-			case 'system':
-				return [
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 ',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
-			case 'light':
-				return [
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
-			case 'dark':
-				return [
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000'
-				];
-			default:
-				return [
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
-		}
-	});
 </script>
 
 <header
@@ -72,7 +20,7 @@
 				<a href="/">
 					<div class="flex items-center gap-2">
 						<div class="w-[27px] h-[27px]">
-							<Webhook/>
+							<Webhook />
 						</div>
 						<div>
 							<TextGradient
@@ -92,7 +40,7 @@
 					<a href="/">
 						<div class="lg:hidden flex items-center gap-2">
 							<div class="w-[27px] h-[27px]">
-								<Webhook/>
+								<Webhook />
 							</div>
 							<div>
 								<TextGradient
@@ -104,61 +52,7 @@
 						</div>
 					</a>
 				</div>
-				<div
-					class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
-				>
-					<div class="w-[32px] h-[32px]">
-						<input
-							{onchange}
-							checked={selected === 'system'}
-							id="theme-switch-system"
-							type="radio"
-							value="system"
-							name="theme"
-							class="hidden"
-						/>
-						<label
-							for="theme-switch-system"
-							class="w-full h-full rounded-full transition duration-0 {system} flex items-center justify-center cursor-pointer"
-						>
-							<DeviceAlternative />
-						</label>
-					</div>
-					<div class="w-[32px] h-[32px]">
-						<input
-							{onchange}
-							checked={selected === 'light'}
-							id="theme-switch-light"
-							type="radio"
-							value="light"
-							name="theme"
-							class="hidden"
-						/>
-						<label
-							for="theme-switch-light"
-							class="w-full h-full rounded-full transition duration-0 {light} flex items-center justify-center cursor-pointer"
-						>
-							<Sun />
-						</label>
-					</div>
-					<div class="w-[32px] h-[32px]">
-						<input
-							{onchange}
-							checked={selected === 'dark'}
-							id="theme-switch-dark"
-							type="radio"
-							value="dark"
-							name="theme"
-							class="hidden"
-						/>
-						<label
-							for="theme-switch-dark"
-							class="w-full h-full rounded-full transition duration-0 {dark} flex items-center justify-center cursor-pointer"
-						>
-							<Moon />
-						</label>
-					</div>
-				</div>
+				<ThemeSwitcher />
 			</div>
 		</div>
 	</div>
@@ -171,7 +65,7 @@
 	class="flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >
 	<aside
-		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400  bottom-0 top-[64px] order-1  flex-col min-[1200px]:flex"
+		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 bottom-0 top-[64px] order-1 flex-col min-[1200px]:flex"
 	>
 		{@render asideSlot()}
 	</aside>

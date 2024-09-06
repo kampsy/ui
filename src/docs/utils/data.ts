@@ -46,6 +46,10 @@ export const asideData: Array<AsideT> = [
                 name: 'error',
                 url: '/error'
             },{
+                name: 'feedback',
+                url: '/feedback'
+            },
+            {
                 name: 'input',
                 url: '/input'
             },
@@ -83,6 +87,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'textarea',
                 url: '/textarea'
+            },
+            {
+                name: 'theme switcher',
+                url: '/theme-switcher'
             },
             {
                 name: 'tooltip',

@@ -52,5 +52,11 @@ export * as Table from './table/index.js';
 // Toggle
 export { default as Toggle } from './toggle/toggle.svelte';
 
+// Textarea
+export { default as Textarea } from './textarea/textarea.svelte';
+
+// Theme Switcher
+export { default as ThemeSwitcher } from './themeSwitcher/themeSwitcher.svelte';
+
 // Tooltip
 export { default as Tooltip } from './tooltip/tooltip.svelte';
