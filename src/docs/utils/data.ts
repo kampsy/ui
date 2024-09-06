@@ -47,6 +47,10 @@ export const asideData: Array<AsideT> = [
                 url: '/error'
             },
             {
+                name: 'note',
+                url: '/note'
+            },
+            {
                 name: 'pagination',
                 url: '/pagination'
             },{

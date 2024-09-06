@@ -25,6 +25,9 @@ export { default as Error } from './error/error.svelte';
 // Input
 export { default as Input } from './input/input.svelte'
 
+// Note
+export { default as Note } from './note/note.svelte';
+
 // Pagination
 export { default as Pagination } from './pagination/pagination.svelte';
 

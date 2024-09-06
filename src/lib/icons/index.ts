@@ -24,3 +24,6 @@ export { default as InformationFillSmall } from './information-fill-small.svelte
 export { default as RotateCounterClockWise } from './rotate-counter-clockwise.svelte'
 export { default as ShieldGlobe } from './shield-globe.svelte'
 export { default as UserPlus } from './user-plus.svelte'
+export { default as Information } from './information.svelte'
+export { default as CheckCircle } from './check-circle.svelte'
+export { default as Warning } from './warning.svelte'
