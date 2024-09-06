@@ -3,39 +3,47 @@
 	import Row from '$lib/../docs/ui/row.svelte';
 	import Shell from '$lib/../docs/ui/shell.svelte';
 	import { asideData } from '$lib/../docs/utils/data.js';
-	import { Pagination } from '$lib/index.js';
+	import { GridSquare, ListUnordered, Shield, ShieldGlobe, UserPlus } from '$lib/icons/index.js';
+	import { Badge, Button, Pagination, Switch } from '$lib/index.js';
+
+	let value = $state('');
 </script>
 
 <svelte:head>
 	<!-- Primary Meta Tags -->
-	<title>Kampsy UI </title>
+	<title>Kampsy UI</title>
 	<meta name="title" content="Kampsy-ui | A Svelte 5 component library" />
 	<meta
-	  name="description"
-	  content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences." />
-  
+		name="description"
+		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
+	/>
+
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ui.kampsy.xyz" />
 	<meta property="og:title" content="Kampsy-ui | A Svelte 5 component library" />
 	<meta
-	  property="og:description"
-	  content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences." />
+		property="og:description"
+		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
+	/>
 	<meta
-	  property="og:image"
-	  content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/" />
-  
+		property="og:image"
+		content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/"
+	/>
+
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://ui.kampsy.xyz" />
 	<meta property="twitter:title" content="Kampsy-ui | A Svelte 5 component library" />
 	<meta
-	  property="twitter:description"
-	  content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences." />
+		property="twitter:description"
+		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
+	/>
 	<meta
-	  property="twitter:image"
-	  content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/" />
-  
+		property="twitter:image"
+		content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/"
+	/>
+
 	<!-- Meta Tags Generated with https://metatags.io -->
 	<meta name="robots" content="noindex,nofollow" />
 </svelte:head>
@@ -60,10 +68,40 @@
 	<section class="grid grid-cols-1 lg:grid-cols-2 box-border">
 		<div class="border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400">
 			<a
-				href="#/"
+				href="/"
 				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
 			>
-				<div class="w-full h-[104px]"></div>
+				<div class="relative w-full min-h-[104px]">
+					<div class="flex items-center gap-4 flex-wrap">
+						<Button type="secondary">
+							<div class="w-4 h-4">
+								<ShieldGlobe />
+							</div>
+						</Button>
+
+						<Switch.Root bind:value name="size-default">
+							<Switch.Control defaultChecked icon={GridSquare} value="source" />
+							<Switch.Control icon={ListUnordered} value="output" />
+						</Switch.Root>
+
+						<Button type="secondary" prefix={UserPlus}>collaborate</Button>
+
+						<div class="flex items-center gap-1">
+							<Badge icon={Shield} size="lg" variant="blue">purple</Badge>
+							<Badge icon={Shield} size="md" variant="purple">purple</Badge>
+							<Badge icon={Shield} size="md" variant="amber-subtle">purple</Badge>
+							<Badge icon={Shield} size="lg" variant="red-subtle">purple</Badge>
+						</div>
+
+						<Button size="small">
+							<div class="w-4 h-4">
+								<ShieldGlobe />
+							</div>
+						</Button>
+
+					</div>
+					<div class="babsolute top-0 left-0 w-full h-full"></div>
+				</div>
 				<div class="mt-[32px] w-full h-[48px]">
 					<p
 						class="first-letter:capitalize text-base text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold leading-6 tracking-[-0.32px]"
@@ -599,9 +637,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination
-			next={{ title: 'colors', href: '/colors' }}
-		/>
+		<Pagination next={{ title: 'colors', href: '/colors' }} />
 	</Row>
 {/snippet}
 
