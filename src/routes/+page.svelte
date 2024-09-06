@@ -28,7 +28,7 @@
 	/>
 	<meta
 		property="og:image"
-		content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/"
+		content="https://ucarecdn.com/91722eb1-c95a-42b2-b851-cdfe01a9bdf7/-/preview/1200x628/"
 	/>
 
 	<!-- Twitter -->
@@ -40,8 +40,8 @@
 		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
 	/>
 	<meta
-		property="twitter:image"
-		content="https://ucarecdn.com/83b4db17-b2fe-4c66-8b7e-354151eb436d/-/preview/1200x628/"
+		property="twitter:image" 
+		content="https://ucarecdn.com/91722eb1-c95a-42b2-b851-cdfe01a9bdf7/-/preview/1200x628/"
 	/>
 
 	<!-- Meta Tags Generated with https://metatags.io -->
