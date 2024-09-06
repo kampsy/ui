@@ -14,6 +14,7 @@
 	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ThemeSwitcher } from '$lib/index.js';
+	import { themeSwitcherDefault } from '../../docs/data/theme-switcher.js';
 </script>
 
 <svelte:head>
@@ -59,7 +60,7 @@
 			{#snippet demo()}
 				<ThemeSwitcher/>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, themeSwitcherDefault)}
 		</div>
 	</Row>
 {/snippet}
