@@ -60,7 +60,7 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full space-y-6 lg:flex lg:gap-6">
+				<div class="w-full space-y-6 md:space-y-0 md:flex md:gap-6">
 					<Note size="small">A small note</Note>
 					<Note>A default note</Note>
 					<Note size="large">A large note</Note>

@@ -25,6 +25,10 @@ import { Note, Button } from 'kampsy-ui';
 export const noteSuccess = `
 import { Note } from 'kampsy-ui';
 
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
+
 <div class="w-full space-y-8">
     <Note type="success">This note details some success information.</Note>
     <Note type="success" action={actionSnip}>
@@ -46,6 +50,10 @@ import { Note } from 'kampsy-ui';
 
 export const noteError = `
 import { Note } from 'kampsy-ui';
+
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
 
 <div class="w-full space-y-8">
     <Note type="error">This note details some error information.</Note>
@@ -69,6 +77,10 @@ import { Note } from 'kampsy-ui';
 export const noteWarning = `
 import { Note } from 'kampsy-ui';
 
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
+
 <div class="w-full space-y-8">
     <Note type="warning">This note details some warning information.</Note>
     <Note type="warning" action={actionSnip}>
@@ -90,6 +102,10 @@ import { Note } from 'kampsy-ui';
 
 export const noteSecondary = `
 import { Note } from 'kampsy-ui';
+
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
 
 <div class="w-full space-y-8">
     <Note type="secondary">This note details some secondary information.</Note>
@@ -113,6 +129,10 @@ import { Note } from 'kampsy-ui';
 export const noteViolet = `
 import { Note } from 'kampsy-ui';
 
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
+
 <div class="w-full space-y-8">
     <Note type="violet">This note details some violet information.</Note>
     <Note type="violet" action={actionSnip}>
@@ -134,6 +154,10 @@ import { Note } from 'kampsy-ui';
 
 export const noteCyan = `
 import { Note } from 'kampsy-ui';
+
+{#snippet actionSnip()}
+	<Button size="small">Upgrade</Button>
+{/snippet}
 
 <div class="w-full space-y-8">
     <Note type="cyan">This note details some cyan information.</Note>
