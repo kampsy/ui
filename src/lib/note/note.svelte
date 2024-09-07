@@ -80,24 +80,31 @@
 		return fillObj[type];
 	});
 
-	const typeObj = {
-		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 [&_a]:text-kui-light-blue-1000 
-		dark:[&_a]:text-kui-dark-blue-1000`,
-		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 [&_a]:text-kui-light-red-1000 
-		dark:[&_a]:text-kui-dark-red-1000`,
-		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 [&_a]:text-kui-light-amber-1000 
-		dark:[&_a]:text-kui-dark-amber-1000`,
-		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900 [&_a]:text-kui-light-gray-alpha-1000 
-		dark:[&_a]:text-kui-dark-gray-alpha-1000`,
-		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900 [&_a]:text-kui-light-purple-1000 
-		dark:[&_a]:text-kui-dark-purple-1000`,
-		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900 [&_a]:text-kui-light-teal-1000 
-		dark:[&_a]:text-kui-dark-teal-1000`,
-		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_a]:text-kui-light-gray-1000 
-		dark:[&_a]:text-kui-dark-gray-1000`
+	const typeTextObj = {
+		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 selection:bg-kui-light-blue-900 
+		selection:text-kui-light-blue-100 dark:selection:bg-kui-dark-blue-800  dark:selection:text-kui-dark-blue-1000 
+		[&_a]:text-kui-light-blue-1000 dark:[&_a]:text-kui-dark-blue-1000`,
+		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 selection:bg-kui-light-red-900 
+		selection:text-kui-light-red-100 dark:selection:bg-kui-dark-red-800  dark:selection:text-kui-dark-red-1000
+		[&_a]:text-kui-light-red-1000 dark:[&_a]:text-kui-dark-red-1000`,
+		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 selection:bg-kui-light-amber-900 
+		selection:text-kui-light-amber-100 dark:selection:bg-kui-dark-amber-800  dark:selection:text-kui-dark-amber-1000
+		[&_a]:text-kui-light-amber-1000 dark:[&_a]:text-kui-dark-amber-1000`,
+		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900 selection:bg-kui-light-gray-900 
+		selection:text-kui-light-gray-100 dark:selection:bg-kui-dark-gray-800  dark:selection:text-kui-dark-gray-1000
+		[&_a]:text-kui-light-gray-alpha-1000 dark:[&_a]:text-kui-dark-gray-alpha-1000`,
+		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900 selection:bg-kui-light-purple-900 
+		selection:text-kui-light-purple-100 dark:selection:bg-kui-dark-purple-800  dark:selection:text-kui-dark-purple-1000
+		[&_a]:text-kui-light-purple-1000 dark:[&_a]:text-kui-dark-purple-1000`,
+		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900 selection:bg-kui-light-teal-900 
+		selection:text-kui-light-teal-100 dark:selection:bg-kui-dark-teal-800  dark:selection:text-kui-dark-teal-1000
+		[&_a]:text-kui-light-teal-1000 dark:[&_a]:text-kui-dark-teal-1000`,
+		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 selection:bg-kui-light-gray-900 
+		selection:text-kui-light-gray-100 dark:selection:bg-kui-dark-gray-800  dark:selection:text-kui-dark-gray-1000
+		[&_a]:text-kui-light-gray-1000 dark:[&_a]:text-kui-dark-gray-1000`
 	};
 	let textClass = $derived.by(() => {
-		return typeObj[type];
+		return typeTextObj[type];
 	});
 
 	const contClass = $derived.by(() => {

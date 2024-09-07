@@ -127,7 +127,7 @@
 					</Note>
 					<Note type="success" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="success">This note details some success information.</Note>
 					<Note fill type="success" action={actionSnip}>
@@ -135,7 +135,7 @@
 					</Note>
 					<Note fill type="success" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -159,14 +159,14 @@
 					<Note fill type="error">This note details some error information.</Note>
 					<Note type="error" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="error" action={actionSnip}
 						>This note details some error information.</Note
 					>
 					<Note fill type="error" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -191,7 +191,7 @@
 					</Note>
 					<Note type="warning" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="warning">This note details some warning information.</Note>
 					<Note fill type="warning" action={actionSnip}>
@@ -199,7 +199,7 @@
 					</Note>
 					<Note fill type="warning" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -224,7 +224,7 @@
 					</Note>
 					<Note type="secondary" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="secondary">This note details some secondary information.</Note>
 					<Note fill type="secondary" action={actionSnip}>
@@ -232,7 +232,7 @@
 					</Note>
 					<Note fill type="secondary" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -255,7 +255,7 @@
 					<Note type="violet" action={actionSnip}>This note details some violet information.</Note>
 					<Note type="violet" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="violet">This note details some violet information.</Note>
 					<Note fill type="violet" action={actionSnip}
@@ -263,7 +263,7 @@
 					>
 					<Note fill type="violet" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -286,17 +286,41 @@
 					<Note type="cyan" action={actionSnip}>This note details some cyan information.</Note>
 					<Note type="cyan" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="cyan">This note details some cyan information.</Note>
 					<Note fill type="cyan" action={actionSnip}>This note details some cyan information.</Note>
 					<Note fill type="cyan" action={actionSnip}>
 						This note details some success information. Check
-						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, noteCyan)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet disabled()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">disabled</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full space-y-6">
+					<Note action={actionSnip} fill type="warning">This note details a warning.</Note>
+					<Note action={actionSnip} fill type="warning"
+						>This filled note details some success information. Check <a
+							href="/#"
+							class="hover:underline">the documentation</a
+						> to learn more.</Note
+					>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, noteDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -320,6 +344,7 @@
 	{@render secondary()}
 	{@render violet()}
 	{@render cyan()}
+	{@render disabled()}
 	{@render prevAndNext()}
 {/snippet}
 
