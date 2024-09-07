@@ -130,7 +130,7 @@
 
 <div class="w-full">
 	<div
-		class="w-full flex items-center justify-between gap-x-3 {contClass} {radiusClass} {sizeClass} {klass}"
+		class="w-full space-y-2 md:space-y-0 md:flex md:items-center md:justify-between lg:gap-x-3 {contClass} {radiusClass} {sizeClass} {klass}"
 	>
 		<div class="flex items-center {iconAndTextGapClass} {textClass}">
 			<div class="w-4 h-4">
