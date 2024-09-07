@@ -6,7 +6,7 @@ export const asideData: Array<AsideT> = [
         ul: [
             {
                 name: 'introduction',
-                url: '/'
+                url: '/',
             },
             {
                 name: 'colors',
@@ -25,10 +25,15 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'badge',
                 url: '/badge'
+                
             },
             {
                 name: 'button',
-                url: '/button'
+                url: '/button',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'calendar',
@@ -48,7 +53,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'note',
-                url: '/note'
+                url: '/note',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'pagination',

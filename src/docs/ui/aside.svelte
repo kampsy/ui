@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { AsideT } from './types.js';
 	import { page } from '$app/stores';
+	import { Badge } from '$lib/index.js';
 
 	type propsT = {
 		asideDataList?: Array<AsideT>;
@@ -29,14 +30,17 @@
 					{#if aisdeData.ul}
 						{#each aisdeData.ul as list}
 							<li class="py-[2px]">
-								<a class="group" href={list?.url || '/#'}
-									><span
-										class="w-full h-[40px] {setActive(
+								<a class="group" href={list?.url || '/#'}>
+									<span
+										class="w-full flex items-center gap-x-3 h-[40px] {setActive(
 											list?.url || ''
 										)} capitalize group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 flex items-center rounded-md px-3 py-1.5 text-[14px] font-normal leading-[20px] group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000"
-										>{list?.name || ''}</span
-									></a
-								>
+										>{list?.name || ''}
+										{#if list?.badge}
+											<Badge size="sm" variant={list?.badge?.variant || 'green'}>{list?.badge.name}</Badge>
+										{/if}
+									</span>
+								</a>
 							</li>
 						{/each}
 					{/if}
