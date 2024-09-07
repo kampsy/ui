@@ -81,13 +81,20 @@
 	});
 
 	const typeObj = {
-		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900`,
-		error: `text-kui-light-red-900 dark:text-kui-dark-red-900`,
-		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900`,
-		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900`,
-		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900`,
-		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900`,
-		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900`
+		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 [&_a]:text-kui-light-blue-1000 
+		dark:[&_a]:text-kui-dark-blue-1000`,
+		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 [&_a]:text-kui-light-red-1000 
+		dark:[&_a]:text-kui-dark-red-1000`,
+		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 [&_a]:text-kui-light-amber-1000 
+		dark:[&_a]:text-kui-dark-amber-1000`,
+		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900 [&_a]:text-kui-light-gray-alpha-1000 
+		dark:[&_a]:text-kui-dark-gray-alpha-1000`,
+		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900 [&_a]:text-kui-light-purple-1000 
+		dark:[&_a]:text-kui-dark-purple-1000`,
+		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900 [&_a]:text-kui-light-teal-1000 
+		dark:[&_a]:text-kui-dark-teal-1000`,
+		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_a]:text-kui-light-gray-1000 
+		dark:[&_a]:text-kui-dark-gray-1000`
 	};
 	let textClass = $derived.by(() => {
 		return typeObj[type];

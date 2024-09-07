@@ -15,9 +15,7 @@
 		noteWarning,
 		noteViolet,
 		noteCyan,
-
 		noteSecondary
-
 	} from '../../docs/data/note.js';
 </script>
 
@@ -127,9 +125,17 @@
 					<Note type="success" action={actionSnip}>
 						This note details some success information.
 					</Note>
+					<Note type="success" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 					<Note fill type="success">This note details some success information.</Note>
 					<Note fill type="success" action={actionSnip}>
 						This note details some success information.
+					</Note>
+					<Note fill type="success" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -151,7 +157,17 @@
 					<Note type="error">This note details some error information.</Note>
 					<Note type="error" action={actionSnip}>This note details some error information.</Note>
 					<Note fill type="error">This note details some error information.</Note>
-					<Note fill type="error" action={actionSnip}>This note details some error information.</Note>
+					<Note type="error" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
+					<Note fill type="error" action={actionSnip}
+						>This note details some error information.</Note
+					>
+					<Note fill type="error" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, noteError)}
@@ -173,9 +189,17 @@
 					<Note type="warning" action={actionSnip}>
 						This note details some warning information.
 					</Note>
+					<Note type="warning" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 					<Note fill type="warning">This note details some warning information.</Note>
 					<Note fill type="warning" action={actionSnip}>
 						This note details some warning information.
+					</Note>
+					<Note fill type="warning" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -198,9 +222,17 @@
 					<Note type="secondary" action={actionSnip}>
 						This note details some secondary information.
 					</Note>
+					<Note type="secondary" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 					<Note fill type="secondary">This note details some secondary information.</Note>
 					<Note fill type="secondary" action={actionSnip}>
 						This note details some secondary information.
+					</Note>
+					<Note fill type="secondary" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 					</Note>
 				</div>
 			{/snippet}
@@ -221,8 +253,18 @@
 				<div class="w-full space-y-6">
 					<Note type="violet">This note details some violet information.</Note>
 					<Note type="violet" action={actionSnip}>This note details some violet information.</Note>
+					<Note type="violet" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 					<Note fill type="violet">This note details some violet information.</Note>
-					<Note fill type="violet" action={actionSnip}>This note details some violet information.</Note>
+					<Note fill type="violet" action={actionSnip}
+						>This note details some violet information.</Note
+					>
+					<Note fill type="violet" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, noteViolet)}
@@ -242,8 +284,16 @@
 				<div class="w-full space-y-6">
 					<Note type="cyan">This note details some cyan information.</Note>
 					<Note type="cyan" action={actionSnip}>This note details some cyan information.</Note>
+					<Note type="cyan" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 					<Note fill type="cyan">This note details some cyan information.</Note>
 					<Note fill type="cyan" action={actionSnip}>This note details some cyan information.</Note>
+					<Note fill type="cyan" action={actionSnip}>
+						This note details some success information. Check
+						<a href="/#" class="hover:underline ">the documentation</a> to learn more.
+					</Note>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, noteCyan)}
@@ -262,7 +312,7 @@
 
 {#snippet cont()}
 	{@render note()}
-	{@render defaultNote()}	
+	{@render defaultNote()}
 	{@render action()}
 	{@render success()}
 	{@render error()}
