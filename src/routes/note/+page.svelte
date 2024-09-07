@@ -156,11 +156,11 @@
 				<div class="w-full space-y-6">
 					<Note type="error">This note details some error information.</Note>
 					<Note type="error" action={actionSnip}>This note details some error information.</Note>
-					<Note fill type="error">This note details some error information.</Note>
 					<Note type="error" action={actionSnip}>
 						This note details some success information. Check
 						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
+					<Note fill type="error">This note details some error information.</Note>
 					<Note fill type="error" action={actionSnip}
 						>This note details some error information.</Note
 					>
