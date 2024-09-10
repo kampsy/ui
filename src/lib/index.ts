@@ -52,6 +52,9 @@ export * as Switch from './switch/index.js';
 // Table
 export * as Table from './table/index.js';
 
+// Tabs
+export { default as Tabs } from './tabs/tabs.svelte';
+
 // Toggle
 export { default as Toggle } from './toggle/toggle.svelte';
 

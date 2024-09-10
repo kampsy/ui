@@ -2,7 +2,9 @@ import type { AsideT } from '../../docs/ui/types.ts';
 
 export const asideData: Array<AsideT> = [
     {
-        title: 'foundations',
+        title: {
+            name:'foundations',
+        },
         ul: [
             {
                 name: 'introduction',
@@ -16,7 +18,13 @@ export const asideData: Array<AsideT> = [
 
     },
     {
-        title: 'components',
+        title: {
+            name: 'components',
+            badge: {
+                name: 'alpha',
+                variant: 'amber'
+            }
+        },
         ul: [
             {
                 name: 'avatar',
@@ -29,11 +37,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'button',
-                url: '/button',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                url: '/button'
             },
             {
                 name: 'calendar',
@@ -53,11 +57,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'note',
-                url: '/note',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/note'
             },
             {
                 name: 'pagination',
@@ -89,6 +89,14 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'table',
                 url: '/table'
+            },
+            {
+                name: 'tabs',
+                url: '/tabs',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'textarea',
