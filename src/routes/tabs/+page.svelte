@@ -8,11 +8,20 @@
 	import { errorDefault } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Tabs } from '$lib/index.js';
-	import { tabsDefault, tabsDisabled, tabsDisabledSpecific } from '../../docs/data/tabs.js';
+	import {
+		tabsDefault,
+		tabsDisabled,
+		tabsDisabledSpecific,
+		tabsSecondary,
+		tabsWithIcons
+	} from '../../docs/data/tabs.js';
+	import { LogoBitbucketColor, LogoGithub, LogoGitlab } from '$lib/icons/index.js';
 
 	let selected = $state('apple');
 	let tabDisabled = $state('apple');
-    let tabDisabledSpecific = $state('mango');
+	let tabDisabledSpecific = $state('apple');
+	let tabWithIcons = $state('github');
+	let tabSecondary = $state('github');
 </script>
 
 <svelte:head>
@@ -119,6 +128,56 @@
 	</Row>
 {/snippet}
 
+{#snippet withIcons()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">with icons</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Tabs
+					bind:selected={tabWithIcons}
+					tabs={[
+						{ title: 'Github', value: 'github', icon: LogoGithub },
+						{ title: 'Gitlab', value: 'gitlab', icon: LogoGitlab },
+						{ title: 'Bitbucket', value: 'bitbucket', icon: LogoBitbucketColor }
+					]}
+				/>
+			{/snippet}
+			{@render demoAndCode(demo, tabsWithIcons)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet secondary()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">secondary</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Tabs
+					bind:selected={tabSecondary}
+					tabs={[
+						{ title: 'Github', value: 'github' },
+						{ title: 'Gitlab', value: 'gitlab' },
+						{
+							title: 'Bitbucket',
+							value: 'bitbucket'
+						}
+					]}
+					type="secondary"
+				/>
+			{/snippet}
+			{@render demoAndCode(demo, tabsSecondary)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -133,6 +192,8 @@
 	{@render defaultTabs()}
 	{@render disabled()}
 	{@render disableSpecific()}
+	{@render withIcons()}
+	{@render secondary()}
 	{@render prevAndNext()}
 {/snippet}
 

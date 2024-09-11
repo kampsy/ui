@@ -41,3 +41,32 @@ let selected = $state('apple');
 		{ title: 'Mango', value: 'mango' ,disabled: true, tooltip: 'Mangos are not allowed'}
 	]}
 />`;
+
+export const tabsWithIcons = `
+import { Tabs } from 'kampsy-ui';
+
+let selected = $state('github');
+
+<Tabs
+	bind:selected
+	tabs={[
+		{ title: 'Github', value: 'github', icon: LogoGithub },
+		{ title: 'Gitlab', value: 'gitlab', icon: LogoGitlab },
+		{ title: 'Bitbucket', value: 'bitbucket', icon: LogoBitbucketColor }
+	]}
+/>`;
+
+export const tabsSecondary = `
+import { Tabs } from 'kampsy-ui';
+
+let selected = $state('github');
+
+<Tabs
+	bind:selected
+	tabs={[
+		{ title: 'Github', value: 'github'},
+		{ title: 'Gitlab', value: 'gitlab'},
+		{ title: 'Bitbucket', value: 'bitbucket'}
+	]}
+    type="secondary"
+/>`;

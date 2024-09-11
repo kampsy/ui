@@ -1,60 +1,126 @@
 <script lang="ts">
 	import { Tooltip } from '$lib/index.js';
+	import type { Component } from 'svelte';
 
 	type propsT = {
 		disabled?: boolean | undefined;
 		selected?: string | undefined;
 		tabs?:
-			| Array<{ title: string; value: string; disabled?: boolean; tooltip?: string }>
+			| Array<{
+					title: string;
+					value: string;
+					icon?: Component;
+					disabled?: boolean;
+					tooltip?: string;
+			  }>
 			| undefined;
+		type?: 'default' | 'secondary';
 	};
-	let { disabled = false, selected = $bindable(''), tabs = undefined }: propsT = $props();
+	let {
+		disabled = false,
+		selected = $bindable(''),
+		tabs = undefined,
+		type = 'default'
+	}: propsT = $props();
 
 	const isSelected = (value: string) => {
 		if (value === selected) {
 			return true;
 		}
+		return false;
 	};
 
-	const isActive = ` text-kui-light-gray-1000 
-    dark:text-kui-dark-gray-1000`;
-	const isInactive = `text-kui-light-gray-900 dark:text-kui-dark-gray-900 
-    hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000`;
-	const isDisabled = `cursor-not-allowed text-kui-light-gray-900 dark:text-kui-dark-gray-900`;
+	const tabButtonFunc = (
+		isActive: boolean,
+		isDisabled: boolean,
+		isDisabledSpecific: boolean | undefined
+	): string => {
+		if (type === 'secondary') {
+            // if the tab is disabled does not matter if active or not
+			if (isDisabled || isDisabledSpecific) {
+				return `cursor-not-allowed px-1.5 py-1 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 rounded-md bg-kui-light-gray-alpha-400 
+            dark:bg-kui-dark-gray-alpha-400`;
+			}
 
-	let [tabsActive, tabsInactive] = $derived.by(() => {
-		if (disabled) {
-			return [isDisabled, isDisabled];
+			if (isActive) {
+				return `px-1.5 py-1 text-kui-light-bg dark:text-kui-dark-bg rounded-md bg-kui-light-gray-1000 
+                dark:bg-kui-dark-gray-1000`;
+			}
+			return `px-1.5 py-1 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 rounded-md bg-kui-light-gray-alpha-400 
+            dark:bg-kui-dark-gray-alpha-400 hover:bg-kui-light-gray-300 dark:hover:bg-kui-dark-gray-300`;
 		}
-		return [isActive, isInactive];
+
+		if (type === 'default') {
+			if (isActive) {
+				// Active but the tab is disabled
+				if (isDisabled || isDisabledSpecific) {
+					return `cursor-not-allowed px-[2px] py-3 border-b-2 border-kui-light-gray-1000 dark:border-kui-dark-gray-1000 
+                text-kui-light-gray-900 dark:text-kui-dark-gray-900`;
+				}
+				return `px-[2px] py-3 border-b-2 border-kui-light-gray-1000 dark:border-kui-dark-gray-1000 
+                text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`;
+			}
+
+			// Not active and the tab is disabled
+			if (isDisabled || isDisabledSpecific) {
+				return `cursor-not-allowed px-[2px] py-3 border-b-2 border-transparent text-kui-light-gray-900 
+                dark:text-kui-dark-gray-900`;
+			}
+			return `px-[2px] py-3 border-b-2 border-transparent text-kui-light-gray-900 dark:text-kui-dark-gray-900 
+            hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000`;
+		}
+
+		return '';
+	};
+
+	let contClass = $derived.by(() => {
+		if (type === 'secondary') {
+			return 'gap-3';
+		}
+		return 'gap-6 border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400';
 	});
 </script>
 
-<div class="w-full flex items-center gap-3 border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+{#snippet tabButton(
+	isActive: boolean,
+	tab: {
+		title: string;
+		value: string;
+		icon?: Component;
+		disabled?: boolean;
+		tooltip?: string;
+	}
+)}
+	<button
+		disabled={disabled || tab.disabled}
+		onclick={() => (selected = tab.value)}
+		class="flex items-center justify-center gap-x-[6px] text-xs {tabButtonFunc(
+			isActive,
+			disabled,
+			tab.disabled
+		)} "
+	>
+		{#if tab.icon}
+			<div class="w-[16px] h-[16px] flex items-center justify-center">
+				<div class="w-[16px] h-[16px]">
+					<svelte:component this={tab.icon} />
+				</div>
+			</div>
+		{/if}
+		{tab.title}
+	</button>
+{/snippet}
+
+<div class="w-full flex items-center {contClass}">
 	{#if tabs}
 		{#each tabs as tab}
 			<div class="mb-[-1px]">
 				{#if tab.disabled}
 					<Tooltip text={tab.tooltip}>
-						<button
-							disabled={tab.disabled}
-							class="transition-colors text-sm {isSelected(tab.value)
-								? `border-b-2 border-kui-light-gray-1000 dark:border-kui-dark-gray-1000`
-								: `border-b-2 border-transparent`} px-[2px] py-3 cursor-not-allowed text-kui-light-gray-900 dark:text-kui-dark-gray-900 capitalize "
-						>
-							{tab.title}
-						</button>
+						{@render tabButton(isSelected(tab.value), tab)}
 					</Tooltip>
 				{:else}
-					<button
-						{disabled}
-						onclick={() => (selected = tab.value)}
-						class="transition-colors text-sm {isSelected(tab.value)
-							? `border-b-2 border-kui-light-gray-1000 dark:border-kui-dark-gray-1000 ${tabsActive}`
-							: `border-b-2 border-transparent ${tabsInactive}`} px-[2px] py-3 capitalize"
-					>
-						{tab.title}
-					</button>
+					{@render tabButton(isSelected(tab.value), tab)}
 				{/if}
 			</div>
 		{/each}
