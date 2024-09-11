@@ -5,9 +5,9 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { errorCustomLabel, errorDefault, errorSize } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Error, Calendar } from '$lib/index.js';
+	import { Calendar } from '$lib/index.js';
+	import { calendarDefault } from '../../docs/data/calendar.js';
 </script>
 
 <svelte:head>
@@ -57,29 +57,13 @@
 					<Calendar />
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, calendarDefault)}
 		</div>
 	</Row>
 {/snippet}
 
 
-{#snippet prefixAndSuffix()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">prefix and suffix</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div class="w-full flex justify-center">
-					<Calendar />
-				</div>
-			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
-		</div>
-	</Row>
-{/snippet}
+
 
 
 {#snippet prevAndNext()}
@@ -94,7 +78,6 @@
 {#snippet cont()}
 	{@render calendar()}
 	{@render defaultCalendar()}
-	{@render prefixAndSuffix()}
 	{@render prevAndNext()}
 {/snippet}
 
