@@ -260,7 +260,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'badge', href: '/badge' }}
-			next={{ title: 'choicebox', href: '/choicebox' }}
+			next={{ title: 'calendar', href: '/calendar' }}
 		/>
 	</Row>
 {/snippet}

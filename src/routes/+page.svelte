@@ -68,7 +68,7 @@
 	<section class="grid grid-cols-1 lg:grid-cols-2 box-border">
 		<div class="border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400">
 			<a
-				href="/"
+				href="/avatar"
 				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
 			>
 				<div class="relative w-full min-h-[104px]">

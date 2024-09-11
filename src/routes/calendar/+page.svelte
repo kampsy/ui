@@ -86,7 +86,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'checkbox', href: '/checkbox' }}
+			next={{ title: 'choicebox', href: '/choicebox' }}
 		/>
 	</Row>
 {/snippet}
