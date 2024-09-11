@@ -7,7 +7,6 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import {
-		tooltipComponents,
 		toolTipCustomeType,
 		toolTipDefault
 	} from '../../docs/data/tooltip.js';

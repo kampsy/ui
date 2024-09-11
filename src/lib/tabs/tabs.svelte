@@ -94,7 +94,7 @@
 	<button
 		disabled={disabled || tab.disabled}
 		onclick={() => (selected = tab.value)}
-		class="flex items-center justify-center gap-x-[6px] text-xs {tabButtonFunc(
+		class="flex items-center justify-center gap-x-[6px] transition-all text-xs {tabButtonFunc(
 			isActive,
 			disabled,
 			tab.disabled

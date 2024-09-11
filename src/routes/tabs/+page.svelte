@@ -5,7 +5,6 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { errorDefault } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Tabs } from '$lib/index.js';
 	import {
