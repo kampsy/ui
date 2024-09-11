@@ -44,6 +44,7 @@ let selected = $state('apple');
 
 export const tabsWithIcons = `
 import { Tabs } from 'kampsy-ui';
+import { LogoGithub, LogoGitlab, LogoBitbucketColor } from 'kampsy-ui/icons';
 
 let selected = $state('github');
 

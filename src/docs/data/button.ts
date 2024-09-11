@@ -22,6 +22,7 @@ import { Button } from 'kampsy-ui';
 
 export const buttonShapes = `
 import { Button } from 'kampsy-ui';
+import { ArrowUp } from 'kampsy-ui/icons';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button aria-label="Upload" shape="square" size="tiny">
