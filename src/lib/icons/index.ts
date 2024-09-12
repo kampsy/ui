@@ -6,6 +6,7 @@ export { default as ChevronLeft } from './chevron-left.svelte';
 export { default as ChevronLeftSmall } from './chevron-left-small.svelte';
 export { default as ChevronRight } from './chevron-right.svelte';
 export { default as ChevronRightSmall } from './chevron-right-small.svelte';
+export { default as ChevronUpSmall } from './chevron-up-small.svelte';
 
 export { default as ChevronDown } from './chevron-down.svelte';
 export { default as ChevronDownSmall } from './chevron-down-small.svelte';

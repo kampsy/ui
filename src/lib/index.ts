@@ -13,6 +13,9 @@ export { default as Calendar } from './calendar/calendar.svelte'
 // Choicebox
 export * as Choicebox from './choicebox/index.js'
 
+// Collapse
+export * as Collapse from './collapse/index.js';
+
 // Description
 export { default as Description } from './description/description.svelte'
 

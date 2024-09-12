@@ -3,7 +3,7 @@ import type { AsideT } from '../../docs/ui/types.ts';
 export const asideData: Array<AsideT> = [
     {
         title: {
-            name:'foundations',
+            name: 'foundations',
         },
         ul: [
             {
@@ -33,7 +33,7 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'badge',
                 url: '/badge'
-                
+
             },
             {
                 name: 'button',
@@ -46,6 +46,9 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'choicebox',
                 url: '/choicebox'
+            }, {
+                name: 'collapse',
+                url: '/collapse'
             },
             {
                 name: 'description',
@@ -62,7 +65,7 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'pagination',
                 url: '/pagination'
-            },{
+            }, {
                 name: 'progress',
                 url: '/progress'
             },

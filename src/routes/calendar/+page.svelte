@@ -62,10 +62,6 @@
 	</Row>
 {/snippet}
 
-
-
-
-
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
