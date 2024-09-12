@@ -8,7 +8,7 @@
 	};
 	let { children }: propsT = $props();
 
-	let { value } = getContext<{ isActive: Writable<boolean>; value: Writable<string> }>(
+	let {size, value } = getContext<{ size: Writable<'small' | 'large'>; value: Writable<string> }>(
 		'collapseItem'
 	);
 	let { open } = getContext<{ open: Writable<string> }>('collapse');
@@ -19,6 +19,22 @@
 		}
 		return '';
 	});
+
+    const paddingObj = {
+        small: `py-[12px]`,
+        large: `py-4 lg:py-6`
+    }
+    let paddingClass = $derived.by(()=>{
+        return paddingObj[$size] 
+    })
+
+    const textObj = {
+        small: 'text-4',
+        large: 'text-lg lg:text-[24px]'
+    }
+    let textClass = $derived.by(()=>{
+        return textObj[$size] 
+    })
 
 	const onclick = () => {
 		if ($open != '' && $value != '') {
@@ -33,9 +49,9 @@
 	};
 </script>
 
-<button {onclick} class="w-full flex items-center justify-between py-6">
+<button {onclick} class="w-full flex items-center justify-between {paddingClass} ">
 	{#if children}
-		<span class="text-[24px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+		<span class="{textClass} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 			>{@render children()}</span
 		>
 	{/if}

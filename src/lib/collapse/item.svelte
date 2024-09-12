@@ -3,13 +3,15 @@
 	import { writable } from 'svelte/store';
 
 	type propsT = {
+        size: 'small' | 'large'
 		value: string;
 		class?: string | undefined;
 		children: Snippet | undefined;
 	};
-	let { value, class: klass = '', children }: propsT = $props();
+	let { size = 'large', value, class: klass = '', children }: propsT = $props();
 
 	setContext('collapseItem', {
+        size: writable<'small' | 'large'>(size),
 		value: writable(value)
 	});
 </script>

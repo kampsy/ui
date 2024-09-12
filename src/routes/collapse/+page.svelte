@@ -6,12 +6,7 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Error from '$lib/error/error.svelte';
-	import {
-		errorCustomLabel,
-		errorDefault,
-		errorSize,
-		errorWithProp
-	} from '../../docs/data/error.js';
+	import { collapseDefault, collapseExpanded, collapseSize } from '../../docs/data/collapse.js';
 	import { Collapse, Pagination } from '$lib/index.js';
 </script>
 
@@ -48,7 +43,7 @@
 	</div>
 {/snippet}
 
-{#snippet defaultErr()}
+{#snippet defaultCollapse()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -67,7 +62,7 @@
 						</Collapse.Content>
 					</Collapse.Item>
 					<Collapse.Item value="item-2">
-						<Collapse.Trigger>Question A</Collapse.Trigger>
+						<Collapse.Trigger>Question B</Collapse.Trigger>
 						<Collapse.Content>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -76,25 +71,40 @@
 					</Collapse.Item>
 				</Collapse.Root>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, collapseDefault)}
 		</div>
 	</Row>
 {/snippet}
 
-{#snippet customLabel()}
+{#snippet expanded()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">custome label</a>
+			<a href="#customelabel" id="default">expanded</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<Error label="Email Error">This email address is already in use.</Error>
-				</div>
+				<Collapse.Root>
+					<Collapse.Item value="item-1">
+						<Collapse.Trigger>Question A</Collapse.Trigger>
+						<Collapse.Content>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</Collapse.Content>
+					</Collapse.Item>
+					<Collapse.Item value="item-2">
+						<Collapse.Trigger>Question B</Collapse.Trigger>
+						<Collapse.Content>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</Collapse.Content>
+					</Collapse.Item>
+				</Collapse.Root>
 			{/snippet}
-			{@render demoAndCode(demo, errorCustomLabel)}
+			{@render demoAndCode(demo, collapseExpanded)}
 		</div>
 	</Row>
 {/snippet}
@@ -104,37 +114,22 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#size" id="default">size</a>
+			<a href="#customelabel" id="default">small</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Error size="sm">This email is in use.</Error>
-				<Error size="md">This email is in use.</Error>
-				<Error size="lg">This email is in use.</Error>
+				<Collapse.Root>
+					<Collapse.Item size="small" value="item-1">
+						<Collapse.Trigger>Question A</Collapse.Trigger>
+						<Collapse.Content>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						</Collapse.Content>
+					</Collapse.Item>
+				</Collapse.Root>
 			{/snippet}
-			{@render demoAndCode(demo, errorSize)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet withErrorProp()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">With an error property</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error
-					error={{
-						message: 'The request failed.',
-						action: 'Contact Us',
-						link: 'https://ui.kampsy.xyz/error'
-					}}
-				/>
-			{/snippet}
-			{@render demoAndCode(demo, errorWithProp)}
+			{@render demoAndCode(demo, collapseSize)}
 		</div>
 	</Row>
 {/snippet}
@@ -150,10 +145,9 @@
 
 {#snippet cont()}
 	{@render collapse()}
-	{@render defaultErr()}
-	{@render customLabel()}
+	{@render defaultCollapse()}
+	{@render expanded()}
 	{@render size()}
-	{@render withErrorProp()}
 	{@render prevAndNext()}
 {/snippet}
 

@@ -48,7 +48,11 @@ export const asideData: Array<AsideT> = [
                 url: '/choicebox'
             }, {
                 name: 'collapse',
-                url: '/collapse'
+                url: '/collapse',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'description',
