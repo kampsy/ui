@@ -8,9 +8,11 @@
 	};
 	let { children }: propsT = $props();
 
-	let {size, value } = getContext<{ size: Writable<'small' | 'large'>; value: Writable<string> }>(
-		'collapseItem'
-	);
+	let { size, value, defaultExpanded } = getContext<{
+		size: Writable<'small' | 'large'>;
+		value: Writable<string>;
+		defaultExpanded: Writable<boolean>;
+	}>('collapseItem');
 	let { open } = getContext<{ open: Writable<string> }>('collapse');
 
 	let rotate = $derived.by(() => {
@@ -20,21 +22,27 @@
 		return '';
 	});
 
-    const paddingObj = {
-        small: `py-[12px]`,
-        large: `py-4 lg:py-6`
-    }
-    let paddingClass = $derived.by(()=>{
-        return paddingObj[$size] 
-    })
+	const paddingObj = {
+		small: `py-[12px]`,
+		large: `py-4 lg:py-6`
+	};
+	let paddingClass = $derived.by(() => {
+		return paddingObj[$size];
+	});
 
-    const textObj = {
-        small: 'text-4',
-        large: 'text-lg lg:text-[24px]'
-    }
-    let textClass = $derived.by(()=>{
-        return textObj[$size] 
-    })
+	const textObj = {
+		small: 'text-4',
+		large: 'text-lg lg:text-[24px]'
+	};
+	let textClass = $derived.by(() => {
+		return textObj[$size];
+	});
+
+    $effect(() => {
+        if ($defaultExpanded) {
+            $open = $value;
+        }
+    });
 
 	const onclick = () => {
 		if ($open != '' && $value != '') {

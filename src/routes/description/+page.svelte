@@ -70,7 +70,7 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'choicebox', href: '/choicebox' }}
+			previous={{ title: 'collapse', href: '/collapse' }}
 			next={{ title: 'error', href: '/error' }}
 		/>
 	</Row>

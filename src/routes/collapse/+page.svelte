@@ -94,7 +94,7 @@
 							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 						</Collapse.Content>
 					</Collapse.Item>
-					<Collapse.Item value="item-2">
+					<Collapse.Item defaultExpanded value="item-2">
 						<Collapse.Trigger>Question B</Collapse.Trigger>
 						<Collapse.Content>
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -137,8 +137,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'description', href: '/description' }}
-			next={{ title: 'note', href: '/note' }}
+			previous={{ title: 'choicebox', href: '/choicebox' }}
+			next={{ title: 'description', href: '/description' }}
 		/>
 	</Row>
 {/snippet}
