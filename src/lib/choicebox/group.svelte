@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { randomString } from '$lib/utils/random.js';
 	import { setContext, type Snippet } from 'svelte';
-	import { writable } from 'svelte/store';
+	import { createGroupState } from './group.svelte.js';
 
 	type propsT = {
 		type?: 'radio' | 'checkbox' | undefined;
@@ -14,22 +14,18 @@
 		type = 'radio',
 		label = undefined,
 		value = $bindable(''),
-		disabled = undefined,
+		disabled = false,
 		children = undefined
 	}: propsT = $props();
 
-	const switchProps = {
+	const groupState = createGroupState({
+		selected: '',
 		name: randomString(8),
-		disabledParent: disabled,
-		type: type
-	};
-
-	setContext('props', switchProps);
-
-	const selected = writable<string | Array<string>>('');
-	setContext('choicebox', {
-		selected
+		type: type,
+		disabledParent: disabled
 	});
+
+	setContext('choicebox', groupState);
 
 	let labelClass = $derived.by(() => {
 		if (disabled) {
@@ -39,7 +35,7 @@
 	});
 
 	$effect(() => {
-		value = $selected;
+		value = groupState.get();
 	});
 </script>
 

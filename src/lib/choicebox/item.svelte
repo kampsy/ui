@@ -2,7 +2,6 @@
 	import Check from '$lib/icons/check.svelte';
 	import { randomString } from '$lib/utils/random.js';
 	import { getContext } from 'svelte';
-	import type { Writable } from 'svelte/store';
 
 	type propT = {
 		defaultChecked?: boolean | undefined;
@@ -21,8 +20,17 @@
 		type: 'radio' | 'checkbox' | undefined;
 	};
 
-	const { name, type, disabledParent } = getContext<switchProps>('props');
-	const { selected } = getContext<{ selected: Writable<string | Array<string>> }>('choicebox');
+	
+
+	const groupState = getContext<{
+		name: string;
+		type: 'radio' | 'checkbox';
+		disabledParent: boolean;
+		get: () => string | Array<string>;
+		set: (value: string | Array<string>) => void;
+	}>('choicebox');
+
+	const { name, type, disabledParent } = groupState;
 
 	// If the parent is disabled then the child is disabled
 	if (disabledParent) {
@@ -32,24 +40,24 @@
 	// If defaultChecked is set and value
 	if (defaultChecked) {
 		if (type === 'radio') {
-			$selected = value;
+			groupState.set(value);
 		} else if (type === 'checkbox') {
-			$selected = [...$selected, value];
+			groupState.set([...groupState.get(), value]);
 		}
 	}
 
 	const onchange = (evt: Event) => {
 		const target = evt.currentTarget as HTMLInputElement;
 		if (type == 'radio') {
-			$selected = target.value;
+			groupState.set(target.value);
 		} else if (type == 'checkbox') {
-			const arrStr = $selected as Array<string>;
+			const arrStr = groupState.get() as Array<string>;
 			const val = target.value;
 			// if val is in the arrStr then remove it else add it
 			if (arrStr.includes(val)) {
-				$selected = arrStr.filter((item) => item !== val);
+				groupState.set(arrStr.filter((item) => item !== val));
 			} else {
-				$selected = [...arrStr, val];
+				groupState.set([...arrStr, val]);
 			}
 		}
 	};
@@ -63,7 +71,7 @@
 		if (disabled) {
 			return ` cursor-not-allowed border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
-		if ($selected === value || $selected.includes(value)) {
+		if (groupState.get() === value || groupState.get().includes(value)) {
 			return `cursor-pointer bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border-kui-light-blue-600  dark:border-kui-dark-blue-600 
 			hover:border-kui-light-blue-700 dark:hover:border-kui-dark-blue-700`;
 		}
@@ -77,7 +85,7 @@
 		if (disabled) {
 			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`;
 		}
-		if ($selected === value || $selected.includes(value)) {
+		if (groupState.get() === value || groupState.get().includes(value)) {
 			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`;
 		}
 		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`;
@@ -89,7 +97,7 @@
 		if (disabled) {
 			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`;
 		}
-		if ($selected === value || $selected.includes(value)) {
+		if (groupState.get() === value || groupState.get().includes(value)) {
 			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`;
 		}
 		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900`;
@@ -102,7 +110,7 @@
 			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
 
-		if ($selected === value) {
+		if (groupState.get() === value) {
 			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 `;
 		}
 		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
@@ -111,7 +119,7 @@
 
 	// The radio cont
 	let radioClass = $derived.by(() => {
-		if ($selected === value) {
+		if (groupState.get() === value) {
 			return `bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `;
 		}
 		return ``;
@@ -123,14 +131,14 @@
 		if (disabled) {
 			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`;
 		}
-		if ($selected.includes(value)) {
+		if (groupState.get().includes(value)) {
 			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `;
 		}
 		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
 		dark:group-hover:border-kui-dark-gray-500 group-hover:bg-kui-light-bg dark:group-hover:bg-kui-dark-bg`;
 	});
 	let checkboxClass = $derived.by(() => {
-		if ($selected.includes(value)) {
+		if (groupState.get().includes(value)) {
 			return `text-white dark:text-black font-bold `;
 		}
 		return `text-transparent font-bold`;
@@ -146,7 +154,7 @@
 				<input
 					{onchange}
 					{type}
-					checked={$selected == value}
+					checked={groupState.get() == value}
 					id={unique}
 					{name}
 					{value}
@@ -170,7 +178,7 @@
 				<input
 					{onchange}
 					{type}
-					checked={$selected.includes(value)}
+					checked={groupState.get().includes(value)}
 					id={unique}
 					{name}
 					{value}
