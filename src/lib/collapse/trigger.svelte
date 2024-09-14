@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { ChevronDownSmall } from '$lib/icons/index.js';
 	import { getContext, type Snippet } from 'svelte';
-	import type { Writable } from 'svelte/store';
 
 	type propsT = {
 		children: Snippet | undefined;
@@ -9,14 +8,15 @@
 	let { children }: propsT = $props();
 
 	let { size, value, defaultExpanded } = getContext<{
-		size: Writable<'small' | 'large'>;
-		value: Writable<string>;
-		defaultExpanded: Writable<boolean>;
+		size: 'small' | 'large';
+		value: string;
+		defaultExpanded: boolean;
 	}>('collapseItem');
-	let { open } = getContext<{ open: Writable<string> }>('collapse');
+
+	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
 
 	let rotate = $derived.by(() => {
-		if ($value == $open) {
+		if (value == collapseItem.get()) {
 			return '-rotate-180';
 		}
 		return '';
@@ -27,7 +27,7 @@
 		large: `py-4 lg:py-6`
 	};
 	let paddingClass = $derived.by(() => {
-		return paddingObj[$size];
+		return paddingObj[size];
 	});
 
 	const textObj = {
@@ -35,24 +35,24 @@
 		large: 'text-lg lg:text-[24px]'
 	};
 	let textClass = $derived.by(() => {
-		return textObj[$size];
+		return textObj[size];
 	});
 
-    $effect(() => {
-        if ($defaultExpanded) {
-            $open = $value;
-        }
-    });
+	$effect(() => {
+		if (defaultExpanded) {
+			collapseItem.set(value);
+		}
+	});
 
 	const onclick = () => {
-		if ($open != '' && $value != '') {
-			if ($open === $value) {
-				$open = '';
+		if (collapseItem.get() != '' && value != '') {
+			if (collapseItem.get() === value) {
+				collapseItem.set('');
 			} else {
-				$open = $value;
+				collapseItem.set(value);
 			}
 		} else {
-			$open = $value;
+			collapseItem.set(value);
 		}
 	};
 </script>

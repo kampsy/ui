@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { getContext, type Snippet } from 'svelte';
-	import type { Writable } from 'svelte/store';
 	import { slide } from 'svelte/transition';
 
 	type propsT = {
@@ -8,10 +7,11 @@
 	};
 	let { children }: propsT = $props();
 
-	let { size, value } = getContext<{ size: Writable<'small' | 'large'>; value: Writable<string> }>(
+	let { size, value } = getContext<{ size:'small' | 'large'; value: string }>(
 		'collapseItem'
 	);
-	let { open } = getContext<{ open: Writable<string> }>('collapse');
+	
+	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
 
 	let isActive = $state(false);
 
@@ -20,11 +20,11 @@
         large: 'text-base'
     }
     let textClass = $derived.by(()=>{
-        return textObj[$size] 
+        return textObj[size] 
     })
 
 	$effect(() => {
-		if ($open == $value) {
+		if (collapseItem.get() == value) {
 			isActive = true;
 		} else {
 			isActive = false;

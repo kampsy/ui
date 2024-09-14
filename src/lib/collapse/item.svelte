@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { setContext, type Snippet } from 'svelte';
-	import { writable } from 'svelte/store';
 
 	type propsT = {
 		size?: 'small' | 'large';
@@ -18,9 +17,9 @@
 	}: propsT = $props();
 
 	setContext('collapseItem', {
-		size: writable<'small' | 'large'>(size),
-		value: writable(value),
-		defaultExpanded: writable(defaultExpanded)
+		size: size,
+		value: value,
+		defaultExpanded: defaultExpanded
 	});
 </script>
 
