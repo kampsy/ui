@@ -3,9 +3,9 @@
 	import { writable } from 'svelte/store';
 
 	type propsT = {
-		size: 'small' | 'large';
+		size?: 'small' | 'large';
 		value: string;
-		defaultExpanded: boolean;
+		defaultExpanded?: boolean;
 		class?: string | undefined;
 		children: Snippet | undefined;
 	};
