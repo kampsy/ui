@@ -17,7 +17,7 @@ import { ShieldCheck } from 'kampsy-ui/icons';
 </div>`;
 
 export const projectBannerWarning = `
-import { ProjectBanner } from 'kampsy-ui';
+import { ProjectBanner, Tooltip } from 'kampsy-ui';
 import { RotateCounterClockWise } from 'kampsy-ui/icons';
 
 {#snippet labelSnip()}
