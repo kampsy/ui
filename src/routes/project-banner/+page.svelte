@@ -7,7 +7,7 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ProjectBanner, Tooltip } from '$lib/index.js';
-	import { projectBannerSuccess, projectBannerWarning } from '../../docs/data/project-banner.js';
+	import { projectBannerError, projectBannerSuccess, projectBannerWarning } from '../../docs/data/project-banner.js';
 	import { RotateCounterClockWise, ShieldCheck, Warning } from '$lib/icons/index.js';
 </script>
 
@@ -160,7 +160,7 @@
 					/>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, projectBannerSuccess)}
+			{@render demoAndCode(demo, projectBannerError)}
 		</div>
 	</Row>
 {/snippet}
