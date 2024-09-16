@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { RotateCounterClockWise } from '$lib/icons/index.js';
-	import type { Snippet } from 'svelte';
+	import type { Component, Snippet } from 'svelte';
 
 	type propsT = {
+		icon?: Component | undefined;
 		callToAction?:
 			| {
 					label: string;
@@ -11,9 +12,14 @@
 			  }
 			| undefined;
 		label?: string | Snippet | undefined;
-		variant: 'gray' | 'warning' | 'error' | 'success';
+		variant?: 'gray' | 'warning' | 'error' | 'success';
 	};
-	let { callToAction = undefined, label = undefined, variant = 'gray' }: propsT = $props();
+	let {
+		icon = undefined,
+		callToAction = undefined,
+		label = undefined,
+		variant = 'gray'
+	}: propsT = $props();
 
 	const variantAsideObj = {
 		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 bg-kui-light-gray-100 
@@ -111,13 +117,15 @@
 	>
 		<div class="flex flex-col gap-2 px-6 w-full md:justify-center md:flex-row md:items-center">
 			<div class="flex gap-2 items-center">
-				<div class="shrink-0">
-					<div class="w-4 h-4">
+				{#if icon}
+					<div class="shrink-0">
 						<div class="w-4 h-4">
-							<RotateCounterClockWise />
+							<div class="w-4 h-4">
+								<svelte:component this={icon} />
+							</div>
 						</div>
 					</div>
-				</div>
+				{/if}
 				{@render labelSnip()}
 			</div>
 			{@render callToActionSnip()}

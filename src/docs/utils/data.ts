@@ -75,7 +75,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'project banner',
-                url: '/project-banner'
+                url: '/project-banner',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'select',

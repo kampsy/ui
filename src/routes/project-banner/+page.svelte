@@ -7,14 +7,8 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ProjectBanner, Tooltip } from '$lib/index.js';
-	import { projectBannerDefault } from '../../docs/data/project-banner.js';
-
-	const ProjectBannerVariants: Array<'gray' | 'warning' | 'error' | 'success'> = [
-		'gray',
-		'warning',
-		'error',
-		'success'
-	];
+	import { projectBannerSuccess, projectBannerWarning } from '../../docs/data/project-banner.js';
+	import { RotateCounterClockWise, ShieldCheck, Warning } from '$lib/icons/index.js';
 </script>
 
 <svelte:head>
@@ -31,7 +25,7 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Project-level banner shown on all project pages.
+			Used for temporary, project-wide notifications that require resolution
 		</p>
 	</Row>
 {/snippet}
@@ -60,7 +54,39 @@
 	</code>
 {/snippet}
 
-{#snippet defaultProjectBanner()}
+{#snippet success()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">success</a>
+		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			For positive, temporary mitigations put in place to protect a project, e.g., Attack Challenge
+			Mode.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<ProjectBanner
+						icon={ShieldCheck}
+						callToAction={{
+							label: 'Disable',
+							href: '/project-banner'
+						}}
+						label="Attack Challenge Mode is enabled for this project"
+						variant="success"
+					/>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, projectBannerSuccess)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet warning()}
 	{#snippet labelSnip()}
 		This project was rolled back by
 		<Tooltip
@@ -75,42 +101,66 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#default" id="default">default</a>
+			<a href="#default" id="default">warning</a>
 		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			The {@render roundedCode('label')} prop accepts either a {@render roundedCode('string')} or a
+			When a project is in an exceptional state which requires non-immediate action to exit, e.g.,
+			during a rollback. The {@render roundedCode('label')} prop accepts either a {@render roundedCode(
+				'string'
+			)} or a
 			{@render roundedCode('Snippet')}.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full space-y-6">
-					{#each ProjectBannerVariants as variant}
-						<div class="w-full space-y-2">
-							<ProjectBanner
-								callToAction={{
-									label: 'Undo Rollback',
-									onClick: () => {
-										alert('Button clicked');
-									}
-								}}
-								label="This project was rolled back by @johnphamous"
-								{variant}
-							/>
-							<ProjectBanner
-								callToAction={{
-									label: 'View Rollback',
-									href: '/project-banner'
-								}}
-								label={labelSnip}
-								{variant}
-							/>
-						</div>
-					{/each}
+				<div class="w-full">
+					<ProjectBanner
+						icon={RotateCounterClockWise}
+						callToAction={{
+							label: 'Undo Rollback',
+							onClick: () => {
+								alert('Button clicked');
+							}
+						}}
+						label={labelSnip}
+						variant="warning"
+					/>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, projectBannerDefault)}
+			{@render demoAndCode(demo, projectBannerWarning)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet error()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">error</a>
+		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			When a project is approaching or experiencing critical downtime which requires immediate
+			attention, e.g., when payment is overdue.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<ProjectBanner
+						icon={Warning}
+						callToAction={{
+							label: 'Add Credit Card',
+							href: '/project-banner'
+						}}
+						label="Payment failed, update credit card information before your account is shut down"
+						variant="error"
+					/>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, projectBannerSuccess)}
 		</div>
 	</Row>
 {/snippet}
@@ -126,7 +176,9 @@
 
 {#snippet cont()}
 	{@render projectBanner()}
-	{@render defaultProjectBanner()}
+	{@render success()}
+	{@render warning()}
+	{@render error()}
 	{@render prevAndNext()}
 {/snippet}
 
