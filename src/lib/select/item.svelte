@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Check } from '$lib/icons/index.js';
 	import { getContext, type Snippet } from 'svelte';
-	import type { Writable } from 'svelte/store';
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
@@ -10,21 +9,23 @@
 	};
 	let { value, children }: propsT = $props();
 
-	// Get the select stores from the context
-	const { selected, isActive } = getContext<{
-		selected: Writable<string>;
-		isActive: Writable<boolean>;
+	
+	const rootState = getContext<{
+		getSelected: () => string;
+		setSelected: (value: string) => void;
+		getIsActive: () => boolean;
+		setIsActive: (value: boolean) => void;
 	}>('select');
 </script>
 
 <button
 	onclick={() => {
-		$selected = value;
-		$isActive = false;
+		rootState.setSelected(value);
+		rootState.setIsActive(false);
 	}}
 	class="relative w-full cursor-pointer transition-colors text-sm flex items-center rounded-sm py-1.5 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
 >
-	{#if $selected === value}
+	{#if rootState.getSelected() === value}
 		<!--Icon-->
 		<div transition:fade class="absolute right-2">
 			<div class="w-full h-full flex items-center justify-center">

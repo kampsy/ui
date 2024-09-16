@@ -1,58 +1,53 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/utils/event.js';
 	import { setContext, type Snippet } from 'svelte';
-	import { writable } from 'svelte/store';
 	import { fade } from 'svelte/transition';
+	import { createRootState } from './root.svelte.js';
 
 	type propsT = {
 		value?: string;
 		size?: 'tiny' | 'small' | 'medium' | 'large' | undefined;
-        class?: string;
+		class?: string;
 		children: Snippet;
 	};
 	let { value = $bindable(''), size = 'medium', class: klass = '', children }: propsT = $props();
 
 
-	const isMobile = writable(false);
-	const selected = writable('');
-	const isActive = writable(false);
-	const transY = writable(-10);
-	const contentPosition = writable('top-[112%]');
-	
-	setContext('select', {
-		isMobile,
-		selected,
-		size: size,
-		isActive,
-		transY,
-		contentPosition,
+	const rootState = createRootState({
+		isMobile: false,
+		selected: '',
+		isActive: false,
+		size,
+		contentPosition: 'top-[112%',
+		transY: -10
 	});
+
+	setContext('select', rootState);
 
 	// Assign the selected value to the parent component value prop when changed.
 	$effect(() => {
-		value = $selected;
+		value = rootState.getSelected();
 	});
 
 	$effect(() => {
 		if (window.innerWidth < 767) {
-			$isMobile = true;
+			rootState.setIsMobile(true);
 		} else {
-			$isMobile = false;
+			rootState.setIsMobile(false);
 		}
 		// update when the user is resizing the window
 		window.addEventListener('resize', () => {
 			if (window.innerWidth < 767) {
-				$isMobile = true;
+				rootState.setIsMobile(true);
 			} else {
-				$isMobile = false;
+				rootState.setIsMobile(false);
 			}
 		});
 	});
-
 </script>
 
 <!--Backgrop background on mobile only-->
-{#if $isActive}
+{#if rootState.getIsActive()}
 	<div
 		in:fade|local
 		out:fade|local
@@ -60,6 +55,6 @@
 	></div>
 {/if}
 
-<div use:clickOutside={() => ($isActive = false)} class="relative inline-block {klass}">
+<div use:clickOutside={() => rootState.setIsActive(false)} class="relative inline-block {klass}">
 	{@render children()}
 </div>

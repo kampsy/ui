@@ -1,7 +1,5 @@
 <script lang="ts">
-	import ChevronDownSmall from '$lib/icons/chevron-down-small.svelte';
 	import { getContext, type Snippet } from 'svelte';
-	import type { Writable } from 'svelte/store';
 
 	type propsT = {
 		class?: string;
@@ -9,12 +7,13 @@
 	};
 	let { class: klass = '', children }: propsT = $props();
 
-	// Get the select stores from the context
-	const {size, isActive, transY, contentPosition } = getContext<{
+	// Get the state of the select from the context
+	const rootState = getContext<{
 		size: 'tiny' | 'small' | 'medium' | 'large';
-		isActive: Writable<boolean>;
-		transY: Writable<number>;
-		contentPosition: Writable<string>;
+		getIsActive: () => boolean;
+		setIsActive: (value: boolean) => void;
+		setContentPosition: (value: string) => void;
+		setTransY: (value: number) => void;
 	}>('select');
 
 	const toogle = (evt: Event) => {
@@ -27,13 +26,13 @@
 		const positionFromBottom = viewportHeight - position.bottom;
 
 		if (positionFromTop > positionFromBottom) {
-			$contentPosition = `bottom-[112%]`;
-			$transY = 10;
+			rootState.setContentPosition(`bottom-[112%]`);
+			rootState.setTransY(10);
 		} else {
-			$contentPosition = `top-[112%]`;
-			$transY = -10;
+			rootState.setContentPosition(`top-[112%]`);
+			rootState.setTransY(-10);
 		}
-		$isActive = !$isActive;
+		rootState.setIsActive(!rootState.getIsActive());
 	};
 
 	const sizeObj = {
@@ -43,7 +42,7 @@
 		large: 'h-[48px] px-[14px] text-base leading-[24px]'
 	};
 	let sizeClass = $derived.by(() => {
-		return sizeObj[size];
+		return sizeObj[rootState.size];
 	});
 </script>
 

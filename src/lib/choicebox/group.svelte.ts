@@ -1,5 +1,8 @@
 
-export function createGroupState(initial: { selected: string | Array<string>, name: string, type: 'radio' | 'checkbox', disabledParent: boolean }) {
+export function createGroupState(initial: {
+    selected: string | Array<string>, name: string,
+    type: 'radio' | 'checkbox', disabledParent: boolean
+}) {
     let selected = $state(initial.selected);
 
     function get() {

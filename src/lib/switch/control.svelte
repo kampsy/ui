@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { randomString } from '$lib/utils/random.js';
 	import { getContext, type Component } from 'svelte';
-	import type { Writable } from 'svelte/store';
 
 	type propT = {
 		defaultChecked?: boolean | undefined;
@@ -12,27 +11,23 @@
 	};
 	let { defaultChecked, disabled = undefined, label, icon = undefined, value }: propT = $props();
 
-	// Switch props, the parent component
-	type switchProps = {
+	const rootState = getContext<{
 		name: string;
 		size: 'small' | 'medium' | 'large';
 		fullWidth: boolean;
-	};
-
-	const { compProps, selected } = getContext<{
-		compProps: switchProps;
-		selected: Writable<string>;
+		getSelected: () => string;
+		setSelected: (value: string) => void;
 	}>('switch');
-	const { name, size, fullWidth } = compProps;
+	const { name, size, fullWidth } = rootState;
 
 	// If defaultChecked is set and value
 	if (defaultChecked) {
-		$selected = value;
+		rootState.setSelected(value);
 	}
 
 	const onchange = (evt: Event) => {
 		const target = evt.currentTarget as HTMLInputElement;
-		$selected = target.value;
+		rootState.setSelected(target.value);
 	};
 
 	// random string for unique id
@@ -71,13 +66,13 @@
 	let selectedClass = $derived.by(() => {
 		// If the switch is disabled
 		if (disabled) {
-			if ($selected === value) {
+			if (rootState.getSelected() === value) {
 				return `text-kui-light-gray-700 dark:text-kui-dark-gray-700 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 			}
 			return `text-kui-light-gray-700 dark:text-kui-dark-gray-700`;
 		}
 
-		if ($selected === value) {
+		if (rootState.getSelected() === value) {
 			return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 		}
 		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 hover:dark:text-kui-dark-gray-1000`;
@@ -126,7 +121,7 @@
 	<input
 		{onchange}
 		type="radio"
-		checked={$selected == value}
+		checked={rootState.getSelected() == value}
 		id={unique}
 		{name}
 		{value}

@@ -2,7 +2,7 @@
 	import { randomString } from '$lib/utils/random.js';
 	import type { Snippet } from 'svelte';
 	import { setContext } from 'svelte';
-	import { writable } from 'svelte/store';
+	import { createRootState } from './root.svelte.js';
 
 	type propT = {
 		value: string;
@@ -31,11 +31,9 @@
 		switchProps.name = randomString(8);
 	}
 
-	const selected = writable('');
-	setContext('switch', {
-		compProps: switchProps,
-		selected
-	});
+	const rootState = createRootState({ selected: '', ...switchProps });
+
+	setContext('switch', rootState);
 
 	let width = $derived.by(() => {
 		if (fullWidth) {
@@ -50,14 +48,14 @@
 			return 'rounded-[8px]';
 		}
 		return 'rounded-[6px]';
-	})
+	});
 
 	$effect(() => {
-		value = $selected;
+		value = rootState.getSelected();
 	});
 </script>
 
-<div class="{width}" >
+<div class={width}>
 	<div
 		class="flex items-center p-1 {borderRadius} border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	>

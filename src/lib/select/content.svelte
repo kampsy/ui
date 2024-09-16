@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/index.js';
 	import { getContext, type Snippet } from 'svelte';
-	import type { Writable } from 'svelte/store';
 	import { fly } from 'svelte/transition';
 
 	type propsT = {
@@ -10,17 +9,19 @@
 	};
 	let { class: klass = '', children }: propsT = $props();
 
-	// Get the select stores from the context
-	const { isMobile, isActive, transY, contentPosition } = getContext<{
-		isMobile: Writable<boolean>;
-		isActive: Writable<boolean>;
-		transY: Writable<number>;
-		contentPosition: Writable<string>;
+	// Get the state of the select from the context
+	const rootState = getContext<{
+		size: 'tiny' | 'small' | 'medium' | 'large';
+		getIsMobile: () => boolean;
+		getIsActive: () => boolean;
+		setIsActive: (value: boolean) => void;
+		getContentPosition: () => string;
+		getTransY: () => number;
 	}>('select');
 </script>
 
 {#snippet mobileSnip()}
-	{#if $isActive}
+	{#if rootState.getIsActive()}
 		<div
 			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
 			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
@@ -34,7 +35,7 @@
 			<footer class="p-4">
 				<Button
 					onclick={() => {
-						$isActive = false;
+						rootState.setIsActive(false);
 					}}
 					type="secondary"
 					class="w-full">done</Button
@@ -45,11 +46,11 @@
 {/snippet}
 
 {#snippet desktopSnip()}
-	{#if $isActive}
+	{#if rootState.getIsActive()}
 		<div
-			in:fly={{ y: $transY }}
-			out:fly={{ y: $transY }}
-			class="absolute w-full {$contentPosition} z-[1000] {klass}"
+			in:fly={{ y: rootState.getTransY() }}
+			out:fly={{ y: rootState.getTransY() }}
+			class="absolute w-full {rootState.getContentPosition()} z-[1000] {klass}"
 		>
 			<div
 				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto {klass}"
@@ -60,7 +61,7 @@
 	{/if}
 {/snippet}
 
-{#if $isMobile}
+{#if rootState.getIsMobile()}
 	{@render mobileSnip()}
 {:else}
 	{@render desktopSnip()}
