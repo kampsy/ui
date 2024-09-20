@@ -1,8 +1,12 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
+	import Error from '$lib/icons/error.svelte';
 
 	type propsT = {
+		type?: 'text' | 'number' | 'email' | 'password' | undefined;
 		value?: string | undefined;
+		label?: string | undefined;
+		error?: string | undefined;
 		'aria-labelledby'?: string | undefined;
 		size?: 'small' | 'medium' | 'large';
 		prefix?: string | Component | undefined;
@@ -14,7 +18,10 @@
 		disabled?: boolean | undefined;
 	};
 	let {
+		type = "text",
 		value = $bindable(''),
+		label = undefined,
+		error = undefined,
 		'aria-labelledby': araiLabelledBy = undefined,
 		size = 'medium',
 		prefix = undefined,
@@ -43,6 +50,11 @@
 		if (disabled) {
 			return `cursor-not-allowed border-kui-light-gray-200 dark:border-kui-dark-gray-400 
 			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
+		}
+		if (error) {
+			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-red-700 
+			dark:hover:border-kui-dark-red-700 ring-4 ring-kui-light-red-400 dark:ring-kui-dark-red-400 
+			hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
 		}
 		if (hasRing) {
 			return `border-kui-light-blue-700 dark:border-kui-dark-blue-700 ring-4 ring-kui-light-blue-400 
@@ -88,6 +100,16 @@
 		}
 		return ``;
 	});
+
+	const errorTextObj = {
+		tiny: 'text-[12px] leading-[16px]',
+		small: 'text-[13px] leading-[20px]',
+		medium: 'text-[14px] leading-[20px]',
+		large: 'text-[16px] leading-[24px]'
+	};
+	let errorText = $derived.by(() => {
+		return errorTextObj[size];
+	});
 </script>
 
 <!--Prefix snippet-->
@@ -126,30 +148,62 @@
 	{/if}
 {/snippet}
 
-<div
-	class="w-full flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px]
-        "
->
-	{@render prefixSnip()}
+{#snippet inputSnip()}
+	<div>
+		<div
+			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px]
+	"
+		>
+			{@render prefixSnip()}
 
-	<div class="w-full h-full {inputContClass}">
-		<input
-			type="text"
-			{value}
-			aria-labelledby={araiLabelledBy}
-			{spellcheck}
-			{placeholder}
-			{disabled}
-			onfocus={() => {
-				hasRing = true;
-			}}
-			onblur={() => {
-				hasRing = false;
-			}}
-			class="{inputClass} w-full h-full outline-none bg-transparent capitalize placeholder:text-kui-light-gray-600
-			 dark:placeholder:text-kui-dark-gray-600"
-		/>
+			<div class="w-full h-full {inputContClass}">
+				<input
+					{type}
+					{value}
+					aria-labelledby={araiLabelledBy}
+					{spellcheck}
+					{placeholder}
+					{disabled}
+					onfocus={() => {
+						hasRing = true;
+					}}
+					onblur={() => {
+						hasRing = false;
+					}}
+					class="{inputClass} w-full h-full outline-none bg-transparent capitalize placeholder:text-kui-light-gray-600
+		 dark:placeholder:text-kui-dark-gray-600"
+				/>
+			</div>
+
+			{@render suffixSnip()}
+		</div>
+		{#if error}
+			<div class="mt-[8px]">
+				<div class="flex items-center gap-[8px]">
+					<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+						<Error />
+					</div>
+					<div class="{errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">
+						{error}
+					</div>
+				</div>
+			</div>
+		{/if}
 	</div>
+{/snippet}
 
-	{@render suffixSnip()}
-</div>
+<!--With a label-->
+{#snippet inputLabel()}
+	<label for="">
+		<div class="text-sm text-kui-light-gray-900 dark:text-kui-light-gray-900 mb-2">
+			{label}
+		</div>
+		{@render inputSnip()}
+	</label>
+{/snippet}
+
+{#if label}
+	{@render inputLabel()}
+{:else}
+	{@render inputSnip()}
+{/if}

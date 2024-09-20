@@ -5,22 +5,25 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import {
-		errorCustomLabel,
-		errorDefault,
-		errorSize,
-		errorWithProp
-	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Input } from '$lib/index.js';
 	import ArrowCircleUp from '$lib/icons/arrow-circle-up.svelte';
+	import {
+		inputDefault,
+		inputPrefixAndSuffix,
+		inputDisabled,
+		inputLabel,
+
+		inputError
+
+	} from '../../docs/data/input.js';
 </script>
 
 <svelte:head>
 	<title>Input</title>
 </svelte:head>
 
-{#snippet error()}
+{#snippet input()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
@@ -57,13 +60,13 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-3 gap-x-4">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
 					<Input aria-labelledby="Demo input" placeholder="small" size="small" />
 					<Input aria-labelledby="Demo input" placeholder="default" />
 					<Input aria-labelledby="Demo input" placeholder="large" size="large" />
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, inputDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -77,16 +80,16 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="default" />
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="default" />
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" prefix="https://" suffix=".com" placeholder="default" />
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						prefix={ArrowCircleUp}
@@ -97,12 +100,12 @@
 					/>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorCustomLabel)}
+			{@render demoAndCode(demo, inputPrefixAndSuffix)}
 		</div>
 	</Row>
 {/snippet}
 
-{#snippet inputDisabled()}
+{#snippet inputDisabledSnip()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -111,19 +114,29 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" placeholder="Disabled with placeholder" disabled />
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" value="Disabled with placeholder" disabled />
 				</div>
-				<div class="w-full grid grid-cols-3">
-					<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="Disabled with prefix" disabled />
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input
+						aria-labelledby="Demo"
+						prefix={ArrowCircleUp}
+						placeholder="Disabled with prefix"
+						disabled
+					/>
 				</div>
-				<div class="w-full grid grid-cols-3">
-					<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="Disabled with suffix" disabled />
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input
+						aria-labelledby="Demo"
+						suffix={ArrowCircleUp}
+						placeholder="Disabled with suffix"
+						disabled
+					/>
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						prefix="https://"
@@ -132,7 +145,7 @@
 						disabled
 					/>
 				</div>
-				<div class="w-full grid grid-cols-3">
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						prefix={ArrowCircleUp}
@@ -144,7 +157,62 @@
 					/>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorCustomLabel)}
+			{@render demoAndCode(demo, inputDisabled)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet errorSnip()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#customelabel" id="default">error</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input
+						aria-labelledby="Demo input"
+						error="An error message."
+						placeholder="long-error@gmail.com"
+						size="small"
+					/>
+				</div>
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input
+						aria-labelledby="Demo input"
+						error="An error message."
+						placeholder="long-error@gmail.com"
+						
+					/>
+				</div>
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input
+						aria-labelledby="Demo input"
+						error="An error message."
+						placeholder="long-error@gmail.com"
+						size="large"
+					/>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, inputError)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet inputLabelSnip()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#customelabel" id="default">label</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Input aria-labelledby="Demo input" label="Label" placeholder="Label" />
+			{/snippet}
+			{@render demoAndCode(demo, inputLabel)}
 		</div>
 	</Row>
 {/snippet}
@@ -152,17 +220,19 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: 'error', href: '/error' }}
+			next={{ title: 'note', href: '/note' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render error()}
+	{@render input()}
 	{@render defaultInput()}
 	{@render prefixAndSuffix()}
-	{@render inputDisabled()}
+	{@render inputDisabledSnip()}
+	{@render errorSnip()}
+	{@render inputLabelSnip()}
 	{@render prevAndNext()}
 {/snippet}
 
