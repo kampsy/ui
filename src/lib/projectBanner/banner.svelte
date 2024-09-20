@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { RotateCounterClockWise } from '$lib/icons/index.js';
 	import type { Component, Snippet } from 'svelte';
 
 	type propsT = {
@@ -118,10 +117,11 @@
 		<div class="flex flex-col gap-2 px-6 w-full md:justify-center md:flex-row md:items-center">
 			<div class="flex gap-2 items-center">
 				{#if icon}
+					{@const Icon = icon}
 					<div class="shrink-0">
 						<div class="w-4 h-4">
 							<div class="w-4 h-4">
-								<svelte:component this={icon} />
+								<Icon />
 							</div>
 						</div>
 					</div>

@@ -5,7 +5,6 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
 	import {
 		errorCustomLabel,
 		errorDefault,
@@ -13,10 +12,12 @@
 		errorWithProp
 	} from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import { Input } from '$lib/index.js';
+	import ArrowCircleUp from '$lib/icons/arrow-circle-up.svelte';
 </script>
 
 <svelte:head>
-    <title>Input</title>
+	<title>Input</title>
 </svelte:head>
 
 {#snippet error()}
@@ -29,7 +30,7 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-        Retrieve text input from a user.
+			Retrieve text input from a user.
 		</p>
 	</Row>
 {/snippet}
@@ -47,7 +48,7 @@
 	</div>
 {/snippet}
 
-{#snippet defaultErr()}
+{#snippet defaultInput()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -56,8 +57,10 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<Error>This email address is already in use.</Error>
+				<div class="w-full grid grid-cols-3 gap-x-4">
+					<Input aria-labelledby="Demo input" placeholder="small" size="small" />
+					<Input aria-labelledby="Demo input" placeholder="default" />
+					<Input aria-labelledby="Demo input" placeholder="large" size="large" />
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, errorDefault)}
@@ -65,17 +68,33 @@
 	</Row>
 {/snippet}
 
-{#snippet customLabel()}
+{#snippet prefixAndSuffix()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">custome label</a>
+			<a href="#customelabel" id="default">prefix and suffix</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<Error label="Email Error">This email address is already in use.</Error>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="default" />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="default" />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" prefix="https://" suffix=".com" placeholder="default" />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input
+						aria-labelledby="Demo"
+						prefix={ArrowCircleUp}
+						prefixStyling={false}
+						suffix={ArrowCircleUp}
+						suffixStyling={false}
+						placeholder="default"
+					/>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, errorCustomLabel)}
@@ -83,42 +102,49 @@
 	</Row>
 {/snippet}
 
-{#snippet size()}
+{#snippet inputDisabled()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#size" id="default">size</a>
+			<a href="#customelabel" id="default">disabled</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Error size="sm">This email is in use.</Error>
-				<Error size="md">This email is in use.</Error>
-				<Error size="lg">This email is in use.</Error>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" placeholder="Disabled with placeholder" disabled />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" value="Disabled with placeholder" disabled />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="Disabled with prefix" disabled />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="Disabled with suffix" disabled />
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input
+						aria-labelledby="Demo"
+						prefix="https://"
+						suffix=".com"
+						placeholder="Disabled with prefix and suffix"
+						disabled
+					/>
+				</div>
+				<div class="w-full grid grid-cols-3">
+					<Input
+						aria-labelledby="Demo"
+						prefix={ArrowCircleUp}
+						prefixStyling={false}
+						suffix={ArrowCircleUp}
+						suffixStyling={false}
+						placeholder="Disabled with prefix and suffix"
+						disabled
+					/>
+				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorSize)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet withErrorProp()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">With an error property</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Error
-					error={{
-						message: 'The request failed.',
-						action: 'Contact Us',
-						link: 'https://kampsy.kampsy.xyz/error'
-					}}
-				/>
-			{/snippet}
-			{@render demoAndCode(demo, errorWithProp)}
+			{@render demoAndCode(demo, errorCustomLabel)}
 		</div>
 	</Row>
 {/snippet}
@@ -134,10 +160,9 @@
 
 {#snippet cont()}
 	{@render error()}
-	{@render defaultErr()}
-	{@render customLabel()}
-	{@render size()}
-    {@render withErrorProp()}
+	{@render defaultInput()}
+	{@render prefixAndSuffix()}
+	{@render inputDisabled()}
 	{@render prevAndNext()}
 {/snippet}
 

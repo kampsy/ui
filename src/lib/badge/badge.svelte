@@ -41,18 +41,21 @@
 		blue: 'bg-kui-light-blue-700 text-kui-light-bg dark:bg-kui-dark-blue-700 dark:text-kui-light-bg',
 		'blue-subtle':
 			' text-kui-light-blue-900 dark:text-kui-dark-blue-900 bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 ',
-		purple: 'bg-kui-light-purple-700 text-kui-light-bg dark:bg-kui-dark-purple-700 dark:text-kui-light-bg',
+		purple:
+			'bg-kui-light-purple-700 text-kui-light-bg dark:bg-kui-dark-purple-700 dark:text-kui-light-bg',
 		'purple-subtle':
 			'bg-kui-light-purple-200 text-kui-light-purple-900 dark:bg-kui-dark-purple-200 dark:text-kui-dark-purple-900',
 		amber: 'bg-kui-light-amber-700 text-black dark:bg-kui-dark-amber-700',
 		'amber-subtle':
 			'bg-kui-light-amber-200 text-kui-light-amber-900 dark:bg-kui-dark-amber-200 dark:text-kui-dark-amber-900',
 		red: 'bg-kui-light-red-700 text-kui-light-bg dark:bg-kui-dark-red-700 dark:text-kui-light-bg',
-		'red-subtle': 'bg-kui-light-red-200 text-kui-light-red-900 dark:bg-kui-dark-red-200 dark:text-kui-dark-red-900',
+		'red-subtle':
+			'bg-kui-light-red-200 text-kui-light-red-900 dark:bg-kui-dark-red-200 dark:text-kui-dark-red-900',
 		pink: 'bg-kui-light-pink-700 text-kui-light-bg dark:bg-kui-dark-pink-700 dark:text-kui-light-bg',
 		'pink-subtle':
 			'bg-kui-light-pink-200 text-kui-light-pink-900 dark:bg-kui-dark-pink-200 dark:text-kui-dark-pink-900',
-		green: 'bg-kui-light-green-700 text-kui-light-bg dark:bg-kui-dark-green-700 dark:text-kui-light-bg',
+		green:
+			'bg-kui-light-green-700 text-kui-light-bg dark:bg-kui-dark-green-700 dark:text-kui-light-bg',
 		'green-subtle':
 			'bg-kui-light-green-200 text-kui-light-green-900 dark:bg-kui-dark-green-200 dark:text-kui-dark-green-900',
 		teal: 'bg-kui-light-teal-700 text-kui-light-bg dark:bg-kui-dark-teal-700 dark:text-kui-light-bg',
@@ -102,8 +105,9 @@
 
 {#snippet iconSnip()}
 	{#if icon}
+		{@const Icon = icon}
 		<span class={iconSizeClass}>
-			<svelte:component this={icon} />
+			<Icon />
 		</span>
 	{/if}
 {/snippet}

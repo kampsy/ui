@@ -135,8 +135,9 @@
 
 {#snippet prefixSnip()}
 	{#if prefix}
+		{@const Prefix = prefix}
 		<div class="{iconSize} flex items-center justify-center">
-			<svelte:component this={prefix} />
+			<Prefix />
 		</div>
 	{:else if loading}
 		{@render spinner()}
@@ -145,8 +146,9 @@
 
 {#snippet suffixSnip()}
 	{#if suffix}
+		{@const Suffix = suffix}
 		<div class="{iconSize} flex items-center justify-center">
-			<svelte:component this={suffix} />
+			<Suffix />
 		</div>
 	{/if}
 {/snippet}

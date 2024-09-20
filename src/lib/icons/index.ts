@@ -1,5 +1,6 @@
 export { default as ArrowLeft } from './arrow-left.svelte';
 export { default as ArrowRight } from './arrow-right.svelte';
+export { default as ArrowCircleUp } from './arrow-circle-up.svelte'
 export { default as Moon } from './moon.svelte';
 
 export { default as ChevronLeft } from './chevron-left.svelte';
@@ -34,6 +35,6 @@ export { default as CheckCircle } from './check-circle.svelte'
 export { default as Warning } from './warning.svelte'
 export { default as LogoTwitterX } from './logo-twitter-x.svelte'
 export { default as LogoTwitterXSmall } from './logo-twitter-x-small.svelte'
-export {default as LogoGithub} from './logo-github.svelte'
-export {default as LogoGitlab} from './logo-gitlab.svelte'
-export {default as LogoBitbucketColor} from './logo-bitbucket-color.svelte'
+export { default as LogoGithub } from './logo-github.svelte'
+export { default as LogoGitlab } from './logo-gitlab.svelte'
+export { default as LogoBitbucketColor } from './logo-bitbucket-color.svelte'

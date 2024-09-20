@@ -63,6 +63,14 @@ export const asideData: Array<AsideT> = [
                 url: '/error'
             },
             {
+                name: 'input',
+                url: '/input',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
+            },
+            {
                 name: 'note',
                 url: '/note'
             },
@@ -103,11 +111,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'tabs',
-                url: '/tabs',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/tabs'
             },
             {
                 name: 'textarea',
