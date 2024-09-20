@@ -109,9 +109,10 @@
 
 {#snippet withIcon()}
 	{#if icon && !label}
+		{@const Icon = icon}
 		<div class="flex items-center justify-center">
 			<div class={iconContClass}>
-				<svelte:component this={icon} />
+				<Icon />
 			</div>
 		</div>
 	{/if}

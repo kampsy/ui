@@ -36,7 +36,7 @@
 		isDisabledSpecific: boolean | undefined
 	): string => {
 		if (type === 'secondary') {
-            // if the tab is disabled does not matter if active or not
+			// if the tab is disabled does not matter if active or not
 			if (isDisabled || isDisabledSpecific) {
 				return `cursor-not-allowed px-1.5 py-1 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 rounded-md bg-kui-light-gray-alpha-400 
             dark:bg-kui-dark-gray-alpha-400`;
@@ -101,9 +101,10 @@
 		)} "
 	>
 		{#if tab.icon}
+			{@const Icon = tab.icon}
 			<div class="w-[16px] h-[16px] flex items-center justify-center">
 				<div class="w-[16px] h-[16px]">
-					<svelte:component this={tab.icon} />
+					<Icon />
 				</div>
 			</div>
 		{/if}
