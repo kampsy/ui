@@ -1,6 +1,8 @@
 // Avatar
 export * from './avatar/index.js';
 
+export * from './customColors/index.js';
+
 // Badege 
 export { default as Badge } from './badge/badge.svelte';
 
