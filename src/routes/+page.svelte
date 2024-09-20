@@ -637,7 +637,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination next={{ title: 'colors', href: '/colors' }} />
+		<Pagination next={{ title: 'installation', href: '/installation' }} />
 	</Row>
 {/snippet}
 

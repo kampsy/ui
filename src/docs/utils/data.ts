@@ -9,6 +9,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'introduction',
                 url: '/',
+            }, 
+            {
+                name: 'installation',
+                url: '/installation'
             },
             {
                 name: 'colors',
