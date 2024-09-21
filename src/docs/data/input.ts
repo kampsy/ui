@@ -79,6 +79,11 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 	/>
 </div>`;
 
+export const inputSearch = `
+import { SearchInput } from 'kampsy-ui';
+
+<SearchInput placeholder="Enter some text..." />`;
+
 export const inputError = `
 import { Input } from 'kampsy-ui';
 

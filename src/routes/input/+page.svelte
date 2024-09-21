@@ -6,15 +6,16 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Input } from '$lib/index.js';
+	import { Input, SearchInput } from '$lib/index.js';
 	import ArrowCircleUp from '$lib/icons/arrow-circle-up.svelte';
 	import {
 		inputDefault,
 		inputPrefixAndSuffix,
 		inputDisabled,
 		inputLabel,
+		inputError,
 
-		inputError
+		inputSearch
 
 	} from '../../docs/data/input.js';
 </script>
@@ -162,6 +163,29 @@
 	</Row>
 {/snippet}
 
+{#snippet searchSnip()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#customelabel" id="default">search</a>
+		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			Automatically clears the input if escape is pressed.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<SearchInput placeholder="Enter some text..." />
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, inputSearch)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet errorSnip()}
 	<Row>
 		<h2
@@ -184,7 +208,6 @@
 						aria-labelledby="Demo input"
 						error="An error message."
 						placeholder="long-error@gmail.com"
-						
 					/>
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
@@ -231,6 +254,7 @@
 	{@render defaultInput()}
 	{@render prefixAndSuffix()}
 	{@render inputDisabledSnip()}
+	{@render searchSnip()}
 	{@render errorSnip()}
 	{@render inputLabelSnip()}
 	{@render prevAndNext()}

@@ -27,8 +27,10 @@ export { default as TextGradient } from './text/textGradient.svelte';
 // Error
 export { default as Error } from './error/error.svelte';
 
-// Input
+// Input 
 export { default as Input } from './input/input.svelte'
+// SearchInput
+export { default as SearchInput } from './input/searchInput.svelte'
 
 // Note
 export { default as Note } from './note/note.svelte';
