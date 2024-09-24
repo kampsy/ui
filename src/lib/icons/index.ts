@@ -39,3 +39,8 @@ export { default as LogoGithub } from './logo-github.svelte'
 export { default as LogoGitlab } from './logo-gitlab.svelte'
 export { default as LogoBitbucketColor } from './logo-bitbucket-color.svelte'
 export { default as MagnifyingGlass } from './magnifying-glass.svelte'
+
+export { default as LockClosed } from './lock-closed.svelte'
+export { default as LockOpen } from './lock-open.svelte'
+export { default as LockClosedSmall } from './lock-closed-small.svelte'
+export { default as LockOpenSmall } from './lock-open-small.svelte'

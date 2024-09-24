@@ -9,7 +9,7 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'introduction',
                 url: '/',
-            }, 
+            },
             {
                 name: 'installation',
                 url: '/installation'
@@ -120,6 +120,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'theme switcher',
                 url: '/theme-switcher'
+            },
+            {
+                name: 'toogle',
+                url: '/toogle'
             },
             {
                 name: 'tooltip',

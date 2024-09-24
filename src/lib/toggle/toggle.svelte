@@ -3,32 +3,107 @@
 	import type { Component } from 'svelte';
 
 	type propT = {
+		'aria-label'?: string | undefined;
+		size?: 'small' | 'large' | undefined;
+		checked?: boolean | undefined;
 		defaultChecked?: boolean | undefined;
 		disabled?: boolean | undefined;
 		label?: string | undefined;
-		icon?: Component | undefined;
-		value: string;
+		icon?:
+			| {
+					checked: Component;
+					unchecked: Component;
+			  }
+			| undefined;
 	};
-	let { defaultChecked, disabled = undefined, label, icon = undefined, value= $bindable('') }: propT = $props();
+	let {
+		'aria-label': ariaLabel,
+		size = 'small',
+		checked = $bindable(false),
+		disabled = undefined,
+		icon = undefined
+	}: propT = $props();
 
-	const onchange = (evt: Event) => {
-		const target = evt.currentTarget as HTMLInputElement;
-		console.log(target.value, '<-------');
+	const onchange = () => {
+		checked = !checked;
 	};
 
 	// random string for unique id
-	const unique = `${randomString(4)}_${value}`;
+	const unique = `${randomString(4)}`;
+
+	const sizeContObj = {
+		small: 'w-[28px] h-[14px]',
+		large: 'w-[48px] h-[24px]'
+	};
+	let sizeContClass = $derived.by(() => {
+		return sizeContObj[size];
+	});
+
+	const sizeThumbObj = {
+		small: 'w-[12px] h-[12px]',
+		large: 'w-[22px] h-[22px]'
+	};
+	let sizeThumbClass = $derived.by(() => {
+		return sizeThumbObj[size];
+	});
+
+	const iconSizeObj = {
+		small: 'w-[10px] h-[10px]',
+		large: 'w-[16px] h-[16px]'
+	};
+	let iconSizeClass = $derived.by(() => {
+		return iconSizeObj[size];
+	});
+
+	let toogleContClass = $derived.by(() => {
+		if (checked) {
+			return `bg-kui-light-blue-700 dark:bg-kui-dark-blue-700
+			border-kui-light-blue-800 dark:border-kui-dark-blue-800`;
+		}
+		return `bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border-black/[0.08]
+		 dark:border-kui-dark-gray-400`;
+	});
+
+	let thumbClass = $derived.by(() => {
+		if (checked) {
+			return `bg-white border-white dark:text-kui-light-gray-1000 translate-x-full dark:text-kui-dark-gray-1000`;
+		}
+		return `bg-kui-light-bg-secondary border-kui-light-gray-200 dark:bg-white dark:text-kui-light-gray-1000`;
+	});
 </script>
 
-<label for={unique} class="inline-flex items-center cursor-pointer gap-2 py-[3px]">
-	<span class="ms-3 text-xs font-medium text-kui-light-gray-900 dark-text-kui-dark-gray-900">Toggle me</span
-	>
-	<input {onchange} type="radio" id={unique} {value} {disabled} class="hidden" />
-	<span
-		class="w-[28px] h-[14px] flex items-center bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 rounded-full"
-	>
-		<div class="w-[12px] h-[12px] bg-kui-light-bg rounded-full">
-			<!---->
+<!--Checked and uncheked icons-->
+{#snippet icons()}
+	{#if icon}
+		<div class="relative w-full h-full rounded-full flex items-center justify-center">
+			{#if checked}
+				{@const CheckedIcon = icon.checked}
+				<div class="absolute {iconSizeClass}">
+					<CheckedIcon />
+				</div>
+			{:else}
+				{@const UncheckedIcon = icon.unchecked}
+				<div class="absolute {iconSizeClass}">
+					<UncheckedIcon />
+				</div>
+			{/if}
 		</div>
-	</span>
+	{/if}
+{/snippet}
+
+<label for={unique} class="inline-flex items-center cursor-pointer">
+	<input
+		{onchange}
+		{checked}
+		aria-label={ariaLabel}
+		type="checkbox"
+		id={unique}
+		{disabled}
+		class="hidden"
+	/>
+	<div class="relative {sizeContClass} flex items-center rounded-full border  {toogleContClass} ">
+		<div class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}">
+			{@render icons()}
+		</div>
+	</div>
 </label>
