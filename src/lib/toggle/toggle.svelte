@@ -1,27 +1,29 @@
 <script lang="ts">
 	import { randomString } from '$lib/utils/random.js';
-	import type { Component } from 'svelte';
+	import type { Component, Snippet } from 'svelte';
 
 	type propT = {
 		'aria-label'?: string | undefined;
 		size?: 'small' | 'large' | undefined;
 		checked?: boolean | undefined;
-		defaultChecked?: boolean | undefined;
 		disabled?: boolean | undefined;
-		label?: string | undefined;
+		direction?: 'switch-last' | 'switch-first';
 		icon?:
 			| {
 					checked: Component;
 					unchecked: Component;
 			  }
 			| undefined;
+		children?: Snippet | undefined;
 	};
 	let {
 		'aria-label': ariaLabel,
 		size = 'small',
 		checked = $bindable(false),
 		disabled = undefined,
-		icon = undefined
+		direction = 'switch-last',
+		icon = undefined,
+		children = undefined
 	}: propT = $props();
 
 	const onchange = () => {
@@ -53,6 +55,13 @@
 	};
 	let iconSizeClass = $derived.by(() => {
 		return iconSizeObj[size];
+	});
+
+	let childLableClass = $derived.by(() => {
+		if (direction === 'switch-first') {
+			return `order-last`;
+		}
+		return ``;
 	});
 
 	let toogleContClass = $derived.by(() => {
@@ -91,7 +100,12 @@
 	{/if}
 {/snippet}
 
-<label for={unique} class="inline-flex items-center cursor-pointer">
+<label for={unique} class="inline-flex items-center gap-3 cursor-pointer">
+	{#if children}
+		<span class="{childLableClass} text-xs text-kui-light-gray-800 dark:text-kui-dark-gray-900">
+			{@render children()}
+		</span>
+	{/if}
 	<input
 		{onchange}
 		{checked}
@@ -101,8 +115,10 @@
 		{disabled}
 		class="hidden"
 	/>
-	<div class="relative {sizeContClass} flex items-center rounded-full border  {toogleContClass} ">
-		<div class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}">
+	<div class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}">
+		<div
+			class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}"
+		>
 			{@render icons()}
 		</div>
 	</div>

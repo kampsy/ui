@@ -40,7 +40,7 @@
 		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
 	/>
 	<meta
-		property="twitter:image" 
+		property="twitter:image"
 		content="https://ucarecdn.com/91722eb1-c95a-42b2-b851-cdfe01a9bdf7/-/preview/1200x628/"
 	/>
 
@@ -98,7 +98,6 @@
 								<ShieldGlobe />
 							</div>
 						</Button>
-
 					</div>
 					<div class="babsolute top-0 left-0 w-full h-full"></div>
 				</div>

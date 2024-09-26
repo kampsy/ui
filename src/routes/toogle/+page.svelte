@@ -7,12 +7,13 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Toggle } from '$lib/index.js';
-	import { toogleCustomColors, toogleDefault, toogleSizes } from '../../docs/data/toogle.js';
+	import { toogleCustomColors, toogleDefault, toogleSizes, toogleWithLabel } from '../../docs/data/toogle.js';
 	import { LockClosedSmall, LockOpenSmall } from '$lib/icons/index.js';
 
 	let checked = $state(false);
 	let checked2 = $state(true);
 	let checkedCustom = $state(false);
+	let label = $state(false);
 </script>
 
 <svelte:head>
@@ -154,6 +155,82 @@
 	</Row>
 {/snippet}
 
+{#snippet withLabel()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">with label</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full space-y-4">
+					<div class="w-full flex items-center gap-6">
+						<Toggle aria-label="Enable Firewall" bind:checked={label}>Enable Firewall</Toggle>
+						<Toggle aria-label="Enable Firewall" bind:checked={label} direction="switch-first"
+							>Enable Firewall</Toggle
+						>
+					</div>
+					<div class="w-full flex items-center gap-6">
+						<Toggle aria-label="Enable Firewall" size="large" bind:checked={label}
+							>Enable Firewall</Toggle
+						>
+						<Toggle
+							aria-label="Enable Firewall"
+							size="large"
+							direction="switch-first"
+							bind:checked={label}>Enable Firewall</Toggle
+						>
+					</div>
+					<div class="w-full flex items-center gap-6">
+						<Toggle
+							aria-label="Enable Firewall"
+							bind:checked={label}
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}>Enable Firewall</Toggle
+						>
+
+						<Toggle
+							aria-label="Enable Firewall"
+							bind:checked={label}
+							direction="switch-first"
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}>Enable Firewall</Toggle
+						>
+					</div>
+					<div class="w-full flex items-center gap-6">
+						<Toggle
+							aria-label="Enable Firewall"
+							size="large"
+							bind:checked={label}
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}>Enable Firewall</Toggle
+						>
+
+						<Toggle
+							aria-label="Enable Firewall"
+							size="large"
+							bind:checked={label}
+							direction="switch-first"
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}>Enable Firewall</Toggle
+						>
+					</div>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, toogleWithLabel)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -168,6 +245,7 @@
 	{@render defaultToogle()}
 	{@render sizes()}
 	{@render customColors()}
+	{@render withLabel()}
 	{@render prevAndNext()}
 {/snippet}
 

@@ -66,8 +66,8 @@ export const asideData: Array<AsideT> = [
                 name: 'input',
                 url: '/input',
                 badge: {
-                    name: 'new',
-                    variant: 'green'
+                    name: 'updated',
+                    variant: 'purple'
                 }
             },
             {
@@ -84,10 +84,7 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'project banner',
                 url: '/project-banner',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                
             },
             {
                 name: 'select',
@@ -123,7 +120,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'toogle',
-                url: '/toogle'
+                url: '/toogle',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'tooltip',

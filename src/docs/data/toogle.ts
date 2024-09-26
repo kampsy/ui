@@ -76,3 +76,62 @@ let checked = $state(false);
 		/>
 	</div>
 </div>`
+
+export const toogleWithLabel = `
+import { Toogle } from 'kampsy-ui';
+import { LockClosedSmall, LockOpenSmall } from 'kampsy-ui/icons';
+
+let withLabel = $state(false);
+
+<div class="w-full space-y-4">
+	<div class="w-full flex items-center gap-6">
+		<Toggle aria-label="Enable Firewall" bind:checked={withLabel}>Enable Firewall</Toggle>
+		<Toggle aria-label="Enable Firewall" bind:checked={withLabel} direction="switch-first">Enable Firewall</Toggle>
+	</div>
+	<div class="w-full flex items-center gap-6">
+		<Toggle aria-label="Enable Firewall" size="large" bind:checked={withLabel}>Enable Firewall</Toggle>
+		<Toggle
+			aria-label="Enable Firewall"
+			size="large"
+			direction="switch-first"
+			bind:checked={withLabel}>Enable Firewall</Toggle>
+	</div>
+	<div class="w-full flex items-center gap-6">
+		<Toggle
+			aria-label="Enable Firewall"
+			bind:checked={withLabel}
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}>Enable Firewall</Toggle>
+
+		<Toggle
+			aria-label="Enable Firewall"
+			bind:checked={withLabel}
+			direction="switch-first"
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}>Enable Firewall</Toggle>
+	</div>
+	<div class="w-full flex items-center gap-6">
+		<Toggle
+			aria-label="Enable Firewall"
+			size="large"
+			bind:checked={withLabel}
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}>Enable Firewall</Toggle>
+
+		<Toggle
+			aria-label="Enable Firewall"
+			size="large"
+			bind:checked={withLabel}
+			direction="switch-first"
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}>Enable Firewall</Toggle>
+	</div>
+</div>`
