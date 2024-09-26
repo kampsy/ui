@@ -89,7 +89,8 @@
 
 	let thumbClass = $derived.by(() => {
 		if (checked) {
-			return `bg-white border-white dark:text-kui-light-gray-1000 translate-x-full dark:text-kui-dark-gray-1000`;
+			return `bg-white border-white dark:text-kui-light-gray-1000 dark:text-kui-dark-gray-1000
+			translate-x-full`;
 		}
 		return `bg-kui-light-bg-secondary border-kui-light-gray-200 dark:bg-white dark:text-kui-light-gray-1000`;
 	});
@@ -129,11 +130,13 @@
 		{disabled}
 		class="hidden"
 	/>
-	<div class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}">
-		<div
-			class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}"
-		>
-			{@render icons()}
+	<div>
+		<div class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}">
+			<div
+				class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}"
+			>
+				{@render icons()}
+			</div>
 		</div>
 	</div>
 </label>
