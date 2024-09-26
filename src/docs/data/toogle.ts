@@ -37,6 +37,7 @@ let checked = $state(false);
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
+			color="purple"
 			icon={{
 				checked: LockClosedSmall,
 				unchecked: LockOpenSmall
@@ -47,6 +48,7 @@ let checked = $state(false);
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
+			color="amber"
 			icon={{
 				checked: LockClosedSmall,
 				unchecked: LockOpenSmall
@@ -57,6 +59,18 @@ let checked = $state(false);
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
+			color="red"
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}
+		/>
+	</div>
+	<div class="w-full">
+		<Toggle
+			aria-label="Enable Firewall"
+			bind:checked={checked}
+			color="pink"
 			size="large"
 			icon={{
 				checked: LockClosedSmall,
@@ -64,10 +78,21 @@ let checked = $state(false);
 			}}
 		/>
 	</div>
-	<div class="w-full">
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
+			color="green"
+			size="large"
+			icon={{
+				checked: LockClosedSmall,
+				unchecked: LockOpenSmall
+			}}
+		/>
+	</div>
+		<Toggle
+			aria-label="Enable Firewall"
+			bind:checked={checked}
+			color="teal"
 			size="large"
 			icon={{
 				checked: LockClosedSmall,

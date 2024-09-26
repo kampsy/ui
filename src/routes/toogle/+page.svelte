@@ -110,6 +110,7 @@
 						<Toggle
 							aria-label="Enable Firewall"
 							bind:checked={checkedCustom}
+							color="purple"
 							icon={{
 								checked: LockClosedSmall,
 								unchecked: LockOpenSmall
@@ -120,6 +121,7 @@
 						<Toggle
 							aria-label="Enable Firewall"
 							bind:checked={checkedCustom}
+							color="amber"
 							icon={{
 								checked: LockClosedSmall,
 								unchecked: LockOpenSmall
@@ -130,6 +132,18 @@
 						<Toggle
 							aria-label="Enable Firewall"
 							bind:checked={checkedCustom}
+							color="red"
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}
+						/>
+					</div>
+					<div class="w-full">
+						<Toggle
+							aria-label="Enable Firewall"
+							bind:checked={checkedCustom}
+							color="pink"
 							size="large"
 							icon={{
 								checked: LockClosedSmall,
@@ -141,6 +155,19 @@
 						<Toggle
 							aria-label="Enable Firewall"
 							bind:checked={checkedCustom}
+							color="green"
+							size="large"
+							icon={{
+								checked: LockClosedSmall,
+								unchecked: LockOpenSmall
+							}}
+						/>
+					</div>
+					<div class="w-full">
+						<Toggle
+							aria-label="Enable Firewall"
+							bind:checked={checkedCustom}
+							color="teal"
 							size="large"
 							icon={{
 								checked: LockClosedSmall,

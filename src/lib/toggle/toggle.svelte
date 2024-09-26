@@ -5,6 +5,7 @@
 	type propT = {
 		'aria-label'?: string | undefined;
 		size?: 'small' | 'large' | undefined;
+		color?: 'blue' | 'purple' | 'amber' | 'red' | 'pink' | 'green' | 'teal';
 		checked?: boolean | undefined;
 		disabled?: boolean | undefined;
 		direction?: 'switch-last' | 'switch-first';
@@ -19,6 +20,7 @@
 	let {
 		'aria-label': ariaLabel,
 		size = 'small',
+		color = 'blue',
 		checked = $bindable(false),
 		disabled = undefined,
 		direction = 'switch-last',
@@ -64,10 +66,22 @@
 		return ``;
 	});
 
+	const colorObj = {
+		blue: 'bg-kui-light-blue-700 dark:bg-kui-dark-blue-700 border-kui-light-blue-800 dark:border-kui-dark-blue-800',
+		purple:
+			'bg-kui-light-purple-700 dark:bg-kui-dark-purple-700 border-kui-light-purple-800 dark:border-kui-dark-purple-800',
+		amber:
+			'bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 border-kui-light-amber-800 dark:border-kui-dark-amber-800',
+		red: 'bg-kui-light-red-700 dark:bg-kui-dark-red-700 border-kui-light-red-800 dark:border-kui-dark-red-800',
+		pink: 'bg-kui-light-pink-700  dark:bg-kui-dark-pink-700 border-kui-light-pink-800 dark:border-kui-dark-pink-800',
+		green:
+			'bg-kui-light-green-700 dark:bg-kui-dark-green-700 border-kui-light-green-800 dark:border-kui-dark-green-800',
+		teal: 'bg-kui-light-teal-700 dark:bg-kui-dark-teal-700 border-kui-light-teal-800 dark:border-kui-dark-teal-800'
+	};
+
 	let toogleContClass = $derived.by(() => {
 		if (checked) {
-			return `bg-kui-light-blue-700 dark:bg-kui-dark-blue-700
-			border-kui-light-blue-800 dark:border-kui-dark-blue-800`;
+			return `${colorObj[color]}`;
 		}
 		return `bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border-black/[0.08]
 		 dark:border-kui-dark-gray-400`;
