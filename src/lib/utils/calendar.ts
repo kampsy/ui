@@ -170,11 +170,18 @@ export const generateCalendar = (
  * @param second - The second date to compare.
  * @return True if the given dates have the same time, false otherwise.
  */
-export const isTimeEqual = (first: Date, second: Date) => {
+export const isTimeEqual = (first: Date, second: Date): boolean => {
     return first.getTime() == second.getTime()
 }
 
-export const isStartDateGreaterThanEndDate = (start: Date, end: Date) => {
+/**
+ * Returns true if the given start date is greater that the end date.
+ *
+ * @param start - The start date to compare.
+ * @param end - The end date to compare.
+ * @return True if the given start date is greater than the end date.
+ */
+export const isStartDateGreaterThanEndDate = (start: Date, end: Date): boolean => {
     return start.getTime() > end.getTime()
 }
 

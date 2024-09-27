@@ -43,6 +43,16 @@ const members = [
 	</div>
 </div>`;
 
+export const avatarText = `
+import { AvatarText } from 'kampsy-ui';
+
+<AvatarText.Root size={40}>
+	<AvatarText.Content>
+		<AvatarText.Heading>Jese Leos</AvatarText.Heading>
+		<AvatarText.Subheading>Joined in August 2014</AvatarText.Subheading>
+	</AvatarText.Content>
+</AvatarText.Root>`;
+
 export const avatarPlaceholder = `
 import { Avatar } from 'kampsy-ui';
 

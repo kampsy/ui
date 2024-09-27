@@ -1,3 +1,3 @@
 export { default as Avatar } from './avatar.svelte';
 export { default as AvatarGroup } from './avatarGroup.svelte';
-export { default as AvatarText } from './avatarText.svelte';
+export * as AvatarText from './avatarText/index.js';

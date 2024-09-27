@@ -5,11 +5,11 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { avatarGroup, avatarPlaceholder } from '../../docs/data/avatar.js';
+	import { avatarGroup, avatarPlaceholder, avatarText } from '../../docs/data/avatar.js';
 	import AvatarGroup from '$lib/avatar/avatarGroup.svelte';
 	import Avatar from '$lib/avatar/avatar.svelte';
-	import AvatarText from '$lib/avatar/avatarText.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import { AvatarText } from '$lib/index.js';
 
 	const members = [
 		{
@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-    <title>Avatar</title>
+	<title>Avatar</title>
 </svelte:head>
 
 {#snippet avatar()}
@@ -86,7 +86,7 @@
 			{#snippet demo()}
 				<div class="space-y-4">
 					<div>
-						<AvatarGroup  members={members.slice(0, 3)} size={32} />
+						<AvatarGroup members={members.slice(0, 3)} size={32} />
 					</div>
 					<div>
 						<AvatarGroup limit={4} {members} size={32} />
@@ -108,10 +108,17 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
-					<AvatarText size={40} />
+					<div>
+						<AvatarText.Root size={40}>
+							<AvatarText.Content>
+								<AvatarText.Heading>Jese Leos</AvatarText.Heading>
+								<AvatarText.Subheading>Joined in August 2014</AvatarText.Subheading>
+							</AvatarText.Content>
+						</AvatarText.Root>
+					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, avatarPlaceholder)}
+			{@render demoAndCode(demo, avatarText)}
 		</div>
 	</Row>
 {/snippet}

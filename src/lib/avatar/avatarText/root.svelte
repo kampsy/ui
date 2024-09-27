@@ -1,10 +1,13 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	type propsT = {
 		size?: number;
 		placeholder?: boolean;
+		children: Snippet | undefined;
 	};
 
-	let { size = 32, placeholder = false }: propsT = $props();
+	let { size = 32, placeholder = false, children = undefined }: propsT = $props();
 
 	let widthHeight = $derived.by(() => {
 		return ` width: ${size}px; height: ${size}px;`;
@@ -20,19 +23,8 @@
 			style={widthHeight}
 			class="flex items-center justify-center rounded-full overflow-hidden text-[10px] font-semibold border dark:text-kui-dark-gray-1000 border-kui-light-gray-200 dark:border-kui-dark-gray-400 group-hover:border-kui-light-gray-500 group-hover:dark:border-kui-dark-gray-500"
 		></div>
-		<div>
-			<div
-				aria-label="avatar heading"
-				class="first-letter:capitalize text-base font-medium text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
-			>
-				Jese Leos
-			</div>
-			<div
-				aria-label="avatar subheading"
-				class="first-letter:capitalize text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-			>
-				Joined in August 2014
-			</div>
-		</div>
+		{#if children}
+			{@render children()}
+		{/if}
 	</div>
 </div>
