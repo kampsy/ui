@@ -12,14 +12,10 @@
 		READY: 'bg-kui-light-green-600 dark:bg-kui-dark-green-600',
 		CANCELED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600'
 	};
-
-	let stateClass = $derived.by(() => {
-		return stateObj[state];
-	});
 </script>
 
 <div class="flex items-center gap-x-2">
-	<div class="w-[10px] h-[10px] rounded-full {stateClass}"></div>
+	<div class="w-[10px] h-[10px] rounded-full {stateObj[state]}"></div>
 	{#if label}
 		<span class="first-letter:capitalize text-sm leading-4">{state.toLowerCase()}</span>
 	{/if}

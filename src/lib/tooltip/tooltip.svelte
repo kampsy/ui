@@ -6,19 +6,26 @@
 		position?: 'top' | 'bottom' | 'left' | 'right';
 		text?: string;
 		type?: 'success' | 'error' | 'warning' | 'violet' | undefined;
-		class?: string | undefined
+		class?: string | undefined;
 		children?: Snippet;
 	};
-	let { position = 'top', text, type = undefined, class: klass = '', children = undefined }: propsT = $props();
+	let {
+		position = 'top',
+		text,
+		type = undefined,
+		class: klass = '',
+		children = undefined
+	}: propsT = $props();
 
-	let widthClass = $derived.by(() => {
+	let widthClass = $state('width:250px');
+
+	$effect(() => {
 		if (text) {
 			const num = getStringWidth(text);
 			if (num < 250) {
-				return 'width:' + (num + 24) + 'px'; // 24 is for the left 12px and right 12px padding 
+				widthClass = 'width:' + (num + 24) + 'px'; // 24 is for the left 12px and right 12px padding
 			}
 		}
-		return 'width:250px';
 	});
 
 	const positionObj = {
