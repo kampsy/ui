@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { getZeroDate, isInDateRange, isWeekend, isZeroDate } from '$lib/utils/calendar.js';
+	import {
+		getZeroDate,
+		isInDateRange,
+		isStartDateGreaterThanEndDate,
+		isWeekend,
+		isZeroDate
+	} from '$lib/utils/calendar.js';
 
 	type propsT = {
 		dayAndDateObj: { day: number | string; dateObj: Date };
@@ -90,7 +96,14 @@
 			}
 		} else if (!isZeroDate(startDate) && isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
-				endDate = dayAndDateObj.dateObj;
+				// an edge ace. if the date selected as end date is less than
+				// the start date, swap the two dates
+				if (isStartDateGreaterThanEndDate(startDate, dayAndDateObj.dateObj)) {
+					endDate = startDate;
+					startDate = dayAndDateObj.dateObj;
+				} else {
+					endDate = dayAndDateObj.dateObj;
+				}
 			}
 		} else if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {

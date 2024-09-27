@@ -174,6 +174,10 @@ export const isTimeEqual = (first: Date, second: Date) => {
     return first.getTime() == second.getTime()
 }
 
+export const isStartDateGreaterThanEndDate = (start: Date, end: Date) => {
+    return start.getTime() > end.getTime()
+}
+
 
 /**
  * Returns true if the given date falls within the given start and end dates,
