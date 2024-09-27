@@ -32,7 +32,11 @@ export const asideData: Array<AsideT> = [
         ul: [
             {
                 name: 'avatar',
-                url: '/avatar'
+                url: '/avatar',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'badge',
@@ -84,7 +88,7 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'project banner',
                 url: '/project-banner',
-                
+
             },
             {
                 name: 'select',
