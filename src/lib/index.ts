@@ -30,6 +30,9 @@ export { default as Input } from './input/input.svelte'
 // SearchInput
 export { default as SearchInput } from './input/searchInput.svelte'
 
+// Menu
+export * as Menu from './menu/index.js';
+
 // Note
 export { default as Note } from './note/note.svelte';
 

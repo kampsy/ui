@@ -33,10 +33,6 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'avatar',
                 url: '/avatar',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
             },
             {
                 name: 'badge',
@@ -72,6 +68,14 @@ export const asideData: Array<AsideT> = [
                 badge: {
                     name: 'updated',
                     variant: 'purple'
+                }
+            },
+            {
+                name: 'menu',
+                url: '/menu',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
                 }
             },
             {

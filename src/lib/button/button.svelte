@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 
 	type propsT = {
-		onclick?: () => void;
+		onclick?: (evt: Event) => void;
 		class?: string;
 		'aria-label'?: string;
 		shape?: 'circle' | 'square' | undefined;
