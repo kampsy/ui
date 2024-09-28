@@ -160,7 +160,7 @@
 </script>
 
 <span>
-	<div class="group relative inline-block cursor-pointer {klass}">
+	<div class="group relative inline-block cursor-pointer text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 {klass}">
 		{#if children}
 			{@render children()}
 		{/if}

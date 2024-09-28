@@ -16,7 +16,7 @@
 	let rotate = $derived(rootState.getIsActive() ? 'rotate-180' : '');
 </script>
 
-<span class="text-sm first-letter:capitalize"
+<span class="text-sm first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 	>{rootState.getSelected() === '' ? placeholder : rootState.getSelected()}</span
 >
 <div class="w-[16px] h-[16px] flex items-center justify-center">

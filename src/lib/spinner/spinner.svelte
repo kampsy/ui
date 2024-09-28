@@ -15,7 +15,7 @@
 
 <div>
 	<div style={sizeStyle} class="relative animate-spin flex items-center justify-center">
-		<div transition:fade class="absolute w-full h-full">
+		<div transition:fade class="absolute w-full h-full text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
 			<LoaderCircle />
 		</div>
 	</div>

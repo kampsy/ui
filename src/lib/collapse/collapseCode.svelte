@@ -49,7 +49,7 @@
 	</div>
 </button>
 {#if isActive}
-	<div class="ui-scrollbar w-full h-auto px-6 text-[13px] scroll-smoth overflow-x-auto">
+	<div class="ui-scrollbar w-full h-auto px-6 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[13px] scroll-smoth overflow-x-auto">
 		<div transition:slide>
 			<pre class="language-tsx">
             <code class="language-tsx">
