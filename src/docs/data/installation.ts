@@ -13,7 +13,7 @@ pnpm i -D kampsy-ui`;
 
 export const installationConfig = `
 /** @type {import('tailwindcss').Config} */
-import { CustomColors } from 'kampsy-ui'
+import { CustomColors } from './node_modules/kampsy-ui/dist/customColors/index.js'
 
 export default {
   darkMode: 'selector',
