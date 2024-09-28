@@ -6,12 +6,8 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import {
-		toolTipCustomeType,
-		toolTipDefault
-	} from '../../docs/data/tooltip.js';
 	import Textarea from '$lib/textarea/textarea.svelte';
-	import { textareError } from '../../docs/data/textarea.js';
+	import { textareaDefault, textareaDisabled, textareError } from '../../docs/data/textarea.js';
 </script>
 
 <svelte:head>
@@ -59,7 +55,7 @@
 					placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 				/>
 			{/snippet}
-			{@render demoAndCode(demo, toolTipDefault)}
+			{@render demoAndCode(demo, textareaDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -78,7 +74,7 @@
 					placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
 				/>
 			{/snippet}
-			{@render demoAndCode(demo, toolTipCustomeType)}
+			{@render demoAndCode(demo, textareaDisabled)}
 		</div>
 	</Row>
 {/snippet}

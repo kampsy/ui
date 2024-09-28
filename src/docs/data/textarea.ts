@@ -1,16 +1,17 @@
 export const textareaDefault = `
-import { Error } from 'kampsy-ui';
+import { Textarea } from 'kampsy-ui';
 
-<Error>
-    This email address is already in use.
-</Error>`;
+<Textarea
+	placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+/>`;
 
 export const textareaDisabled = `
-import { Error } from 'kampsy-ui';
+import { Textarea } from 'kampsy-ui';
 
-<Error label="Email Error">
-    This email address is already in use.
-</Error>`;
+<Textarea
+	disabled
+	placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+/>`;
 
 export const textareError = `
 import { Textarea } from 'kampsy-ui';
