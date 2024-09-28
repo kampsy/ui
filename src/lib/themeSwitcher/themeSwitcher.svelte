@@ -56,9 +56,9 @@
 	$effect(() => {
 		if (switcher.theme === 'system') {
 			const str = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-			document.body.className = `${str} bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
+			document.body.className = `${str} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
 		} else {
-			document.body.className = `${switcher.theme} bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
+			document.body.className = `${switcher.theme} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
 		}
 	});
 </script>
