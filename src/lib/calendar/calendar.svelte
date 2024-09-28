@@ -80,7 +80,7 @@
 		if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			strValue = formatDateRange(startDate, endDate);
 		}
-	})
+	});
 
 	$effect(() => {
 		if (window.innerWidth < 767) {
@@ -221,7 +221,6 @@
 	{/if}
 {/snippet}
 
-
 <!--Backgrop background on mobile only-->
 {#if isActive}
 	<div
@@ -231,7 +230,13 @@
 	></div>
 {/if}
 
-<div use:clickOutside={() => (isActive = false)} class="relative inline-block">
+<div
+	use:clickOutside={() => {
+		isActive = false;
+		console.log('clicked outside', '<-------');
+	}}
+	class="relative inline-block"
+>
 	<button
 		onclick={toggle}
 		class="w-[250px] h-[40px] box-border px-[10px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm capitalize font-normal flex items-center rounded-[6px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400 transition-colors hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"

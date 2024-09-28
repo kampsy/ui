@@ -60,7 +60,7 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			You can install SvelteKit or Svelte to start your app. For SvelteKit
+			You can install SvelteKit by running the following command. Remember to choose svelte 5.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationSveltekit)}

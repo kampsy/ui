@@ -1,5 +1,5 @@
 export const installationSveltekit = `
-npm create svelte@latest my-app
+pnpm create svelte@latest my-app
 cd my-app
 pnpm install`;
 

@@ -26,6 +26,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
+		},
+		"./icons": {
+			"types": "./dist/icons/index.d.ts",
+			"svelte": "./dist/icons/index.js"
 		}
 	},
 	"files": [
