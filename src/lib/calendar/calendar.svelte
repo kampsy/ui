@@ -14,7 +14,6 @@
 		nextMonth,
 		prevMonth
 	} from '$lib/utils/calendar.js';
-	import { cubicInOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';
 	import Weekday from './weekday.svelte';
 
@@ -129,8 +128,6 @@
 				<div class="text-center">
 					{#if monthAndYear}
 						<h2
-							in:fly|local={{ y: -10, duration: 300, easing: cubicInOut }}
-							out:fly|local={{ y: -10, duration: 300, easing: cubicInOut }}
 							class="text-sm font-normal capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 						>
 							{monthAndYear}
@@ -175,8 +172,6 @@
 
 			{#each calendarList as row, i}
 				<div
-					in:fly|local={{ y: 10, duration: i * 50, easing: cubicInOut }}
-					out:fly|local={{ y: -10, duration: i * 50, easing: cubicInOut }}
 					class="relative flex items-center justify-center"
 				>
 					<Weekday dayAndDateObj={row} bind:startDate bind:endDate />
@@ -233,7 +228,6 @@
 <div
 	use:clickOutside={() => {
 		isActive = false;
-		console.log('clicked outside', '<-------');
 	}}
 	class="relative inline-block"
 >
