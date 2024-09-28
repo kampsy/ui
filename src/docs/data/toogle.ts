@@ -78,6 +78,7 @@ let checked = $state(false);
 			}}
 		/>
 	</div>
+	<div class="w-full">
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
@@ -89,6 +90,7 @@ let checked = $state(false);
 			}}
 		/>
 	</div>
+	<div class="w-full">
 		<Toggle
 			aria-label="Enable Firewall"
 			bind:checked={checked}
