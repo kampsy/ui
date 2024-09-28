@@ -3,7 +3,7 @@
 
 	type propsT = {
 		onClick: () => void;
-		type: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
 		children: Snippet;
 	};
 	let { onClick, type = 'tertiary', children }: propsT = $props();
@@ -30,7 +30,7 @@
 		onClick();
 		rootState.setIsActive(false);
 	}}
-	class="relative w-full cursor-pointer transition-colors text-sm flex items-center rounded-md py-2 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
+	class="relative w-full cursor-pointer transition-colors text-sm flex items-center rounded-md py-3.5 lg:py-2 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
 >
 	<span class="first-letter:capitalize {typeClass}">
 		{@render children()}

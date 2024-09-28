@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/utils/event.js';
+	import { fade } from 'svelte/transition';
     import { createRootState } from './root.svelte.js';
 	import { setContext, type Snippet } from 'svelte';
 
@@ -34,6 +35,15 @@
 		});
 	});
 </script>
+
+<!--Backgrop background on mobile only-->
+{#if rootState.getIsActive()}
+	<div
+		in:fade|local
+		out:fade|local
+		class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-[0.4] lg:hidden z-[1000]"
+	></div>
+{/if}
 
 <div use:clickOutside={() => rootState.setIsActive(false)} class="relative inline-block {klass}">
 	{#if children}

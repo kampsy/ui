@@ -6,9 +6,8 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import { Menu } from '$lib/index.js';
-	import { errorDefault } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { menuDefault } from '../../docs/data/menu.js';
+	import { menuDefault, menuLinkItem } from '../../docs/data/menu.js';
 </script>
 
 <svelte:head>
@@ -63,32 +62,40 @@
 					<Menu.Root>
 						<Menu.Button>Actions</Menu.Button>
 						<Menu.Content class="w-[200px]">
-							<Menu.Item
-								onClick={() => {
-									console.log('One');
-								}}>One</Menu.Item
-							>
-							<Menu.Item
-								onClick={() => {
-									console.log('Two');
-								}}>Two</Menu.Item
-							>
-							<Menu.Item
-								onClick={() => {
-									console.log('Three');
-								}}>Three</Menu.Item
-							>
-							<Menu.Item
-								onClick={() => {
-									console.log('Delete');
-								}}
-								type="error">Delete</Menu.Item
-							>
+							<Menu.Item onClick={() => console.log('One')}>One</Menu.Item>
+							<Menu.Item onClick={() => console.log('Two')}>Two</Menu.Item>
+							<Menu.Item onClick={() => console.log('Three')}>One</Menu.Item>
+							<Menu.Item onClick={() => console.log('Delete')} type="error">Delete</Menu.Item>
 						</Menu.Content>
 					</Menu.Root>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, menuDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet linkItem()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">link item</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<Menu.Root>
+						<Menu.Button>Actions</Menu.Button>
+						<Menu.Content class="w-[200px]">
+							<Menu.Link href="/menu">One</Menu.Link>
+							<Menu.Link href="#/">Two</Menu.Link>
+							<Menu.Link href="#/">One</Menu.Link>
+						</Menu.Content>
+					</Menu.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, menuLinkItem)}
 		</div>
 	</Row>
 {/snippet}
@@ -105,6 +112,7 @@
 {#snippet cont()}
 	{@render menu()}
 	{@render defaultMenu()}
+    {@render linkItem()}
 	{@render prevAndNext()}
 {/snippet}
 

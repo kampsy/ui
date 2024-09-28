@@ -31,15 +31,6 @@
 			>
 				{@render children()}
 			</div>
-			<footer class="p-4">
-				<Button
-					onclick={() => {
-						rootState.setIsActive(false);
-					}}
-					type="secondary"
-					class="w-full">done</Button
-				>
-			</footer>
 		</div>
 	{/if}
 {/snippet}
