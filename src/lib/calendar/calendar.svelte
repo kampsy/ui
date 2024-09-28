@@ -131,7 +131,7 @@
 						<h2
 							in:fly|local={{ y: -10, duration: 300, easing: cubicInOut }}
 							out:fly|local={{ y: -10, duration: 300, easing: cubicInOut }}
-							class="text-sm font-normal capitalize"
+							class="text-sm font-normal capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 						>
 							{monthAndYear}
 						</h2>
