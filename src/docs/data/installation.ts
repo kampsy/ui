@@ -4,8 +4,8 @@ cd my-app
 pnpm install`;
 
 export const installationSvelte = `
-npm create vite@latest myapp -- --template svelte
-cd myapp
+pnpm create vite@latest my-app -- --template svelte
+cd my-app
 pnpm install`;
 
 export const installationKampsy = `
