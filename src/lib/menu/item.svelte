@@ -1,12 +1,20 @@
 <script lang="ts">
-	import { getContext, type Snippet } from 'svelte';
+	import { getContext, type Component, type Snippet } from 'svelte';
 
 	type propsT = {
-		onClick: () => void;
+		onClick?: () => void | undefined;
+		prefix?: Component | undefined;
+		suffix?: Component | undefined;
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
 		children: Snippet;
 	};
-	let { onClick, type = 'tertiary', children }: propsT = $props();
+	let {
+		onClick = undefined,
+		type = 'tertiary',
+		prefix = undefined,
+		suffix = undefined,
+		children
+	}: propsT = $props();
 
 	const rootState = getContext<{
 		getIsActive: () => boolean;
@@ -23,16 +31,46 @@
 	let typeClass = $derived.by(() => {
 		return typeObj[type];
 	});
+
+	let isSuffixClass = $derived.by(() => {
+		if (suffix) {
+			return 'justify-between';
+		}
+		return ''
+	})
 </script>
+
+{#snippet prefixSnip()}
+	{#if prefix}
+		{@const Prefix = prefix}
+		<div class="w-[16px] h-[16px] flex items-center justify-center">
+			<Prefix />
+		</div>
+	{/if}
+{/snippet}
+
+{#snippet suffixSnip()}
+	{#if suffix}
+		{@const Suffix = suffix}
+		<div class="w-[16px] h-[16px] flex items-center justify-center">
+			<Suffix />
+		</div>
+	{/if}
+{/snippet}
 
 <button
 	onclick={() => {
-		onClick();
+		if (onClick) {
+			onClick();
+		}
 		rootState.setIsActive(false);
 	}}
-	class="relative w-full cursor-pointer transition-colors text-sm flex items-center rounded-md py-3.5 lg:py-2 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100"
+	class="relative w-full cursor-pointer transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md 
+	py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100 {typeClass}"
 >
-	<span class="first-letter:capitalize {typeClass}">
+	{@render prefixSnip()}
+	<span class="first-letter:capitalize ">
 		{@render children()}
 	</span>
+	{@render suffixSnip()}
 </button>

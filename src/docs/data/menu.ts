@@ -26,3 +26,34 @@ import { Menu } from 'kampsy-ui';
     	</Menu.Content>
     </Menu.Root>
 </div>`;
+
+export const menuPrefixAndSuffix = `
+import { Menu } from 'kampsy-ui';
+import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
+
+<div class="w-full flex gap-6">
+	<Menu.Root>
+		<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+			<div class="w-[16px] h-[16px]">
+				<MoreHorizontal />
+			</div>
+		</Menu.Button>
+		<Menu.Content class="w-[200px]">
+			<Menu.Item prefix={Accessibility}>Left</Menu.Item>
+			<Menu.Item prefix={Accessibility}>Center</Menu.Item>
+			<Menu.Item prefix={Accessibility}>Right</Menu.Item>
+		</Menu.Content>
+	</Menu.Root>
+	<Menu.Root>
+		<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+			<div class="w-[16px] h-[16px]">
+				<MoreHorizontal />
+			</div>
+		</Menu.Button>
+		<Menu.Content class="w-[200px]">
+			<Menu.Item suffix={Accessibility}>Left</Menu.Item>
+			<Menu.Item suffix={Accessibility}>Center</Menu.Item>
+			<Menu.Item suffix={Accessibility}>Right</Menu.Item>
+		</Menu.Content>
+	</Menu.Root>
+</div>`;

@@ -7,7 +7,8 @@
 	import type { Snippet } from 'svelte';
 	import { Menu } from '$lib/index.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { menuDefault, menuLinkItem } from '../../docs/data/menu.js';
+	import { menuDefault, menuLinkItem, menuPrefixAndSuffix } from '../../docs/data/menu.js';
+	import { MoreHorizontal, Accessibility } from '$lib/icons/index.js';
 </script>
 
 <svelte:head>
@@ -24,7 +25,7 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Dropdown menu opened via button. Supports typeahead and keyboard navigation.
+			Dropdown menu opened via button. Supports keyboard navigation.
 		</p>
 	</Row>
 {/snippet}
@@ -100,6 +101,52 @@
 	</Row>
 {/snippet}
 
+{#snippet defaultPrefixAndSuffix()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Prefix and Suffix</a>
+		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			The trigger is still wrapped by an unstyled button.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full flex gap-6">
+					<Menu.Root>
+						<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+							<div class="w-[16px] h-[16px]">
+								<MoreHorizontal />
+							</div>
+						</Menu.Button>
+						<Menu.Content class="w-[200px]">
+							<Menu.Item prefix={Accessibility}>Left</Menu.Item>
+							<Menu.Item prefix={Accessibility}>Center</Menu.Item>
+							<Menu.Item prefix={Accessibility}>Right</Menu.Item>
+						</Menu.Content>
+					</Menu.Root>
+					<Menu.Root>
+						<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+							<div class="w-[16px] h-[16px]">
+								<MoreHorizontal />
+							</div>
+						</Menu.Button>
+						<Menu.Content class="w-[200px]">
+							<Menu.Item suffix={Accessibility}>Left</Menu.Item>
+							<Menu.Item suffix={Accessibility}>Center</Menu.Item>
+							<Menu.Item suffix={Accessibility}>Right</Menu.Item>
+						</Menu.Content>
+					</Menu.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, menuPrefixAndSuffix)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -112,7 +159,8 @@
 {#snippet cont()}
 	{@render menu()}
 	{@render defaultMenu()}
-    {@render linkItem()}
+	{@render linkItem()}
+	{@render defaultPrefixAndSuffix()}
 	{@render prevAndNext()}
 {/snippet}
 

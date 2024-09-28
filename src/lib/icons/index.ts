@@ -44,3 +44,6 @@ export { default as LockClosed } from './lock-closed.svelte'
 export { default as LockOpen } from './lock-open.svelte'
 export { default as LockClosedSmall } from './lock-closed-small.svelte'
 export { default as LockOpenSmall } from './lock-open-small.svelte'
+
+export { default as MoreHorizontal } from './more-horizontal.svelte'
+export { default as Accessibility } from './accessibility.svelte'

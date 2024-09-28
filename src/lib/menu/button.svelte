@@ -1,11 +1,20 @@
 <script lang="ts">
 	import { Button } from '$lib/index.js';
-	import { getContext, type Snippet } from 'svelte';
+	import { getContext, type Component, type Snippet } from 'svelte';
 	type propsT = {
 		class?: string | undefined;
+		'aria-label'?: string;
+		shape?: 'circle' | 'square' | undefined;
+		size?: 'tiny' | 'small' | 'medium' | 'large';
+		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		prefix?: Component | undefined;
+		suffix?: Component | undefined;
+		rounded?: boolean;
+		loading?: boolean;
+		disabled?: boolean;
 		children: Snippet | undefined;
 	};
-	let { class: klass = '', children }: propsT = $props();
+	let { class: klass = '', children, ...attributes }: propsT = $props();
 
 	const rootState = getContext<{
 		getIsActive: () => boolean;
@@ -34,10 +43,8 @@
 	};
 </script>
 
-<div>
-	{#if children}
-		<Button onclick={toogle}>
-			{@render children()}
-		</Button>
-	{/if}
-</div>
+{#if children}
+	<Button {...attributes} onclick={toogle}>
+		{@render children()}
+	</Button>
+{/if}
