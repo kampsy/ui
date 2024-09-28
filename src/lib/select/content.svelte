@@ -28,7 +28,8 @@
 			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 py-3 rounded-t-[15px] border-y border-kui-light-gray-400 dark:border-kui-dark-gray-400 scroll-smooth overflow-y-auto"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 py-3 rounded-t-[15px] border-y 
+				border-kui-light-gray-200 dark:border-kui-dark-gray-200 scroll-smooth overflow-y-auto"
 			>
 				{@render children()}
 			</div>

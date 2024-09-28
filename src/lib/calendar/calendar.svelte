@@ -106,7 +106,8 @@
 <!--Calendar content -->
 {#snippet calendarSnip()}
 	<div
-		class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border border-kui-light-gray-400 dark:border-kui-dark-gray-400 lg:shadow-sm scroll-smooth overflow-y-auto"
+		class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border 
+		border-kui-light-gray-200 dark:border-kui-dark-gray-200 lg:shadow-sm scroll-smooth overflow-y-auto"
 	>
 		<div class="grid grid-cols-7 gap-y-[5px] items-center">
 			<div>
