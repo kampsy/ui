@@ -64,7 +64,7 @@
 		>
 	{/if}
 	<div class="">
-		<div class="w-[16px] h-[16px] {rotate} transform-gpu duration-200">
+		<div class="w-[16px] h-[16px] {rotate} transform-gpu duration-200 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
 			<ChevronDownSmall />
 		</div>
 	</div>
