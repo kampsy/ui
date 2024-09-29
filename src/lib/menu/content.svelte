@@ -11,12 +11,21 @@
 
 	// Get the state of the select from the context
 	const rootState = getContext<{
+		alignment: 'left' | 'right';
 		getIsMobile: () => boolean;
 		getIsActive: () => boolean;
 		setIsActive: (value: boolean) => void;
 		getContentPosition: () => string;
 		getTransY: () => number;
 	}>('menu');
+
+	let alightmentClass = $derived.by(() => {
+		if (rootState.alignment === 'left') {
+			return 'left-0';
+		} else {
+			return 'right-0';
+		}
+	});
 </script>
 
 {#snippet mobileSnip()}
@@ -27,7 +36,7 @@
 			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[15px] border-t 
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[15px] border-t
 				border-kui-light-gray-200 dark:border-kui-dark-gray-200 scroll-smooth overflow-y-auto"
 			>
 				{@render children()}
@@ -41,7 +50,7 @@
 		<div
 			in:fly={{ y: rootState.getTransY() }}
 			out:fly={{ y: rootState.getTransY() }}
-			class="absolute w-full {rootState.getContentPosition()} z-[1000] {klass}"
+			class="absolute {rootState.getContentPosition()} {alightmentClass} z-[1000] {klass}"
 		>
 			<div
 				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-2 rounded-[12px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto {klass}"

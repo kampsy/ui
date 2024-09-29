@@ -57,3 +57,26 @@ import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
 		</Menu.Content>
 	</Menu.Root>
 </div>`;
+
+export const menuAlignment = `
+import { Menu } from 'kampsy-ui';
+import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
+
+<div class="w-full flex justify-between gap-8">
+	<Menu.Root>
+		<Menu.Button>Actions</Menu.Button>
+		<Menu.Content class="w-[200px]">
+			<Menu.Item prefix={Accessibility}>Left</Menu.Item>
+			<Menu.Item prefix={Accessibility}>Center</Menu.Item>
+			<Menu.Item prefix={Accessibility}>Right</Menu.Item>
+		</Menu.Content>
+	</Menu.Root>
+	<Menu.Root alignment="right">
+		<Menu.Button>Actions</Menu.Button>
+		<Menu.Content class="w-[200px]">
+			<Menu.Item suffix={Accessibility}>Left</Menu.Item>
+			<Menu.Item suffix={Accessibility}>Center</Menu.Item>
+			<Menu.Item suffix={Accessibility}>Right</Menu.Item>
+		</Menu.Content>
+	</Menu.Root>
+</div>`;

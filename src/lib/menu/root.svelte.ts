@@ -1,5 +1,6 @@
 export function createRootState(initial: {
     isMobile: boolean,isActive: boolean,
+    alignment: 'left' | 'right',
     contentPosition: string, transY: number
 }) {
     let isMobile = $state(initial.isMobile);
@@ -37,6 +38,7 @@ export function createRootState(initial: {
     }
 
     return {
+        alignment: initial.alignment,
         getIsMobile,
         setIsMobile,
         getIsActive,

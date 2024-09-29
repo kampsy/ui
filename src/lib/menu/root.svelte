@@ -1,25 +1,27 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/utils/event.js';
 	import { fade } from 'svelte/transition';
-    import { createRootState } from './root.svelte.js';
+	import { createRootState } from './root.svelte.js';
 	import { setContext, type Snippet } from 'svelte';
 
 	type propsT = {
 		class?: string | undefined;
+		alignment?: 'left' | 'right' | undefined;
 		children: Snippet | undefined;
 	};
-	let { class: klass = '', children = undefined }: propsT = $props();
+	let { class: klass = '', alignment = 'left', children = undefined }: propsT = $props();
 
-    const rootState = createRootState({
+	const rootState = createRootState({
 		isMobile: false,
 		isActive: false,
-		contentPosition: 'top-[112%',
+		alignment: alignment,
+		contentPosition: 'top-[112%]',
 		transY: -10
 	});
 
 	setContext('menu', rootState);
 
-    $effect(() => {
+	$effect(() => {
 		if (window.innerWidth < 767) {
 			rootState.setIsMobile(true);
 		} else {
