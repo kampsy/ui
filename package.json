@@ -69,11 +69,20 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
+	"bugs": {
+		"url": "https://github.com/kampsy/ui/issues"
+	},
 	"keywords": [
+		"ui",
+		"components",
 		"svelte",
-		"svelte 5",
-		"sveltekit",
+		"svelte-5",
+		"component-library",
+		"ui-components",
+		"ui-framework",
+		"tailwind",
 		"tailwindcss",
-		"ui"
+		"components-library",
+		"sveltekit"
 	]
 }

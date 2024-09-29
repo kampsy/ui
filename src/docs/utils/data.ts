@@ -64,11 +64,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'input',
-                url: '/input',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                url: '/input'
             },
             {
                 name: 'menu',
@@ -101,6 +97,14 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'spinner',
                 url: '/spinner'
+            },
+            {
+                name: 'split button',
+                url: '/split-button',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'status dot',

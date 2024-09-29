@@ -6,72 +6,63 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import Spinner from '$lib/spinner/spinner.svelte';
-	import { spinnerCustom, spinnerDefault } from '../../docs/data/spinner.js';
+	import { Description } from '$lib/index.js';
+	import { descriptionDefault } from '../../docs/data/description.js';
 </script>
 
 <svelte:head>
-	<title>Spinner</title>
+	<title>Split Button</title>
 </svelte:head>
 
-{#snippet spinner()}
+{#snippet description()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			spinner
+			Split Button
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Indicate an action running in the background. Unlike the loading dots, this should generally
-			be used to indicate loading feedback in response to a user action, like for buttons,
-			pagination, etc.
+			A button that offers a primary interaction coupled with a dropdown menu offering additional
+			actions.
 		</p>
 	</Row>
 {/snippet}
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl"
 	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4">
+		<div class="w-full p-4 lg:p-6">
+			<div class="w-full flex flex-nowrap gap-4 items-center justify-between">
 				{@render demo()}
 			</div>
 		</div>
-		<CollapseCode {code} />
+		<div class="overflow-hidden rounded-b-xl">
+			<CollapseCode {code} />
+		</div>
 	</div>
 {/snippet}
 
-{#snippet defaultSize()}
+{#snippet defaultDescription()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#default" id="default">Default size</a>
+			<a href="#default" id="default">default</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Spinner />
+				<div>
+					<Description
+						content="Data about this section."
+						title="Section Title"
+						tooltip="Additional context about what this section refers to."
+					/>
+				</div>
 			{/snippet}
-			{@render demoAndCode(demo, spinnerDefault)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet custom()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customsize" id="default">custom size</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Spinner size={30} />
-			{/snippet}
-			{@render demoAndCode(demo, spinnerCustom)}
+			{@render demoAndCode(demo, descriptionDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -79,16 +70,15 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'select', href: '/select' }}
-			next={{ title: 'split button', href: '/split-button' }}
+			previous={{ title: 'spinner', href: '/spinner' }}
+			next={{ title: 'status dot', href: '/status-dot' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render spinner()}
-	{@render defaultSize()}
-	{@render custom()}
+	{@render description()}
+	{@render defaultDescription()}
 	{@render prevAndNext()}
 {/snippet}
 
