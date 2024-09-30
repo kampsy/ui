@@ -62,7 +62,7 @@
 			{#snippet demo()}
 				<Select.Root bind:value class="w-full lg:w-auto" >
 					<Select.Trigger class="w-full lg:w-[200px]">
-						<Select.Value placeholder="select a friuit" />
+						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Item value="apple">apple</Select.Item>
@@ -88,7 +88,7 @@
 			{#snippet demo()}
 				<Select.Root size="small" bind:value class="w-full lg:w-auto" >
 					<Select.Trigger class="w-full lg:w-[200px]">
-						<Select.Value placeholder="select a friuit" />
+						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Item value="apple">apple</Select.Item>
@@ -100,7 +100,7 @@
 
 				<Select.Root bind:value class="w-full lg:w-auto" >
 					<Select.Trigger class="w-full lg:w-[200px]">
-						<Select.Value placeholder="select a friuit" />
+						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Item value="apple">apple</Select.Item>
@@ -112,7 +112,7 @@
 
 				<Select.Root size="large" bind:value class="w-full lg:w-auto" >
 					<Select.Trigger class="w-full lg:w-[200px]">
-						<Select.Value placeholder="select a friuit" />
+						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
 					<Select.Content>
 						<Select.Item value="apple">apple</Select.Item>
