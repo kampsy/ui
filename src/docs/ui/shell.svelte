@@ -3,7 +3,7 @@
 	import TextGradient from '$lib/text/textGradient.svelte';
 	import Webhook from '$lib/icons/webhook.svelte';
 	import { ThemeSwitcher } from '$lib/index.js';
-	import { LogoTwitterX } from '$lib/icons/index.js';
+	import { LogoGithub, LogoTwitterX } from '$lib/icons/index.js';
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
 </script>
@@ -56,8 +56,8 @@
 				<div class="flex items-center justify-center gap-x-3">
 					<div class="w-[32px] h-[32px] flex items-center justify-center rounded-full border border-kui-light-gray-200 dark:border-kui-dark-gray-400">
 						<div class="w-4 h-4">
-							<a href="https://twitter.com/kampsy" target="_blank"  class="w-full h-full transition-colors text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000">
-								<LogoTwitterX/>
+							<a href="https://github.com/kampsy/ui" target="_blank"  class="w-full h-full transition-colors text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000">
+								<LogoGithub/>
 							</a>
 						</div>
 					</div>
