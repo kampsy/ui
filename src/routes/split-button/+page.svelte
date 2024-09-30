@@ -6,8 +6,17 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Description } from '$lib/index.js';
-	import { descriptionDefault } from '../../docs/data/description.js';
+	import { SplitButton } from '$lib/index.js';
+	import { splitButtonDefault, splitButtonMenuAlignment, splitButtonTypes } from '../../docs/data/split-button.js';
+
+	const sizes: Array<'tiny' | 'small' | 'medium' | 'large'> = ['small', 'medium', 'large'];
+	const sbTypes: Array<'primary' | 'secondary' | 'tertiary' | 'error' | 'warning'> = [
+		'primary',
+		'secondary',
+		'tertiary',
+		'error',
+		'warning'
+	];
 </script>
 
 <svelte:head>
@@ -52,17 +61,143 @@
 		>
 			<a href="#default" id="default">default</a>
 		</h2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			The button's primary action should be the first item in the dropdown menu.
+		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div>
-					<Description
-						content="Data about this section."
-						title="Section Title"
-						tooltip="Additional context about what this section refers to."
-					/>
+				<div class="space-y-8">
+					<div class="flex flex-wrap gap-4 lg:gap-8">
+						{#each sizes as size}
+							<SplitButton.Root>
+								<SplitButton.Button onclick={() => alert('Clicked save')} {size}
+									>save</SplitButton.Button
+								>
+								<SplitButton.Content class="w-[264px]">
+									<SplitButton.Item
+										onClick={() => alert('Clicked save')}
+										title="Save"
+										description="Save changes"
+									/>
+									<SplitButton.Item
+										onClick={() => alert('Clicked save + Redeploy')}
+										title="Save + Redeploy"
+										description="Save changes and create a new production deployment"
+									/>
+								</SplitButton.Content>
+							</SplitButton.Root>
+						{/each}
+					</div>
+					<div class="w-full flex flex-wrap gap-4 lg:gap-8">
+						{#each sizes as size}
+							<SplitButton.Root>
+								<SplitButton.Button onclick={() => alert('Clicked save')} {size} type="secondary"
+									>save</SplitButton.Button
+								>
+								<SplitButton.Content class="w-[264px]">
+									<SplitButton.Item
+										onClick={() => alert('Clicked save')}
+										title="Save"
+										description="Save changes"
+									/>
+									<SplitButton.Item
+										onClick={() => alert('Clicked save + Redeploy')}
+										title="Save + Redeploy"
+										description="Save changes and create a new production deployment"
+									/>
+								</SplitButton.Content>
+							</SplitButton.Root>
+						{/each}
+					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, descriptionDefault)}
+			{@render demoAndCode(demo, splitButtonDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet types()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Types</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full flex flex-wrap gap-4 lg:gap-10">
+					{#each sbTypes as sbType}
+						<SplitButton.Root>
+							<SplitButton.Button onclick={() => alert('Clicked save')} type={sbType}
+								>save</SplitButton.Button
+							>
+							<SplitButton.Content class="w-[264px]">
+								<SplitButton.Item
+									onClick={() => alert('Clicked save')}
+									title="Save"
+									description="Save changes"
+								/>
+								<SplitButton.Item
+									onClick={() => alert('Clicked save + Redeploy')}
+									title="Save + Redeploy"
+									description="Save changes and create a new production deployment"
+								/>
+							</SplitButton.Content>
+						</SplitButton.Root>
+					{/each}
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, splitButtonTypes)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet alignment()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Menu Alignment</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full flex gap-10">
+					<SplitButton.Root>
+						<SplitButton.Button onclick={() => alert('Clicked save')}>save</SplitButton.Button>
+						<SplitButton.Content class="w-[264px]">
+							<SplitButton.Item
+								onClick={() => alert('Clicked save')}
+								title="Save"
+								description="Save changes"
+							/>
+							<SplitButton.Item
+								onClick={() => alert('Clicked save + Redeploy')}
+								title="Save + Redeploy"
+								description="Save changes and create a new production deployment"
+							/>
+						</SplitButton.Content>
+					</SplitButton.Root>
+
+					<SplitButton.Root alignment="right">
+						<SplitButton.Button onclick={() => alert('Clicked save')}>save</SplitButton.Button>
+						<SplitButton.Content class="w-[264px]">
+							<SplitButton.Item
+								onClick={() => alert('Clicked save')}
+								title="Save"
+								description="Save changes"
+							/>
+							<SplitButton.Item
+								onClick={() => alert('Clicked save + Redeploy')}
+								title="Save + Redeploy"
+								description="Save changes and create a new production deployment"
+							/>
+						</SplitButton.Content>
+					</SplitButton.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, splitButtonMenuAlignment)}
 		</div>
 	</Row>
 {/snippet}
@@ -79,6 +214,8 @@
 {#snippet cont()}
 	{@render description()}
 	{@render defaultDescription()}
+	{@render types()}
+	{@render alignment()}
 	{@render prevAndNext()}
 {/snippet}
 

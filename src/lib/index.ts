@@ -51,6 +51,9 @@ export * as Select from './select/index.js';
 // Spinner
 export { default as Spinner } from './spinner/spinner.svelte';
 
+// Split Button
+export * as SplitButton from './splitButton/index.js';
+
 // Status Dot
 export { default as StatusDot } from './statusDot/statusDot.svelte';
 
