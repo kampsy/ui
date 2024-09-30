@@ -117,7 +117,7 @@
 
 <label for={unique} class="inline-flex items-center gap-3 cursor-pointer">
 	{#if children}
-		<span class="{childLableClass} text-xs text-kui-light-gray-800 dark:text-kui-dark-gray-900">
+		<span class="{childLableClass} select-none text-xs text-kui-light-gray-800 dark:text-kui-dark-gray-900">
 			{@render children()}
 		</span>
 	{/if}
