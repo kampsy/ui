@@ -24,7 +24,7 @@ import { Tooltip } from 'kampsy-ui';
 	</div>
 </div>`;
 
-export const toolTipCustomeType = `
+export const toolTipCustomType = `
 import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">

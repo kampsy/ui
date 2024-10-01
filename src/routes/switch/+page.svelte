@@ -84,7 +84,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">disabled</a>
+			<a href="#customlabel" id="default">disabled</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -103,7 +103,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">sizes</a>
+			<a href="#customlabel" id="default">sizes</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -132,7 +132,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">full width</a>
+			<a href="#customlabel" id="default">full width</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -151,7 +151,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">tooltip</a>
+			<a href="#customlabel" id="default">tooltip</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -174,7 +174,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">icon</a>
+			<a href="#customlabel" id="default">icon</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}

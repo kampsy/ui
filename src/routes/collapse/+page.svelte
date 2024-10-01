@@ -81,7 +81,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">expanded</a>
+			<a href="#customlabel" id="default">expanded</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -114,7 +114,7 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#customelabel" id="default">small</a>
+			<a href="#customlabel" id="default">small</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
