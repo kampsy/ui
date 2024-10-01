@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Cross } from '$lib/icons/index.js';
 	import { clickOutside } from '$lib/utils/event.js';
 	import type { Snippet } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
@@ -23,6 +24,18 @@
 			class="fixed top-0 left-0 w-[75%] h-full bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary
 border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 z-[1000]"
 		>
+		<!--Close button-->
+			<div class="absolute top-4 right-[22px] w-[40px] h-[40px] z-30">
+				<div class="w-full h-full flex items-center justify-center">
+					<button
+						onclick={() => (isOpen = false)}
+						class="w-4 h-4 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+					>
+						<Cross />
+					</button>
+				</div>
+			</div>
+
 			{@render asideSlot()}
 		</div>
 	</div>
