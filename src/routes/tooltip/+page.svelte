@@ -9,7 +9,7 @@
 	import Tooltip from '$lib/tooltip/tooltip.svelte';
 	import {
 		tooltipComponents,
-		toolTipCustomeType,
+		toolTipCustomType,
 		toolTipDefault
 	} from '../../docs/data/tooltip.js';
 	import Button from '$lib/button/button.svelte';
@@ -88,7 +88,7 @@
 	</Row>
 {/snippet}
 
-{#snippet customeType()}
+{#snippet customType()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -119,7 +119,7 @@
 					</Tooltip>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, toolTipCustomeType)}
+			{@render demoAndCode(demo, toolTipCustomType)}
 		</div>
 	</Row>
 {/snippet}
@@ -159,7 +159,7 @@
 {#snippet cont()}
 	{@render tooltip()}
 	{@render defaultTooltip()}
-	{@render customeType()}
+	{@render customType()}
 	{@render components()}
 	{@render prevAndNext()}
 {/snippet}
