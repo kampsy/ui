@@ -62,7 +62,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'textarea', href: '/textarea' }}
-			next={{ title: 'toogle', href: '/toogle' }}
+			next={{ title: 'toggle', href: '/toggle' }}
 		/>
 	</Row>
 {/snippet}

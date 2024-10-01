@@ -1,5 +1,5 @@
-export const toogleDefault = `
-import { Toogle } from 'kampsy-ui';
+export const toggleDefault = `
+import { Toggle } from 'kampsy-ui';
 
 let checked = $state(false);
 let checked2 = $state(true);
@@ -13,8 +13,8 @@ let checked2 = $state(true);
 	</div>
 </div>`;
 
-export const toogleSizes = `
-import { Toogle } from 'kampsy-ui';
+export const toggleSizes = `
+import { Toggle } from 'kampsy-ui';
 
 <div class="w-full flex">
 	<div class="w-4/12">
@@ -25,8 +25,8 @@ import { Toogle } from 'kampsy-ui';
 	</div>
 </div>`;
 
-export const toogleCustomColors = `
-import { Toogle } from 'kampsy-ui';
+export const toggleCustomColors = `
+import { Toggle } from 'kampsy-ui';
 import { LockClosedSmall, LockOpenSmall } from 'kampsy-ui/icons';
 
 let checked = $state(false);
@@ -104,8 +104,8 @@ let checked = $state(false);
 	</div>
 </div>`
 
-export const toogleWithLabel = `
-import { Toogle } from 'kampsy-ui';
+export const toggleWithLabel = `
+import { Toggle } from 'kampsy-ui';
 import { LockClosedSmall, LockOpenSmall } from 'kampsy-ui/icons';
 
 let withLabel = $state(false);

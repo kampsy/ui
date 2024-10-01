@@ -7,7 +7,7 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Toggle } from '$lib/index.js';
-	import { toogleCustomColors, toogleDefault, toogleSizes, toogleWithLabel } from '../../docs/data/toogle.js';
+	import { toggleCustomColors, toggleDefault, toggleSizes, toggleWithLabel } from '../../docs/data/toggle.js';
 	import { LockClosedSmall, LockOpenSmall } from '$lib/icons/index.js';
 
 	let checked = $state(false);
@@ -17,15 +17,15 @@
 </script>
 
 <svelte:head>
-	<title>Toogle</title>
+	<title>Toggle</title>
 </svelte:head>
 
-{#snippet toogle()}
+{#snippet toggle()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			Toogle
+			Toggle
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
@@ -50,7 +50,7 @@
 	</div>
 {/snippet}
 
-{#snippet defaultToogle()}
+{#snippet defaultToggle()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
@@ -68,7 +68,7 @@
 					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, toogleDefault)}
+			{@render demoAndCode(demo, toggleDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -91,7 +91,7 @@
 					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, toogleSizes)}
+			{@render demoAndCode(demo, toggleSizes)}
 		</div>
 	</Row>
 {/snippet}
@@ -177,7 +177,7 @@
 					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, toogleCustomColors)}
+			{@render demoAndCode(demo, toggleCustomColors)}
 		</div>
 	</Row>
 {/snippet}
@@ -253,7 +253,7 @@
 					</div>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, toogleWithLabel)}
+			{@render demoAndCode(demo, toggleWithLabel)}
 		</div>
 	</Row>
 {/snippet}
@@ -268,8 +268,8 @@
 {/snippet}
 
 {#snippet cont()}
-	{@render toogle()}
-	{@render defaultToogle()}
+	{@render toggle()}
+	{@render defaultToggle()}
 	{@render sizes()}
 	{@render customColors()}
 	{@render withLabel()}
