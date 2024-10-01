@@ -47,3 +47,4 @@ export { default as LockOpenSmall } from './lock-open-small.svelte'
 
 export { default as MoreHorizontal } from './more-horizontal.svelte'
 export { default as Accessibility } from './accessibility.svelte'
+export { default as MenuAlt } from './menu-alt.svelte'

@@ -1,11 +1,20 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import { onMount, type Snippet } from 'svelte';
 	import TextGradient from '$lib/text/textGradient.svelte';
 	import Webhook from '$lib/icons/webhook.svelte';
 	import { ThemeSwitcher } from '$lib/index.js';
-	import { LogoGithub, LogoTwitterX } from '$lib/icons/index.js';
+	import { LogoGithub, MenuAlt } from '$lib/icons/index.js';
+	import MobileNavmenu from './mobileNavmenu.svelte';
+	import { preventScroll } from '$lib/utils/general.js';
 
 	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
+
+	// Mobile Navmenu
+	let isMobileMenuOpen = $state(false);
+
+	$effect(() => {
+		preventScroll(isMobileMenuOpen);
+	});
 </script>
 
 <header
@@ -37,7 +46,17 @@
 		<div class="w-full h-full">
 			<!---->
 			<div class="w-full h-full px-6 flex items-center justify-between">
-				<div>
+				<div class="flex items-center gap-x-3">
+					<div class="block lg:hidden">
+						<div class="w-4 h-4 flex items-center justify-center">
+							<button
+								onclick={() => (isMobileMenuOpen = !isMobileMenuOpen)}
+								class="w-4 h-4 bg-transparent"
+							>
+								<MenuAlt />
+							</button>
+						</div>
+					</div>
 					<a href="/">
 						<div class="lg:hidden flex items-center gap-2">
 							<div class="w-[27px] h-[27px]">
@@ -54,10 +73,16 @@
 					</a>
 				</div>
 				<div class="flex items-center justify-center gap-x-3">
-					<div class="w-[32px] h-[32px] flex items-center justify-center rounded-full border border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+					<div
+						class="w-[32px] h-[32px] flex items-center justify-center rounded-full border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+					>
 						<div class="w-4 h-4">
-							<a href="https://github.com/kampsy/ui" target="_blank"  class="w-full h-full transition-colors text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000">
-								<LogoGithub/>
+							<a
+								href="https://github.com/kampsy/ui"
+								target="_blank"
+								class="w-full h-full transition-colors text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000"
+							>
+								<LogoGithub />
 							</a>
 						</div>
 					</div>
@@ -87,3 +112,6 @@
 		</div>
 	</div>
 </main>
+
+<!--Mobile mavmenu -->
+<MobileNavmenu bind:isOpen={isMobileMenuOpen} {asideSlot} />
