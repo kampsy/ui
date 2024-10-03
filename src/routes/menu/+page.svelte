@@ -185,7 +185,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'input', href: '/input' }}
-			next={{ title: 'note', href: '/note' }}
+			next={{ title: 'modal', href: '/modal' }}
 		/>
 	</Row>
 {/snippet}

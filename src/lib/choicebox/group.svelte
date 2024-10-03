@@ -45,7 +45,7 @@
 			{label}
 		</div>
 	{/if}
-	<div class="w-full flex items-center gap-x-4">
+	<div class="w-full flex gap-x-4">
 		{#if children}
 			{@render children()}
 		{/if}

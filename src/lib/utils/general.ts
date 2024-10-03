@@ -67,9 +67,9 @@ export const iosEnableDisableScrolling = (isOpen: boolean) => {
 export const preventScroll = (isOpen: boolean) => {
     const os = detectOperatingSystem();
 
-    if (os === "iOS") {
+    if (os === "iOS" || os === "Mac") {
         iosEnableDisableScrolling(isOpen);
-    } else if (os === "Android") {
+    } else if (os === "Android" || os === "Linux" || os === "Windows") {
         androidEnableDisableScrolling(isOpen);
     }
 }

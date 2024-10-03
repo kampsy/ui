@@ -1,3 +1,209 @@
-<script>
-	
+<script lang="ts">
+	import Aside from '$lib/../docs/ui/aside.svelte';
+	import Row from '$lib/../docs/ui/row.svelte';
+	import Shell from '$lib/../docs/ui/shell.svelte';
+	import { asideData } from '$lib/../docs/utils/data.js';
+	import CollapseCode from '$lib/collapse/collapseCode.svelte';
+	import type { Snippet } from 'svelte';
+	import { errorDefault } from '../../docs/data/error.js';
+	import Pagination from '$lib/pagination/pagination.svelte';
+	import { Button, Modal } from '$lib/index.js';
+
+	let active = $state(false);
+	let activeSticky = $state(false);
+	let activeSingleButton = $state(false);
+	let activeDisabled = $state(false);
 </script>
+
+<svelte:head>
+	<title>Modal</title>
+</svelte:head>
+
+{#snippet modal()}
+	<Row>
+		<h1
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+		>
+			modal
+		</h1>
+		<p
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+		>
+			Display popup content that requires attention or provides additional information.
+		</p>
+	</Row>
+{/snippet}
+
+{#snippet demoAndCode(demo: Snippet, code: string)}
+	<div
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+	>
+		<div class="w-full p-4 lg:p-6 overflow-x-auto">
+			<div class="w-full flex flex-wrap gap-4">
+				{@render demo()}
+			</div>
+		</div>
+		<CollapseCode {code} />
+	</div>
+{/snippet}
+
+{#snippet defaultModal()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">default</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Button onclick={() => (active = true)} size="small">Open Modal</Button>
+					<Modal.Root bind:active>
+						<Modal.Content>
+							<Modal.Body>
+								<Modal.Header>
+									<Modal.Title>Create Token</Modal.Title>
+									<Modal.Subtitle>
+										Enter a unique name for your token to differentiate it from other tokens and
+										then select the scope.
+									</Modal.Subtitle>
+								</Modal.Header>
+								<Modal.Text>Some content contained within the modal.</Modal.Text>
+							</Modal.Body>
+							<Modal.Footer>
+								<Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+								<Button onclick={() => (active = false)}>Submit</Button>
+							</Modal.Footer>
+						</Modal.Content>
+					</Modal.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, errorDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet sticky()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">sticky</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Button onclick={() => (activeSticky = true)} size="small">Open Modal</Button>
+					<Modal.Root bind:active={activeSticky} sticky>
+						<Modal.Content>
+							<Modal.Body>
+								<Modal.Header>
+									<Modal.Title>Create Token</Modal.Title>
+								</Modal.Header>
+								<!--Array from 1 to 30-->
+								{#each Array(30) as _, i}
+									<Modal.Text>Some content contained within the modal.</Modal.Text>
+								{/each}
+							</Modal.Body>
+							<Modal.Footer>
+								<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
+								<Button onclick={() => (activeSticky = false)}>Submit</Button>
+							</Modal.Footer>
+						</Modal.Content>
+					</Modal.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, errorDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet singleButton()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Single Button</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Button onclick={() => (activeSingleButton = true)} size="small">Open Modal</Button>
+					<Modal.Root bind:active={activeSingleButton}>
+						<Modal.Content>
+							<Modal.Body>
+								<Modal.Header>
+									<Modal.Title>Create Token</Modal.Title>
+								</Modal.Header>
+								<Modal.Text>Some content contained within the modal.</Modal.Text>
+							</Modal.Body>
+							<Modal.Footer>
+								<Button onclick={() => (activeSingleButton = false)} type="secondary" class="w-full"
+									>Cancel</Button
+								>
+							</Modal.Footer>
+						</Modal.Content>
+					</Modal.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, errorDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet disabled()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Disabled actions</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Button onclick={() => (activeDisabled = true)} size="small">Open Modal</Button>
+					<Modal.Root bind:active={activeDisabled}>
+						<Modal.Content>
+							<Modal.Body>
+								<Modal.Header>
+									<Modal.Title>Create Token</Modal.Title>
+									<Modal.Subtitle>This is a modal.</Modal.Subtitle>
+								</Modal.Header>
+								<Modal.Text>Some content contained within the modal.</Modal.Text>
+							</Modal.Body>
+							<Modal.Footer>
+								<Button onclick={() => (activeDisabled = false)} type="secondary">Cancel</Button>
+								<Button disabled onclick={() => (activeDisabled = false)}>Submit</Button>
+							</Modal.Footer>
+						</Modal.Content>
+					</Modal.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, errorDefault)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet prevAndNext()}
+	<Row bottomLine={false}>
+		<Pagination
+			previous={{ title: 'menu', href: '/menu' }}
+			next={{ title: 'note', href: '/note' }}
+		/>
+	</Row>
+{/snippet}
+
+{#snippet cont()}
+	{@render modal()}
+	{@render defaultModal()}
+	{@render sticky()}
+	{@render singleButton()}
+	{@render disabled()}
+	{@render prevAndNext()}
+{/snippet}
+
+{#snippet aside()}
+	<Aside asideDataList={asideData} />
+{/snippet}
+
+<Shell asideSlot={aside} contSlot={cont} />
