@@ -29,7 +29,7 @@
 	});
 </script>
 
-{#snippet childrenLabelSize()}
+{#snippet childrenLabelSizeSnip()}
 	<div class="space-x-1 {sizeClass}">
 		{#if label}
 			<span class="text-kui-light-red-900 dark:text-kui-dark-red-900 font-medium">
@@ -45,7 +45,7 @@
 	</div>
 {/snippet}
 
-{#snippet withErrorProp()}
+{#snippet withErrorPropSnip()}
 	<div class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 		{error?.message || ''}
 		<div
@@ -65,9 +65,9 @@
 
 {#snippet errorSnip()}
 	{#if error}
-		{@render withErrorProp()}
+		{@render withErrorPropSnip()}
 	{:else}
-		{@render childrenLabelSize()}
+		{@render childrenLabelSizeSnip()}
 	{/if}
 {/snippet}
 
