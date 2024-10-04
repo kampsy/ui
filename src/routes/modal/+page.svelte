@@ -5,9 +5,9 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { errorDefault } from '../../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Button, Modal } from '$lib/index.js';
+	import { modalDefault, modalDisabkedActions, modalSingleButton, modalSticky } from '../../docs/data/modal.js';
 
 	let active = $state(false);
 	let activeSticky = $state(false);
@@ -78,7 +78,7 @@
 					</Modal.Root>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, modalDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -113,7 +113,7 @@
 					</Modal.Root>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, modalSticky)}
 		</div>
 	</Row>
 {/snippet}
@@ -146,7 +146,7 @@
 					</Modal.Root>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, modalSingleButton)}
 		</div>
 	</Row>
 {/snippet}
@@ -179,7 +179,7 @@
 					</Modal.Root>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, errorDefault)}
+			{@render demoAndCode(demo, modalDisabkedActions)}
 		</div>
 	</Row>
 {/snippet}
