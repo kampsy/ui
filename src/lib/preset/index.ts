@@ -3,6 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme.js';
 import { CustomColors } from '$lib/customColors/index.js';
 
 export default {
+  darkMode: 'selector',
   content: [
     './src/**/*.{html,js,svelte,ts}', 
     './node_modules/kampsy-ui/dist/**/*.{html,js,svelte,ts}'
