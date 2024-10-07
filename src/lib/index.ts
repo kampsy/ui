@@ -33,6 +33,9 @@ export { default as SearchInput } from './input/searchInput.svelte'
 // Menu
 export * as Menu from './menu/index.js';
 
+// Modal
+export * as Modal from './modal/index.js';
+
 // Note
 export { default as Note } from './note/note.svelte';
 

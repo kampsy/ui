@@ -195,7 +195,7 @@
 
 <label
 	for={unique}
-	class="group transition-colors ease-in w-full border flex rounded-[6px] {labelClass} "
+	class="group w-full transition-colors ease-in border flex  rounded-[6px] {labelClass} "
 >
 	<div class="w-full p-[12px] flex items-center justify-between">
 		<div>

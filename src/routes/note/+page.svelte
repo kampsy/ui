@@ -328,7 +328,7 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'menu', href: '/menu' }}
+			previous={{ title: 'modal', href: '/modal' }}
 			next={{ title: 'pagination', href: '/pagination' }}
 		/>
 	</Row>

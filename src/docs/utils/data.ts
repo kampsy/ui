@@ -49,8 +49,13 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'choicebox',
-                url: '/choicebox'
-            }, {
+                url: '/choicebox',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
+            }, 
+            {
                 name: 'collapse',
                 url: '/collapse'
             },
@@ -69,6 +74,10 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'menu',
                 url: '/menu',
+            },
+            {
+                name: 'modal',
+                url: '/modal',
                 badge: {
                     name: 'new',
                     variant: 'green'
@@ -100,11 +109,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'split button',
-                url: '/split-button',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/split-button'
             },
             {
                 name: 'status dot',
@@ -132,11 +137,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'toggle',
-                url: '/toggle',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/toggle'
             },
             {
                 name: 'tooltip',
