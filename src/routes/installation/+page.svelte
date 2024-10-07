@@ -16,6 +16,7 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import {
 		installationConfig,
+		installationConfigLong,
 		installationKampsy,
 		installationSvelte,
 		installationSveltekit
@@ -144,10 +145,18 @@
 		>
 			Update the {@render roundedCode('tailwind.config.cjs')} file in your project’s root folder to inform
 			the Tailwind CSS compiler where to locate the utility classes and configure Kampsy-ui's custom
-			color palette.
+			color palette, by using the config preset.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationConfig)}
+		</div>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			If you prefer the classic Tailwind config options, you can use the extended defaults.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{@render demoAndCodeSnip(installationConfigLong)}
 		</div>
 	</Row>
 {/snippet}

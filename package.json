@@ -30,6 +30,9 @@
 		"./icons": {
 			"types": "./dist/icons/index.d.ts",
 			"svelte": "./dist/icons/index.js"
+		},
+		"./preset": {
+			"default": "./dist/preset/index.js"
 		}
 	},
 	"files": [
@@ -43,15 +46,15 @@
 	"devDependencies": {
 		"@playwright/test": "^1.47.2",
 		"@sveltejs/adapter-auto": "^3.2.5",
-		"@sveltejs/kit": "^2.6.1",
+		"@sveltejs/kit": "^2.6.2",
 		"@sveltejs/package": "^2.3.5",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
 		"@types/eslint": "^8.56.12",
 		"autoprefixer": "^10.4.20",
-		"eslint": "^9.11.1",
+		"eslint": "^9.12.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.44.1",
-		"globals": "^15.9.0",
+		"globals": "^15.10.0",
 		"highlight.js": "^11.10.0",
 		"postcss": "^8.4.47",
 		"prettier": "^3.3.3",
