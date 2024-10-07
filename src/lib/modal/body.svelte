@@ -14,21 +14,18 @@
 
 	let bodyClass = $derived.by(() => {
 		if (rootState.sticky) {
-			return 'px-6 py-20 ';
+			return '';
 		} else {
-			return 'p-6';
+			return '';
 		}
 	});
 </script>
 
 {#if children}
-	<div class="modal-body scroll-smooth overflow-y-auto {bodyClass} {klass}">
-		{@render children()}
+	<div class="relative modal-body !h-full p-6 scroll-smooth overflow-y-auto overscroll-contain {bodyClass} {klass}">
+		<div>
+			{@render children()}
+		</div>
+		<div aria-hidden="true" class="w-full lg:h-[73px]"></div>
 	</div>
 {/if}
-
-<style>
-	.modal-body {
-		max-height: calc(39.125rem - 4.0625rem);
-	}
-</style>

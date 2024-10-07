@@ -7,10 +7,15 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Button, Modal } from '$lib/index.js';
-	import { modalDefault, modalDisabkedActions, modalSingleButton, modalSticky } from '../../docs/data/modal.js';
+	import {
+		modalDefault,
+		modalDisabkedActions,
+		modalSingleButton,
+		modalSticky
+	} from '../../docs/data/modal.js';
 
 	let active = $state(false);
-	let activeSticky = $state(false);
+	let activeSticky = $state(true);
 	let activeSingleButton = $state(false);
 	let activeDisabled = $state(false);
 </script>
@@ -31,7 +36,19 @@
 		>
 			Display popup content that requires attention or provides additional information.
 		</p>
-	</Row>
+
+		<div>
+			<span class="ml-auto"
+				><div
+					class="pointer-events-auto h-6 w-10 rounded-full p-1 ring-1 ring-inset transition duration-200 ease-in-out bg-indigo-600 ring-black/20"
+				>
+					<div
+						class="h-4 w-4 rounded-full bg-white shadow-sm ring-1 ring-slate-700/10 transition duration-200 ease-in-out translate-x-4"
+					></div>
+				</div></span
+			>
+		</div>
+	</Row>	
 {/snippet}
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
@@ -101,7 +118,7 @@
 									<Modal.Title>Create Token</Modal.Title>
 								</Modal.Header>
 								<!--Array from 1 to 30-->
-								{#each Array(30) as _, i}
+								{#each Array(60) as _, i}
 									<Modal.Text>Some content contained within the modal.</Modal.Text>
 								{/each}
 							</Modal.Body>

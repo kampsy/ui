@@ -29,7 +29,7 @@
 				use:clickOutside={() => {
 					rootState.setIsActive(false);
 				}}
-				class="hide-scrollbar rounded-t-[15px] rounded-[15px] bg-kui-light-bg dark:bg-kui-dark-bg-secondary 
+				class="w-full max-h-[80vh] rounded-t-[15px] rounded-[15px] bg-kui-light-bg dark:bg-kui-dark-bg-secondary 
 				border-t border-kui-light-gray-600 dark:border-kui-dark-gray-200"
 			>
 				{@render children()}
@@ -49,7 +49,8 @@
 			class="relative w-[540px] max-h-[626px] rounded-[12px] bg-kui-light-bg dark:bg-kui-dark-bg-secondary border
                 border-kui-light-gray-600 dark:border-kui-dark-gray-200 {klass}"
 		>
-			{@render children()}
+			
+				{@render children()}
 		</div>
 	{/if}
 {/snippet}
