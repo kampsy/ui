@@ -12,20 +12,22 @@ export const installationKampsy = `
 pnpm i -D kampsy-ui`;
 
 export const installationConfig = `
-/** @type {import('tailwindcss').Config} */
-import { CustomColors } from './node_modules/kampsy-ui/dist/customColors/index.js'
+import kampsyUI from 'kampsy-ui/preset';
 
+/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'selector',
-  content: ['./src/**/*.{html,js,svelte,ts}',
-    './node_modules/kampsy-ui/dist/**/*.{html,js,svelte,ts}'
-  ],
+  presets: [kampsyUI]
+}`;
+
+export const installationConfigLong = `
+import kampsyUI from 'kampsy-ui/preset';
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: kampsyUI.content,
+  presets: [kampsyUI],
   theme: {
-    extend: {
-      colors: {
-        ...CustomColors
-      }
-    },
+    extend: {}
   },
   plugins: [],
 }`;
