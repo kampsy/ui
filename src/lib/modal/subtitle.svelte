@@ -10,7 +10,7 @@
 </script>
 
 {#if children}
-	<p class="text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 leading-[24px] {klass}">
+	<p aria-labelledby="modal-subtitle" class="text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 leading-[24px] {klass}">
 		{@render children()}
 	</p>
 {/if}

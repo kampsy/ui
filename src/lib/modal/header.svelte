@@ -22,7 +22,7 @@
 </script>
 
 {#if children}
-	<header class={headerClass}>
+	<header aria-labelledby="modal-title" class={headerClass}>
 		{@render children()}
 	</header>
 {/if}

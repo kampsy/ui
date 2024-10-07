@@ -27,6 +27,7 @@ let active = $state(false);
 
 export const modalSticky = `
 import { Modal } from 'kampsy-ui';
+import { ArrowLeft } from 'kampsy-ui/icons';
 
 let active = $state(false);
 
@@ -38,13 +39,15 @@ let active = $state(false);
     			<Modal.Header>
     				<Modal.Title>Create Token</Modal.Title>
     			</Modal.Header>
-    			<!--Array from 1 to 30-->
-				{#each Array(30) as _, i}
+				{#each Array(40) as _, i}
 					<Modal.Text>Some content contained within the modal.</Modal.Text>
 				{/each}
     		</Modal.Body>
     		<Modal.Footer>
-    			<Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+    			<div class="flex gap-3">
+					<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
+					<Button prefix={ArrowLeft} onclick={() => (activeSticky = false)} type="secondary">Previous</Button>
+				</div>
     			<Button onclick={() => (active = false)}>Submit</Button>
     		</Modal.Footer>
     	</Modal.Content>

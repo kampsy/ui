@@ -13,9 +13,10 @@
 		modalSingleButton,
 		modalSticky
 	} from '../../docs/data/modal.js';
+	import { ArrowLeft } from '$lib/icons/index.js';
 
 	let active = $state(false);
-	let activeSticky = $state(true);
+	let activeSticky = $state(false);
 	let activeSingleButton = $state(false);
 	let activeDisabled = $state(false);
 </script>
@@ -36,18 +37,6 @@
 		>
 			Display popup content that requires attention or provides additional information.
 		</p>
-
-		<div>
-			<span class="ml-auto"
-				><div
-					class="pointer-events-auto h-6 w-10 rounded-full p-1 ring-1 ring-inset transition duration-200 ease-in-out bg-indigo-600 ring-black/20"
-				>
-					<div
-						class="h-4 w-4 rounded-full bg-white shadow-sm ring-1 ring-slate-700/10 transition duration-200 ease-in-out translate-x-4"
-					></div>
-				</div></span
-			>
-		</div>
 	</Row>	
 {/snippet}
 
@@ -123,7 +112,10 @@
 								{/each}
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
+								<div class="flex gap-3">
+									<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
+									<Button prefix={ArrowLeft} onclick={() => (activeSticky = false)} type="secondary">Previous</Button>
+								</div>
 								<Button onclick={() => (activeSticky = false)}>Submit</Button>
 							</Modal.Footer>
 						</Modal.Content>

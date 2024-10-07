@@ -56,7 +56,7 @@
 	});
 </script>
 
-<dialog bind:this={dialog}>
+<dialog bind:this={dialog} tabindex="-1">
 	<div
 		class="fixed top-0 left-0 w-full h-full flex items-center justify-center transition-colors bg-kui-black bg-opacity-[0.25] dark:bg-opacity-[0.75]"
 	>
