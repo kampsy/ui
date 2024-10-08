@@ -7,7 +7,12 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import Textarea from '$lib/textarea/textarea.svelte';
-	import { textareaDefault, textareaDisabled, textareError } from '../../docs/data/textarea.js';
+	import {
+		textareaDefault,
+		textareaDisabled,
+		textareaWithLabel,
+		textareError
+	} from '../../docs/data/textarea.js';
 </script>
 
 <svelte:head>
@@ -79,6 +84,27 @@
 	</Row>
 {/snippet}
 
+{#snippet withLabel()}
+	<Row>
+		<h2
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		>
+			<a href="#default" id="default">Label</a>
+		</h2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="w-full">
+					<Textarea
+						label="Label"
+						placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+					/>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, textareaWithLabel)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet withError()}
 	<Row>
 		<h2
@@ -129,6 +155,7 @@
 	{@render textarea()}
 	{@render defaultTextarea()}
 	{@render disabled()}
+	{@render withLabel()}
 	{@render withError()}
 	{@render prevAndNext()}
 {/snippet}
