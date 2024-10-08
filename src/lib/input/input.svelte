@@ -59,7 +59,8 @@
 		}
 		if (hasRing) {
 			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400 
-            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700`;
+            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700 
+			placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600`;
 		}
 		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 
 		dark:hover:border-kui-dark-gray-500`;
@@ -172,8 +173,7 @@
 					onblur={() => {
 						hasRing = false;
 					}}
-					class="{inputClass} w-full h-full outline-none bg-transparent capitalize placeholder:text-kui-light-gray-600
-		 dark:placeholder:text-kui-dark-gray-600"
+					class="{inputClass} w-full h-full outline-none bg-transparent capitalize "
 				/>
 			</div>
 
