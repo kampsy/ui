@@ -132,6 +132,14 @@ export const asideData: Array<AsideT> = [
                 url: '/tabs'
             },
             {
+                name: 'text',
+                url: '/text',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
+            },
+            {
                 name: 'textarea',
                 url: '/textarea',
                 badge: {
