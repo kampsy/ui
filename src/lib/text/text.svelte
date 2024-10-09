@@ -97,45 +97,44 @@
 
 	let sizeClass = $state('');
 
-	if (size) {
-		if (typeof size === 'number') {
-			sizeClass = sizeObj[size];
-		} else if (typeof size === 'object') {
-			sizeClass = `${sizeObj[size.sm]} ${sizeObj[size.md]
-				.split(' ')
-				.map((pre) => `md:${pre}`)
-				.join(' ')} ${sizeObj[size.lg]
-				.split(' ')
-				.map((pre) => `lg:${pre}`)
-				.join(' ')}`;
+	$effect.pre(() => {
+		if (size) {
+			if (typeof size === 'number') {
+				sizeClass = sizeObj[size];
+			} else if (typeof size === 'object') {
+				sizeClass = `${sizeObj[size.sm]} ${sizeObj[size.md]
+					.split(' ')
+					.map((pre) => `md:${pre}`)
+					.join(' ')} ${sizeObj[size.lg]
+					.split(' ')
+					.map((pre) => `lg:${pre}`)
+					.join(' ')}`;
+			}
+		} else if (variant) {
+			if (typeof variant === 'string') {
+				sizeClass = variantObj[variant];
+			} else if (typeof variant === 'object') {
+				sizeClass = `${variantObj[variant.sm]} ${variantObj[variant.md]
+					.split(' ')
+					.map((pre) => `md:${pre}`)
+					.join(' ')} ${variantObj[variant.lg]
+					.split(' ')
+					.map((pre) => `lg:${pre}`)
+					.join(' ')}`;
+			}
 		}
-	}
+	});
 
-	if (variant) {
-		if (typeof variant === 'string') {
-			sizeClass = variantObj[variant];
-		} else if (typeof variant === 'object') {
-			sizeClass = `${variantObj[variant.sm]} ${variantObj[variant.md]
-				.split(' ')
-				.map((pre) => `md:${pre}`)
-				.join(' ')} ${variantObj[variant.lg]
-				.split(' ')
-				.map((pre) => `lg:${pre}`)
-				.join(' ')}`;
+	let truncateClass = $derived.by(() => {
+		if (truncate) {
+			return 'truncate';
 		}
-	}
-    
-
-    let truncateClass = $derived.by(() => {
-        if (truncate) {
-            return 'truncate';
-        }
-        return '';
-    })
+		return '';
+	});
 </script>
 
 <p
-	class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 {sizeClass}  {truncateClass} {klass}"
+	class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 {sizeClass} {truncateClass} {klass}"
 >
 	{@render children()}
 </p>
