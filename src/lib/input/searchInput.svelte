@@ -42,10 +42,10 @@
 			hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
 		}
 		if (hasRing) {
-			return `border-kui-light-blue-700 dark:border-kui-dark-blue-700 ring-4 ring-kui-light-blue-400 
-            dark:ring-kui-dark-blue-400 hover:border-kui-light-blue-700 dark:hover:border-kui-dark-blue-700`;
+			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400 
+            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700`;
 		}
-		return `border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:border-kui-light-blue-700 dark:hover:border-kui-dark-blue-700`;
+		return `border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700`;
 	});
 </script>
 

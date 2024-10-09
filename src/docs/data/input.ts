@@ -1,10 +1,14 @@
 export const inputDefault = `
 import { Input } from 'kampsy-ui';
 
+let small = $state('');
+let defaultInput = $state('');
+let large = $state('');
+
 <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-4">
-	<Input aria-labelledby="Demo input" placeholder="small" size="small" />
-	<Input aria-labelledby="Demo input" placeholder="default" />
-	<Input aria-labelledby="Demo input" placeholder="large" size="large" />
+	<Input aria-labelledby="Demo input" bind:value={small} placeholder="small" size="small" />
+	<Input aria-labelledby="Demo input" bind:value={defaultInput} placeholder="default" />
+	<Input aria-labelledby="Demo input" bind:value={large} placeholder="large" size="large" />
 </div>`;
 
 

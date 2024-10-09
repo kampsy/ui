@@ -69,7 +69,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'input',
-                url: '/input'
+                url: '/input',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'menu',
@@ -128,8 +132,20 @@ export const asideData: Array<AsideT> = [
                 url: '/tabs'
             },
             {
+                name: 'text',
+                url: '/text',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
+            },
+            {
                 name: 'textarea',
-                url: '/textarea'
+                url: '/textarea',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'theme switcher',
