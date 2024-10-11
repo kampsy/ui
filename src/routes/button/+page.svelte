@@ -66,8 +66,9 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
+				<Button size="tiny">upload</Button>
 				<Button size="small">upload</Button>
-				<Button>upload</Button>
+				<Button size="medium">upload</Button>
 				<Button size="large">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonSize)}
@@ -130,7 +131,7 @@
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="square">
+				<Button aria-label="Upload" shape="square" size="medium">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
@@ -154,7 +155,7 @@
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle">
+				<Button aria-label="Upload" shape="circle" size="medium">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
@@ -208,8 +209,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
+				<Button size="tiny" type="secondary" rounded>upload</Button>
 				<Button size="small" type="secondary" rounded>upload</Button>
-				<Button type="secondary" rounded>upload</Button>
+				<Button size="medium" type="secondary" rounded>upload</Button>
 				<Button size="large" type="secondary" rounded>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
@@ -228,8 +230,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
+				<Button size="tiny" loading>upload</Button>
 				<Button size="small" loading>upload</Button>
-				<Button loading>upload</Button>
+				<Button size="medium" loading>upload</Button>
 				<Button size="large" loading>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonLoading)}
@@ -247,8 +250,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
+				<Button size="tiny" disabled>upload</Button>
 				<Button size="small" disabled>upload</Button>
-				<Button disabled>upload</Button>
+				<Button size="medium" disabled>upload</Button>
 				<Button size="large" disabled>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonDisabled)}

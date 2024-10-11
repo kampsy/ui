@@ -1,14 +1,11 @@
-//button
-
 export const buttonSize = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="sm">upload</Button>
+	<Button size="tiny">upload</Button>
 	<Button>upload</Button>
-	<Button size="lg">upload</Button>
+	<Button size="large">upload</Button>
 </div>`;
-
 
 export const buttonTypes = `
 import { Button } from 'kampsy-ui';
@@ -88,25 +85,28 @@ export const buttonRounded = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="sm" type="secondary" rounded>upload</Button>
+	<Button size="tiny" type="secondary" rounded>upload</Button>
+	<Button size="small" type="secondary" rounded>upload</Button>
 	<Button type="secondary" rounded>upload</Button>
-	<Button size="lg" type="secondary" rounded>upload</Button>
+	<Button size="large" type="secondary" rounded>upload</Button>
 </div>`;
 
 export const buttonLoading= `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="sm" loading>upload</Button>
+	<Button size="tiny" loading>upload</Button>
+	<Button size="small" loading>upload</Button>
 	<Button loading>upload</Button>
-	<Button size="lg" loading>upload</Button>
+	<Button size="large" loading>upload</Button>
 </div>`;
 
 export const buttonDisabled= `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="sm" disabled>upload</Button>
+	<Button size="tiny" disabled>upload</Button>
+	<Button size="small" disabled>upload</Button>
 	<Button disabled>upload</Button>
-	<Button size="lg" disabled>upload</Button>
+	<Button size="large" disabled>upload</Button>
 </div>`;
