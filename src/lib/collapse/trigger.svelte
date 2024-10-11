@@ -57,9 +57,9 @@
 	};
 </script>
 
-<button {onclick} class="w-full flex items-center justify-between {paddingClass} ">
+<button {onclick} class="w-full flex items-center justify-between text-left {paddingClass} ">
 	{#if children}
-		<span class="{textClass} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+		<span class="{textClass} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold"
 			>{@render children()}</span
 		>
 	{/if}

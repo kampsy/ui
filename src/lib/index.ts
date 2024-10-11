@@ -69,14 +69,17 @@ export * as Table from './table/index.js';
 // Tabs
 export { default as Tabs } from './tabs/tabs.svelte';
 
-// Toggle
-export { default as Toggle } from './toggle/toggle.svelte';
+// Text
+export { default as Text } from './text/text.svelte';
 
 // Textarea
 export { default as Textarea } from './textarea/textarea.svelte';
 
 // Theme Switcher
 export { default as ThemeSwitcher } from './themeSwitcher/themeSwitcher.svelte';
+
+// Toggle
+export { default as Toggle } from './toggle/toggle.svelte';
 
 // Tooltip
 export { default as Tooltip } from './tooltip/tooltip.svelte';

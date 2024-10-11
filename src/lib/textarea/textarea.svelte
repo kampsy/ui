@@ -2,6 +2,9 @@
 	import Error from '$lib/icons/error.svelte';
 
 	type propT = {
+		'aria-labelledby'?: string | undefined;
+		value?: string | undefined;
+		label?: string | undefined;
 		defaultValue?: string | undefined;
 		error?: string | undefined;
 		size?: 'tiny' | 'small' | 'medium' | 'large';
@@ -9,12 +12,23 @@
 		disabled?: boolean;
 	};
 	let {
+		'aria-labelledby': araiLabelledBy = undefined,
+		value = $bindable(''),
+		label = undefined,
 		defaultValue = '',
 		error = undefined,
 		size = 'medium',
 		placeholder = undefined,
 		disabled = false
 	}: propT = $props();
+
+	// The focus and blur state of the input
+	let hasRing = $state(false);
+
+	// Assign defaultValue if it is not ''
+	if (defaultValue !== '') {
+		value = defaultValue;
+	}
 
 	const textObj = {
 		tiny: 'text-[12px] leading-[16px]',
@@ -27,57 +41,83 @@
 		return textObj[size];
 	});
 
-	let background = $derived.by(() => {
+	let ringClass = $derived.by(() => {
 		if (disabled) {
-			return 'bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary';
+			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400 
+			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600 
+			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
 		}
-		return 'bg-kui-light-bg dark:bg-kui-dark-bg';
-	});
-
-	let cursor = $derived.by(() => {
-		if (disabled) {
-			return 'cursor-not-allowed';
-		}
-		return '';
-	});
-
-	let border = $derived.by(() => {
 		if (error) {
-			return `border border-kui-light-red-800 dark:border-kui-dark-red-800 focus:ring-kui-light-red-800 
-			dark:focus:ring-kui-dark-red-800 focus:border-kui-light-red-800 dark:focus:border-kui-dark-red-800 focus:shadow-sm`;
+			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-red-700 
+			dark:hover:border-kui-dark-red-700 ring-4 ring-kui-light-red-400 dark:ring-kui-dark-red-400
+			hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
 		}
-		return `border border-kui-light-gray-200 dark:border-kui-dark-gray-400 focus:ring-kui-light-gray-800 
-		dark:focus:ring-kui-dark-gray-800 focus:border-kui-light-gray-800 dark:focus:border-kui-dark-gray-800 focus:shadow-sm`;
+
+		if (hasRing) {
+			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400 
+            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700
+			text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
+		}
+
+		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 
+		dark:hover:border-kui-dark-gray-500 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 placeholder-kui-light-gray-600 
+		dark:placeholder-kui-dark-gray-600`;
 	});
 
-	let textarea = $derived.by(() => {
-		return `${background} ${text} ${cursor} ${border}`;
+	let textareaClass = $derived.by(() => {
+		return `${text}  ${ringClass}`;
 	});
 </script>
 
-<div class="w-full">
-	<textarea
-		autocapitalize="off"
-		autocomplete="off"
-		autocorrect="off"
-		id="message"
-		rows="4"
-		value={defaultValue}
-		class="{textarea} block px-[12px] py-[10px] w-full rounded-[6px] outline-none text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg placeholder-kui-light-gray-800 dark:placeholder-kui-dark-gray-800"
-		{placeholder}
-		{disabled}
-	></textarea>
+{#snippet textAreaSnip()}
+	<div class="w-full">
+		<textarea
+			{value}
+			aria-labelledby={araiLabelledBy}
+			autocapitalize="off"
+			autocomplete="off"
+			autocorrect="off"
+			id="message"
+			rows="4"
+			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-none
+		 bg-kui-light-bg dark:bg-kui-dark-bg "
+			{placeholder}
+			{disabled}
+			onfocus={() => {
+				hasRing = true;
+			}}
+			onblur={() => {
+				hasRing = false;
+			}}
+		></textarea>
 
-	{#if error}
-		<div class="mt-[8px]">
-			<div class="flex items-center gap-[8px]">
-				<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
-					<Error />
-				</div>
-				<div class="font-medium {text} text-kui-light-red-900 dark:text-kui-dark-red-900">
-					{error}
+		{#if error}
+			<div class="mt-[8px]">
+				<div class="flex items-center gap-[8px]">
+					<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+						<Error />
+					</div>
+					<div class="font-medium {text} text-kui-light-red-900 dark:text-kui-dark-red-900">
+						{error}
+					</div>
 				</div>
 			</div>
+		{/if}
+	</div>
+{/snippet}
+
+<!--With a label-->
+{#snippet textAreaLabel()}
+	<label for="">
+		<div class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+			{label}
 		</div>
-	{/if}
-</div>
+		{@render textAreaSnip()}
+	</label>
+{/snippet}
+
+{#if label}
+	{@render textAreaLabel()}
+{:else}
+	{@render textAreaSnip()}
+{/if}
