@@ -68,7 +68,7 @@
 			{#snippet demo()}
 				<Button size="tiny">upload</Button>
 				<Button size="small">upload</Button>
-				<Button size="medium">upload</Button>
+				<Button>upload</Button>
 				<Button size="large">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonSize)}
@@ -114,7 +114,7 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-		Icon-only buttons should include the {@render roundedCode('shape')} prop and an
+			Icon-only buttons should include the {@render roundedCode('shape')} prop and an
 			{@render roundedCode('aria-label')}.
 		</p>
 		<div class="mt-4 xl:mt-7">
@@ -131,7 +131,7 @@
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="square" size="medium">
+				<Button aria-label="Upload" shape="square">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
@@ -155,7 +155,7 @@
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle" size="medium">
+				<Button aria-label="Upload" shape="circle">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
@@ -211,7 +211,7 @@
 			{#snippet demo()}
 				<Button size="tiny" type="secondary" rounded>upload</Button>
 				<Button size="small" type="secondary" rounded>upload</Button>
-				<Button size="medium" type="secondary" rounded>upload</Button>
+				<Button type="secondary" rounded>upload</Button>
 				<Button size="large" type="secondary" rounded>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
@@ -232,7 +232,7 @@
 			{#snippet demo()}
 				<Button size="tiny" loading>upload</Button>
 				<Button size="small" loading>upload</Button>
-				<Button size="medium" loading>upload</Button>
+				<Button loading>upload</Button>
 				<Button size="large" loading>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonLoading)}
@@ -252,7 +252,7 @@
 			{#snippet demo()}
 				<Button size="tiny" disabled>upload</Button>
 				<Button size="small" disabled>upload</Button>
-				<Button size="medium" disabled>upload</Button>
+				<Button disabled>upload</Button>
 				<Button size="large" disabled>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonDisabled)}

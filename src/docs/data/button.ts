@@ -3,6 +3,7 @@ import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="tiny">upload</Button>
+	<Button size="small">upload</Button>
 	<Button>upload</Button>
 	<Button size="large">upload</Button>
 </div>`;
@@ -91,7 +92,7 @@ import { Button } from 'kampsy-ui';
 	<Button size="large" type="secondary" rounded>upload</Button>
 </div>`;
 
-export const buttonLoading= `
+export const buttonLoading = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
@@ -101,7 +102,7 @@ import { Button } from 'kampsy-ui';
 	<Button size="large" loading>upload</Button>
 </div>`;
 
-export const buttonDisabled= `
+export const buttonDisabled = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
