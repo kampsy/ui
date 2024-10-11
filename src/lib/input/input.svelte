@@ -159,7 +159,7 @@
 			<div class="w-full h-full {inputContClass}">
 				<input
 					{type}
-					{value}
+					bind:value
 					aria-labelledby={araiLabelledBy}
 					{spellcheck}
 					{placeholder}
