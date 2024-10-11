@@ -18,7 +18,7 @@
 		disabled?: boolean | undefined;
 	};
 	let {
-		type = "text",
+		type = 'text',
 		value = $bindable(''),
 		label = undefined,
 		error = undefined,
@@ -154,7 +154,7 @@
 {#snippet inputSnip()}
 	<div>
 		<div
-			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px] bg-kui-light-bg 
+			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px] bg-kui-light-bg
 			dark:bg-kui-dark-bg"
 		>
 			{@render prefixSnip()}
@@ -173,7 +173,7 @@
 					onblur={() => {
 						hasRing = false;
 					}}
-					class="{inputClass} w-full h-full outline-none bg-transparent capitalize "
+					class="{inputClass} w-full h-full outline-none bg-transparent"
 				/>
 			</div>
 
@@ -195,17 +195,19 @@
 {/snippet}
 
 <!--With a label-->
-{#snippet inputLabel()}
-	<label for="">
-		<div class="text-sm text-kui-light-gray-900 dark:text-kui-light-gray-900 mb-2">
-			{label}
-		</div>
-		{@render inputSnip()}
-	</label>
-{/snippet}
+<div>
+	{#snippet inputLabel()}
+		<label for="">
+			<div class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+				{label}
+			</div>
+			{@render inputSnip()}
+		</label>
+	{/snippet}
 
-{#if label}
-	{@render inputLabel()}
-{:else}
-	{@render inputSnip()}
-{/if}
+	{#if label}
+		{@render inputLabel()}
+	{:else}
+		{@render inputSnip()}
+	{/if}
+</div>

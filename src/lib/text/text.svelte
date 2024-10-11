@@ -125,12 +125,7 @@
 		}
 	});
 
-	let truncateClass = $derived.by(() => {
-		if (truncate) {
-			return 'truncate';
-		}
-		return '';
-	});
+	let truncateClass = truncate ? 'truncate' : '';
 </script>
 
 <p
