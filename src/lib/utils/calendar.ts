@@ -1,3 +1,4 @@
+import type { DateValue, RangeValue } from "$lib/types/general.js";
 
 
 /**
@@ -257,5 +258,33 @@ export const formatDateRange = (startDate: Date, endDate: Date): string => {
     } else {
         // Different month or year
         return `${startMonth} ${startDay} - ${endMonth} ${endDay}`;
+    }
+}
+
+/**
+ * Returns the value of the date selection.
+ *
+ * If the start and end dates are the same, the function returns the DateValue.
+ * If the start and end dates are different, the function returns the RangeValue<DateValue>.
+ *
+ * @param startDate - The start date of the range.
+ * @param endDate - The end date of the range.
+ * @return The value of the date range selection.
+ */
+export const selectedValue = (startDate: Date, endDate: Date): DateValue | RangeValue<DateValue> => {
+    const startDay = startDate.getDate();
+    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
+    const startYear = startDate.getFullYear();
+
+    const endDay = endDate.getDate();
+    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
+    const endYear = endDate.getFullYear();
+
+    if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
+        // Same day, return the DateValue
+        return startDate;
+    } else {
+        // Different day, return the RangeValue<DateValue>
+        return { start: startDate, end: endDate };
     }
 }

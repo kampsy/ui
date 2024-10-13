@@ -3,7 +3,7 @@
 	import Calendar from '$lib/icons/calendar.svelte';
 	import { ChevronLeft } from '$lib/icons/index.js';
 	import { ChevronRight } from '$lib/icons/index.js';
-	import { Button } from '$lib/index.js';
+	import { Button, type DateValue, type RangeValue } from '$lib/index.js';
 	import {
 		formatDateRange,
 		generateCalendar,
@@ -12,10 +12,17 @@
 		getZeroDate,
 		isZeroDate,
 		nextMonth,
-		prevMonth
+		prevMonth,
+		selectedValue
+
 	} from '$lib/utils/calendar.js';
 	import { fade, fly } from 'svelte/transition';
 	import Weekday from './weekday.svelte';
+
+	type propT = {
+		value: DateValue | RangeValue<DateValue> | undefined;
+	};
+	let { value = $bindable() }: propT = $props();
 
 	const days = [
 		{
@@ -78,6 +85,7 @@
 	$effect(() => {
 		if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			strValue = formatDateRange(startDate, endDate);
+			value = selectedValue(startDate, endDate);
 		}
 	});
 
