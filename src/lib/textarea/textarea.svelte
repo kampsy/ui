@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Error from '$lib/icons/error.svelte';
+	import { randomString } from '$lib/utils/random.js';
 
 	type propT = {
 		'aria-labelledby'?: string | undefined;
+		id?: string | undefined;
+		name?: string | undefined;
 		value?: string | undefined;
 		label?: string | undefined;
 		defaultValue?: string | undefined;
@@ -13,6 +16,8 @@
 	};
 	let {
 		'aria-labelledby': araiLabelledBy = undefined,
+		id = undefined,
+		name = undefined,
 		value = $bindable(''),
 		label = undefined,
 		defaultValue = '',
@@ -24,6 +29,14 @@
 
 	// The focus and blur state of the input
 	let hasRing = $state(false);
+
+	// The name is used on the label and input name
+	let inputID = $derived.by(() => {
+		if (id) {
+			return id;
+		}
+		return randomString(8);
+	});
 
 	// Assign defaultValue if it is not ''
 	if (defaultValue !== '') {
@@ -72,15 +85,16 @@
 {#snippet textAreaSnip()}
 	<div class="w-full">
 		<textarea
-			{value}
+			bind:value
+			id={inputID}
+			{name}
 			aria-labelledby={araiLabelledBy}
 			autocapitalize="off"
 			autocomplete="off"
 			autocorrect="off"
-			id="message"
 			rows="4"
 			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-none
-		 bg-kui-light-bg dark:bg-kui-dark-bg "
+		 bg-kui-light-bg dark:bg-kui-dark-bg"
 			{placeholder}
 			{disabled}
 			onfocus={() => {
@@ -108,8 +122,8 @@
 
 <!--With a label-->
 {#snippet textAreaLabel()}
-	<label for="">
-		<div class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+	<label for={inputID}>
+		<div class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
 			{label}
 		</div>
 		{@render textAreaSnip()}
