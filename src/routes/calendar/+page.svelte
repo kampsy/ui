@@ -11,7 +11,6 @@
 	import { calendarDefault } from '../../docs/data/calendar.js';
 
 	let value = $state<DateValue | RangeValue<DateValue>>();
-	$inspect(value)
 </script>
 
 <svelte:head>

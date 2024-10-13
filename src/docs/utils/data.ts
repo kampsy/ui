@@ -45,15 +45,15 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'calendar',
-                url: '/calendar'
-            },
-            {
-                name: 'choicebox',
-                url: '/choicebox',
+                url: '/calendar',
                 badge: {
                     name: 'updated',
                     variant: 'purple'
                 }
+            },
+            {
+                name: 'choicebox',
+                url: '/choicebox'
             }, 
             {
                 name: 'collapse',
