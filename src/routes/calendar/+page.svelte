@@ -7,7 +7,11 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Calendar } from '$lib/index.js';
+	import type { DateValue, RangeValue } from '$lib/index.js';
 	import { calendarDefault } from '../../docs/data/calendar.js';
+
+	let value = $state<DateValue | RangeValue<DateValue>>();
+	$inspect(value)
 </script>
 
 <svelte:head>
@@ -54,7 +58,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full flex justify-center">
-					<Calendar />
+					<Calendar bind:value />
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, calendarDefault)}

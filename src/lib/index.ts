@@ -1,3 +1,8 @@
+
+/*The types */
+export * from './types/index.js';
+
+
 // Avatar
 export * from './avatar/index.js';
 
