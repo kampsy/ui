@@ -16,14 +16,16 @@ export const inputPrefixAndSuffix = `
 import { Input } from 'kampsy-ui';
 import { ArrowCircleUp } from 'kampsy-ui/icons'
 
+let value = $state('');
+
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="default" />
+	<Input aria-labelledby="Demo" prefix={ArrowCircleUp} bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="default" />
+	<Input aria-labelledby="Demo" suffix={ArrowCircleUp} bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" prefix="https://" suffix=".com" placeholder="default" />
+	<Input aria-labelledby="Demo" prefix="https://" suffix=".com" bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
