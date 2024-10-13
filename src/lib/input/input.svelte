@@ -1,9 +1,12 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
 	import Error from '$lib/icons/error.svelte';
+	import { randomString } from '$lib/utils/random.js';
 
 	type propsT = {
 		type?: 'text' | 'number' | 'email' | 'password' | undefined;
+		id?: string | undefined;
+		name?: string | undefined;
 		value?: string | undefined;
 		label?: string | undefined;
 		error?: string | undefined;
@@ -19,6 +22,8 @@
 	};
 	let {
 		type = 'text',
+		id = undefined,
+		name = undefined,
 		value = $bindable(''),
 		label = undefined,
 		error = undefined,
@@ -35,6 +40,14 @@
 
 	// The focus and blur state of the input
 	let hasRing = $state(false);
+
+	// The name is used on the label and input name
+	let inputID = $derived.by(() => {
+		if (id) {
+			return id;
+		}
+		return randomString(8);
+	});
 
 	const sizeObj = {
 		small: 'h-[32px] text-sm',
@@ -162,7 +175,9 @@
 			<div class="w-full h-full {inputContClass}">
 				<input
 					{type}
-					{value}
+					bind:value
+					id={inputID}
+					{name}
 					aria-labelledby={araiLabelledBy}
 					{spellcheck}
 					{placeholder}
@@ -197,8 +212,8 @@
 <!--With a label-->
 <div>
 	{#snippet inputLabel()}
-		<label for="">
-			<div class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+		<label for={inputID}>
+			<div class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
 				{label}
 			</div>
 			{@render inputSnip()}

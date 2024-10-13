@@ -123,7 +123,7 @@
 <!--With a label-->
 {#snippet textAreaLabel()}
 	<label for={inputID}>
-		<div class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+		<div class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
 			{label}
 		</div>
 		{@render textAreaSnip()}
