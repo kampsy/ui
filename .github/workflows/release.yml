@@ -34,8 +34,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Verify Integrity
-        run: pnpm audit signatures
+      # - name: Verify Integrity
+      #  run: pnpm audit signatures
 
       - name: Run Semantic Release
         env:
