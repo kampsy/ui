@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setContext, type Snippet } from 'svelte';
-	import { createModalState } from './root.svelte.js';
+	import { createModalState } from './root.svelte.ts';
 	import { preventScroll } from '$lib/utils/general.js';
 
 	type propsT = {

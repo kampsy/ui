@@ -2,7 +2,7 @@
 	import { randomString } from '$lib/utils/random.js';
 	import type { Snippet } from 'svelte';
 	import { setContext } from 'svelte';
-	import { createRootState } from './root.svelte.js';
+	import { createRootState } from './root.svelte.ts';
 
 	type propT = {
 		value: string;
