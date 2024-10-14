@@ -61,7 +61,7 @@
 		<input
 			type="search"
 			aria-labelledby={araiLabelledBy}
-			{value}
+			bind:value
 			{placeholder}
 			{disabled}
 			onfocus={() => {
