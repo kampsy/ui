@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { clickOutside } from '$lib/utils/event.js';
 	import { fade } from 'svelte/transition';
-	import { createRootState } from './root.svelte.ts';
+	import { createRootState } from './root.svelte.js';
 	import { setContext, type Snippet } from 'svelte';
 
 	type propsT = {

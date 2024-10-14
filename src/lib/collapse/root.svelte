@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { setContext, type Snippet } from 'svelte';
-	import { createCollapseState } from './root.svelte.ts';
+	import { createCollapseState } from './root.svelte.js';
 
 	type propsT = {
 		children: Snippet | undefined;

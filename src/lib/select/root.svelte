@@ -2,7 +2,7 @@
 	import { clickOutside } from '$lib/utils/event.js';
 	import { setContext, type Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { createRootState } from './root.svelte.ts';
+	import { createRootState } from './root.svelte.js';
 
 	type propsT = {
 		value?: string;

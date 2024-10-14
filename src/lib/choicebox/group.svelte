@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { randomString } from '$lib/utils/random.js';
 	import { setContext, type Snippet } from 'svelte';
-	import { createGroupState } from './group.svelte.ts';
+	import { createGroupState } from './group.svelte.js';
 
 	type propsT = {
 		type?: 'radio' | 'checkbox' | undefined;
