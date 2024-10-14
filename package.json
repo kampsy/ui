@@ -8,6 +8,13 @@
 		"url": "https://string.kampsy.xyz/about"
 	},
 	"homepage": "https://ui.kampsy.xyz",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kampsy/ui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/kampsy/ui/issues"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -45,6 +52,7 @@
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.47.2",
+		"@semantic-release/exec": "^6.0.3",
 		"@sveltejs/adapter-auto": "^3.2.5",
 		"@sveltejs/kit": "^2.6.2",
 		"@sveltejs/package": "^2.3.5",
@@ -60,6 +68,7 @@
 		"prettier": "^3.3.3",
 		"prettier-plugin-svelte": "^3.2.7",
 		"publint": "^0.1.16",
+		"semantic-release": "^24.1.2",
 		"svelte": "5.0.0-next.175",
 		"svelte-check": "^4.0.5",
 		"tailwindcss": "^3.4.13",
@@ -72,9 +81,6 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
-	"bugs": {
-		"url": "https://github.com/kampsy/ui/issues"
-	},
 	"keywords": [
 		"ui",
 		"components",
@@ -87,5 +93,24 @@
 		"tailwindcss",
 		"components-library",
 		"sveltekit"
-	]
+	],
+	"release": {
+		"plugins": [
+			["@semantic-release/commit-analyzer", {
+				"parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+        }
+			}],
+    	["@semantic-release/release-notes-generator", {
+				"parserOpts": {
+          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
+        }
+			}],
+			["@semantic-release/exec", {
+				"verifyConditionsCmd": "pnpm check"
+			}],
+			"@semantic-release/npm",
+			"@semantic-release/github"
+		]
+	}
 }
