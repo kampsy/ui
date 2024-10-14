@@ -1,21 +1,20 @@
 name: Release
+
 on:
   push:
     branches:
       - master # or main
 
 permissions:
-  contents: read # for checkout
+  contents: write # to be able to publish a GitHub release
+  issues: write # to comment on issues after release
+  pull-requests: write # to comment on PRs after release
+  id-token: write # for OIDC (npm provenance)
 
 jobs:
   release:
     name: Build & Publish @latest Release
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,17 +24,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "lts/*"
+          node-version: 'lts/*'
+          cache: 'pnpm'
 
-      - name: Use PNPM v8
+      - name: Use PNPM
         uses: pnpm/action-setup@v4
+        with:
+          version: 8
 
       - name: Install dependencies
-        run: pnpm clean-install
+        run: pnpm install
 
-      - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
+      - name: Verify Integrity
         run: pnpm audit signatures
-      - name: Create Release
+
+      - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
