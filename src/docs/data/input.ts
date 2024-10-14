@@ -121,4 +121,6 @@ import { Input } from 'kampsy-ui';
 export const inputLabel = `
 import { Input } from 'kampsy-ui';
 
-<Input aria-labelledby="Demo input" label="Label" placeholder="Label" />`;
+let value = $state('');
+
+<Input aria-labelledby="Demo input" label="Label" bind:value placeholder="Label" />`;
