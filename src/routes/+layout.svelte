@@ -40,7 +40,7 @@
 	/>
 
 	<!-- Meta Tags Generated with https://metatags.io -->
-	<meta name="robots" content="noindex,nofollow" />
+	<meta name="robots" content="index, follow" />
 </svelte:head>
 
 <Analytics>
