@@ -95,37 +95,57 @@
 		'heading-72': 'text-[72px] leading-[72px] tracking-[-4.32px] font-semibold'
 	};
 
-	let sizeClass = $state('');
+	let view = $state('mobile');
 
-	$effect.pre(() => {
+	let sizeClass = $derived.by(() => {
 		if (size) {
 			if (typeof size === 'number') {
-				sizeClass = sizeObj[size];
+				return sizeObj[size];
 			} else if (typeof size === 'object') {
-				sizeClass = `${sizeObj[size.sm]} ${sizeObj[size.md]
-					.split(' ')
-					.map((pre) => `md:${pre}`)
-					.join(' ')} ${sizeObj[size.lg]
-					.split(' ')
-					.map((pre) => `lg:${pre}`)
-					.join(' ')}`;
+				if (view === 'mobile') {
+					return sizeObj[size.sm];
+				} else if (view === 'tablet') {
+					return sizeObj[size.md];
+				} else if (view === 'desktop') {
+					return sizeObj[size.lg];
+				}
 			}
 		} else if (variant) {
 			if (typeof variant === 'string') {
-				sizeClass = variantObj[variant];
+				return variantObj[variant];
 			} else if (typeof variant === 'object') {
-				sizeClass = `${variantObj[variant.sm]} ${variantObj[variant.md]
-					.split(' ')
-					.map((pre) => `md:${pre}`)
-					.join(' ')} ${variantObj[variant.lg]
-					.split(' ')
-					.map((pre) => `lg:${pre}`)
-					.join(' ')}`;
+				if (view === 'mobile') {
+					return variantObj[variant.sm];
+				} else if (view === 'tablet') {
+					return variantObj[variant.md];
+				} else if (view === 'desktop') {
+					return variantObj[variant.lg];
+				}
 			}
 		}
 	});
 
 	let truncateClass = truncate ? 'truncate' : '';
+
+	$effect(() => {
+		if (window.innerWidth < 767) {
+			view = 'mobile';
+		} else if (window.innerWidth >= 767 && window.innerWidth <= 1024) {
+			view = 'tablet';
+		} else {
+			view = 'desktop';
+		}
+		// update when the user is resizing the window
+		window.addEventListener('resize', () => {
+			if (window.innerWidth < 767) {
+				view = 'mobile';
+			} else if (window.innerWidth >= 767 && window.innerWidth <= 1024) {
+				view = 'tablet';
+			} else {
+				view = 'desktop';
+			}
+		});
+	});
 </script>
 
 <p

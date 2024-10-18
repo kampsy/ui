@@ -51,18 +51,18 @@
 		"svelte": "^5.0.0-next.1"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.47.2",
+		"@playwright/test": "^1.48.1",
 		"@semantic-release/exec": "^6.0.3",
 		"@sveltejs/adapter-auto": "^3.2.5",
-		"@sveltejs/kit": "^2.6.2",
+		"@sveltejs/kit": "^2.7.1",
 		"@sveltejs/package": "^2.3.5",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.6",
 		"@types/eslint": "^8.56.12",
 		"autoprefixer": "^10.4.20",
 		"eslint": "^9.12.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.44.1",
-		"globals": "^15.10.0",
+		"eslint-plugin-svelte": "^2.45.1",
+		"globals": "^15.11.0",
 		"highlight.js": "^11.10.0",
 		"postcss": "^8.4.47",
 		"prettier": "^3.3.3",
@@ -71,11 +71,11 @@
 		"semantic-release": "^24.1.2",
 		"svelte": "5.0.0-next.175",
 		"svelte-check": "^4.0.5",
-		"tailwindcss": "^3.4.13",
-		"tslib": "^2.7.0",
-		"typescript": "^5.6.2",
+		"tailwindcss": "^3.4.14",
+		"tslib": "^2.8.0",
+		"typescript": "^5.6.3",
 		"typescript-eslint": "8.0.0-alpha.39",
-		"vite": "^5.4.8",
+		"vite": "^5.4.9",
 		"vitest": "^1.6.0"
 	},
 	"svelte": "./dist/index.js",
@@ -96,19 +96,36 @@
 	],
 	"release": {
 		"plugins": [
-			["@semantic-release/commit-analyzer", {
-				"parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-        }
-			}],
-    	["@semantic-release/release-notes-generator", {
-				"parserOpts": {
-          "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES", "BREAKING"]
-        }
-			}],
-			["@semantic-release/exec", {
-				"verifyConditionsCmd": "pnpm check"
-			}],
+			[
+				"@semantic-release/commit-analyzer",
+				{
+					"parserOpts": {
+						"noteKeywords": [
+							"BREAKING CHANGE",
+							"BREAKING CHANGES",
+							"BREAKING"
+						]
+					}
+				}
+			],
+			[
+				"@semantic-release/release-notes-generator",
+				{
+					"parserOpts": {
+						"noteKeywords": [
+							"BREAKING CHANGE",
+							"BREAKING CHANGES",
+							"BREAKING"
+						]
+					}
+				}
+			],
+			[
+				"@semantic-release/exec",
+				{
+					"verifyConditionsCmd": "pnpm check"
+				}
+			],
 			"@semantic-release/npm",
 			"@semantic-release/github"
 		]
