@@ -91,7 +91,6 @@
 			aria-labelledby={araiLabelledBy}
 			autocapitalize="off"
 			autocomplete="off"
-			autocorrect="off"
 			rows="4"
 			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-none
 		 bg-kui-light-bg dark:bg-kui-dark-bg"
