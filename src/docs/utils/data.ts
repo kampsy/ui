@@ -45,10 +45,14 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'calendar',
-                url: '/calendar',
+                url: '/calendar'
+            },
+            {
+                name: 'checkbox',
+                url: '/checkbox',
                 badge: {
-                    name: 'updated',
-                    variant: 'purple'
+                    name: 'new',
+                    variant: 'green'
                 }
             },
             {
@@ -69,11 +73,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'input',
-                url: '/input',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                url: '/input'
             },
             {
                 name: 'menu',
@@ -81,11 +81,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'modal',
-                url: '/modal',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/modal'
             },
             {
                 name: 'note',
@@ -133,19 +129,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'text',
-                url: '/text',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/text'
             },
             {
                 name: 'textarea',
-                url: '/textarea',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                url: '/textarea'
             },
             {
                 name: 'theme switcher',

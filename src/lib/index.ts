@@ -15,6 +15,9 @@ export { default as Button } from './button/button.svelte';
 // Calendar
 export { default as Calendar } from './calendar/calendar.svelte'
 
+// Checkbox
+export {default as Checkbox} from './checkbox/checkbox.svelte'
+
 // Choicebox
 export * as Choicebox from './choicebox/index.js'
 
