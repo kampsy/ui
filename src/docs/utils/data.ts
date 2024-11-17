@@ -12,7 +12,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'installation',
-                url: '/installation'
+                url: '/installation',
+                badge: {
+                    name: 'updated',
+                    variant: 'purple'
+                }
             },
             {
                 name: 'colors',
