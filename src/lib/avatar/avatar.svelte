@@ -6,7 +6,7 @@
 
 	let { size = 32, placeholder = false }: propsT = $props();
 
-	let widthHeight = $derived.by(() => {
+	let widthAndHeight = $derived.by(() => {
 		return ` width: ${size}px; height: ${size}px;`;
 	});
 </script>
@@ -14,7 +14,7 @@
 {#snippet isPlaceholder()}
 	<div
 		aria-label="Avatar placeholder"
-		style={widthHeight}
+		style={widthAndHeight}
 		class="flex items-center justify-center rounded-full overflow-hidden text-[10px] font-semibold border dark:text-kui-dark-gray-1000 border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	></div>
 {/snippet}
