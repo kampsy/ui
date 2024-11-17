@@ -1,15 +1,8 @@
 export const installationSveltekit = `
-pnpm create svelte@latest my-app
-cd my-app
-pnpm install`;
-
-export const installationSvelte = `
-pnpm create vite@latest my-app -- --template svelte
-cd my-app
-pnpm install`;
+npx sv create my-app`;
 
 export const installationKampsy = `
-pnpm i -D kampsy-ui`;
+pnpm i -D kampsy-ui@latest`;
 
 export const installationConfig = `
 import kampsyUI from 'kampsy-ui/preset';
