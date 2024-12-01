@@ -10,42 +10,7 @@
 </script>
 
 <svelte:head>
-	<!-- Primary Meta Tags -->
-	<title>Kampsy UI</title>
-	<meta name="title" content="Kampsy-ui | A Svelte 5 component library" />
-	<meta
-		name="description"
-		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
-	/>
-
-	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://ui.kampsy.xyz" />
-	<meta property="og:title" content="Kampsy-ui | A Svelte 5 component library" />
-	<meta
-		property="og:description"
-		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
-	/>
-	<meta
-		property="og:image"
-		content="https://ucarecdn.com/91722eb1-c95a-42b2-b851-cdfe01a9bdf7/-/preview/1200x628/"
-	/>
-
-	<!-- Twitter -->
-	<meta property="twitter:card" content="summary_large_image" />
-	<meta property="twitter:url" content="https://ui.kampsy.xyz" />
-	<meta property="twitter:title" content="Kampsy-ui | A Svelte 5 component library" />
-	<meta
-		property="twitter:description"
-		content="Kampsy-ui - A Svelte 5 component library, thoughtfully designed to deliver consistent and cohesive web experiences."
-	/>
-	<meta
-		property="twitter:image"
-		content="https://ucarecdn.com/91722eb1-c95a-42b2-b851-cdfe01a9bdf7/-/preview/1200x628/"
-	/>
-
-	<!-- Meta Tags Generated with https://metatags.io -->
-	<meta name="robots" content="noindex,nofollow" />
+	<title>Kampsy-ui</title>
 </svelte:head>
 
 {#snippet foundation()}
@@ -58,7 +23,7 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A Svelte 5 component library, inspired by Vercel's Geist, thoughtfully designed to deliver
+			A Svelte 5 component library, inspired by Vercel's Geist, is thoughtfully designed to provide
 			consistent and cohesive web experiences.
 		</p>
 	</Row>
@@ -115,7 +80,86 @@
 				</div>
 			</a>
 		</div>
+
 		<div class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+			<a
+				href="/colors"
+				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
+			>
+				<div class="flex justify-between">
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-gray-800 dark:bg-kui-dark-gray-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-blue-800 dark:bg-kui-dark-blue-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-purple-800 dark:bg-kui-dark-purple-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-pink-800 dark:bg-kui-dark-pink-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-red-800 dark:bg-kui-dark-red-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-amber-800 dark:bg-kui-dark-amber-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-green-800 dark:bg-kui-dark-green-800"
+						></div>
+					</div>
+					<div
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+					>
+						<div
+							class="h-[72px] w-2 rounded-full bg-kui-light-teal-800 dark:bg-kui-dark-teal-800"
+						></div>
+					</div>
+				</div>
+				<div class="mt-[32px] w-full h-[48px]">
+					<p
+						class="first-letter:capitalize text-base text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold leading-6 tracking-[-0.32px]"
+					>
+						colors
+					</p>
+					<p
+						class="first-letter:capitalize text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-6"
+					>
+						a high contrast accessible color system.
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<!--<div class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
 			<a
 				href="#/"
 				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
@@ -552,85 +596,7 @@
 					</p>
 				</div>
 			</a>
-		</div>
-
-		<div class="border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400">
-			<a
-				href="/colors"
-				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
-			>
-				<div class="flex justify-between">
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-gray-800 dark:bg-kui-dark-gray-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-blue-800 dark:bg-kui-dark-blue-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-purple-800 dark:bg-kui-dark-purple-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-pink-800 dark:bg-kui-dark-pink-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-red-800 dark:bg-kui-dark-red-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-amber-800 dark:bg-kui-dark-amber-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-green-800 dark:bg-kui-dark-green-800"
-						></div>
-					</div>
-					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
-					>
-						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-teal-800 dark:bg-kui-dark-teal-800"
-						></div>
-					</div>
-				</div>
-				<div class="mt-[32px] w-full h-[48px]">
-					<p
-						class="first-letter:capitalize text-base text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold leading-6 tracking-[-0.32px]"
-					>
-						colors
-					</p>
-					<p
-						class="first-letter:capitalize text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-6"
-					>
-						a high contrast accessible color system.
-					</p>
-				</div>
-			</a>
-		</div>
+		</div>-->
 	</section>
 {/snippet}
 

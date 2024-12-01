@@ -2,9 +2,26 @@
 	import type { Component } from 'svelte';
 	import Error from '$lib/icons/error.svelte';
 	import { randomString } from '$lib/utils/random.js';
+	import type { HTMLAttributes } from 'svelte/elements';
 
 	type propsT = {
-		type?: 'text' | 'number' | 'email' | 'password' | undefined;
+		type?:
+			| 'text'
+			| 'number'
+			| 'email'
+			| 'password'
+			| 'search'
+			| 'time'
+			| 'date'
+			| 'datetime-local'
+			| 'file'
+			| 'image'
+			| 'tel'
+			| 'color'
+			| 'url'
+			| 'week'
+			| 'month'
+			| undefined;
 		id?: string | undefined;
 		name?: string | undefined;
 		value?: string | undefined;
