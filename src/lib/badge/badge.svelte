@@ -113,7 +113,7 @@
 {/snippet}
 
 <span class="flex items-center justify-center rounded-full {badgeClass} {klass}">
-	<span class="flex items-center {iconXGap} capitalize">
+	<span class="flex items-center {iconXGap}">
 		{@render iconSnip()}
 		{@render children()}
 	</span>
