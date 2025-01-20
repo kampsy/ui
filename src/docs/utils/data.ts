@@ -16,22 +16,14 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'colors',
-                url: '/colors',
-                badge: {
-                    name: 'updated',
-                    variant: 'purple'
-                }
+                url: '/colors'
             }
         ]
 
     },
     {
         title: {
-            name: 'components',
-            badge: {
-                name: 'alpha',
-                variant: 'amber'
-            }
+            name: 'components'
         },
         ul: [
             {
@@ -53,11 +45,7 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'checkbox',
-                url: '/checkbox',
-                badge: {
-                    name: 'new',
-                    variant: 'green'
-                }
+                url: '/checkbox'
             },
             {
                 name: 'choicebox',
@@ -106,6 +94,14 @@ export const asideData: Array<AsideT> = [
             {
                 name: 'select',
                 url: '/select'
+            },
+            {
+                "name": 'show more',
+                "url": '/show-more',
+                badge: {
+                    name: 'new',
+                    variant: 'green'
+                }
             },
             {
                 name: 'spinner',

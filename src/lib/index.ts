@@ -59,6 +59,9 @@ export { default as ProjectBanner } from './projectBanner/banner.svelte';
 // Select
 export * as Select from './select/index.js';
 
+// Show more
+export { default as ShowMore } from './showMore/showMore.svelte';
+
 // Spinner
 export { default as Spinner } from './spinner/spinner.svelte';
 
