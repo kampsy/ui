@@ -5,9 +5,9 @@
 		isActive: boolean;
 	};
 
-	let { isActive = $bindable(false) }: propsT = $props();
+	let { isActive = $bindable(false)}: propsT = $props();
 
-    const onclick = () => {
+	const onclick = () => {
 		isActive = !isActive;
 	};
 
@@ -18,14 +18,19 @@
 		return '';
 	});
 
+    let ariaLabel = $derived.by(() => {
+        if (isActive) {
+            return 'Show less content';
+        }
+        return 'Show more content';
+    });
+
 	let buttonText = $derived.by(() => {
 		if (isActive) {
 			return 'show less';
 		}
 		return 'Show more';
 	});
-    
-
 </script>
 
 {#snippet suffixSnip()}
@@ -46,9 +51,10 @@
 		<div class="grow-0">
 			<button
 				{onclick}
+				aria-label={ariaLabel}
 				type="button"
-				class="rounded-full p-1.5 border border-kui-light-gray-400 dark:border-kui-dark-gray-400 
-                hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 hover:bg-kui-light-gray-200 
+				class="rounded-full p-1.5 border border-kui-light-gray-400 dark:border-kui-dark-gray-400
+                hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 hover:bg-kui-light-gray-200
                 dark:hover:bg-kui-dark-gray-200 transition duration-300"
 			>
 				<div class="px-1.5 w-full flex items-center gap-1 justify-center">
