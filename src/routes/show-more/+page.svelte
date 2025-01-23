@@ -9,8 +9,9 @@
 	import { ShowMore } from '$lib/index.js';
 	import { showMoreDefault } from '../../docs/data/showMore.js';
 
-    let isActive = $state(false);
+	let isActive = $state(false);
 
+	$inspect(isActive);
 </script>
 
 <svelte:head>
@@ -55,8 +56,8 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
-                    <ShowMore {isActive} />
-                </div>
+					<ShowMore bind:isActive />
+				</div>
 			{/snippet}
 			{@render demoAndCode(demo, showMoreDefault)}
 		</div>

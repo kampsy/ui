@@ -4,5 +4,5 @@ import { ShowMore } from 'kampsy-ui';
 let isActive = $state(false);
 
 <div class="w-full">
-    <ShowMore {isActive} />
+    <ShowMore bind:isActive />
 </div>`;
