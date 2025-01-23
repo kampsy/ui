@@ -109,7 +109,7 @@
 
 	let loadingDisabledClass = $derived.by(() => {
 		if (disabled || loading) {
-			return 'cursor-not-allowed text-kui-light-gray-700 dark:text-kui-dark-gray-700  bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border border-kui-light-gray-200 dark:border-kui-dark-gray-400';
+			return 'cursor-not-allowed text-kui-light-gray-700 dark:text-kui-dark-gray-700 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border border-kui-light-gray-200 dark:border-kui-dark-gray-400';
 		}
 		return '';
 	});
@@ -154,7 +154,7 @@
 {/snippet}
 
 {#snippet mainButton()}
-	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} ">
+	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} transition duration-300">
 		<div class="w-full h-full px-[6px] flex items-center justify-center gap-[8px]">
 			{@render prefixSnip()}
 			<span class="font-medium first-letter:capitalize">

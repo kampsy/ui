@@ -6,27 +6,29 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import Spinner from '$lib/spinner/spinner.svelte';
-	import { spinnerCustom, spinnerDefault } from '../../docs/data/spinner.js';
+	import { ShowMore } from '$lib/index.js';
+	import { showMoreDefault } from '../../docs/data/showMore.js';
+
+	let isActive = $state(false);
+
+	$inspect(isActive);
 </script>
 
 <svelte:head>
-	<title>Spinner</title>
+	<title>Show More</title>
 </svelte:head>
 
-{#snippet spinner()}
+{#snippet error()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			spinner
+			Show more
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Indicate an action running in the background. Unlike the loading dots, this should generally
-			be used to indicate loading feedback in response to a user action, like for buttons,
-			pagination, etc.
+			Styling component to show expanded or collapsed content.
 		</p>
 	</Row>
 {/snippet}
@@ -44,34 +46,20 @@
 	</div>
 {/snippet}
 
-{#snippet defaultSize()}
+{#snippet defaultShowMore()}
 	<Row>
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			<a href="#default" id="default">Default size</a>
+			<a href="#default" id="default">default</a>
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Spinner />
+				<div class="w-full">
+					<ShowMore bind:isActive />
+				</div>
 			{/snippet}
-			{@render demoAndCode(demo, spinnerDefault)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet custom()}
-	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customsize" id="default">custom size</a>
-		</h2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<Spinner size={30} />
-			{/snippet}
-			{@render demoAndCode(demo, spinnerCustom)}
+			{@render demoAndCode(demo, showMoreDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -79,16 +67,15 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'show more', href: '/show-more' }}
-			next={{ title: 'split button', href: '/split-button' }}
+			previous={{ title: 'select', href: '/select' }}
+			next={{ title: 'spinner', href: '/spinner' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render spinner()}
-	{@render defaultSize()}
-	{@render custom()}
+	{@render error()}
+	{@render defaultShowMore()}
 	{@render prevAndNext()}
 {/snippet}
 

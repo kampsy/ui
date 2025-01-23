@@ -131,7 +131,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'project banner', href: '/project-banner' }}
-			next={{ title: 'spinner', href: '/spinner' }}
+			next={{ title: 'show more', href: '/show-more' }}
 		/>
 	</Row>
 {/snippet}
