@@ -92,7 +92,7 @@
 			<div class="ml-6 md:ml-0">
 				<a
 					href={callToAction.href}
-					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-none px-0 h-6 my-[-1px] {callToActionClass}"
+					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-hidden px-0 h-6 my-[-1px] {callToActionClass}"
 				>
 					{callToAction.label}
 				</a>
@@ -101,7 +101,7 @@
 			<div class="ml-6 md:ml-0">
 				<button
 					onclick={callToAction.onClick}
-					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-none px-0 h-6 my-[-1px] {callToActionClass}"
+					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-hidden px-0 h-6 my-[-1px] {callToActionClass}"
 				>
 					{callToAction.label}
 				</button>

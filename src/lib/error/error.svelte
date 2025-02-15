@@ -49,7 +49,7 @@
 	<div class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 		{error?.message || ''}
 		<div
-			class=" font-medium leading-[20px] capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 hover:dark:text-kui-dark-red-800 hover:border-kui-light-red-600 hover:dark:border-kui-dark-red-800"
+			class=" font-medium leading-[20px] capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800"
 		>
 			<a href={error?.link || ''}>
 				<div class="flex items-center gap-1">

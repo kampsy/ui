@@ -14,7 +14,7 @@
 		<div
 			in:fade|local
 			out:fade|local
-			class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-[0.4] lg:hidden z-[1000]"
+			class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-[0.4] lg:hidden z-1000"
 		></div>
 
 		<div
@@ -22,7 +22,7 @@
 			in:fly|local={{ x: '-100vw', duration: 500, opacity: 1 }}
 			out:fly|local={{ x: '-100vw', duration: 500, opacity: 1 }}
 			class="fixed top-0 left-0 w-[75%] h-full bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary
-border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 z-[1000]"
+border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 z-1000"
 		>
 		<!--Close button-->
 			<div class="absolute top-4 right-[22px] w-[40px] h-[40px] z-30">

@@ -34,8 +34,8 @@
 	const unique = `${randomString(4)}_${value}`;
 
 	const sizeObj = {
-		small: 'text-sm h-[24px] px-[12px] rounded-sm',
-		medium: 'text-sm h-[32px] px-[12px] rounded-sm',
+		small: 'text-sm h-[24px] px-[12px] rounded-xs',
+		medium: 'text-sm h-[32px] px-[12px] rounded-xs',
 		large: 'text-base  h-[40px] px-[12px] rounded-[4px]'
 	};
 	let sizeClass = $derived.by(() => {
@@ -44,8 +44,8 @@
 
 	// Seting the width and height values to the label
 	const iconSizeObj = {
-		small: 'h-[24px] px-[8px] py-[4px] rounded-sm',
-		medium: 'h-[32px] px-[12px] py-[8px] rounded-sm',
+		small: 'h-[24px] px-[8px] py-[4px] rounded-xs',
+		medium: 'h-[32px] px-[12px] py-[8px] rounded-xs',
 		large: 'w-[40px] h-[40px] p-[12px] rounded-[4px]'
 	};
 	let iconSizeClass = $derived.by(() => {
@@ -75,7 +75,7 @@
 		if (rootState.getSelected() === value) {
 			return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`;
 		}
-		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 hover:dark:text-kui-dark-gray-1000`;
+		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000`;
 	});
 
 	let disabledClass = $derived.by(() => {

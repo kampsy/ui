@@ -202,8 +202,8 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Combination of {@render roundedCode('rounded')} and the
-			{@render roundedCode('shadow')} prop, often used on marketing pages.
+			Combination of {@render roundedCode('rounded-sm')} and the
+			{@render roundedCode('shadow-sm')} prop, often used on marketing pages.
 		</p>
 
 		<!--The example with code snippet-->

@@ -44,22 +44,22 @@
 
 	switch (variant) {
 		case 'ios':
-			utilities = `bg-gradient-to-r ${ios.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${ios.join(' ')} bg-clip-text text-transparent`;
 			break;
 		case 'ipad':
-			utilities = `bg-gradient-to-r ${ipad.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${ipad.join(' ')} bg-clip-text text-transparent`;
 			break;
 		case 'mac':
-			utilities = `bg-gradient-to-r ${mac.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${mac.join(' ')} bg-clip-text text-transparent`;
 			break;
 		case 'watch':
-			utilities = `bg-gradient-to-r ${watch.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${watch.join(' ')} bg-clip-text text-transparent`;
 			break;
 		case 'vision':
-			utilities = `bg-gradient-to-r ${vision.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${vision.join(' ')} bg-clip-text text-transparent`;
 			break;
 		default:
-			utilities = `bg-gradient-to-r ${mac.join(' ')} bg-clip-text text-transparent`;
+			utilities = `bg-linear-to-r ${mac.join(' ')} bg-clip-text text-transparent`;
 			break;
 	}
 </script>

@@ -25,7 +25,7 @@
 		<div
 			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
 			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
 		>
 			<div
 				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 py-3 rounded-t-[15px] border-y 
@@ -51,10 +51,10 @@
 		<div
 			in:fly={{ y: rootState.getTransY() }}
 			out:fly={{ y: rootState.getTransY() }}
-			class="absolute w-full {rootState.getContentPosition()} z-[1000] {klass}"
+			class="absolute w-full {rootState.getContentPosition()} z-1000 {klass}"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto {klass}"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-xs scroll-smooth overflow-y-auto {klass}"
 			>
 				{@render children()}
 			</div>

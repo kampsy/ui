@@ -1,6 +1,234 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-inter: Inter, sans-serif;
+
+  --color-kui-black: #000000;
+
+  --color-kui-light-bg: #ffffff;
+  --color-kui-light-bg-secondary: #fafafa;
+
+  --color-kui-light-gray-100: #f2f2f2;
+  --color-kui-light-gray-200: #ebebeb;
+  --color-kui-light-gray-300: #e6e6e6;
+  --color-kui-light-gray-400: #ebebeb;
+  --color-kui-light-gray-500: #c9c9c9;
+  --color-kui-light-gray-600: #a8a8a8;
+  --color-kui-light-gray-700: #8f8f8f;
+  --color-kui-light-gray-800: #7d7d7d;
+  --color-kui-light-gray-900: #666666;
+  --color-kui-light-gray-1000: #171717;
+
+  --color-kui-light-gray-alpha-100: #0000000d;
+  --color-kui-light-gray-alpha-200: #00000014;
+  --color-kui-light-gray-alpha-300: #0000001a;
+  --color-kui-light-gray-alpha-400: #00000014;
+  --color-kui-light-gray-alpha-500: #00000036;
+  --color-kui-light-gray-alpha-600: #00000057;
+  --color-kui-light-gray-alpha-700: #00000070;
+  --color-kui-light-gray-alpha-800: #00000082;
+  --color-kui-light-gray-alpha-900: #0000009c;
+  --color-kui-light-gray-alpha-1000: #000000e8;
+
+  --color-kui-light-blue-100: #f0f7ff;
+  --color-kui-light-blue-200: #e9f4ff;
+  --color-kui-light-blue-300: #dfefff;
+  --color-kui-light-blue-400: #cae7ff;
+  --color-kui-light-blue-500: #94ccff;
+  --color-kui-light-blue-600: #48aeff;
+  --color-kui-light-blue-700: #006bff;
+  --color-kui-light-blue-800: #0059ec;
+  --color-kui-light-blue-900: #005ff2;
+  --color-kui-light-blue-1000: #002359;
+
+  --color-kui-light-red-100: #ffeeef;
+  --color-kui-light-red-200: #ffe8ea;
+  --color-kui-light-red-300: #ffe3e4;
+  --color-kui-light-red-400: #ffd7d6;
+  --color-kui-light-red-500: #ffb1b3;
+  --color-kui-light-red-600: #ff676d;
+  --color-kui-light-red-700: #fc0035;
+  --color-kui-light-red-800: #ea001d;
+  --color-kui-light-red-900: #d8001b;
+  --color-kui-light-red-1000: #47000c;
+
+  --color-kui-light-amber-100: #fff6de;
+  --color-kui-light-amber-200: #fff4cf;
+  --color-kui-light-amber-300: #fff1c1;
+  --color-kui-light-amber-400: #ffdc73;
+  --color-kui-light-amber-500: #ffc543;
+  --color-kui-light-amber-600: #ffa700;
+  --color-kui-light-amber-700: #ffaf00;
+  --color-kui-light-amber-800: #ff9400;
+  --color-kui-light-amber-900: #aa4d00;
+  --color-kui-light-amber-1000: #561900;
+
+  --color-kui-light-green-100: #ecfdec;
+  --color-kui-light-green-200: #e5fce7;
+  --color-kui-light-green-300: #d3fad1;
+  --color-kui-light-green-400: #b9f5bc;
+  --color-kui-light-green-500: #82eb8d;
+  --color-kui-light-green-600: #4ce15e;
+  --color-kui-light-green-700: #28a948;
+  --color-kui-light-green-800: #279141;
+  --color-kui-light-green-900: #107d32;
+  --color-kui-light-green-1000: #003900;
+
+  --color-kui-light-teal-100: #defffb;
+  --color-kui-light-teal-200: #ddfef6;
+  --color-kui-light-teal-300: #ccf9f1;
+  --color-kui-light-teal-400: #b1f7ec;
+  --color-kui-light-teal-500: #52f0db;
+  --color-kui-light-teal-600: #00e3c4;
+  --color-kui-light-teal-700: #00a995;
+  --color-kui-light-teal-800: #00907e;
+  --color-kui-light-teal-900: #007d6f;
+  --color-kui-light-teal-1000: #003f34;
+
+  --color-kui-light-purple-100: #faf0ff;
+  --color-kui-light-purple-200: #f9f0ff;
+  --color-kui-light-purple-300: #f6e8ff;
+  --color-kui-light-purple-400: #f2d9ff;
+  --color-kui-light-purple-500: #dfa7ff;
+  --color-kui-light-purple-600: #c979ff;
+  --color-kui-light-purple-700: #a000f8;
+  --color-kui-light-purple-800: #8500d1;
+  --color-kui-light-purple-900: #7d00cc;
+  --color-kui-light-purple-1000: #2f004e;
+
+  --color-kui-light-pink-100: #ffe8f6;
+  --color-kui-light-pink-200: #ffe8f3;
+  --color-kui-light-pink-300: #ffdfeb;
+  --color-kui-light-pink-400: #ffd3e1;
+  --color-kui-light-pink-500: #fdb3cc;
+  --color-kui-light-pink-600: #f97ea7;
+  --color-kui-light-pink-700: #f22782;
+  --color-kui-light-pink-800: #e4106e;
+  --color-kui-light-pink-900: #c41562;
+  --color-kui-light-pink-1000: #460523;
+
+  --color-kui-dark-bg: #0a0a0a;
+  --color-kui-dark-bg-secondary: #000000;
+
+  --color-kui-dark-gray-100: #1a1a1a;
+  --color-kui-dark-gray-200: #1f1f1f;
+  --color-kui-dark-gray-300: #292929;
+  --color-kui-dark-gray-400: #2e2e2e;
+  --color-kui-dark-gray-500: #454545;
+  --color-kui-dark-gray-600: #878787;
+  --color-kui-dark-gray-700: #8f8f8f;
+  --color-kui-dark-gray-800: #7d7d7d;
+  --color-kui-dark-gray-900: #a1a1a1;
+  --color-kui-dark-gray-1000: #ededed;
+
+  --color-kui-dark-gray-alpha-100: #ffffff0f;
+  --color-kui-dark-gray-alpha-200: #ffffff17;
+  --color-kui-dark-gray-alpha-300: #ffffff21;
+  --color-kui-dark-gray-alpha-400: #ffffff24;
+  --color-kui-dark-gray-alpha-500: #ffffff3d;
+  --color-kui-dark-gray-alpha-600: #ffffff82;
+  --color-kui-dark-gray-alpha-700: #ffffff8a;
+  --color-kui-dark-gray-alpha-800: #ffffff78;
+  --color-kui-dark-gray-alpha-900: #ffffff9c;
+  --color-kui-dark-gray-alpha-1000: #ffffffeb;
+
+  --color-kui-dark-blue-100: #06193a;
+  --color-kui-dark-blue-200: #022248;
+  --color-kui-dark-blue-300: #002f62;
+  --color-kui-dark-blue-400: #003674;
+  --color-kui-dark-blue-500: #00418b;
+  --color-kui-dark-blue-600: #0090ff;
+  --color-kui-dark-blue-700: #006efe;
+  --color-kui-dark-blue-800: #005be7;
+  --color-kui-dark-blue-900: #47a8ff;
+  --color-kui-dark-blue-1000: #eaf6ff;
+
+  --color-kui-dark-red-100: #330a11;
+  --color-kui-dark-red-200: #440d13;
+  --color-kui-dark-red-300: #5d0e17;
+  --color-kui-dark-red-400: #6f101b;
+  --color-kui-dark-red-500: #88151f;
+  --color-kui-dark-red-600: #f32e40;
+  --color-kui-dark-red-700: #f13242;
+  --color-kui-dark-red-800: #e2162a;
+  --color-kui-dark-red-900: #ff565f;
+  --color-kui-dark-red-1000: #ffe9ed;
+
+  --color-kui-dark-amber-100: #2a1700;
+  --color-kui-dark-amber-200: #361900;
+  --color-kui-dark-amber-300: #502800;
+  --color-kui-dark-amber-400: #5b3000;
+  --color-kui-dark-amber-500: #703e00;
+  --color-kui-dark-amber-600: #ed9a00;
+  --color-kui-dark-amber-700: #ffaf00;
+  --color-kui-dark-amber-800: #ff9400;
+  --color-kui-dark-amber-900: #ff9400;
+  --color-kui-dark-amber-1000: #fff3d5;
+
+  --color-kui-dark-green-100: #002608;
+  --color-kui-dark-green-200: #00320b;
+  --color-kui-dark-green-300: #003a0e;
+  --color-kui-dark-green-400: #004615;
+  --color-kui-dark-green-500: #006717;
+  --color-kui-dark-green-600: #00952d;
+  --color-kui-dark-green-700: #00ac3a;
+  --color-kui-dark-green-800: #009432;
+  --color-kui-dark-green-900: #00ca50;
+  --color-kui-dark-green-1000: #d8ffe4;
+
+  --color-kui-dark-teal-100: #00231b;
+  --color-kui-dark-teal-200: #002b22;
+  --color-kui-dark-teal-300: #003d34;
+  --color-kui-dark-teal-400: #004035;
+  --color-kui-dark-teal-500: #006154;
+  --color-kui-dark-teal-600: #009b86;
+  --color-kui-dark-teal-700: #00a995;
+  --color-kui-dark-teal-800: #00907e;
+  --color-kui-dark-teal-900: #00cbb5;
+  --color-kui-dark-teal-1000: #cbfff5;
+
+  --color-kui-dark-purple-100: #290c33;
+  --color-kui-dark-purple-200: #341142;
+  --color-kui-dark-purple-300: #47185e;
+  --color-kui-dark-purple-400: #541a76;
+  --color-kui-dark-purple-500: #642290;
+  --color-kui-dark-purple-600: #9440d5;
+  --color-kui-dark-purple-700: #9440d5;
+  --color-kui-dark-purple-800: #7d2bba;
+  --color-kui-dark-purple-900: #c472fb;
+  --color-kui-dark-purple-1000: #fbecff;
+
+  --color-kui-dark-pink-100: #310d1e;
+  --color-kui-dark-pink-200: #420c25;
+  --color-kui-dark-pink-300: #571032;
+  --color-kui-dark-pink-400: #5d0c34;
+  --color-kui-dark-pink-500: #76063f;
+  --color-kui-dark-pink-600: #ba0056;
+  --color-kui-dark-pink-700: #f12b82;
+  --color-kui-dark-pink-800: #e7006d;
+  --color-kui-dark-pink-900: #ff4d8d;
+  --color-kui-dark-pink-1000: #ffe9f4;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @font-face {
     font-family: 'Inter';

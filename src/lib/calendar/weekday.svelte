@@ -115,9 +115,9 @@
 </script>
 
 <div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}"></div>
-<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[1] transition-colors {dayBg}">
+<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-1 transition-colors {dayBg}">
 	<div class="w-full h-full flex justify-center">
-		<button {onclick} class="w-full h-full rounded-sm flex items-center justify-center">
+		<button {onclick} class="w-full h-full rounded-xs flex items-center justify-center">
 			<span class="text-xs transition-colors {dayText} font-normal tracking-[0.06px]">
 				{dayAndDateObj.day}
 			</span>

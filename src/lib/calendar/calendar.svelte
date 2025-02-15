@@ -115,7 +115,7 @@
 {#snippet calendarSnip()}
 	<div
 		class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border 
-		border-kui-light-gray-200 dark:border-kui-dark-gray-200 lg:shadow-sm scroll-smooth overflow-y-auto"
+		border-kui-light-gray-200 dark:border-kui-dark-gray-200 lg:shadow-xs scroll-smooth overflow-y-auto"
 	>
 		<div class="grid grid-cols-7 gap-y-[5px] items-center">
 			<div>
@@ -167,7 +167,7 @@
 				<div class="relative flex items-center justify-center">
 					<div class="relative z-[0.01] w-[40px] h-[40px] lg:w-[34px] lg:h-[34px]">
 						<div class="w-full h-full flex justify-center">
-							<button class="relative w-full h-full rounded-sm flex items-center justify-center">
+							<button class="relative w-full h-full rounded-xs flex items-center justify-center">
 								<span
 									class="text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900 font-normal tracking-[0.06px]"
 								>
@@ -206,7 +206,7 @@
 		<div
 			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
 			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
 		>
 			{@render calendarSnip()}
 		</div>
@@ -218,7 +218,7 @@
 		<div
 			in:fly|local={{ y: -10 }}
 			out:fly|local={{ y: -10 }}
-			class="absolute {desktopPosition == 'top' ? 'top-[112%]' : 'bottom-[112%]'} z-[1001]"
+			class="absolute {desktopPosition == 'top' ? 'top-[112%]' : 'bottom-[112%]'} z-1001"
 		>
 			{@render calendarSnip()}
 		</div>
@@ -230,7 +230,7 @@
 	<div
 		in:fade|local
 		out:fade|local
-		class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-[0.4] lg:hidden z-[1000]"
+		class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-[0.4] lg:hidden z-1000"
 	></div>
 {/if}
 

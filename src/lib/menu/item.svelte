@@ -66,7 +66,7 @@
 		rootState.setIsActive(false);
 	}}
 	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md 
-	py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100 {typeClass}"
+	py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100 {typeClass}"
 >
 	{@render prefixSnip()}
 	<span class="first-letter:capitalize ">
