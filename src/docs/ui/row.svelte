@@ -2,11 +2,12 @@
 	import type { Snippet } from 'svelte';
 
 	interface Props {
+		class?: string;
 		bottomLine?: boolean;
 		children: Snippet;
 	};
 
-	let { bottomLine = true, children }: Props = $props();
+	let {class: klass = '', bottomLine = true, children }: Props = $props();
 
 	const bottomLineClass = $derived.by(() => {
 		if (bottomLine) {
@@ -16,6 +17,6 @@
 	});
 </script>
 
-<section class="p-6 lg:p-12 {bottomLineClass} ">
+<section class="p-6 lg:p-12 {bottomLineClass} {klass}">
 	{@render children()}
 </section>
