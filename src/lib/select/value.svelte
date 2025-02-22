@@ -2,10 +2,10 @@
 	import ChevronDownSmall from '$lib/icons/chevron-down-small.svelte';
 	import { getContext } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		placeholder?: string;
 	};
-	let { placeholder = 'placeholder' }: propsT = $props();
+	let { placeholder = 'placeholder' }: Props = $props();
 
 	const rootState = getContext<{
 		getSelected: () => string;

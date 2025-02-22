@@ -4,13 +4,13 @@
 	import { fade } from 'svelte/transition';
 	import { createRootState } from './root.svelte.js';
 
-	type propsT = {
+	interface Props {
 		value?: string;
 		size?: 'tiny' | 'small' | 'medium' | 'large' | undefined;
 		class?: string;
 		children: Snippet;
 	};
-	let { value = $bindable(''), size = 'medium', class: klass = '', children }: propsT = $props();
+	let { value = $bindable(''), size = 'medium', class: klass = '', children }: Props = $props();
 
 
 	const rootState = createRootState({

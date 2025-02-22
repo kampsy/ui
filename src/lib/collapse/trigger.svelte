@@ -2,10 +2,10 @@
 	import { ChevronDownSmall } from '$lib/icons/index.js';
 	import { getContext, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		children: Snippet | undefined;
 	};
-	let { children }: propsT = $props();
+	let { children }: Props = $props();
 
 	let { size, value, defaultExpanded } = getContext<{
 		size: 'small' | 'large';

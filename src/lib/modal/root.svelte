@@ -3,12 +3,12 @@
 	import { createModalState } from './root.svelte.js';
 	import { preventScroll } from '$lib/utils/general.js';
 
-	type propsT = {
+	interface Props {
 		active: boolean;
 		sticky?: boolean;
 		children: Snippet;
 	};
-	let { active = $bindable(false), sticky = false, children }: propsT = $props();
+	let { active = $bindable(false), sticky = false, children }: Props = $props();
 
 	let dialog: HTMLDialogElement;
 

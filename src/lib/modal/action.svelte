@@ -2,7 +2,7 @@
 	import { Button } from '$lib/index.js';
 	import { getContext, type Component, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		onclick?: (evt: Event) => void;
 		class?: string;
 		'aria-label'?: string;
@@ -16,7 +16,7 @@
 		disabled?: boolean;
 		children: Snippet;
 	};
-	let { children, ...attributes }: propsT = $props();
+	let { children, ...attributes }: Props = $props();
 </script>
 
 {#if children}

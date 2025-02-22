@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/index.js';
 	import { getContext, type Component, type Snippet } from 'svelte';
-	type propsT = {
+	interface Props {
 		class?: string | undefined;
 		'aria-label'?: string;
 		shape?: 'circle' | 'square' | undefined;
@@ -14,7 +14,7 @@
 		disabled?: boolean;
 		children: Snippet | undefined;
 	};
-	let { class: klass = '', children, ...attributes }: propsT = $props();
+	let { class: klass = '', children, ...attributes }: Props = $props();
 
 	const rootState = getContext<{
 		getIsActive: () => boolean;

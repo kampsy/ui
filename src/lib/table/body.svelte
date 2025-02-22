@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		striped?: boolean | undefined;
 		interactive?: boolean | undefined;
 		children: Snippet | undefined;
 	};
-	let { striped = undefined, interactive = undefined, children = undefined }: propsT = $props();
+	let { striped = undefined, interactive = undefined, children = undefined }: Props = $props();
 
 	let stripedClass = $derived.by(() => {
 		if (striped) {

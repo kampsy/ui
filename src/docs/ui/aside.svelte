@@ -3,11 +3,11 @@
 	import { page } from '$app/stores';
 	import { Badge } from '$lib/index.js';
 
-	type propsT = {
+	interface Props {
 		asideDataList?: Array<AsideT>;
 	};
 
-	let { asideDataList = undefined }: propsT = $props();
+	let { asideDataList = undefined }: Props = $props();
 
 	const setActive = (url: string) => {
 		if ($page.url.pathname.endsWith(url)) {

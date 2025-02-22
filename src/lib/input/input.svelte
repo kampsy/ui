@@ -4,7 +4,7 @@
 	import { randomString } from '$lib/utils/random.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	type propsT = {
+	interface Props {
 		type?:
 			| 'text'
 			| 'number'
@@ -53,7 +53,7 @@
 		spellcheck = false,
 		placeholder = undefined,
 		disabled = false
-	}: propsT = $props();
+	}: Props = $props();
 
 	// The focus and blur state of the input
 	let hasRing = $state(false);

@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { getContext, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		children: Snippet | undefined;
 	};
 
-	let { children }: propsT = $props();
+	let { children }: Props = $props();
 
 	const rootState = getContext<{
 		sticky: boolean;

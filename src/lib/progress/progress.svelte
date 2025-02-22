@@ -2,11 +2,11 @@
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
 
-	type propsT = {
+	interface Props {
 		type?: 'success' | 'error' | 'warning' | 'secondary' | undefined;
 		value?: number | undefined;
 	};
-	let { type = undefined, value = 0 }: propsT = $props();
+	let { type = undefined, value = 0 }: Props = $props();
 
 	const progress = tweened(0, {
 		duration: 400,

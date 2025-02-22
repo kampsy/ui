@@ -1,10 +1,10 @@
 <script lang="ts">
-	type propsT = {
+	interface Props {
 		size?: number;
 		placeholder?: boolean;
 	};
 
-	let { size = 32, placeholder = false }: propsT = $props();
+	let { size = 32, placeholder = false }: Props = $props();
 
 	let widthAndHeight = $derived.by(() => {
 		return ` width: ${size}px; height: ${size}px;`;

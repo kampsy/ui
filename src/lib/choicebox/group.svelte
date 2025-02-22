@@ -3,7 +3,7 @@
 	import { setContext, type Snippet } from 'svelte';
 	import { createGroupState } from './group.svelte.js';
 
-	type propsT = {
+	interface Props {
 		type?: 'radio' | 'checkbox' | undefined;
 		label?: string | undefined;
 		value?: string | Array<string> | undefined;
@@ -16,7 +16,7 @@
 		value = $bindable(''),
 		disabled = false,
 		children = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	const groupState = createGroupState({
 		selected: '',

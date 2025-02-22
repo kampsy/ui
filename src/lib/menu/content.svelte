@@ -3,11 +3,11 @@
 	import { getContext, type Snippet } from 'svelte';
 	import { fly } from 'svelte/transition';
 
-	type propsT = {
+	interface Props {
 		class?: string;
 		children: Snippet;
 	};
-	let { class: klass = '', children }: propsT = $props();
+	let { class: klass = '', children }: Props = $props();
 
 	// Get the state of the select from the context
 	const rootState = getContext<{

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import MagnifyingGlass from '$lib/icons/magnifying-glass.svelte';
 
-	type propsT = {
+	interface Props {
 		'aria-labelledby'?: string | undefined;
 		value?: string | undefined;
 		size?: 'small' | 'medium' | 'large';
@@ -16,7 +16,7 @@
 		error = undefined,
 		disabled = false,
 		placeholder = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	// The focus and blur state of the input
 	let hasRing = $state(false);

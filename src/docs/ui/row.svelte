@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		bottomLine?: boolean;
 		children: Snippet;
 	};
 
-	let { bottomLine = true, children }: propsT = $props();
+	let { bottomLine = true, children }: Props = $props();
 
 	const bottomLineClass = $derived.by(() => {
 		if (bottomLine) {

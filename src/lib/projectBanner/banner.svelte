@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Component, Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		icon?: Component | undefined;
 		callToAction?:
 			| {
@@ -18,7 +18,7 @@
 		callToAction = undefined,
 		label = undefined,
 		variant = 'gray'
-	}: propsT = $props();
+	}: Props = $props();
 
 	const variantAsideObj = {
 		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 bg-kui-light-gray-100 

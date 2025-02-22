@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		href: string;
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
 		children?: Snippet | undefined;
 	};
-	let { href, type = 'tertiary', children = undefined }: propsT = $props();
+	let { href, type = 'tertiary', children = undefined }: Props = $props();
 
 	const typeObj = {
 		primary: 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',

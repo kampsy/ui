@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Component, Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string;
 		variant?:
 			| 'gray'
@@ -32,7 +32,7 @@
 		size = 'md',
 		icon = undefined,
 		children
-	}: propsT = $props();
+	}: Props = $props();
 
 	const variantObj = {
 		gray: 'bg-kui-light-gray-700 text-kui-light-bg dark:bg-kui-dark-gray-700 dark:text-kui-light-bg',

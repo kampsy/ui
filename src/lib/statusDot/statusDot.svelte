@@ -1,9 +1,9 @@
 <script lang="ts">
-	type propsT = {
+	interface Props {
 		state?: 'QUEUED' | 'BUILDING' | 'ERROR' | 'READY' | 'CANCELED';
 		label?: boolean;
 	};
-	let { label = false, state = 'QUEUED' }: propsT = $props();
+	let { label = false, state = 'QUEUED' }: Props = $props();
 
 	const stateObj = {
 		QUEUED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600',

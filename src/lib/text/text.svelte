@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string | undefined;
 		size?:
 			| sizeOption
@@ -28,7 +28,7 @@
 		variant = undefined,
 		truncate = false,
 		children
-	}: propsT = $props();
+	}: Props = $props();
 
 	type sizeOption = 10 | 12 | 14 | 16 | 20 | 24 | 32 | 48;
 	type variantOption =

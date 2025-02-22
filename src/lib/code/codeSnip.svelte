@@ -2,13 +2,13 @@
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/atom-one-light.css';
 
-	type propsT = {
+	interface Props {
 		code: string;
 		lang?: string;
 		language?: string;
 	};
 
-	let { code, lang = 'tsx', language = 'language-tsx' }: propsT = $props();
+	let { code, lang = 'tsx', language = 'language-tsx' }: Props = $props();
 
 	const highlightedCode = hljs.highlight(code, { language: lang }).value;
 </script>
