@@ -142,7 +142,7 @@
 				</Tooltip>
 
 				<Tooltip position="left" text="The Evil Rabbit Jumped over the Fence">
-					<Badge size="sm">LEFT</Badge>
+					<Badge size="small">LEFT</Badge>
 				</Tooltip>
 			{/snippet}
 			{@render demoAndCode(demo, tooltipComponents)}
