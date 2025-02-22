@@ -23,6 +23,22 @@ export const asideData: Array<AsideT> = [
     },
     {
         title: {
+            name: 'resources',
+        },
+        ul: [
+            {
+                name: 'changelog',
+                url: '/changelog',
+                badge: {
+                    name: 'new',
+                    variant: "green"
+                }
+            }
+        ]
+
+    },
+    {
+        title: {
             name: 'components'
         },
         ul: [
@@ -32,7 +48,11 @@ export const asideData: Array<AsideT> = [
             },
             {
                 name: 'badge',
-                url: '/badge'
+                url: '/badge',
+                badge: {
+                    name: 'accessibility',
+                    variant: "blue"
+                }
 
             },
             {

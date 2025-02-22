@@ -13,7 +13,7 @@
 		buttonRounded,
 		buttonShapes,
 		buttonSize,
-		buttonTypes
+		buttonVariants
 	} from '../../docs/data/button.js';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
@@ -66,10 +66,10 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny">upload</Button>
-				<Button size="small">upload</Button>
-				<Button>upload</Button>
-				<Button size="large">upload</Button>
+				<Button size="tiny" aria-label="tiny" >upload</Button>
+				<Button size="small" aria-label="small" >upload</Button>
+				<Button aria-label="medium">upload</Button>
+				<Button size="large" aria-label="large">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonSize)}
 		</div>
@@ -81,16 +81,16 @@
 		<h2
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
 		>
-			Types
+			variants
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button type="secondary">upload</Button>
-				<Button type="tertiary">upload</Button>
-				<Button type="error">upload</Button>
-				<Button type="warning">upload</Button>
+				<Button variant="secondary" aria-label="secondary" >upload</Button>
+				<Button variant="tertiary" aria-label="tertiary">upload</Button>
+				<Button variant="error" aria-label="error">upload</Button>
+				<Button variant="warning" aria-label="warning">upload</Button>
 			{/snippet}
-			{@render demoAndCode(demo, buttonTypes)}
+			{@render demoAndCode(demo, buttonVariants)}
 		</div>
 	</Row>
 {/snippet}
@@ -119,49 +119,49 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button aria-label="Upload" shape="square" size="tiny">
+				<Button aria-label="square tiny" shape="square" size="tiny">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="square" size="small">
+				<Button aria-label="square small" shape="square" size="small">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="square">
+				<Button aria-label="square medium" shape="square">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="square" size="large">
+				<Button aria-label="square large" shape="square" size="large">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle" size="tiny">
+				<Button aria-label="circle tiny" shape="circle" size="tiny">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle" size="small">
+				<Button aria-label="circle small" shape="circle" size="small">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle">
+				<Button aria-label="circle medium" shape="circle">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
 				</Button>
 
-				<Button aria-label="Upload" shape="circle" size="large">
+				<Button aria-label="circle large" shape="circle" size="large">
 					<div class="w-[16px] h-[16px]">
 						<ArrowUp />
 					</div>
@@ -182,9 +182,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button prefix={ArrowLeft}>upload</Button>
-				<Button suffix={ArrowRight}>upload</Button>
-				<Button prefix={ArrowLeft} suffix={ArrowRight}>upload</Button>
+				<Button iconPrefix={ArrowLeft} aria-label="icon prefix" >upload</Button>
+				<Button iconSuffix={ArrowRight} aria-label="icon suffix" >upload</Button>
+				<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight} aria-label="icon prefix and suffix" >upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonPrefixAndSuffix)}
 		</div>
@@ -209,10 +209,10 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" type="secondary" rounded>upload</Button>
-				<Button size="small" type="secondary" rounded>upload</Button>
-				<Button type="secondary" rounded>upload</Button>
-				<Button size="large" type="secondary" rounded>upload</Button>
+				<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded" >upload</Button>
+				<Button size="small" variant="secondary" rounded aria-label="small rounded">upload</Button>
+				<Button variant="secondary" rounded aria-label="medium rounded">upload</Button>
+				<Button size="large" variant="secondary" rounded aria-label="large rounded">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
 		</div>
@@ -230,10 +230,10 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" loading>upload</Button>
-				<Button size="small" loading>upload</Button>
-				<Button loading>upload</Button>
-				<Button size="large" loading>upload</Button>
+				<Button size="tiny" loading aria-label="tiny loading">upload</Button>
+				<Button size="small" loading aria-label="small loading">upload</Button>
+				<Button loading aria-label="medium loading">upload</Button>
+				<Button size="large" loading aria-label="large loading">upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonLoading)}
 		</div>
@@ -250,9 +250,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" disabled>upload</Button>
-				<Button size="small" disabled>upload</Button>
-				<Button disabled>upload</Button>
+				<Button size="tiny" disabled aria-label="tiny disabled">upload</Button>
+				<Button size="small" disabled aria-label="small disabled">upload</Button>
+				<Button disabled aria-label="tiny disabled">upload</Button>
 				<Button size="large" disabled>upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonDisabled)}

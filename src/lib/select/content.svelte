@@ -38,7 +38,7 @@
 					onclick={() => {
 						rootState.setIsActive(false);
 					}}
-					type="secondary"
+					variant="secondary"
 					class="w-full">done</Button
 				>
 			</footer>

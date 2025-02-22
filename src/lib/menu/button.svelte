@@ -1,20 +1,23 @@
 <script lang="ts">
 	import { Button } from '$lib/index.js';
 	import { getContext, type Component, type Snippet } from 'svelte';
-	interface Props {
-		class?: string | undefined;
-		'aria-label'?: string;
+	import type { HTMLButtonAttributes } from 'svelte/elements';
+
+
+	interface Props extends HTMLButtonAttributes {
+		onclick?: (evt: Event) => void;
+		class?: string;
 		shape?: 'circle' | 'square' | undefined;
 		size?: 'tiny' | 'small' | 'medium' | 'large';
-		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
-		prefix?: Component | undefined;
-		suffix?: Component | undefined;
+		variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		iconPrefix?: Component | undefined;
+		iconSuffix?: Component | undefined;
 		rounded?: boolean;
 		loading?: boolean;
 		disabled?: boolean;
 		children: Snippet | undefined;
 	};
-	let { class: klass = '', children, ...attributes }: Props = $props();
+	let { class: klass = '', children, ...rest }: Props = $props();
 
 	const rootState = getContext<{
 		getIsActive: () => boolean;
@@ -44,7 +47,7 @@
 </script>
 
 {#if children}
-	<Button {...attributes} onclick={toogle}>
+	<Button {...rest} onclick={toogle}>
 		{@render children()}
 	</Button>
 {/if}

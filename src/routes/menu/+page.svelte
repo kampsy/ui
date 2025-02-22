@@ -118,7 +118,7 @@
 			{#snippet demo()}
 				<div class="w-full flex gap-6">
 					<Menu.Root>
-						<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+						<Menu.Button aria-label="Menu" shape="square" size="small" variant="secondary">
 							<div class="w-[16px] h-[16px]">
 								<MoreHorizontal />
 							</div>
@@ -130,7 +130,7 @@
 						</Menu.Content>
 					</Menu.Root>
 					<Menu.Root>
-						<Menu.Button aria-label="Menu" shape="square" size="small" type="secondary">
+						<Menu.Button aria-label="Menu" shape="square" size="small" variant="secondary">
 							<div class="w-[16px] h-[16px]">
 								<MoreHorizontal />
 							</div>

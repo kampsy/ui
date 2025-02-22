@@ -4,29 +4,29 @@
 	import { fade } from 'svelte/transition';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLButtonAttributes {
 		onclick?: (evt: Event) => void;
 		class?: string;
 		shape?: 'circle' | 'square' | undefined;
 		size?: 'tiny' | 'small' | 'medium' | 'large';
-		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
-		prefix?: Component | undefined;
-		suffix?: Component | undefined;
+		variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		iconPrefix?: Component | undefined;
+		iconSuffix?: Component | undefined;
 		rounded?: boolean;
 		loading?: boolean;
 		disabled?: boolean;
 		children: Snippet;
-		rest?: HTMLButtonAttributes;
 	}
+	
 
 	let {
 		onclick = undefined,
 		class: klass = '',
 		shape = undefined,
 		size = 'medium',
-		type = 'primary',
-		prefix = undefined,
-		suffix = undefined,
+		variant = 'primary',
+		iconPrefix = undefined,
+		iconSuffix = undefined,
 		rounded = false,
 		loading = false,
 		disabled = false,
@@ -65,7 +65,7 @@
 		return prefixSuffixSpinnerObj[size];
 	});
 
-	const typeObj = {
+	const variantObj = {
 		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 
 		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
 		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border 
@@ -78,7 +78,7 @@
 		hover:bg-kui-light-amber-800 hover:dark:bg-kui-dark-amber-800`
 	};
 	let typeClass = $derived.by(() => {
-		return typeObj[type];
+		return variantObj[variant];
 	});
 
 	let roundedStyle = $derived.by(() => {
@@ -135,8 +135,8 @@
 {/snippet}
 
 {#snippet prefixSnip()}
-	{#if prefix}
-		{@const Prefix = prefix}
+	{#if iconPrefix}
+		{@const Prefix = iconPrefix}
 		<div class="{iconSize} flex items-center justify-center">
 			<Prefix />
 		</div>
@@ -146,8 +146,8 @@
 {/snippet}
 
 {#snippet suffixSnip()}
-	{#if suffix}
-		{@const Suffix = suffix}
+	{#if iconSuffix}
+		{@const Suffix = iconSuffix}
 		<div class="{iconSize} flex items-center justify-center">
 			<Suffix />
 		</div>

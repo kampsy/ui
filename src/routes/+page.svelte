@@ -38,7 +38,7 @@
 			>
 				<div class="relative w-full min-h-[104px]">
 					<div class="flex items-center gap-4 flex-wrap">
-						<Button type="secondary">
+						<Button variant="secondary">
 							<div class="w-4 h-4">
 								<ShieldGlobe />
 							</div>
@@ -49,13 +49,13 @@
 							<Switch.Control icon={ListUnordered} value="output" />
 						</Switch.Root>
 
-						<Button type="secondary" prefix={UserPlus}>collaborate</Button>
+						<Button variant="secondary" iconPrefix={UserPlus}>collaborate</Button>
 
 						<div class="flex items-center gap-1">
-							<Badge icon={Shield} size="lg" variant="blue">purple</Badge>
-							<Badge icon={Shield} size="md" variant="purple">purple</Badge>
-							<Badge icon={Shield} size="md" variant="amber-subtle">purple</Badge>
-							<Badge icon={Shield} size="lg" variant="red-subtle">purple</Badge>
+							<Badge icon={Shield} size="large" variant="blue">purple</Badge>
+							<Badge icon={Shield} size="medium" variant="purple">purple</Badge>
+							<Badge icon={Shield} size="medium" variant="amber-subtle">purple</Badge>
+							<Badge icon={Shield} size="large" variant="red-subtle">purple</Badge>
 						</div>
 
 						<Button size="small">
