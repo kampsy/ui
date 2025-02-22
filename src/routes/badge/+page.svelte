@@ -34,7 +34,7 @@
 </svelte:head>
 
 {#snippet badge(title: string, para: string)}
-	<Row bottomLine={false} class="">
+	<Row bottomLine={false}>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>

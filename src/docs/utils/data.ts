@@ -50,14 +50,18 @@ export const asideData: Array<AsideT> = [
                 name: 'badge',
                 url: '/badge',
                 badge: {
-                    name: 'accessibility',
-                    variant: "blue"
+                    name: 'updated',
+                    variant: "purple"
                 }
 
             },
             {
                 name: 'button',
-                url: '/button'
+                url: '/button',
+                badge: {
+                    name: 'updated',
+                    variant: "purple"
+                }
             },
             {
                 name: 'calendar',
