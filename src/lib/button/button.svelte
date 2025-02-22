@@ -2,11 +2,11 @@
 	import LoaderCircle from '$lib/icons/loader-circle.svelte';
 	import type { Component, Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	type propsT = {
+	interface Props {
 		onclick?: (evt: Event) => void;
 		class?: string;
-		'aria-label'?: string;
 		shape?: 'circle' | 'square' | undefined;
 		size?: 'tiny' | 'small' | 'medium' | 'large';
 		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
@@ -16,12 +16,12 @@
 		loading?: boolean;
 		disabled?: boolean;
 		children: Snippet;
-	};
+		rest?: HTMLButtonAttributes;
+	}
 
 	let {
 		onclick = undefined,
 		class: klass = '',
-		'aria-label': ariaLabel = undefined,
 		shape = undefined,
 		size = 'medium',
 		type = 'primary',
@@ -30,8 +30,9 @@
 		rounded = false,
 		loading = false,
 		disabled = false,
-		children
-	}: propsT = $props();
+		children,
+		...rest
+	}: Props = $props();
 
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
@@ -154,7 +155,7 @@
 {/snippet}
 
 {#snippet mainButton()}
-	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} transition duration-300">
+	<button {onclick} type="button" {disabled} class="{buttonClass} transition duration-300" {...rest}>
 		<div class="w-full h-full px-[6px] flex items-center justify-center gap-[8px]">
 			{@render prefixSnip()}
 			<span class="font-medium first-letter:capitalize">
@@ -166,7 +167,7 @@
 {/snippet}
 
 {#snippet withShape()}
-	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} ">
+	<button {onclick} type="button" {disabled} class="{buttonClass}" {...rest}>
 		<div class="w-full h-full flex items-center justify-center">
 			<span class="font-medium first-letter:capitalize">
 				{@render children()}
