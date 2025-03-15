@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { ChevronDownSmall } from '$lib/icons/index.js';
 	import { getContext, type Snippet } from 'svelte';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLButtonAttributes {
 		children: Snippet | undefined;
-	};
-	let { children }: Props = $props();
+	}
+	let { children, ...rest }: Props = $props();
 
 	let { size, value, defaultExpanded } = getContext<{
 		size: 'small' | 'large';
@@ -59,7 +60,8 @@
 
 <button
 	{onclick}
-	class="w-full flex items-center justify-between text-left bg-transparent {paddingClass} "
+	class="w-full flex items-center justify-between text-left bg-transparent {paddingClass}"
+	{...rest}
 >
 	{#if children}
 		<span class="{textClass} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold"
