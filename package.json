@@ -76,7 +76,7 @@
 		"typescript": "^5.7.2",
 		"typescript-eslint": "8.0.0-alpha.39",
 		"vite": "^5.4.11",
-		"vitest": "^1.6.0"
+		"vitest": "^1.6.1"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
