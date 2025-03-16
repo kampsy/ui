@@ -2,7 +2,7 @@
 	import ChevronLeft from '$lib/icons/chevron-left.svelte';
 	import ChevronRight from '$lib/icons/chevron-right.svelte';
 
-	type propsT = {
+	interface Props {
 		previous?:
 			| {
 					title: string;
@@ -17,7 +17,7 @@
 			| undefined;
 	};
 
-	let { previous = undefined, next = undefined }: propsT = $props();
+	let { previous = undefined, next = undefined }: Props = $props();
 
 	let paginationStyle = $derived.by(() => {
 		if (previous && next) {

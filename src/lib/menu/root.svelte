@@ -4,12 +4,12 @@
 	import { createRootState } from './root.svelte.js';
 	import { setContext, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string | undefined;
 		alignment?: 'left' | 'right' | undefined;
 		children: Snippet | undefined;
-	};
-	let { class: klass = '', alignment = 'left', children = undefined }: propsT = $props();
+	}
+	let { class: klass = '', alignment = 'left', children = undefined }: Props = $props();
 
 	const rootState = createRootState({
 		isMobile: false,
@@ -33,6 +33,14 @@
 				rootState.setIsMobile(true);
 			} else {
 				rootState.setIsMobile(false);
+			}
+		});
+
+		// when the esc key is pressed
+		window.addEventListener('keydown', (event: KeyboardEvent) => {
+			if (event.code == 'Escape') {
+				rootState.setIsActive(false);
+				event.stopPropagation();
 			}
 		});
 	});

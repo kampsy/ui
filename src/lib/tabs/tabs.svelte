@@ -2,7 +2,7 @@
 	import { Tooltip } from '$lib/index.js';
 	import type { Component } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		disabled?: boolean | undefined;
 		selected?: string | undefined;
 		tabs?:
@@ -21,7 +21,7 @@
 		selected = $bindable(''),
 		tabs = undefined,
 		type = 'default'
-	}: propsT = $props();
+	}: Props = $props();
 
 	const isSelected = (value: string) => {
 		if (value === selected) {

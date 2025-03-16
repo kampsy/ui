@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { Component, Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type propsT = {
+	interface Props extends HTMLAttributes<HTMLSpanElement> {
 		class?: string;
 		variant?:
 			| 'gray'
@@ -21,7 +22,7 @@
 			| 'teal'
 			| 'teal-subtle'
 			| 'inverted';
-		size?: 'sm' | 'md' | 'lg';
+		size?: 'small' | 'medium' | 'large';
 		icon?: Component | undefined;
 		children: Snippet;
 	};
@@ -29,10 +30,11 @@
 	let {
 		class: klass = '',
 		variant = 'gray',
-		size = 'md',
+		size = 'medium',
 		icon = undefined,
-		children
-	}: propsT = $props();
+		children,
+		...rest
+	}: Props = $props();
 
 	const variantObj = {
 		gray: 'bg-kui-light-gray-700 text-kui-light-bg dark:bg-kui-dark-gray-700 dark:text-kui-light-bg',
@@ -69,27 +71,27 @@
 	});
 
 	const sizeObj = {
-		sm: 'h-[20px] px-[6px] py-0 text-[11px] text-wrap font-medium',
-		md: 'h-[24px] px-[10px] py-0 text-[12px] text-wrap font-medium',
-		lg: 'h-[32px] px-[12px] py-0 text-[14px] text-wrap font-medium'
+		small: 'h-[20px] px-[6px] py-0 text-[11px] text-wrap font-medium',
+		medium: 'h-[24px] px-[10px] py-0 text-[12px] text-wrap font-medium',
+		large: 'h-[32px] px-[12px] py-0 text-[14px] text-wrap font-medium'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size];
 	});
 
 	const iconSizeObj = {
-		sm: 'w-[11px] h-[11px]',
-		md: 'w-[14px] h-[14px]',
-		lg: 'w-[16px] h-[16px]'
+		small: 'w-[11px] h-[11px]',
+		medium: 'w-[14px] h-[14px]',
+		large: 'w-[16px] h-[16px]'
 	};
 	let iconSizeClass = $derived.by(() => {
 		return iconSizeObj[size];
 	});
 
 	const iconXGapObj = {
-		sm: 'first:gap-x-[3px]',
-		md: 'first:gap-x-[4px]',
-		lg: 'first:gap-x-[6px]'
+		small: 'first:gap-x-[3px]',
+		medium: 'first:gap-x-[4px]',
+		large: 'first:gap-x-[6px]'
 	};
 	let iconXGap = $derived.by(() => {
 		return iconXGapObj[size];
@@ -112,7 +114,7 @@
 	{/if}
 {/snippet}
 
-<span class="flex items-center justify-center rounded-full {badgeClass} {klass}">
+<span class="flex items-center justify-center rounded-full {badgeClass} {klass}" {...rest} >
 	<span class="flex items-center {iconXGap}">
 		{@render iconSnip()}
 		{@render children()}

@@ -88,7 +88,7 @@
 							}
 						}}
 						size="small"
-						type="secondary">Decrease</Button
+						variant="secondary">Decrease</Button
 					>
 				</div>
 			{/snippet}

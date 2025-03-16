@@ -3,11 +3,11 @@
 	import { getContext, type Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	type propsT = {
+	interface Props {
 		value: string;
 		children: Snippet;
 	};
-	let { value, children }: propsT = $props();
+	let { value, children }: Props = $props();
 
 	
 	const rootState = getContext<{

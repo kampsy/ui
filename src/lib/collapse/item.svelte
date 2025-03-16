@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { setContext, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		size?: 'small' | 'large';
 		value: string;
 		defaultExpanded?: boolean;
@@ -14,7 +14,7 @@
 		class: klass = '',
 		defaultExpanded = false,
 		children
-	}: propsT = $props();
+	}: Props = $props();
 
 	setContext('collapseItem', {
 		size: size,

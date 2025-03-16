@@ -1,15 +1,15 @@
 <script lang="ts">
-	import { Button } from '$lib/index.js';
 	import { getContext, type Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 	import { fly } from 'svelte/transition';
 
-	type propsT = {
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: string;
 		children: Snippet;
-	};
-	let { class: klass = '', children }: propsT = $props();
+	}
+	let { class: klass = '', children, ...rest }: Props = $props();
 
-	// Get the state of the select from the context
+	// Get the state of the menu from the context
 	const rootState = getContext<{
 		alignment: 'left' | 'right';
 		getIsMobile: () => boolean;
@@ -26,14 +26,25 @@
 			return 'right-0';
 		}
 	});
+
+	let content: HTMLDivElement = $state<any>();
+	$effect(() => {
+		if (rootState.getIsActive()) {
+			content.setAttribute('aria-hidden', 'false');
+		} else {
+			content.setAttribute('aria-hidden', 'true');
+		}
+	});
 </script>
 
 {#snippet mobileSnip()}
 	{#if rootState.getIsActive()}
 		<div
+			bind:this={content}
 			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
 			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
 			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			{...rest}
 		>
 			<div
 				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[15px] border-t
@@ -48,9 +59,11 @@
 {#snippet desktopSnip()}
 	{#if rootState.getIsActive()}
 		<div
+			bind:this={content}
 			in:fly={{ y: rootState.getTransY() }}
 			out:fly={{ y: rootState.getTransY() }}
 			class="absolute {rootState.getContentPosition()} {alightmentClass} z-[1000] {klass}"
+			{...rest}
 		>
 			<div
 				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-2 rounded-[12px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto {klass}"

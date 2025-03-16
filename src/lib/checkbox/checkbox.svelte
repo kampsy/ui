@@ -3,15 +3,16 @@
 	import Minus from '$lib/icons/minus.svelte';
 	import { randomString } from '$lib/utils/random.js';
 	import type { Snippet } from 'svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	type propT = {
+	interface Props extends HTMLAttributes<HTMLInputElement> {
 		checked?: boolean | undefined;
 		value?: string | undefined;
 		items?: Array<string> | undefined;
 		indeterminate?: boolean | undefined;
 		disabled?: boolean | undefined;
 		children?: Snippet;
-	};
+	}
 	let {
 		checked = $bindable(false),
 		value = undefined,
@@ -19,7 +20,7 @@
 		indeterminate = false,
 		disabled = false,
 		children
-	}: propT = $props();
+	}: Props = $props();
 
 	// random string for unique id
 	const unique = `${randomString(4)}_${value}`;

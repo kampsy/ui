@@ -2,11 +2,11 @@
 	import { LoaderCircle } from '$lib/icons/index.js';
 	import { fade } from 'svelte/transition';
 
-	type propsT = {
+	interface Props {
 		size?: number;
 	};
 
-	let { size = 20 }: propsT = $props();
+	let { size = 20 }: Props = $props();
 
 	let sizeStyle = $derived.by(() => {
 		return `width: ${size}px; height: ${size}px;`;

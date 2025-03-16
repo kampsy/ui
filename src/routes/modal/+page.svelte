@@ -77,7 +77,7 @@
 								<Modal.Text>Some content contained within the modal.</Modal.Text>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+								<Button onclick={() => (active = false)} variant="secondary">Cancel</Button>
 								<Button onclick={() => (active = false)}>Submit</Button>
 							</Modal.Footer>
 						</Modal.Content>
@@ -113,8 +113,8 @@
 							</Modal.Body>
 							<Modal.Footer>
 								<div class="flex gap-3">
-									<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
-									<Button prefix={ArrowLeft} onclick={() => (activeSticky = false)} type="secondary">Previous</Button>
+									<Button onclick={() => (activeSticky = false)} variant="secondary">Cancel</Button>
+									<Button iconPrefix={ArrowLeft} onclick={() => (activeSticky = false)} variant="secondary">Previous</Button>
 								</div>
 								<Button onclick={() => (activeSticky = false)}>Submit</Button>
 							</Modal.Footer>
@@ -147,7 +147,7 @@
 								<Modal.Text>Some content contained within the modal.</Modal.Text>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (activeSingleButton = false)} type="secondary" class="w-full"
+								<Button onclick={() => (activeSingleButton = false)} variant="secondary" class="w-full"
 									>Cancel</Button
 								>
 							</Modal.Footer>
@@ -181,7 +181,7 @@
 								<Modal.Text>Some content contained within the modal.</Modal.Text>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (activeDisabled = false)} type="secondary">Cancel</Button>
+								<Button onclick={() => (activeDisabled = false)} variant="secondary">Cancel</Button>
 								<Button disabled onclick={() => (activeDisabled = false)}>Submit</Button>
 							</Modal.Footer>
 						</Modal.Content>

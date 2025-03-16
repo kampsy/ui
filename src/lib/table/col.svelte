@@ -1,8 +1,8 @@
 <script lang="ts">
-	type propsT = {
+	interface Props {
 		class?: string | undefined
 	};
-	let { class: klass = '' }: propsT = $props();
+	let { class: klass = '' }: Props = $props();
 </script>
 
 <col class="{klass}"/>

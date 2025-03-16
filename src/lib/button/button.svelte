@@ -2,36 +2,38 @@
 	import LoaderCircle from '$lib/icons/loader-circle.svelte';
 	import type { Component, Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-	type propsT = {
+	interface Props extends HTMLButtonAttributes {
+		buttonElement?: HTMLButtonElement;
 		onclick?: (evt: Event) => void;
 		class?: string;
-		'aria-label'?: string;
 		shape?: 'circle' | 'square' | undefined;
 		size?: 'tiny' | 'small' | 'medium' | 'large';
-		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
-		prefix?: Component | undefined;
-		suffix?: Component | undefined;
+		variant?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
+		iconPrefix?: Component | undefined;
+		iconSuffix?: Component | undefined;
 		rounded?: boolean;
 		loading?: boolean;
 		disabled?: boolean;
 		children: Snippet;
-	};
+	}
 
 	let {
+		buttonElement = $bindable(),
 		onclick = undefined,
 		class: klass = '',
-		'aria-label': ariaLabel = undefined,
 		shape = undefined,
 		size = 'medium',
-		type = 'primary',
-		prefix = undefined,
-		suffix = undefined,
+		variant = 'primary',
+		iconPrefix = undefined,
+		iconSuffix = undefined,
 		rounded = false,
 		loading = false,
 		disabled = false,
-		children
-	}: propsT = $props();
+		children,
+		...rest
+	}: Props = $props();
 
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
@@ -64,20 +66,20 @@
 		return prefixSuffixSpinnerObj[size];
 	});
 
-	const typeObj = {
-		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 
+	const variantObj = {
+		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000
 		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
-		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border 
+		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border
 		border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
-		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200 
+		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200
 		hover:dark:bg-kui-dark-gray-200`,
-		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900 
+		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900
 		hover:dark:bg-kui-dark-red-900 `,
-		warning: `text-kui-light-gray-1000 bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 
+		warning: `text-kui-light-gray-1000 bg-kui-light-amber-700 dark:bg-kui-dark-amber-700
 		hover:bg-kui-light-amber-800 hover:dark:bg-kui-dark-amber-800`
 	};
 	let typeClass = $derived.by(() => {
-		return typeObj[type];
+		return variantObj[variant];
 	});
 
 	let roundedStyle = $derived.by(() => {
@@ -134,8 +136,8 @@
 {/snippet}
 
 {#snippet prefixSnip()}
-	{#if prefix}
-		{@const Prefix = prefix}
+	{#if iconPrefix}
+		{@const Prefix = iconPrefix}
 		<div class="{iconSize} flex items-center justify-center">
 			<Prefix />
 		</div>
@@ -145,8 +147,8 @@
 {/snippet}
 
 {#snippet suffixSnip()}
-	{#if suffix}
-		{@const Suffix = suffix}
+	{#if iconSuffix}
+		{@const Suffix = iconSuffix}
 		<div class="{iconSize} flex items-center justify-center">
 			<Suffix />
 		</div>
@@ -154,7 +156,14 @@
 {/snippet}
 
 {#snippet mainButton()}
-	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} transition duration-300">
+	<button
+		bind:this={buttonElement}
+		{onclick}
+		type="button"
+		{disabled}
+		class="{buttonClass} transition duration-300"
+		{...rest}
+	>
 		<div class="w-full h-full px-[6px] flex items-center justify-center gap-[8px]">
 			{@render prefixSnip()}
 			<span class="font-medium first-letter:capitalize">
@@ -166,7 +175,14 @@
 {/snippet}
 
 {#snippet withShape()}
-	<button aria-label={ariaLabel} {onclick} type="button" {disabled} class="{buttonClass} ">
+	<button
+		bind:this={buttonElement}
+		{onclick}
+		type="button"
+		{disabled}
+		class={buttonClass}
+		{...rest}
+	>
 		<div class="w-full h-full flex items-center justify-center">
 			<span class="font-medium first-letter:capitalize">
 				{@render children()}

@@ -2,7 +2,7 @@
 	import { ChevronDown } from '$lib/icons/index.js';
 	import { getContext, type Component, type Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		onclick?: (evt: Event) => void;
 		'aria-label'?: string;
 		shape?: 'circle' | 'square' | undefined;
@@ -20,7 +20,7 @@
 		type = 'primary',
 		disabled = false,
 		children = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	const typeObj = {
 		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 

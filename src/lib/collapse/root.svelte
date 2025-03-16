@@ -2,10 +2,10 @@
 	import { setContext, type Snippet } from 'svelte';
 	import { createCollapseState } from './root.svelte.js';
 
-	type propsT = {
+	interface Props {
 		children: Snippet | undefined;
 	};
-	let { children }: propsT = $props();
+	let { children }: Props = $props();
 
 	const collapseState = createCollapseState({ item: '' });
 

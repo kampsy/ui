@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string | undefined;
 		children: Snippet | undefined;
 	};
-	let { class: klass = '', children }: propsT = $props();
+	let { class: klass = '', children }: Props = $props();
 </script>
 
 {#if children}

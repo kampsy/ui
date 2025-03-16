@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		onClick?: () => void | undefined;
 		title?: string | undefined;
 		description?: string | undefined;
@@ -12,7 +12,7 @@
 		type = 'primary',
 		title = undefined,
 		description = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	const rootState = getContext<{
 		getIsActive: () => boolean;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string;
 		size?: number;
 		limit?: number;
@@ -11,7 +11,7 @@
 		}>;
 		children?: Snippet;
 	};
-	let { class: klass = '', size = 32, members = undefined, limit = 0, children }: propsT = $props();
+	let { class: klass = '', size = 32, members = undefined, limit = 0, children }: Props = $props();
 
 	let widthHeight = $derived.by(() => {
 		return ` width: ${size}px; height: ${size}px;`;

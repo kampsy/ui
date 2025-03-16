@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { ChevronDownSmall } from '$lib/icons/index.js';
 
-	type propsT = {
+	interface Props {
 		isActive: boolean;
 	};
 
-	let { isActive = $bindable(false)}: propsT = $props();
+	let { isActive = $bindable(false)}: Props = $props();
 
 	const onclick = () => {
 		isActive = !isActive;

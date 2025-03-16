@@ -7,7 +7,7 @@
 		isZeroDate
 	} from '$lib/utils/calendar.js';
 
-	type propsT = {
+	interface Props {
 		dayAndDateObj: { day: number | string; dateObj: Date };
 		startDate: Date;
 		endDate: Date;
@@ -17,7 +17,7 @@
 		dayAndDateObj,
 		startDate = $bindable(getZeroDate()),
 		endDate = $bindable(getZeroDate())
-	}: propsT = $props();
+	}: Props = $props();
 
 	const isToday = (date: Date): boolean => {
 		const today = new Date();

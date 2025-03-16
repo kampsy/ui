@@ -3,11 +3,11 @@
 	import type { Snippet } from 'svelte';
 	import { googleTag } from './analytics.js';
 
-	type propsT = {
+	interface Props {
 		children: Snippet | undefined;
 	};
 
-	let { children }: propsT = $props();
+	let { children }: Props = $props();
 
 	$effect(() => {
 		const pageViewEventParameters = {

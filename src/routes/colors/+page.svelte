@@ -428,7 +428,7 @@
 		<div
 			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[136px] w-full items-center justify-center border border-kui-light-gray-400 dark:border-kui-dark-gray-400"
 		>
-			<Button type="secondary" class="min-w-[160px]">New Project</Button>
+			<Button variant="secondary" class="min-w-[160px]">New Project</Button>
 		</div>
 	</Row>
 {/snippet}

@@ -5,7 +5,7 @@
 	import Error from '$lib/icons/error.svelte';
 	import Warning from '$lib/icons/warning.svelte';
 
-	type propsT = {
+	interface Props {
 		class?: string;
 		size?: 'small' | 'medium' | 'large';
 		action?: Snippet | undefined;
@@ -20,7 +20,7 @@
 		type = 'default',
 		fill = false,
 		children = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	const sizeObj = {
 		small: 'px-[8px] py-[8px] text-xs leading-4',

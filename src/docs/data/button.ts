@@ -2,20 +2,20 @@ export const buttonSize = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny">upload</Button>
-	<Button size="small">upload</Button>
-	<Button>upload</Button>
-	<Button size="large">upload</Button>
+	<Button size="tiny" aria-label="tiny">upload</Button>
+	<Button size="small" aria-label="small">upload</Button>
+	<Button aria-label="medium">upload</Button>
+	<Button size="large" aria-label="large">upload</Button>
 </div>`;
 
-export const buttonTypes = `
+export const buttonVariants = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button type="secondary">upload</Button>
-	<Button type="tertiary">upload</Button>
-	<Button type="error">upload</Button>
-	<Button type="warning">upload</Button>
+	<Button variant="secondary" aria-label="secondary" >upload</Button>
+	<Button variant="tertiary" aria-label="tertiary">upload</Button>
+	<Button variant="error" aria-label="error">upload</Button>
+	<Button variant="warning" aria-label="warning">upload</Button>
 </div>`;
 
 export const buttonShapes = `
@@ -23,49 +23,49 @@ import { Button } from 'kampsy-ui';
 import { ArrowUp } from 'kampsy-ui/icons';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button aria-label="Upload" shape="square" size="tiny">
+	<Button aria-label="tiny square" shape="square" size="tiny">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="square" size="small">
+	<Button aria-label="small square" shape="square" size="small">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="square">
+	<Button aria-label="medium square" shape="square">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="square" size="large">
+	<Button aria-label="large square" shape="square" size="large">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="circle" size="tiny">
+	<Button aria-label="tiny circle" shape="circle" size="tiny">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="circle" size="small">
+	<Button aria-label="small circle" shape="circle" size="small">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="circle">
+	<Button aria-label="medium circle" shape="circle">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
 	</Button>
 
-	<Button aria-label="Upload" shape="circle" size="large">
+	<Button aria-label="large circle" shape="circle" size="large">
 		<div class="w-[16px] h-[16px]">
 			<ArrowUp />
 		</div>
@@ -77,37 +77,37 @@ import { Button } from 'kampsy-ui';
 import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button prefix={ArrowLeft}>upload</Button>
-	<Button suffix={ArrowRight}>upload</Button>
-	<Button prefix={ArrowLeft} suffix={ArrowRight}>upload</Button>
+	<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
+	<Button iconSuffix={ArrowRight} aria-label="icon suffix">upload</Button>
+	<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight} aria-label="icon prefix and suffix">upload</Button>
 </div>`;
 
 export const buttonRounded = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" type="secondary" rounded>upload</Button>
-	<Button size="small" type="secondary" rounded>upload</Button>
-	<Button type="secondary" rounded>upload</Button>
-	<Button size="large" type="secondary" rounded>upload</Button>
+	<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded">upload</Button>
+	<Button size="small" variant="secondary" rounded aria-label="small rounded">upload</Button>
+	<Button variant="secondary" rounded aria-label="medium rounded">upload</Button>
+	<Button size="large" variant="secondary" rounded aria-label="large rounded">upload</Button>
 </div>`;
 
 export const buttonLoading = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" loading>upload</Button>
-	<Button size="small" loading>upload</Button>
-	<Button loading>upload</Button>
-	<Button size="large" loading>upload</Button>
+	<Button size="tiny" loading aria-label="tiny loading">upload</Button>
+	<Button size="small" loading aria-label="small loading">upload</Button>
+	<Button loading aria-label="medium loading">upload</Button>
+	<Button size="large" loading aria-label="large loading">upload</Button>
 </div>`;
 
 export const buttonDisabled = `
 import { Button } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" disabled>upload</Button>
-	<Button size="small" disabled>upload</Button>
-	<Button disabled>upload</Button>
-	<Button size="large" disabled>upload</Button>
+	<Button size="tiny" disabled aria-label="tiny disabled">upload</Button>
+	<Button size="small" disabled aria-label="small disabled">upload</Button>
+	<Button disabled aria-label="medium disabled">upload</Button>
+	<Button size="large" disabled aria-label="large disabled">upload</Button>
 </div>`;

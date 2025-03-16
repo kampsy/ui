@@ -2,7 +2,7 @@
 	import { getStringWidth } from '$lib/utils/text.js';
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		position?: 'top' | 'bottom' | 'left' | 'right';
 		text?: string;
 		type?: 'success' | 'error' | 'warning' | 'violet' | undefined;
@@ -15,7 +15,7 @@
 		type = undefined,
 		class: klass = '',
 		children = undefined
-	}: propsT = $props();
+	}: Props = $props();
 
 	let widthClass = $state('width:250px');
 

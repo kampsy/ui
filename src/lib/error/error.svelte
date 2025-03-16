@@ -3,7 +3,7 @@
 	import LinkExternal from '$lib/icons/link-external.svelte';
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		label?: string;
 		size?: 'sm' | 'md' | 'lg';
 		error?: withErrorProp;
@@ -16,7 +16,7 @@
 		link: string;
 	};
 
-	let { label, size = 'md', error = undefined, children }: propsT = $props();
+	let { label, size = 'md', error = undefined, children }: Props = $props();
 
 	const sizeObj = {
 		sm: 'text-[13px] leading-[20px]',

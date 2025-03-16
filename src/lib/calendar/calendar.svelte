@@ -14,15 +14,14 @@
 		nextMonth,
 		prevMonth,
 		selectedValue
-
 	} from '$lib/utils/calendar.js';
 	import { fade, fly } from 'svelte/transition';
 	import Weekday from './weekday.svelte';
 
-	type propT = {
+	interface Props {
 		value: DateValue | RangeValue<DateValue> | undefined;
-	};
-	let { value = $bindable() }: propT = $props();
+	}
+	let { value = $bindable() }: Props = $props();
 
 	const days = [
 		{
@@ -114,7 +113,7 @@
 <!--Calendar content -->
 {#snippet calendarSnip()}
 	<div
-		class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border 
+		class=" bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[15px] lg:rounded-[6px] border-y lg:border
 		border-kui-light-gray-200 dark:border-kui-dark-gray-200 lg:shadow-sm scroll-smooth overflow-y-auto"
 	>
 		<div class="grid grid-cols-7 gap-y-[5px] items-center">
@@ -180,9 +179,7 @@
 			{/each}
 
 			{#each calendarList as row, i}
-				<div
-					class="relative flex items-center justify-center"
-				>
+				<div class="relative flex items-center justify-center">
 					<Weekday dayAndDateObj={row} bind:startDate bind:endDate />
 				</div>
 			{/each}
@@ -195,7 +192,7 @@
 			onclick={() => {
 				isActive = false;
 			}}
-			type="secondary"
+			variant="secondary"
 			class="w-full">done</Button
 		>
 	</footer>

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 
-	type propsT = {
+	interface Props {
 		children: Snippet | undefined;
 	};
-	let { children = undefined }: propsT = $props();
+	let { children = undefined }: Props = $props();
 </script>
 
 <tbody aria-hidden="true" class="table-row h-3"></tbody>

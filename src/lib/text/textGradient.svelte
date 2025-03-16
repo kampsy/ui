@@ -1,10 +1,10 @@
 <script lang="ts">
-	type propsT = {
+	interface Props {
 		class?: string;
 		variant?: 'ios' | 'ipad' | 'mac' | 'watch' | 'vision';
 		text?: string;
 	};
-	let { class:klass = '', variant = 'mac', text }: propsT = $props();
+	let { class:klass = '', variant = 'mac', text }: Props = $props();
 
 	let utilities = $state('');
 
