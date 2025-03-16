@@ -8,19 +8,36 @@
 	}
 	let { children, ...rest }: Props = $props();
 
+	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
+
 	let { size, value, defaultExpanded } = getContext<{
 		size: 'small' | 'large';
 		value: string;
 		defaultExpanded: boolean;
 	}>('collapseItem');
 
-	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
+	$effect(() => {
+		// If default expanded is true, then set the collapseItem to the value
+		if (defaultExpanded) {
+			collapseItem.set(value);
+		}
+	});
 
 	let rotate = $derived.by(() => {
 		if (value == collapseItem.get()) {
 			return '-rotate-180';
 		}
 		return '';
+	});
+
+	// accessibility if its true then set aria-expanded to true else false
+	let button: HTMLButtonElement = $state<any>();
+	$effect(() => {
+		if (value == collapseItem.get()) {
+			button.setAttribute('aria-expanded', 'true');
+		} else {
+			button.setAttribute('aria-expanded', 'false');
+		}
 	});
 
 	const paddingObj = {
@@ -39,12 +56,6 @@
 		return textObj[size];
 	});
 
-	$effect(() => {
-		if (defaultExpanded) {
-			collapseItem.set(value);
-		}
-	});
-
 	const onclick = () => {
 		if (collapseItem.get() != '' && value != '') {
 			if (collapseItem.get() === value) {
@@ -60,6 +71,7 @@
 
 <button
 	{onclick}
+	bind:this={button}
 	class="w-full flex items-center justify-between text-left bg-transparent {paddingClass}"
 	{...rest}
 >

@@ -14,8 +14,6 @@
 
 	let isActive = $state(false);
 
-	let content: HTMLDivElement;
-
 	const textObj = {
 		small: 'text-sm',
 		large: 'text-base'
@@ -32,7 +30,14 @@
 		}
 	});
 
-	$inspect(isActive)
+	let content: HTMLDivElement = $state<any>();
+	$effect(() => {
+		if (isActive) {
+			content.setAttribute('aria-hidden', 'false');
+		} else {
+			content.setAttribute('aria-hidden', 'true');
+		}
+	});
 </script>
 
 {#if isActive}

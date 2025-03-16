@@ -197,7 +197,7 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			This component must adhere to
+			This component aims to adhere to
 			<a
 				href="https://www.w3.org/TR/WCAG22/"
 				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900">WCAG 2.2 (level AA)</a
