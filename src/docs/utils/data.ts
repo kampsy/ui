@@ -66,7 +66,11 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'checkbox',
-				url: '/checkbox'
+				url: '/checkbox',
+				badge: {
+					name: 'updated',
+					variant: 'amber'
+				}
 			},
 			{
 				name: 'choicebox',
