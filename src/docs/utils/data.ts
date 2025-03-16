@@ -27,10 +27,10 @@ export const asideData: Array<AsideT> = [
 		ul: [
 			{
 				name: 'changelog',
-				url: '/changelog',
+				url: '/',
 				badge: {
-					name: 'new',
-					variant: 'green'
+					name: 'coming soon',
+					variant: 'inverted'
 				}
 			}
 		]
