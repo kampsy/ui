@@ -3,7 +3,6 @@
 	import { getContext, type Component, type Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
-
 	interface Props extends HTMLButtonAttributes {
 		onclick?: (evt: Event) => void;
 		class?: string;
@@ -16,7 +15,7 @@
 		loading?: boolean;
 		disabled?: boolean;
 		children: Snippet | undefined;
-	};
+	}
 	let { class: klass = '', children, ...rest }: Props = $props();
 
 	const rootState = getContext<{
@@ -25,6 +24,16 @@
 		setContentPosition: (value: string) => void;
 		setTransY: (value: number) => void;
 	}>('menu');
+
+	let buttonElement: HTMLButtonElement = $state<any>();
+
+	$effect(() => {
+		if (rootState.getIsActive()) {
+			buttonElement.setAttribute('aria-expanded', 'true');
+		} else {
+			buttonElement.setAttribute('aria-expanded', 'false');
+		}
+	});
 
 	const toogle = (evt: Event) => {
 		const target = evt.currentTarget as HTMLInputElement;
@@ -47,7 +56,7 @@
 </script>
 
 {#if children}
-	<Button {...rest} onclick={toogle}>
+	<Button bind:buttonElement {...rest} onclick={toogle}>
 		{@render children()}
 	</Button>
 {/if}

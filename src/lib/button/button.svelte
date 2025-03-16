@@ -5,6 +5,7 @@
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
 	interface Props extends HTMLButtonAttributes {
+		buttonElement?: HTMLButtonElement;
 		onclick?: (evt: Event) => void;
 		class?: string;
 		shape?: 'circle' | 'square' | undefined;
@@ -17,9 +18,9 @@
 		disabled?: boolean;
 		children: Snippet;
 	}
-	
 
 	let {
+		buttonElement = $bindable(),
 		onclick = undefined,
 		class: klass = '',
 		shape = undefined,
@@ -66,15 +67,15 @@
 	});
 
 	const variantObj = {
-		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 
+		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000
 		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
-		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border 
+		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border
 		border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
-		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200 
+		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200
 		hover:dark:bg-kui-dark-gray-200`,
-		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900 
+		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900
 		hover:dark:bg-kui-dark-red-900 `,
-		warning: `text-kui-light-gray-1000 bg-kui-light-amber-700 dark:bg-kui-dark-amber-700 
+		warning: `text-kui-light-gray-1000 bg-kui-light-amber-700 dark:bg-kui-dark-amber-700
 		hover:bg-kui-light-amber-800 hover:dark:bg-kui-dark-amber-800`
 	};
 	let typeClass = $derived.by(() => {
@@ -155,7 +156,14 @@
 {/snippet}
 
 {#snippet mainButton()}
-	<button {onclick} type="button" {disabled} class="{buttonClass} transition duration-300" {...rest}>
+	<button
+		bind:this={buttonElement}
+		{onclick}
+		type="button"
+		{disabled}
+		class="{buttonClass} transition duration-300"
+		{...rest}
+	>
 		<div class="w-full h-full px-[6px] flex items-center justify-center gap-[8px]">
 			{@render prefixSnip()}
 			<span class="font-medium first-letter:capitalize">
@@ -167,7 +175,14 @@
 {/snippet}
 
 {#snippet withShape()}
-	<button {onclick} type="button" {disabled} class="{buttonClass}" {...rest}>
+	<button
+		bind:this={buttonElement}
+		{onclick}
+		type="button"
+		{disabled}
+		class={buttonClass}
+		{...rest}
+	>
 		<div class="w-full h-full flex items-center justify-center">
 			<span class="font-medium first-letter:capitalize">
 				{@render children()}

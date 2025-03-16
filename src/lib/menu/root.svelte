@@ -8,7 +8,7 @@
 		class?: string | undefined;
 		alignment?: 'left' | 'right' | undefined;
 		children: Snippet | undefined;
-	};
+	}
 	let { class: klass = '', alignment = 'left', children = undefined }: Props = $props();
 
 	const rootState = createRootState({
@@ -33,6 +33,14 @@
 				rootState.setIsMobile(true);
 			} else {
 				rootState.setIsMobile(false);
+			}
+		});
+
+		// when the esc key is pressed
+		window.addEventListener('keydown', (event: KeyboardEvent) => {
+			if (event.code == 'Escape') {
+				rootState.setIsActive(false);
+				event.stopPropagation();
 			}
 		});
 	});

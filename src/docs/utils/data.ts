@@ -94,7 +94,11 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'menu',
-				url: '/menu'
+				url: '/menu',
+				badge: {
+					name: 'updated',
+					variant: 'amber'
+				}
 			},
 			{
 				name: 'modal',
