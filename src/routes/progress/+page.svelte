@@ -10,7 +10,7 @@
 	import { progressDefault, progressDynamicColors, progressThemed } from '../../docs/data/progress.js';
 	import Button from '$lib/button/button.svelte';
 
-	let dynamic = $state(0);
+	let dynamic = $state(40);
 </script>
 
 <svelte:head>
@@ -70,7 +70,7 @@
 		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Progress value={dynamic} />
+				<Progress value={dynamic}/>
 				<div class="flex items-center gap-4">
 					<Button
 						onclick={() => {
