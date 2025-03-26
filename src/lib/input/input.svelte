@@ -4,55 +4,36 @@
 	import { randomString } from '$lib/utils/random.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props {
-		type?:
-			| 'text'
-			| 'number'
-			| 'email'
-			| 'password'
-			| 'search'
-			| 'time'
-			| 'date'
-			| 'datetime-local'
-			| 'file'
-			| 'image'
-			| 'tel'
-			| 'color'
-			| 'url'
-			| 'week'
-			| 'month'
-			| undefined;
+	interface Props extends HTMLAttributes<HTMLInputElement>  {
 		id?: string | undefined;
 		name?: string | undefined;
 		value?: string | undefined;
 		label?: string | undefined;
 		error?: string | undefined;
-		'aria-labelledby'?: string | undefined;
 		size?: 'small' | 'medium' | 'large';
-		prefix?: string | Component | undefined;
+		contPrefix?: string | Component | undefined;
 		prefixStyling?: boolean | undefined;
-		suffix?: string | Component | undefined;
+		contSuffix?: string | Component | undefined;
 		suffixStyling?: boolean | undefined;
 		spellcheck?: boolean | undefined;
 		placeholder?: string | undefined;
 		disabled?: boolean | undefined;
 	};
 	let {
-		type = 'text',
 		id = undefined,
 		name = undefined,
 		value = $bindable(''),
 		label = undefined,
 		error = undefined,
-		'aria-labelledby': araiLabelledBy = undefined,
 		size = 'medium',
-		prefix = undefined,
+		contPrefix = undefined,
 		prefixStyling = true,
-		suffix = undefined,
+		contSuffix = undefined,
 		suffixStyling = true,
 		spellcheck = false,
 		placeholder = undefined,
-		disabled = false
+		disabled = false,
+		... rest
 	}: Props = $props();
 
 	// The focus and blur state of the input
@@ -147,14 +128,14 @@
 
 <!--Prefix snippet-->
 {#snippet prefixSnip()}
-	{#if prefix}
+	{#if contPrefix}
 		<span
 			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {prefixClass}"
 		>
-			{#if typeof prefix === 'string'}
-				{prefix}
-			{:else if typeof prefix === 'function'}
-				{@const PrefixIcon = prefix}
+			{#if typeof contPrefix === 'string'}
+				{contPrefix}
+			{:else if typeof contPrefix === 'function'}
+				{@const PrefixIcon = contPrefix}
 				<div class="w-[16px] h-[16px]">
 					<PrefixIcon />
 				</div>
@@ -165,14 +146,14 @@
 
 <!--Suffix snippet-->
 {#snippet suffixSnip()}
-	{#if suffix}
+	{#if contSuffix}
 		<span
 			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {suffixClass}"
 		>
-			{#if typeof suffix === 'string'}
-				{suffix}
-			{:else if typeof suffix === 'function'}
-				{@const SuffixIcon = suffix}
+			{#if typeof contSuffix === 'string'}
+				{contSuffix}
+			{:else if typeof contSuffix === 'function'}
+				{@const SuffixIcon = contSuffix}
 				<div class="w-[16px] h-[16px]">
 					<SuffixIcon />
 				</div>
@@ -191,11 +172,9 @@
 
 			<div class="w-full h-full {inputContClass}">
 				<input
-					{type}
 					bind:value
 					id={inputID}
 					{name}
-					aria-labelledby={araiLabelledBy}
 					{spellcheck}
 					{placeholder}
 					{disabled}
@@ -206,6 +185,7 @@
 						hasRing = false;
 					}}
 					class="{inputClass} w-full h-full outline-none bg-transparent"
+					{...rest}
 				/>
 			</div>
 
