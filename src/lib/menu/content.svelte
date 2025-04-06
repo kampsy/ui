@@ -2,6 +2,7 @@
 	import { getContext, type Snippet } from 'svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: string;
@@ -29,10 +30,12 @@
 
 	let content: HTMLDivElement = $state<any>();
 	$effect(() => {
-		if (rootState.getIsActive()) {
-			content.setAttribute('aria-hidden', 'false');
-		} else {
-			content.setAttribute('aria-hidden', 'true');
+		if (content) {
+			if (rootState.getIsActive()) {
+				content.setAttribute('aria-hidden', 'false');
+			} else {
+				content.setAttribute('aria-hidden', 'true');
+			}
 		}
 	});
 </script>
@@ -41,14 +44,14 @@
 	{#if rootState.getIsActive()}
 		<div
 			bind:this={content}
-			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			in:fly|local={{ y: '50vh', duration: 500, opacity: 1 }}
+			out:fly|local={{ y: '100vh', duration: 600, easing: cubicOut, opacity: 1 }}
+			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
 			{...rest}
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[15px] border-t
-				border-kui-light-gray-200 dark:border-kui-dark-gray-200 scroll-smooth overflow-y-auto"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[10px] border-t
+				border-kui-light-gray-600 dark:border-kui-dark-gray-500 scroll-smooth overflow-y-auto"
 			>
 				{@render children()}
 			</div>

@@ -4,7 +4,7 @@
 	interface Props {
 		class?: string | undefined;
 		children: Snippet | undefined;
-	};
+	}
 
 	let { class: klass = '', children }: Props = $props();
 </script>

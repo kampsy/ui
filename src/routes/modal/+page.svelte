@@ -6,7 +6,7 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Button, Modal } from '$lib/index.js';
+	import { Button, Modal, Text } from '$lib/index.js';
 	import {
 		modalDefault,
 		modalDisabkedActions,
@@ -37,7 +37,7 @@
 		>
 			Display popup content that requires attention or provides additional information.
 		</p>
-	</Row>	
+	</Row>
 {/snippet}
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
@@ -74,7 +74,7 @@
 										then select the scope.
 									</Modal.Subtitle>
 								</Modal.Header>
-								<Modal.Text>Some content contained within the modal.</Modal.Text>
+								<Text size={14}>Some content contained within the modal.</Text>
 							</Modal.Body>
 							<Modal.Footer>
 								<Button onclick={() => (active = false)} variant="secondary">Cancel</Button>
@@ -108,13 +108,17 @@
 								</Modal.Header>
 								<!--Array from 1 to 30-->
 								{#each Array(60) as _, i}
-									<Modal.Text>Some content contained within the modal.</Modal.Text>
+									<Text size={14}>Some content contained within the modal.</Text>
 								{/each}
 							</Modal.Body>
 							<Modal.Footer>
 								<div class="flex gap-3">
 									<Button onclick={() => (activeSticky = false)} variant="secondary">Cancel</Button>
-									<Button iconPrefix={ArrowLeft} onclick={() => (activeSticky = false)} variant="secondary">Previous</Button>
+									<Button
+										iconPrefix={ArrowLeft}
+										onclick={() => (activeSticky = false)}
+										variant="secondary">Previous</Button
+									>
 								</div>
 								<Button onclick={() => (activeSticky = false)}>Submit</Button>
 							</Modal.Footer>
@@ -144,11 +148,13 @@
 								<Modal.Header>
 									<Modal.Title>Create Token</Modal.Title>
 								</Modal.Header>
-								<Modal.Text>Some content contained within the modal.</Modal.Text>
+								<Text size={14}>Some content contained within the modal.</Text>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (activeSingleButton = false)} variant="secondary" class="w-full"
-									>Cancel</Button
+								<Button
+									onclick={() => (activeSingleButton = false)}
+									variant="secondary"
+									class="w-full">Cancel</Button
 								>
 							</Modal.Footer>
 						</Modal.Content>
@@ -178,7 +184,7 @@
 									<Modal.Title>Create Token</Modal.Title>
 									<Modal.Subtitle>This is a modal.</Modal.Subtitle>
 								</Modal.Header>
-								<Modal.Text>Some content contained within the modal.</Modal.Text>
+								<Text size={14}>Some content contained within the modal.</Text>
 							</Modal.Body>
 							<Modal.Footer>
 								<Button onclick={() => (activeDisabled = false)} variant="secondary">Cancel</Button>

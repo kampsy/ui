@@ -1,21 +1,21 @@
 <script lang="ts">
-	import { tweened } from 'svelte/motion';
+	import { Tween } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		type?: 'success' | 'error' | 'warning' | 'secondary' | undefined;
-		value?: number | undefined;
-	};
-	let { type = undefined, value = 0 }: Props = $props();
+		value: number;
+	}
+	let { type = undefined, value = 0, ...rest }: Props = $props();
 
-	const progress = tweened(0, {
+	const tween = Tween.of(() => value, {
 		duration: 400,
 		easing: cubicOut
 	});
 
 	let widthClass = $derived.by(() => {
-		progress.set(value);
-		return 'width:' + $progress + '%';
+		return 'width:' + tween.current + '%';
 	});
 
 	const typeObj = {
@@ -33,7 +33,14 @@
 </script>
 
 <div class="w-full">
-	<div class="w-full h-2.5 dark:bg-kui-dark-gray-200 bg-kui-light-gray-300 rounded-full">
+	<div
+		role="progressbar"
+		aria-valuenow={tween.current}
+		aria-valuemin="0"
+		aria-valuemax="100"
+		class="w-full h-2.5 dark:bg-kui-dark-gray-200 bg-kui-light-gray-300 rounded-full"
+		{...rest}
+	>
 		<div class="h-2.5 {progressClass} rounded-full" style={widthClass}></div>
 	</div>
 </div>

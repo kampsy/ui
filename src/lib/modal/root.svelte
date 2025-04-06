@@ -2,12 +2,13 @@
 	import { setContext, type Snippet } from 'svelte';
 	import { createModalState } from './root.svelte.js';
 	import { preventScroll } from '$lib/utils/general.js';
+	import { fade } from 'svelte/transition';
 
 	interface Props {
 		active: boolean;
 		sticky?: boolean;
 		children: Snippet;
-	};
+	}
 	let { active = $bindable(false), sticky = false, children }: Props = $props();
 
 	let dialog: HTMLDialogElement;
@@ -58,7 +59,9 @@
 
 <dialog bind:this={dialog} tabindex="-1">
 	<div
-		class="fixed top-0 left-0 w-full h-full flex items-center justify-center transition-colors bg-kui-black bg-opacity-[0.25] dark:bg-opacity-[0.75]"
+		in:fade|local
+		out:fade|local
+		class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-kui-black bg-opacity-35 dark:bg-opacity-45"
 	>
 		{@render children()}
 	</div>

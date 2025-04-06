@@ -82,20 +82,20 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
-					<Input aria-labelledby="Demo" prefix={ArrowCircleUp} placeholder="default" />
+					<Input aria-labelledby="Demo" contPrefix={ArrowCircleUp} placeholder="default" />
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
-					<Input aria-labelledby="Demo" suffix={ArrowCircleUp} placeholder="default" />
+					<Input aria-labelledby="Demo" contSuffix={ArrowCircleUp} placeholder="default" />
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
-					<Input aria-labelledby="Demo" prefix="https://" suffix=".com" placeholder="default" />
+					<Input aria-labelledby="Demo" prefix="https://" contSuffix=".com" placeholder="default" />
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
-						prefix={ArrowCircleUp}
+						contPrefix={ArrowCircleUp}
 						prefixStyling={false}
-						suffix={ArrowCircleUp}
+						contSuffix={ArrowCircleUp}
 						suffixStyling={false}
 						placeholder="default"
 					/>
@@ -124,7 +124,7 @@
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
-						prefix={ArrowCircleUp}
+						contPrefix={ArrowCircleUp}
 						placeholder="Disabled with prefix"
 						disabled
 					/>
@@ -132,7 +132,7 @@
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
-						suffix={ArrowCircleUp}
+						contSuffix={ArrowCircleUp}
 						placeholder="Disabled with suffix"
 						disabled
 					/>
@@ -141,7 +141,7 @@
 					<Input
 						aria-labelledby="Demo"
 						prefix="https://"
-						suffix=".com"
+						contSuffix=".com"
 						placeholder="Disabled with prefix and suffix"
 						disabled
 					/>
@@ -149,9 +149,9 @@
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
-						prefix={ArrowCircleUp}
+						contPrefix={ArrowCircleUp}
 						prefixStyling={false}
-						suffix={ArrowCircleUp}
+						contSuffix={ArrowCircleUp}
 						suffixStyling={false}
 						placeholder="Disabled with prefix and suffix"
 						disabled

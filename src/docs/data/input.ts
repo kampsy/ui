@@ -19,20 +19,20 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 let value = $state('');
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" prefix={ArrowCircleUp} bind:value placeholder="default" />
+	<Input aria-labelledby="Demo" contPrefix={ArrowCircleUp} bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" suffix={ArrowCircleUp} bind:value placeholder="default" />
+	<Input aria-labelledby="Demo" contSuffix={ArrowCircleUp} bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
-	<Input aria-labelledby="Demo" prefix="https://" suffix=".com" bind:value placeholder="default" />
+	<Input aria-labelledby="Demo" contPrefix="https://" contSuffix=".com" bind:value placeholder="default" />
 </div>
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
         aria-labelledby="Demo"
-        prefix={ArrowCircleUp}
+        contPrefix={ArrowCircleUp}
         prefixStyling={false}
-        suffix={ArrowCircleUp}
+        contSuffix={ArrowCircleUp}
         suffixStyling={false}
         placeholder="default"
 	/>
@@ -51,7 +51,7 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
 		aria-labelledby="Demo"
-		prefix={ArrowCircleUp}
+		contPrefix={ArrowCircleUp}
 		placeholder="Disabled with prefix"
 		disabled
 	/>
@@ -59,7 +59,7 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
 		aria-labelledby="Demo"
-		suffix={ArrowCircleUp}
+		contSuffix={ArrowCircleUp}
 		placeholder="Disabled with suffix"
 		disabled
 	/>
@@ -67,8 +67,8 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
 		aria-labelledby="Demo"
-		prefix="https://"
-		suffix=".com"
+		contPrefix="https://"
+		contSuffix=".com"
 		placeholder="Disabled with prefix and suffix"
 		disabled
 	/>
@@ -76,9 +76,9 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input
 		aria-labelledby="Demo"
-		prefix={ArrowCircleUp}
+		contPrefix={ArrowCircleUp}
 		prefixStyling={false}
-		suffix={ArrowCircleUp}
+		contSuffix={ArrowCircleUp}
 		suffixStyling={false}
 		placeholder="Disabled with prefix and suffix"
 		disabled
