@@ -1,5 +1,5 @@
 export const modalDefault = `
-import { Modal } from 'kampsy-ui';
+import { Modal, Text } from 'kampsy-ui';
 
 let active = $state(false);
 
@@ -15,7 +15,7 @@ let active = $state(false);
                         then select the scope.
     				</Modal.Subtitle>
     			</Modal.Header>
-    			<Modal.Text>Some content contained within the modal.</Modal.Text>
+    			<Text size={14}>Some content contained within the modal.</Text>
     		</Modal.Body>
     		<Modal.Footer>
     			<Button onclick={() => (active = false)} type="secondary">Cancel</Button>
@@ -26,7 +26,7 @@ let active = $state(false);
 </div>`;
 
 export const modalSticky = `
-import { Modal } from 'kampsy-ui';
+import { Modal, Text } from 'kampsy-ui';
 import { ArrowLeft } from 'kampsy-ui/icons';
 
 let active = $state(false);
@@ -40,7 +40,7 @@ let active = $state(false);
     				<Modal.Title>Create Token</Modal.Title>
     			</Modal.Header>
 				{#each Array(40) as _, i}
-					<Modal.Text>Some content contained within the modal.</Modal.Text>
+					<Text size={14}>Some content contained within the modal.</Text>
 				{/each}
     		</Modal.Body>
     		<Modal.Footer>
@@ -55,7 +55,7 @@ let active = $state(false);
 </div>`;
 
 export const modalSingleButton = `
-import { Modal } from 'kampsy-ui';
+import { Modal, Text } from 'kampsy-ui';
 
 let active = $state(false);
 
@@ -67,7 +67,7 @@ let active = $state(false);
     			<Modal.Header>
     				<Modal.Title>Create Token</Modal.Title>
     			</Modal.Header>
-    			<Modal.Text>Some content contained within the modal.</Modal.Text>
+    			<Text size={14}>Some content contained within the modal.</Text>
     		</Modal.Body>
     		<Modal.Footer>
     			<Button onclick={() => (activeSingleButton = false)} type="secondary" class="w-full">
@@ -79,7 +79,7 @@ let active = $state(false);
 </div>`;
 
 export const modalDisabkedActions = `
-import { Modal } from 'kampsy-ui';
+import { Modal, Text } from 'kampsy-ui';
 
 let active = $state(false);
 
@@ -92,7 +92,7 @@ let active = $state(false);
     				<Modal.Title>Create Token</Modal.Title>
 					<Modal.Subtitle>This is a modal.</Modal.Subtitle>
     			</Modal.Header>
-    			<Modal.Text>Some content contained within the modal.</Modal.Text>
+    			<Text size={14}>Some content contained within the modal.</Text>
     		</Modal.Body>
     		<Modal.Footer>
                 <Button onclick={() => (activeDisabled = false)} type="secondary">Cancel</Button>
