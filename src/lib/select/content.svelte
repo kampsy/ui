@@ -2,11 +2,12 @@
 	import { Button } from '$lib/index.js';
 	import { getContext, type Snippet } from 'svelte';
 	import { fly } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
 
 	interface Props {
 		class?: string;
 		children: Snippet;
-	};
+	}
 	let { class: klass = '', children }: Props = $props();
 
 	// Get the state of the select from the context
@@ -23,13 +24,14 @@
 {#snippet mobileSnip()}
 	{#if rootState.getIsActive()}
 		<div
-			in:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			out:fly|local={{ y: '100vh', duration: 500, opacity: 1 }}
-			class="fixed bottom-0 left-0 w-full rounded-t-[15px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			in:fly|local={{ y: '50vh', duration: 500, opacity: 1 }}
+			out:fly|local={{ y: '100vh', duration: 600, easing: cubicOut, opacity: 1 }}
+			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 py-3 rounded-t-[15px] border-y 
-				border-kui-light-gray-200 dark:border-kui-dark-gray-200 scroll-smooth overflow-y-auto"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 py-3 rounded-t-[10px] border-b
+				border-b-kui-light-gray-200 dark:border-b-kui-dark-gray-200 border-t border-t-kui-light-gray-600
+				dark:border-t-kui-dark-gray-500 scroll-smooth overflow-y-auto"
 			>
 				{@render children()}
 			</div>
