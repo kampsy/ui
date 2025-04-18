@@ -57,12 +57,17 @@
 	});
 </script>
 
-<dialog bind:this={dialog} tabindex="-1">
+<!--Backgrop background-->
+{#if active}
 	<div
-		in:fade|local
-		out:fade|local
-		class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-kui-black bg-opacity-35 dark:bg-opacity-45"
-	>
+		in:fade|local={{ duration: 100 }}
+		out:fade|local={{ duration: 100 }}
+		class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-40 z-[1000]"
+	></div>
+{/if}
+
+<dialog bind:this={dialog}>
+	<div in:fade out:fade class="fixed top-0 left-0 w-full h-full flex items-center justify-center">
 		{@render children()}
 	</div>
 </dialog>

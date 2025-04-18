@@ -32,10 +32,12 @@
 
 	let content: HTMLDivElement = $state<any>();
 	$effect(() => {
-		if (isActive) {
-			content.setAttribute('aria-hidden', 'false');
-		} else {
-			content.setAttribute('aria-hidden', 'true');
+		if (content) {
+			if (isActive) {
+				content.setAttribute('aria-hidden', 'false');
+			} else {
+				content.setAttribute('aria-hidden', 'true');
+			}
 		}
 	});
 </script>
