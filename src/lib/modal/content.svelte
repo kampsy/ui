@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Button } from '$lib/index.js';
 	import { clickOutside } from '$lib/utils/event.js';
 	import { getContext, type Snippet } from 'svelte';
 	import { cubicOut } from 'svelte/easing';

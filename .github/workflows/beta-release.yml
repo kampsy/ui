@@ -1,0 +1,44 @@
+name: Beta Release
+
+on:
+  push:
+    branches:
+      - tailwindcss-v4
+
+permissions:
+  contents: write # to be able to publish a GitHub release
+  issues: write # to comment on issues after release
+  pull-requests: write # to comment on PRs after release
+  id-token: write # for OIDC (npm provenance)
+
+jobs:
+  beta-release:
+    name: Build & Publish @beta Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Use PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+
+      # - name: Verify Integrity
+      #  run: pnpm audit signatures
+
+      - name: Run Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --tag-format='beta-v{version}'
