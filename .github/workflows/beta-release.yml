@@ -34,8 +34,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # - name: Verify Integrity
+      #  run: pnpm audit signatures
+
       - name: Run Semantic Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --tag-format='beta-v{version}'
+        run: npx semantic-release --branch=beta --tag-format=beta-v${version}
