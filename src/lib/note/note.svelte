@@ -135,7 +135,8 @@
 <div class="w-full">
 	<div
 		class="w-full space-y-2 md:space-y-0 md:flex md:items-center md:justify-between lg:gap-x-3
-		{disabled}
+		class:disabled={disabled}
+		aria-disabled={disabled}
 		{contClass} {radiusClass} {sizeClass} {klass}"
 		{...rest}
 	>

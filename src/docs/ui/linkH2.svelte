@@ -1,17 +1,20 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 	import Link from '$lib/icons/link.svelte';
 
-	interface Props extends HTMLAttributes<HTMLAnchorElement> {
+	interface Props extends HTMLAnchorAttributes {
 		href: string;
 		children: Snippet;
 	}
 
 	let { href, children, ...rest }: Props = $props();
+
+	// id for page navigation
+	const id = href.split('#').pop();
 </script>
 
-<a {href} class="no-underline outline-none relative -ml-5 pl-5 inline-block group" {...rest}>
+<a {href} {id} class="no-underline outline-none relative -ml-5 pl-5 inline-block group" {...rest}>
 	<h2
 		class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px]"
 	>
