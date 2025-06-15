@@ -6,6 +6,7 @@
 	import Shell from '$lib/../docs/ui/shell.svelte';
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 	import {
 		buttonDisabled,
 		buttonLoading,
@@ -71,11 +72,7 @@
 
 {#snippet size()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			size
-		</h2>
+		<LinkH2 href="/button#size">size</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -95,11 +92,7 @@
 
 {#snippet types()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			variants
-		</h2>
+		<LinkH2 href="/button#variants">variants</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Button variant="secondary" aria-label="secondary">upload</Button>
@@ -123,11 +116,7 @@
 
 {#snippet shapes()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			shapes
-		</h2>
+		<LinkH2 href="/button#shapes">shapes</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -191,11 +180,7 @@
 
 {#snippet prefixAndSuffix()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			Prefix and Suffix
-		</h2>
+		<LinkH2 href="/button#prefix-and-suffix">Prefix and Suffix</LinkH2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -212,12 +197,7 @@
 
 {#snippet rounded()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			rounded
-		</h2>
-
+		<LinkH2 href="/button#rounded">rounded</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -240,12 +220,7 @@
 
 {#snippet loading()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			loading
-		</h2>
-
+		<LinkH2 href="/button#loading" aria-label="loading">loading</LinkH2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -261,11 +236,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			disabled
-		</h2>
+		<LinkH2 href="/button#disabled" aria-label="disabled">disabled</LinkH2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -336,8 +307,7 @@
 			In some situations, it may be important to inform the user that a button is in a pressed
 			state—such as when a button opens a contextual menu. This can be achieved by adding {@render roundedCode(
 				'aria-pressed="true"'
-			)} to the button using JavaScript when it is clicked, and removing it when
-			necessary.
+			)} to the button using JavaScript when it is clicked, and removing it when necessary.
 		</Text>
 	</Row>
 {/snippet}

@@ -13,6 +13,7 @@
 		textareaWithLabel,
 		textareError
 	} from '../../docs/data/textarea.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
@@ -49,11 +50,7 @@
 
 {#snippet defaultTextarea()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/textarea#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Textarea
@@ -67,11 +64,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">disabled</a>
-		</h2>
+		<LinkH2 href="/textarea#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Textarea
@@ -86,11 +79,7 @@
 
 {#snippet withLabel()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Label</a>
-		</h2>
+		<LinkH2 href="/textarea#label" aria-label="label">label</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -107,11 +96,7 @@
 
 {#snippet withError()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">error</a>
-		</h2>
+		<LinkH2 href="/textarea#error" aria-label="error">error</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">

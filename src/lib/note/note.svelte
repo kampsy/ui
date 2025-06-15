@@ -4,22 +4,26 @@
 	import CheckCircle from '$lib/icons/check-circle.svelte';
 	import Error from '$lib/icons/error.svelte';
 	import Warning from '$lib/icons/warning.svelte';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: string;
 		size?: 'small' | 'medium' | 'large';
 		action?: Snippet | undefined;
+		disabled?: boolean;
 		type?: 'success' | 'error' | 'warning' | 'secondary' | 'violet' | 'cyan' | 'default';
 		fill?: boolean;
 		children?: Snippet | undefined;
-	};
+	}
 	let {
 		class: klass = '',
 		size = 'medium',
 		action = undefined,
+		disabled = false,
 		type = 'default',
 		fill = false,
-		children = undefined
+		children = undefined,
+		...rest
 	}: Props = $props();
 
 	const sizeObj = {
@@ -61,19 +65,19 @@
 	});
 
 	const fillObj = {
-		success: `bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border border-kui-light-blue-200 
+		success: `bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border border-kui-light-blue-200
 		dark:border-kui-dark-blue-200`,
-		error: `bg-kui-light-red-200 dark:bg-kui-dark-red-200 border border-kui-light-red-200 
+		error: `bg-kui-light-red-200 dark:bg-kui-dark-red-200 border border-kui-light-red-200
 		dark:border-kui-dark-red-200`,
-		warning: `bg-kui-light-amber-200 dark:bg-kui-dark-amber-200 border border-kui-light-amber-200 
+		warning: `bg-kui-light-amber-200 dark:bg-kui-dark-amber-200 border border-kui-light-amber-200
 		dark:border-kui-dark-amber-200`,
-		secondary: `bg-kui-light-gray-alpha-200 dark:bg-kui-dark-gray-alpha-200 border border-kui-light-gray-alpha-200 
+		secondary: `bg-kui-light-gray-alpha-200 dark:bg-kui-dark-gray-alpha-200 border border-kui-light-gray-alpha-200
 		dark:border-kui-dark-gray-alpha-200`,
-		violet: `bg-kui-light-purple-200 dark:bg-kui-dark-purple-200 border border-kui-light-purple-200 
+		violet: `bg-kui-light-purple-200 dark:bg-kui-dark-purple-200 border border-kui-light-purple-200
 		dark:border-kui-dark-purple-200`,
-		cyan: `bg-kui-light-teal-200 dark:bg-kui-dark-teal-200 border border-kui-light-teal-200 
+		cyan: `bg-kui-light-teal-200 dark:bg-kui-dark-teal-200 border border-kui-light-teal-200
 		dark:border-kui-dark-teal-200`,
-		default: `bg-kui-light-gray-200 dark:bg-kui-dark-gray-200 border border-kui-light-gray-200 
+		default: `bg-kui-light-gray-200 dark:bg-kui-dark-gray-200 border border-kui-light-gray-200
 		dark:border-kui-dark-gray-200`
 	};
 	let fillClass = $derived.by(() => {
@@ -81,25 +85,25 @@
 	});
 
 	const typeTextObj = {
-		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 selection:bg-kui-light-blue-900 
-		selection:text-kui-light-blue-100 dark:selection:bg-kui-dark-blue-800  dark:selection:text-kui-dark-blue-1000 
+		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 selection:bg-kui-light-blue-900
+		selection:text-kui-light-blue-100 dark:selection:bg-kui-dark-blue-800  dark:selection:text-kui-dark-blue-1000
 		[&_a]:text-kui-light-blue-1000 dark:[&_a]:text-kui-dark-blue-1000`,
-		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 selection:bg-kui-light-red-900 
+		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 selection:bg-kui-light-red-900
 		selection:text-kui-light-red-100 dark:selection:bg-kui-dark-red-800  dark:selection:text-kui-dark-red-1000
 		[&_a]:text-kui-light-red-1000 dark:[&_a]:text-kui-dark-red-1000`,
-		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 selection:bg-kui-light-amber-900 
+		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 selection:bg-kui-light-amber-900
 		selection:text-kui-light-amber-100 dark:selection:bg-kui-dark-amber-800  dark:selection:text-kui-dark-amber-1000
 		[&_a]:text-kui-light-amber-1000 dark:[&_a]:text-kui-dark-amber-1000`,
-		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900 selection:bg-kui-light-gray-900 
+		secondary: `text-kui-light-gray-alpha-900 dark:text-kui-dark-gray-alpha-900 selection:bg-kui-light-gray-900
 		selection:text-kui-light-gray-100 dark:selection:bg-kui-dark-gray-800  dark:selection:text-kui-dark-gray-1000
 		[&_a]:text-kui-light-gray-alpha-1000 dark:[&_a]:text-kui-dark-gray-alpha-1000`,
-		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900 selection:bg-kui-light-purple-900 
+		violet: `text-kui-light-purple-900 dark:text-kui-dark-purple-900 selection:bg-kui-light-purple-900
 		selection:text-kui-light-purple-100 dark:selection:bg-kui-dark-purple-800  dark:selection:text-kui-dark-purple-1000
 		[&_a]:text-kui-light-purple-1000 dark:[&_a]:text-kui-dark-purple-1000`,
-		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900 selection:bg-kui-light-teal-900 
+		cyan: `text-kui-light-teal-900 dark:text-kui-dark-teal-900 selection:bg-kui-light-teal-900
 		selection:text-kui-light-teal-100 dark:selection:bg-kui-dark-teal-800  dark:selection:text-kui-dark-teal-1000
 		[&_a]:text-kui-light-teal-1000 dark:[&_a]:text-kui-dark-teal-1000`,
-		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 selection:bg-kui-light-gray-900 
+		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 selection:bg-kui-light-gray-900
 		selection:text-kui-light-gray-100 dark:selection:bg-kui-dark-gray-800  dark:selection:text-kui-dark-gray-1000
 		[&_a]:text-kui-light-gray-1000 dark:[&_a]:text-kui-dark-gray-1000`
 	};
@@ -130,7 +134,10 @@
 
 <div class="w-full">
 	<div
-		class="w-full space-y-2 md:space-y-0 md:flex md:items-center md:justify-between lg:gap-x-3 {contClass} {radiusClass} {sizeClass} {klass}"
+		class="w-full space-y-2 md:space-y-0 md:flex md:items-center md:justify-between lg:gap-x-3
+		{disabled}
+		{contClass} {radiusClass} {sizeClass} {klass}"
+		{...rest}
 	>
 		<div class="flex items-center {iconAndTextGapClass} {textClass}">
 			<div class="w-4 h-4">

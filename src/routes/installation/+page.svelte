@@ -11,6 +11,7 @@
 		installationKampsy,
 		installationSveltekit
 	} from '../../docs/data/installation.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
@@ -43,11 +44,9 @@
 
 {#snippet sveltekit()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/installation#using-svelteKit" aria-label="Using SvelteKit"
+			>Using SvelteKit</LinkH2
 		>
-			<a href="#default" id="default">Using SvelteKit</a>
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -102,19 +101,17 @@
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Once the dependencies are installed, your SvelteKit project with Tailwindcss is ready!
-			Navigate to your project directory {@render roundedCode('cd my-app')} . From here, you can
-			proceed to the next step.
+			Navigate to your project directory {@render roundedCode('cd my-app')} . From here, you can proceed
+			to the next step.
 		</p>
 	</Row>
 {/snippet}
 
 {#snippet kampsyui()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/installation#install-kampsy-ui" aria-label="install kampsy-ui"
+			>install kampsy-ui</LinkH2
 		>
-			<a href="#default" id="default">install kampsy-ui</a>
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -137,11 +134,7 @@
 
 {#snippet config()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Configuration</a>
-		</h2>
+		<LinkH2 href="/installation#configuration" aria-label="Configuration">Configuration</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>

@@ -8,10 +8,11 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ThemeSwitcher } from '$lib/index.js';
 	import { themeSwitcherDefault } from '../../docs/data/theme-switcher.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
-    <title>Theme Switcher</title>
+	<title>Theme Switcher</title>
 </svelte:head>
 
 {#snippet error()}
@@ -24,7 +25,7 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-        Component that allows users to switch between light and dark themes.
+			Component that allows users to switch between light and dark themes.
 		</p>
 	</Row>
 {/snippet}
@@ -44,14 +45,10 @@
 
 {#snippet defaultThemeSwitcher()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/theme-switcher#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<ThemeSwitcher/>
+				<ThemeSwitcher />
 			{/snippet}
 			{@render demoAndCode(demo, themeSwitcherDefault)}
 		</div>

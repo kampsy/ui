@@ -7,14 +7,11 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import Tooltip from '$lib/tooltip/tooltip.svelte';
-	import {
-		tooltipComponents,
-		toolTipCustomType,
-		toolTipDefault
-	} from '../../docs/data/tooltip.js';
+	import { tooltipComponents, toolTipCustomType, toolTipDefault } from '../../docs/data/tooltip.js';
 	import Button from '$lib/button/button.svelte';
 	import { Badge } from '$lib/index.js';
 	import Spinner from '$lib/spinner/spinner.svelte';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
@@ -54,11 +51,7 @@
 
 {#snippet defaultTooltip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/tooltip#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -90,11 +83,7 @@
 
 {#snippet customType()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">custom type</a>
-		</h2>
+		<LinkH2 href="/tooltip#custom-type" aria-label="custom type">custom type</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -126,11 +115,7 @@
 
 {#snippet components()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">components</a>
-		</h2>
+		<LinkH2 href="/tooltip#components" aria-label="components">components</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tooltip position="bottom" text="The Evil Rabbit Jumped over the Fence">

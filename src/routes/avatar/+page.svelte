@@ -10,6 +10,7 @@
 	import Avatar from '$lib/avatar/avatar.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { AvatarText } from '$lib/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	const members = [
 		{
@@ -22,7 +23,7 @@
 		},
 		{
 			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+			imageLink: 'https://vercel.com/api/www/avatar?s=64&u=rauchg'
 		},
 		{
 			name: 'Evil Rabbit',
@@ -77,11 +78,7 @@
 
 {#snippet group()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			Group
-		</h2>
+		<LinkH2 href="/avatar#group">group</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="space-y-4">
@@ -100,11 +97,7 @@
 
 {#snippet text()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			avatar text
-		</h2>
+		<LinkH2 href="/avatar#avatar-text">avatar text</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>

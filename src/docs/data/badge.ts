@@ -131,7 +131,7 @@ import { Shield } from 'kampsy-ui/icons';
 		<Badge icon={Shield} size="small" variant="green-subtle">green</Badge>
 		<Badge icon={Shield} size="medium" variant="green-subtle" >green</Badge>
 		<Badge icon={Shield} size="large" variant="green-subtle">green</Badge>
-	</div>	
+	</div>
 
 	<div class="flex items-center gap-1 capitalize">
 		<Badge icon={Shield} size="large" variant="teal" aria-label="icon large teal">teal</Badge>
@@ -147,4 +147,21 @@ import { Shield } from 'kampsy-ui/icons';
 		<Badge icon={Shield} size="medium" variant="inverted" aria-label="icon medium inverted">inverted</Badge>
 		<Badge icon={Shield} size="small" variant="inverted" aria-label="icon small inverted">inverted</Badge>
 	</div>
+</div>`;
+
+export const badgePill = `
+import { Badge } from 'kampsy-ui';
+import { LogoSlackColor } from 'kampsy-ui/icons';
+
+<div class="flex flex-col gap-4">
+  <div class="flex items-center gap-2 capitalize">
+	  <Badge href="#badge#pill" size="small" variant="pill" aria-label="large pill">label</Badge>
+	  <Badge href="#badge#pill" size="medium" variant="pill" aria-label="medium pill">label</Badge>
+	  <Badge href="#badge#pill" size="large" variant="pill" aria-label="small pill">label</Badge>
+  </div>
+  <div class="flex items-center gap-2 capitalize">
+	  <Badge href="#badge#pill" icon={LogoSlackColor} size="small" variant="pill" aria-label="icon large pill">label</Badge>
+	  <Badge href="#badge#pill" icon={LogoSlackColor} size="medium" variant="pill" aria-label="icon medium pill">label</Badge>
+	  <Badge href="#badge#pill" icon={LogoSlackColor} size="large" variant="pill" aria-label="icon small pill">label</Badge>
+  </div>
 </div>`;

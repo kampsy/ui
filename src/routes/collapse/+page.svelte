@@ -9,6 +9,7 @@
 	import { Collapse, Pagination, Tabs, Text } from '$lib/index.js';
 	import { fade } from 'svelte/transition';
 	import { Webhook, Accessibility } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let selected = $state('implementation');
 </script>
@@ -60,11 +61,7 @@
 
 {#snippet defaultCollapse()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/collapse#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>
@@ -105,11 +102,7 @@
 
 {#snippet expanded()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">expanded</a>
-		</h2>
+		<LinkH2 href="/collapse#expanded" aria-label="expanded">expanded</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>
@@ -150,11 +143,7 @@
 
 {#snippet size()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">small</a>
-		</h2>
+		<LinkH2 href="/collapse#small" aria-label="small">small</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>

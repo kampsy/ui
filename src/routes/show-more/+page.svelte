@@ -8,6 +8,7 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { ShowMore } from '$lib/index.js';
 	import { showMoreDefault } from '../../docs/data/showMore.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let isActive = $state(false);
 
@@ -48,11 +49,7 @@
 
 {#snippet defaultShowMore()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/show-more#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">

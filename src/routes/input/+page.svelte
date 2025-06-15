@@ -14,10 +14,9 @@
 		inputDisabled,
 		inputLabel,
 		inputError,
-
 		inputSearch
-
-	} from '../../docs/data/input.js';
+	} from '$lib/../docs/data/input.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
@@ -54,14 +53,10 @@
 
 {#snippet defaultInput()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/input#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
+				<div class="w-full grid grid-cols-1 gap-4 lg:grid-cols-3">
 					<Input aria-labelledby="Demo input" placeholder="small" size="small" />
 					<Input aria-labelledby="Demo input" placeholder="default" />
 					<Input aria-labelledby="Demo input" placeholder="large" size="large" />
@@ -74,11 +69,8 @@
 
 {#snippet prefixAndSuffix()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/input#prefix-and-suffix" aria-label="prefix and suffix">prefix and suffix</LinkH2
 		>
-			<a href="#customlabel" id="default">prefix and suffix</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
@@ -108,11 +100,7 @@
 
 {#snippet inputDisabledSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">disabled</a>
-		</h2>
+		<LinkH2 href="/input#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
@@ -165,11 +153,7 @@
 
 {#snippet searchSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">search</a>
-		</h2>
+		<LinkH2 href="/input#search" aria-label="search">search</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -188,11 +172,7 @@
 
 {#snippet errorSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">error</a>
-		</h2>
+		<LinkH2 href="/input#error" aria-label="error">error</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
@@ -226,11 +206,7 @@
 
 {#snippet inputLabelSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">label</a>
-		</h2>
+		<LinkH2 href="/input#label" aria-label="label">label</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Input aria-labelledby="Demo input" label="Label" placeholder="Label" />

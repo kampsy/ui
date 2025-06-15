@@ -6,12 +6,13 @@
 	import Badge from '$lib/badge/badge.svelte';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { badgeSize, badgeVariants, badgeWithIcon } from '$lib/../docs/data/badge.js';
+	import { badgeSize, badgeVariants, badgeWithIcon, badgePill } from '$lib/../docs/data/badge.js';
 	import Shield from '$lib/icons/shield.svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Tabs, Text } from '$lib/index.js';
 	import { fade } from 'svelte/transition';
-	import { Webhook, Accessibility } from '$lib/icons/index.js';
+	import { Webhook, Accessibility, LogoSlackColor } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	const contHeading = {
 		title: 'badge',
@@ -75,11 +76,7 @@
 
 {#snippet variants()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			Variants
-		</h2>
+		<LinkH2 href="/badge#variants">Variants</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="flex flex-col gap-2">
@@ -135,11 +132,7 @@
 
 {#snippet size()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			Sizes
-		</h2>
+		<LinkH2 href="/badge#sizes">Sizes</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="flex flex-col gap-2">
@@ -163,11 +156,7 @@
 
 {#snippet icons()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			With Icons
-		</h2>
+		<LinkH2 href="/badge#with-icons">With Icons</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="flex flex-col gap-2">
@@ -424,6 +413,61 @@
 	</Row>
 {/snippet}
 
+<!-- The pill section of the documentation -->
+{#snippet pill()}
+	<Row>
+		<LinkH2 href="/badge#pill">Pill</LinkH2>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			A special link, not quite as prominent as a button, based on {@render roundedCode(
+				'<Badge />'
+			)} styling.
+		</p>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div class="flex flex-col gap-4">
+					<div class="flex items-center gap-2 capitalize">
+						<Badge href="#badge#pill" size="small" variant="pill" aria-label="large pill"
+							>label</Badge
+						>
+						<Badge href="#badge#pill" size="medium" variant="pill" aria-label="medium pill"
+							>label</Badge
+						>
+						<Badge href="#badge#pill" size="large" variant="pill" aria-label="small pill"
+							>label</Badge
+						>
+					</div>
+					<div class="flex items-center gap-2 capitalize">
+						<Badge
+							href="#badge#pill"
+							icon={LogoSlackColor}
+							size="small"
+							variant="pill"
+							aria-label="icon large pill">label</Badge
+						>
+						<Badge
+							href="#badge#pill"
+							icon={LogoSlackColor}
+							size="medium"
+							variant="pill"
+							aria-label="icon medium pill">label</Badge
+						>
+						<Badge
+							href="#badge#pill"
+							icon={LogoSlackColor}
+							size="large"
+							variant="pill"
+							aria-label="icon small pill">label</Badge
+						>
+					</div>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, badgePill)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet roundedCode(rct: string)}
 	<code
 		class="px-2 py-[3.6px] rounded-[6px] text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
@@ -447,7 +491,10 @@
 			This section provides guidance to support that effort.
 		</p>
 		{#each considerations as para, i}
-			<Text size={{sm:14, md: 16, lg:16}} class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900">
+			<Text
+				size={{ sm: 14, md: 16, lg: 16 }}
+				class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			>
 				{para}
 			</Text>
 		{/each}
@@ -472,6 +519,7 @@
 			{@render variants()}
 			{@render size()}
 			{@render icons()}
+			{@render pill()}
 		</section>
 	{/if}
 

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Component, Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLAttributes<HTMLSpanElement> {
+	interface Props extends HTMLAnchorAttributes {
 		class?: string;
 		variant?:
 			| 'gray'
@@ -21,11 +21,12 @@
 			| 'green-subtle'
 			| 'teal'
 			| 'teal-subtle'
-			| 'inverted';
+			| 'inverted'
+			| 'pill';
 		size?: 'small' | 'medium' | 'large';
 		icon?: Component | undefined;
 		children: Snippet;
-	};
+	}
 
 	let {
 		class: klass = '',
@@ -64,7 +65,8 @@
 		'teal-subtle':
 			'bg-kui-light-teal-300 text-kui-light-teal-900 dark:bg-kui-dark-teal-300 dark:text-kui-dark-teal-900',
 		inverted:
-			'bg-kui-light-gray-1000 text-kui-light-gray-100 dark:bg-kui-dark-gray-1000 dark:text-kui-dark-gray-100'
+			'bg-kui-light-gray-1000 text-kui-light-gray-100 dark:bg-kui-dark-gray-1000 dark:text-kui-dark-gray-100',
+		pill: 'cursor-pointer border border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100 '
 	};
 	let variantClass = $derived.by(() => {
 		return variantObj[variant];
@@ -114,9 +116,9 @@
 	{/if}
 {/snippet}
 
-<span class="flex items-center justify-center rounded-full {badgeClass} {klass}" {...rest} >
+<a class="flex items-center justify-center rounded-full {badgeClass} {klass}" {...rest}>
 	<span class="flex items-center {iconXGap}">
 		{@render iconSnip()}
 		{@render children()}
 	</span>
-</span>
+</a>

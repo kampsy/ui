@@ -46,19 +46,11 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'badge',
-				url: '/badge',
-				badge: {
-					name: 'updated',
-					variant: 'purple'
-				}
+				url: '/badge'
 			},
 			{
 				name: 'button',
-				url: '/button',
-				badge: {
-					name: 'updated',
-					variant: 'purple'
-				}
+				url: '/button'
 			},
 			{
 				name: 'calendar',
@@ -66,11 +58,7 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'checkbox',
-				url: '/checkbox',
-				badge: {
-					name: 'updated',
-					variant: 'amber'
-				}
+				url: '/checkbox'
 			},
 			{
 				name: 'choicebox',
@@ -78,11 +66,7 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'collapse',
-				url: '/collapse',
-				badge: {
-					name: 'updated',
-					variant: 'purple'
-				}
+				url: '/collapse'
 			},
 			{
 				name: 'description',
@@ -98,11 +82,7 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'menu',
-				url: '/menu',
-				badge: {
-					name: 'updated',
-					variant: 'amber'
-				}
+				url: '/menu'
 			},
 			{
 				name: 'modal',
@@ -115,6 +95,14 @@ export const asideData: Array<AsideT> = [
 			{
 				name: 'pagination',
 				url: '/pagination'
+			},
+			{
+				name: 'pill',
+				url: '/badge#pill',
+				badge: {
+					name: 'new',
+					variant: 'green'
+				}
 			},
 			{
 				name: 'progress',

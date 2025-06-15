@@ -11,12 +11,13 @@
 		errorDefault,
 		errorSize,
 		errorWithProp
-	} from '../../docs/data/error.js';
+	} from '$lib/../docs/data/error.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
-    <title>Error</title>
+	<title>Error</title>
 </svelte:head>
 
 {#snippet error()}
@@ -50,11 +51,7 @@
 
 {#snippet defaultErr()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/error#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -68,11 +65,7 @@
 
 {#snippet customLabel()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">custom label</a>
-		</h2>
+		<LinkH2 href="/error#custome-label" aria-label="custom-label">custom label</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -86,11 +79,7 @@
 
 {#snippet size()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">size</a>
-		</h2>
+		<LinkH2 href="/error#size" aria-label="size">size</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Error size="sm">This email is in use.</Error>
@@ -104,11 +93,9 @@
 
 {#snippet withErrorProp()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/error#with-an-error-property" aria-label="With an error property"
+			>With an error property</LinkH2
 		>
-			<a href="#size" id="default">With an error property</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Error
@@ -138,7 +125,7 @@
 	{@render defaultErr()}
 	{@render customLabel()}
 	{@render size()}
-    {@render withErrorProp()}
+	{@render withErrorProp()}
 	{@render prevAndNext()}
 {/snippet}
 

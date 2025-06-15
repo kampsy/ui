@@ -16,6 +16,7 @@
 	} from '../../docs/data/menu.js';
 	import { MoreHorizontal, Accessibility, Webhook } from '$lib/icons/index.js';
 	import { fade } from 'svelte/transition';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let selected = $state('implementation');
 </script>
@@ -69,11 +70,7 @@
 
 {#snippet defaultMenu()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/menu#default" aria-label="default">default</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -102,11 +99,7 @@
 
 {#snippet linkItem()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">link item</a>
-		</h2>
+		<LinkH2 href="/menu#link-item" aria-label="link item">link item</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -129,11 +122,7 @@
 
 {#snippet defaultPrefixAndSuffix()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Prefix and Suffix</a>
-		</h2>
+		<LinkH2 href="/menu#prefix-and-suffix" aria-label="prefix and suffix">prefix and suffix</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -189,11 +178,7 @@
 
 {#snippet alignment()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Menu Alignment</a>
-		</h2>
+		<LinkH2 href="/menu#menu-alignment" aria-label="menu alignment">menu alignment</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full flex justify-between gap-8">
