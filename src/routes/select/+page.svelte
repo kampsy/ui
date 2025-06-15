@@ -7,7 +7,8 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Select } from '$lib/index.js';
-	import { selectDefault, selectSize } from '../../docs/data/select.js';
+	import { selectDefault, selectSize } from '$lib/../docs/data/select.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let value = $state('');
 </script>
@@ -48,11 +49,7 @@
 
 {#snippet defaultSelect()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/select#default" aria-label="default">default</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -60,7 +57,7 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Select.Root bind:value class="w-full lg:w-auto" >
+				<Select.Root bind:value class="w-full lg:w-auto">
 					<Select.Trigger class="w-full lg:w-[200px]">
 						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
@@ -79,14 +76,10 @@
 
 {#snippet size()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">size</a>
-		</h2>
+		<LinkH2 href="/select#size" aria-label="size">size</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Select.Root size="small" bind:value class="w-full lg:w-auto" >
+				<Select.Root size="small" bind:value class="w-full lg:w-auto">
 					<Select.Trigger class="w-full lg:w-[200px]">
 						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
@@ -98,7 +91,7 @@
 					</Select.Content>
 				</Select.Root>
 
-				<Select.Root bind:value class="w-full lg:w-auto" >
+				<Select.Root bind:value class="w-full lg:w-auto">
 					<Select.Trigger class="w-full lg:w-[200px]">
 						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>
@@ -110,7 +103,7 @@
 					</Select.Content>
 				</Select.Root>
 
-				<Select.Root size="large" bind:value class="w-full lg:w-auto" >
+				<Select.Root size="large" bind:value class="w-full lg:w-auto">
 					<Select.Trigger class="w-full lg:w-[200px]">
 						<Select.Value placeholder="select a fruit" />
 					</Select.Trigger>

@@ -11,7 +11,8 @@
 		choiceboxDefault,
 		choiceboxDisabled,
 		choiceboxMultiselect
-	} from '../../docs/data/choicebox.js';
+	} from '$lib/../docs/data/choicebox.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let value: string | string[] = $state('');
 	let value2: string | string[] = $state([]);
@@ -51,11 +52,7 @@
 
 {#snippet defaultChoicebox()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/choicebox#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -77,11 +74,7 @@
 
 {#snippet multiselect()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">multiselect</a>
-		</h2>
+		<LinkH2 href="/choicebox#multiselect" aria-label="multiselect">multiselect</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -98,11 +91,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">disabled</a>
-		</h2>
+		<LinkH2 href="/choicebox#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-4">

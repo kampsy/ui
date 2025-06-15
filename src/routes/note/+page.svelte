@@ -17,6 +17,7 @@
 		noteCyan,
 		noteSecondary
 	} from '../../docs/data/note.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
@@ -53,11 +54,7 @@
 
 {#snippet defaultNote()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/note#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6 md:space-y-0 md:flex md:gap-6">
@@ -86,11 +83,7 @@
 
 {#snippet action()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">action</a>
-		</h2>
+		<LinkH2 href="/note#action" aria-label="action">action</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -113,11 +106,7 @@
 
 {#snippet success()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">success</a>
-		</h2>
+		<LinkH2 href="/note#success" aria-label="success">success</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -146,11 +135,7 @@
 
 {#snippet error()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">error</a>
-		</h2>
+		<LinkH2 href="/note#error" aria-label="error">error</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -177,11 +162,7 @@
 
 {#snippet warning()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">warning</a>
-		</h2>
+		<LinkH2 href="/note#warning" aria-label="warning">warning</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -210,11 +191,7 @@
 
 {#snippet secondary()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">secondary</a>
-		</h2>
+		<LinkH2 href="/note#secondary" aria-label="secondary">secondary</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -243,11 +220,7 @@
 
 {#snippet violet()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">violet</a>
-		</h2>
+		<LinkH2 href="/note#violet" aria-label="violet">violet</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -274,11 +247,7 @@
 
 {#snippet cyan()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#size" id="default">cyan</a>
-		</h2>
+		<LinkH2 href="/note#cyan" aria-label="cyan">cyan</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -303,16 +272,14 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">disabled</a>
-		</h2>
+		<LinkH2 href="/note#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
-					<Note action={actionSnip} fill type="warning">This note details a warning.</Note>
-					<Note action={actionSnip} fill type="warning"
+					<Note action={actionSnip} disabled fill type="warning" aria-label="warning"
+						>This note details a warning.</Note
+					>
+					<Note action={actionSnip} disabled fill type="warning"
 						>This filled note details some success information. Check <a
 							href="/#"
 							class="hover:underline">the documentation</a
@@ -344,6 +311,7 @@
 	{@render secondary()}
 	{@render violet()}
 	{@render cyan()}
+	<!-- {@render disabled()} -->
 	{@render prevAndNext()}
 {/snippet}
 

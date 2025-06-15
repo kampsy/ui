@@ -4,7 +4,7 @@
 	import { randomString } from '$lib/utils/random.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLAttributes<HTMLInputElement>  {
+	interface Props extends HTMLAttributes<HTMLInputElement> {
 		id?: string | undefined;
 		name?: string | undefined;
 		value?: string | undefined;
@@ -18,7 +18,7 @@
 		spellcheck?: boolean | undefined;
 		placeholder?: string | undefined;
 		disabled?: boolean | undefined;
-	};
+	}
 	let {
 		id = undefined,
 		name = undefined,
@@ -33,7 +33,7 @@
 		spellcheck = false,
 		placeholder = undefined,
 		disabled = false,
-		... rest
+		...rest
 	}: Props = $props();
 
 	// The focus and blur state of the input
@@ -59,21 +59,21 @@
 	// Show the ring when the input is focused
 	let ringClass = $derived.by(() => {
 		if (disabled) {
-			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400 
-			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600 
+			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400
+			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600
 			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
 		}
 		if (error) {
-			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-red-700 
-			dark:hover:border-kui-dark-red-700 ring-4 ring-kui-light-red-400 dark:ring-kui-dark-red-400 
+			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-red-700
+			dark:hover:border-kui-dark-red-700 ring-4 ring-kui-light-red-400 dark:ring-kui-dark-red-400
 			hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
 		}
 		if (hasRing) {
-			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400 
-            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700 
+			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400
+            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700
 			placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600`;
 		}
-		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 
+		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500
 		dark:hover:border-kui-dark-gray-500`;
 	});
 

@@ -16,6 +16,7 @@
 		textVariants
 	} from '../../docs/data/text.js';
 	import type { VariantOption } from '../../docs/ui/types.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	const variants: Array<VariantOption> = [
 		'heading-72',
@@ -81,11 +82,7 @@
 
 {#snippet sizeSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">size</a>
-		</h2>
+		<LinkH2 href="/text#size" aria-label="size">size</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-2">
@@ -106,11 +103,7 @@
 
 {#snippet responsiveSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">responsive</a>
-		</h2>
+		<LinkH2 href="/text#responsive" aria-label="responsive">responsive</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -124,11 +117,7 @@
 
 {#snippet variantSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Variants</a>
-		</h2>
+		<LinkH2 href="/text#variants" aria-label="variants">variants</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-2">
@@ -146,11 +135,9 @@
 
 {#snippet responsiveVariantSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/text#responsive-variants" aria-label="responsive-variants"
+			>responsive variants</LinkH2
 		>
-			<a href="#default" id="default">responsive Variant</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
@@ -169,11 +156,7 @@
 
 {#snippet modifiersSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Modifiers</a>
-		</h2>
+		<LinkH2 href="/text#modifiers" aria-label="modifiers">modifiers</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -190,17 +173,11 @@
 
 {#snippet truncateSnip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Truncate</a>
-		</h2>
+		<LinkH2 href="/text#truncate" aria-label="truncate">truncate</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
-					<Text size={16} class="max-w-[100px]" truncate>
-						The Evil Rabbit jumps.
-					</Text>
+					<Text size={16} class="max-w-[100px]" truncate>The Evil Rabbit jumps.</Text>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, textTruncate)}
@@ -224,7 +201,7 @@
 	{@render variantSnip()}
 	{@render responsiveVariantSnip()}
 	{@render modifiersSnip()}
-    {@render truncateSnip()}
+	{@render truncateSnip()}
 	{@render prevAndNext()}
 {/snippet}
 

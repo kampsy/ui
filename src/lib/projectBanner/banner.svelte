@@ -12,7 +12,7 @@
 			| undefined;
 		label?: string | Snippet | undefined;
 		variant?: 'gray' | 'warning' | 'error' | 'success';
-	};
+	}
 	let {
 		icon = undefined,
 		callToAction = undefined,
@@ -21,32 +21,32 @@
 	}: Props = $props();
 
 	const variantAsideObj = {
-		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 bg-kui-light-gray-100 
+		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 bg-kui-light-gray-100
 		dark:bg-kui-dark-gray-100 border-kui-light-gray-400 dark:border-kui-dark-gray-400`,
-		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 bg-kui-light-amber-100 
+		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 bg-kui-light-amber-100
 		dark:bg-kui-dark-amber-100 border-kui-light-amber-400 dark:border-kui-dark-amber-400`,
-		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 bg-kui-light-red-100 
+		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 bg-kui-light-red-100
 		dark:bg-kui-dark-red-100 border-kui-light-red-400 dark:border-kui-dark-red-400`,
-		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 bg-kui-light-blue-100 
+		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 bg-kui-light-blue-100
 		dark:bg-kui-dark-blue-100 border-kui-light-blue-400 dark:border-kui-dark-blue-400`
 	};
 
 	const variantCallToActionObj = {
-		gray: `hover:text-kui-light-gray-900 dark:hover:text-kui-dark-gray-900 
-		hover:decoration-kui-light-gray-500 dark:hover:decoration-kui-dark-gray-500 
-		decoration-kui-light-gray-500 dark:decoration-kui-dark-gray-500 text-kui-light-gray-1000 
+		gray: `hover:text-kui-light-gray-900 dark:hover:text-kui-dark-gray-900
+		hover:decoration-kui-light-gray-500 dark:hover:decoration-kui-dark-gray-500
+		decoration-kui-light-gray-500 dark:decoration-kui-dark-gray-500 text-kui-light-gray-1000
 		dark:text-kui-dark-gray-1000`,
-		warning: `hover:text-kui-light-amber-900 dark:hover:text-kui-dark-amber-900 
-		hover:decoration-kui-light-amber-500 dark:hover:decoration-kui-dark-amber-500 
-		decoration-kui-light-amber-400 dark:decoration-kui-dark-amber-400 text-kui-light-amber-1000 
+		warning: `hover:text-kui-light-amber-900 dark:hover:text-kui-dark-amber-900
+		hover:decoration-kui-light-amber-500 dark:hover:decoration-kui-dark-amber-500
+		decoration-kui-light-amber-400 dark:decoration-kui-dark-amber-400 text-kui-light-amber-1000
 		dark:text-kui-dark-amber-1000`,
-		error: `hover:text-kui-light-red-900 dark:hover:text-kui-dark-red-900 
-		hover:decoration-kui-light-red-500 dark:hover:decoration-kui-dark-red-500 
-		decoration-kui-light-red-400 dark:decoration-kui-dark-red-400 text-kui-light-red-1000 
+		error: `hover:text-kui-light-red-900 dark:hover:text-kui-dark-red-900
+		hover:decoration-kui-light-red-500 dark:hover:decoration-kui-dark-red-500
+		decoration-kui-light-red-400 dark:decoration-kui-dark-red-400 text-kui-light-red-1000
 		dark:text-kui-dark-red-1000`,
-		success: `hover:text-kui-light-blue-900 dark:hover:text-kui-dark-blue-900 
-		hover:decoration-kui-light-blue-500 dark:hover:decoration-kui-dark-blue-500 
-		decoration-kui-light-blue-400 dark:decoration-kui-dark-blue-400 text-kui-light-blue-1000 
+		success: `hover:text-kui-light-blue-900 dark:hover:text-kui-dark-blue-900
+		hover:decoration-kui-light-blue-500 dark:hover:decoration-kui-dark-blue-500
+		decoration-kui-light-blue-400 dark:decoration-kui-dark-blue-400 text-kui-light-blue-1000
 		dark:text-kui-dark-blue-1000`
 	};
 
@@ -79,7 +79,7 @@
 			</p>
 		{:else if typeof label === 'function'}
 			<p class="text-sm {labelClass}">
-				{@render label()}
+				{@render label?.()}
 			</p>
 		{/if}
 	{/if}

@@ -7,8 +7,14 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Toggle } from '$lib/index.js';
-	import { toggleCustomColors, toggleDefault, toggleSizes, toggleWithLabel } from '../../docs/data/toggle.js';
+	import {
+		toggleCustomColors,
+		toggleDefault,
+		toggleSizes,
+		toggleWithLabel
+	} from '../../docs/data/toggle.js';
 	import { LockClosedSmall, LockOpenSmall } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let checked = $state(false);
 	let checked2 = $state(true);
@@ -52,11 +58,7 @@
 
 {#snippet defaultToggle()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/toggle#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="space-y-4">
@@ -75,11 +77,7 @@
 
 {#snippet sizes()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">sizes</a>
-		</h2>
+		<LinkH2 href="/toggle#sizes" aria-label="sizes">sizes</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full flex">
@@ -98,11 +96,7 @@
 
 {#snippet customColors()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">custom color</a>
-		</h2>
+		<LinkH2 href="/toggle#custom-color" aria-label="custom color">custom color</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-4">
@@ -184,21 +178,17 @@
 
 {#snippet withLabel()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">with label</a>
-		</h2>
+		<LinkH2 href="/toggle#with-label" aria-label="with label">with label</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full space-y-4">
-					<div class="w-full flex items-center gap-6">
+				<div class="w-full space-y-6">
+					<div class="w-full flex items-center gap-4">
 						<Toggle aria-label="Enable Firewall" bind:checked={label}>Enable Firewall</Toggle>
 						<Toggle aria-label="Enable Firewall" bind:checked={label} direction="switch-first"
 							>Enable Firewall</Toggle
 						>
 					</div>
-					<div class="w-full flex items-center gap-6">
+					<div class="w-full flex items-center gap-4">
 						<Toggle aria-label="Enable Firewall" size="large" bind:checked={label}
 							>Enable Firewall</Toggle
 						>
@@ -209,7 +199,7 @@
 							bind:checked={label}>Enable Firewall</Toggle
 						>
 					</div>
-					<div class="w-full flex items-center gap-6">
+					<div class="w-full flex items-center gap-4">
 						<Toggle
 							aria-label="Enable Firewall"
 							bind:checked={label}
@@ -229,7 +219,7 @@
 							}}>Enable Firewall</Toggle
 						>
 					</div>
-					<div class="w-full flex items-center gap-6">
+					<div class="w-full flex items-center gap-4">
 						<Toggle
 							aria-label="Enable Firewall"
 							size="large"

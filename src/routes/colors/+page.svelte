@@ -7,6 +7,7 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import Text from '$lib/text/text.svelte';
 	import Tooltip from '$lib/tooltip/tooltip.svelte';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	import {
 		gray,
@@ -52,9 +53,9 @@
 		</div>
 
 		<ul class="flex w-full gap-1 md:gap-2">
-			{#each colorList as item, index}
+			{#each colorList as item}
 				<li class="w-full max-w-[68px]">
-					<Tooltip position="top" text={item} class="w-full h-full">
+					<Tooltip position="top" text={item}>
 						<div class="w-full h-full flex items-center">
 							<button
 								aria-label={item}
@@ -70,11 +71,7 @@
 
 {#snippet scales()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			size
-		</h2>
+		<LinkH2 href="/colors#size" aria-label="size">size</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -142,11 +139,7 @@
 
 {#snippet backgrounds()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			Backgrounds
-		</h2>
+		<LinkH2 href="/colors#backgrounds" aria-label="backgrounds">backgrounds</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -250,11 +243,10 @@
 
 {#snippet compactBackgrounds()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2
+			href="/colors#colors-1–3:-component-backgrounds"
+			aria-label="Colors 1–3: Component Backgrounds">Colors 1–3: Component Backgrounds</LinkH2
 		>
-			Colors 1–3: Component Backgrounds
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -343,11 +335,9 @@
 
 {#snippet borders()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/colors#colors-4-6:-borders" aria-label="Colors 4-6: Borders"
+			>colors 4-6: borders</LinkH2
 		>
-			Colors 4-6: Borders
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -435,11 +425,11 @@
 
 {#snippet contrast()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2
+			href="/colors#colors-7-8:-high-contrast-backgrounds"
+			aria-label="Colors 7-8: High Contrast Backgrounds"
+			>Colors 7-8: High Contrast Backgrounds</LinkH2
 		>
-			Colors 7-8: High Contrast Backgrounds
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -493,21 +483,18 @@
 				>
 			</div>
 		</div>
-
 	</Row>
 {/snippet}
 
 {#snippet textIcon()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/colors#colors-9-10:-text-and-icons" aria-label="Colors 9-10: Text and Icons"
+			>Colors 9-10: Text and Icons</LinkH2
 		>
-		Colors 9-10: Text and Icons
-		</h2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-		These two colors are designed for accessible text and icons.
+			These two colors are designed for accessible text and icons.
 		</p>
 
 		<!---->
@@ -557,7 +544,6 @@
 				>
 			</div>
 		</div>
-
 	</Row>
 {/snippet}
 

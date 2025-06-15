@@ -14,9 +14,9 @@
 		switchIcon,
 		switchSize,
 		switchTooltip
-
 	} from '../../docs/data/switch.js';
 	import { GridSquare, ListUnordered } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let value = $state('');
 </script>
@@ -57,11 +57,7 @@
 
 {#snippet defaultSwitch()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/switch#default" aria-label="default">default</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -81,11 +77,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">disabled</a>
-		</h2>
+		<LinkH2 href="/switch#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value>
@@ -100,11 +92,7 @@
 
 {#snippet sizes()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">sizes</a>
-		</h2>
+		<LinkH2 href="/switch#sizes" aria-label="sizes">sizes</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value name="size-small" size="small">
@@ -129,11 +117,7 @@
 
 {#snippet fullWidth()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">full width</a>
-		</h2>
+		<LinkH2 href="/switch#full-width" aria-label="full-width">full width</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value name="size-small" size="large" fullWidth>
@@ -148,11 +132,7 @@
 
 {#snippet tooltip()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">tooltip</a>
-		</h2>
+		<LinkH2 href="/switch#tooltip" aria-label="tooltip">tooltip</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value>
@@ -171,11 +151,7 @@
 
 {#snippet icon()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#customlabel" id="default">icon</a>
-		</h2>
+		<LinkH2 href="/switch#icon" aria-label="icon">icon</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Switch.Root bind:value name="size-small" size="small">

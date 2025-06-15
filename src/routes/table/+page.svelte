@@ -6,8 +6,14 @@
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
 	import { Table } from '$lib/index.js';
-	import { tableDefault, tableStriped, tableInteractive, tableFull } from '$lib/../docs/data/table.js';
+	import {
+		tableDefault,
+		tableStriped,
+		tableInteractive,
+		tableFull
+	} from '$lib/../docs/data/table.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	const formatter = new Intl.NumberFormat('en-US', {
 		style: 'currency',
@@ -93,11 +99,7 @@
 
 {#snippet defaultTable()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Basic table</a>
-		</h2>
+		<LinkH2 href="/table#basic-table" aria-label="basic-table">basic table</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -136,11 +138,7 @@
 
 {#snippet striped()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">striped table</a>
-		</h2>
+		<LinkH2 href="/table#striped-table" aria-label="striped-table">striped table</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -179,11 +177,8 @@
 
 {#snippet interactive()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/table#interactive-table" aria-label="interactive-table">interactive table</LinkH2
 		>
-			<a href="#default" id="default">interactive table</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -222,11 +217,9 @@
 
 {#snippet full()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/table#full-featured-table" aria-label="full-featured-table"
+			>full featured table</LinkH2
 		>
-			<a href="#default" id="default">full featured table</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
@@ -257,10 +250,15 @@
 						</Table.Body>
 						<Table.Footer>
 							<Table.Row>
-								<Table.Cell class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium">Subtotal</Table.Cell>
+								<Table.Cell
+									class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium"
+									>Subtotal</Table.Cell
+								>
 								<Table.Cell></Table.Cell>
 								<Table.Cell></Table.Cell>
-								<Table.Cell class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium">
+								<Table.Cell
+									class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium"
+								>
 									{formatCurrency(items.reduce((sum, val) => sum + val.charge, 0))}
 								</Table.Cell>
 							</Table.Row>

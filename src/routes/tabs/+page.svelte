@@ -15,6 +15,7 @@
 		tabsWithIcons
 	} from '../../docs/data/tabs.js';
 	import { LogoBitbucketColor, LogoGithub, LogoGitlab } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let selected = $state('apple');
 	let tabDisabled = $state('apple');
@@ -59,11 +60,7 @@
 
 {#snippet defaultTabs()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/tabs#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tabs
@@ -82,11 +79,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Disabled</a>
-		</h2>
+		<LinkH2 href="/tabs#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tabs
@@ -106,11 +99,9 @@
 
 {#snippet disableSpecific()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/tabs#disable-specific-tabs" aria-label="disable specific tabs"
+			>disable specific tabs</LinkH2
 		>
-			<a href="#default" id="default">Disable specific tabs</a>
-		</h2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tabs
@@ -129,11 +120,7 @@
 
 {#snippet withIcons()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">with icons</a>
-		</h2>
+		<LinkH2 href="/tabs#with-icons" aria-label="with-icons">with icons</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tabs
@@ -152,11 +139,7 @@
 
 {#snippet secondary()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">secondary</a>
-		</h2>
+		<LinkH2 href="/tabs#secondary" aria-label="secondary">secondary</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Tabs

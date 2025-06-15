@@ -14,6 +14,7 @@
 		modalSticky
 	} from '../../docs/data/modal.js';
 	import { ArrowLeft } from '$lib/icons/index.js';
+	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let active = $state(false);
 	let activeSticky = $state(false);
@@ -55,11 +56,7 @@
 
 {#snippet defaultModal()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">default</a>
-		</h2>
+		<LinkH2 href="/modal#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -91,11 +88,7 @@
 
 {#snippet sticky()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">sticky</a>
-		</h2>
+		<LinkH2 href="/modal#sticky" aria-label="sticky">sticky</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -133,11 +126,7 @@
 
 {#snippet singleButton()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Single Button</a>
-		</h2>
+		<LinkH2 href="/modal#single-button" aria-label="single-button">single button</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -168,11 +157,7 @@
 
 {#snippet disabled()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
-		>
-			<a href="#default" id="default">Disabled actions</a>
-		</h2>
+		<LinkH2 href="/modal#disabled-actions" aria-label="disabled-actions">disabled actions</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
