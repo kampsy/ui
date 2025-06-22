@@ -59,7 +59,7 @@
 						<div class="w-full h-full flex items-center">
 							<button
 								aria-label={item}
-								class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-1000 dark:border-kui-dark-gray-500 rounded {item}"
+								class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded {item}"
 							></button>
 						</div>
 					</Tooltip>
@@ -100,7 +100,7 @@
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-200 dark:border-kui-dark-gray-200 bg-kui-light-bg rounded dark:bg-kui-dark-bg"
+											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 bg-kui-light-bg rounded dark:bg-kui-dark-bg"
 										></button>
 									</div>
 								</Tooltip>
@@ -114,7 +114,7 @@
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray alpha"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-200 dark:border-kui-dark-gray-200 rounded bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
+											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
 										></button>
 									</div>
 								</Tooltip>
@@ -159,7 +159,7 @@
 							class="w-full h-full"
 						>
 							<div
-								class="w-4 h-4 border border-kui-light-gray-400 dark:border-kui-dark-gray-400 rounded-full bg-kui-light-bg dark:bg-kui-dark-bg"
+								class="w-4 h-4 border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-full bg-kui-light-bg dark:bg-kui-dark-bg"
 							></div>
 						</Tooltip>
 					</div>
@@ -182,7 +182,7 @@
 							class="w-full h-full"
 						>
 							<div
-								class="w-4 h-4 border border-kui-light-gray-400 dark:border-kui-dark-gray-400 rounded-full bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
+								class="w-4 h-4 border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-full bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
 							></div>
 						</Tooltip>
 					</div>
@@ -198,13 +198,13 @@
 
 		<!---->
 		<div
-			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[700px] w-full flex-col border border-kui-light-gray-400 dark:border-kui-dark-gray-400 md:h-[412px] md:flex-row"
+			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[700px] w-full flex-col border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-[412px] md:flex-row"
 		>
 			<div
-				class="flex h-[50%] items-center justify-center border-r border-kui-light-gray-400 dark:border-kui-dark-gray-400 md:h-[100%] md:w-[50%]"
+				class="flex h-[50%] items-center justify-center border-r border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-[100%] md:w-[50%]"
 			>
 				<div
-					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400"
+					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
 				>
 					<div
 						class="bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100 flex h-6 w-6 items-center justify-center rounded-full text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900"
@@ -223,7 +223,7 @@
 				class="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary flex h-[50%] items-center justify-center md:h-[100%] md:w-[50%]"
 			>
 				<div
-					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400"
+					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
 				>
 					<div
 						class="bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100 flex h-6 w-6 items-center justify-center rounded-full text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900"
@@ -351,7 +351,7 @@
 					<div class="w-4 h-4 cursor-pointer">
 						<Tooltip
 							position="right"
-							text="border-kui-light-gray-400 dark:border-kui-dark-gray-400"
+							text="border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
 							class="w-full h-full"
 						>
 							<div
@@ -416,7 +416,7 @@
 
 		<!--Box-->
 		<div
-			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[136px] w-full items-center justify-center border border-kui-light-gray-400 dark:border-kui-dark-gray-400"
+			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[136px] w-full items-center justify-center border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
 		>
 			<Button variant="secondary" class="min-w-[160px]">New Project</Button>
 		</div>
