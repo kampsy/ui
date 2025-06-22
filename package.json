@@ -16,7 +16,7 @@
 		"url": "https://github.com/kampsy/ui/issues"
 	},
 	"scripts": {
-		"dev": "vite dev --port 3000",
+		"dev": "vite dev --port 3100",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
