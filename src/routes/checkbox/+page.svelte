@@ -120,8 +120,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'collapse', href: '/collapse' }}
-			next={{ title: 'error', href: '/error' }}
+			previous={{ title: 'calendar', href: '/calendar' }}
+			next={{ title: 'choicebox', href: '/choicebox' }}
 		/>
 	</Row>
 {/snippet}
