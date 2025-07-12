@@ -7,10 +7,11 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Select } from '$lib/index.js';
-	import { selectDefault, selectSize } from '$lib/../docs/data/select.js';
+	import { selectDefault, selectSize, selectError } from '$lib/../docs/data/select.js';
 	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let value = $state('');
+	let error = $state('Please select a value.');
 </script>
 
 <svelte:head>
@@ -120,6 +121,52 @@
 	</Row>
 {/snippet}
 
+{#snippet errorSnip()}
+	<Row>
+		<LinkH2 href="/select#size" aria-label="size">error</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Select.Root bind:error size="small" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:error bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:error size="large" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+			{/snippet}
+			{@render demoAndCode(demo, selectError)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -133,6 +180,7 @@
 	{@render select()}
 	{@render defaultSelect()}
 	{@render size()}
+	{@render errorSnip()}
 	{@render prevAndNext()}
 {/snippet}
 

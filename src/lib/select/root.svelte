@@ -6,15 +6,22 @@
 
 	interface Props {
 		value?: string;
+		error?: string;
 		size?: 'tiny' | 'small' | 'medium' | 'large' | undefined;
 		class?: string;
 		children: Snippet;
-	};
-	let { value = $bindable(''), size = 'medium', class: klass = '', children }: Props = $props();
-
+	}
+	let {
+		value = $bindable(''),
+		error = $bindable(''),
+		size = 'medium',
+		class: klass = '',
+		children
+	}: Props = $props();
 
 	const rootState = createRootState({
 		isMobile: false,
+		error,
 		selected: '',
 		isActive: false,
 		size,
@@ -43,6 +50,17 @@
 				rootState.setIsMobile(false);
 			}
 		});
+
+		// when the esc key is pressed
+		window.addEventListener('keydown', (event: KeyboardEvent) => {
+			if (event.code == 'Escape') {
+				rootState.setIsActive(false);
+				event.stopPropagation();
+			}
+		});
+
+		// When isError is changed
+		rootState.setIsError(error);
 	});
 </script>
 
@@ -55,6 +73,8 @@
 	></div>
 {/if}
 
-<div use:clickOutside={() => rootState.setIsActive(false)} class="relative inline-block {klass}">
-	{@render children()}
+<div>
+	<div use:clickOutside={() => rootState.setIsActive(false)} class="relative inline-block {klass}">
+		{@render children()}
+	</div>
 </div>
