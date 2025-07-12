@@ -73,6 +73,14 @@ export const asideData: Array<AsideT> = [
 				url: '/description'
 			},
 			{
+				name: 'empty state',
+				url: '/empty-state',
+				badge: {
+					name: 'new',
+					variant: 'green'
+				}
+			},
+			{
 				name: 'error',
 				url: '/error'
 			},
@@ -98,11 +106,7 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'pill',
-				url: '/badge#pill',
-				badge: {
-					name: 'new',
-					variant: 'green'
-				}
+				url: '/badge#pill'
 			},
 			{
 				name: 'progress',
