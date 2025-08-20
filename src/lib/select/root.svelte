@@ -3,10 +3,12 @@
 	import { setContext, type Snippet } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { createRootState } from './root.svelte.js';
+	import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLAttributes<HTMLSelectElement> {
 		value?: string;
 		error?: string;
+		loading?: boolean;
 		size?: 'tiny' | 'small' | 'medium' | 'large' | undefined;
 		class?: string;
 		children: Snippet;
@@ -14,6 +16,7 @@
 	let {
 		value = $bindable(''),
 		error = $bindable(''),
+		loading = $bindable(false),
 		size = 'medium',
 		class: klass = '',
 		children
@@ -22,10 +25,11 @@
 	const rootState = createRootState({
 		isMobile: false,
 		error,
+		loading,
 		selected: '',
 		isActive: false,
 		size,
-		contentPosition: 'top-[112%',
+		contentPosition: 'top-[112%]',
 		transY: -10
 	});
 
@@ -59,8 +63,11 @@
 			}
 		});
 
-		// When isError is changed
-		rootState.setIsError(error);
+		// When error is changed
+		rootState.setError(error);
+
+		// When loading is changed
+		rootState.setLoading(loading);
 	});
 </script>
 

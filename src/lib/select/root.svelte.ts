@@ -2,6 +2,7 @@
  * @param {Object} initial - Initial state Select.Root.
  * @param {boolean} initial.isMobile - Whether the device is mobile.
  * @param {string} initial.error - Error state.
+ * @param {boolean} initial.loading - Loading state.
  * @param {string} initial.selected - Selected value.
  * @param {boolean} initial.isActive - Whether the select is active.
  * @param {string} initial.contentPosition - Content position.
@@ -12,6 +13,7 @@
 export function createRootState(initial: {
 	isMobile: boolean;
 	error: string;
+	loading: boolean;
 	selected: string;
 	isActive: boolean;
 	contentPosition: string;
@@ -19,7 +21,8 @@ export function createRootState(initial: {
 	transY: number;
 }) {
 	let isMobile = $state(initial.isMobile);
-	let isError = $state(initial.error);
+	let error = $state(initial.error);
+	let loading = $state(initial.loading);
 	let selected = $state(initial.selected);
 	let isActive = $state(initial.isActive);
 	let contentPosition = $state(initial.contentPosition);
@@ -31,11 +34,17 @@ export function createRootState(initial: {
 	function setIsMobile(value: boolean) {
 		isMobile = value;
 	}
-	function getIsError() {
-		return isError;
+	function getError() {
+		return error;
 	}
-	function setIsError(value: string) {
-		isError = value;
+	function setError(value: string) {
+		error = value;
+	}
+	function getLoading() {
+		return loading;
+	}
+	function setLoading(value: boolean) {
+		loading = value;
 	}
 	function getSelected() {
 		return selected;
@@ -69,8 +78,10 @@ export function createRootState(initial: {
 		size: initial.size,
 		getIsMobile,
 		setIsMobile,
-		getIsError,
-		setIsError,
+		getError,
+		setError,
+		getLoading,
+		setLoading,
 		getSelected,
 		setSelected,
 		getIsActive,

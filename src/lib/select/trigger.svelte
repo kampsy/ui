@@ -10,9 +10,10 @@
 
 	// Get the state of the select from the context
 	const rootState = getContext<{
-		getIsError: () => string;
+		getError: () => string;
 		size: 'tiny' | 'small' | 'medium' | 'large';
 		getIsActive: () => boolean;
+		getLoading: () => boolean;
 		setIsActive: (value: boolean) => void;
 		setContentPosition: (value: string) => void;
 		setTransY: (value: number) => void;
@@ -48,18 +49,22 @@
 	});
 
 	let ringClass = $derived.by(() => {
-		if (rootState.getIsError()) {
+		if (rootState.getError()) {
 			return `bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-red-700 dark:border-kui-dark-red-700
-			hover:border-kui-light-red-700 dark:hover:border-kui-dark-red-700 ring ring-kui-light-red-400
-			dark:ring-kui-dark-red-400 hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
+			hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 ring ring-kui-light-red-400
+			dark:ring-kui-dark-red-400 hover:ring-0 dark:hover:ring-0`;
 		}
 
 		return `bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400
 		hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500`;
 	});
 
+	let cursorClass = $derived.by(() => {
+		return rootState.getLoading() ? 'cursor-not-allowed' : 'cursor-auto';
+	});
+
 	let triggerClass = $derived.by(() => {
-		return `${sizeClass}  ${ringClass}`;
+		return `${sizeClass}  ${ringClass} ${cursorClass}`;
 	});
 
 	// The size of the error text
@@ -75,20 +80,17 @@
 	});
 </script>
 
-<button
-	onclick={toogle}
-	class="group transition-all {triggerClass} flex items-center justify-between rounded-[6px] {klass} "
->
+<button onclick={toogle} disabled={rootState.getLoading()} class="group transition-all {triggerClass} rounded-[6px] {klass} ">
 	{@render children()}
 </button>
-{#if rootState.getIsError()}
+{#if rootState.getError()}
 	<div class="mt-[8px]">
 		<div class="flex items-center gap-[8px]">
 			<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 				<Error />
 			</div>
 			<div class="font-medium {errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">
-				{rootState.getIsError()}
+				{rootState.getError()}
 			</div>
 		</div>
 	</div>
