@@ -100,7 +100,7 @@
 
 {#snippet blank()}
 	<Row>
-		<LinkH2 href="/error#default" aria-label="default">blabk state</LinkH2>
+		<LinkH2 href="/error#default" aria-label="default">blank state</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>

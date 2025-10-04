@@ -6,4 +6,8 @@ import { Spinner } from 'kampsy-ui';
 export const spinnerCustom = `
 import { Spinner } from 'kampsy-ui';
 
-<Spinner size={30} />`;
+<div class="flex items-center gap-8">
+	<Spinner size={12} />
+	<Spinner size={32} />
+	<Spinner size={40} />
+</div>`;

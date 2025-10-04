@@ -62,7 +62,11 @@
 		<LinkH2 href="/spinner#custom-size" aria-label="custom-size">custom size</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Spinner size={30} />
+				<div class="flex items-center gap-8">
+					<Spinner size={12} />
+					<Spinner size={32} />
+					<Spinner size={40} />
+				</div>
 			{/snippet}
 			{@render demoAndCode(demo, spinnerCustom)}
 		</div>
