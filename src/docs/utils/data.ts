@@ -66,7 +66,11 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'collapse',
-				url: '/collapse'
+				url: '/collapse',
+				badge: {
+					name: 'updated',
+					variant: 'purple'
+				}
 			},
 			{
 				name: 'description',
@@ -77,7 +81,7 @@ export const asideData: Array<AsideT> = [
 				url: '/empty-state',
 				badge: {
 					name: 'new',
-					variant: 'green'
+					variant: 'blue'
 				}
 			},
 			{
@@ -118,7 +122,11 @@ export const asideData: Array<AsideT> = [
 			},
 			{
 				name: 'select',
-				url: '/select'
+				url: '/select',
+				badge: {
+					name: 'updated',
+					variant: 'purple'
+				}
 			},
 			{
 				name: 'show more',

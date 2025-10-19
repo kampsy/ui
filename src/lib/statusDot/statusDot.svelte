@@ -6,11 +6,11 @@
 	let { label = false, state = 'QUEUED' }: Props = $props();
 
 	const stateObj = {
-		QUEUED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600',
+		QUEUED: 'bg-kui-light-gray-400 dark:bg-kui-dark-gray-400',
 		BUILDING: 'bg-kui-light-amber-600 dark:bg-kui-dark-amber-600',
 		ERROR: 'bg-kui-light-red-600 dark:bg-kui-dark-red-600',
 		READY: 'bg-kui-light-green-600 dark:bg-kui-dark-green-600',
-		CANCELED: 'bg-kui-light-gray-600 dark:bg-kui-dark-gray-600'
+		CANCELED: 'bg-kui-light-gray-400 dark:bg-kui-dark-gray-400'
 	};
 </script>
 

@@ -13,8 +13,6 @@
 
 	const collapseState = createCollapseState({ multiple: multiple, item: []});
 
-	$inspect(collapseState.getItem(), collapseState.getMultiple());
-
 	setContext('collapse', collapseState);
 </script>
 
