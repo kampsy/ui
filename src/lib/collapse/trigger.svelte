@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ChevronDownSmall } from '$lib/icons/index.js';
+	import { ChevronRight } from '$lib/icons/index.js';
 	import { getContext, type Snippet } from 'svelte';
 	import type { HTMLButtonAttributes } from 'svelte/elements';
 
@@ -8,7 +8,13 @@
 	}
 	let { children, ...rest }: Props = $props();
 
-	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
+	let collapseItem = getContext<{
+		getMultiple: () => boolean;
+		getItem: () => Array<string>;
+		setItem: (value: string) => void;
+		deleteItem: (value: string) => void;
+		clearItems: () => void;
+	}>('collapse');
 
 	let { size, value, defaultExpanded } = getContext<{
 		size: 'small' | 'large';
@@ -16,16 +22,13 @@
 		defaultExpanded: boolean;
 	}>('collapseItem');
 
-	$effect(() => {
-		// If default expanded is true, then set the collapseItem to the value
-		if (defaultExpanded) {
-			collapseItem.set(value);
-		}
-	});
+	if (defaultExpanded) {
+		collapseItem.setItem(value);
+	}
 
 	let rotate = $derived.by(() => {
-		if (value == collapseItem.get()) {
-			return '-rotate-180';
+		if (collapseItem.getItem().includes(value)) {
+			return 'rotate-90';
 		}
 		return '';
 	});
@@ -33,7 +36,7 @@
 	// accessibility if its true then set aria-expanded to true else false
 	let button: HTMLButtonElement = $state<any>();
 	$effect(() => {
-		if (value == collapseItem.get()) {
+		if (collapseItem.getItem().includes(value)) {
 			button.setAttribute('aria-expanded', 'true');
 		} else {
 			button.setAttribute('aria-expanded', 'false');
@@ -56,15 +59,27 @@
 		return textObj[size];
 	});
 
-	const onclick = () => {
-		if (collapseItem.get() != '' && value != '') {
-			if (collapseItem.get() === value) {
-				collapseItem.set('');
+	const onclick = (): void => {
+		const items = collapseItem.getItem();
+		const multiple = collapseItem.getMultiple();
+
+		if (!value) return;
+
+		if (multiple) {
+			if (items.includes(value)) {
+				collapseItem.deleteItem(value);
 			} else {
-				collapseItem.set(value);
+				collapseItem.setItem(value);
 			}
+			return;
+		}
+
+		// single-select behaviour: toggle off if selected, otherwise clear and select the value
+		if (items.includes(value)) {
+			collapseItem.clearItems();
 		} else {
-			collapseItem.set(value);
+			collapseItem.clearItems();
+			collapseItem.setItem(value);
 		}
 	};
 </script>
@@ -85,7 +100,7 @@
 			<div
 				class="w-[16px] h-[16px] {rotate} transform-gpu duration-200 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 			>
-				<ChevronDownSmall />
+				<ChevronRight />
 			</div>
 		</div>
 	</div>

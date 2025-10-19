@@ -10,7 +10,10 @@
 
 	let { size, value } = getContext<{ size: 'small' | 'large'; value: string }>('collapseItem');
 
-	let collapseItem = getContext<{ get: () => string; set: (value: string) => void }>('collapse');
+	let collapseItem = getContext<{ 
+		getItem: () => string; 
+		setItem: (value: string) => void 
+	}>('collapse');
 
 	let isActive = $state(false);
 
@@ -23,7 +26,7 @@
 	});
 
 	$effect.pre(() => {
-		if (collapseItem.get() == value) {
+		if (collapseItem.getItem().includes(value)) {
 			isActive = true;
 		} else {
 			isActive = false;

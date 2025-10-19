@@ -5,13 +5,18 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import { collapseDefault, collapseExpanded, collapseSize } from '../../docs/data/collapse.js';
+	import { collapseDefault, collapseExpanded, collapseMultiple , collapseSize } from '../../docs/data/collapse.js';
 	import { Collapse, Pagination, Tabs, Text } from '$lib/index.js';
 	import { fade } from 'svelte/transition';
 	import { Webhook, Accessibility } from '$lib/icons/index.js';
 	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let selected = $state('implementation');
+
+	const questions = [
+		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+		'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+	];
 </script>
 
 <svelte:head>
@@ -65,7 +70,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>
-					<Collapse.Item value="tab1">
+					<Collapse.Item value="1">
 						<Collapse.Trigger
 							role="heading"
 							aria-level={3}
@@ -74,12 +79,10 @@
 							aria-expanded="false">Question A</Collapse.Trigger
 						>
 						<Collapse.Content id="tab1-section" aria-hidden="true" aria-labelledby="tab1">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							{questions[0]}
 						</Collapse.Content>
 					</Collapse.Item>
-					<Collapse.Item value="tab2">
+					<Collapse.Item value="2">
 						<Collapse.Trigger
 							role="heading"
 							aria-level={3}
@@ -88,9 +91,7 @@
 							aria-expanded="false">Question B</Collapse.Trigger
 						>
 						<Collapse.Content id="tab2-section" aria-hidden="true" aria-labelledby="tab2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							{questions[1]}
 						</Collapse.Content>
 					</Collapse.Item>
 				</Collapse.Root>
@@ -106,7 +107,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>
-					<Collapse.Item value="tab1">
+					<Collapse.Item value="1">
 						<Collapse.Trigger
 							role="heading"
 							aria-level={3}
@@ -115,12 +116,10 @@
 							aria-expanded="false">Question A</Collapse.Trigger
 						>
 						<Collapse.Content id="tab2-section" aria-hidden="true" aria-labelledby="tab2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							{questions[0]}
 						</Collapse.Content>
 					</Collapse.Item>
-					<Collapse.Item defaultExpanded value="tab2">
+					<Collapse.Item defaultExpanded value="2">
 						<Collapse.Trigger
 							role="heading"
 							aria-level={3}
@@ -129,14 +128,49 @@
 							aria-expanded="true">Question B</Collapse.Trigger
 						>
 						<Collapse.Content id="tab2-section" aria-hidden="false" aria-labelledby="tab2">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							{questions[1]}
 						</Collapse.Content>
 					</Collapse.Item>
 				</Collapse.Root>
 			{/snippet}
 			{@render demoAndCode(demo, collapseExpanded)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet multiple()}
+	<Row>
+		<LinkH2 href="/collapse#multiple" aria-label="multiple">multiple</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Collapse.Root multiple>
+					<Collapse.Item value="1">
+						<Collapse.Trigger
+							role="heading"
+							aria-level={3}
+							type="button"
+							aria-controls="tab1-section"
+							aria-expanded="false">Question A</Collapse.Trigger
+						>
+						<Collapse.Content id="tab2-section" aria-hidden="true" aria-labelledby="tab2">
+							{questions[0]}
+						</Collapse.Content>
+					</Collapse.Item>
+					<Collapse.Item value="2">
+						<Collapse.Trigger
+							role="heading"
+							aria-level={3}
+							type="button"
+							aria-controls="tab2-section"
+							aria-expanded="true">Question B</Collapse.Trigger
+						>
+						<Collapse.Content id="tab2-section" aria-hidden="false" aria-labelledby="tab2">
+							{questions[1]}
+						</Collapse.Content>
+					</Collapse.Item>
+				</Collapse.Root>
+			{/snippet}
+			{@render demoAndCode(demo, collapseMultiple)}
 		</div>
 	</Row>
 {/snippet}
@@ -147,7 +181,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Collapse.Root>
-					<Collapse.Item size="small" value="tab1">
+					<Collapse.Item size="small" value="1">
 						<Collapse.Trigger
 							role="heading"
 							aria-level={3}
@@ -156,9 +190,7 @@
 							aria-expanded="false">Question A</Collapse.Trigger
 						>
 						<Collapse.Content id="tab1-section" aria-hidden="true" aria-labelledby="tab1">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							{questions[0]}
 						</Collapse.Content>
 					</Collapse.Item>
 				</Collapse.Root>
@@ -264,6 +296,7 @@
 		<section transition:fade>
 			{@render defaultCollapse()}
 			{@render expanded()}
+			{@render multiple()}
 			{@render size()}
 		</section>
 	{/if}
