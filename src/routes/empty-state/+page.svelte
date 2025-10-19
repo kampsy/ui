@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>Error</title>
+	<title>Empty State</title>
 </svelte:head>
 
 {#snippet emptyState()}
@@ -53,7 +53,7 @@
 
 {#snippet defaultEmptyState()}
 	<Row>
-		<LinkH2 href="/error#default" aria-label="default">Empty state Design framework</LinkH2>
+		<LinkH2 href="/empty-state#default" aria-label="default">Empty state Design framework</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -100,7 +100,7 @@
 
 {#snippet blank()}
 	<Row>
-		<LinkH2 href="/error#default" aria-label="default">blank state</LinkH2>
+		<LinkH2 href="/empty-state#blank-state" aria-label="blank-state">blank state</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
@@ -121,7 +121,7 @@
 
 {#snippet informational()}
 	<Row>
-		<LinkH2 href="/error#default" aria-label="default">Informational</LinkH2>
+		<LinkH2 href="/empty-state#informational" aria-label="informational">Informational</LinkH2>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
