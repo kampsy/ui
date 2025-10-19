@@ -1,11 +1,9 @@
 <script lang="ts">
 	import type { Component } from 'svelte';
 	import Error from '$lib/icons/error.svelte';
-	import { randomString } from '$lib/utils/random.js';
 	import type { HTMLAttributes } from 'svelte/elements';
 
 	interface Props extends HTMLAttributes<HTMLInputElement> {
-		id?: string | undefined;
 		name?: string | undefined;
 		value?: string | undefined;
 		label?: string | undefined;
@@ -20,7 +18,6 @@
 		disabled?: boolean | undefined;
 	}
 	let {
-		id = undefined,
 		name = undefined,
 		value = $bindable(''),
 		label = undefined,
@@ -39,13 +36,7 @@
 	// The focus and blur state of the input
 	let hasRing = $state(false);
 
-	// The name is used on the label and input name
-	let inputID = $derived.by(() => {
-		if (id) {
-			return id;
-		}
-		return randomString(8);
-	});
+	const uid = $props.id();
 
 	const sizeObj = {
 		small: 'h-[32px] text-sm',
@@ -173,7 +164,7 @@
 			<div class="w-full h-full {inputContClass}">
 				<input
 					bind:value
-					id={inputID}
+					id={uid}
 					{name}
 					{spellcheck}
 					{placeholder}
@@ -209,7 +200,7 @@
 <!--With a label-->
 <div>
 	{#snippet inputLabel()}
-		<label for={inputID}>
+		<label for={uid}>
 			<div class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
 				{label}
 			</div>
