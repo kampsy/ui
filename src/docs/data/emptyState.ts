@@ -7,14 +7,7 @@ import { EmptyState, ChartBarPeak } from 'kampsy-ui';
   title="Title"
 />`;
 
-export const blankStateDocs = `
-import { EmptyState, ChartBarPeak } from 'kampsy-ui';
-
-<EmptyState.Root
-  description="A message conveying the state of the product."
-  icon={ChartBarPeak}
-  title="Title"
-/>`;
+export const blankStateDocs = emptyStateDefault;
 
 export const informationalDocs = `
 import { EmptyState, ChartBarPeak, Button} from 'kampsy-ui';

@@ -13,6 +13,7 @@
 </script>
 
 <div
+	{...rest}
 	class="w-full px-[70px] py-[48px] border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
 >
 	<div class="grid justify-items-center gap-6">
