@@ -57,3 +57,4 @@ export { default as Minus } from './minus.svelte';
 
 export { default as LogoSlackColor } from './logo-slack-color.svelte';
 export { default as Link } from './link.svelte';
+export { default as ChartBarPeak } from './chart-bar-peak.svelte';

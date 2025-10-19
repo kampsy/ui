@@ -68,7 +68,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'collapse', href: '/collapse' }}
-			next={{ title: 'error', href: '/error' }}
+			next={{ title: 'empty state', href: '/empty-state' }}
 		/>
 	</Row>
 {/snippet}

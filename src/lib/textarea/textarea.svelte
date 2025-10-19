@@ -56,24 +56,24 @@
 
 	let ringClass = $derived.by(() => {
 		if (disabled) {
-			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400 
-			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600 
+			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400
+			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600
 			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
 		}
 		if (error) {
-			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-red-700 
-			dark:hover:border-kui-dark-red-700 ring-4 ring-kui-light-red-400 dark:ring-kui-dark-red-400
-			hover:ring-kui-light-red-500 dark:hover:ring-kui-dark-red-500 `;
+			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-gray-500
+			dark:hover:border-kui-dark-gray-500 ring ring-kui-light-red-400 dark:ring-kui-dark-red-400
+			hover:ring-0 dark:hover:ring-0 `;
 		}
 
 		if (hasRing) {
-			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring-4 ring-kui-light-gray-400 
+			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring ring-kui-light-gray-400
             dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700
 			text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
 		}
 
-		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 
-		dark:hover:border-kui-dark-gray-500 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 placeholder-kui-light-gray-600 
+		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500
+		dark:hover:border-kui-dark-gray-500 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 placeholder-kui-light-gray-600
 		dark:placeholder-kui-dark-gray-600`;
 	});
 

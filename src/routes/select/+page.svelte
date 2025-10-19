@@ -7,10 +7,12 @@
 	import type { Snippet } from 'svelte';
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import { Select } from '$lib/index.js';
-	import { selectDefault, selectSize } from '$lib/../docs/data/select.js';
+	import { selectDefault, selectSize, selectError } from '$lib/../docs/data/select.js';
 	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 
 	let value = $state('');
+	let error = $state('Please select a value.');
+	let loading = $state(true);
 </script>
 
 <svelte:head>
@@ -37,7 +39,7 @@
 		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="w-full flex flex-wrap gap-4 justify-between">
+			<div class="w-full grid gap-4 lg:flex lg:flex-wrap lg:justify-between">
 				{@render demo()}
 			</div>
 		</div>
@@ -120,6 +122,98 @@
 	</Row>
 {/snippet}
 
+{#snippet errorSnip()}
+	<Row>
+		<LinkH2 href="/select#size" aria-label="size">error</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Select.Root bind:error size="small" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:error bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:error size="large" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+			{/snippet}
+			{@render demoAndCode(demo, selectError)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet loadingSnip()}
+	<Row>
+		<LinkH2 href="/select#size" aria-label="size">loading</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Select.Root bind:loading size="small" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:loading bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+
+				<Select.Root bind:loading size="large" bind:value class="w-full lg:w-auto">
+					<Select.Trigger class="w-full lg:w-[200px]">
+						<Select.Value placeholder="select a fruit" />
+					</Select.Trigger>
+					<Select.Content>
+						<Select.Item value="apple">apple</Select.Item>
+						<Select.Item value="banana">banana</Select.Item>
+						<Select.Item value="orange">orange</Select.Item>
+						<Select.Item value="pineapple">pineapple</Select.Item>
+					</Select.Content>
+				</Select.Root>
+			{/snippet}
+			{@render demoAndCode(demo, selectError)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -133,6 +227,8 @@
 	{@render select()}
 	{@render defaultSelect()}
 	{@render size()}
+	{@render errorSnip()}
+	{@render loadingSnip()}
 	{@render prevAndNext()}
 {/snippet}
 

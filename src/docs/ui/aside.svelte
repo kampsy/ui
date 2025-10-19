@@ -5,7 +5,7 @@
 
 	interface Props {
 		asideDataList?: Array<AsideT>;
-	};
+	}
 
 	let { asideDataList = undefined }: Props = $props();
 

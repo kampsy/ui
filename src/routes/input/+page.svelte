@@ -80,7 +80,12 @@
 					<Input aria-labelledby="Demo" contSuffix={ArrowCircleUp} placeholder="default" />
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
-					<Input aria-labelledby="Demo" prefix="https://" contSuffix=".com" placeholder="default" />
+					<Input
+						aria-labelledby="Demo"
+						contPrefix="https://"
+						contSuffix=".com"
+						placeholder="default"
+					/>
 				</div>
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
@@ -91,6 +96,9 @@
 						suffixStyling={false}
 						placeholder="default"
 					/>
+				</div>
+				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+					<Input aria-labelledby="Demo" contPrefix="ui" placeholder="default" />
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, inputPrefixAndSuffix)}
@@ -128,7 +136,7 @@
 				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
-						prefix="https://"
+						contPrefix="https://"
 						contSuffix=".com"
 						placeholder="Disabled with prefix and suffix"
 						disabled

@@ -3,11 +3,15 @@
 	import { createCollapseState } from './root.svelte.js';
 
 	interface Props {
+		multiple?: boolean | undefined;
 		children: Snippet | undefined;
-	};
-	let { children }: Props = $props();
+	}
+	let { 
+		multiple = false, 
+		children 
+	}: Props = $props();
 
-	const collapseState = createCollapseState({ item: '' });
+	const collapseState = createCollapseState({ multiple: multiple, item: []});
 
 	setContext('collapse', collapseState);
 </script>
