@@ -8,6 +8,7 @@ import { Menu } from 'kampsy-ui';
     		<Menu.Item onClick={() => console.log('One')}>One</Menu.Item>
             <Menu.Item onClick={() => console.log('Two')}>Two</Menu.Item>
             <Menu.Item onClick={() => console.log('Three')}>One</Menu.Item>
+			<Menu.Link href="https://ui.kampsy.xyz">Test for Link</Menu.Link>
             <Menu.Item onClick={() => console.log('Delete')} type="error">Delete</Menu.Item>
     	</Menu.Content>
     </Menu.Root>
