@@ -8,10 +8,11 @@
 		class?: string;
 		type?: 'default' | 'success' | 'error' | 'warning' | 'inverted';
 		text?: string | Array<string>;
+		prompt?: boolean;
 		onCopy?: () => void;
 	}
 
-	let { class: klass = '', type = 'default', text = '', onCopy = undefined }: Props = $props();
+	let { class: klass = '', type = 'default', text = '', prompt = true, onCopy = undefined }: Props = $props();
 
 	let snippetList = $state<string[]>([]);
 
@@ -41,6 +42,13 @@
 		if (onCopy) onCopy();
 		copyToClipboard();
 	}
+
+	const showPrompt = $derived.by(() => {
+		if (prompt) {
+			return "before:content-['$'] before:px-2";
+		}
+		return '';
+	});
 
 	const typeBorderObj = {
 		default: `border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400`,
@@ -92,7 +100,7 @@
 
 {#snippet preSnippet()}
 	{#each snippetList as sl}
-		<pre class="text-sm">{sl}</pre>
+		<pre class="{showPrompt} text-sm">{sl}</pre>
 	{/each}
 {/snippet}
 

@@ -11,6 +11,7 @@
 		snippetDefault,
 		snippetInverted,
 		snippetMultiline,
+		snippetNoPrompt,
 		snippetVariants
 	} from '$lib/../docs/data/snippet.js';
 	import Pagination from '$lib/pagination/pagination.svelte';
@@ -54,7 +55,7 @@
 		<LinkH2 href="/snippet#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<CodeSnippet text="npm init next-app" class="w-[300px]" />
+				<CodeSnippet text="npm init next-app" class="w-full lg:w-[300px]" />
 			{/snippet}
 			{@render demoAndCode(demo, snippetDefault)}
 		</div>
@@ -66,7 +67,7 @@
 		<LinkH2 href="/error#custome-label" aria-label="custom-label">inverted</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<CodeSnippet type="inverted" text="npm init next-app" class="w-[300px]" />
+				<CodeSnippet type="inverted" text="npm init next-app" class="w-full lg:w-[300px]" />
 			{/snippet}
 			{@render demoAndCode(demo, snippetInverted)}
 		</div>
@@ -85,6 +86,22 @@
 	</Row>
 {/snippet}
 
+{#snippet noPrompt()}
+	<Row>
+		<LinkH2 href="/error#custome-label" aria-label="custom-label">no prompt</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<CodeSnippet
+					prompt={false}
+					text="npm init next-app"
+					class="w-full lg:w-[300px]"
+				/>
+			{/snippet}
+			{@render demoAndCode(demo, snippetNoPrompt)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet callback()}
 	<Row>
 		<LinkH2 href="/error#custome-label" aria-label="custom-label">callback</LinkH2>
@@ -93,7 +110,7 @@
 				<CodeSnippet
 					onCopy={() => alert('You copied the text!')}
 					text="npm init next-app"
-					class="w-[300px]"
+					class="w-full lg:w-[300px]"
 				/>
 			{/snippet}
 			{@render demoAndCode(demo, snippetCallback)}
@@ -106,10 +123,10 @@
 		<LinkH2 href="/error#size" aria-label="size">varinats</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="flex flex-col gap-3 flex-wrap">
-					<CodeSnippet type="success" text="npm init next-app" class="w-[300px]" />
-					<CodeSnippet type="error" text="npm init next-app" class="w-[300px]" />
-					<CodeSnippet type="warning" text="npm init next-app" class="w-[300px]" />
+				<div class="w-full flex flex-col gap-3 flex-wrap">
+					<CodeSnippet type="success" text="npm init next-app" class="w-full lg:w-[300px]" />
+					<CodeSnippet type="error" text="npm init next-app" class="w-full lg:w-[300px]" />
+					<CodeSnippet type="warning" text="npm init next-app" class="w-full lg:w-[300px]" />
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, snippetVariants)}
@@ -131,6 +148,7 @@
 	{@render defaultErr()}
 	{@render inverted()}
 	{@render multiline()}
+	{@render noPrompt()}
 	{@render callback()}
 	{@render size()}
 	{@render prevAndNext()}
