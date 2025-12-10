@@ -82,7 +82,7 @@
 		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 selection:bg-kui-light-red-1000
 		selection:text-kui-light-red-100 dark:selection:bg-kui-dark-red-1000 dark:selection:text-kui-dark-red-100
 		dark:selection:text-kui-dark-red-100`,
-		warning: `text-kui-light-amber-900 dark:text-kui-dark-900 selection:bg-kui-light-amber-1000
+		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900 selection:bg-kui-light-amber-1000
 		selection:text-kui-light-amber-100 dark:selection:bg-kui-dark-amber-1000
 		dark:selection:text-kui-dark-amber-100`,
 		inverted: `text-kui-light-gray-100 dark:text-kui-dark-gray-100 selection:bg-kui-light-gray-100
