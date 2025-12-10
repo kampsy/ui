@@ -67,6 +67,9 @@ export * as Select from './select/index.js';
 // Show more
 export { default as ShowMore } from './showMore/showMore.svelte';
 
+// Snippet
+export { default as CodeSnippet } from './snippet/snippet.svelte';
+
 // Spinner
 export { default as Spinner } from './spinner/spinner.svelte';
 

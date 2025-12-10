@@ -65,7 +65,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'select', href: '/select' }}
-			next={{ title: 'spinner', href: '/spinner' }}
+			next={{ title: 'snippet', href: '/snippet' }}
 		/>
 	</Row>
 {/snippet}

@@ -131,10 +131,6 @@ export const asideData: Array<AsideT> = [
 			{
 				name: 'select',
 				url: '/select',
-				badge: {
-					name: 'updated',
-					variant: 'purple'
-				}
 			},
 			{
 				name: 'show more',
@@ -143,6 +139,14 @@ export const asideData: Array<AsideT> = [
 			{
 				name: 'spinner',
 				url: '/spinner'
+			},
+			{
+				name: 'snippet',
+				url: '/snippet',
+				badge: {
+					name: 'new',
+					variant: 'blue'
+				}
 			},
 			{
 				name: 'split button',
