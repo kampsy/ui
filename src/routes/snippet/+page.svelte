@@ -76,7 +76,7 @@
 
 {#snippet multiline()}
 	<Row>
-		<LinkH2 href="/error#custome-label" aria-label="custom-label">multiline</LinkH2>
+		<LinkH2 href="/snippet#multiline" aria-label="multiline">multiline</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<CodeSnippet text={['cd project', 'now']} class="w-full" />
