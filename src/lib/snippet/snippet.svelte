@@ -2,7 +2,8 @@
 	import Copy from '$lib/icons/copy.svelte';
 	import Check from '$lib/icons/check.svelte';
 	import type { HTMLAttributes } from 'svelte/elements';
-	import { fade, scale } from 'svelte/transition';
+	import { scale } from 'svelte/transition';
+	import { onDestroy } from 'svelte';
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
 		class?: string;
@@ -12,7 +13,13 @@
 		onCopy?: () => void;
 	}
 
-	let { class: klass = '', type = 'default', text = '', prompt = true, onCopy = undefined }: Props = $props();
+	let {
+		class: klass = '',
+		type = 'default',
+		text = '',
+		prompt = true,
+		onCopy = undefined
+	}: Props = $props();
 
 	const snippetList = $derived.by(() => {
 		if (typeof text == 'string') {
@@ -24,6 +31,7 @@
 	});
 
 	let isCopied = $state(false);
+	let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
 	const copyToClipboard = async () => {
 		if (snippetList.length === 0) return;
@@ -37,14 +45,20 @@
 		try {
 			await navigator.clipboard.writeText(clipText);
 			isCopied = true;
-			setTimeout(() => {
+			if (timeoutId) clearTimeout(timeoutId);
+			timeoutId = setTimeout(() => {
 				isCopied = false;
+				timeoutId = undefined;
 			}, 1500);
 		} catch (error) {
 			console.error('Failed to copy text:', error);
 			// TODO: Show user-visible error feedback (e.g., error toast/message)
 		}
 	};
+
+	onDestroy(() => {
+		if (timeoutId) clearTimeout(timeoutId);
+	});
 
 	function onclick() {
 		if (onCopy) onCopy();
