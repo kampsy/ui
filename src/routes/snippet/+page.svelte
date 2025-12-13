@@ -120,7 +120,7 @@
 
 {#snippet size()}
 	<Row>
-		<LinkH2 href="/error#size" aria-label="size">varinats</LinkH2>
+		<LinkH2 href="/snippet#variants" aria-label="variants">variants</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full flex flex-col gap-3 flex-wrap">
