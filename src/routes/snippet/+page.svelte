@@ -88,7 +88,7 @@
 
 {#snippet noPrompt()}
 	<Row>
-		<LinkH2 href="/error#custome-label" aria-label="custom-label">no prompt</LinkH2>
+		<LinkH2 href="/snippet#no-prompt" aria-label="no-prompt">no prompt</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<CodeSnippet
