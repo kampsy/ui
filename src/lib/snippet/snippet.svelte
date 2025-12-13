@@ -14,18 +14,25 @@
 
 	let { class: klass = '', type = 'default', text = '', prompt = true, onCopy = undefined }: Props = $props();
 
-	let snippetList = $state<string[]>([]);
-
-	if (typeof text == 'string') {
-		snippetList.push(text);
-	} else if (Array.isArray(text)) {
-		snippetList.push(...text);
-	}
+	const snippetList = $derived.by(() => {
+		if (typeof text == 'string') {
+			return [text];
+		} else if (Array.isArray(text)) {
+			return [...text];
+		}
+		return [];
+	});
 
 	let isCopied = $state(false);
 
 	const copyToClipboard = async () => {
 		if (snippetList.length === 0) return;
+
+		if (!navigator.clipboard) {
+			console.error('Clipboard API not supported');
+			return;
+		}
+
 		const clipText = snippetList.join('\n');
 		try {
 			await navigator.clipboard.writeText(clipText);
@@ -35,6 +42,7 @@
 			}, 1500);
 		} catch (error) {
 			console.error('Failed to copy text:', error);
+			// TODO: Show user-visible error feedback (e.g., error toast/message)
 		}
 	};
 
