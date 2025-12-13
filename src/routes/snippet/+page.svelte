@@ -104,7 +104,7 @@
 
 {#snippet callback()}
 	<Row>
-		<LinkH2 href="/error#custome-label" aria-label="custom-label">callback</LinkH2>
+		<LinkH2 href="/snippet#callback" aria-label="callback">callback</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<CodeSnippet
