@@ -76,8 +76,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'spinner', href: '/spinner' }}
-			next={{ title: 'split button', href: '/split-button' }}
+			previous={{ title: 'show more', href: '/show-more' }}
+			next={{ title: 'snippet', href: '/snippet' }}
 		/>
 	</Row>
 {/snippet}
