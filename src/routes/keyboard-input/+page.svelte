@@ -5,29 +5,26 @@
 	import { asideData } from '$lib/../docs/utils/data.js';
 	import CollapseCode from '$lib/collapse/collapseCode.svelte';
 	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import Spinner from '$lib/spinner/spinner.svelte';
-	import { spinnerCustom, spinnerDefault } from '../../docs/data/spinner.js';
+	import { Kbd, Pagination } from '$lib/index.js';
+	import { keyboardInputModifiers } from '$lib/../docs/data/keyboard-input.js';
 	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
 </script>
 
 <svelte:head>
-	<title>Spinner</title>
+	<title>Keyboard Input</title>
 </svelte:head>
 
-{#snippet spinner()}
+{#snippet keyboardInputDefault()}
 	<Row>
 		<h1
 			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
-			spinner
+			Keyboard Input
 		</h1>
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Indicate an action running in the background. Unlike the loading dots, this should generally
-			be used to indicate loading feedback in response to a user action, like for buttons,
-			pagination, etc.
+			Display keyboard input that triggers an action.
 		</p>
 	</Row>
 {/snippet}
@@ -45,30 +42,21 @@
 	</div>
 {/snippet}
 
-{#snippet defaultSize()}
+{#snippet keyboardInputModifiersSnippet()}
 	<Row>
-		<LinkH2 href="/spinner#default-size" aria-label="default-size">default size</LinkH2>
+		<LinkH2 href="/keyboard-input#modifiers" aria-label="modifiers">Modifiers</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Spinner />
-			{/snippet}
-			{@render demoAndCode(demo, spinnerDefault)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet custom()}
-	<Row>
-		<LinkH2 href="/spinner#custom-size" aria-label="custom-size">custom size</LinkH2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div class="flex items-center gap-8">
-					<Spinner size={12} />
-					<Spinner size={32} />
-					<Spinner size={40} />
+				<div>
+					<Kbd.Group>
+						<Kbd.Root>⌘</Kbd.Root>
+						<Kbd.Root>⇧</Kbd.Root>
+						<Kbd.Root>⌥</Kbd.Root>
+						<Kbd.Root>⌃</Kbd.Root>
+					</Kbd.Group>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, spinnerCustom)}
+			{@render demoAndCode(demo, keyboardInputModifiers)}
 		</div>
 	</Row>
 {/snippet}
@@ -76,16 +64,15 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'show more', href: '/show-more' }}
-			next={{ title: 'snippet', href: '/snippet' }}
+			previous={{ title: 'input', href: '/input' }}
+			next={{ title: 'menu', href: '/menu' }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render spinner()}
-	{@render defaultSize()}
-	{@render custom()}
+	{@render keyboardInputDefault()}
+	{@render keyboardInputModifiersSnippet()}
 	{@render prevAndNext()}
 {/snippet}
 

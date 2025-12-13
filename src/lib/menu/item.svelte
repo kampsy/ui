@@ -22,11 +22,16 @@
 	}>('menu');
 
 	const typeObj = {
-		primary: 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-		secondary: 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-		tertiary: 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-		error: 'text-kui-light-red-800 dark:text-kui-dark-red-800',
-		warning: 'text-kui-light-amber-800 dark:text-kui-dark-amber-800'
+		primary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 
+		hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
+		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 
+		hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
+		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 
+		hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
+		error: `text-kui-light-red-800 dark:text-kui-dark-red-800 
+		hover:bg-kui-light-red-100 hover:dark:bg-kui-dark-red-100`,
+		warning: `text-kui-light-amber-800 dark:text-kui-dark-amber-800 
+		hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`
 	};
 	let typeClass = $derived.by(() => {
 		return typeObj[type];
@@ -66,7 +71,7 @@
 		rootState.setIsActive(false);
 	}}
 	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md 
-	py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100 {typeClass}"
+	py-3.5 lg:py-2.5 px-2  {typeClass}"
 >
 	{@render prefixSnip()}
 	<span class="first-letter:capitalize ">

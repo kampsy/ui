@@ -228,7 +228,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: 'error', href: '/error' }}
-			next={{ title: 'menu', href: '/menu' }}
+			next={{ title: 'keyboard input', href: '/keyboard-input' }}
 		/>
 	</Row>
 {/snippet}
