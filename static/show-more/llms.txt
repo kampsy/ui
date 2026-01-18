@@ -1,0 +1,33 @@
+# ShowMore Component
+
+### ShowMore
+
+**Exports:**
+- `ShowMore` - Show more/less toggle component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { ShowMore } from 'kampsy-ui';
+
+	let isActive = $state(false);
+</script>
+
+<div class="w-full">
+    <ShowMore bind:isActive />
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/show-more for full documentation and examples.
+
+## License
+
+MIT License

@@ -1,0 +1,53 @@
+# Input Component
+
+### Input
+
+**Exports:**
+- `Input` - Text input component
+- `SearchInput` - Search-specific input component
+
+**Input Props:**
+- `name`: string | undefined
+- `value`: string (bindable, default: '')
+- `label`: string | undefined
+- `error`: string | undefined - Error message to display
+- `size`: 'small' | 'medium' | 'large' (default: 'medium')
+- `contPrefix`: string | Component | undefined - Prefix content (text or icon)
+- `prefixStyling`: boolean (default: true) - Apply styling to prefix
+- `contSuffix`: string | Component | undefined - Suffix content (text or icon)
+- `suffixStyling`: boolean (default: true) - Apply styling to suffix
+- `spellcheck`: boolean (default: false)
+- `placeholder`: string | undefined
+- `disabled`: boolean (default: false)
+- Extends `HTMLAttributes<HTMLInputElement>`
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
+
+	let small = $state('');
+	let defaultInput = $state('');
+	let large = $state('');
+</script>
+
+<div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-4">
+	<Input aria-labelledby="Demo input" bind:value={small} placeholder="small" size="small" />
+	<Input aria-labelledby="Demo input" bind:value={defaultInput} placeholder="default" />
+	<Input aria-labelledby="Demo input" bind:value={large} placeholder="large" size="large" />
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/input for full documentation and examples.
+
+## License
+
+MIT License

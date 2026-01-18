@@ -1,0 +1,29 @@
+# Spinner Component
+
+### Spinner
+
+**Exports:**
+- `Spinner` - Loading spinner component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Spinner } from 'kampsy-ui';
+</script>
+
+<Spinner />
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/spinner for full documentation and examples.
+
+## License
+
+MIT License

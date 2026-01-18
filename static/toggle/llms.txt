@@ -1,0 +1,39 @@
+# Toggle Component
+
+### Toggle
+
+**Exports:**
+- `Toggle` - Toggle button component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Toggle } from 'kampsy-ui';
+
+	let checked = $state(false);
+	let checked2 = $state(true);
+</script>
+
+<div class="space-y-4">
+	<div class="w-full">
+		<Toggle aria-label="Enable Firewall" {checked} />
+	</div>
+	<div class="w-full">
+		<Toggle aria-label="Enable Firewall" checked={checked2} />
+	</div>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/toggle for full documentation and examples.
+
+## License
+
+MIT License

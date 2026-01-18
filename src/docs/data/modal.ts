@@ -1,7 +1,9 @@
 export const modalDefault = `
-import { Modal, Text } from 'kampsy-ui';
+<script lang="ts">
+	import { Modal, Text } from 'kampsy-ui';
 
-let active = $state(false);
+	let active = $state(false);
+</script>
 
 <div>
 	<Button onclick={() => (active = true)} size="small">Open Modal</Button>
@@ -26,10 +28,12 @@ let active = $state(false);
 </div>`;
 
 export const modalSticky = `
-import { Modal, Text } from 'kampsy-ui';
-import { ArrowLeft } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { Modal, Text } from 'kampsy-ui';
+	import { ArrowLeft } from 'kampsy-ui/icons';
 
-let active = $state(false);
+	let active = $state(false);
+</script>
 
 <div>
 	<Button onclick={() => (active = true)} size="small">Open Modal</Button>
@@ -55,9 +59,11 @@ let active = $state(false);
 </div>`;
 
 export const modalSingleButton = `
-import { Modal, Text } from 'kampsy-ui';
+<script lang="ts">
+	import { Modal, Text } from 'kampsy-ui';
 
-let active = $state(false);
+	let active = $state(false);
+</script>
 
 <div>
 	<Button onclick={() => (active = true)} size="small">Open Modal</Button>
@@ -79,9 +85,11 @@ let active = $state(false);
 </div>`;
 
 export const modalDisabkedActions = `
-import { Modal, Text } from 'kampsy-ui';
+<script lang="ts">
+	import { Modal, Text } from 'kampsy-ui';
 
-let active = $state(false);
+	let active = $state(false);
+</script>
 
 <div>
 	<Button onclick={() => (active = true)} size="small">Open Modal</Button>

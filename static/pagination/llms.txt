@@ -1,0 +1,39 @@
+# Pagination Component
+
+### Pagination
+
+**Exports:**
+- `Pagination` - Pagination component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Pagination } from 'kampsy-ui';
+
+	const prev = {
+	  title: 'Home',
+	  href: '#',
+	};
+ 
+	const next = {
+	  title: 'Introduction',
+	  href: '#',
+	};
+</script>
+
+<Pagination previous={prev} {next} />
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/pagination for full documentation and examples.
+
+## License
+
+MIT License

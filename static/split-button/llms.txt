@@ -1,0 +1,73 @@
+# SplitButton Component
+
+### SplitButton
+
+**Exports:**
+- `SplitButton.Root` - Root split button container
+- `SplitButton.Button` - Main button
+- `SplitButton.Content` - Dropdown content
+- `SplitButton.Item` - Dropdown item
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { SplitButton } from 'kampsy-ui';
+
+	const sizes: Array<'tiny' | 'small' | 'medium' | 'large'> = ['small', 'medium', 'large'];
+</script>
+
+<div class="space-y-8">
+	<div class="flex flex-wrap gap-4 lg:gap-8">
+		{#each sizes as size}
+			<SplitButton.Root>
+				<SplitButton.Button onclick={() => alert('Clicked save')} {size}>save</SplitButton.Button>
+				<SplitButton.Content class="w-[264px]">
+					<SplitButton.Item
+						onClick={() => alert('Clicked save')}
+						title="Save"
+						description="Save changes"
+					/>
+					<SplitButton.Item
+						onClick={() => alert('Clicked save + Redeploy')}
+						title="Save + Redeploy"
+						description="Save changes and create a new production deployment"
+					/>
+				</SplitButton.Content>
+			</SplitButton.Root>
+		{/each}
+    </div>
+	<div class="flex flex-wrap gap-4 lg:gap-8">
+		{#each sizes as size}
+			<SplitButton.Root>
+				<SplitButton.Button onclick={() => alert('Clicked save')} {size} type="secondary">save</SplitButton.Button>
+				<SplitButton.Content class="w-[264px]">
+					<SplitButton.Item
+						onClick={() => alert('Clicked save')}
+						title="Save"
+						description="Save changes"
+					/>
+					<SplitButton.Item
+						onClick={() => alert('Clicked save + Redeploy')}
+						title="Save + Redeploy"
+						description="Save changes and create a new production deployment"
+					/>
+				</SplitButton.Content>
+			</SplitButton.Root>
+		{/each}
+    </div>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/split-button for full documentation and examples.
+
+## License
+
+MIT License

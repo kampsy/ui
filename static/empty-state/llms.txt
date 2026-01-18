@@ -1,0 +1,33 @@
+# EmptyState Component
+
+### EmptyState
+
+**Exports:**
+- `EmptyState.Root` - Empty state container component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { EmptyState, ChartBarPeak } from 'kampsy-ui';
+</script>
+
+<EmptyState.Root
+  description="A message conveying the state of the product."
+  icon={ChartBarPeak}
+  title="Title"
+/>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/empty-state for full documentation and examples.
+
+## License
+
+MIT License

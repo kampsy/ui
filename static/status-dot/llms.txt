@@ -1,0 +1,35 @@
+# StatusDot Component
+
+### StatusDot
+
+**Exports:**
+- `StatusDot` - Status indicator dot component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { StatusDot } from 'kampsy-ui';
+</script>
+
+<div class="space-y-6">
+	<StatusDot state="QUEUED" />
+	<StatusDot state="BUILDING" />
+	<StatusDot state="ERROR" />
+	<StatusDot state="READY" />
+	<StatusDot state="CANCELED" />
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/status-dot for full documentation and examples.
+
+## License
+
+MIT License

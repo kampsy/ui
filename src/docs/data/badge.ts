@@ -1,5 +1,7 @@
 export const badgeVariants = `
-import { Badge } from 'kampsy-ui';
+<script lang="ts">
+	import { Badge } from 'kampsy-ui';
+</script>
 
 <div class="flex flex-col gap-2">
 	<div class="flex gap-1 capitalize">
@@ -47,7 +49,9 @@ import { Badge } from 'kampsy-ui';
 </div>`;
 
 export const badgeSize = `
-import { Badge } from 'kampsy-ui';
+<script lang="ts">
+	import { Badge } from 'kampsy-ui';
+</script>
 
 <div class="flex flex-col gap-2">
 
@@ -65,8 +69,10 @@ import { Badge } from 'kampsy-ui';
 </div>`;
 
 export const badgeWithIcon = `
-import { Badge } from 'kampsy-ui';
-import { Shield } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { Badge } from 'kampsy-ui';
+	import { Shield } from 'kampsy-ui/icons';
+</script>
 
 <div class="flex flex-col gap-2">
 
@@ -150,8 +156,10 @@ import { Shield } from 'kampsy-ui/icons';
 </div>`;
 
 export const badgePill = `
-import { Badge } from 'kampsy-ui';
-import { LogoSlackColor } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { Badge } from 'kampsy-ui';
+	import { LogoSlackColor } from 'kampsy-ui/icons';
+</script>
 
 <div class="flex flex-col gap-4">
   <div class="flex items-center gap-2 capitalize">

@@ -1,0 +1,29 @@
+# Progress Component
+
+### Progress
+
+**Exports:**
+- `Progress` - Progress bar component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Progress } from 'kampsy-ui';
+</script>
+
+<Progress value={80} />
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/progress for full documentation and examples.
+
+## License
+
+MIT License

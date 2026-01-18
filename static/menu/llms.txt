@@ -1,0 +1,44 @@
+# Menu Component
+
+### Menu
+
+**Exports:**
+- `Menu.Root` - Root menu container
+- `Menu.Button` - Menu trigger button
+- `Menu.Content` - Menu dropdown content
+- `Menu.Item` - Menu item
+- `Menu.Link` - Menu link item
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Menu } from 'kampsy-ui';
+</script>
+
+<div class="w-full">
+    <Menu.Root>
+    	<Menu.Button aria-controls="menu" aria-expanded="false" aria-haspopup="true" >Actions</Menu.Button>
+    	<Menu.Content id="menu" aria-hidden="true" class="w-[200px]">
+    		<Menu.Item onClick={() => console.log('One')}>One</Menu.Item>
+            <Menu.Item onClick={() => console.log('Two')}>Two</Menu.Item>
+            <Menu.Item onClick={() => console.log('Three')}>One</Menu.Item>
+			<Menu.Link href="https://ui.kampsy.xyz">Test for Link</Menu.Link>
+            <Menu.Item onClick={() => console.log('Delete')} type="error">Delete</Menu.Item>
+    	</Menu.Content>
+    </Menu.Root>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/menu for full documentation and examples.
+
+## License
+
+MIT License

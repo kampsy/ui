@@ -1,0 +1,29 @@
+# Snippet Component
+
+### Snippet
+
+**Exports:**
+- `CodeSnippet` - Code snippet display component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { CodeSnippet } from 'kampsy-ui';
+</script>
+
+<CodeSnippet text="npm init next-app" class="w-full lg:w-[300px]"/>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/snippet for full documentation and examples.
+
+## License
+
+MIT License

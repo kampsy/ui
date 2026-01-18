@@ -1,0 +1,31 @@
+# Error Component
+
+### Error
+
+**Exports:**
+- `Error` - Error display component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Error } from 'kampsy-ui';
+</script>
+
+<Error>
+    This email address is already in use.
+</Error>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/error for full documentation and examples.
+
+## License
+
+MIT License

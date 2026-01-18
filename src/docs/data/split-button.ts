@@ -1,8 +1,10 @@
 
 export const splitButtonDefault = `
-import { SplitButton } from 'kampsy-ui';
+<script lang="ts">
+	import { SplitButton } from 'kampsy-ui';
 
-const sizes: Array<'tiny' | 'small' | 'medium' | 'large'> = ['small', 'medium', 'large'];
+	const sizes: Array<'tiny' | 'small' | 'medium' | 'large'> = ['small', 'medium', 'large'];
+</script>
 
 <div class="space-y-8">
 	<div class="flex flex-wrap gap-4 lg:gap-8">
@@ -48,15 +50,17 @@ const sizes: Array<'tiny' | 'small' | 'medium' | 'large'> = ['small', 'medium', 
 
 
 export const splitButtonTypes = `
-import { SplitButton } from 'kampsy-ui';
+<script lang="ts">
+	import { SplitButton } from 'kampsy-ui';
 
-const sbTypes: Array<'primary' | 'secondary' | 'tertiary' | 'error' | 'warning'> = [
+	const sbTypes: Array<'primary' | 'secondary' | 'tertiary' | 'error' | 'warning'> = [
 	'primary',
 	'secondary',
 	'tertiary',
 	'error',
 	'warning'
-];
+	];
+</script>
 
 <div class="flex flex-wrap gap-4 lg:gap-10">
 	{#each sbTypes as sbType}
@@ -80,7 +84,9 @@ const sbTypes: Array<'primary' | 'secondary' | 'tertiary' | 'error' | 'warning'>
 
 
 export const splitButtonMenuAlignment = `
-import { SplitButton } from 'kampsy-ui';
+<script lang="ts">
+	import { SplitButton } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex gap-10">
     <SplitButton.Root>

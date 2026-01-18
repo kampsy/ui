@@ -1,7 +1,9 @@
 export const textareaDefault = `
-import { Textarea } from 'kampsy-ui';
+<script lang="ts">
+	import { Textarea } from 'kampsy-ui';
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <Textarea
 	bind:value
@@ -9,9 +11,11 @@ let value = $state('');
 />`;
 
 export const textareaDisabled = `
-import { Textarea } from 'kampsy-ui';
+<script lang="ts">
+	import { Textarea } from 'kampsy-ui';
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <Textarea
 	bind:value
@@ -20,9 +24,11 @@ let value = $state('');
 />`;
 
 export const textareaWithLabel = `
-import { Textarea } from 'kampsy-ui';
+<script lang="ts">
+	import { Textarea } from 'kampsy-ui';
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <Textarea
 	bind:value
@@ -31,9 +37,11 @@ let value = $state('');
 />`;
 
 export const textareError = `
-import { Textarea } from 'kampsy-ui';
+<script lang="ts">
+	import { Textarea } from 'kampsy-ui';
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <div class="w-full space-y-6">
 	<Textarea

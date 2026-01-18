@@ -1,0 +1,35 @@
+# Calendar Component
+
+### Calendar
+
+**Exports:**
+- `Calendar` - Calendar component
+- `Weekday` - Weekday component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Calendar } from 'kampsy-ui';
+	import type { DateValue, RangeValue } from 'kampsy-ui';
+
+	let value = $state<DateValue | RangeValue<DateValue>>();
+</script>
+
+<div class="w-full flex justify-center">
+	<Calendar bind:value/>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/calendar for full documentation and examples.
+
+## License
+
+MIT License

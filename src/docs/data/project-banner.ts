@@ -1,8 +1,10 @@
 
 
 export const projectBannerSuccess = `
-import { ProjectBanner } from 'kampsy-ui';
-import { ShieldCheck } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { ProjectBanner } from 'kampsy-ui';
+	import { ShieldCheck } from 'kampsy-ui/icons';
+</script>
 
 <div class="w-full">
 	<ProjectBanner
@@ -17,11 +19,14 @@ import { ShieldCheck } from 'kampsy-ui/icons';
 </div>`;
 
 export const projectBannerWarning = `
-import { ProjectBanner, Tooltip } from 'kampsy-ui';
-import { RotateCounterClockWise } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { ProjectBanner, Tooltip } from 'kampsy-ui';
+	import { RotateCounterClockWise } from 'kampsy-ui/icons';
 
-{#snippet labelSnip()}
+	{#snippet labelSnip()}
 	This project was rolled back by
+</script>
+
 	<Tooltip
 		class="underline decoration-dashed underline-offset-[5px]"
 		text="Yesterday for project marketing-website"
@@ -45,8 +50,10 @@ import { RotateCounterClockWise } from 'kampsy-ui/icons';
 </div>`;
 
 export const projectBannerError = `
-import { ProjectBanner } from 'kampsy-ui';
-import { Warning } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { ProjectBanner } from 'kampsy-ui';
+	import { Warning } from 'kampsy-ui/icons';
+</script>
 
 <div class="w-full">
 	<ProjectBanner

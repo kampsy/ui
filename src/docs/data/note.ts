@@ -1,5 +1,7 @@
 export const noteDefault = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex gap-8">
     <Note size="small">A small note</Note>
@@ -8,9 +10,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteAction = `
-import { Note, Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Note, Button } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -23,9 +28,12 @@ import { Note, Button } from 'kampsy-ui';
 </div>`;
 
 export const noteSuccess = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -49,9 +57,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteError = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -75,9 +86,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteWarning = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -101,9 +115,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteSecondary = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -127,9 +144,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteViolet = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
@@ -153,9 +173,12 @@ import { Note } from 'kampsy-ui';
 </div>`;
 
 export const noteCyan = `
-import { Note } from 'kampsy-ui';
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
 
-{#snippet actionSnip()}
+	{#snippet actionSnip()}
+</script>
+
 	<Button size="small">Upgrade</Button>
 {/snippet}
 
