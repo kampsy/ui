@@ -1,7 +1,5 @@
 export const textSize = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
-</script>
+import { Text } from 'kampsy-ui';
 
 <div class="w-full space-y-2">
     <Text size={48}>The Evil Rabbit jumps.</Text>
@@ -16,9 +14,7 @@ export const textSize = `
 
 
 export const textResponsive = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
-</script>
+import { Text } from 'kampsy-ui';
 
 <div class="w-full">
     <Text size={{ sm: 24, md: 32, lg: 48 }}>The Evil Rabbit jumps.</Text>
@@ -26,62 +22,60 @@ export const textResponsive = `
 
 
 export const textVariants = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
+import { Text } from 'kampsy-ui';
 
-	type VariantOption =
-	    | 'copy-13'
-	    | 'copy-14'
-	    | 'copy-16'
-	    | 'copy-18'
-	    | 'copy-20'
-	    | 'copy-24'
-	    | 'label-12'
-	    | 'label-13'
-	    | 'label-14'
-	    | 'label-16'
-	    | 'label-18'
-	    | 'label-20'
-	    | 'button-12'
-	    | 'button-14'
-	    | 'button-16'
-	    | 'heading-16'
-	    | 'heading-20'
-	    | 'heading-24'
-	    | 'heading-32'
-	    | 'heading-40'
-	    | 'heading-48'
-	    | 'heading-56'
-	    | 'heading-64'
-	    | 'heading-72';
+type VariantOption =
+    | 'copy-13'
+    | 'copy-14'
+    | 'copy-16'
+    | 'copy-18'
+    | 'copy-20'
+    | 'copy-24'
+    | 'label-12'
+    | 'label-13'
+    | 'label-14'
+    | 'label-16'
+    | 'label-18'
+    | 'label-20'
+    | 'button-12'
+    | 'button-14'
+    | 'button-16'
+    | 'heading-16'
+    | 'heading-20'
+    | 'heading-24'
+    | 'heading-32'
+    | 'heading-40'
+    | 'heading-48'
+    | 'heading-56'
+    | 'heading-64'
+    | 'heading-72';
 
-	const variants: Array<VariantOption> = [
-	    'heading-72',
-	    'heading-64',
-	    'heading-56',
-	    'heading-48',
-	    'heading-40',
-	    'heading-32',
-	    'heading-24',
-	    'heading-20',
-	    'heading-16',
-	    'button-16',
-	    'button-14',
-	    'button-12',
-	    'label-20',
-	    'label-18',
-	    'label-16',
-	    'label-14',
-	    'label-13',
-	    'label-12',
-	    'copy-24',
-	    'copy-20',
-	    'copy-18',
-	    'copy-16',
-	    'copy-14',
-	    'copy-13'
-	];
-</script>
+const variants: Array<VariantOption> = [
+    'heading-72',
+    'heading-64',
+    'heading-56',
+    'heading-48',
+    'heading-40',
+    'heading-32',
+    'heading-24',
+    'heading-20',
+    'heading-16',
+    'button-16',
+    'button-14',
+    'button-12',
+    'label-20',
+    'label-18',
+    'label-16',
+    'label-14',
+    'label-13',
+    'label-12',
+    'copy-24',
+    'copy-20',
+    'copy-18',
+    'copy-16',
+    'copy-14',
+    'copy-13'
+];
 
 <div class="w-full space-y-2">
 	{#each variants as variant}
@@ -93,9 +87,7 @@ export const textVariants = `
 
 
 export const textResponsiveVariant = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
-</script>
+import { Text } from 'kampsy-ui';
 
 <div class="w-full space-y-6">
 	<Text variant={{ sm: 'heading-24', md: 'heading-32', lg: 'heading-48' }}>
@@ -107,9 +99,7 @@ export const textResponsiveVariant = `
 </div>`;
 
 export const textModifiers = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
-</script>
+import { Text } from 'kampsy-ui';
 
 <div class="w-full">
     <Text size={16}>
@@ -119,9 +109,7 @@ export const textModifiers = `
 </div>`;
 
 export const textTruncate = `
-<script lang="ts">
-	import { Text } from 'kampsy-ui';
-</script>
+import { Text } from 'kampsy-ui';
 
 <div class="w-full">
     <Text size={16} class="max-w-[100px]" truncate>

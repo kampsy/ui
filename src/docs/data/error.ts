@@ -1,25 +1,19 @@
 export const errorDefault = `
-<script lang="ts">
-	import { Error } from 'kampsy-ui';
-</script>
+import { Error } from 'kampsy-ui';
 
 <Error>
     This email address is already in use.
 </Error>`;
 
 export const errorCustomLabel = `
-<script lang="ts">
-	import { Error } from 'kampsy-ui';
-</script>
+import { Error } from 'kampsy-ui';
 
 <Error label="Email Error">
     This email address is already in use.
 </Error>`;
 
 export const errorSize = `
-<script lang="ts">
-	import { Error } from 'kampsy-ui';
-</script>
+import { Error } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4">
 	<Error size="sm">This email is in use.</Error>
@@ -28,9 +22,7 @@ export const errorSize = `
 </div>`;
 
 export const errorWithProp = `
-<script lang="ts">
-	import { Error } from 'kampsy-ui';
-</script>
+import { Error } from 'kampsy-ui';
 
 <Error
 	error={{

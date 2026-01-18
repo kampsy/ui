@@ -1,9 +1,7 @@
 export const switchDefault = `
-<script lang="ts">
-	import { Switch } from 'kampsy-ui';
+import { Switch } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <Switch.Root bind:value name="default">
 	<Switch.Control defaultChecked label="Source" value="source" />
@@ -11,11 +9,9 @@ export const switchDefault = `
 </Switch.Root>`;
 
 export const switchDisabled = `
-<script lang="ts">
-	import { Switch } from 'kampsy-ui';
+import { Switch } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <Switch.Root bind:value name="default">
 	<Switch.Control defaultChecked disabled label="Source" value="source" />
@@ -23,11 +19,9 @@ export const switchDisabled = `
 </Switch.Root>`;
 
 export const switchSize = `
-<script lang="ts">
-	import { Switch } from 'kampsy-ui';
+import { Switch } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Switch.Root bind:value name="size-small" size="small">
@@ -47,11 +41,9 @@ export const switchSize = `
 </div>`;
 
 export const switchFullWidth = `
-<script lang="ts">
-	import { Switch } from 'kampsy-ui';
+import { Switch } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <Switch.Root bind:value name="size-large" size="large" fullWidth>
 	<Switch.Control defaultChecked disabled label="Source" value="source" />
@@ -59,11 +51,9 @@ export const switchFullWidth = `
 </Switch.Root>`;
 
 export const switchTooltip = `
-<script lang="ts">
-	import { Switch, Tooltip } from 'kampsy-ui';
+import { Switch, Tooltip } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <Switch.Root bind:value>
 	<Tooltip text="View Source">
@@ -75,12 +65,10 @@ export const switchTooltip = `
 </Switch.Root>`;
 
 export const switchIcon = `
-<script lang="ts">
-	import { Switch } from 'kampsy-ui';
-	import { GridSquare, ListUnordered } from 'kampsy-ui/icons';
+import { Switch } from 'kampsy-ui';
+import { GridSquare, ListUnordered } from 'kampsy-ui/icons';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Switch.Root bind:value name="size-small" size="small">

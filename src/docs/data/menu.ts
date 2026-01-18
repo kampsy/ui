@@ -1,7 +1,5 @@
 export const menuDefault = `
-<script lang="ts">
-	import { Menu } from 'kampsy-ui';
-</script>
+import { Menu } from 'kampsy-ui';
 
 <div class="w-full">
     <Menu.Root>
@@ -17,9 +15,7 @@ export const menuDefault = `
 </div>`;
 
 export const menuLinkItem = `
-<script lang="ts">
-	import { Menu } from 'kampsy-ui';
-</script>
+import { Menu } from 'kampsy-ui';
 
 <div class="w-full">
     <Menu.Root>
@@ -33,10 +29,8 @@ export const menuLinkItem = `
 </div>`;
 
 export const menuPrefixAndSuffix = `
-<script lang="ts">
-	import { Menu } from 'kampsy-ui';
-	import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
-</script>
+import { Menu } from 'kampsy-ui';
+import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
 
 <div class="w-full flex gap-6">
 	<Menu.Root>
@@ -66,10 +60,8 @@ export const menuPrefixAndSuffix = `
 </div>`;
 
 export const menuAlignment = `
-<script lang="ts">
-	import { Menu } from 'kampsy-ui';
-	import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
-</script>
+import { Menu } from 'kampsy-ui';
+import { MoreHorizontal,Accessibility } from 'kampsy-ui/icons';
 
 <div class="w-full flex justify-between gap-8">
 	<Menu.Root>

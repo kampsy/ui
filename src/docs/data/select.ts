@@ -1,9 +1,7 @@
 export const selectDefault = `
-<script lang="ts">
-	import { Select } from 'kampsy-ui';
+import { Select } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <Select.Root bind:value class="w-full lg:w-auto" >
 	<Select.Trigger class="w-full lg:w-[200px]">
@@ -18,11 +16,9 @@ export const selectDefault = `
 </Select.Root>`;
 
 export const selectSize = `
-<script lang="ts">
-	import { Select } from 'kampsy-ui';
+import { Select } from 'kampsy-ui';
 
-	let value = $state('');
-</script>
+let value = $state('');
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Select.Root size="small" bind:value class="w-full lg:w-auto">
@@ -63,12 +59,10 @@ export const selectSize = `
 </div>`;
 
 export const selectError = `
-<script lang="ts">
-	import { Select } from 'kampsy-ui';
+import { Select } from 'kampsy-ui';
 
-	let value = $state('');
-	let error = $state('Please select a value.');
-</script>
+let value = $state('');
+let error = $state('Please select a value.');
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Select.Root bind:error size="small" bind:value class="w-full lg:w-auto">

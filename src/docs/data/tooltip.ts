@@ -1,7 +1,5 @@
 export const toolTipDefault = `
-<script lang="ts">
-	import { Tooltip } from 'kampsy-ui';
-</script>
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
     <div>
@@ -27,9 +25,7 @@ export const toolTipDefault = `
 </div>`;
 
 export const toolTipCustomType = `
-<script lang="ts">
-	import { Tooltip } from 'kampsy-ui';
-</script>
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
     <div>
@@ -55,9 +51,7 @@ export const toolTipCustomType = `
 </div>`;
 
 export const tooltipComponents = `
-<script lang="ts">
-	import { Tooltip } from 'kampsy-ui';
-</script>
+import { Tooltip } from 'kampsy-ui';
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
   <div>

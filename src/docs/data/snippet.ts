@@ -1,35 +1,25 @@
 export const snippetDefault = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <CodeSnippet text="npm init next-app" class="w-full lg:w-[300px]"/>`;
 
 export const snippetInverted = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <CodeSnippet type="inverted" text="npm init next-app" class="w-full lg:w-[300px]"/>`;
 
 export const snippetMultiline = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <CodeSnippet text={['cd project', 'now']} class="w-full"/>`;
 
 export const snippetNoPrompt = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <CodeSnippet prompt={false} text="npm init next-app" class="w-full lg:w-[300px]"/>`;
 
 export const snippetCallback = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <CodeSnippet
 	onCopy={() => alert('You copied the text!')}
@@ -38,9 +28,7 @@ export const snippetCallback = `
 />`;
 
 export const snippetVariants = `
-<script lang="ts">
-	import { CodeSnippet } from 'kampsy-ui';
-</script>
+import { CodeSnippet } from 'kampsy-ui';
 
 <div class="w-full flex flex-col gap-3 flex-wrap">
 	<CodeSnippet type="success" text="npm init next-app" class="w-full lg:w-[300px]" />

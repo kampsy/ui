@@ -1,7 +1,5 @@
 export const tableDefault = `
-<script lang="ts">
-	import { Table } from 'kampsy-ui';
-</script>
+import { Table } from 'kampsy-ui';
 
 <div class="w-full">
     <Table.Root>
@@ -33,9 +31,7 @@ export const tableDefault = `
 </div>`;
 
 export const tableStriped = `
-<script lang="ts">
-	import { Table } from 'kampsy-ui';
-</script>
+import { Table } from 'kampsy-ui';
 
 <div class="w-full">
     <Table.Root>
@@ -67,9 +63,7 @@ export const tableStriped = `
 </div>`;
 
 export const tableInteractive = `
-<script lang="ts">
-	import { Table } from 'kampsy-ui';
-</script>
+import { Table } from 'kampsy-ui';
 
 <div class="w-full">
     <Table.Root>
@@ -101,58 +95,56 @@ export const tableInteractive = `
 </div>`;
 
 export const tableFull = `
-<script lang="ts">
-	import { Table } from 'kampsy-ui';
+import { Table } from 'kampsy-ui';
 
-	const formatter = new Intl.NumberFormat('en-US', {
+const formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	maximumFractionDigits: 2,
 	currency: 'usd'
-	});
+});
 
-	function formatCurrency(amount: number): string {
+function formatCurrency(amount: number): string {
 	return formatter.format(amount);
-	}
+}
 
-	const items = [
-	    {
-	    	product: 'Brake Pads Set',
-	    	usage: '100 sets',
-	    	price: '$50 per set',
-	    	charge: 5000
-	    },
-	    {
-	    	product: 'Oil Filters',
-	    	usage: '200 filters',
-	    	price: '$10 per filter',
-	    	charge: 2000
-	    },
-	    {
-	    	product: 'Car Batteries',
-	    	usage: '50 batteries',
-	    	price: '$100 per battery',
-	    	charge: 5000
-	    },
-	    {
-	    	product: 'Headlight Bulbs',
-	    	usage: '300 bulbs',
-	    	price: '$15 per bulb',
-	    	charge: 4500
-	    },
-	    {
-	    	product: 'Windshield Wipers',
-	    	usage: '250 pairs',
-	    	price: '$20 per pair',
-	    	charge: 5000
-	    },
-	    {
-	    	product: 'Spark Plugs',
-	    	usage: '500 sets',
-	    	price: '$5 per set',
-	    	charge: 2500
-	    }
-	];
-</script>
+const items = [
+    {
+    	product: 'Brake Pads Set',
+    	usage: '100 sets',
+    	price: '$50 per set',
+    	charge: 5000
+    },
+    {
+    	product: 'Oil Filters',
+    	usage: '200 filters',
+    	price: '$10 per filter',
+    	charge: 2000
+    },
+    {
+    	product: 'Car Batteries',
+    	usage: '50 batteries',
+    	price: '$100 per battery',
+    	charge: 5000
+    },
+    {
+    	product: 'Headlight Bulbs',
+    	usage: '300 bulbs',
+    	price: '$15 per bulb',
+    	charge: 4500
+    },
+    {
+    	product: 'Windshield Wipers',
+    	usage: '250 pairs',
+    	price: '$20 per pair',
+    	charge: 5000
+    },
+    {
+    	product: 'Spark Plugs',
+    	usage: '500 sets',
+    	price: '$5 per set',
+    	charge: 2500
+    }
+];
 
 <div class="w-full">
     <Table.Root>

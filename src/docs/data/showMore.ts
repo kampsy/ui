@@ -1,9 +1,7 @@
 export const showMoreDefault = `
-<script lang="ts">
-	import { ShowMore } from 'kampsy-ui';
+import { ShowMore } from 'kampsy-ui';
 
-	let isActive = $state(false);
-</script>
+let isActive = $state(false);
 
 <div class="w-full">
     <ShowMore bind:isActive />

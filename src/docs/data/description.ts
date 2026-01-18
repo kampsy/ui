@@ -1,7 +1,5 @@
 export const descriptionDefault = `
-<script lang="ts">
-	import { Description } from 'kampsy-ui';
-</script>
+import { Description } from 'kampsy-ui';
 
 <Description
 	content="Data about this section."

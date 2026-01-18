@@ -1,16 +1,14 @@
 export const paginationDefault = `
-<script lang="ts">
-	import { Pagination } from 'kampsy-ui';
+import { Pagination } from 'kampsy-ui';
 
-	const prev = {
-	  title: 'Home',
-	  href: '#',
-	};
+const prev = {
+  title: 'Home',
+  href: '#',
+};
  
-	const next = {
-	  title: 'Introduction',
-	  href: '#',
-	};
-</script>
+const next = {
+  title: 'Introduction',
+  href: '#',
+};
 
 <Pagination previous={prev} {next} />`;

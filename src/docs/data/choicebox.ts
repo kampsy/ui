@@ -1,9 +1,7 @@
 export const choiceboxDefault = `
-<script lang="ts">
-	import { Choicebox } from 'kampsy-ui';
+import { Choicebox } from 'kampsy-ui';
 
-	let value: string | string[]  = $state('');
-</script>
+let value: string | string[]  = $state('');
 
 <div class="w-full">
 	<Choicebox.Group label="select a plan" type="radio" bind:value>
@@ -13,11 +11,9 @@ export const choiceboxDefault = `
 </div>`;
 
 export const choiceboxMultiselect = `
-<script lang="ts">
-	import { Choicebox } from 'kampsy-ui';
+import { Choicebox } from 'kampsy-ui';
 
-	let value: string | string[] = $state([]);
-</script>
+let value: string | string[] = $state([]);
 
 <div class="w-full">
 	<Choicebox.Group label="select a plan" type="checkbox" bind:value>
@@ -27,12 +23,10 @@ export const choiceboxMultiselect = `
 </div>`;
 
 export const choiceboxDisabled = `
-<script lang="ts">
-	import { Choicebox } from 'kampsy-ui';
+import { Choicebox } from 'kampsy-ui';
 
-	let value: string | string[] = $state('');
-	let value2: string | string[] = $state([]);
-</script>
+let value: string | string[] = $state('');
+let value2: string | string[] = $state([]);
 
 <div class="w-full space-y-4">
 	<Choicebox.Group label="select a plan" disabled type="radio" bind:value>

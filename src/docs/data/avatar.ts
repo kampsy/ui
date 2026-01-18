@@ -1,43 +1,36 @@
-const title = "avatar"
-const description = `
-Avatars represent a user or a team. Stacked avatars represent a group of people
-`
-
 export const avatarGroup = `
-<script lang="ts">
-	import { AvatarGroup } from 'kampsy-ui';
+import { AvatarGroup } from 'kampsy-ui';
 
-	const members = [
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
-		}
-	];
-</script>
+const members = [
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+	},
+	{
+		name: 'Evil Rabbit',
+		imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
+	}
+];
 
 <div class="flex flex-col gap-2">
 	<div class="space-y-4">
@@ -51,9 +44,7 @@ export const avatarGroup = `
 </div>`;
 
 export const avatarText = `
-<script lang="ts">
-	import { AvatarText } from 'kampsy-ui';
-</script>
+import { AvatarText } from 'kampsy-ui';
 
 <AvatarText.Root size={40}>
 	<AvatarText.Content>
@@ -63,9 +54,7 @@ export const avatarText = `
 </AvatarText.Root>`;
 
 export const avatarPlaceholder = `
-<script lang="ts">
-	import { Avatar } from 'kampsy-ui';
-</script>
+import { Avatar } from 'kampsy-ui';
 
 <div>
 	<Avatar placeholder size={90} />

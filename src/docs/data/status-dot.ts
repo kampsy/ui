@@ -1,7 +1,5 @@
 export const statusDotDefault = `
-<script lang="ts">
-	import { StatusDot } from 'kampsy-ui';
-</script>
+import { StatusDot } from 'kampsy-ui';
 
 <div class="space-y-6">
 	<StatusDot state="QUEUED" />
@@ -12,9 +10,7 @@ export const statusDotDefault = `
 </div>`;
 
 export const statusDotLabel = `
-<script lang="ts">
-	import { StatusDot } from 'kampsy-ui';
-</script>
+import { StatusDot } from 'kampsy-ui';
 
 <div class="space-y-6">
 	<StatusDot label state="QUEUED" />

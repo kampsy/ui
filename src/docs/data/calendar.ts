@@ -1,10 +1,8 @@
 export const calendarDefault = `
-<script lang="ts">
-	import { Calendar } from 'kampsy-ui';
-	import type { DateValue, RangeValue } from 'kampsy-ui';
+import { Calendar } from 'kampsy-ui';
+import type { DateValue, RangeValue } from 'kampsy-ui';
 
-	let value = $state<DateValue | RangeValue<DateValue>>();
-</script>
+let value = $state<DateValue | RangeValue<DateValue>>();
 
 <div class="w-full flex justify-center">
 	<Calendar bind:value/>

@@ -1,9 +1,7 @@
 export const tabsDefault = `
-<script lang="ts">
-	import { Tabs } from 'kampsy-ui';
+import { Tabs } from 'kampsy-ui';
 
-	let selected = $state('apple');
-</script>
+let selected = $state('apple');
 
 <Tabs
 	bind:selected
@@ -16,11 +14,9 @@ export const tabsDefault = `
 
 
 export const tabsDisabled = `
-<script lang="ts">
-	import { Tabs } from 'kampsy-ui';
+import { Tabs } from 'kampsy-ui';
 
-	let selected = $state('apple');
-</script>
+let selected = $state('apple');
 
 <Tabs
     disabled
@@ -33,11 +29,9 @@ export const tabsDisabled = `
 />`;
 
 export const tabsDisabledSpecific = `
-<script lang="ts">
-	import { Tabs } from 'kampsy-ui';
+import { Tabs } from 'kampsy-ui';
 
-	let selected = $state('apple');
-</script>
+let selected = $state('apple');
 
 <Tabs
 	bind:selected
@@ -49,12 +43,10 @@ export const tabsDisabledSpecific = `
 />`;
 
 export const tabsWithIcons = `
-<script lang="ts">
-	import { Tabs } from 'kampsy-ui';
-	import { LogoGithub, LogoGitlab, LogoBitbucketColor } from 'kampsy-ui/icons';
+import { Tabs } from 'kampsy-ui';
+import { LogoGithub, LogoGitlab, LogoBitbucketColor } from 'kampsy-ui/icons';
 
-	let selected = $state('github');
-</script>
+let selected = $state('github');
 
 <Tabs
 	bind:selected
@@ -66,11 +58,9 @@ export const tabsWithIcons = `
 />`;
 
 export const tabsSecondary = `
-<script lang="ts">
-	import { Tabs } from 'kampsy-ui';
+import { Tabs } from 'kampsy-ui';
 
-	let selected = $state('github');
-</script>
+let selected = $state('github');
 
 <Tabs
 	bind:selected

@@ -1,7 +1,5 @@
 export const emptyStateDefault = `
-<script lang="ts">
-	import { EmptyState, ChartBarPeak } from 'kampsy-ui';
-</script>
+import { EmptyState, ChartBarPeak } from 'kampsy-ui';
 
 <EmptyState.Root
   description="A message conveying the state of the product."
@@ -12,9 +10,7 @@ export const emptyStateDefault = `
 export const blankStateDocs = emptyStateDefault;
 
 export const informationalDocs = `
-<script lang="ts">
-	import { EmptyState, ChartBarPeak, Button} from 'kampsy-ui';
-</script>
+import { EmptyState, ChartBarPeak, Button} from 'kampsy-ui';
 
 <EmptyState.Root
 	description="This should detail the actions you can take on this screen, as well as why it’s valuable."
