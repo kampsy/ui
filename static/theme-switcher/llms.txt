@@ -1,0 +1,29 @@
+# ThemeSwitcher Component
+
+### ThemeSwitcher
+
+**Exports:**
+- `ThemeSwitcher` - Theme switcher component (light/dark mode)
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { ThemeSwitcher } from 'kampsy-ui';
+</script>
+
+<ThemeSwitcher />
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/theme-switcher for full documentation and examples.
+
+## License
+
+MIT License

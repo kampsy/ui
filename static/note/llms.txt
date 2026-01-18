@@ -1,0 +1,33 @@
+# Note Component
+
+### Note
+
+**Exports:**
+- `Note` - Note/alert component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Note } from 'kampsy-ui';
+</script>
+
+<div class="w-full flex gap-8">
+    <Note size="small">A small note</Note>
+    <Note>A default note</Note>
+    <Note size="large">A large note</Note>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/note for full documentation and examples.
+
+## License
+
+MIT License

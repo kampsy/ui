@@ -1,0 +1,38 @@
+# Tabs Component
+
+### Tabs
+
+**Exports:**
+- `Tabs` - Tabs component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Tabs } from 'kampsy-ui';
+
+	let selected = $state('apple');
+</script>
+
+<Tabs
+	bind:selected
+	tabs={[
+		{ title: 'Apple', value: 'apple' },
+		{ title: 'Orange', value: 'orange' },
+		{ title: 'Mango', value: 'mango' }
+	]}
+/>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/tabs for full documentation and examples.
+
+## License
+
+MIT License

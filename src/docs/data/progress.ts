@@ -1,11 +1,15 @@
 export const progressDefault = `
-import { Progress } from 'kampsy-ui';
+<script lang="ts">
+	import { Progress } from 'kampsy-ui';
+</script>
 
 <Progress value={80} />`;
 
 
 export const progressDynamicColors = `
-import { Progress } from 'kampsy-ui';
+<script lang="ts">
+	import { Progress } from 'kampsy-ui';
+</script>
 
 <Progress value={dynamic} />
 
@@ -28,7 +32,9 @@ import { Progress } from 'kampsy-ui';
 </div>`;
 
 export const progressThemed = `
-import { Progress } from 'kampsy-ui';
+<script lang="ts">
+	import { Progress } from 'kampsy-ui';
+</script>
 
 <div class="w-full space-y-6">
 	<Progress type="success" value={100} />

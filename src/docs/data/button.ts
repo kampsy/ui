@@ -1,5 +1,7 @@
 export const buttonSize = `
-import { Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="tiny" aria-label="tiny">upload</Button>
@@ -9,7 +11,9 @@ import { Button } from 'kampsy-ui';
 </div>`;
 
 export const buttonVariants = `
-import { Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button variant="secondary" aria-label="secondary" >upload</Button>
@@ -19,8 +23,10 @@ import { Button } from 'kampsy-ui';
 </div>`;
 
 export const buttonShapes = `
-import { Button } from 'kampsy-ui';
-import { ArrowUp } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+	import { ArrowUp } from 'kampsy-ui/icons';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button aria-label="tiny square" shape="square" size="tiny">
@@ -73,8 +79,10 @@ import { ArrowUp } from 'kampsy-ui/icons';
 </div>`;
 
 export const buttonPrefixAndSuffix = `
-import { Button } from 'kampsy-ui';
-import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+	import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
@@ -83,7 +91,9 @@ import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
 </div>`;
 
 export const buttonRounded = `
-import { Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded">upload</Button>
@@ -93,7 +103,9 @@ import { Button } from 'kampsy-ui';
 </div>`;
 
 export const buttonLoading = `
-import { Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="tiny" loading aria-label="tiny loading">upload</Button>
@@ -103,7 +115,9 @@ import { Button } from 'kampsy-ui';
 </div>`;
 
 export const buttonDisabled = `
-import { Button } from 'kampsy-ui';
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button size="tiny" disabled aria-label="tiny disabled">upload</Button>

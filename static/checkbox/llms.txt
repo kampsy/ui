@@ -1,0 +1,30 @@
+# Checkbox Component
+
+### Checkbox
+
+**Exports:**
+- `Checkbox` - Checkbox input component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Checkbox } from 'kampsy-ui';
+	let value = $state(false);
+</script>
+
+<Checkbox bind:checked aria-labelledby="checkbox">option 1</Checkbox>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/checkbox for full documentation and examples.
+
+## License
+
+MIT License

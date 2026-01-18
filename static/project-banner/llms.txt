@@ -1,0 +1,40 @@
+# ProjectBanner Component
+
+### ProjectBanner
+
+**Exports:**
+- `ProjectBanner` - Project banner component
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { ProjectBanner } from 'kampsy-ui';
+	import { ShieldCheck } from 'kampsy-ui/icons';
+</script>
+
+<div class="w-full">
+	<ProjectBanner
+		icon={ShieldCheck}
+		callToAction={{
+			label: 'Disable',
+			href: '/project-banner'
+		}}
+		label="Attack Challenge Mode is enabled for this project"
+		variant="success"
+	/>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/project-banner for full documentation and examples.
+
+## License
+
+MIT License

@@ -1,5 +1,7 @@
 export const collapseDefault = `
-import { Collapse } from 'kampsy-ui';
+<script lang="ts">
+	import { Collapse } from 'kampsy-ui';
+</script>
 
 <Collapse.Root>
 	<Collapse.Item value="tab1">
@@ -31,7 +33,9 @@ import { Collapse } from 'kampsy-ui';
 </Collapse.Root>`;
 
 export const collapseExpanded = `
-import { Collapse } from 'kampsy-ui';
+<script lang="ts">
+	import { Collapse } from 'kampsy-ui';
+</script>
 
 <Collapse.Root>
 	<Collapse.Item value="tab1">
@@ -63,7 +67,9 @@ import { Collapse } from 'kampsy-ui';
 </Collapse.Root>`;
 
 export const collapseMultiple = `
-import { Collapse } from 'kampsy-ui';
+<script lang="ts">
+	import { Collapse } from 'kampsy-ui';
+</script>
 
 <Collapse.Root multiple>
 	<Collapse.Item value="tab1">
@@ -95,7 +101,9 @@ import { Collapse } from 'kampsy-ui';
 </Collapse.Root>`;
 
 export const collapseSize = `
-import { Collapse } from 'kampsy-ui';
+<script lang="ts">
+	import { Collapse } from 'kampsy-ui';
+</script>
 
 <Collapse.Root>
 	<Collapse.Item size="small" value="tab1">

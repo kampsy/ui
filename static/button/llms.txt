@@ -1,0 +1,48 @@
+# Button Component
+
+### Button
+
+**Exports:**
+- `Button` - Button component
+
+**Props:**
+- `shape`: 'circle' | 'square' | undefined
+- `size`: 'tiny' | 'small' | 'medium' | 'large' (default: 'medium')
+- `variant`: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'primary')
+- `iconPrefix`: Component | undefined - Icon component to show before text
+- `iconSuffix`: Component | undefined - Icon component to show after text
+- `rounded`: boolean (default: false) - Fully rounded button
+- `loading`: boolean (default: false) - Shows loading spinner
+- `disabled`: boolean (default: false)
+- `buttonElement`: HTMLButtonElement - Bindable reference to button element
+- `onclick`: (evt: Event) => void - Click handler
+- `class`: string - Additional CSS classes
+- Extends `HTMLButtonAttributes`
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
+
+<div class="w-full flex flex-wrap gap-4 justify-between">
+	<Button size="tiny" aria-label="tiny">upload</Button>
+	<Button size="small" aria-label="small">upload</Button>
+	<Button aria-label="medium">upload</Button>
+	<Button size="large" aria-label="large">upload</Button>
+</div>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/button for full documentation and examples.
+
+## License
+
+MIT License

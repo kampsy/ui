@@ -1,10 +1,14 @@
 export const spinnerDefault = `
-import { Spinner } from 'kampsy-ui';
+<script lang="ts">
+	import { Spinner } from 'kampsy-ui';
+</script>
 
 <Spinner />`;
 
 export const spinnerCustom = `
-import { Spinner } from 'kampsy-ui';
+<script lang="ts">
+	import { Spinner } from 'kampsy-ui';
+</script>
 
 <div class="flex items-center gap-8">
 	<Spinner size={12} />

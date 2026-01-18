@@ -1,8 +1,10 @@
 export const toggleDefault = `
-import { Toggle } from 'kampsy-ui';
+<script lang="ts">
+	import { Toggle } from 'kampsy-ui';
 
-let checked = $state(false);
-let checked2 = $state(true);
+	let checked = $state(false);
+	let checked2 = $state(true);
+</script>
 
 <div class="space-y-4">
 	<div class="w-full">
@@ -14,7 +16,9 @@ let checked2 = $state(true);
 </div>`;
 
 export const toggleSizes = `
-import { Toggle } from 'kampsy-ui';
+<script lang="ts">
+	import { Toggle } from 'kampsy-ui';
+</script>
 
 <div class="w-full flex">
 	<div class="w-4/12">

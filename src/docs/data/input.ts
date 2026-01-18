@@ -1,9 +1,11 @@
 export const inputDefault = `
-import { Input } from 'kampsy-ui';
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
 
-let small = $state('');
-let defaultInput = $state('');
-let large = $state('');
+	let small = $state('');
+	let defaultInput = $state('');
+	let large = $state('');
+</script>
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-4">
 	<Input aria-labelledby="Demo input" bind:value={small} placeholder="small" size="small" />
@@ -13,10 +15,12 @@ let large = $state('');
 
 
 export const inputPrefixAndSuffix = `
-import { Input } from 'kampsy-ui';
-import { ArrowCircleUp } from 'kampsy-ui/icons'
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
+	import { ArrowCircleUp } from 'kampsy-ui/icons'
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input aria-labelledby="Demo" contPrefix={ArrowCircleUp} bind:value placeholder="default" />
@@ -39,8 +43,10 @@ let value = $state('');
 </div>`;
 
 export const inputDisabled = `
-import { Input } from 'kampsy-ui';
-import { ArrowCircleUp } from 'kampsy-ui/icons'
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
+	import { ArrowCircleUp } from 'kampsy-ui/icons'
+</script>
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
 	<Input aria-labelledby="Demo" placeholder="Disabled with placeholder" disabled />
@@ -86,12 +92,16 @@ import { ArrowCircleUp } from 'kampsy-ui/icons'
 </div>`;
 
 export const inputSearch = `
-import { SearchInput } from 'kampsy-ui';
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+</script>
 
 <SearchInput placeholder="Enter some text..." />`;
 
 export const inputError = `
-import { Input } from 'kampsy-ui';
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
+</script>
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3">
     <Input
@@ -119,8 +129,10 @@ import { Input } from 'kampsy-ui';
 
 
 export const inputLabel = `
-import { Input } from 'kampsy-ui';
+<script lang="ts">
+	import { Input } from 'kampsy-ui';
 
-let value = $state('');
+	let value = $state('');
+</script>
 
 <Input aria-labelledby="Demo input" label="Label" bind:value placeholder="Label" />`;

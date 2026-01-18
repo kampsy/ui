@@ -1,4 +1,6 @@
 export const themeSwitcherDefault = `
-import { ThemeSwitcher } from 'kampsy-ui';
+<script lang="ts">
+	import { ThemeSwitcher } from 'kampsy-ui';
+</script>
 
 <ThemeSwitcher />`;

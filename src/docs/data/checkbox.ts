@@ -1,11 +1,15 @@
 export const checkboxDefault = `
-import { Checkbox } from 'kampsy-ui';
-let value = $state(false);
+<script lang="ts">
+	import { Checkbox } from 'kampsy-ui';
+	let value = $state(false);
+</script>
 
 <Checkbox bind:checked aria-labelledby="checkbox">option 1</Checkbox>`;
 
 export const checkboxDisabled = `
-import { Checkbox } from 'kampsy-ui';
+<script lang="ts">
+	import { Checkbox } from 'kampsy-ui';
+</script>
 
 <div class="w-full space-y-4">
     <Checkbox disabled aria-labelledby="checkbox-2">Disabled</Checkbox>
@@ -14,14 +18,18 @@ import { Checkbox } from 'kampsy-ui';
 </div>`;
 
 export const checkboxIndeterminate = `
-import { Checkbox } from 'kampsy-ui';
+<script lang="ts">
+	import { Checkbox } from 'kampsy-ui';
+</script>
 
 <Checkbox indeterminate aria-labelledby="checkbox-5">option 1</Checkbox>`;
 
 export const checkboxItems = `
-import { Checkbox } from 'kampsy-ui';
+<script lang="ts">
+	import { Checkbox } from 'kampsy-ui';
 
-let items = $state(['avatar', 'choicebox']);
+	let items = $state(['avatar', 'choicebox']);
+</script>
 
 <div class="w-full space-y-4">
     <Checkbox value="avatar" bind:items aria-labelledby="checkbox-6">avatar</Checkbox>

@@ -1,5 +1,7 @@
 export const keyboardInputModifiers = `
-import { Kbd } from 'kampsy-ui';
+<script lang="ts">
+	import { Kbd } from 'kampsy-ui';
+</script>
 
 <div>
     <Kbd.Group>
