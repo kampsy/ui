@@ -306,7 +306,7 @@
 					</div>
 					<div class="flex justify-between">
 						<span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -323,7 +323,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -340,7 +340,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -357,7 +357,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -374,7 +374,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -391,7 +391,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -408,7 +408,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -425,7 +425,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[100ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-100"
 							style="transition-delay: 20ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -445,7 +445,7 @@
 					</div>
 					<div class="flex justify-between">
 						<span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -462,7 +462,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -479,7 +479,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -496,7 +496,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -513,7 +513,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -530,7 +530,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -547,7 +547,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"
@@ -564,7 +564,7 @@
 								></path></svg
 							></span
 						><span
-							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-[200ms]"
+							class="group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 transition-colors delay-200"
 							style="transition-delay: 40ms; transition-property: color; transition-duration: 200ms;"
 							><svg
 								data-testid="geist-icon"

@@ -44,7 +44,7 @@
 
 {#snippet colSnip(title: string, colorList: string[])}
 	<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
-		<div class="w-[100px] flex-shrink-0">
+		<div class="w-[100px] shrink-0">
 			<p
 				class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium first-letter:capitalize"
 			>
@@ -59,7 +59,7 @@
 						<div class="w-full h-full flex items-center">
 							<button
 								aria-label={item}
-								class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded {item}"
+								class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-sm {item}"
 							></button>
 						</div>
 					</Tooltip>
@@ -81,7 +81,7 @@
 
 		<div class="mt-5 xl:mt-10 space-y-6">
 			<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
-				<div class="w-[100px] flex-shrink-0">
+				<div class="w-[100px] shrink-0">
 					<p
 						class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium capitalize"
 					>
@@ -94,13 +94,13 @@
 							<li class="w-full max-w-[68px]">
 								<Tooltip
 									position="top"
-									text="bg-kui-light-bg rounded dark:bg-kui-dark-bg"
+									text="bg-kui-light-bg rounded-sm dark:bg-kui-dark-bg"
 									class="w-full h-full"
 								>
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 bg-kui-light-bg rounded dark:bg-kui-dark-bg"
+											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 bg-kui-light-bg rounded-sm dark:bg-kui-dark-bg"
 										></button>
 									</div>
 								</Tooltip>
@@ -114,7 +114,7 @@
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray alpha"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
+											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-sm bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
 										></button>
 									</div>
 								</Tooltip>
@@ -201,7 +201,7 @@
 			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[700px] w-full flex-col border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-[412px] md:flex-row"
 		>
 			<div
-				class="flex h-[50%] items-center justify-center border-r border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-[100%] md:w-[50%]"
+				class="flex h-[50%] items-center justify-center border-r border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-full md:w-[50%]"
 			>
 				<div
 					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
@@ -220,7 +220,7 @@
 			</div>
 
 			<div
-				class="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary flex h-[50%] items-center justify-center md:h-[100%] md:w-[50%]"
+				class="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary flex h-[50%] items-center justify-center md:h-full md:w-[50%]"
 			>
 				<div
 					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"

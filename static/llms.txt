@@ -98,7 +98,7 @@ import { Shield } from 'kampsy-ui/icons';
 - `variant`: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'primary')
 - `iconPrefix`: Component | undefined - Icon component to show before text
 - `iconSuffix`: Component | undefined - Icon component to show after text
-- `rounded`: boolean (default: false) - Fully rounded button
+- `rounded-sm`: boolean (default: false) - Fully rounded button
 - `loading`: boolean (default: false) - Shows loading spinner
 - `disabled`: boolean (default: false)
 - `buttonElement`: HTMLButtonElement - Bindable reference to button element

@@ -38,14 +38,14 @@
 			<div class="flex items-center gap-x-2">
 				<div class="w-[20px] h-[20px]"></div>
 				<div
-					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 group-hover:dark:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
 				>
 					previous
 				</div>
 			</div>
 			<div class="flex items-center gap-x-2">
 				<div
-					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 group-hover:dark:text-kui-dark-gray-1000"
+					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
 				>
 					<div class="w-[16px] h-[16px]">
 						<ChevronLeft />
@@ -66,7 +66,7 @@
 		<a aria-label="go to next page: {next.title}" href={next.href} class="group">
 			<div class="flex items-center gap-x-2">
 				<div
-					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 group-hover:dark:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
 				>
 					next
 				</div>
@@ -79,7 +79,7 @@
 					{next.title}
 				</span>
 				<div
-					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 group-hover:dark:text-kui-dark-gray-1000"
+					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
 				>
 					<div class="w-[16px] h-[16px]">
 						<ChevronRight />

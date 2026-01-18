@@ -40,7 +40,7 @@
 {/snippet}
 
 {#snippet tabSnip()}
-	<Row bottomLine={false} class="!py-1">
+	<Row bottomLine={false} class="py-1!">
 		<Tabs
 			bind:selected
 			tabs={[

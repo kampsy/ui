@@ -70,13 +70,13 @@
 		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000
 		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
 		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border
-		border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100`,
+		border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100`,
 		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200
-		hover:dark:bg-kui-dark-gray-200`,
+		dark:hover:bg-kui-dark-gray-200`,
 		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900
-		hover:dark:bg-kui-dark-red-900 `,
+		dark:hover:bg-kui-dark-red-900 `,
 		warning: `text-kui-light-gray-1000 bg-kui-light-amber-700 dark:bg-kui-dark-amber-700
-		hover:bg-kui-light-amber-800 hover:dark:bg-kui-dark-amber-800`
+		hover:bg-kui-light-amber-800 dark:hover:bg-kui-dark-amber-800`
 	};
 	let typeClass = $derived.by(() => {
 		return variantObj[variant];

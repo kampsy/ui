@@ -92,7 +92,7 @@
 			autocapitalize="off"
 			autocomplete="off"
 			rows="4"
-			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-none
+			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-hidden
 		 bg-kui-light-bg dark:bg-kui-dark-bg"
 			{placeholder}
 			{disabled}
