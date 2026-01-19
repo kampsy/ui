@@ -83,7 +83,7 @@
 		if (checked) {
 			return `${colorObj[color]}`;
 		}
-		return `bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border-black/[0.08]
+		return `bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 border-black/8
 		 dark:border-kui-dark-gray-400`;
 	});
 

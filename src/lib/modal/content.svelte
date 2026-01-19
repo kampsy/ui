@@ -24,7 +24,7 @@
 			in:fly|local={{ y: '50vh', duration: 500, opacity: 1 }}
 			out:fly|local={{ y: '100vh', duration: 600, easing: cubicOut, opacity: 1 }}
 			role="dialog"
-			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
 		>
 			<div
 				use:clickOutside={() => {

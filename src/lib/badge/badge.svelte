@@ -66,7 +66,7 @@
 			'bg-kui-light-teal-300 text-kui-light-teal-900 dark:bg-kui-dark-teal-300 dark:text-kui-dark-teal-900',
 		inverted:
 			'bg-kui-light-gray-1000 text-kui-light-gray-100 dark:bg-kui-dark-gray-1000 dark:text-kui-dark-gray-100',
-		pill: 'cursor-pointer border border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 hover:dark:bg-kui-dark-gray-100 '
+		pill: 'cursor-pointer border border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100 '
 	};
 	let variantClass = $derived.by(() => {
 		return variantObj[variant];

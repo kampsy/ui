@@ -53,7 +53,7 @@
 			class="absolute {rootState.getContentPosition()} {alightmentClass} z-[1000] {klass}"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-2 rounded-[12px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-sm scroll-smooth overflow-y-auto {klass}"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-2 rounded-[12px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-xs scroll-smooth overflow-y-auto {klass}"
 			>
 				{@render children()}
 			</div>
