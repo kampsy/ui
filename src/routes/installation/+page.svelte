@@ -76,12 +76,16 @@
 		>
 			You will then see the question: {@render roundedCode(
 				'What would you like to add to your project?'
-			)} Use the arrow keys to navigate, and the spacebar to select or deselect options. Choose the following:
+			)} Use the arrow keys to navigate, and spacebar to select or deselect options. Choose the following:
 			{@render roundedCode('prettier')} ,
 			{@render roundedCode('eslint')} ,
 			{@render roundedCode('vitest')} ,
-			{@render roundedCode('playwright')} ,
-			{@render roundedCode('tailwindcss')} . Once you have made your selections, press Enter.
+			{@render roundedCode('playwright')} .
+		</p>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			For Tailwind CSS, choose {@render roundedCode('tailwindcss')} if prompted. The SvelteKit template now includes Tailwind CSS 4 by default, which uses a simpler configuration approach.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
@@ -138,9 +142,7 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Update the {@render roundedCode('tailwind.config.cjs')} file in your project’s root folder to inform
-			the Tailwind CSS compiler where to locate the utility classes and configure Kampsy-ui's custom
-			color palette, by using the config preset.
+			Create or update your Tailwind configuration file in your project's root folder (can be {@render roundedCode('tailwind.config.js')}, {@render roundedCode('tailwind.config.ts')}, etc.) to use Kampsy-ui's preset.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationConfig)}
@@ -148,7 +150,12 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			If you prefer the classic Tailwind config options, you can use the extended defaults.
+			Note: With Tailwind CSS 4, you might not need a config file at all if you're using the default setup. Kampsy-ui's colors are automatically available when you import the preset.
+		</p>
+		<p
+			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+		>
+			If you need to specify content paths or use additional options, you can use the extended configuration.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationConfigLong)}
