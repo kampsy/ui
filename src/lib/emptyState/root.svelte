@@ -14,7 +14,7 @@
 
 <div
 	{...rest}
-	class="w-full px-[70px] py-[48px] border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
+	class="w-full px-17.5 py-12 border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
 >
 	<div class="grid justify-items-center gap-6">
 		<!-- icon container -->
@@ -22,16 +22,16 @@
 			{@const Icon = icon}
 			<div class="w-full flex justify-center">
 				<div
-					class="flex items-center justify-center w-[62px] h-[60px] border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
+					class="flex items-center justify-center w-15.5 h-15 border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
 				>
-					<div class="w-[32px] h-[32px]">
+					<div class="w-8 h-8">
 						<Icon />
 					</div>
 				</div>
 			</div>
 		{/if}
 		<!-- text cont -->
-		<div class="flex flex-col gap-2 mx-auto max-w-[340px]">
+		<div class="flex flex-col gap-2 mx-auto max-w-85">
 			<p
 				class="text-center text-base capitalize text-kui-light-dark-gray-1000 dark:text-kui-dark-gray-1000"
 			>

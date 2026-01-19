@@ -39,7 +39,7 @@
 	const uid = $props.id();
 
 	const sizeObj = {
-		small: 'h-[32px] text-sm',
+		small: 'h-8 text-sm',
 		medium: 'h-[40px] text-sm',
 		large: 'h-[48px] text-base'
 	};
@@ -127,7 +127,7 @@
 				{contPrefix}
 			{:else if typeof contPrefix === 'function'}
 				{@const PrefixIcon = contPrefix}
-				<div class="w-[16px] h-[16px]">
+				<div class="w-4 h-4">
 					<PrefixIcon />
 				</div>
 			{/if}
@@ -145,7 +145,7 @@
 				{contSuffix}
 			{:else if typeof contSuffix === 'function'}
 				{@const SuffixIcon = contSuffix}
-				<div class="w-[16px] h-[16px]">
+				<div class="w-4 h-4">
 					<SuffixIcon />
 				</div>
 			{/if}
@@ -183,9 +183,9 @@
 			{@render suffixSnip()}
 		</div>
 		{#if error}
-			<div class="mt-[8px]">
-				<div class="flex items-center gap-[8px]">
-					<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+			<div class="mt-2">
+				<div class="flex items-center gap-2">
+					<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
 						<Error />
 					</div>
 					<div class="{errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">

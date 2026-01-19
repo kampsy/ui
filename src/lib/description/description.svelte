@@ -14,15 +14,15 @@
 <div>
 	<dl class="">
 		<dt
-			class="flex items-center mb-[8px] text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-[14px]"
+			class="flex items-center mb-2 text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-3.5"
 		>
 			{#if title}
 				{title}
 			{/if}
 			{#if tooltip}
-				<span class="w-[14px] h-[14px] ml-[4px]">
+				<span class="w-3.5 h-3.5 ml-1">
 					<Tooltip text={tooltip}>
-						<div class="w-[14px] h-[14px]">
+						<div class="w-3.5 h-3.5">
 							<InformationFillSmall />
 						</div>
 					</Tooltip>

@@ -37,13 +37,13 @@
 
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
-		small: 'h-[32px] px-[6px] text-sm leading-4',
+		small: 'h-8 px-[6px] text-sm leading-4',
 		medium: 'h-[40px] px-[10px] text-sm leading-5',
 		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
 	const shapeSizeObj = {
 		tiny: `w-[24px] ${sizeObj.tiny} `,
-		small: `w-[32px] ${sizeObj.small} `,
+		small: `w-8 ${sizeObj.small} `,
 		medium: `w-[40px] ${sizeObj.medium} `,
 		large: `w-[48px] ${sizeObj.large} `
 	};
@@ -57,9 +57,9 @@
 
 	// The size of the prefix, suffix and spinner
 	const prefixSuffixSpinnerObj = {
-		tiny: 'w-[14px] h-[14px]',
-		small: 'w-[16px] h-[16px]',
-		medium: 'w-[16px] h-[16px]',
+		tiny: 'w-3.5 h-3.5',
+		small: 'w-4 h-4',
+		medium: 'w-4 h-4',
 		large: 'w-[24px] h-[24px]'
 	};
 	let iconSize = $derived.by(() => {

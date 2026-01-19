@@ -47,7 +47,7 @@
 				<div
 					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
 				>
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ChevronLeft />
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 				<div
 					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
 				>
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ChevronRight />
 					</div>
 				</div>

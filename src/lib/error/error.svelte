@@ -54,7 +54,7 @@
 			<a href={error?.link || ''}>
 				<div class="flex items-center gap-1">
 					{error?.action || ''}
-					<div class="w-[14px] h-[14px]">
+					<div class="w-3.5 h-3.5">
 						<LinkExternal />
 					</div>
 				</div>
@@ -71,8 +71,8 @@
 	{/if}
 {/snippet}
 
-<div class="flex items-center gap-[8px]">
-	<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+<div class="flex items-center gap-2">
+	<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
 		<Error />
 	</div>
 	<div>

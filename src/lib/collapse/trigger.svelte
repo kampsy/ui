@@ -96,9 +96,9 @@
 		>
 	{/if}
 	<div class="">
-		<div class="w-[16px] h-[16px] overflow-hidden">
+		<div class="w-4 h-4 overflow-hidden">
 			<div
-				class="w-[16px] h-[16px] {rotate} transform-gpu duration-200 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+				class="w-4 h-4 {rotate} transform-gpu duration-200 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 			>
 				<ChevronRight />
 			</div>

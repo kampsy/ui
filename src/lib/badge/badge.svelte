@@ -75,7 +75,7 @@
 	const sizeObj = {
 		small: 'h-[20px] px-[6px] py-0 text-[11px] text-wrap font-medium',
 		medium: 'h-[24px] px-[10px] py-0 text-[12px] text-wrap font-medium',
-		large: 'h-[32px] px-[12px] py-0 text-[14px] text-wrap font-medium'
+		large: 'h-8 px-[12px] py-0 text-[14px] text-wrap font-medium'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size];
@@ -83,8 +83,8 @@
 
 	const iconSizeObj = {
 		small: 'w-[11px] h-[11px]',
-		medium: 'w-[14px] h-[14px]',
-		large: 'w-[16px] h-[16px]'
+		medium: 'w-3.5 h-3.5',
+		large: 'w-4 h-4'
 	};
 	let iconSizeClass = $derived.by(() => {
 		return iconSizeObj[size];

@@ -35,7 +35,7 @@
 
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
-		small: 'h-[32px] px-[6px] text-sm leading-4',
+		small: 'h-8 px-[6px] text-sm leading-4',
 		medium: 'h-[40px] px-[10px] text-sm leading-5',
 		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
@@ -72,7 +72,7 @@
 	// The divider between the buttons
 	const sizeDivideObj = {
 		tiny: 'h-[24px]',
-		small: 'h-[32px]',
+		small: 'h-8',
 		medium: 'h-[40px]',
 		large: 'h-[48px]'
 	};
@@ -155,7 +155,7 @@
 	<div class="{sizeDivideClass} border-l {typeDivideClass}"></div>
 	<button aria-label={ariaLabel} onclick={toogle} type="button" {disabled} class={menuClass}>
 		<span class="flex px-[6px]">
-			<span class="w-[16px] h-[16px]">
+			<span class="w-4 h-4">
 				<ChevronDown />
 			</span>
 		</span>

@@ -74,7 +74,7 @@
 				</div>
 				<div class="flex items-center justify-center gap-x-3">
 					<div
-						class="w-[32px] h-[32px] flex items-center justify-center rounded-full border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+						class="w-8 h-8 flex items-center justify-center rounded-full border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 					>
 						<div class="w-4 h-4">
 							<a

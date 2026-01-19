@@ -30,49 +30,49 @@ export const buttonShapes = `
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
 	<Button aria-label="tiny square" shape="square" size="tiny">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="small square" shape="square" size="small">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="medium square" shape="square">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="large square" shape="square" size="large">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="tiny circle" shape="circle" size="tiny">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="small circle" shape="circle" size="small">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="medium circle" shape="circle">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
 
 	<Button aria-label="large circle" shape="circle" size="large">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<ArrowUp />
 		</div>
 	</Button>
