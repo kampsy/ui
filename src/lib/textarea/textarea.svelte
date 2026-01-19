@@ -45,9 +45,9 @@
 
 	const textObj = {
 		tiny: 'text-[12px] leading-[16px]',
-		small: 'text-[13px] leading-[20px]',
-		medium: 'text-[14px] leading-[20px]',
-		large: 'text-[16px] leading-[24px]'
+		small: 'text-[13px] leading-5',
+		medium: 'text-[14px] leading-5',
+		large: 'text-[16px] leading-6'
 	};
 
 	let text = $derived.by(() => {
@@ -92,7 +92,7 @@
 			autocapitalize="off"
 			autocomplete="off"
 			rows="4"
-			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-[6px] outline-hidden
+			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-md outline-hidden
 		 bg-kui-light-bg dark:bg-kui-dark-bg"
 			{placeholder}
 			{disabled}

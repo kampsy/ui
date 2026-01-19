@@ -114,12 +114,12 @@
 <!--Calendar content -->
 {#snippet calendarSnip()}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[10px] lg:rounded-[6px]
+		class="bg-kui-light-bg dark:bg-kui-dark-bg p-6 lg:p-3 rounded-t-[10px] lg:rounded-md
 		border-b border-b-kui-light-gray-200 dark:border-b-kui-dark-gray-200 border-t border-t-kui-light-gray-600
 		dark:border-t-kui-dark-gray-500 lg:border lg:border-kui-light-gray-200 lg:dark:border-kui-dark-gray-200
 		lg:shadow-xs scroll-smooth overflow-y-auto"
 	>
-		<div class="grid grid-cols-7 gap-y-[5px] items-center">
+		<div class="grid grid-cols-7 gap-y-1.25 items-center">
 			<div>
 				<div class="w-full flex items-center justify-center">
 					<button
@@ -127,9 +127,9 @@
 							reset();
 							currentMonth = prevMonth(currentMonth);
 						}}
-						class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] flex items-center justify-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
+						class="w-10 h-10 lg:w-8.5 lg:h-8.5 flex items-center justify-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
-						<span class="w-[16px] h-[16px]">
+						<span class="w-4 h-4">
 							<ChevronLeft />
 						</span>
 					</button>
@@ -153,9 +153,9 @@
 							reset();
 							currentMonth = nextMonth(currentMonth);
 						}}
-						class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] flex items-center justify-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
+						class="w-10 h-10 lg:w-8.5 lg:h-8.5 flex items-center justify-center transition-colors text-kui-light-gray-700 dark:text-kui-dark-gray-700 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000"
 					>
-						<span class="w-[16px] h-[16px]">
+						<span class="w-4 h-4">
 							<ChevronRight />
 						</span>
 					</button>
@@ -167,7 +167,7 @@
 			<!--Days of the week-->
 			{#each days as day}
 				<div class="relative flex items-center justify-center">
-					<div class="relative z-[0.01] w-[40px] h-[40px] lg:w-[34px] lg:h-[34px]">
+					<div class="relative z-[0.01] w-10 h-10 lg:w-8.5 lg:h-8.5">
 						<div class="w-full h-full flex justify-center">
 							<button class="relative w-full h-full rounded-xs flex items-center justify-center">
 								<span
@@ -230,7 +230,7 @@
 	<div
 		in:fade|local
 		out:fade|local
-		class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-35 dark:bg-opacity-45 lg:hidden z-1000"
+		class="fixed top-0 left-0 w-full h-full bg-black opacity-35 dark:opacity-45 lg:hidden z-1000"
 	></div>
 {/if}
 
@@ -242,14 +242,14 @@
 >
 	<button
 		onclick={toggle}
-		class="w-[250px] h-[40px] box-border px-[10px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm capitalize font-normal flex items-center rounded-[6px] border border-kui-light-gray-400 dark:border-kui-dark-gray-400 transition-colors hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
+		class="w-62.5 h-10 box-border px-2.5 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm capitalize font-normal flex items-center rounded-md border border-kui-light-gray-400 dark:border-kui-dark-gray-400 transition-colors hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
 	>
-		<span class="w-[20px] h-[20px] flex items-center justify-center">
-			<span class="w-[16px] h-[16px]">
+		<span class="w-5 h-5 flex items-center justify-center">
+			<span class="w-4 h-4">
 				<Calendar />
 			</span>
 		</span>
-		<span class="px-[6px]"> {strValue} </span>
+		<span class="px-1.5"> {strValue} </span>
 	</button>
 
 	{#if isMobile}

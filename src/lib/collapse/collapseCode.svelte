@@ -45,7 +45,7 @@
 		<div class="w-[16px] h-[16px]  {rotate180} transform-gpu duration-200">
             <ChevronRightSmall/>
 		</div>
-		<span class="text-sm font-normal leading-[20px] first-letter:capitalize"> {title} </span>
+		<span class="text-sm font-normal leading-5 first-letter:capitalize"> {title} </span>
 	</div>
 </button>
 {#if isActive}

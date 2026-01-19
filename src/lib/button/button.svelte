@@ -38,8 +38,8 @@
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
 		small: 'h-[32px] px-[6px] text-sm leading-4',
-		medium: 'h-[40px] px-[10px] text-sm leading-[20px]',
-		large: 'h-[48px] px-[14px] text-base leading-[24px]'
+		medium: 'h-[40px] px-[10px] text-sm leading-5',
+		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
 	const shapeSizeObj = {
 		tiny: `w-[24px] ${sizeObj.tiny} `,
@@ -68,7 +68,7 @@
 
 	const variantObj = {
 		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000
-		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
+		hover:opacity-85 hover:dark:opacity-90`,
 		secondary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border
 		border-kui-light-gray-200 dark:border-kui-dark-gray-400 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100`,
 		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200
@@ -86,13 +86,13 @@
 		if (rounded) {
 			return 'rounded-full';
 		}
-		return 'rounded-[6px]';
+		return 'rounded-md';
 	});
 
 	const radiusObj = {
-		tiny: 'rounded-[4px]',
-		small: 'rounded-[6px]',
-		medium: 'rounded-[6px]',
+		tiny: 'rounded-sm',
+		small: 'rounded-md',
+		medium: 'rounded-md',
 		large: 'rounded-[8px]'
 	};
 	let roundedWithShapeStyle = $derived.by(() => {
@@ -164,7 +164,7 @@
 		class="{buttonClass} transition duration-300"
 		{...rest}
 	>
-		<div class="w-full h-full px-[6px] flex items-center justify-center gap-[8px]">
+		<div class="w-full h-full px-1.5 flex items-center justify-center gap-2">
 			{@render prefixSnip()}
 			<span class="font-medium first-letter:capitalize">
 				{@render children()}

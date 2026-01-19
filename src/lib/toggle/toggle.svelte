@@ -52,7 +52,7 @@
 	});
 
 	const iconSizeObj = {
-		small: 'w-[10px] h-[10px]',
+		small: 'w-2.5 h-2.5',
 		large: 'w-[16px] h-[16px]'
 	};
 	let iconSizeClass = $derived.by(() => {

@@ -49,7 +49,7 @@
 	<div bind:this={content} transition:slide class="pb-4" {...rest}>
 		{#if children}
 			<p
-				class=" {textClass} font-normal leading-[24px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+				class=" {textClass} font-normal leading-6 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 			>
 				{@render children()}
 			</p>

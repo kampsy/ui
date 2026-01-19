@@ -76,7 +76,7 @@
 	<div
 		in:fade|local
 		out:fade|local
-		class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-[0.4] lg:hidden z-1000"
+		class="fixed top-0 left-0 w-full h-full bg-kui-black opacity-[0.4] lg:hidden z-1000"
 	></div>
 {/if}
 

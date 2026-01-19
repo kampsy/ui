@@ -56,7 +56,7 @@
 			class="absolute w-full {rootState.getContentPosition()} z-1000 {klass}"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-[6px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-xs scroll-smooth overflow-y-auto {klass}"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-1 rounded-md border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-xs scroll-smooth overflow-y-auto {klass}"
 			>
 				{@render children()}
 			</div>

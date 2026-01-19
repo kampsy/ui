@@ -57,10 +57,10 @@
 
 	const dayBg = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
-			return `rounded-[4px] bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`;
+			return `rounded-sm bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`;
 		}
 		if (isToday(dayAndDateObj.dateObj)) {
-			return `rounded-[4px] bg-kui-light-blue-900 dark:bg-kui-dark-blue-900`;
+			return `rounded-sm bg-kui-light-blue-900 dark:bg-kui-dark-blue-900`;
 		}
 		return '';
 	});
@@ -115,7 +115,7 @@
 </script>
 
 <div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}"></div>
-<div class="w-[40px] h-[40px] lg:w-[34px] lg:h-[34px] z-[1] transition-colors {dayBg}">
+<div class="w-10 h-10 lg:w-8.5 lg:h-8.5 z-1 transition-colors {dayBg}">
 	<div class="w-full h-full flex justify-center">
 		<button {onclick} class="w-full h-full rounded-xs flex items-center justify-center">
 			<span class="text-xs transition-colors {dayText} font-normal tracking-[0.06px]">

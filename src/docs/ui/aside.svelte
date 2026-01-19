@@ -22,7 +22,7 @@
 		{#each asideDataList as asideData}
 			<div>
 				<p
-					class="w-full h-[40px] flex items-center gap-2 mb-0.5 pl-3 py-1.5 text-[14px] font-medium leading-[20px] capitalize text-kui-black dark:text-kui-dark-gray-1000"
+					class="w-full h-[40px] flex items-center gap-2 mb-0.5 pl-3 py-1.5 text-[14px] font-medium leading-5 capitalize text-kui-black dark:text-kui-dark-gray-1000"
 				>
 					{asideData?.title?.name || ''}
 					{#if asideData?.title?.badge}
@@ -39,7 +39,7 @@
 									<span
 										class="w-full flex items-center gap-x-3 h-[40px] {setActive(
 											list?.url || ''
-										)} capitalize group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 flex items-center rounded-md px-3 py-1.5 text-[14px] font-normal leading-[20px] group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000"
+										)} capitalize group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 flex items-center rounded-md px-3 py-1.5 text-[14px] font-normal leading-5 group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000"
 										>{list?.name || ''}
 										{#if list?.badge}
 											<Badge size="small" variant={list?.badge?.variant || 'green'}

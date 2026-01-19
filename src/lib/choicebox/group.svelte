@@ -41,7 +41,7 @@
 
 <div class="w-full">
 	{#if label}
-		<div class="text-[13px] mb-[8px] first-letter:capitalize {labelClass} ">
+		<div class="text-[13px] mb-2 first-letter:capitalize {labelClass} ">
 			{label}
 		</div>
 	{/if}

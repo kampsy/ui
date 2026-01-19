@@ -19,9 +19,9 @@
 	let { label, size = 'md', error = undefined, children }: Props = $props();
 
 	const sizeObj = {
-		sm: 'text-[13px] leading-[20px]',
-		md: 'text-[14px] leading-[20px]',
-		lg: 'text-[16px] leading-[24px]'
+		sm: 'text-[13px] leading-5',
+		md: 'text-[14px] leading-5',
+		lg: 'text-[16px] leading-6'
 	}
 
 	let sizeClass = $derived.by(() => {
@@ -49,7 +49,7 @@
 	<div class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900">
 		{error?.message || ''}
 		<div
-			class=" font-medium leading-[20px] capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800"
+			class=" font-medium leading-5 capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800"
 		>
 			<a href={error?.link || ''}>
 				<div class="flex items-center gap-1">
