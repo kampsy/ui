@@ -108,9 +108,9 @@
 
 	const errorTextObj = {
 		tiny: 'text-[12px] leading-[16px]',
-		small: 'text-[13px] leading-[20px]',
-		medium: 'text-[14px] leading-[20px]',
-		large: 'text-[16px] leading-[24px]'
+		small: 'text-[13px] leading-5',
+		medium: 'text-[14px] leading-5',
+		large: 'text-[16px] leading-6'
 	};
 	let errorText = $derived.by(() => {
 		return errorTextObj[size];
@@ -156,7 +156,7 @@
 {#snippet inputSnip()}
 	<div>
 		<div
-			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px] bg-kui-light-bg
+			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-md bg-kui-light-bg
 			dark:bg-kui-dark-bg"
 		>
 			{@render prefixSnip()}

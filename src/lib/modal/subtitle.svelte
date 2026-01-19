@@ -12,7 +12,7 @@
 {#if children}
 	<p
 		aria-labelledby="modal-subtitle"
-		class="mt-6 text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 leading-[24px] {klass}"
+		class="mt-6 text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 leading-6 {klass}"
 	>
 		{@render children()}
 	</p>

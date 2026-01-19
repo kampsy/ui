@@ -54,12 +54,12 @@
 >
 	<div>
 		{#if title}
-			<div class="text-sm {typeTitleClass} font-medium leading-[20px]">
+			<div class="text-sm {typeTitleClass} font-medium leading-5">
 				{title}
 			</div>
 		{/if}
 		{#if description}
-			<div class="text-sm {typeDescriptionClass} font-normal leading-[20px]">
+			<div class="text-sm {typeDescriptionClass} font-normal leading-5">
 				{description}
 			</div>
 		{/if}

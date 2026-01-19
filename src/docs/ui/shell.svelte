@@ -36,7 +36,7 @@
 							<TextGradient
 								text="kampsy-ui"
 								variant="vision"
-								class="text-base font-semibold leading-[24px]"
+								class="text-base font-semibold leading-6"
 							/>
 						</div>
 					</div>
@@ -66,7 +66,7 @@
 								<TextGradient
 									text="kampsy-ui"
 									variant="vision"
-									class="text-base font-semibold leading-[24px]"
+									class="text-base font-semibold leading-6"
 								/>
 							</div>
 						</div>

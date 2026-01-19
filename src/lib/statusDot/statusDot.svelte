@@ -2,7 +2,7 @@
 	interface Props {
 		state?: 'QUEUED' | 'BUILDING' | 'ERROR' | 'READY' | 'CANCELED';
 		label?: boolean;
-	};
+	}
 	let { label = false, state = 'QUEUED' }: Props = $props();
 
 	const stateObj = {
@@ -15,8 +15,11 @@
 </script>
 
 <div class="flex items-center gap-x-2">
-	<div class="w-[10px] h-[10px] rounded-full {stateObj[state]}"></div>
+	<div class="w-2.5 h-2.5 rounded-full {stateObj[state]}"></div>
 	{#if label}
-		<span class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm leading-4">{state.toLowerCase()}</span>
+		<span
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm leading-4"
+			>{state.toLowerCase()}</span
+		>
 	{/if}
 </div>

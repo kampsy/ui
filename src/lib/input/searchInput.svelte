@@ -50,7 +50,7 @@
 </script>
 
 <div
-	class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-[6px]"
+	class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-md"
 >
 	<span class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700">
 		<div class="w-[16px] h-[16px]">

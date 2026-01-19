@@ -47,7 +47,7 @@
 		if (size === 'large') {
 			return 'rounded-[8px]';
 		}
-		return 'rounded-[6px]';
+		return 'rounded-md';
 	});
 
 	$effect(() => {

@@ -35,7 +35,7 @@
 			colors
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-[24px] lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
 			Learn how to use our color system. Hover over each color to view the corresponding colors.
 		</p>
@@ -59,7 +59,7 @@
 						<div class="w-full h-full flex items-center">
 							<button
 								aria-label={item}
-								class="w-full h-[30px] md:h-10 border border-opacity-5 border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-sm {item}"
+								class="w-full h-[30px] md:h-10 border border-kui-light-gray-alpha-200/5 dark:border-kui-dark-gray-alpha-200/5 rounded-sm {item}"
 							></button>
 						</div>
 					</Tooltip>

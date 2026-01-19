@@ -24,7 +24,7 @@
 
 	const typeObj = {
 		primary: `text-white dark:text-kui-dark-bg bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000 
-		hover:bg-opacity-85 hover:dark:bg-opacity-90`,
+		hover:opacity-85 hover:dark:opacity-90`,
 		tertiary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 hover:bg-kui-light-gray-200 
 		dark:hover:bg-kui-dark-gray-200`,
 		error: `text-[#F5F5F5] bg-kui-light-red-800 dark:bg-kui-dark-red-800 hover:bg-kui-light-red-900 
@@ -36,8 +36,8 @@
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
 		small: 'h-[32px] px-[6px] text-sm leading-4',
-		medium: 'h-[40px] px-[10px] text-sm leading-[20px]',
-		large: 'h-[48px] px-[14px] text-base leading-[24px]'
+		medium: 'h-[40px] px-[10px] text-sm leading-5',
+		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size];

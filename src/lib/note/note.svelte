@@ -29,7 +29,7 @@
 	const sizeObj = {
 		small: 'px-[8px] py-[8px] text-xs leading-4',
 		medium: 'px-[12px] py-[9px] text-sm leading-[21px]',
-		large: 'px-[12px] py-[11px] text-base leading-[24px]'
+		large: 'px-[12px] py-[11px] text-base leading-6'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size];

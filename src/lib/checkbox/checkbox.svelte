@@ -93,7 +93,7 @@
 	<label for={unique}>
 		<div class="flex items-center gap-2 cursor-pointer">
 			<div
-				class="w-[16px] h-[16px] rounded-[4px] p-[2px] box-border transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
+				class="w-4 h-4 rounded-sm p-0.5 box-border transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
 			>
 				<input
 					{onchange}
@@ -105,7 +105,7 @@
 					{indeterminate}
 					class="hidden"
 				/>
-				<div class="w-[16px] h-[16px] font-bold transition-colors ease-in {checkboxClass}">
+				<div class="w-4 h-4 font-bold transition-colors ease-in {checkboxClass}">
 					{#if indeterminate}
 						<Minus />
 					{:else}

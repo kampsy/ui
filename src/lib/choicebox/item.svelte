@@ -20,8 +20,6 @@
 		type: 'radio' | 'checkbox' | undefined;
 	};
 
-	
-
 	const groupState = getContext<{
 		name: string;
 		type: 'radio' | 'checkbox';
@@ -161,9 +159,7 @@
 					{disabled}
 					class="hidden"
 				/>
-				<div
-					class="w-[8px] h-[8px] bg-red rounded-full transition-colors ease-in {radioClass}"
-				></div>
+				<div class="w-2 h-2 bg-red rounded-full transition-colors ease-in {radioClass}"></div>
 			</div>
 		</div>
 	{/if}
@@ -172,7 +168,7 @@
 {#snippet checkbox()}
 	{#if type === 'checkbox'}
 		<div
-			class="w-[16px] h-[16px] p-px rounded-[4px] transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
+			class="w-[16px] h-[16px] p-px rounded-sm transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
 		>
 			<div class="w-[16px] h-[16px] flex items-center justify-center">
 				<input
@@ -185,7 +181,7 @@
 					{disabled}
 					class="hidden"
 				/>
-				<div class="w-[10px] h-[10px] transition-colors ease-in {checkboxClass}">
+				<div class="w-2.5 h-2.5 transition-colors ease-in {checkboxClass}">
 					<Check />
 				</div>
 			</div>
@@ -195,9 +191,9 @@
 
 <label
 	for={unique}
-	class="group w-full transition-colors ease-in border flex  rounded-[6px] {labelClass} "
+	class="group w-full transition-colors ease-in border flex rounded-md {labelClass} "
 >
-	<div class="w-full p-[12px] flex items-center justify-between">
+	<div class="w-full p-3 flex items-center justify-between">
 		<div>
 			{#if title}
 				<p

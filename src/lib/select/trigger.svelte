@@ -41,8 +41,8 @@
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
 		small: 'h-[32px] px-[6px] text-sm leading-4',
-		medium: 'h-[40px] px-[10px] text-sm leading-[20px]',
-		large: 'h-[48px] px-[14px] text-base leading-[24px]'
+		medium: 'h-[40px] px-[10px] text-sm leading-5',
+		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
 	let sizeClass = $derived.by(() => {
 		return sizeObj[rootState.size];
@@ -70,9 +70,9 @@
 	// The size of the error text
 	const errorTextObj = {
 		tiny: 'text-[12px] leading-[16px]',
-		small: 'text-[13px] leading-[20px]',
-		medium: 'text-[14px] leading-[20px]',
-		large: 'text-[16px] leading-[24px]'
+		small: 'text-[13px] leading-5',
+		medium: 'text-[14px] leading-5',
+		large: 'text-[16px] leading-6'
 	};
 
 	let errorText = $derived.by(() => {
@@ -80,7 +80,7 @@
 	});
 </script>
 
-<button onclick={toogle} disabled={rootState.getLoading()} class="group transition-all {triggerClass} rounded-[6px] {klass} ">
+<button onclick={toogle} disabled={rootState.getLoading()} class="group transition-all {triggerClass} rounded-md {klass} ">
 	{@render children()}
 </button>
 {#if rootState.getError()}

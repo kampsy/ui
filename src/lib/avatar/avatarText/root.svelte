@@ -15,9 +15,9 @@
 </script>
 
 <div
-	class="group cursor-pointer transition duration-150 ease-out hover:ease-in hover:bg-kui-light-gray-200 dark:hover:bg-kui-dark-gray-200 px-[10px] py-[8px] rounded-[8px]"
+	class="group cursor-pointer transition duration-150 ease-out hover:ease-in hover:bg-kui-light-gray-200 dark:hover:bg-kui-dark-gray-200 px-2.5 py-2 rounded-lg"
 >
-	<div class="flex items-center gap-x-[10px]">
+	<div class="flex items-center gap-x-2.5">
 		<div
 			aria-label="avatar circle"
 			style={widthHeight}

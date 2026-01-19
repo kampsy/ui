@@ -52,7 +52,7 @@
 					</div>
 				</div>
 				<span
-					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-[24px] capitalize"
+					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-6 capitalize"
 				>
 					{previous.title}
 				</span>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="flex items-center gap-x-2">
 				<span
-					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-[24px] capitalize"
+					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-6 capitalize"
 				>
 					{next.title}
 				</span>
