@@ -48,7 +48,7 @@
 				rootState.setIsActive(false);
 			}}
 			role="dialog"
-			class="relative w-[540px] max-h-[626px] rounded-[12px] bg-kui-light-bg dark:bg-kui-dark-bg-secondary border
+			class="relative w-135 max-h-156.5 rounded-xl bg-kui-light-bg dark:bg-kui-dark-bg-secondary border
                 border-kui-light-gray-600 dark:border-kui-dark-gray-200 {klass}"
 		>
 			{@render children()}

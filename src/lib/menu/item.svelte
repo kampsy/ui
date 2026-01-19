@@ -48,7 +48,7 @@
 {#snippet prefixSnip()}
 	{#if prefix}
 		{@const Prefix = prefix}
-		<div class="w-[16px] h-[16px] flex items-center justify-center">
+		<div class="w-4 h-4 flex items-center justify-center">
 			<Prefix />
 		</div>
 	{/if}
@@ -57,7 +57,7 @@
 {#snippet suffixSnip()}
 	{#if suffix}
 		{@const Suffix = suffix}
-		<div class="w-[16px] h-[16px] flex items-center justify-center">
+		<div class="w-4 h-4 flex items-center justify-center">
 			<Suffix />
 		</div>
 	{/if}

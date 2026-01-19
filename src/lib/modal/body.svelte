@@ -24,12 +24,12 @@
 {#if children}
 	<div class="relative h-full {bodyClass} {klass}">
 		{#if rootState.sticky}
-			<div aria-hidden="true" class="w-full h-[73px]"></div>
+			<div aria-hidden="true" class="w-full h-18.25"></div>
 		{/if}
 		<div class="modal-body p-6 scroll-smooth overflow-y-auto overscroll-contain">
 			{@render children()}
 		</div>
-		<div aria-hidden="true" class="w-full lg:h-[73px]"></div>
+		<div aria-hidden="true" class="w-full lg:h-18.25"></div>
 	</div>
 {/if}
 
