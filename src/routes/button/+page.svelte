@@ -126,49 +126,49 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<Button aria-label="square tiny" shape="square" size="tiny">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="square small" shape="square" size="small">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="square medium" shape="square">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="square large" shape="square" size="large">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="circle tiny" shape="circle" size="tiny">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="circle small" shape="circle" size="small">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="circle medium" shape="circle">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>
 
 				<Button aria-label="circle large" shape="circle" size="large">
-					<div class="w-[16px] h-[16px]">
+					<div class="w-4 h-4">
 						<ArrowUp />
 					</div>
 				</Button>

@@ -65,9 +65,9 @@
 
 <span>
 	<div
-		class="w-[96px] h-[32px] rounded-full overflow-hidden flex items-center {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="w-[96px] h-8 rounded-full overflow-hidden flex items-center {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	>
-		<div class="w-[32px] h-[32px]">
+		<div class="w-8 h-8">
 			<input
 				{onchange}
 				checked={switcher.theme === 'system'}
@@ -84,7 +84,7 @@
 				<DeviceAlternative />
 			</label>
 		</div>
-		<div class="w-[32px] h-[32px]">
+		<div class="w-8 h-8">
 			<input
 				{onchange}
 				checked={switcher.theme === 'light'}
@@ -101,7 +101,7 @@
 				<Sun />
 			</label>
 		</div>
-		<div class="w-[32px] h-[32px]">
+		<div class="w-8 h-8">
 			<input
 				{onchange}
 				checked={switcher.theme === 'dark'}

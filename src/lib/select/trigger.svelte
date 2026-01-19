@@ -40,7 +40,7 @@
 
 	const sizeObj = {
 		tiny: 'h-[24px] text-xs leading-3',
-		small: 'h-[32px] px-[6px] text-sm leading-4',
+		small: 'h-8 px-[6px] text-sm leading-4',
 		medium: 'h-[40px] px-[10px] text-sm leading-5',
 		large: 'h-[48px] px-[14px] text-base leading-6'
 	};
@@ -84,9 +84,9 @@
 	{@render children()}
 </button>
 {#if rootState.getError()}
-	<div class="mt-[8px]">
-		<div class="flex items-center gap-[8px]">
-			<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+	<div class="mt-2">
+		<div class="flex items-center gap-2">
+			<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
 				<Error />
 			</div>
 			<div class="font-medium {errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">

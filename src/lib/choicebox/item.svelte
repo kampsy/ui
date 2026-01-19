@@ -146,9 +146,9 @@
 {#snippet radio()}
 	{#if type === 'radio'}
 		<div
-			class="w-[16px] h-[16px] p-px rounded-full transition-colors ease-in flex items-center justify-center border {radioContClass} "
+			class="w-4 h-4 p-px rounded-full transition-colors ease-in flex items-center justify-center border {radioContClass} "
 		>
-			<div class="w-[16px] h-[16px] flex items-center justify-center">
+			<div class="w-4 h-4 flex items-center justify-center">
 				<input
 					{onchange}
 					{type}
@@ -168,9 +168,9 @@
 {#snippet checkbox()}
 	{#if type === 'checkbox'}
 		<div
-			class="w-[16px] h-[16px] p-px rounded-sm transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
+			class="w-4 h-4 p-px rounded-sm transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
 		>
-			<div class="w-[16px] h-[16px] flex items-center justify-center">
+			<div class="w-4 h-4 flex items-center justify-center">
 				<input
 					{onchange}
 					{type}

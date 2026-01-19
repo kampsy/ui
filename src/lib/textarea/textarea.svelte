@@ -105,9 +105,9 @@
 		></textarea>
 
 		{#if error}
-			<div class="mt-[8px]">
-				<div class="flex items-center gap-[8px]">
-					<div class="w-[16px] h-[16px] text-kui-light-red-900 dark:text-kui-dark-red-900">
+			<div class="mt-2">
+				<div class="flex items-center gap-2">
+					<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
 						<Error />
 					</div>
 					<div class="font-medium {text} text-kui-light-red-900 dark:text-kui-dark-red-900">

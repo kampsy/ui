@@ -41,7 +41,7 @@ export const menuPrefixAndSuffix = `
 <div class="w-full flex gap-6">
 	<Menu.Root>
 		<Menu.Button shape="square" size="small" type="secondary" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
-			<div class="w-[16px] h-[16px]">
+			<div class="w-4 h-4">
 				<MoreHorizontal />
 			</div>
 		</Menu.Button>
@@ -53,7 +53,7 @@ export const menuPrefixAndSuffix = `
 	</Menu.Root>
 	<Menu.Root>
 		<Menu.Button shape="square" size="small" type="secondary" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
-			<div class="w-[16px] h-[16px]">
+			<div class="w-4 h-4">
 				<MoreHorizontal />
 			</div>
 		</Menu.Button>

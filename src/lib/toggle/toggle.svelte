@@ -36,7 +36,7 @@
 	const unique = `${randomString(4)}`;
 
 	const sizeContObj = {
-		small: 'w-[28px] h-[14px]',
+		small: 'w-7 h-3.5',
 		large: 'w-[48px] h-[24px]'
 	};
 	let sizeContClass = $derived.by(() => {
@@ -53,7 +53,7 @@
 
 	const iconSizeObj = {
 		small: 'w-2.5 h-2.5',
-		large: 'w-[16px] h-[16px]'
+		large: 'w-4 h-4'
 	};
 	let iconSizeClass = $derived.by(() => {
 		return iconSizeObj[size];

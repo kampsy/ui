@@ -141,7 +141,7 @@
 							aria-expanded="false"
 							aria-haspopup="true"
 						>
-							<div class="w-[16px] h-[16px]">
+							<div class="w-4 h-4">
 								<MoreHorizontal />
 							</div>
 						</Menu.Button>
@@ -160,7 +160,7 @@
 							aria-expanded="false"
 							aria-haspopup="true"
 						>
-							<div class="w-[16px] h-[16px]">
+							<div class="w-4 h-4">
 								<MoreHorizontal />
 							</div>
 						</Menu.Button>

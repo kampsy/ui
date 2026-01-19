@@ -22,7 +22,7 @@
 	let hasRing = $state(false);
 
 	const sizeObj = {
-		small: 'h-[32px] text-sm',
+		small: 'h-8 text-sm',
 		medium: 'h-[40px] text-sm',
 		large: 'h-[48px] text-base'
 	};
@@ -53,7 +53,7 @@
 	class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-md"
 >
 	<span class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700">
-		<div class="w-[16px] h-[16px]">
+		<div class="w-4 h-4">
 			<MagnifyingGlass />
 		</div>
 	</span>

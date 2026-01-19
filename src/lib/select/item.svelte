@@ -29,7 +29,7 @@
 		<!--Icon-->
 		<div transition:fade class="absolute right-2">
 			<div class="w-full h-full flex items-center justify-center">
-				<div class="w-[14px] h-[14px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
+				<div class="w-3.5 h-3.5 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
 					<Check />
 				</div>
 			</div>

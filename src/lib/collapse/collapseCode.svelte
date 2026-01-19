@@ -39,10 +39,10 @@
 
 <button
 	onclick={toggleFunc}
-	class="w-full h-[48px] px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+	class="w-full h-12 px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 >
 	<div class="flex items-center gap-x-2">
-		<div class="w-[16px] h-[16px]  {rotate180} transform-gpu duration-200">
+		<div class="w-4 h-4  {rotate180} transform-gpu duration-200">
             <ChevronRightSmall/>
 		</div>
 		<span class="text-sm font-normal leading-5 first-letter:capitalize"> {title} </span>

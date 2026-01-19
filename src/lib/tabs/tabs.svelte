@@ -102,8 +102,8 @@
 	>
 		{#if tab.icon}
 			{@const Icon = tab.icon}
-			<div class="w-[16px] h-[16px] flex items-center justify-center">
-				<div class="w-[16px] h-[16px]">
+			<div class="w-4 h-4 flex items-center justify-center">
+				<div class="w-4 h-4">
 					<Icon />
 				</div>
 			</div>

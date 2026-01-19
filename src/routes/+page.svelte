@@ -88,56 +88,56 @@
 			>
 				<div class="flex justify-between">
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-gray-800 dark:bg-kui-dark-gray-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-blue-800 dark:bg-kui-dark-blue-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-purple-800 dark:bg-kui-dark-purple-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-pink-800 dark:bg-kui-dark-pink-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-red-800 dark:bg-kui-dark-red-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-amber-800 dark:bg-kui-dark-amber-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-green-800 dark:bg-kui-dark-green-800"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-[32px] items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
 					>
 						<div
 							class="h-[72px] w-2 rounded-full bg-kui-light-teal-800 dark:bg-kui-dark-teal-800"
