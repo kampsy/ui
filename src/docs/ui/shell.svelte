@@ -100,7 +100,7 @@
 	class="flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >
 	<aside
-		class="w-[260px] h-[calc(100vh_-_64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 bottom-0 top-[64px] order-1 flex-col min-[1200px]:flex"
+		class="w-[260px] h-[calc(100vh-64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 bottom-0 top-[64px] order-1 flex-col min-[1200px]:flex"
 	>
 		{@render asideSlot()}
 	</aside>

@@ -132,7 +132,7 @@
 		{onclick}
 		aria-label={isCopied ? 'Copied' : 'Copy to clipboard'}
 		class="absolute top-2/4 right-1 w-[32px] h-[32px] rounded-md flex items-center justify-center translate-y-[-50%]
-		hover:border hover:border-kui-light-gray-400 hover:dark:border-kui-dark-gray-400"
+		hover:border hover:border-kui-light-gray-400 dark:hover:border-kui-dark-gray-400"
 	>
 		<span class="flex items-center justify-center">
 			<div class="relative w-4 h-4">

@@ -1,6 +1,5 @@
 import { type Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme.js';
-import { CustomColors } from '$lib/customColors/index.js';
 
 export default {
   darkMode: 'selector',
@@ -11,11 +10,6 @@ export default {
   theme: {
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
-    },
-    extend: {
-      colors: {
-        ...CustomColors
-      }
     },
   },
   plugins: [],

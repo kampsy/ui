@@ -62,7 +62,7 @@
 	<div
 		in:fade|local={{ duration: 100 }}
 		out:fade|local={{ duration: 100 }}
-		class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-40 z-[1000]"
+		class="fixed top-0 left-0 w-full h-full bg-kui-black bg-opacity-40 z-1000"
 	></div>
 {/if}
 

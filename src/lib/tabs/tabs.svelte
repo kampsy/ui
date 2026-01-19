@@ -115,7 +115,7 @@
 <div class="w-full flex items-center {contClass}">
 	{#if tabs}
 		{#each tabs as tab}
-			<div class="mb-[-1px]">
+			<div class="-mb-px">
 				{#if tab.disabled}
 					<Tooltip text={tab.tooltip}>
 						{@render tabButton(isSelected(tab.value), tab)}

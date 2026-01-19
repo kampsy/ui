@@ -175,7 +175,7 @@
 					onblur={() => {
 						hasRing = false;
 					}}
-					class="{inputClass} w-full h-full outline-none bg-transparent"
+					class="{inputClass} w-full h-full outline-hidden bg-transparent"
 					{...rest}
 				/>
 			</div>

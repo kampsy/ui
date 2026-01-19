@@ -96,10 +96,10 @@ export const buttonRounded = `
 </script>
 
 <div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded">upload</Button>
-	<Button size="small" variant="secondary" rounded aria-label="small rounded">upload</Button>
-	<Button variant="secondary" rounded aria-label="medium rounded">upload</Button>
-	<Button size="large" variant="secondary" rounded aria-label="large rounded">upload</Button>
+	<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded-sm">upload</Button>
+	<Button size="small" variant="secondary" rounded aria-label="small rounded-sm">upload</Button>
+	<Button variant="secondary" rounded aria-label="medium rounded-sm">upload</Button>
+	<Button size="large" variant="secondary" rounded aria-label="large rounded-sm">upload</Button>
 </div>`;
 
 export const buttonLoading = `

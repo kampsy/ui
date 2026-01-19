@@ -92,7 +92,7 @@
 			<div class="ml-6 md:ml-0">
 				<a
 					href={callToAction.href}
-					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-none px-0 h-6 my-[-1px] {callToActionClass}"
+					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-hidden px-0 h-6 -my-px {callToActionClass}"
 				>
 					{callToAction.label}
 				</a>
@@ -101,7 +101,7 @@
 			<div class="ml-6 md:ml-0">
 				<button
 					onclick={callToAction.onClick}
-					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-none px-0 h-6 my-[-1px] {callToActionClass}"
+					class="capitalize rounded-xs cursor-pointer bg-transparent py-1 font-medium underline border-none underline-offset-[5px] outline-hidden px-0 h-6 -my-px {callToActionClass}"
 				>
 					{callToAction.label}
 				</button>
@@ -112,7 +112,7 @@
 
 <div class="w-full">
 	<aside
-		class="w-full flex z-30 gap-x-2 justify-center items-center py-2 leading-5 border-t border-b min-h-[40px] translate-y-[-1px] text-[14px] {asideClass} "
+		class="w-full flex z-30 gap-x-2 justify-center items-center py-2 leading-5 border-t border-b min-h-[40px] -translate-y-px text-[14px] {asideClass} "
 	>
 		<div class="flex flex-col gap-2 px-6 w-full md:justify-center md:flex-row md:items-center">
 			<div class="flex gap-2 items-center">

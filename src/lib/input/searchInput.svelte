@@ -70,7 +70,7 @@
 			onblur={() => {
 				hasRing = false;
 			}}
-			class="w-full h-full outline-none bg-transparent capitalize placeholder:text-sm placeholder:text-kui-light-gray-600
+			class="w-full h-full outline-hidden bg-transparent capitalize placeholder:text-sm placeholder:text-kui-light-gray-600
              dark:placeholder:text-kui-dark-gray-600"
 		/>
 	</div>
