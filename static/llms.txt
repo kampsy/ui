@@ -12,11 +12,13 @@ pnpm i -D kampsy-ui@latest
 
 Add the following to the layout.css file
 
-```javascript
+```css
 @import "kampsy-ui/theme.css";
 
 @source "../../node_modules/kampsy-ui/dist";
 ```
+
+> **Note:** The `@source` path may need adjustment based on your project structure or can be replaced with an absolute path pattern supported by Tailwind v4.
 
 ## Components
 
