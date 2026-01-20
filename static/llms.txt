@@ -1286,15 +1286,6 @@ import { ArrowLeft, Check, Error } from 'kampsy-ui/icons';
 import type { DateValue, RangeValue } from 'kampsy-ui';
 ```
 
-## Preset
-
-Preset configurations are available from the `kampsy-ui/preset` export.
-
-**Usage:**
-```javascript
-import preset from 'kampsy-ui/preset';
-```
-
 ## Styling
 
 The library uses Tailwind CSS with custom color tokens:
