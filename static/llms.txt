@@ -10,13 +10,12 @@ pnpm i -D kampsy-ui@latest
 
 ### Tailwind Configuration
 
-```javascript
-import kampsyUI from 'kampsy-ui/preset';
+Add the following to the layout.css file
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  presets: [kampsyUI]
-}
+```javascript
+@import "kampsy-ui/theme.css";
+
+@source "../../node_modules/kampsy-ui/dist";
 ```
 
 ## Components

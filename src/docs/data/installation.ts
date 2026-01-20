@@ -2,19 +2,12 @@ export const installationSveltekit = `
 npx sv create my-app`;
 
 export const installationKampsy = `
-pnpm i -D kampsy-ui@latest`;
+pnpm i -D kampsy-ui@latest
+`;
 
 export const installationConfig = `
-import kampsyUI from 'kampsy-ui/preset';
+@import "kampsy-ui/theme.css";
 
-export default {
-  presets: [kampsyUI]
-}`;
+@source "../../node_modules/kampsy-ui/dist";
+`;
 
-export const installationConfigLong = `
-import kampsyUI from 'kampsy-ui/preset';
-
-export default {
-  content: kampsyUI.content,
-  presets: [kampsyUI]
-}`;

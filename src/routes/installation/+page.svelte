@@ -7,7 +7,6 @@
 	import Pagination from '$lib/pagination/pagination.svelte';
 	import {
 		installationConfig,
-		installationConfigLong,
 		installationKampsy,
 		installationSveltekit
 	} from '../../docs/data/installation.js';
@@ -80,26 +79,29 @@
 			{@render roundedCode('prettier')} ,
 			{@render roundedCode('eslint')} ,
 			{@render roundedCode('vitest')} ,
-			{@render roundedCode('playwright')} .
+			{@render roundedCode('playwright')},
+			{@render roundedCode('tailwindcss')}
+			 .
+
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			For Tailwind CSS, choose {@render roundedCode('tailwindcss')} if prompted. The SvelteKit template now includes Tailwind CSS 4 by default, which uses a simpler configuration approach.
+			SvelteKit now includes Tailwind CSS 4 by default, which uses a simpler configuration approach. Press enter to confirm
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Tailwindcss plugins (optional): For the question: {@render roundedCode(
 				'Tailwindcss: Which plugins would you like to add?'
-			)} Press Enter, as no plugins are needed.
+			)} Press Enter if no plugins are needed.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Finally, you’ll be asked: {@render roundedCode(
 				'Which package manager do you want to install dependencies with?'
-			)} The default option is {@render roundedCode('pnpm,')} which we prefer. Press Enter to confirm.
+			)} Choose {@render roundedCode('pnpm,')} as it is preferred. Press Enter to confirm.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
@@ -142,24 +144,12 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Create or update your Tailwind configuration file in your project's root folder (can be {@render roundedCode('tailwind.config.js')}, {@render roundedCode('tailwind.config.ts')}, etc.) to use Kampsy-ui's preset.
+			Add the following to your {@render roundedCode('layout.css')} file.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationConfig)}
 		</div>
-		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
-		>
-			Note: With Tailwind CSS 4, you might not need a config file at all if you're using the default setup. Kampsy-ui's colors are automatically available when you import the preset.
-		</p>
-		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
-		>
-			If you need to specify content paths or use additional options, you can use the extended configuration.
-		</p>
-		<div class="mt-4 xl:mt-7">
-			{@render demoAndCodeSnip(installationConfigLong)}
-		</div>
+
 	</Row>
 {/snippet}
 

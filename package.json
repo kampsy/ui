@@ -38,17 +38,16 @@
 			"types": "./dist/icons/index.d.ts",
 			"svelte": "./dist/icons/index.js"
 		},
-		"./preset": {
-			"default": "./dist/preset/index.js"
-		}
+		 "./theme.css": "./src/theme.css"
 	},
 	"files": [
 		"dist",
+		"src/theme.css",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-		"svelte": "^5.0.0-next.1"
+		"svelte": "^5.45.6"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.56.1",
