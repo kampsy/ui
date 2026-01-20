@@ -10,14 +10,15 @@ pnpm i -D kampsy-ui@latest
 
 ### Tailwind Configuration
 
-```javascript
-import kampsyUI from 'kampsy-ui/preset';
+Add the following to the layout.css file
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  presets: [kampsyUI]
-}
+```css
+@import "kampsy-ui/theme.css";
+
+@source "../../node_modules/kampsy-ui/dist";
 ```
+
+> **Note:** The `@source` path may need adjustment based on your project structure or can be replaced with an absolute path pattern supported by Tailwind v4.
 
 ## Components
 
@@ -1285,15 +1286,6 @@ import { ArrowLeft, Check, Error } from 'kampsy-ui/icons';
 **Usage:**
 ```svelte
 import type { DateValue, RangeValue } from 'kampsy-ui';
-```
-
-## Preset
-
-Preset configurations are available from the `kampsy-ui/preset` export.
-
-**Usage:**
-```javascript
-import preset from 'kampsy-ui/preset';
 ```
 
 ## Styling
