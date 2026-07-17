@@ -1,27 +1,24 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-
 	interface Props {
-		class?: string;
-		size?: number;
-		limit?: number;
+		class?: string
+		size?: number
+		limit?: number
 		members?: Array<{
-			name: string;
-			imageLink: string;
-		}>;
-		children?: Snippet;
-	};
-	let { class: klass = '', size = 32, members = undefined, limit = 0, children }: Props = $props();
+			name: string
+			imageLink: string
+		}>
+	}
+	let { class: klass = "", size = 32, members = undefined, limit = 0 }: Props = $props()
 
 	let widthHeight = $derived.by(() => {
-		return ` width: ${size}px; height: ${size}px;`;
-	});
+		return ` width: ${size}px; height: ${size}px;`
+	})
 </script>
 
 <div class="flex -space-x-4 rtl:space-x-reverse">
 	{#if members}
 		{#snippet noLimit()}
-			{#each members as member}
+			{#each members as member, index (index)}
 				<div
 					aria-label={member.name}
 					style={widthHeight}
@@ -43,7 +40,7 @@
 		{/snippet}
 
 		{#snippet withLimit()}
-			{#each members as member, index}
+			{#each members as member, index (index)}
 				{#if index < limit}
 					<div
 						aria-label={member.name}

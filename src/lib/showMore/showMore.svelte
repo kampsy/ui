@@ -1,36 +1,36 @@
 <script lang="ts">
-	import { ChevronDownSmall } from '$lib/icons/index.js';
+	import { ChevronDownSmall } from "$lib/icons/index.js"
 
 	interface Props {
-		isActive: boolean;
-	};
+		isActive: boolean
+	}
 
-	let { isActive = $bindable(false)}: Props = $props();
+	let { isActive = $bindable(false) }: Props = $props()
 
 	const onclick = () => {
-		isActive = !isActive;
-	};
+		isActive = !isActive
+	}
 
 	let rotate = $derived.by(() => {
 		if (isActive) {
-			return 'rotate-180';
+			return "rotate-180"
 		}
-		return '';
-	});
+		return ""
+	})
 
-    let ariaLabel = $derived.by(() => {
-        if (isActive) {
-            return 'Show less content';
-        }
-        return 'Show more content';
-    });
+	let ariaLabel = $derived.by(() => {
+		if (isActive) {
+			return "Show less content"
+		}
+		return "Show more content"
+	})
 
 	let buttonText = $derived.by(() => {
 		if (isActive) {
-			return 'show less';
+			return "show less"
 		}
-		return 'Show more';
-	});
+		return "Show more"
+	})
 </script>
 
 {#snippet suffixSnip()}

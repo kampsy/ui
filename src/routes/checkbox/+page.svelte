@@ -1,23 +1,23 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Checkbox } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Checkbox } from "$lib/index.js"
 	import {
 		checkboxDefault,
 		checkboxDisabled,
 		checkboxIndeterminate,
-		checkboxItems
-	} from '$lib/../docs/data/checkbox.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		checkboxItems,
+	} from "$lib/../docs/data/checkbox.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let checked = $state(false);
+	let checked = $state(false)
 
-	let items = $state(['avatar', 'choicebox']);
+	let items = $state(["avatar", "choicebox"])
 </script>
 
 <svelte:head>
@@ -108,8 +108,11 @@
 				<div class="w-full space-y-4">
 					<Checkbox value="avatar" bind:items aria-labelledby="checkbox-6">avatar</Checkbox>
 					<Checkbox value="button" bind:items aria-labelledby="checkbox-7">button</Checkbox>
-					<Checkbox value="calendar" bind:items aria-labelledby="checkbox-8">calendar</Checkbox>
-					<Checkbox value="choicebox" bind:items aria-labelledby="checkbox-9">choicebox</Checkbox>
+					<Checkbox value="calendar" bind:items aria-labelledby="checkbox-8">calendar</Checkbox
+					>
+					<Checkbox value="choicebox" bind:items aria-labelledby="checkbox-9"
+						>choicebox</Checkbox
+					>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, checkboxItems)}
@@ -120,8 +123,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'calendar', href: '/calendar' }}
-			next={{ title: 'choicebox', href: '/choicebox' }}
+			previous={{ title: "calendar", href: "/calendar" }}
+			next={{ title: "choicebox", href: "/choicebox" }}
 		/>
 	</Row>
 {/snippet}

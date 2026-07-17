@@ -12,8 +12,7 @@ export const tabsDefault = `
 		{ title: 'Orange', value: 'orange' },
 		{ title: 'Mango', value: 'mango' }
 	]}
-/>`;
-
+/>`
 
 export const tabsDisabled = `
 <script lang="ts">
@@ -30,7 +29,7 @@ export const tabsDisabled = `
 		{ title: 'Orange', value: 'orange' },
 		{ title: 'Mango', value: 'mango' }
 	]}
-/>`;
+/>`
 
 export const tabsDisabledSpecific = `
 <script lang="ts">
@@ -46,7 +45,7 @@ export const tabsDisabledSpecific = `
 		{ title: 'Orange', value: 'orange' },
 		{ title: 'Mango', value: 'mango' ,disabled: true, tooltip: 'Mangos are not allowed'}
 	]}
-/>`;
+/>`
 
 export const tabsWithIcons = `
 <script lang="ts">
@@ -63,7 +62,7 @@ export const tabsWithIcons = `
 		{ title: 'Gitlab', value: 'gitlab', icon: LogoGitlab },
 		{ title: 'Bitbucket', value: 'bitbucket', icon: LogoBitbucketColor }
 	]}
-/>`;
+/>`
 
 export const tabsSecondary = `
 <script lang="ts">
@@ -80,4 +79,4 @@ export const tabsSecondary = `
 		{ title: 'Bitbucket', value: 'bitbucket'}
 	]}
     type="secondary"
-/>`;
+/>`

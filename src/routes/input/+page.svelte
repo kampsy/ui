@@ -1,22 +1,22 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Input, SearchInput } from '$lib/index.js';
-	import ArrowCircleUp from '$lib/icons/arrow-circle-up.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Input, SearchInput } from "$lib/index.js"
+	import ArrowCircleUp from "$lib/icons/arrow-circle-up.svelte"
 	import {
 		inputDefault,
 		inputPrefixAndSuffix,
 		inputDisabled,
 		inputLabel,
 		inputError,
-		inputSearch
-	} from '$lib/../docs/data/input.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		inputSearch,
+	} from "$lib/../docs/data/input.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -69,7 +69,8 @@
 
 {#snippet prefixAndSuffix()}
 	<Row>
-		<LinkH2 href="/input#prefix-and-suffix" aria-label="prefix and suffix">prefix and suffix</LinkH2
+		<LinkH2 href="/input#prefix-and-suffix" aria-label="prefix and suffix"
+			>prefix and suffix</LinkH2
 		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -227,8 +228,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'error', href: '/error' }}
-			next={{ title: 'keyboard input', href: '/keyboard-input' }}
+			previous={{ title: "error", href: "/error" }}
+			next={{ title: "keyboard input", href: "/keyboard-input" }}
 		/>
 	</Row>
 {/snippet}

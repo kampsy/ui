@@ -1,35 +1,35 @@
 <script lang="ts">
-	import { onMount, type Snippet } from 'svelte';
-	import TextGradient from '$lib/text/textGradient.svelte';
-	import Webhook from '$lib/icons/webhook.svelte';
-	import { ThemeSwitcher } from '$lib/index.js';
-	import { LogoGithub, MenuAlt } from '$lib/icons/index.js';
-	import MobileNavmenu from './mobileNavmenu.svelte';
-	import { preventScroll } from '$lib/utils/general.js';
+	import { type Snippet } from "svelte"
+	import TextGradient from "$lib/text/textGradient.svelte"
+	import Webhook from "$lib/icons/webhook.svelte"
+	import { ThemeSwitcher } from "$lib/index.js"
+	import { LogoGithub, MenuAlt } from "$lib/icons/index.js"
+	import MobileNavmenu from "./mobileNavmenu.svelte"
+	import { preventScroll } from "$lib/utils/general.js"
 
-	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props();
+	let { asideSlot, contSlot }: { asideSlot: Snippet; contSlot: Snippet } = $props()
 
 	// Mobile Navmenu
-	let isMobileMenuOpen = $state(false);
+	let isMobileMenuOpen = $state(false)
 
 	$effect(() => {
-		preventScroll(isMobileMenuOpen);
-	});
+		preventScroll(isMobileMenuOpen)
+	})
 </script>
 
 <header
-	class="z-50 fixed top-0 mx-auto w-full max-w-[1220px] h-[64px] md:sticky bg-kui-light-bg dark:bg-kui-dark-bg"
+	class="z-50 fixed top-0 mx-auto w-full max-w-305 h-16 md:sticky bg-kui-light-bg dark:bg-kui-dark-bg"
 >
 	<div
-		class=" bg-kui-light-bg dark:bg-kui-dark-bg w-full h-[64px] flex border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class=" bg-kui-light-bg dark:bg-kui-dark-bg w-full h-16 flex border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	>
 		<div
-			class="hidden lg:block w-full max-w-[260px] h-full border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+			class="hidden lg:block w-full max-w-65 h-full border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 		>
 			<div class="hidden w-full h-full px-6 lg:flex items-center">
 				<a href="/">
 					<div class="flex items-center gap-2">
-						<div class="w-[27px] h-[27px]">
+						<div class="w-6.75 h-6.75">
 							<Webhook />
 						</div>
 						<div>
@@ -59,7 +59,7 @@
 					</div>
 					<a href="/">
 						<div class="lg:hidden flex items-center gap-2">
-							<div class="w-[27px] h-[27px]">
+							<div class="w-6.75 h-6.75">
 								<Webhook />
 							</div>
 							<div>
@@ -93,14 +93,14 @@
 	</div>
 </header>
 <!--mobile only-->
-<div class="h-[64px] md:hidden">
+<div class="h-16 md:hidden">
 	<!---->
 </div>
 <main
-	class="flex max-w-[1220px] flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
+	class="flex max-w-305 flex-col md:mx-auto min-[1200px]:mt-0 min-[1200px]:grid min-[1200px]:grid-cols-[260px_1fr]"
 >
 	<aside
-		class="w-[260px] h-[calc(100vh-64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 bottom-0 top-[64px] order-1 flex-col min-[1200px]:flex"
+		class="w-65 h-[calc(100vh-64px)] hidden sticky border-l border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 bottom-0 top-[64px] order-1 flex-col min-[1200px]:flex"
 	>
 		{@render asideSlot()}
 	</aside>

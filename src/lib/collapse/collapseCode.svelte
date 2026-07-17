@@ -1,40 +1,40 @@
 <script lang="ts">
-	import hljs from 'highlight.js';
-	import 'highlight.js/styles/atom-one-light.css';
+	import hljs from "highlight.js"
+	import "highlight.js/styles/atom-one-light.css"
 
-	import { slide } from 'svelte/transition';
-	import ChevronRightSmall from '$lib/icons/chevron-right-small.svelte';
+	import { slide } from "svelte/transition"
+	import ChevronRightSmall from "$lib/icons/chevron-right-small.svelte"
 
-    let {code}:{code:string}=$props()
+	let { code }: { code: string } = $props()
 
-	let isActive = $state(false);
+	let isActive = $state(false)
 
 	const toggleFunc = () => {
-		isActive = !isActive;
-	};
+		isActive = !isActive
+	}
 
 	let rotate180 = $derived.by(() => {
 		if (isActive) {
-			return 'rotate-90';
+			return "rotate-90"
 		}
-		return '';
-	});
+		return ""
+	})
 
 	let title = $derived.by(() => {
 		if (isActive) {
-			return 'Hide code';
+			return "Hide code"
 		}
-		return 'Show code';
-	});
+		return "Show code"
+	})
 
 	let border = $derived.by(() => {
 		if (isActive) {
-			return 'border-y';
+			return "border-y"
 		}
-		return 'border-t';
-	});
+		return "border-t"
+	})
 
-	const highlightedCode = hljs.highlight(code, { language: 'tsx' }).value;
+	const highlightedCode = hljs.highlight(code, { language: "tsx" }).value
 </script>
 
 <button
@@ -42,17 +42,20 @@
 	class="w-full h-12 px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 >
 	<div class="flex items-center gap-x-2">
-		<div class="w-4 h-4  {rotate180} transform-gpu duration-200">
-            <ChevronRightSmall/>
+		<div class="w-4 h-4 {rotate180} transform-gpu duration-200">
+			<ChevronRightSmall />
 		</div>
 		<span class="text-sm font-normal leading-5 first-letter:capitalize"> {title} </span>
 	</div>
 </button>
 {#if isActive}
-	<div class="ui-scrollbar w-full h-auto px-6 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[13px] scroll-smoth overflow-x-auto">
+	<div
+		class="ui-scrollbar w-full h-auto px-6 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[13px] scroll-smoth overflow-x-auto"
+	>
 		<div transition:slide>
 			<pre class="language-tsx">
             <code class="language-tsx">
+                <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
                 {@html highlightedCode}
             </code>
         </pre>

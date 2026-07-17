@@ -11,8 +11,7 @@ export const inputDefault = `
 	<Input aria-labelledby="Demo input" bind:value={small} placeholder="small" size="small" />
 	<Input aria-labelledby="Demo input" bind:value={defaultInput} placeholder="default" />
 	<Input aria-labelledby="Demo input" bind:value={large} placeholder="large" size="large" />
-</div>`;
-
+</div>`
 
 export const inputPrefixAndSuffix = `
 <script lang="ts">
@@ -40,7 +39,7 @@ export const inputPrefixAndSuffix = `
         suffixStyling={false}
         placeholder="default"
 	/>
-</div>`;
+</div>`
 
 export const inputDisabled = `
 <script lang="ts">
@@ -89,14 +88,14 @@ export const inputDisabled = `
 		placeholder="Disabled with prefix and suffix"
 		disabled
 	/>
-</div>`;
+</div>`
 
 export const inputSearch = `
 <script lang="ts">
 	import { SearchInput } from 'kampsy-ui';
 </script>
 
-<SearchInput placeholder="Enter some text..." />`;
+<SearchInput placeholder="Enter some text..." />`
 
 export const inputError = `
 <script lang="ts">
@@ -125,8 +124,7 @@ export const inputError = `
 	    placeholder="long-error@gmail.com"
 	    size="large"
 	    />
-</div>`;
-
+</div>`
 
 export const inputLabel = `
 <script lang="ts">
@@ -135,4 +133,4 @@ export const inputLabel = `
 	let value = $state('');
 </script>
 
-<Input aria-labelledby="Demo input" label="Label" bind:value placeholder="Label" />`;
+<Input aria-labelledby="Demo input" label="Label" bind:value placeholder="Label" />`

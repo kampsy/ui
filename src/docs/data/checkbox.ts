@@ -4,7 +4,7 @@ export const checkboxDefault = `
 	let value = $state(false);
 </script>
 
-<Checkbox bind:checked aria-labelledby="checkbox">option 1</Checkbox>`;
+<Checkbox bind:checked aria-labelledby="checkbox">option 1</Checkbox>`
 
 export const checkboxDisabled = `
 <script lang="ts">
@@ -15,14 +15,14 @@ export const checkboxDisabled = `
     <Checkbox disabled aria-labelledby="checkbox-2">Disabled</Checkbox>
     <Checkbox checked disabled aria-labelledby="checkbox-3">Disabled Checked</Checkbox>
     <Checkbox disabled indeterminate aria-labelledby="checkbox-4">Disabled Indeterminate</Checkbox>
-</div>`;
+</div>`
 
 export const checkboxIndeterminate = `
 <script lang="ts">
 	import { Checkbox } from 'kampsy-ui';
 </script>
 
-<Checkbox indeterminate aria-labelledby="checkbox-5">option 1</Checkbox>`;
+<Checkbox indeterminate aria-labelledby="checkbox-5">option 1</Checkbox>`
 
 export const checkboxItems = `
 <script lang="ts">
@@ -36,4 +36,4 @@ export const checkboxItems = `
     <Checkbox value="button" bind:items aria-labelledby="checkbox-7">button</Checkbox>
     <Checkbox value="calendar" bind:items aria-labelledby="checkbox-8">calendar</Checkbox>
     <Checkbox value="choicebox" bind:items aria-labelledby="checkbox-9">choicebox</Checkbox>
-</div>`;
+</div>`

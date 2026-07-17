@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import type { Snippet } from 'svelte';
-	import { googleTag } from './analytics.js';
+	import { page } from "$app/stores"
+	import type { Snippet } from "svelte"
+	import { googleTag } from "./analytics.js"
 
 	interface Props {
-		children: Snippet | undefined;
-	};
+		children: Snippet | undefined
+	}
 
-	let { children }: Props = $props();
+	let { children }: Props = $props()
 
 	$effect(() => {
 		const pageViewEventParameters = {
 			page_title: document.title,
 			page_path: $page.url.pathname,
-			value: 'page_view'
-		};
-		googleTag('event', 'page_view', pageViewEventParameters);
+			value: "page_view",
+		}
+		googleTag("event", "page_view", pageViewEventParameters)
 
 		// <!-- Global site tag (gtag.js) - Google Analytics -->
 		// console.log("loading... Global site tag")
-		const script = document.createElement('script');
-		script.src = 'https://www.googletagmanager.com/gtag/js?id=G-8TYYNBE4EE';
-		script.async = true;
+		const script = document.createElement("script")
+		script.src = "https://www.googletagmanager.com/gtag/js?id=G-8TYYNBE4EE"
+		script.async = true
 		// var n = window["__nonce"]
 		// n && script.setAttribute("nonce", n)
-		document.head.appendChild(script);
-	});
+		document.head.appendChild(script)
+	})
 </script>
 
 <svelte:head>

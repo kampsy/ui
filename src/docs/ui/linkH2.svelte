@@ -1,17 +1,17 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import type { HTMLAnchorAttributes } from 'svelte/elements';
-	import Link from '$lib/icons/link.svelte';
+	import type { Snippet } from "svelte"
+	import type { HTMLAnchorAttributes } from "svelte/elements"
+	import Link from "$lib/icons/link.svelte"
 
 	interface Props extends HTMLAnchorAttributes {
-		href: string;
-		children: Snippet;
+		href: string
+		children: Snippet
 	}
 
-	let { href, children, ...rest }: Props = $props();
+	let { href, children, ...rest }: Props = $props()
 
 	// id for page navigation
-	const id = href.split('#').pop();
+	const id = href.split("#").pop()
 </script>
 
 <a

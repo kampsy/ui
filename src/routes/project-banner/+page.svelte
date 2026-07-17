@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { ProjectBanner, Tooltip } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { ProjectBanner, Tooltip } from "$lib/index.js"
 	import {
 		projectBannerError,
 		projectBannerSuccess,
-		projectBannerWarning
-	} from '../../docs/data/project-banner.js';
-	import { RotateCounterClockWise, ShieldCheck, Warning } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		projectBannerWarning,
+	} from "../../docs/data/project-banner.js"
+	import { RotateCounterClockWise, ShieldCheck, Warning } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -65,8 +65,8 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			For positive, temporary mitigations put in place to protect a project, e.g., Attack Challenge
-			Mode.
+			For positive, temporary mitigations put in place to protect a project, e.g., Attack
+			Challenge Mode.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -74,8 +74,8 @@
 					<ProjectBanner
 						icon={ShieldCheck}
 						callToAction={{
-							label: 'Disable',
-							href: '/project-banner'
+							label: "Disable",
+							href: "/project-banner",
 						}}
 						label="Attack Challenge Mode is enabled for this project"
 						variant="success"
@@ -103,11 +103,11 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			When a project is in an exceptional state which requires non-immediate action to exit, e.g.,
-			during a rollback. The {@render roundedCode('label')} prop accepts either a {@render roundedCode(
-				'string'
+			When a project is in an exceptional state which requires non-immediate action to exit,
+			e.g., during a rollback. The {@render roundedCode("label")} prop accepts either a {@render roundedCode(
+				"string",
 			)} or a
-			{@render roundedCode('Snippet')}.
+			{@render roundedCode("Snippet")}.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -115,10 +115,10 @@
 					<ProjectBanner
 						icon={RotateCounterClockWise}
 						callToAction={{
-							label: 'Undo Rollback',
+							label: "Undo Rollback",
 							onClick: () => {
-								alert('Button clicked');
-							}
+								alert("Button clicked")
+							},
 						}}
 						label={labelSnip}
 						variant="warning"
@@ -145,8 +145,8 @@
 					<ProjectBanner
 						icon={Warning}
 						callToAction={{
-							label: 'Add Credit Card',
-							href: '/project-banner'
+							label: "Add Credit Card",
+							href: "/project-banner",
 						}}
 						label="Payment failed, update credit card information before your account is shut down"
 						variant="error"
@@ -161,8 +161,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'progress', href: '/progress' }}
-			next={{ title: 'select', href: '/select' }}
+			previous={{ title: "progress", href: "/progress" }}
+			next={{ title: "select", href: "/select" }}
 		/>
 	</Row>
 {/snippet}

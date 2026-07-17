@@ -7,7 +7,7 @@ export const noteDefault = `
     <Note size="small">A small note</Note>
     <Note>A default note</Note>
     <Note size="large">A large note</Note>
-</div>`;
+</div>`
 
 export const noteAction = `
 <script lang="ts">
@@ -25,7 +25,7 @@ export const noteAction = `
     	This note details a large amount information that could potentially wrap into two or
     	more lines, forcing the height of the Note to be larger.
     </Note>
-</div>`;
+</div>`
 
 export const noteSuccess = `
 <script lang="ts">
@@ -54,7 +54,7 @@ export const noteSuccess = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`
 
 export const noteError = `
 <script lang="ts">
@@ -83,7 +83,7 @@ export const noteError = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`
 
 export const noteWarning = `
 <script lang="ts">
@@ -112,7 +112,7 @@ export const noteWarning = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`
 
 export const noteSecondary = `
 <script lang="ts">
@@ -141,7 +141,7 @@ export const noteSecondary = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`
 
 export const noteViolet = `
 <script lang="ts">
@@ -170,7 +170,7 @@ export const noteViolet = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`
 
 export const noteCyan = `
 <script lang="ts">
@@ -199,4 +199,4 @@ export const noteCyan = `
 		This note details some success information. Check
 		<a href="/#" class="hover:underline ">the documentation</a> to learn more.
 	</Note>
-</div>`;
+</div>`

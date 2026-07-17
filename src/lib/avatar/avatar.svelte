@@ -1,14 +1,14 @@
 <script lang="ts">
 	interface Props {
-		size?: number;
-		placeholder?: boolean;
-	};
+		size?: number
+		placeholder?: boolean
+	}
 
-	let { size = 32, placeholder = false }: Props = $props();
+	let { size = 32, placeholder = false }: Props = $props()
 
 	let widthAndHeight = $derived.by(() => {
-		return ` width: ${size}px; height: ${size}px;`;
-	});
+		return ` width: ${size}px; height: ${size}px;`
+	})
 </script>
 
 {#snippet isPlaceholder()}

@@ -3,8 +3,7 @@ export const progressDefault = `
 	import { Progress } from 'kampsy-ui';
 </script>
 
-<Progress value={80} />`;
-
+<Progress value={80} />`
 
 export const progressDynamicColors = `
 <script lang="ts">
@@ -29,7 +28,7 @@ export const progressDynamicColors = `
 		}}
 		size="small"
 		type="secondary">Decrease</Button>
-</div>`;
+</div>`
 
 export const progressThemed = `
 <script lang="ts">
@@ -41,4 +40,4 @@ export const progressThemed = `
 	<Progress type="error" value={10} />
 	<Progress type="warning" value={40} />
 	<Progress type="secondary" value={70} />
-</div>`;
+</div>`

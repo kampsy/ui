@@ -1,24 +1,24 @@
 <script lang="ts">
-	import type { Component, Snippet } from 'svelte';
+	import type { Component, Snippet } from "svelte"
 
 	interface Props {
-		icon?: Component | undefined;
+		icon?: Component | undefined
 		callToAction?:
 			| {
-					label: string;
-					href?: string | undefined;
-					onClick?: () => void | undefined;
+					label: string
+					href?: string | undefined
+					onClick?: () => void | undefined
 			  }
-			| undefined;
-		label?: string | Snippet | undefined;
-		variant?: 'gray' | 'warning' | 'error' | 'success';
+			| undefined
+		label?: string | Snippet | undefined
+		variant?: "gray" | "warning" | "error" | "success"
 	}
 	let {
 		icon = undefined,
 		callToAction = undefined,
 		label = undefined,
-		variant = 'gray'
-	}: Props = $props();
+		variant = "gray",
+	}: Props = $props()
 
 	const variantAsideObj = {
 		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 bg-kui-light-gray-100
@@ -28,8 +28,8 @@
 		error: `text-kui-light-red-900 dark:text-kui-dark-red-900 bg-kui-light-red-100
 		dark:bg-kui-dark-red-100 border-kui-light-red-400 dark:border-kui-dark-red-400`,
 		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 bg-kui-light-blue-100
-		dark:bg-kui-dark-blue-100 border-kui-light-blue-400 dark:border-kui-dark-blue-400`
-	};
+		dark:bg-kui-dark-blue-100 border-kui-light-blue-400 dark:border-kui-dark-blue-400`,
+	}
 
 	const variantCallToActionObj = {
 		gray: `hover:text-kui-light-gray-900 dark:hover:text-kui-dark-gray-900
@@ -47,37 +47,37 @@
 		success: `hover:text-kui-light-blue-900 dark:hover:text-kui-dark-blue-900
 		hover:decoration-kui-light-blue-500 dark:hover:decoration-kui-dark-blue-500
 		decoration-kui-light-blue-400 dark:decoration-kui-dark-blue-400 text-kui-light-blue-1000
-		dark:text-kui-dark-blue-1000`
-	};
+		dark:text-kui-dark-blue-1000`,
+	}
 
 	const variantLabelObj = {
 		gray: `text-kui-light-gray-900 dark:text-kui-dark-gray-900`,
 		warning: `text-kui-light-amber-900 dark:text-kui-dark-amber-900`,
 		error: `text-kui-light-red-900 dark:text-kui-dark-red-900`,
-		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900`
-	};
+		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900`,
+	}
 
 	let asideClass = $derived.by(() => {
-		return `${variantAsideObj[variant]}`;
-	});
+		return `${variantAsideObj[variant]}`
+	})
 
 	let callToActionClass = $derived.by(() => {
-		return `${variantCallToActionObj[variant]}`;
-	});
+		return `${variantCallToActionObj[variant]}`
+	})
 
 	let labelClass = $derived.by(() => {
-		return `${variantLabelObj[variant]}`;
-	});
+		return `${variantLabelObj[variant]}`
+	})
 </script>
 
 <!--Label snippet-->
 {#snippet labelSnip()}
 	{#if label}
-		{#if typeof label === 'string'}
+		{#if typeof label === "string"}
 			<p class="text-sm {labelClass}">
 				{label}
 			</p>
-		{:else if typeof label === 'function'}
+		{:else if typeof label === "function"}
 			<p class="text-sm {labelClass}">
 				{@render label?.()}
 			</p>

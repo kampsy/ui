@@ -24,7 +24,7 @@ export const toolTipDefault = `
             <span>Left</span>
         </Tooltip>
 	</div>
-</div>`;
+</div>`
 
 export const toolTipCustomType = `
 <script lang="ts">
@@ -52,7 +52,7 @@ export const toolTipCustomType = `
             <span>Left</span>
         </Tooltip>
 	</div>
-</div>`;
+</div>`
 
 export const tooltipComponents = `
 <script lang="ts">
@@ -77,4 +77,4 @@ export const tooltipComponents = `
       <Badge size="sm">LEFT</Badge>
     </Tooltip>
   </div>
-</div>`;
+</div>`

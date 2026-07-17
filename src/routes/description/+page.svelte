@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Description } from '$lib/index.js';
-	import { descriptionDefault } from '../../docs/data/description.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Description } from "$lib/index.js"
+	import { descriptionDefault } from "../../docs/data/description.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -25,8 +25,8 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Displays a brief heading and subheading to communicate any additional information or context a
-			user needs to continue.
+			Displays a brief heading and subheading to communicate any additional information or
+			context a user needs to continue.
 		</p>
 	</Row>
 {/snippet}
@@ -67,8 +67,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'collapse', href: '/collapse' }}
-			next={{ title: 'empty state', href: '/empty-state' }}
+			previous={{ title: "collapse", href: "/collapse" }}
+			next={{ title: "empty state", href: "/empty-state" }}
 		/>
 	</Row>
 {/snippet}

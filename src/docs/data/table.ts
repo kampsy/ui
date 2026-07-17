@@ -30,7 +30,7 @@ export const tableDefault = `
             </Table.Row>
         </Table.Body>
     </Table.Root>
-</div>`;
+</div>`
 
 export const tableStriped = `
 <script lang="ts">
@@ -64,7 +64,7 @@ export const tableStriped = `
             </Table.Row>
         </Table.Body>
     </Table.Root>
-</div>`;
+</div>`
 
 export const tableInteractive = `
 <script lang="ts">
@@ -98,7 +98,7 @@ export const tableInteractive = `
             </Table.Row>
         </Table.Body>
     </Table.Root>
-</div>`;
+</div>`
 
 export const tableFull = `
 <script lang="ts">
@@ -191,4 +191,4 @@ export const tableFull = `
             </Table.Row>
         </Table.Footer>
     </Table.Root>
-</div>`;
+</div>`

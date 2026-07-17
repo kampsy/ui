@@ -1,58 +1,58 @@
 <script lang="ts">
-	import { randomString } from '$lib/utils/random.js';
-	import type { Snippet } from 'svelte';
-	import { setContext } from 'svelte';
-	import { createRootState } from './root.svelte.js';
+	import { randomString } from "$lib/utils/random.js"
+	import type { Snippet } from "svelte"
+	import { setContext } from "svelte"
+	import { createRootState } from "./root.svelte.js"
 
 	type propT = {
-		value: string;
-		name?: string | undefined;
-		size?: 'small' | 'medium' | 'large' | undefined;
-		fullWidth?: boolean | undefined;
-		children?: Snippet | undefined;
-	};
+		value: string
+		name?: string | undefined
+		size?: "small" | "medium" | "large" | undefined
+		fullWidth?: boolean | undefined
+		children?: Snippet | undefined
+	}
 	let {
-		value = $bindable(''),
+		value = $bindable(""),
 		name = undefined,
-		size = 'medium',
+		size = "medium",
 		fullWidth = false,
-		children = undefined
-	}: propT = $props();
+		children = undefined,
+	}: propT = $props()
 
 	const switchProps = {
-		name: '',
+		name: "",
 		size: size,
-		fullWidth: fullWidth
-	};
-
-	if (name) {
-		switchProps.name = name;
-	} else {
-		switchProps.name = randomString(8);
+		fullWidth: fullWidth,
 	}
 
-	const rootState = createRootState({ selected: '', ...switchProps });
+	if (name) {
+		switchProps.name = name
+	} else {
+		switchProps.name = randomString(8)
+	}
 
-	setContext('switch', rootState);
+	const rootState = createRootState({ selected: "", ...switchProps })
+
+	setContext("switch", rootState)
 
 	let width = $derived.by(() => {
 		if (fullWidth) {
-			return 'w-full';
+			return "w-full"
 		}
-		return '';
-	});
+		return ""
+	})
 
 	// Large size has a different border radius than other sizes
 	let borderRadius = $derived.by(() => {
-		if (size === 'large') {
-			return 'rounded-[8px]';
+		if (size === "large") {
+			return "rounded-[8px]"
 		}
-		return 'rounded-md';
-	});
+		return "rounded-md"
+	})
 
 	$effect(() => {
-		value = rootState.getSelected();
-	});
+		value = rootState.getSelected()
+	})
 </script>
 
 <div class={width}>

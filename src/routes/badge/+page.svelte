@@ -1,33 +1,38 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import Badge from '$lib/badge/badge.svelte';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import { badgeSize, badgeVariants, badgeWithIcon, badgePill } from '$lib/../docs/data/badge.js';
-	import Shield from '$lib/icons/shield.svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Tabs, Text } from '$lib/index.js';
-	import { fade } from 'svelte/transition';
-	import { Webhook, Accessibility, LogoSlackColor } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import Badge from "$lib/badge/badge.svelte"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import {
+		badgeSize,
+		badgeVariants,
+		badgeWithIcon,
+		badgePill,
+	} from "$lib/../docs/data/badge.js"
+	import Shield from "$lib/icons/shield.svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Tabs, Text } from "$lib/index.js"
+	import { fade } from "svelte/transition"
+	import { Webhook, Accessibility, LogoSlackColor } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	const contHeading = {
-		title: 'badge',
+		title: "badge",
 		para: `A label that emphasizes an element that requires attention, or helps categorize with other
-			similar elements.`
-	};
+			similar elements.`,
+	}
 
-	let selected = $state('implementation');
+	let selected = $state("implementation")
 
 	const considerations = [
 		`Choose a badge with a color that semantically aligns with your intended use case.`,
 		`Avoid using color as the sole method of conveying information or actions.`,
 		`Utilize aria-label to give complete context for screen readers. For instance, you might say "gray badge.".`,
-		`If the badge represents a live status, consider using role="status" for better accessibility.`
-	];
+		`If the badge represents a live status, consider using role="status" for better accessibility.`,
+	]
 </script>
 
 <svelte:head>
@@ -54,8 +59,8 @@
 		<Tabs
 			bind:selected
 			tabs={[
-				{ title: 'Implementation', value: 'implementation', icon: Webhook },
-				{ title: 'Accessibility', value: 'accessibility', icon: Accessibility }
+				{ title: "Implementation", value: "implementation", icon: Webhook },
+				{ title: "Accessibility", value: "accessibility", icon: Accessibility },
 			]}
 		/>
 	</Row>
@@ -281,10 +286,15 @@
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="red" aria-label="icon large red">red</Badge>
-						<Badge icon={Shield} size="medium" variant="red" aria-label="icon medium red">red</Badge
+						<Badge icon={Shield} size="large" variant="red" aria-label="icon large red"
+							>red</Badge
 						>
-						<Badge icon={Shield} size="small" variant="red" aria-label="icon small red">red</Badge>
+						<Badge icon={Shield} size="medium" variant="red" aria-label="icon medium red"
+							>red</Badge
+						>
+						<Badge icon={Shield} size="small" variant="red" aria-label="icon small red"
+							>red</Badge
+						>
 						<Badge
 							icon={Shield}
 							size="small"
@@ -396,14 +406,23 @@
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="inverted" aria-label="icon large inverted"
-							>inverted</Badge
+						<Badge
+							icon={Shield}
+							size="large"
+							variant="inverted"
+							aria-label="icon large inverted">inverted</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="inverted" aria-label="icon medium inverted"
-							>inverted</Badge
+						<Badge
+							icon={Shield}
+							size="medium"
+							variant="inverted"
+							aria-label="icon medium inverted">inverted</Badge
 						>
-						<Badge icon={Shield} size="small" variant="inverted" aria-label="icon small inverted"
-							>inverted</Badge
+						<Badge
+							icon={Shield}
+							size="small"
+							variant="inverted"
+							aria-label="icon small inverted">inverted</Badge
 						>
 					</div>
 				</div>
@@ -421,7 +440,7 @@
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			A special link, not quite as prominent as a button, based on {@render roundedCode(
-				'<Badge />'
+				"<Badge />",
 			)} styling.
 		</p>
 		<div class="mt-4 xl:mt-7">
@@ -486,11 +505,11 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			This component aims to adhere to {@render roundedCode('WCAG 2.2 (level AA)')} guidelines, and it
-			is important to maintain this commitment when implementing the component across other projects.
-			This section provides guidance to support that effort.
+			This component aims to adhere to {@render roundedCode("WCAG 2.2 (level AA)")} guidelines,
+			and it is important to maintain this commitment when implementing the component across other
+			projects. This section provides guidance to support that effort.
 		</p>
-		{#each considerations as para, i}
+		{#each considerations as para (para)}
 			<Text
 				size={{ sm: 14, md: 16, lg: 16 }}
 				class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
@@ -504,8 +523,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'avatar', href: '/avatar' }}
-			next={{ title: 'button', href: '/button' }}
+			previous={{ title: "avatar", href: "/avatar" }}
+			next={{ title: "button", href: "/button" }}
 		/>
 	</Row>
 {/snippet}
@@ -514,7 +533,7 @@
 	{@render badge(contHeading.title, contHeading.para)}
 	{@render tabSnip()}
 
-	{#if selected == 'implementation'}
+	{#if selected == "implementation"}
 		<section transition:fade>
 			{@render variants()}
 			{@render size()}
@@ -523,7 +542,7 @@
 		</section>
 	{/if}
 
-	{#if selected == 'accessibility'}
+	{#if selected == "accessibility"}
 		<section transition:fade>
 			{@render accessibility()}
 		</section>

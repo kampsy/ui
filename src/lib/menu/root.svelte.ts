@@ -1,41 +1,41 @@
 export function createRootState(initial: {
-	isMobile: boolean;
-	isActive: boolean;
-	alignment: 'left' | 'right';
-	contentPosition: string;
-	transY: number;
+	isMobile: boolean
+	isActive: boolean
+	alignment: "left" | "right"
+	contentPosition: string
+	transY: number
 }) {
-	let isMobile = $state(initial.isMobile);
-	let isActive = $state(initial.isActive);
-	let contentPosition = $state(initial.contentPosition);
-	let transY = $state(initial.transY);
+	let isMobile = $state(initial.isMobile)
+	let isActive = $state(initial.isActive)
+	let contentPosition = $state(initial.contentPosition)
+	let transY = $state(initial.transY)
 
 	function getIsMobile() {
-		return isMobile;
+		return isMobile
 	}
 	function setIsMobile(value: boolean) {
-		isMobile = value;
+		isMobile = value
 	}
 
 	function getIsActive() {
-		return isActive;
+		return isActive
 	}
 	function setIsActive(value: boolean) {
-		isActive = value;
+		isActive = value
 	}
 
 	function getContentPosition() {
-		return contentPosition;
+		return contentPosition
 	}
 	function setContentPosition(value: string) {
-		contentPosition = value;
+		contentPosition = value
 	}
 
 	function setTransY(value: number) {
-		transY = value;
+		transY = value
 	}
 	function getTransY() {
-		return transY;
+		return transY
 	}
 
 	return {
@@ -47,6 +47,6 @@ export function createRootState(initial: {
 		getContentPosition,
 		setContentPosition,
 		getTransY,
-		setTransY
-	};
+		setTransY,
+	}
 }

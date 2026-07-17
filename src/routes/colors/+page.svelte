@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import Button from '$lib/button/button.svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import Text from '$lib/text/text.svelte';
-	import Tooltip from '$lib/tooltip/tooltip.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import Button from "$lib/button/button.svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import Text from "$lib/text/text.svelte"
+	import Tooltip from "$lib/tooltip/tooltip.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	import {
 		gray,
@@ -18,9 +18,9 @@
 		green,
 		teal,
 		purple,
-		pink
-	} from '../../docs/data/colors.js';
-	import Hr from '../../docs/ui/hr.svelte';
+		pink,
+	} from "../../docs/data/colors.js"
+	import Hr from "../../docs/ui/hr.svelte"
 </script>
 
 <svelte:head>
@@ -30,21 +30,22 @@
 {#snippet error()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			colors
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
-			Learn how to use our color system. Hover over each color to view the corresponding colors.
+			Learn how to use our color system. Hover over each color to view the corresponding
+			colors.
 		</p>
 	</Row>
 {/snippet}
 
 {#snippet colSnip(title: string, colorList: string[])}
 	<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
-		<div class="w-[100px] shrink-0">
+		<div class="w-25 shrink-0">
 			<p
 				class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium first-letter:capitalize"
 			>
@@ -53,13 +54,13 @@
 		</div>
 
 		<ul class="flex w-full gap-1 md:gap-2">
-			{#each colorList as item}
-				<li class="w-full max-w-[68px]">
+			{#each colorList as item, index (index)}
+				<li class="w-full max-w-17">
 					<Tooltip position="top" text={item}>
 						<div class="w-full h-full flex items-center">
 							<button
 								aria-label={item}
-								class="w-full h-[30px] md:h-10 border border-kui-light-gray-alpha-200/5 dark:border-kui-dark-gray-alpha-200/5 rounded-sm {item}"
+								class="w-full h-7.5 md:h-10 border border-kui-light-gray-alpha-200/5 dark:border-kui-dark-gray-alpha-200/5 rounded-sm {item}"
 							></button>
 						</div>
 					</Tooltip>
@@ -81,7 +82,7 @@
 
 		<div class="mt-5 xl:mt-10 space-y-6">
 			<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
-				<div class="w-[100px] shrink-0">
+				<div class="w-25 shrink-0">
 					<p
 						class="text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium capitalize"
 					>
@@ -89,9 +90,9 @@
 					</p>
 				</div>
 				<ul class="flex w-full gap-1 md:gap-2">
-					<li class="flex items-center w-[72px] gap-1 md:w-[152px] md:gap-2">
+					<li class="flex items-center w-18 gap-1 md:w-38 md:gap-2">
 						<ul class="flex items-center w-full gap-1 md:gap-2">
-							<li class="w-full max-w-[68px]">
+							<li class="w-full max-w-17">
 								<Tooltip
 									position="top"
 									text="bg-kui-light-bg rounded-sm dark:bg-kui-dark-bg"
@@ -100,12 +101,12 @@
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 bg-kui-light-bg rounded-sm dark:bg-kui-dark-bg"
+											class="w-full h-8.5 lg:h-10 border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 bg-kui-light-bg rounded-sm dark:bg-kui-dark-bg"
 										></button>
 									</div>
 								</Tooltip>
 							</li>
-							<li class="w-full max-w-[68px]">
+							<li class="w-full max-w-17">
 								<Tooltip
 									position="top"
 									text="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
@@ -114,7 +115,7 @@
 									<div class="w-full h-full flex items-center">
 										<button
 											aria-label="gray alpha"
-											class="w-full h-[34px] lg:h-[40px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-sm bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
+											class="w-full h-8.5 lg:h-10 border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 rounded-sm bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary"
 										></button>
 									</div>
 								</Tooltip>
@@ -124,15 +125,15 @@
 				</ul>
 			</div>
 
-			{@render colSnip('gray', gray)}
-			{@render colSnip('gray alpha', grayAlpha)}
-			{@render colSnip('blue', blue)}
-			{@render colSnip('red', red)}
-			{@render colSnip('amber', amber)}
-			{@render colSnip('green', green)}
-			{@render colSnip('teal', teal)}
-			{@render colSnip('purple', purple)}
-			{@render colSnip('pink', pink)}
+			{@render colSnip("gray", gray)}
+			{@render colSnip("gray alpha", grayAlpha)}
+			{@render colSnip("blue", blue)}
+			{@render colSnip("red", red)}
+			{@render colSnip("amber", amber)}
+			{@render colSnip("green", green)}
+			{@render colSnip("teal", teal)}
+			{@render colSnip("purple", purple)}
+			{@render colSnip("pink", pink)}
 		</div>
 	</Row>
 {/snippet}
@@ -143,13 +144,13 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			There are two background colors for pages and UI components. In most instances, you should use
-			Background 1—especially when color is being placed on top of the background. Background 2
-			should be used sparingly when a subtle background differentiation is needed.
+			There are two background colors for pages and UI components. In most instances, you
+			should use Background 1—especially when color is being placed on top of the background.
+			Background 2 should be used sparingly when a subtle background differentiation is needed.
 		</p>
 
 		<!---->
-		<div class="w-full py-[20px]">
+		<div class="w-full py-5">
 			<div class="flex items-center gap-8">
 				<div class="flex items-center gap-2">
 					<div class="w-4 h-4 cursor-pointer">
@@ -198,13 +199,13 @@
 
 		<!---->
 		<div
-			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-[700px] w-full flex-col border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-[412px] md:flex-row"
+			class="bg-kui-light-bg dark:bg-kui-dark-bg mt-10 flex h-175 w-full flex-col border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-103 md:flex-row"
 		>
 			<div
 				class="flex h-[50%] items-center justify-center border-r border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200 md:h-full md:w-[50%]"
 			>
 				<div
-					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-[164px] w-[164px] items-center justify-center rounded-[12px] border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
+					class="bg-kui-light-bg dark:bg-kui-dark-bg relative flex h-41 w-41 items-center justify-center rounded-xl border border-kui-light-gray-alpha-200 dark:border-kui-dark-gray-alpha-200"
 				>
 					<div
 						class="bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100 flex h-6 w-6 items-center justify-center rounded-full text-xs text-kui-light-gray-900 dark:text-kui-dark-gray-900"
@@ -326,9 +327,9 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			If your UI component’s default background is Background 1, you can use Color 1 as your hover
-			background and Color 2 as your active background. On smaller UI elements like badges, you can
-			use Color 2 or Color 3 as the background.
+			If your UI component’s default background is Background 1, you can use Color 1 as your
+			hover background and Color 2 as your active background. On smaller UI elements like
+			badges, you can use Color 2 or Color 3 as the background.
 		</p>
 	</Row>
 {/snippet}
@@ -550,8 +551,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'installation', href: '/installation' }}
-			next={{ title: 'avatar', href: '/avatar' }}
+			previous={{ title: "installation", href: "/installation" }}
+			next={{ title: "avatar", href: "/avatar" }}
 		/>
 	</Row>
 {/snippet}

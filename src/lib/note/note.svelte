@@ -1,68 +1,68 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import Information from '$lib/icons/information.svelte';
-	import CheckCircle from '$lib/icons/check-circle.svelte';
-	import Error from '$lib/icons/error.svelte';
-	import Warning from '$lib/icons/warning.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { Snippet } from "svelte"
+	import Information from "$lib/icons/information.svelte"
+	import CheckCircle from "$lib/icons/check-circle.svelte"
+	import Error from "$lib/icons/error.svelte"
+	import Warning from "$lib/icons/warning.svelte"
+	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		class?: string;
-		size?: 'small' | 'medium' | 'large';
-		action?: Snippet | undefined;
-		disabled?: boolean;
-		type?: 'success' | 'error' | 'warning' | 'secondary' | 'violet' | 'cyan' | 'default';
-		fill?: boolean;
-		children?: Snippet | undefined;
+		class?: string
+		size?: "small" | "medium" | "large"
+		action?: Snippet | undefined
+		disabled?: boolean
+		type?: "success" | "error" | "warning" | "secondary" | "violet" | "cyan" | "default"
+		fill?: boolean
+		children?: Snippet | undefined
 	}
 	let {
-		class: klass = '',
-		size = 'medium',
+		class: klass = "",
+		size = "medium",
 		action = undefined,
 		disabled = false,
-		type = 'default',
+		type = "default",
 		fill = false,
 		children = undefined,
 		...rest
-	}: Props = $props();
+	}: Props = $props()
 
 	const sizeObj = {
-		small: 'px-[8px] py-[8px] text-xs leading-4',
-		medium: 'px-[12px] py-[9px] text-sm leading-[21px]',
-		large: 'px-[12px] py-[11px] text-base leading-6'
-	};
+		small: "px-[8px] py-[8px] text-xs leading-4",
+		medium: "px-[12px] py-[9px] text-sm leading-[21px]",
+		large: "px-[12px] py-[11px] text-base leading-6",
+	}
 	let sizeClass = $derived.by(() => {
-		return sizeObj[size];
-	});
+		return sizeObj[size]
+	})
 
 	const iconAndTextGapObj = {
-		small: 'gap-2',
-		medium: 'gap-3',
-		large: 'gap-3'
-	};
+		small: "gap-2",
+		medium: "gap-3",
+		large: "gap-3",
+	}
 	let iconAndTextGapClass = $derived.by(() => {
-		return iconAndTextGapObj[size];
-	});
+		return iconAndTextGapObj[size]
+	})
 
 	let radiusClass = $derived.by(() => {
 		if (action) {
-			return 'rounded-[10px]';
+			return "rounded-[10px]"
 		}
-		return 'rounded-md';
-	});
+		return "rounded-md"
+	})
 
 	const typeBorderObj = {
 		success: `border border-kui-light-blue-400 dark:border-kui-dark-blue-400`,
 		error: `border border-kui-light-red-400 dark:border-kui-dark-red-400`,
-		warning: 'border border-kui-light-amber-400 dark:border-kui-dark-amber-400',
+		warning: "border border-kui-light-amber-400 dark:border-kui-dark-amber-400",
 		secondary: `border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400`,
 		violet: `border border-kui-light-purple-400 dark:border-kui-dark-purple-400`,
 		cyan: `border border-kui-light-teal-400 dark:border-kui-dark-teal-400`,
-		default: `border border-kui-light-gray-400 dark:border-kui-dark-gray-400`
-	};
+		default: `border border-kui-light-gray-400 dark:border-kui-dark-gray-400`,
+	}
 	let typeBorderClass = $derived.by(() => {
-		return typeBorderObj[type];
-	});
+		return typeBorderObj[type]
+	})
 
 	const fillObj = {
 		success: `bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border border-kui-light-blue-200
@@ -78,11 +78,11 @@
 		cyan: `bg-kui-light-teal-200 dark:bg-kui-dark-teal-200 border border-kui-light-teal-200
 		dark:border-kui-dark-teal-200`,
 		default: `bg-kui-light-gray-200 dark:bg-kui-dark-gray-200 border border-kui-light-gray-200
-		dark:border-kui-dark-gray-200`
-	};
+		dark:border-kui-dark-gray-200`,
+	}
 	let fillClass = $derived.by(() => {
-		return fillObj[type];
-	});
+		return fillObj[type]
+	})
 
 	const typeTextObj = {
 		success: `text-kui-light-blue-900 dark:text-kui-dark-blue-900 selection:bg-kui-light-blue-900
@@ -105,27 +105,27 @@
 		[&_a]:text-kui-light-teal-1000 dark:[&_a]:text-kui-dark-teal-1000`,
 		default: `text-kui-light-gray-900 dark:text-kui-dark-gray-900 selection:bg-kui-light-gray-900
 		selection:text-kui-light-gray-100 dark:selection:bg-kui-dark-gray-800  dark:selection:text-kui-dark-gray-1000
-		[&_a]:text-kui-light-gray-1000 dark:[&_a]:text-kui-dark-gray-1000`
-	};
+		[&_a]:text-kui-light-gray-1000 dark:[&_a]:text-kui-dark-gray-1000`,
+	}
 	let textClass = $derived.by(() => {
-		return typeTextObj[type];
-	});
+		return typeTextObj[type]
+	})
 
 	const contClass = $derived.by(() => {
 		if (fill) {
-			return `${fillClass}`;
+			return `${fillClass}`
 		}
-		return `${typeBorderClass}`;
-	});
+		return `${typeBorderClass}`
+	})
 </script>
 
 <!--Icon snippet based on the type-->
 {#snippet icon()}
-	{#if type === 'success'}
+	{#if type === "success"}
 		<CheckCircle />
-	{:else if type === 'error'}
+	{:else if type === "error"}
 		<Error />
-	{:else if type === 'warning'}
+	{:else if type === "warning"}
 		<Warning />
 	{:else}
 		<Information />

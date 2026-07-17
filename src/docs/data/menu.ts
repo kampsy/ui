@@ -14,7 +14,7 @@ export const menuDefault = `
             <Menu.Item onClick={() => console.log('Delete')} type="error">Delete</Menu.Item>
     	</Menu.Content>
     </Menu.Root>
-</div>`;
+</div>`
 
 export const menuLinkItem = `
 <script lang="ts">
@@ -30,7 +30,7 @@ export const menuLinkItem = `
             <Menu.Link href="#/">One</Menu.Link>
     	</Menu.Content>
     </Menu.Root>
-</div>`;
+</div>`
 
 export const menuPrefixAndSuffix = `
 <script lang="ts">
@@ -63,7 +63,7 @@ export const menuPrefixAndSuffix = `
 			<Menu.Item suffix={Accessibility}>Right</Menu.Item>
 		</Menu.Content>
 	</Menu.Root>
-</div>`;
+</div>`
 
 export const menuAlignment = `
 <script lang="ts">
@@ -88,4 +88,4 @@ export const menuAlignment = `
 			<Menu.Item suffix={Accessibility}>Right</Menu.Item>
 		</Menu.Content>
 	</Menu.Root>
-</div>`;
+</div>`

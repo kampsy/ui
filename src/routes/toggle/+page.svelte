@@ -1,25 +1,25 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Toggle } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Toggle } from "$lib/index.js"
 	import {
 		toggleCustomColors,
 		toggleDefault,
 		toggleSizes,
-		toggleWithLabel
-	} from '../../docs/data/toggle.js';
-	import { LockClosedSmall, LockOpenSmall } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		toggleWithLabel,
+	} from "../../docs/data/toggle.js"
+	import { LockClosedSmall, LockOpenSmall } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let checked = $state(false);
-	let checked2 = $state(true);
-	let checkedCustom = $state(false);
-	let label = $state(false);
+	let checked = $state(false)
+	let checked2 = $state(true)
+	let checkedCustom = $state(false)
+	let label = $state(false)
 </script>
 
 <svelte:head>
@@ -107,7 +107,7 @@
 							color="purple"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -118,7 +118,7 @@
 							color="amber"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -129,7 +129,7 @@
 							color="red"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -141,7 +141,7 @@
 							size="large"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -153,7 +153,7 @@
 							size="large"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -165,7 +165,7 @@
 							size="large"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}
 						/>
 					</div>
@@ -205,7 +205,7 @@
 							bind:checked={label}
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}>Enable Firewall</Toggle
 						>
 
@@ -215,7 +215,7 @@
 							direction="switch-first"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}>Enable Firewall</Toggle
 						>
 					</div>
@@ -226,7 +226,7 @@
 							bind:checked={label}
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}>Enable Firewall</Toggle
 						>
 
@@ -237,7 +237,7 @@
 							direction="switch-first"
 							icon={{
 								checked: LockClosedSmall,
-								unchecked: LockOpenSmall
+								unchecked: LockOpenSmall,
 							}}>Enable Firewall</Toggle
 						>
 					</div>
@@ -251,8 +251,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'theme switcher', href: '/theme-switcher' }}
-			next={{ title: 'tooltip', href: '/tooltip' }}
+			previous={{ title: "theme switcher", href: "/theme-switcher" }}
+			next={{ title: "tooltip", href: "/tooltip" }}
 		/>
 	</Row>
 {/snippet}

@@ -8,7 +8,7 @@ export const switchDefault = `
 <Switch.Root bind:value name="default">
 	<Switch.Control defaultChecked label="Source" value="source" />
 	<Switch.Control label="Output" value="output" />
-</Switch.Root>`;
+</Switch.Root>`
 
 export const switchDisabled = `
 <script lang="ts">
@@ -20,7 +20,7 @@ export const switchDisabled = `
 <Switch.Root bind:value name="default">
 	<Switch.Control defaultChecked disabled label="Source" value="source" />
 	<Switch.Control disabled label="Output" value="output" />
-</Switch.Root>`;
+</Switch.Root>`
 
 export const switchSize = `
 <script lang="ts">
@@ -44,7 +44,7 @@ export const switchSize = `
 		<Switch.Control defaultChecked disabled label="Source" value="source" />
 		<Switch.Control disabled label="Output" value="output" />
 	</Switch.Root>
-</div>`;
+</div>`
 
 export const switchFullWidth = `
 <script lang="ts">
@@ -56,7 +56,7 @@ export const switchFullWidth = `
 <Switch.Root bind:value name="size-large" size="large" fullWidth>
 	<Switch.Control defaultChecked disabled label="Source" value="source" />
 	<Switch.Control disabled label="Output" value="output" />
-</Switch.Root>`;
+</Switch.Root>`
 
 export const switchTooltip = `
 <script lang="ts">
@@ -72,7 +72,7 @@ export const switchTooltip = `
 	<Tooltip text="View Output">
 		<Switch.Control label="Output" value="output" />
 	</Tooltip>
-</Switch.Root>`;
+</Switch.Root>`
 
 export const switchIcon = `
 <script lang="ts">
@@ -97,4 +97,4 @@ export const switchIcon = `
 		<Switch.Control defaultChecked icon={GridSquare} value="source" />
 		<Switch.Control icon={ListUnordered} value="output" />
 	</Switch.Root>
-</div>`;
+</div>`

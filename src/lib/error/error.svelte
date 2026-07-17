@@ -1,32 +1,32 @@
 <script lang="ts">
-	import Error from '$lib/icons/error.svelte';
-	import LinkExternal from '$lib/icons/link-external.svelte';
-	import type { Snippet } from 'svelte';
+	import Error from "$lib/icons/error.svelte"
+	import LinkExternal from "$lib/icons/link-external.svelte"
+	import type { Snippet } from "svelte"
 
 	interface Props {
-		label?: string;
-		size?: 'sm' | 'md' | 'lg';
-		error?: withErrorProp;
-		children?: Snippet | undefined;
-	};
+		label?: string
+		size?: "sm" | "md" | "lg"
+		error?: withErrorProp
+		children?: Snippet | undefined
+	}
 
 	type withErrorProp = {
-		message: string;
-		action: string;
-		link: string;
-	};
+		message: string
+		action: string
+		link: string
+	}
 
-	let { label, size = 'md', error = undefined, children }: Props = $props();
+	let { label, size = "md", error = undefined, children }: Props = $props()
 
 	const sizeObj = {
-		sm: 'text-[13px] leading-5',
-		md: 'text-[14px] leading-5',
-		lg: 'text-[16px] leading-6'
+		sm: "text-[13px] leading-5",
+		md: "text-[14px] leading-5",
+		lg: "text-[16px] leading-6",
 	}
 
 	let sizeClass = $derived.by(() => {
 		return sizeObj[size]
-	});
+	})
 </script>
 
 {#snippet childrenLabelSizeSnip()}
@@ -40,20 +40,22 @@
 		{#if children}
 			<span class="text-kui-light-red-900 dark:text-kui-dark-red-900 font-normal">
 				{@render children()}
-			</span>	
+			</span>
 		{/if}
 	</div>
 {/snippet}
 
 {#snippet withErrorPropSnip()}
-	<div class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900">
-		{error?.message || ''}
+	<div
+		class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900"
+	>
+		{error?.message || ""}
 		<div
 			class=" font-medium leading-5 capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800"
 		>
-			<a href={error?.link || ''}>
+			<a href={error?.link || ""}>
 				<div class="flex items-center gap-1">
-					{error?.action || ''}
+					{error?.action || ""}
 					<div class="w-3.5 h-3.5">
 						<LinkExternal />
 					</div>

@@ -1,37 +1,36 @@
 <script lang="ts">
-	import ChevronDownSmall from '$lib/icons/chevron-down-small.svelte';
-	import { getContext } from 'svelte';
-	import { Spinner,Text } from '$lib/index.js';
+	import ChevronDownSmall from "$lib/icons/chevron-down-small.svelte"
+	import { getContext } from "svelte"
+	import { Spinner, Text } from "$lib/index.js"
 
 	interface Props {
-		placeholder?: string;
+		placeholder?: string
 	}
-	let { placeholder = 'placeholder' }: Props = $props();
+	let { placeholder = "placeholder" }: Props = $props()
 
 	const rootState = getContext<{
-		size: 'tiny' | 'small' | 'medium' | 'large';
-		getSelected: () => string;
-		getIsActive: () => boolean;
-		getLoading: () => boolean;
-	}>('select');
+		size: "tiny" | "small" | "medium" | "large"
+		getSelected: () => string
+		getIsActive: () => boolean
+		getLoading: () => boolean
+	}>("select")
 
 	let spinnerSize = $derived.by(() => {
-		if (rootState.size === 'tiny') return 14;
-		if (rootState.size === 'small') return 16;
-		if (rootState.size === 'medium') return 16;
-		return 24;
-	});
+		if (rootState.size === "tiny") return 14
+		if (rootState.size === "small") return 16
+		if (rootState.size === "medium") return 16
+		return 24
+	})
 
 	// We are going to rotate the chevron icon when the select is active
-	let rotate = $derived(rootState.getIsActive() ? 'rotate-180' : '');
+	let rotate = $derived(rootState.getIsActive() ? "rotate-180" : "")
 </script>
 
 <div class="flex items-center justify-between">
-
 	{#if !rootState.getLoading()}
 		<span
 			class="text-sm first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
-			>{rootState.getSelected() === '' ? placeholder : rootState.getSelected()}</span
+			>{rootState.getSelected() === "" ? placeholder : rootState.getSelected()}</span
 		>
 		<div class="w-4 h-4 flex items-center justify-center">
 			<div
@@ -47,5 +46,4 @@
 			<Text>Loading...</Text>
 		</div>
 	{/if}
-	
 </div>

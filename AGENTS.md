@@ -80,16 +80,16 @@ npx playwright test tests/test.ts
 
 ```svelte
 <script lang="ts">
-	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import type { Component, Snippet } from 'svelte';
+	import type { HTMLButtonAttributes } from "svelte/elements"
+	import type { Component, Snippet } from "svelte"
 
 	interface Props extends HTMLButtonAttributes {
-		variant?: 'primary' | 'secondary';
-		children: Snippet;
+		variant?: "primary" | "secondary"
+		children: Snippet
 	}
 
-	let { variant = 'primary', children, ...rest }: Props = $props();
-	let computedClass = $derived.by(() => calculateClass(variant));
+	let { variant = "primary", children, ...rest }: Props = $props()
+	let computedClass = $derived.by(() => calculateClass(variant))
 </script>
 ```
 
@@ -114,10 +114,10 @@ npx playwright test tests/test.ts
 
 ```typescript
 // Group: external libs, then Svelte imports, then internal
-import { fade } from 'svelte/transition';
-import type { Component, Snippet } from 'svelte';
-import type { HTMLButtonAttributes } from 'svelte/elements';
-import LoaderCircle from '$lib/icons/loader-circle.svelte';
+import { fade } from "svelte/transition"
+import type { Component, Snippet } from "svelte"
+import type { HTMLButtonAttributes } from "svelte/elements"
+import LoaderCircle from "$lib/icons/loader-circle.svelte"
 ```
 
 - Use Svelte's `$lib` alias for internal imports
@@ -156,10 +156,10 @@ Export components from `src/lib/index.ts`:
 
 ```typescript
 // Default export for single component
-export { default as Button } from './button/button.svelte';
+export { default as Button } from "./button/button.svelte"
 
 // Namespace export for multi-part components
-export * as Menu from './menu/index.js';
+export * as Menu from "./menu/index.js"
 ```
 
 ## Testing Guidelines

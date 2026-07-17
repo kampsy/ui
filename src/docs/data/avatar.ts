@@ -1,8 +1,3 @@
-const title = "avatar"
-const description = `
-Avatars represent a user or a team. Stacked avatars represent a group of people
-`
-
 export const avatarGroup = `
 <script lang="ts">
 	import { AvatarGroup } from 'kampsy-ui';
@@ -48,7 +43,7 @@ export const avatarGroup = `
 			<AvatarGroup limit={4} {members} size={32} />
 		</div>
 	</div>
-</div>`;
+</div>`
 
 export const avatarText = `
 <script lang="ts">
@@ -60,7 +55,7 @@ export const avatarText = `
 		<AvatarText.Heading>Jese Leos</AvatarText.Heading>
 		<AvatarText.Subheading>Joined in August 2014</AvatarText.Subheading>
 	</AvatarText.Content>
-</AvatarText.Root>`;
+</AvatarText.Root>`
 
 export const avatarPlaceholder = `
 <script lang="ts">
@@ -69,4 +64,4 @@ export const avatarPlaceholder = `
 
 <div>
 	<Avatar placeholder size={90} />
-</div>`;
+</div>`

@@ -5,7 +5,7 @@ export const errorDefault = `
 
 <Error>
     This email address is already in use.
-</Error>`;
+</Error>`
 
 export const errorCustomLabel = `
 <script lang="ts">
@@ -14,7 +14,7 @@ export const errorCustomLabel = `
 
 <Error label="Email Error">
     This email address is already in use.
-</Error>`;
+</Error>`
 
 export const errorSize = `
 <script lang="ts">
@@ -25,7 +25,7 @@ export const errorSize = `
 	<Error size="sm">This email is in use.</Error>
 	<Error size="md">This email is in use.</Error>
 	<Error size="lg">This email is in use.</Error>
-</div>`;
+</div>`
 
 export const errorWithProp = `
 <script lang="ts">
@@ -38,4 +38,4 @@ export const errorWithProp = `
 		action: 'Contact Us',
 		link: 'https://ui.kampsy.xyz/error'
 	}}
-/>`;
+/>`

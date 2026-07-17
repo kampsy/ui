@@ -1,19 +1,19 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Error from "$lib/error/error.svelte"
 	import {
 		errorCustomLabel,
 		errorDefault,
 		errorSize,
-		errorWithProp
-	} from '$lib/../docs/data/error.js';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		errorWithProp,
+	} from "$lib/../docs/data/error.js"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -100,9 +100,9 @@
 			{#snippet demo()}
 				<Error
 					error={{
-						message: 'The request failed.',
-						action: 'Contact Us',
-						link: 'https://ui.kampsy.xyz/error'
+						message: "The request failed.",
+						action: "Contact Us",
+						link: "https://ui.kampsy.xyz/error",
 					}}
 				/>
 			{/snippet}
@@ -114,8 +114,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'empty state', href: '/empty-state' }}
-			next={{ title: 'input', href: '/input' }}
+			previous={{ title: "empty state", href: "/empty-state" }}
+			next={{ title: "input", href: "/input" }}
 		/>
 	</Row>
 {/snippet}

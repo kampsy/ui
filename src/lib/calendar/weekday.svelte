@@ -4,29 +4,29 @@
 		isInDateRange,
 		isStartDateGreaterThanEndDate,
 		isWeekend,
-		isZeroDate
-	} from '$lib/utils/calendar.js';
+		isZeroDate,
+	} from "$lib/utils/calendar.js"
 
 	interface Props {
-		dayAndDateObj: { day: number | string; dateObj: Date };
-		startDate: Date;
-		endDate: Date;
+		dayAndDateObj: { day: number | string; dateObj: Date }
+		startDate: Date
+		endDate: Date
 	}
 
 	let {
 		dayAndDateObj,
 		startDate = $bindable(getZeroDate()),
-		endDate = $bindable(getZeroDate())
-	}: Props = $props();
+		endDate = $bindable(getZeroDate()),
+	}: Props = $props()
 
 	const isToday = (date: Date): boolean => {
-		const today = new Date();
+		const today = new Date()
 		return (
 			date.getDate() === today.getDate() &&
 			date.getMonth() === today.getMonth() &&
 			date.getFullYear() === today.getFullYear()
-		);
-	};
+		)
+	}
 
 	const isHighlighteble = (date: Date): boolean => {
 		if (!isZeroDate(date)) {
@@ -39,79 +39,79 @@
 						date.getMonth() === endDate.getMonth() &&
 						date.getFullYear() === endDate.getFullYear())
 				) {
-					return true;
+					return true
 				}
 			}
 		}
-		return false;
-	};
+		return false
+	}
 
-	const isRangeHighlighteble = (date: Date): boolean => {
+	const isRangeHighlighteble = (): boolean => {
 		if (!isZeroDate(dayAndDateObj.dateObj) && !isZeroDate(startDate) && !isZeroDate(endDate)) {
 			if (isInDateRange(dayAndDateObj.dateObj, startDate, endDate)) {
-				return true;
+				return true
 			}
 		}
-		return false;
-	};
+		return false
+	}
 
 	const dayBg = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
-			return `rounded-sm bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`;
+			return `rounded-sm bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`
 		}
 		if (isToday(dayAndDateObj.dateObj)) {
-			return `rounded-sm bg-kui-light-blue-900 dark:bg-kui-dark-blue-900`;
+			return `rounded-sm bg-kui-light-blue-900 dark:bg-kui-dark-blue-900`
 		}
-		return '';
-	});
+		return ""
+	})
 
 	const dayText = $derived.by(() => {
 		if (isHighlighteble(dayAndDateObj.dateObj)) {
-			return `text-kui-light-bg dark:text-kui-dark-bg`;
+			return `text-kui-light-bg dark:text-kui-dark-bg`
 		}
 		if (isToday(dayAndDateObj.dateObj)) {
-			return `text-kui-light-bg dark:text-kui-dark-bg`;
+			return `text-kui-light-bg dark:text-kui-dark-bg`
 		}
-		if (isRangeHighlighteble(dayAndDateObj.dateObj) && !isWeekend(dayAndDateObj.dateObj)) {
-			return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
+		if (isRangeHighlighteble() && !isWeekend(dayAndDateObj.dateObj)) {
+			return "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
 		}
 		if (isWeekend(dayAndDateObj.dateObj)) {
-			return 'text-kui-light-gray-900 dark:text-kui-dark-gray-900';
+			return "text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		}
 
-		return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
-	});
+		return "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+	})
 
 	const rangeBg = $derived.by(() => {
-		if (isRangeHighlighteble(dayAndDateObj.dateObj)) {
-			return 'bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100';
+		if (isRangeHighlighteble()) {
+			return "bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100"
 		}
-		return '';
-	});
+		return ""
+	})
 
 	const onclick = () => {
 		if (isZeroDate(startDate) && isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
-				startDate = dayAndDateObj.dateObj;
+				startDate = dayAndDateObj.dateObj
 			}
 		} else if (!isZeroDate(startDate) && isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
 				// an edge ace. if the date selected as end date is less than
 				// the start date, swap the two dates
 				if (isStartDateGreaterThanEndDate(startDate, dayAndDateObj.dateObj)) {
-					endDate = startDate;
-					startDate = dayAndDateObj.dateObj;
+					endDate = startDate
+					startDate = dayAndDateObj.dateObj
 				} else {
-					endDate = dayAndDateObj.dateObj;
+					endDate = dayAndDateObj.dateObj
 				}
 			}
 		} else if (!isZeroDate(startDate) && !isZeroDate(endDate)) {
 			if (!isZeroDate(dayAndDateObj.dateObj)) {
-				startDate = dayAndDateObj.dateObj;
-				endDate = getZeroDate();
+				startDate = dayAndDateObj.dateObj
+				endDate = getZeroDate()
 			}
 		}
-	};
+	}
 </script>
 
 <div class="absolute top-0 left-0 w-full h-full z-[0.1] {rangeBg}"></div>

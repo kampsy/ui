@@ -1,5 +1,4 @@
-import type { DateValue, RangeValue } from "$lib/types/general.js";
-
+import type { DateValue, RangeValue } from "$lib/types/general.js"
 
 /**
  * Returns a Date object representing 1970-01-01T00:00:00.000Z.
@@ -7,9 +6,8 @@ import type { DateValue, RangeValue } from "$lib/types/general.js";
  * @return {Date} A Date object representing 1970-01-01T00:00:00.000Z.
  */
 export const getZeroDate = (): Date => {
-    return new Date(Date.UTC(1970, 0, 1));
-};
-
+	return new Date(Date.UTC(1970, 0, 1))
+}
 
 /**
  * Returns true if the given Date object represents the date 1970-01-01T00:00:00.000Z, false otherwise.
@@ -18,8 +16,8 @@ export const getZeroDate = (): Date => {
  * @return {boolean} True if the date is 1970-01-01T00:00:00.000Z, false otherwise.
  */
 export const isZeroDate = (date: Date): boolean => {
-    return date.getUTCFullYear() === 1970 && date.getUTCMonth() === 0 && date.getUTCDate() === 1;
-};
+	return date.getUTCFullYear() === 1970 && date.getUTCMonth() === 0 && date.getUTCDate() === 1
+}
 
 /**
  * Returns a new Date object representing the month before the given date.
@@ -28,8 +26,8 @@ export const isZeroDate = (date: Date): boolean => {
  * @return {Date} A new Date object representing the first day of the previous month.
  */
 export const prevMonth = (fnDate: Date): Date => {
-    return new Date(fnDate.setMonth(fnDate.getMonth() - 1));
-};
+	return new Date(fnDate.setMonth(fnDate.getMonth() - 1))
+}
 
 /**
  * Returns a new Date object representing the month after the given date.
@@ -38,8 +36,8 @@ export const prevMonth = (fnDate: Date): Date => {
  * @return {Date} A new Date object representing the first day of the next month.
  */
 export const nextMonth = (fnDate: Date): Date => {
-    return new Date(fnDate.setMonth(fnDate.getMonth() + 1));
-};
+	return new Date(fnDate.setMonth(fnDate.getMonth() + 1))
+}
 
 /**
  * Returns the first and last day of the month for a given date.
@@ -48,15 +46,14 @@ export const nextMonth = (fnDate: Date): Date => {
  * @return {[Date, Date]} An array containing the first and last day of the month.
  */
 export const getFirstAndLastDay = (date: Date): [Date, Date] => {
-    const year = date.getFullYear();
-    const month = date.getMonth();
+	const year = date.getFullYear()
+	const month = date.getMonth()
 
-    const monthStart = new Date(year, month, 1);
-    const monthEnd = new Date(year, month + 1, 0);
+	const monthStart = new Date(year, month, 1)
+	const monthEnd = new Date(year, month + 1, 0)
 
-    return [monthStart, monthEnd];
-};
-
+	return [monthStart, monthEnd]
+}
 
 /**
  * Returns the first and last day of the month for a given date, using UTC date calculations.
@@ -65,14 +62,14 @@ export const getFirstAndLastDay = (date: Date): [Date, Date] => {
  * @return {[Date, Date]} An array containing the first and last day of the month.
  */
 export const getFirstAndLastDayUTC = (date: Date): [Date, Date] => {
-    const year = date.getUTCFullYear();
-    const month = date.getUTCMonth();
+	const year = date.getUTCFullYear()
+	const month = date.getUTCMonth()
 
-    const monthStart = new Date(Date.UTC(year, month, 1));
-    const monthEnd = new Date(Date.UTC(year, month + 1, 0));
+	const monthStart = new Date(Date.UTC(year, month, 1))
+	const monthEnd = new Date(Date.UTC(year, month + 1, 0))
 
-    return [monthStart, monthEnd];
-};
+	return [monthStart, monthEnd]
+}
 
 /**
  * Generates an array of numbers over a specified range.
@@ -83,16 +80,16 @@ export const getFirstAndLastDayUTC = (date: Date): [Date, Date] => {
  * @return {number[]} An array of numbers from `start` to `end` with the specified `step`.
  */
 export const arrayRange = (start: number = 0, end: number = 0, step: number = 1): number[] => {
-    end = Number(end) - 1;
+	end = Number(end) - 1
 
-    if (end < start) return [];
-    if (step === 0) step = 1;
+	if (end < start) return []
+	if (step === 0) step = 1
 
-    // Used Math.floor for safer handling of non-integer ranges
-    const length = Math.floor((end - start) / step) + 1;
+	// Used Math.floor for safer handling of non-integer ranges
+	const length = Math.floor((end - start) / step) + 1
 
-    return Array.from({ length }, (_, i) => start + i * step);
-};
+	return Array.from({ length }, (_, i) => start + i * step)
+}
 
 /**
  * Generates an array of objects representing the days in a month.
@@ -102,15 +99,13 @@ export const arrayRange = (start: number = 0, end: number = 0, step: number = 1)
  * @return {Object[]} An array of objects containing the day of the month and a corresponding date object.
  */
 export const getMonthDateRange = (dateProp: Date, monthEnd: Date) => {
-    const daysInMonth = monthEnd.getDate();
+	const daysInMonth = monthEnd.getDate()
 
-    return arrayRange(1, daysInMonth + 1, 1).map((date) => ({
-        day: date,
-        dateObj: new Date(dateProp.getFullYear(), dateProp.getMonth(), date)
-    }));
-};
-
-
+	return arrayRange(1, daysInMonth + 1, 1).map(date => ({
+		day: date,
+		dateObj: new Date(dateProp.getFullYear(), dateProp.getMonth(), date),
+	}))
+}
 
 /**
  * Generates an array of objects representing the days in a month, using UTC date calculations.
@@ -119,15 +114,17 @@ export const getMonthDateRange = (dateProp: Date, monthEnd: Date) => {
  * @param {Date} monthEnd - The date object representing the last day of the month.
  * @return {Object[]} An array of objects containing the day of the month and a corresponding date object.
  */
-export const getMonthDateRangeUTC = (dateProp: Date, monthEnd: Date): { day: number; dateObj: Date }[] => {
-    const daysInMonth = monthEnd.getUTCDate();
+export const getMonthDateRangeUTC = (
+	dateProp: Date,
+	monthEnd: Date,
+): { day: number; dateObj: Date }[] => {
+	const daysInMonth = monthEnd.getUTCDate()
 
-    return arrayRange(1, daysInMonth + 1, 1).map((date) => ({
-        day: date,
-        dateObj: new Date(Date.UTC(dateProp.getUTCFullYear(), dateProp.getUTCMonth(), date))
-    }));
-};
-
+	return arrayRange(1, daysInMonth + 1, 1).map(date => ({
+		day: date,
+		dateObj: new Date(Date.UTC(dateProp.getUTCFullYear(), dateProp.getUTCMonth(), date)),
+	}))
+}
 
 /**
  * Generates a calendar array based on the provided date list.
@@ -137,32 +134,34 @@ export const getMonthDateRangeUTC = (dateProp: Date, monthEnd: Date): { day: num
  */
 
 export const generateCalendar = (
-    dateList: { day: number; dateObj: Date }[]
+	dateList: { day: number; dateObj: Date }[],
 ): Array<{ day: number | string; dateObj: Date }> => {
-    // Get the day of the week of the first date
-    const firstDateObj = dateList[0].dateObj;
-    const firstDayOfWeek = firstDateObj.getDay(); // Sunday = 0, Saturday = 6
+	// Get the day of the week of the first date
+	const firstDateObj = dateList[0].dateObj
+	const firstDayOfWeek = firstDateObj.getDay() // Sunday = 0, Saturday = 6
 
-    // zero date
-    const zero = getZeroDate();
+	// zero date
+	const zero = getZeroDate()
 
-    // Start filling the first week with empty objects until the first date
-    const currentRow: Array<{ day: number | string; dateObj: Date }> = new Array(firstDayOfWeek).fill({ day: '', dateObj: zero });
+	// Start filling the first week with empty objects until the first date
+	const currentRow: Array<{ day: number | string; dateObj: Date }> = new Array(
+		firstDayOfWeek,
+	).fill({ day: "", dateObj: zero })
 
-    // Fill the current row with the dates from the date list
-    dateList.forEach((date) => {
-        currentRow.push({ day: date.day, dateObj: date.dateObj });
-    });
+	// Fill the current row with the dates from the date list
+	dateList.forEach(date => {
+		currentRow.push({ day: date.day, dateObj: date.dateObj })
+	})
 
-    // Fill the rest of the rows with empty objects
-    if (currentRow.length > 0) {
-        while (currentRow.length < 7) {
-            currentRow.push({ day: '', dateObj: zero });
-        }
-    }
+	// Fill the rest of the rows with empty objects
+	if (currentRow.length > 0) {
+		while (currentRow.length < 7) {
+			currentRow.push({ day: "", dateObj: zero })
+		}
+	}
 
-    return currentRow;
-};
+	return currentRow
+}
 
 /**
  * Returns true if the given dates have the same time.
@@ -172,7 +171,7 @@ export const generateCalendar = (
  * @return True if the given dates have the same time, false otherwise.
  */
 export const isTimeEqual = (first: Date, second: Date): boolean => {
-    return first.getTime() == second.getTime()
+	return first.getTime() == second.getTime()
 }
 
 /**
@@ -183,9 +182,8 @@ export const isTimeEqual = (first: Date, second: Date): boolean => {
  * @return True if the given start date is greater than the end date.
  */
 export const isStartDateGreaterThanEndDate = (start: Date, end: Date): boolean => {
-    return start.getTime() > end.getTime()
+	return start.getTime() > end.getTime()
 }
-
 
 /**
  * Returns true if the given date falls within the given start and end dates,
@@ -197,10 +195,10 @@ export const isStartDateGreaterThanEndDate = (start: Date, end: Date): boolean =
  * @return True if the given date is in the given range, false otherwise.
  */
 export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
-    startDate.setHours(0, 0, 0, 0)
-    endDate.setHours(0, 0, 0, 0)
-    date.setHours(0, 0, 0, 0)
-    return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
+	startDate.setHours(0, 0, 0, 0)
+	endDate.setHours(0, 0, 0, 0)
+	date.setHours(0, 0, 0, 0)
+	return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
 }
 
 /**
@@ -213,10 +211,10 @@ export const isInDateRange = (date: Date, startDate: Date, endDate: Date) => {
  * @return True if the given date is in the given range, false otherwise.
  */
 export const isInDateRangeUTC = (date: Date, startDate: Date, endDate: Date) => {
-    startDate.setUTCHours(0, 0, 0, 0)
-    endDate.setUTCHours(0, 0, 0, 0)
-    date.setUTCHours(0, 0, 0, 0)
-    return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
+	startDate.setUTCHours(0, 0, 0, 0)
+	endDate.setUTCHours(0, 0, 0, 0)
+	date.setUTCHours(0, 0, 0, 0)
+	return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime()
 }
 
 /**
@@ -226,9 +224,8 @@ export const isInDateRangeUTC = (date: Date, startDate: Date, endDate: Date) => 
  * @returns True if the given date is a Saturday or Sunday.
  */
 export const isWeekend = (date: Date) => {
-    return date.getDay() === 0 || date.getDay() === 6
+	return date.getDay() === 0 || date.getDay() === 6
 }
-
 
 /**
  * Formats a date range into a string, handling different cases for single day,
@@ -239,26 +236,26 @@ export const isWeekend = (date: Date) => {
  * @return A string representing the date range.
  */
 export const formatDateRange = (startDate: Date, endDate: Date): string => {
-    const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric' };
+	const options: Intl.DateTimeFormatOptions = { month: "short", day: "numeric" }
 
-    const startDay = startDate.getDate();
-    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
-    const startYear = startDate.getFullYear();
+	const startDay = startDate.getDate()
+	const startMonth = startDate.toLocaleString("en-US", { month: "short" })
+	const startYear = startDate.getFullYear()
 
-    const endDay = endDate.getDate();
-    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
-    const endYear = endDate.getFullYear();
+	const endDay = endDate.getDate()
+	const endMonth = endDate.toLocaleString("en-US", { month: "short" })
+	const endYear = endDate.getFullYear()
 
-    if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
-        // Same day
-        return startDate.toLocaleDateString('en-US', { weekday: 'short', ...options });
-    } else if (startMonth === endMonth && startYear === endYear) {
-        // Same month and year
-        return `${startMonth} ${startDay} - ${endDay}`;
-    } else {
-        // Different month or year
-        return `${startMonth} ${startDay} - ${endMonth} ${endDay}`;
-    }
+	if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
+		// Same day
+		return startDate.toLocaleDateString("en-US", { weekday: "short", ...options })
+	} else if (startMonth === endMonth && startYear === endYear) {
+		// Same month and year
+		return `${startMonth} ${startDay} - ${endDay}`
+	} else {
+		// Different month or year
+		return `${startMonth} ${startDay} - ${endMonth} ${endDay}`
+	}
 }
 
 /**
@@ -271,20 +268,23 @@ export const formatDateRange = (startDate: Date, endDate: Date): string => {
  * @param endDate - The end date of the range.
  * @return The value of the date range selection.
  */
-export const selectedValue = (startDate: Date, endDate: Date): DateValue | RangeValue<DateValue> => {
-    const startDay = startDate.getDate();
-    const startMonth = startDate.toLocaleString('en-US', { month: 'short' });
-    const startYear = startDate.getFullYear();
+export const selectedValue = (
+	startDate: Date,
+	endDate: Date,
+): DateValue | RangeValue<DateValue> => {
+	const startDay = startDate.getDate()
+	const startMonth = startDate.toLocaleString("en-US", { month: "short" })
+	const startYear = startDate.getFullYear()
 
-    const endDay = endDate.getDate();
-    const endMonth = endDate.toLocaleString('en-US', { month: 'short' });
-    const endYear = endDate.getFullYear();
+	const endDay = endDate.getDate()
+	const endMonth = endDate.toLocaleString("en-US", { month: "short" })
+	const endYear = endDate.getFullYear()
 
-    if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
-        // Same day, return the DateValue
-        return startDate;
-    } else {
-        // Different day, return the RangeValue<DateValue>
-        return { start: startDate, end: endDate };
-    }
+	if (startYear === endYear && startMonth === endMonth && startDay === endDay) {
+		// Same day, return the DateValue
+		return startDate
+	} else {
+		// Different day, return the RangeValue<DateValue>
+		return { start: startDate, end: endDate }
+	}
 }

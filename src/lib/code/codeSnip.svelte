@@ -1,21 +1,22 @@
 <script lang="ts">
-	import hljs from 'highlight.js';
-	import 'highlight.js/styles/atom-one-light.css';
+	import hljs from "highlight.js"
+	import "highlight.js/styles/atom-one-light.css"
 
 	interface Props {
-		code: string;
-		lang?: string;
-		language?: string;
-	};
+		code: string
+		lang?: string
+		language?: string
+	}
 
-	let { code, lang = 'tsx', language = 'language-tsx' }: Props = $props();
+	let { code, lang = "tsx", language = "language-tsx" }: Props = $props()
 
-	const highlightedCode = hljs.highlight(code, { language: lang }).value;
+	const highlightedCode = hljs.highlight(code, { language: lang }).value
 </script>
 
 <div class="ui-scrollbar w-full h-auto px-6 text-[13px] scroll-smoth overflow-x-auto">
 	<pre class={language}>
         <code class={language}>
+            <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
             {@html highlightedCode}
         </code>
     </pre>

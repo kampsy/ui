@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { Snippet } from "svelte"
+	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLElement> {
-		children: Snippet;
+		children: Snippet
 	}
 
-	let { children, ...rest }: Props = $props();
+	let { children, ...rest }: Props = $props()
 </script>
 
 <kbd
