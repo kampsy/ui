@@ -1,4 +1,3 @@
-
 /**
  * Creates a state manager for a switch component.
  *
@@ -10,26 +9,25 @@
  * @returns {Object} An object with methods to get and set the selected value of the switch component.
  */
 export function createRootState(initial: {
-    selected: string,
-    name: string,
-    size: 'small' | 'medium' | 'large',
-    fullWidth: boolean
+	selected: string
+	name: string
+	size: "small" | "medium" | "large"
+	fullWidth: boolean
 }) {
+	let selected = $state(initial.selected)
 
-    let selected = $state(initial.selected);
+	function getSelected() {
+		return selected
+	}
+	function setSelected(value: string) {
+		selected = value
+	}
 
-    function getSelected() {
-        return selected
-    }
-    function setSelected(value: string) {
-        selected = value
-    }
-
-    return {
-        name: initial.name,
-        size: initial.size,
-        fullWidth: initial.fullWidth,
-        getSelected,
-        setSelected
-    }
+	return {
+		name: initial.name,
+		size: initial.size,
+		fullWidth: initial.fullWidth,
+		getSelected,
+		setSelected,
+	}
 }

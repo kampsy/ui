@@ -1,1 +1,1 @@
-export { default as Root } from './root.svelte';
+export { default as Root } from "./root.svelte"

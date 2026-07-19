@@ -8,7 +8,7 @@ export const textareaDefault = `
 <Textarea
 	bind:value
 	placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-/>`;
+/>`
 
 export const textareaDisabled = `
 <script lang="ts">
@@ -21,7 +21,7 @@ export const textareaDisabled = `
 	bind:value
 	disabled
 	placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-/>`;
+/>`
 
 export const textareaWithLabel = `
 <script lang="ts">
@@ -34,7 +34,7 @@ export const textareaWithLabel = `
 	bind:value
 	label="Label"
 	placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-/>`;
+/>`
 
 export const textareError = `
 <script lang="ts">
@@ -68,4 +68,4 @@ export const textareError = `
 		error="There has been an error."
 		size="large"
 	/>
-</div>`;
+</div>`

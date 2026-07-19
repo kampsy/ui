@@ -46,7 +46,7 @@ export const badgeVariants = `
 	<div class="flex gap-1 capitalize">
 		<Badge variant="inverted" aria-label="inverted">inverted</Badge>
 	</div>
-</div>`;
+</div>`
 
 export const badgeSize = `
 <script lang="ts">
@@ -66,7 +66,7 @@ export const badgeSize = `
 	<div class="flex gap-1 capitalize">
 		<Badge size="large" aria-label="large">large</Badge>
 	</div>
-</div>`;
+</div>`
 
 export const badgeWithIcon = `
 <script lang="ts">
@@ -153,7 +153,7 @@ export const badgeWithIcon = `
 		<Badge icon={Shield} size="medium" variant="inverted" aria-label="icon medium inverted">inverted</Badge>
 		<Badge icon={Shield} size="small" variant="inverted" aria-label="icon small inverted">inverted</Badge>
 	</div>
-</div>`;
+</div>`
 
 export const badgePill = `
 <script lang="ts">
@@ -172,4 +172,4 @@ export const badgePill = `
 	  <Badge href="/badge#pill" icon={LogoSlackColor} size="medium" variant="pill" aria-label="icon medium pill">label</Badge>
 	  <Badge href="/badge#pill" icon={LogoSlackColor} size="large" variant="pill" aria-label="icon small pill">label</Badge>
   </div>
-</div>`;
+</div>`

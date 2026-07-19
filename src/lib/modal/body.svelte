@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { getContext, type Snippet } from 'svelte';
+	import { getContext, type Snippet } from "svelte"
 
 	interface Props {
-		class?: string;
-		children: Snippet | undefined;
-	};
+		class?: string
+		children: Snippet | undefined
+	}
 
-	let { class: klass = '', children }: Props = $props();
+	let { class: klass = "", children }: Props = $props()
 
 	const rootState = getContext<{
-		sticky: boolean;
-	}>('modal');
+		sticky: boolean
+	}>("modal")
 
 	let bodyClass = $derived.by(() => {
 		if (rootState.sticky) {
-			return '';
+			return ""
 		} else {
-			return '';
+			return ""
 		}
-	});
+	})
 </script>
 
 {#if children}

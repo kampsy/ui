@@ -1,22 +1,27 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import { collapseDefault, collapseExpanded, collapseMultiple , collapseSize } from '../../docs/data/collapse.js';
-	import { Collapse, Pagination, Tabs, Text } from '$lib/index.js';
-	import { fade } from 'svelte/transition';
-	import { Webhook, Accessibility } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import {
+		collapseDefault,
+		collapseExpanded,
+		collapseMultiple,
+		collapseSize,
+	} from "../../docs/data/collapse.js"
+	import { Collapse, Pagination, Tabs, Text } from "$lib/index.js"
+	import { fade } from "svelte/transition"
+	import { Webhook, Accessibility } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let selected = $state('implementation');
+	let selected = $state("implementation")
 
 	const questions = [
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-		'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-	];
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+		"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+	]
 </script>
 
 <svelte:head>
@@ -44,8 +49,8 @@
 		<Tabs
 			bind:selected
 			tabs={[
-				{ title: 'Implementation', value: 'implementation', icon: Webhook },
-				{ title: 'Accessibility', value: 'accessibility', icon: Accessibility }
+				{ title: "Implementation", value: "implementation", icon: Webhook },
+				{ title: "Accessibility", value: "accessibility", icon: Accessibility },
 			]}
 		/>
 	</Row>
@@ -221,7 +226,8 @@
 			This component aims to adhere to
 			<a
 				href="https://www.w3.org/TR/WCAG22/"
-				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900">WCAG 2.2 (level AA)</a
+				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900"
+				>WCAG 2.2 (level AA)</a
 			> guidelines. Ensure this compliance is maintained when the component is integrated into other
 			projects.
 		</p>
@@ -244,37 +250,36 @@
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
 			Ensure that the Collapse.Trigger has a {@render roundedCode('role="heading"')}
-			attribute. This heading should have an appropriate {@render roundedCode('aria-level')} designation,
+			attribute. This heading should have an appropriate {@render roundedCode("aria-level")} designation,
 			based on its position in the page hierarchy.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			If the accordion panel linked to the heading is visible, then the Collapse.Trigger must have {@render roundedCode(
-				'aria-expanded="true"'
-			)} .
+			If the accordion panel linked to the heading is visible, then the Collapse.Trigger must
+			have {@render roundedCode('aria-expanded="true"')} .
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			The Collapse.Trigger must have an {@render roundedCode('aria-controls')} attribute that points
+			The Collapse.Trigger must have an {@render roundedCode("aria-controls")} attribute that points
 			to the ID of the associated accordion panel.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			Add the {@render roundedCode('aria-labelledby')} attribute to Collapse.Content and set its ID value
-			to the aria-controls of Collapse.Trigger.
+			Add the {@render roundedCode("aria-labelledby")} attribute to Collapse.Content and set its
+			ID value to the aria-controls of Collapse.Trigger.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			Avoid keyboard traps when adding components to the accordion panel. For instance, users can
-			expand an accordion but may not be able to tab to the next focusable element.
+			Avoid keyboard traps when adding components to the accordion panel. For instance, users
+			can expand an accordion but may not be able to tab to the next focusable element.
 		</Text>
 	</Row>
 {/snippet}
@@ -282,8 +287,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'choicebox', href: '/choicebox' }}
-			next={{ title: 'description', href: '/description' }}
+			previous={{ title: "choicebox", href: "/choicebox" }}
+			next={{ title: "description", href: "/description" }}
 		/>
 	</Row>
 {/snippet}
@@ -292,7 +297,7 @@
 	{@render collapse()}
 	{@render tabSnip()}
 
-	{#if selected == 'implementation'}
+	{#if selected == "implementation"}
 		<section transition:fade>
 			{@render defaultCollapse()}
 			{@render expanded()}
@@ -301,7 +306,7 @@
 		</section>
 	{/if}
 
-	{#if selected == 'accessibility'}
+	{#if selected == "accessibility"}
 		<section transition:fade>
 			{@render accessibility()}
 		</section>

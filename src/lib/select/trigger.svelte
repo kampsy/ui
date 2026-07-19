@@ -1,86 +1,90 @@
 <script lang="ts">
-	import Error from '$lib/error/error.svelte';
-	import { getContext, type Snippet } from 'svelte';
+	import Error from "$lib/error/error.svelte"
+	import { getContext, type Snippet } from "svelte"
 
 	interface Props {
-		class?: string;
-		children: Snippet;
+		class?: string
+		children: Snippet
 	}
-	let { class: klass = '', children }: Props = $props();
+	let { class: klass = "", children }: Props = $props()
 
 	// Get the state of the select from the context
 	const rootState = getContext<{
-		getError: () => string;
-		size: 'tiny' | 'small' | 'medium' | 'large';
-		getIsActive: () => boolean;
-		getLoading: () => boolean;
-		setIsActive: (value: boolean) => void;
-		setContentPosition: (value: string) => void;
-		setTransY: (value: number) => void;
-	}>('select');
+		getError: () => string
+		size: "tiny" | "small" | "medium" | "large"
+		getIsActive: () => boolean
+		getLoading: () => boolean
+		setIsActive: (value: boolean) => void
+		setContentPosition: (value: string) => void
+		setTransY: (value: number) => void
+	}>("select")
 
 	const toogle = (evt: Event) => {
-		const target = evt.currentTarget as HTMLInputElement;
-		const position = target.getBoundingClientRect();
+		const target = evt.currentTarget as HTMLInputElement
+		const position = target.getBoundingClientRect()
 
-		const viewportHeight = window.innerHeight;
+		const viewportHeight = window.innerHeight
 
-		const positionFromTop = position.top;
-		const positionFromBottom = viewportHeight - position.bottom;
+		const positionFromTop = position.top
+		const positionFromBottom = viewportHeight - position.bottom
 
 		if (positionFromTop > positionFromBottom) {
-			rootState.setContentPosition(`bottom-[112%]`);
-			rootState.setTransY(10);
+			rootState.setContentPosition(`bottom-[112%]`)
+			rootState.setTransY(10)
 		} else {
-			rootState.setContentPosition(`top-[112%]`);
-			rootState.setTransY(-10);
+			rootState.setContentPosition(`top-[112%]`)
+			rootState.setTransY(-10)
 		}
-		rootState.setIsActive(!rootState.getIsActive());
-	};
+		rootState.setIsActive(!rootState.getIsActive())
+	}
 
 	const sizeObj = {
-		tiny: 'h-[24px] text-xs leading-3',
-		small: 'h-8 px-[6px] text-sm leading-4',
-		medium: 'h-[40px] px-[10px] text-sm leading-5',
-		large: 'h-[48px] px-[14px] text-base leading-6'
-	};
+		tiny: "h-[24px] text-xs leading-3",
+		small: "h-8 px-[6px] text-sm leading-4",
+		medium: "h-[40px] px-[10px] text-sm leading-5",
+		large: "h-[48px] px-[14px] text-base leading-6",
+	}
 	let sizeClass = $derived.by(() => {
-		return sizeObj[rootState.size];
-	});
+		return sizeObj[rootState.size]
+	})
 
 	let ringClass = $derived.by(() => {
 		if (rootState.getError()) {
 			return `bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-red-700 dark:border-kui-dark-red-700
 			hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 ring ring-kui-light-red-400
-			dark:ring-kui-dark-red-400 hover:ring-0 dark:hover:ring-0`;
+			dark:ring-kui-dark-red-400 hover:ring-0 dark:hover:ring-0`
 		}
 
 		return `bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400
-		hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500`;
-	});
+		hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500`
+	})
 
 	let cursorClass = $derived.by(() => {
-		return rootState.getLoading() ? 'cursor-not-allowed' : 'cursor-auto';
-	});
+		return rootState.getLoading() ? "cursor-not-allowed" : "cursor-auto"
+	})
 
 	let triggerClass = $derived.by(() => {
-		return `${sizeClass}  ${ringClass} ${cursorClass}`;
-	});
+		return `${sizeClass}  ${ringClass} ${cursorClass}`
+	})
 
 	// The size of the error text
 	const errorTextObj = {
-		tiny: 'text-[12px] leading-[16px]',
-		small: 'text-[13px] leading-5',
-		medium: 'text-[14px] leading-5',
-		large: 'text-[16px] leading-6'
-	};
+		tiny: "text-[12px] leading-[16px]",
+		small: "text-[13px] leading-5",
+		medium: "text-[14px] leading-5",
+		large: "text-[16px] leading-6",
+	}
 
 	let errorText = $derived.by(() => {
-		return errorTextObj[rootState.size];
-	});
+		return errorTextObj[rootState.size]
+	})
 </script>
 
-<button onclick={toogle} disabled={rootState.getLoading()} class="group transition-all {triggerClass} rounded-md {klass} ">
+<button
+	onclick={toogle}
+	disabled={rootState.getLoading()}
+	class="group transition-all {triggerClass} rounded-md {klass} "
+>
 	{@render children()}
 </button>
 {#if rootState.getError()}

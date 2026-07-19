@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CodeSnip from '$lib/code/codeSnip.svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CodeSnip from "$lib/code/codeSnip.svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
 	import {
 		installationConfig,
 		installationKampsy,
-		installationSveltekit
-	} from '../../docs/data/installation.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		installationSveltekit,
+	} from "../../docs/data/installation.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -27,13 +27,13 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Begin your journey with Kampsy-ui by following the quickstart guide to unlock the power of
-			interactive Svelte 5 components, seamlessly integrated with Tailwind CSS.
+			Begin your journey with Kampsy-ui by following the quickstart guide to unlock the power
+			of interactive Svelte 5 components, seamlessly integrated with Tailwind CSS.
 		</p>
 	</Row>
 {/snippet}
 
-{#snippet demoAndCodeSnip(code: string, lang = 'tsx', language = 'language-tsx')}
+{#snippet demoAndCodeSnip(code: string, lang = "tsx", language = "language-tsx")}
 	<div
 		class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
 	>
@@ -49,66 +49,68 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			We recommend using {@render roundedCode('SvelteKit')} , the official application framework from
-			the Svelte team powered by {@render roundedCode('Vite')} .
+			We recommend using {@render roundedCode("SvelteKit")} , the official application framework
+			from the Svelte team powered by {@render roundedCode("Vite")} .
 		</p>
 
 		<div class="mt-4 xl:mt-7">
-			{@render demoAndCodeSnip(installationSveltekit, 'bash', 'language-bash')}
+			{@render demoAndCodeSnip(installationSveltekit, "bash", "language-bash")}
 		</div>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			After running the above command, you’ll be asked: {@render roundedCode(
-				'Which template would you like?'
-			)} Select {@render roundedCode('SvelteKit minimal')} and press Enter.
+				"Which template would you like?",
+			)} Select {@render roundedCode("SvelteKit minimal")} and press Enter.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Next, you’ll see the prompt: {@render roundedCode('Add type checking with Typescript?')} We recommend
-			keeping the default option: {@render roundedCode('Yes, using TypeScript syntax.')} Press Enter
-			to confirm.
+			Next, you’ll see the prompt: {@render roundedCode("Add type checking with Typescript?")} We
+			recommend keeping the default option: {@render roundedCode(
+				"Yes, using TypeScript syntax.",
+			)} Press Enter to confirm.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			You will then see the question: {@render roundedCode(
-				'What would you like to add to your project?'
-			)} Use the arrow keys to navigate, and spacebar to select or deselect options. Choose the following:
-			{@render roundedCode('prettier')} ,
-			{@render roundedCode('eslint')} ,
-			{@render roundedCode('vitest')} ,
-			{@render roundedCode('playwright')},
-			{@render roundedCode('tailwindcss')}
-			 .
-
+				"What would you like to add to your project?",
+			)} Use the arrow keys to navigate, and spacebar to select or deselect options. Choose the
+			following:
+			{@render roundedCode("prettier")} ,
+			{@render roundedCode("eslint")} ,
+			{@render roundedCode("vitest")} ,
+			{@render roundedCode("playwright")},
+			{@render roundedCode("tailwindcss")}
+			.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			SvelteKit now includes Tailwind CSS 4 by default, which uses a simpler configuration approach. Press enter to confirm
+			SvelteKit now includes Tailwind CSS 4 by default, which uses a simpler configuration
+			approach. Press enter to confirm
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Tailwindcss plugins (optional): For the question: {@render roundedCode(
-				'Tailwindcss: Which plugins would you like to add?'
+				"Tailwindcss: Which plugins would you like to add?",
 			)} Press Enter if no plugins are needed.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Finally, you’ll be asked: {@render roundedCode(
-				'Which package manager do you want to install dependencies with?'
-			)} Choose {@render roundedCode('pnpm,')} as it is preferred. Press Enter to confirm.
+				"Which package manager do you want to install dependencies with?",
+			)} Choose {@render roundedCode("pnpm,")} as it is preferred. Press Enter to confirm.
 		</p>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
 			Once the dependencies are installed, your SvelteKit project with Tailwindcss is ready!
-			Navigate to your project directory {@render roundedCode('cd my-app')} . From here, you can proceed
-			to the next step.
+			Navigate to your project directory {@render roundedCode("cd my-app")} . From here, you can
+			proceed to the next step.
 		</p>
 	</Row>
 {/snippet}
@@ -124,7 +126,7 @@
 			Run the following command to install kmapsy-ui:
 		</p>
 		<div class="mt-4 xl:mt-7">
-			{@render demoAndCodeSnip(installationKampsy, 'bash', 'language-bash')}
+			{@render demoAndCodeSnip(installationKampsy, "bash", "language-bash")}
 		</div>
 	</Row>
 {/snippet}
@@ -140,24 +142,24 @@
 
 {#snippet config()}
 	<Row>
-		<LinkH2 href="/installation#configuration" aria-label="Configuration">Configuration</LinkH2>
+		<LinkH2 href="/installation#configuration" aria-label="Configuration">Configuration</LinkH2
+		>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Add the following to your {@render roundedCode('layout.css')} file.
+			Add the following to your {@render roundedCode("layout.css")} file.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(installationConfig)}
 		</div>
-
 	</Row>
 {/snippet}
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'introduction', href: '/' }}
-			next={{ title: 'colors', href: '/colors' }}
+			previous={{ title: "introduction", href: "/" }}
+			next={{ title: "colors", href: "/colors" }}
 		/>
 	</Row>
 {/snippet}

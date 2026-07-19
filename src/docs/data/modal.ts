@@ -25,7 +25,7 @@ export const modalDefault = `
     		</Modal.Footer>
     	</Modal.Content>
     </Modal.Root>
-</div>`;
+</div>`
 
 export const modalSticky = `
 <script lang="ts">
@@ -56,7 +56,7 @@ export const modalSticky = `
     		</Modal.Footer>
     	</Modal.Content>
     </Modal.Root>
-</div>`;
+</div>`
 
 export const modalSingleButton = `
 <script lang="ts">
@@ -82,7 +82,7 @@ export const modalSingleButton = `
     		</Modal.Footer>
     	</Modal.Content>
     </Modal.Root>
-</div>`;
+</div>`
 
 export const modalDisabkedActions = `
 <script lang="ts">
@@ -108,4 +108,4 @@ export const modalDisabkedActions = `
     		</Modal.Footer>
     	</Modal.Content>
     </Modal.Root>
-</div>`;
+</div>`

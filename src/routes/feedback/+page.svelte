@@ -1,18 +1,13 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Error from '$lib/error/error.svelte';
-	import {
-		errorCustomLabel,
-		errorDefault,
-		errorSize,
-		errorWithProp
-	} from '../../docs/data/error.js';
-	import Pagination from '$lib/pagination/pagination.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Error from "$lib/error/error.svelte"
+	import { errorDefault } from "../../docs/data/error.js"
+	import Pagination from "$lib/pagination/pagination.svelte"
 </script>
 
 <svelte:head>
@@ -22,12 +17,12 @@
 {#snippet feedback()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			feedback
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			Gather text feedback with an associated emotion.
 		</p>
@@ -50,7 +45,7 @@
 {#snippet defaultFeedback()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">default</a>
 		</h2>
@@ -73,7 +68,7 @@
 {#snippet inline()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
 		>
 			<a href="#default" id="default">inline</a>
 		</h2>
@@ -91,8 +86,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'button', href: '/button' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: "button", href: "/button" }}
+			next={{ title: "pagination", href: "/pagination" }}
 		/>
 	</Row>
 {/snippet}
@@ -100,7 +95,7 @@
 {#snippet cont()}
 	{@render feedback()}
 	{@render defaultFeedback()}
-    {@render inline()}
+	{@render inline()}
 	{@render prevAndNext()}
 {/snippet}
 

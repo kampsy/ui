@@ -10,4 +10,4 @@ export const keyboardInputModifiers = `
     	<Kbd.Root>⌥</Kbd.Root>
     	<Kbd.Root>⌃</Kbd.Root>
     </Kbd.Group>
-</div>`;
+</div>`

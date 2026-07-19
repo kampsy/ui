@@ -3,4 +3,4 @@ export const themeSwitcherDefault = `
 	import { ThemeSwitcher } from 'kampsy-ui';
 </script>
 
-<ThemeSwitcher />`;
+<ThemeSwitcher />`

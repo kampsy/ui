@@ -1,66 +1,67 @@
 <script lang="ts">
-	import { switcher } from './themeSwitcher.svelte.js';
-	import DeviceAlternative from '$lib/icons/device-alternate.svelte';
-	import Sun from '$lib/icons/sun.svelte';
-	import Moon from '$lib/icons/moon.svelte';
-	import { randomString } from '$lib/utils/random.js';
+	import { switcher } from "./themeSwitcher.svelte.js"
+	import DeviceAlternative from "$lib/icons/device-alternate.svelte"
+	import Sun from "$lib/icons/sun.svelte"
+	import Moon from "$lib/icons/moon.svelte"
+	import { randomString } from "$lib/utils/random.js"
 
-	const randStr = randomString(8);
+	const randStr = randomString(8)
 
-	const onchange = (evt: any) => {
-		switcher.setTheme(evt.currentTarget.value);
-	};
+	const onchange = (evt: Event) => {
+		const target = evt.currentTarget as HTMLInputElement
+		switcher.setTheme(target.value)
+	}
 
 	let contBorder = $derived.by(() => {
 		switch (switcher.theme) {
-			case 'system':
-				return 'border-r border-y';
-			case 'light':
-				return 'border';
-			case 'dark':
-				return 'border-l border-y';
+			case "system":
+				return "border-r border-y"
+			case "light":
+				return "border"
+			case "dark":
+				return "border-l border-y"
 			default:
-				return 'border-r border-y';
+				return "border-r border-y"
 		}
-	});
+	})
 
 	let [system, light, dark] = $derived.by(() => {
 		switch (switcher.theme) {
-			case 'system':
+			case "system":
 				return [
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 ',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
-			case 'light':
+					"border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 ",
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+				]
+			case "light":
 				return [
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
-			case 'dark':
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+					"border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000",
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+				]
+			case "dark":
 				return [
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000'
-				];
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+					"text-kui-light-gray-900 dark:text-kui-dark-gray-900 hover:text-kui-light-gray-1000 dark:hover:text-kui-dark-gray-1000",
+					"border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000",
+				]
 			default:
 				return [
-					'border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000',
-					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000',
-					'dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000'
-				];
+					"border border-kui-light-gray-200 dark:border-kui-dark-gray-400 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000",
+					"dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000",
+					"dark:text-kui-dark-gray-900 hover:text-kui-dark-gray-1000 dark:hover:text-kui-dark-gray-1000",
+				]
 		}
-	});
+	})
 
 	$effect(() => {
-		if (switcher.theme === 'system') {
-			const str = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-			document.body.className = `${str} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
+		if (switcher.theme === "system") {
+			const str = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+			document.body.className = `${str} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`
 		} else {
-			document.body.className = `${switcher.theme} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`;
+			document.body.className = `${switcher.theme} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary`
 		}
-	});
+	})
 </script>
 
 <span>
@@ -70,7 +71,7 @@
 		<div class="w-8 h-8">
 			<input
 				{onchange}
-				checked={switcher.theme === 'system'}
+				checked={switcher.theme === "system"}
 				id="theme-switch-system-{randStr}"
 				type="radio"
 				value="system"
@@ -87,7 +88,7 @@
 		<div class="w-8 h-8">
 			<input
 				{onchange}
-				checked={switcher.theme === 'light'}
+				checked={switcher.theme === "light"}
 				id="theme-switch-light-{randStr}"
 				type="radio"
 				value="light"
@@ -104,7 +105,7 @@
 		<div class="w-8 h-8">
 			<input
 				{onchange}
-				checked={switcher.theme === 'dark'}
+				checked={switcher.theme === "dark"}
 				id="theme-switch-dark-{randStr}"
 				type="radio"
 				value="dark"

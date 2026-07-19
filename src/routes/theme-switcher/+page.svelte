@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { ThemeSwitcher } from '$lib/index.js';
-	import { themeSwitcherDefault } from '../../docs/data/theme-switcher.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { ThemeSwitcher } from "$lib/index.js"
+	import { themeSwitcherDefault } from "../../docs/data/theme-switcher.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -58,8 +58,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'textarea', href: '/textarea' }}
-			next={{ title: 'toggle', href: '/toggle' }}
+			previous={{ title: "textarea", href: "/textarea" }}
+			next={{ title: "toggle", href: "/toggle" }}
 		/>
 	</Row>
 {/snippet}

@@ -1,98 +1,98 @@
 <script lang="ts">
-	import Copy from '$lib/icons/copy.svelte';
-	import Check from '$lib/icons/check.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
-	import { scale } from 'svelte/transition';
-	import { onDestroy } from 'svelte';
+	import Copy from "$lib/icons/copy.svelte"
+	import Check from "$lib/icons/check.svelte"
+	import type { HTMLAttributes } from "svelte/elements"
+	import { scale } from "svelte/transition"
+	import { onDestroy } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		class?: string;
-		type?: 'default' | 'success' | 'error' | 'warning' | 'inverted';
-		text?: string | Array<string>;
-		prompt?: boolean;
-		onCopy?: () => void;
+		class?: string
+		type?: "default" | "success" | "error" | "warning" | "inverted"
+		text?: string | Array<string>
+		prompt?: boolean
+		onCopy?: () => void
 	}
 
 	let {
-		class: klass = '',
-		type = 'default',
-		text = '',
+		class: klass = "",
+		type = "default",
+		text = "",
 		prompt = true,
-		onCopy = undefined
-	}: Props = $props();
+		onCopy = undefined,
+	}: Props = $props()
 
 	const snippetList = $derived.by(() => {
-		if (typeof text == 'string') {
-			return [text];
+		if (typeof text == "string") {
+			return [text]
 		} else if (Array.isArray(text)) {
-			return [...text];
+			return [...text]
 		}
-		return [];
-	});
+		return []
+	})
 
-	let isCopied = $state(false);
-	let timeoutId: ReturnType<typeof setTimeout> | undefined;
+	let isCopied = $state(false)
+	let timeoutId: ReturnType<typeof setTimeout> | undefined
 
 	const copyToClipboard = async () => {
-		if (snippetList.length === 0) return;
+		if (snippetList.length === 0) return
 
 		if (!navigator.clipboard) {
-			console.error('Clipboard API not supported');
-			return;
+			console.error("Clipboard API not supported")
+			return
 		}
 
-		const clipText = snippetList.join('\n');
+		const clipText = snippetList.join("\n")
 		try {
-			await navigator.clipboard.writeText(clipText);
-			isCopied = true;
-			if (timeoutId) clearTimeout(timeoutId);
+			await navigator.clipboard.writeText(clipText)
+			isCopied = true
+			if (timeoutId) clearTimeout(timeoutId)
 			timeoutId = setTimeout(() => {
-				isCopied = false;
-				timeoutId = undefined;
-			}, 1500);
+				isCopied = false
+				timeoutId = undefined
+			}, 1500)
 		} catch (error) {
-			console.error('Failed to copy text:', error);
+			console.error("Failed to copy text:", error)
 			// TODO: Show user-visible error feedback (e.g., error toast/message)
 		}
-	};
+	}
 
 	onDestroy(() => {
-		if (timeoutId) clearTimeout(timeoutId);
-	});
+		if (timeoutId) clearTimeout(timeoutId)
+	})
 
 	function onclick() {
-		if (onCopy) onCopy();
-		copyToClipboard();
+		if (onCopy) onCopy()
+		copyToClipboard()
 	}
 
 	const showPrompt = $derived.by(() => {
 		if (prompt) {
-			return "before:content-['$'] before:px-2";
+			return "before:content-['$'] before:px-2"
 		}
-		return '';
-	});
+		return ""
+	})
 
 	const typeBorderObj = {
 		default: `border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400`,
 		success: `border-kui-light-blue-400 dark:border-kui-dark-blue-400`,
 		error: `border-kui-light-red-400 dark:border-kui-dark-red-400`,
 		warning: `border-kui-light-amber-400 dark:border-kui-dark-amber-400`,
-		inverted: `border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400`
-	};
+		inverted: `border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400`,
+	}
 	let typeBorderClass = $derived.by(() => {
-		return typeBorderObj[type];
-	});
+		return typeBorderObj[type]
+	})
 
 	const typeFillObj = {
 		default: `bg-kui-light-bg dark:bg-kui-dark-bg`,
 		success: `bg-kui-light-blue-100 dark:bg-kui-dark-blue-100`,
 		error: `bg-kui-light-red-100 dark:bg-kui-dark-red-100`,
 		warning: `bg-kui-light-amber-100 dark:bg-kui-dark-amber-100`,
-		inverted: `bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`
-	};
+		inverted: `bg-kui-light-gray-1000 dark:bg-kui-dark-gray-1000`,
+	}
 	let typeFillClass = $derived.by(() => {
-		return typeFillObj[type];
-	});
+		return typeFillObj[type]
+	})
 
 	const typeTextObj = {
 		default: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 selection:bg-kui-light-gray-1000
@@ -109,19 +109,19 @@
 		dark:selection:text-kui-dark-amber-100`,
 		inverted: `text-kui-light-gray-100 dark:text-kui-dark-gray-100 selection:bg-kui-light-gray-100
 		selection:text-kui-light-gray-1000 dark:selection:bg-kui-dark-gray-100
-		dark:selection:text-kui-dark-gray-1000`
-	};
+		dark:selection:text-kui-dark-gray-1000`,
+	}
 	const typeTextClass = $derived.by(() => {
-		return typeTextObj[type];
-	});
+		return typeTextObj[type]
+	})
 
 	const snippetClass = $derived.by(() => {
-		return `${typeBorderClass} ${typeFillClass} ${typeTextClass}`;
-	});
+		return `${typeBorderClass} ${typeFillClass} ${typeTextClass}`
+	})
 </script>
 
 {#snippet preSnippet()}
-	{#each snippetList as sl}
+	{#each snippetList as sl (sl)}
 		<pre class="{showPrompt} text-sm">{sl}</pre>
 	{/each}
 {/snippet}
@@ -130,7 +130,7 @@
 	{@render preSnippet()}
 	<button
 		{onclick}
-		aria-label={isCopied ? 'Copied' : 'Copy to clipboard'}
+		aria-label={isCopied ? "Copied" : "Copy to clipboard"}
 		class="absolute top-2/4 right-1 w-8 h-8 rounded-md flex items-center justify-center translate-y-[-50%]
 		hover:border hover:border-kui-light-gray-400 dark:hover:border-kui-dark-gray-400"
 	>

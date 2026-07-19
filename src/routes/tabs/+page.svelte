@@ -1,27 +1,27 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Tabs } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Tabs } from "$lib/index.js"
 	import {
 		tabsDefault,
 		tabsDisabled,
 		tabsDisabledSpecific,
 		tabsSecondary,
-		tabsWithIcons
-	} from '../../docs/data/tabs.js';
-	import { LogoBitbucketColor, LogoGithub, LogoGitlab } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		tabsWithIcons,
+	} from "../../docs/data/tabs.js"
+	import { LogoBitbucketColor, LogoGithub, LogoGitlab } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let selected = $state('apple');
-	let tabDisabled = $state('apple');
-	let tabDisabledSpecific = $state('apple');
-	let tabWithIcons = $state('github');
-	let tabSecondary = $state('github');
+	let selected = $state("apple")
+	let tabDisabled = $state("apple")
+	let tabDisabledSpecific = $state("apple")
+	let tabWithIcons = $state("github")
+	let tabSecondary = $state("github")
 </script>
 
 <svelte:head>
@@ -66,9 +66,9 @@
 				<Tabs
 					bind:selected
 					tabs={[
-						{ title: 'Apple', value: 'apple' },
-						{ title: 'Orange', value: 'orange' },
-						{ title: 'Mango', value: 'mango' }
+						{ title: "Apple", value: "apple" },
+						{ title: "Orange", value: "orange" },
+						{ title: "Mango", value: "mango" },
 					]}
 				/>
 			{/snippet}
@@ -86,9 +86,9 @@
 					disabled
 					bind:selected={tabDisabled}
 					tabs={[
-						{ title: 'Apple', value: 'apple' },
-						{ title: 'Orange', value: 'orange' },
-						{ title: 'Mango', value: 'mango' }
+						{ title: "Apple", value: "apple" },
+						{ title: "Orange", value: "orange" },
+						{ title: "Mango", value: "mango" },
 					]}
 				/>
 			{/snippet}
@@ -107,9 +107,14 @@
 				<Tabs
 					bind:selected={tabDisabledSpecific}
 					tabs={[
-						{ title: 'Apple', value: 'apple' },
-						{ title: 'Orange', value: 'orange' },
-						{ title: 'Mango', value: 'mango', disabled: true, tooltip: 'Mangos are not allowed' }
+						{ title: "Apple", value: "apple" },
+						{ title: "Orange", value: "orange" },
+						{
+							title: "Mango",
+							value: "mango",
+							disabled: true,
+							tooltip: "Mangos are not allowed",
+						},
 					]}
 				/>
 			{/snippet}
@@ -126,9 +131,9 @@
 				<Tabs
 					bind:selected={tabWithIcons}
 					tabs={[
-						{ title: 'Github', value: 'github', icon: LogoGithub },
-						{ title: 'Gitlab', value: 'gitlab', icon: LogoGitlab },
-						{ title: 'Bitbucket', value: 'bitbucket', icon: LogoBitbucketColor }
+						{ title: "Github", value: "github", icon: LogoGithub },
+						{ title: "Gitlab", value: "gitlab", icon: LogoGitlab },
+						{ title: "Bitbucket", value: "bitbucket", icon: LogoBitbucketColor },
 					]}
 				/>
 			{/snippet}
@@ -145,12 +150,12 @@
 				<Tabs
 					bind:selected={tabSecondary}
 					tabs={[
-						{ title: 'Github', value: 'github' },
-						{ title: 'Gitlab', value: 'gitlab' },
+						{ title: "Github", value: "github" },
+						{ title: "Gitlab", value: "gitlab" },
 						{
-							title: 'Bitbucket',
-							value: 'bitbucket'
-						}
+							title: "Bitbucket",
+							value: "bitbucket",
+						},
 					]}
 					type="secondary"
 				/>
@@ -163,8 +168,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'table', href: '/table' }}
-			next={{ title: 'text', href: '/text' }}
+			previous={{ title: "table", href: "/table" }}
+			next={{ title: "text", href: "/text" }}
 		/>
 	</Row>
 {/snippet}

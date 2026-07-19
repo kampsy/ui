@@ -7,4 +7,4 @@ export const showMoreDefault = `
 
 <div class="w-full">
     <ShowMore bind:isActive />
-</div>`;
+</div>`

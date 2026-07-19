@@ -15,7 +15,7 @@ export const selectDefault = `
 		<Select.Item value="orange">orange</Select.Item>
 		<Select.Item value="pineapple">pineapple</Select.Item>
 	</Select.Content>
-</Select.Root>`;
+</Select.Root>`
 
 export const selectSize = `
 <script lang="ts">
@@ -60,7 +60,7 @@ export const selectSize = `
 			<Select.Item value="pineapple">pineapple</Select.Item>
 		</Select.Content>
 	</Select.Root>
-</div>`;
+</div>`
 
 export const selectError = `
 <script lang="ts">
@@ -106,4 +106,4 @@ export const selectError = `
 			<Select.Item value="pineapple">pineapple</Select.Item>
 		</Select.Content>
 	</Select.Root>
-</div>`;
+</div>`

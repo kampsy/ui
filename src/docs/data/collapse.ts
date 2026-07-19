@@ -30,7 +30,7 @@ export const collapseDefault = `
 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</Collapse.Content>
 	</Collapse.Item>
-</Collapse.Root>`;
+</Collapse.Root>`
 
 export const collapseExpanded = `
 <script lang="ts">
@@ -64,7 +64,7 @@ export const collapseExpanded = `
 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</Collapse.Content>
 	</Collapse.Item>
-</Collapse.Root>`;
+</Collapse.Root>`
 
 export const collapseMultiple = `
 <script lang="ts">
@@ -98,7 +98,7 @@ export const collapseMultiple = `
 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</Collapse.Content>
 	</Collapse.Item>
-</Collapse.Root>`;
+</Collapse.Root>`
 
 export const collapseSize = `
 <script lang="ts">
@@ -119,6 +119,4 @@ export const collapseSize = `
 			exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 		</Collapse.Content>
 	</Collapse.Item>
-</Collapse.Root>`;
-
-
+</Collapse.Root>`

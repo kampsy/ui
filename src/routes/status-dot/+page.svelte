@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import StatusDot from '$lib/statusDot/statusDot.svelte';
-	import { statusDotDefault, statusDotLabel } from '../../docs/data/status-dot.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import StatusDot from "$lib/statusDot/statusDot.svelte"
+	import { statusDotDefault, statusDotLabel } from "../../docs/data/status-dot.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -82,8 +82,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'split button', href: '/split-button' }}
-			next={{ title: 'switch', href: '/switch' }}
+			previous={{ title: "split button", href: "/split-button" }}
+			next={{ title: "switch", href: "/switch" }}
 		/>
 	</Row>
 {/snippet}

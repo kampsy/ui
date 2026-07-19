@@ -1,193 +1,193 @@
-import type { AsideT } from '../../docs/ui/types.ts';
+import type { AsideT } from "../../docs/ui/types.ts"
 
 export const asideData: Array<AsideT> = [
 	{
 		title: {
-			name: 'foundations'
+			name: "foundations",
 		},
 		ul: [
 			{
-				name: 'introduction',
-				url: '/'
+				name: "introduction",
+				url: "/",
 			},
 			{
-				name: 'installation',
-				url: '/installation'
+				name: "installation",
+				url: "/installation",
 			},
 			{
-				name: 'colors',
-				url: '/colors'
-			}
-		]
+				name: "colors",
+				url: "/colors",
+			},
+		],
 	},
 	{
 		title: {
-			name: 'resources'
+			name: "resources",
 		},
 		ul: [
 			{
-				name: 'changelog',
-				url: '/',
+				name: "changelog",
+				url: "/",
 				badge: {
-					name: 'coming soon',
-					variant: 'inverted'
-				}
-			}
-		]
+					name: "coming soon",
+					variant: "inverted",
+				},
+			},
+		],
 	},
 	{
 		title: {
-			name: 'components'
+			name: "components",
 		},
 		ul: [
 			{
-				name: 'avatar',
-				url: '/avatar'
+				name: "avatar",
+				url: "/avatar",
 			},
 			{
-				name: 'badge',
-				url: '/badge'
+				name: "badge",
+				url: "/badge",
 			},
 			{
-				name: 'button',
-				url: '/button'
+				name: "button",
+				url: "/button",
 			},
 			{
-				name: 'calendar',
-				url: '/calendar'
+				name: "calendar",
+				url: "/calendar",
 			},
 			{
-				name: 'checkbox',
-				url: '/checkbox'
+				name: "checkbox",
+				url: "/checkbox",
 			},
 			{
-				name: 'choicebox',
-				url: '/choicebox'
+				name: "choicebox",
+				url: "/choicebox",
 			},
 			{
-				name: 'collapse',
-				url: '/collapse',
+				name: "collapse",
+				url: "/collapse",
 				badge: {
-					name: 'updated',
-					variant: 'purple'
-				}
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
-				name: 'description',
-				url: '/description'
+				name: "description",
+				url: "/description",
 			},
 			{
-				name: 'empty state',
-				url: '/empty-state',
+				name: "empty state",
+				url: "/empty-state",
 				badge: {
-					name: 'new',
-					variant: 'blue'
-				}
+					name: "new",
+					variant: "blue",
+				},
 			},
 			{
-				name: 'error',
-				url: '/error'
+				name: "error",
+				url: "/error",
 			},
 			{
-				name: 'input',
-				url: '/input'
+				name: "input",
+				url: "/input",
 			},
 			{
-				name: 'keyboard input',
-				url: '/keyboard-input',
+				name: "keyboard input",
+				url: "/keyboard-input",
 				badge: {
-					name: 'new',
-					variant: 'blue'
-				}
+					name: "new",
+					variant: "blue",
+				},
 			},
 			{
-				name: 'menu',
-				url: '/menu'
+				name: "menu",
+				url: "/menu",
 			},
 			{
-				name: 'modal',
-				url: '/modal'
+				name: "modal",
+				url: "/modal",
 			},
 			{
-				name: 'note',
-				url: '/note'
+				name: "note",
+				url: "/note",
 			},
 			{
-				name: 'pagination',
-				url: '/pagination'
+				name: "pagination",
+				url: "/pagination",
 			},
 			{
-				name: 'pill',
-				url: '/badge#pill'
+				name: "pill",
+				url: "/badge#pill",
 			},
 			{
-				name: 'progress',
-				url: '/progress'
+				name: "progress",
+				url: "/progress",
 			},
 			{
-				name: 'project banner',
-				url: '/project-banner'
+				name: "project banner",
+				url: "/project-banner",
 			},
 			{
-				name: 'select',
-				url: '/select',
+				name: "select",
+				url: "/select",
 			},
 			{
-				name: 'show more',
-				url: '/show-more'
+				name: "show more",
+				url: "/show-more",
 			},
 			{
-				name: 'spinner',
-				url: '/spinner'
+				name: "spinner",
+				url: "/spinner",
 			},
 			{
-				name: 'snippet',
-				url: '/snippet',
+				name: "snippet",
+				url: "/snippet",
 				badge: {
-					name: 'new',
-					variant: 'blue'
-				}
+					name: "new",
+					variant: "blue",
+				},
 			},
 			{
-				name: 'split button',
-				url: '/split-button'
+				name: "split button",
+				url: "/split-button",
 			},
 			{
-				name: 'status dot',
-				url: '/status-dot'
+				name: "status dot",
+				url: "/status-dot",
 			},
 			{
-				name: 'switch',
-				url: '/switch'
+				name: "switch",
+				url: "/switch",
 			},
 			{
-				name: 'table',
-				url: '/table'
+				name: "table",
+				url: "/table",
 			},
 			{
-				name: 'tabs',
-				url: '/tabs'
+				name: "tabs",
+				url: "/tabs",
 			},
 			{
-				name: 'text',
-				url: '/text'
+				name: "text",
+				url: "/text",
 			},
 			{
-				name: 'textarea',
-				url: '/textarea'
+				name: "textarea",
+				url: "/textarea",
 			},
 			{
-				name: 'theme switcher',
-				url: '/theme-switcher'
+				name: "theme switcher",
+				url: "/theme-switcher",
 			},
 			{
-				name: 'toggle',
-				url: '/toggle'
+				name: "toggle",
+				url: "/toggle",
 			},
 			{
-				name: 'tooltip',
-				url: '/tooltip'
-			}
-		]
-	}
-];
+				name: "tooltip",
+				url: "/tooltip",
+			},
+		],
+	},
+]

@@ -1,18 +1,18 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Select } from '$lib/index.js';
-	import { selectDefault, selectSize, selectError } from '$lib/../docs/data/select.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Select } from "$lib/index.js"
+	import { selectDefault, selectSize, selectError } from "$lib/../docs/data/select.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let value = $state('');
-	let error = $state('Please select a value.');
-	let loading = $state(true);
+	let value = $state("")
+	let error = $state("Please select a value.")
+	let loading = $state(true)
 </script>
 
 <svelte:head>
@@ -217,8 +217,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'project banner', href: '/project-banner' }}
-			next={{ title: 'show more', href: '/show-more' }}
+			previous={{ title: "project banner", href: "/project-banner" }}
+			next={{ title: "show more", href: "/show-more" }}
 		/>
 	</Row>
 {/snippet}

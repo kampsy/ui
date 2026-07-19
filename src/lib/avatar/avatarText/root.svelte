@@ -1,17 +1,16 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+	import type { Snippet } from "svelte"
 
 	interface Props {
-		size?: number;
-		placeholder?: boolean;
-		children: Snippet | undefined;
-	};
+		size?: number
+		children: Snippet | undefined
+	}
 
-	let { size = 32, placeholder = false, children = undefined }: Props = $props();
+	let { size = 32, children = undefined }: Props = $props()
 
 	let widthHeight = $derived.by(() => {
-		return ` width: ${size}px; height: ${size}px;`;
-	});
+		return ` width: ${size}px; height: ${size}px;`
+	})
 </script>
 
 <div

@@ -1,42 +1,42 @@
 <script lang="ts">
-	import { randomString } from '$lib/utils/random.js';
-	import { setContext, type Snippet } from 'svelte';
-	import { createGroupState } from './group.svelte.js';
+	import { randomString } from "$lib/utils/random.js"
+	import { setContext, type Snippet } from "svelte"
+	import { createGroupState } from "./group.svelte.js"
 
 	interface Props {
-		type?: 'radio' | 'checkbox' | undefined;
-		label?: string | undefined;
-		value?: string | Array<string> | undefined;
-		disabled?: boolean | undefined;
-		children?: Snippet | undefined;
-	};
+		type?: "radio" | "checkbox" | undefined
+		label?: string | undefined
+		value?: string | Array<string> | undefined
+		disabled?: boolean | undefined
+		children?: Snippet | undefined
+	}
 	let {
-		type = 'radio',
+		type = "radio",
 		label = undefined,
-		value = $bindable(''),
+		value = $bindable(""),
 		disabled = false,
-		children = undefined
-	}: Props = $props();
+		children = undefined,
+	}: Props = $props()
 
 	const groupState = createGroupState({
-		selected: '',
+		selected: "",
 		name: randomString(8),
 		type: type,
-		disabledParent: disabled
-	});
+		disabledParent: disabled,
+	})
 
-	setContext('choicebox', groupState);
+	setContext("choicebox", groupState)
 
 	let labelClass = $derived.by(() => {
 		if (disabled) {
-			return 'text-kui-light-gray-900 dark:text-kui-dark-gray-900';
+			return "text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		}
-		return 'text-kui-light-gray-1000 dark:text-kui-dark-gray-1000';
-	});
+		return "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+	})
 
 	$effect(() => {
-		value = groupState.get();
-	});
+		value = groupState.get()
+	})
 </script>
 
 <div class="w-full">

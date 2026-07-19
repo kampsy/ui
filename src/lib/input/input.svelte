@@ -1,28 +1,28 @@
 <script lang="ts">
-	import type { Component } from 'svelte';
-	import Error from '$lib/icons/error.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import type { Component } from "svelte"
+	import Error from "$lib/icons/error.svelte"
+	import type { HTMLAttributes } from "svelte/elements"
 
 	interface Props extends HTMLAttributes<HTMLInputElement> {
-		name?: string | undefined;
-		value?: string | undefined;
-		label?: string | undefined;
-		error?: string | undefined;
-		size?: 'small' | 'medium' | 'large';
-		contPrefix?: string | Component | undefined;
-		prefixStyling?: boolean | undefined;
-		contSuffix?: string | Component | undefined;
-		suffixStyling?: boolean | undefined;
-		spellcheck?: boolean | undefined;
-		placeholder?: string | undefined;
-		disabled?: boolean | undefined;
+		name?: string | undefined
+		value?: string | undefined
+		label?: string | undefined
+		error?: string | undefined
+		size?: "small" | "medium" | "large"
+		contPrefix?: string | Component | undefined
+		prefixStyling?: boolean | undefined
+		contSuffix?: string | Component | undefined
+		suffixStyling?: boolean | undefined
+		spellcheck?: boolean | undefined
+		placeholder?: string | undefined
+		disabled?: boolean | undefined
 	}
 	let {
 		name = undefined,
-		value = $bindable(''),
+		value = $bindable(""),
 		label = undefined,
 		error = undefined,
-		size = 'medium',
+		size = "medium",
 		contPrefix = undefined,
 		prefixStyling = true,
 		contSuffix = undefined,
@@ -31,90 +31,90 @@
 		placeholder = undefined,
 		disabled = false,
 		...rest
-	}: Props = $props();
+	}: Props = $props()
 
 	// The focus and blur state of the input
-	let hasRing = $state(false);
+	let hasRing = $state(false)
 
-	const uid = $props.id();
+	const uid = $props.id()
 
 	const sizeObj = {
-		small: 'h-8 text-sm',
-		medium: 'h-[40px] text-sm',
-		large: 'h-[48px] text-base'
-	};
+		small: "h-8 text-sm",
+		medium: "h-[40px] text-sm",
+		large: "h-[48px] text-base",
+	}
 	let sizeClass = $derived.by(() => {
-		return sizeObj[size];
-	});
+		return sizeObj[size]
+	})
 
 	// Show the ring when the input is focused
 	let ringClass = $derived.by(() => {
 		if (disabled) {
 			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400
 			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600
-			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`;
+			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`
 		}
 		if (error) {
 			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-gray-500
 			dark:hover:border-kui-dark-gray-500 ring ring-kui-light-red-400 dark:ring-kui-dark-red-400
-			hover:ring-0 dark:hover:ring-0 `;
+			hover:ring-0 dark:hover:ring-0 `
 		}
 		if (hasRing) {
 			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring ring-kui-light-gray-400
             dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700
-			placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600`;
+			placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600`
 		}
 		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500
-		dark:hover:border-kui-dark-gray-500`;
-	});
+		dark:hover:border-kui-dark-gray-500`
+	})
 
 	let inputClass = $derived.by(() => {
 		if (disabled) {
-			return `cursor-not-allowed text-kui-light-gray-600 dark:text-kui-dark-gray-600`;
+			return `cursor-not-allowed text-kui-light-gray-600 dark:text-kui-dark-gray-600`
 		}
-		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`;
-	});
+		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`
+	})
 
 	let inputContClass = $derived.by(() => {
 		if (prefixStyling && suffixStyling) {
-			return `px-3`;
+			return `px-3`
 		}
 		if (prefixStyling) {
-			return 'pl-3';
+			return "pl-3"
 		}
 		if (suffixStyling) {
-			return 'pr-3';
+			return "pr-3"
 		}
-		return ``;
-	});
+		return ``
+	})
 
 	// will the prefix have a bg and a border?
 	let prefixClass = $derived.by(() => {
 		if (prefixStyling) {
 			return `bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary border-r border-kui-light-gray-200
-     dark:border-kui-dark-gray-400`;
+     dark:border-kui-dark-gray-400`
 		}
-		return ``;
-	});
+		return ``
+	})
 
 	// will the prefix have a bg and a border?
 	let suffixClass = $derived.by(() => {
 		if (suffixStyling) {
 			return `bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary border-l border-kui-light-gray-200
-     dark:border-kui-dark-gray-400`;
+     dark:border-kui-dark-gray-400`
 		}
-		return ``;
-	});
+		return ``
+	})
 
 	const errorTextObj = {
-		tiny: 'text-[12px] leading-[16px]',
-		small: 'text-[13px] leading-5',
-		medium: 'text-[14px] leading-5',
-		large: 'text-[16px] leading-6'
-	};
+		tiny: "text-[12px] leading-[16px]",
+		small: "text-[13px] leading-5",
+		medium: "text-[14px] leading-5",
+		large: "text-[16px] leading-6",
+	}
 	let errorText = $derived.by(() => {
-		return errorTextObj[size];
-	});
+		return errorTextObj[size]
+	})
 </script>
 
 <!--Prefix snippet-->
@@ -123,9 +123,9 @@
 		<span
 			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {prefixClass}"
 		>
-			{#if typeof contPrefix === 'string'}
+			{#if typeof contPrefix === "string"}
 				{contPrefix}
-			{:else if typeof contPrefix === 'function'}
+			{:else if typeof contPrefix === "function"}
 				{@const PrefixIcon = contPrefix}
 				<div class="w-4 h-4">
 					<PrefixIcon />
@@ -141,9 +141,9 @@
 		<span
 			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {suffixClass}"
 		>
-			{#if typeof contSuffix === 'string'}
+			{#if typeof contSuffix === "string"}
 				{contSuffix}
-			{:else if typeof contSuffix === 'function'}
+			{:else if typeof contSuffix === "function"}
 				{@const SuffixIcon = contSuffix}
 				<div class="w-4 h-4">
 					<SuffixIcon />
@@ -170,10 +170,10 @@
 					{placeholder}
 					{disabled}
 					onfocus={() => {
-						hasRing = true;
+						hasRing = true
 					}}
 					onblur={() => {
-						hasRing = false;
+						hasRing = false
 					}}
 					class="{inputClass} w-full h-full outline-hidden bg-transparent"
 					{...rest}
@@ -201,7 +201,9 @@
 <div>
 	{#snippet inputLabel()}
 		<label for={uid}>
-			<div class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2">
+			<div
+				class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2"
+			>
 				{label}
 			</div>
 			{@render inputSnip()}

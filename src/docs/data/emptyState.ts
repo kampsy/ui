@@ -7,9 +7,9 @@ export const emptyStateDefault = `
   description="A message conveying the state of the product."
   icon={ChartBarPeak}
   title="Title"
-/>`;
+/>`
 
-export const blankStateDocs = emptyStateDefault;
+export const blankStateDocs = emptyStateDefault
 
 export const informationalDocs = `
 <script lang="ts">
@@ -23,4 +23,4 @@ export const informationalDocs = `
 >
 	<Button variant="secondary">Primary Action</Button>
 </EmptyState.Root>
-`;
+`

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Button, Note } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Button, Note } from "$lib/index.js"
 	import {
 		noteAction,
 		noteDefault,
@@ -15,9 +15,9 @@
 		noteWarning,
 		noteViolet,
 		noteCyan,
-		noteSecondary
-	} from '../../docs/data/note.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		noteSecondary,
+	} from "../../docs/data/note.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -27,12 +27,12 @@
 {#snippet note()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			note
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			Display text that requires attention or provides additional information.
 		</p>
@@ -87,15 +87,15 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			The {@render roundedCode('action')} prop accepts a {@render roundedCode('Snippet')}.
+			The {@render roundedCode("action")} prop accepts a {@render roundedCode("Snippet")}.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
 					<Note action={actionSnip}>This note details some information.</Note>
 					<Note action={actionSnip}>
-						This note details a large amount information that could potentially wrap into two or
-						more lines, forcing the height of the Note to be larger.
+						This note details a large amount information that could potentially wrap into two
+						or more lines, forcing the height of the Note to be larger.
 					</Note>
 				</div>
 			{/snippet}
@@ -140,7 +140,9 @@
 			{#snippet demo()}
 				<div class="w-full space-y-6">
 					<Note type="error">This note details some error information.</Note>
-					<Note type="error" action={actionSnip}>This note details some error information.</Note>
+					<Note type="error" action={actionSnip}
+						>This note details some error information.</Note
+					>
 					<Note type="error" action={actionSnip}>
 						This note details some success information. Check
 						<a href="/#" class="hover:underline">the documentation</a> to learn more.
@@ -225,7 +227,9 @@
 			{#snippet demo()}
 				<div class="w-full space-y-6">
 					<Note type="violet">This note details some violet information.</Note>
-					<Note type="violet" action={actionSnip}>This note details some violet information.</Note>
+					<Note type="violet" action={actionSnip}
+						>This note details some violet information.</Note
+					>
 					<Note type="violet" action={actionSnip}>
 						This note details some success information. Check
 						<a href="/#" class="hover:underline">the documentation</a> to learn more.
@@ -258,7 +262,9 @@
 						<a href="/#" class="hover:underline">the documentation</a> to learn more.
 					</Note>
 					<Note fill type="cyan">This note details some cyan information.</Note>
-					<Note fill type="cyan" action={actionSnip}>This note details some cyan information.</Note>
+					<Note fill type="cyan" action={actionSnip}
+						>This note details some cyan information.</Note
+					>
 					<Note fill type="cyan" action={actionSnip}>
 						This note details some success information. Check
 						<a href="/#" class="hover:underline">the documentation</a> to learn more.
@@ -270,33 +276,11 @@
 	</Row>
 {/snippet}
 
-{#snippet disabled()}
-	<Row>
-		<LinkH2 href="/note#disabled" aria-label="disabled">disabled</LinkH2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div class="w-full space-y-6">
-					<Note action={actionSnip} disabled fill type="warning" aria-label="warning"
-						>This note details a warning.</Note
-					>
-					<Note action={actionSnip} disabled fill type="warning"
-						>This filled note details some success information. Check <a
-							href="/#"
-							class="hover:underline">the documentation</a
-						> to learn more.</Note
-					>
-				</div>
-			{/snippet}
-			{@render demoAndCode(demo, noteDefault)}
-		</div>
-	</Row>
-{/snippet}
-
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'modal', href: '/modal' }}
-			next={{ title: 'pagination', href: '/pagination' }}
+			previous={{ title: "modal", href: "/modal" }}
+			next={{ title: "pagination", href: "/pagination" }}
 		/>
 	</Row>
 {/snippet}
@@ -311,7 +295,6 @@
 	{@render secondary()}
 	{@render violet()}
 	{@render cyan()}
-	<!-- {@render disabled()} -->
 	{@render prevAndNext()}
 {/snippet}
 

@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import Spinner from '$lib/spinner/spinner.svelte';
-	import { spinnerCustom, spinnerDefault } from '../../docs/data/spinner.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import Spinner from "$lib/spinner/spinner.svelte"
+	import { spinnerCustom, spinnerDefault } from "../../docs/data/spinner.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -25,9 +25,9 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			Indicate an action running in the background. Unlike the loading dots, this should generally
-			be used to indicate loading feedback in response to a user action, like for buttons,
-			pagination, etc.
+			Indicate an action running in the background. Unlike the loading dots, this should
+			generally be used to indicate loading feedback in response to a user action, like for
+			buttons, pagination, etc.
 		</p>
 	</Row>
 {/snippet}
@@ -76,8 +76,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'show more', href: '/show-more' }}
-			next={{ title: 'snippet', href: '/snippet' }}
+			previous={{ title: "show more", href: "/show-more" }}
+			next={{ title: "snippet", href: "/snippet" }}
 		/>
 	</Row>
 {/snippet}

@@ -13,7 +13,7 @@ export const toggleDefault = `
 	<div class="w-full">
 		<Toggle aria-label="Enable Firewall" checked={checked2} />
 	</div>
-</div>`;
+</div>`
 
 export const toggleSizes = `
 <script lang="ts">
@@ -27,7 +27,7 @@ export const toggleSizes = `
 	<div class="w-4/12">
 		<Toggle aria-label="Enable Firewall" checked={false} size="large" />
 	</div>
-</div>`;
+</div>`
 
 export const toggleCustomColors = `
 import { Toggle } from 'kampsy-ui';

@@ -1,51 +1,51 @@
 <script lang="ts">
-	import { getContext, type Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
-	import { fly } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
+	import { getContext, type Snippet } from "svelte"
+	import type { HTMLAttributes } from "svelte/elements"
+	import { fly } from "svelte/transition"
+	import { cubicOut } from "svelte/easing"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		class?: string;
-		children: Snippet;
+		class?: string
+		children: Snippet
 	}
-	let { class: klass = '', children, ...rest }: Props = $props();
+	let { class: klass = "", children, ...rest }: Props = $props()
 
 	// Get the state of the menu from the context
 	const rootState = getContext<{
-		alignment: 'left' | 'right';
-		getIsMobile: () => boolean;
-		getIsActive: () => boolean;
-		setIsActive: (value: boolean) => void;
-		getContentPosition: () => string;
-		getTransY: () => number;
-	}>('menu');
+		alignment: "left" | "right"
+		getIsMobile: () => boolean
+		getIsActive: () => boolean
+		setIsActive: (value: boolean) => void
+		getContentPosition: () => string
+		getTransY: () => number
+	}>("menu")
 
 	let alightmentClass = $derived.by(() => {
-		if (rootState.alignment === 'left') {
-			return 'left-0';
+		if (rootState.alignment === "left") {
+			return "left-0"
 		} else {
-			return 'right-0';
+			return "right-0"
 		}
-	});
+	})
 
-	let content: HTMLDivElement = $state<any>();
+	let content = $state<HTMLDivElement>()
 	$effect(() => {
 		if (content) {
 			if (rootState.getIsActive()) {
-				content.setAttribute('aria-hidden', 'false');
+				content.setAttribute("aria-hidden", "false")
 			} else {
-				content.setAttribute('aria-hidden', 'true');
+				content.setAttribute("aria-hidden", "true")
 			}
 		}
-	});
+	})
 </script>
 
 {#snippet mobileSnip()}
 	{#if rootState.getIsActive()}
 		<div
 			bind:this={content}
-			in:fly|local={{ y: '50vh', duration: 500, opacity: 1 }}
-			out:fly|local={{ y: '100vh', duration: 600, easing: cubicOut, opacity: 1 }}
+			in:fly|local={{ y: "50vh", duration: 500, opacity: 1 }}
+			out:fly|local={{ y: "100vh", duration: 600, easing: cubicOut, opacity: 1 }}
 			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
 			{...rest}
 		>

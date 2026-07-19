@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { InformationFillSmall } from '$lib/icons/index.js';
-	import { Tooltip } from '$lib/index.js';
+	import { InformationFillSmall } from "$lib/icons/index.js"
+	import { Tooltip } from "$lib/index.js"
 
 	interface Props {
-		content?: string;
-		title?: string;
-		tooltip?: string;
-	};
+		content?: string
+		title?: string
+		tooltip?: string
+	}
 
-	let { content = undefined, title = undefined, tooltip = undefined }: Props = $props();
+	let { content = undefined, title = undefined, tooltip = undefined }: Props = $props()
 </script>
 
 <div>

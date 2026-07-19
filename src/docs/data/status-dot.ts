@@ -9,7 +9,7 @@ export const statusDotDefault = `
 	<StatusDot state="ERROR" />
 	<StatusDot state="READY" />
 	<StatusDot state="CANCELED" />
-</div>`;
+</div>`
 
 export const statusDotLabel = `
 <script lang="ts">
@@ -22,4 +22,4 @@ export const statusDotLabel = `
 	<StatusDot label state="ERROR" />
 	<StatusDot label state="READY" />
 	<StatusDot label state="CANCELED" />
-</div>`;
+</div>`

@@ -1,21 +1,21 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import Progress from '$lib/progress/progress.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import Progress from "$lib/progress/progress.svelte"
 	import {
 		progressDefault,
 		progressDynamicColors,
-		progressThemed
-	} from '../../docs/data/progress.js';
-	import Button from '$lib/button/button.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		progressThemed,
+	} from "../../docs/data/progress.js"
+	import Button from "$lib/button/button.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let dynamic = $state(40);
+	let dynamic = $state(40)
 </script>
 
 <svelte:head>
@@ -72,7 +72,7 @@
 					<Button
 						onclick={() => {
 							if (dynamic < 100) {
-								dynamic = dynamic + 10;
+								dynamic = dynamic + 10
 							}
 						}}
 						size="small">Increase</Button
@@ -80,7 +80,7 @@
 					<Button
 						onclick={() => {
 							if (dynamic > 0) {
-								dynamic = dynamic - 10;
+								dynamic = dynamic - 10
 							}
 						}}
 						size="small"
@@ -113,8 +113,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'pagination', href: '/pagination' }}
-			next={{ title: 'project banner', href: '/project-banner' }}
+			previous={{ title: "pagination", href: "/pagination" }}
+			next={{ title: "project banner", href: "/project-banner" }}
 		/>
 	</Row>
 {/snippet}

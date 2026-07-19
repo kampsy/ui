@@ -1,15 +1,15 @@
 <script lang="ts">
-	import type { HTMLAttributes } from 'svelte/elements';
-	import type { Component, Snippet } from 'svelte';
+	import type { HTMLAttributes } from "svelte/elements"
+	import type { Component, Snippet } from "svelte"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		title: string;
-		description: string;
-		icon: Component | undefined;
-		children?: Snippet | undefined;
+		title: string
+		description: string
+		icon: Component | undefined
+		children?: Snippet | undefined
 	}
 
-	let { title, description, icon, children, ...rest }: Props = $props();
+	let { title, description, icon, children, ...rest }: Props = $props()
 </script>
 
 <div

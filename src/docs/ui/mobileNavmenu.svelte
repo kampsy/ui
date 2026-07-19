@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { Cross } from '$lib/icons/index.js';
-	import { clickOutside } from '$lib/utils/event.js';
-	import type { Snippet } from 'svelte';
-	import { fade, fly } from 'svelte/transition';
+	import { Cross } from "$lib/icons/index.js"
+	import { clickOutside } from "$lib/utils/event.js"
+	import type { Snippet } from "svelte"
+	import { fade, fly } from "svelte/transition"
 
-	let { isOpen = $bindable(false), asideSlot }: { isOpen: boolean; asideSlot: Snippet } = $props();
+	let { isOpen = $bindable(false), asideSlot }: { isOpen: boolean; asideSlot: Snippet } =
+		$props()
 </script>
 
 <!--The backdrop color when the menu is open-->
@@ -19,12 +20,12 @@
 
 		<div
 			use:clickOutside={() => (isOpen = false)}
-			in:fly|local={{ x: '-100vw', duration: 500, opacity: 1 }}
-			out:fly|local={{ x: '-100vw', duration: 500, opacity: 1 }}
+			in:fly|local={{ x: "-100vw", duration: 500, opacity: 1 }}
+			out:fly|local={{ x: "-100vw", duration: 500, opacity: 1 }}
 			class="fixed top-0 left-0 w-[75%] h-full bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary
 border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 z-1000"
 		>
-		<!--Close button-->
+			<!--Close button-->
 			<div class="absolute top-4 right-[22px] w-[40px] h-[40px] z-30">
 				<div class="w-full h-full flex items-center justify-center">
 					<button

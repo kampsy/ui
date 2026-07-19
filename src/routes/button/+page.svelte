@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { ArrowLeft, ArrowRight } from '$lib/icons/index.js';
-	import { Button } from '$lib/index.js';
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import { ArrowLeft, ArrowRight } from "$lib/icons/index.js"
+	import { Button } from "$lib/index.js"
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 	import {
 		buttonDisabled,
 		buttonLoading,
@@ -14,16 +14,16 @@
 		buttonRounded,
 		buttonShapes,
 		buttonSize,
-		buttonVariants
-	} from '../../docs/data/button.js';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import ArrowUp from '$lib/icons/arrow-up.svelte';
-	import { Tabs, Text } from '$lib/index.js';
-	import { fade } from 'svelte/transition';
-	import { Webhook, Accessibility } from '$lib/icons/index.js';
+		buttonVariants,
+	} from "../../docs/data/button.js"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import ArrowUp from "$lib/icons/arrow-up.svelte"
+	import { Tabs, Text } from "$lib/index.js"
+	import { fade } from "svelte/transition"
+	import { Webhook, Accessibility } from "$lib/icons/index.js"
 
-	let selected = $state('implementation');
+	let selected = $state("implementation")
 </script>
 
 <svelte:head>
@@ -50,8 +50,8 @@
 		<Tabs
 			bind:selected
 			tabs={[
-				{ title: 'Implementation', value: 'implementation', icon: Webhook },
-				{ title: 'Accessibility', value: 'accessibility', icon: Accessibility }
+				{ title: "Implementation", value: "implementation", icon: Webhook },
+				{ title: "Accessibility", value: "accessibility", icon: Accessibility },
 			]}
 		/>
 	</Row>
@@ -120,8 +120,8 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Icon-only buttons should include the {@render roundedCode('shape')} prop and an
-			{@render roundedCode('aria-label')}.
+			Icon-only buttons should include the {@render roundedCode("shape")} prop and an
+			{@render roundedCode("aria-label")}.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -186,8 +186,10 @@
 			{#snippet demo()}
 				<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
 				<Button iconSuffix={ArrowRight} aria-label="icon suffix">upload</Button>
-				<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight} aria-label="icon prefix and suffix"
-					>upload</Button
+				<Button
+					iconPrefix={ArrowLeft}
+					iconSuffix={ArrowRight}
+					aria-label="icon prefix and suffix">upload</Button
 				>
 			{/snippet}
 			{@render demoAndCode(demo, buttonPrefixAndSuffix)}
@@ -201,17 +203,23 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Combination of {@render roundedCode('rounded-sm')} and the
-			{@render roundedCode('shadow-sm')} prop, often used on marketing pages.
+			Combination of {@render roundedCode("rounded-sm")} and the
+			{@render roundedCode("shadow-sm")} prop, often used on marketing pages.
 		</p>
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded-sm">upload</Button>
-				<Button size="small" variant="secondary" rounded aria-label="small rounded-sm">upload</Button>
+				<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded-sm"
+					>upload</Button
+				>
+				<Button size="small" variant="secondary" rounded aria-label="small rounded-sm"
+					>upload</Button
+				>
 				<Button variant="secondary" rounded aria-label="medium rounded-sm">upload</Button>
-				<Button size="large" variant="secondary" rounded aria-label="large rounded-sm">upload</Button>
+				<Button size="large" variant="secondary" rounded aria-label="large rounded-sm"
+					>upload</Button
+				>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
 		</div>
@@ -260,25 +268,25 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			This component aims to adhere to {@render roundedCode('WCAG 2.2 (level AA)')} guidelines, and it
-			is important to maintain this commitment when implementing the component across other projects.
-			This section provides guidance to support that effort.
+			This component aims to adhere to {@render roundedCode("WCAG 2.2 (level AA)")} guidelines,
+			and it is important to maintain this commitment when implementing the component across other
+			projects. This section provides guidance to support that effort.
 		</p>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			A button that is focused should be activated using the {@render roundedCode('Space')} or {@render roundedCode(
-				'Enter'
+			A button that is focused should be activated using the {@render roundedCode("Space")} or {@render roundedCode(
+				"Enter",
 			)} keys.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			It is important for the button to have a clear description, which can be provided either as
-			text on the button itself or by using the {@render roundedCode('aria-label')} or {@render roundedCode(
-				'aria-labelledby'
+			It is important for the button to have a clear description, which can be provided either
+			as text on the button itself or by using the {@render roundedCode("aria-label")} or {@render roundedCode(
+				"aria-labelledby",
 			)} attributes.
 		</Text>
 		<Text
@@ -286,15 +294,15 @@
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
 			If the button includes a description, it should also have an {@render roundedCode(
-				'aria-labelledby'
+				"aria-labelledby",
 			)} attribute that matches the ID of the description.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			After the button is activated, ensure that focus is set appropriately based on the type of
-			action that the button performs. For guidance, refer to the <a
+			After the button is activated, ensure that focus is set appropriately based on the type
+			of action that the button performs. For guidance, refer to the <a
 				href="https://www.w3.org/WAI/ARIA/apg/patterns/button/"
 				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900"
 				>W3C WAI-ARIA Authoring Practices Button Design Pattern</a
@@ -306,7 +314,7 @@
 		>
 			In some situations, it may be important to inform the user that a button is in a pressed
 			state—such as when a button opens a contextual menu. This can be achieved by adding {@render roundedCode(
-				'aria-pressed="true"'
+				'aria-pressed="true"',
 			)} to the button using JavaScript when it is clicked, and removing it when necessary.
 		</Text>
 	</Row>
@@ -315,8 +323,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'badge', href: '/badge' }}
-			next={{ title: 'calendar', href: '/calendar' }}
+			previous={{ title: "badge", href: "/badge" }}
+			next={{ title: "calendar", href: "/calendar" }}
 		/>
 	</Row>
 {/snippet}
@@ -325,7 +333,7 @@
 	{@render button()}
 	{@render tabSnip()}
 
-	{#if selected == 'implementation'}
+	{#if selected == "implementation"}
 		<section transition:fade>
 			{@render size()}
 			{@render types()}
@@ -337,7 +345,7 @@
 		</section>
 	{/if}
 
-	{#if selected == 'accessibility'}
+	{#if selected == "accessibility"}
 		<section transition:fade>
 			{@render accessibility()}
 		</section>

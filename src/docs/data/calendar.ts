@@ -8,4 +8,4 @@ export const calendarDefault = `
 
 <div class="w-full flex justify-center">
 	<Calendar bind:value/>
-</div>`;
+</div>`

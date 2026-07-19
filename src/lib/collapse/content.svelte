@@ -1,48 +1,48 @@
 <script lang="ts">
-	import { getContext, type Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
-	import { slide } from 'svelte/transition';
+	import { getContext, type Snippet } from "svelte"
+	import type { HTMLAttributes } from "svelte/elements"
+	import { slide } from "svelte/transition"
 
 	interface Props extends HTMLAttributes<HTMLDivElement> {
-		children: Snippet | undefined;
+		children: Snippet | undefined
 	}
-	let { children, ...rest }: Props = $props();
+	let { children, ...rest }: Props = $props()
 
-	let { size, value } = getContext<{ size: 'small' | 'large'; value: string }>('collapseItem');
+	let { size, value } = getContext<{ size: "small" | "large"; value: string }>("collapseItem")
 
-	let collapseItem = getContext<{ 
-		getItem: () => string; 
-		setItem: (value: string) => void 
-	}>('collapse');
+	let collapseItem = getContext<{
+		getItem: () => string
+		setItem: (value: string) => void
+	}>("collapse")
 
-	let isActive = $state(false);
+	let isActive = $state(false)
 
 	const textObj = {
-		small: 'text-sm',
-		large: 'text-base'
-	};
+		small: "text-sm",
+		large: "text-base",
+	}
 	let textClass = $derived.by(() => {
-		return textObj[size];
-	});
+		return textObj[size]
+	})
 
 	$effect.pre(() => {
 		if (collapseItem.getItem().includes(value)) {
-			isActive = true;
+			isActive = true
 		} else {
-			isActive = false;
+			isActive = false
 		}
-	});
+	})
 
-	let content: HTMLDivElement = $state<any>();
+	let content = $state<HTMLDivElement>()
 	$effect(() => {
 		if (content) {
 			if (isActive) {
-				content.setAttribute('aria-hidden', 'false');
+				content.setAttribute("aria-hidden", "false")
 			} else {
-				content.setAttribute('aria-hidden', 'true');
+				content.setAttribute("aria-hidden", "true")
 			}
 		}
-	});
+	})
 </script>
 
 {#if isActive}

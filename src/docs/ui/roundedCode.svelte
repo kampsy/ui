@@ -1,9 +1,9 @@
 <script lang="ts">
 	interface Props {
-		text: string;
+		text: string
 	}
 
-	let { text }: Props = $props();
+	let { text }: Props = $props()
 </script>
 
 {#snippet textSnip(text: string)}

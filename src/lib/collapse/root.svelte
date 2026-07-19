@@ -1,19 +1,16 @@
 <script lang="ts">
-	import { setContext, type Snippet } from 'svelte';
-	import { createCollapseState } from './root.svelte.js';
+	import { setContext, type Snippet } from "svelte"
+	import { createCollapseState } from "./root.svelte.js"
 
 	interface Props {
-		multiple?: boolean | undefined;
-		children: Snippet | undefined;
+		multiple?: boolean | undefined
+		children: Snippet | undefined
 	}
-	let { 
-		multiple = false, 
-		children 
-	}: Props = $props();
+	let { multiple = false, children }: Props = $props()
 
-	const collapseState = createCollapseState({ multiple: multiple, item: []});
+	const collapseState = createCollapseState({ multiple: multiple, item: [] })
 
-	setContext('collapse', collapseState);
+	setContext("collapse", collapseState)
 </script>
 
 <div

@@ -1,35 +1,35 @@
 <script lang="ts">
-	import ChevronLeft from '$lib/icons/chevron-left.svelte';
-	import ChevronRight from '$lib/icons/chevron-right.svelte';
+	import ChevronLeft from "$lib/icons/chevron-left.svelte"
+	import ChevronRight from "$lib/icons/chevron-right.svelte"
 
 	interface Props {
 		previous?:
 			| {
-					title: string;
-					href: string;
+					title: string
+					href: string
 			  }
-			| undefined;
+			| undefined
 		next?:
 			| {
-					title: string;
-					href: string;
+					title: string
+					href: string
 			  }
-			| undefined;
-	};
+			| undefined
+	}
 
-	let { previous = undefined, next = undefined }: Props = $props();
+	let { previous = undefined, next = undefined }: Props = $props()
 
 	let paginationStyle = $derived.by(() => {
 		if (previous && next) {
-			return 'justify-between';
+			return "justify-between"
 		} else if (previous) {
-			return 'justify-start';
+			return "justify-start"
 		} else if (next) {
-			return 'justify-end';
+			return "justify-end"
 		} else {
-			return '';
+			return ""
 		}
-	});
+	})
 </script>
 
 {#snippet prevSnip()}

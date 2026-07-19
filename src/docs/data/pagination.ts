@@ -13,4 +13,4 @@ export const paginationDefault = `
 	};
 </script>
 
-<Pagination previous={prev} {next} />`;
+<Pagination previous={prev} {next} />`

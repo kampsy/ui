@@ -1,47 +1,47 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import { avatarGroup, avatarPlaceholder, avatarText } from '../../docs/data/avatar.js';
-	import AvatarGroup from '$lib/avatar/avatarGroup.svelte';
-	import Avatar from '$lib/avatar/avatar.svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { AvatarText } from '$lib/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import { avatarGroup, avatarPlaceholder, avatarText } from "../../docs/data/avatar.js"
+	import AvatarGroup from "$lib/avatar/avatarGroup.svelte"
+	import Avatar from "$lib/avatar/avatar.svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { AvatarText } from "$lib/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	const members = [
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=evilrabbit&s=64",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=sambecker&s=64",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?s=64&u=rauchg'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?s=64&u=rauchg",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=sambecker&s=64",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=rauno&s=64",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=sambecker&s=64",
 		},
 		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
-		}
-	];
+			name: "Evil Rabbit",
+			imageLink: "https://vercel.com/api/www/avatar?u=evilrabbit&s=64",
+		},
+	]
 </script>
 
 <svelte:head>
@@ -137,8 +137,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'introduction', href: '/' }}
-			next={{ title: 'badge', href: '/badge' }}
+			previous={{ title: "introduction", href: "/" }}
+			next={{ title: "badge", href: "/badge" }}
 		/>
 	</Row>
 {/snippet}

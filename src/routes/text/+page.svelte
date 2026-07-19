@@ -1,49 +1,49 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Text } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Text } from "$lib/index.js"
 	import {
 		textModifiers,
 		textResponsive,
 		textResponsiveVariant,
 		textSize,
 		textTruncate,
-		textVariants
-	} from '../../docs/data/text.js';
-	import type { VariantOption } from '../../docs/ui/types.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		textVariants,
+	} from "../../docs/data/text.js"
+	import type { VariantOption } from "../../docs/ui/types.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	const variants: Array<VariantOption> = [
-		'heading-72',
-		'heading-64',
-		'heading-56',
-		'heading-48',
-		'heading-40',
-		'heading-32',
-		'heading-24',
-		'heading-20',
-		'heading-16',
-		'button-16',
-		'button-14',
-		'button-12',
-		'label-20',
-		'label-18',
-		'label-16',
-		'label-14',
-		'label-13',
-		'label-12',
-		'copy-24',
-		'copy-20',
-		'copy-18',
-		'copy-16',
-		'copy-14',
-		'copy-13'
-	];
+		"heading-72",
+		"heading-64",
+		"heading-56",
+		"heading-48",
+		"heading-40",
+		"heading-32",
+		"heading-24",
+		"heading-20",
+		"heading-16",
+		"button-16",
+		"button-14",
+		"button-12",
+		"label-20",
+		"label-18",
+		"label-16",
+		"label-14",
+		"label-13",
+		"label-12",
+		"copy-24",
+		"copy-20",
+		"copy-18",
+		"copy-16",
+		"copy-14",
+		"copy-13",
+	]
 </script>
 
 <svelte:head>
@@ -53,12 +53,12 @@
 {#snippet textSnip()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			Text
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			Display text using well-defined typographic styles.
 		</p>
@@ -121,9 +121,9 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-2">
-					{#each variants as variant}
+					{#each variants as variant, index (index)}
 						<Text class="capitalize" {variant}>
-							{variant.replace('-', ' ')}
+							{variant.replace("-", " ")}
 						</Text>
 					{/each}
 				</div>
@@ -141,10 +141,10 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full space-y-6">
-					<Text variant={{ sm: 'heading-24', md: 'heading-32', lg: 'heading-48' }}>
+					<Text variant={{ sm: "heading-24", md: "heading-32", lg: "heading-48" }}>
 						Responsive Heading
 					</Text>
-					<Text variant={{ sm: 'copy-14', md: 'copy-16', lg: 'copy-20' }}>
+					<Text variant={{ sm: "copy-14", md: "copy-16", lg: "copy-20" }}>
 						Responsive Copy, Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					</Text>
 				</div>
@@ -177,7 +177,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="w-full">
-					<Text size={16} class="max-w-[100px]" truncate>The Evil Rabbit jumps.</Text>
+					<Text size={16} class="max-w-25" truncate>The Evil Rabbit jumps.</Text>
 				</div>
 			{/snippet}
 			{@render demoAndCode(demo, textTruncate)}
@@ -188,8 +188,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'tabs', href: '/tabs' }}
-			next={{ title: 'textarea', href: '/textarea' }}
+			previous={{ title: "tabs", href: "/tabs" }}
+			next={{ title: "textarea", href: "/textarea" }}
 		/>
 	</Row>
 {/snippet}

@@ -10,7 +10,7 @@ export const choiceboxDefault = `
 		<Choicebox.Item defaultChecked description="Free for two weeks" title="Pro Trial" value="trial" />
 		<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 	</Choicebox.Group>
-</div>`;
+</div>`
 
 export const choiceboxMultiselect = `
 <script lang="ts">
@@ -24,7 +24,7 @@ export const choiceboxMultiselect = `
 		<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
 		<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 	</Choicebox.Group>
-</div>`;
+</div>`
 
 export const choiceboxDisabled = `
 <script lang="ts">
@@ -43,4 +43,4 @@ export const choiceboxDisabled = `
 		<Choicebox.Item description="Free for two weeks" disabled title="Pro Trial" value="trial" />
 		<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 	</Choicebox.Group>
-</div>`;
+</div>`

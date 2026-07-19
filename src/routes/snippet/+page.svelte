@@ -1,21 +1,21 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import CodeSnippet from '$lib/snippet/snippet.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import CodeSnippet from "$lib/snippet/snippet.svelte"
 	import {
 		snippetCallback,
 		snippetDefault,
 		snippetInverted,
 		snippetMultiline,
 		snippetNoPrompt,
-		snippetVariants
-	} from '$lib/../docs/data/snippet.js';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		snippetVariants,
+	} from "$lib/../docs/data/snippet.js"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -79,7 +79,7 @@
 		<LinkH2 href="/snippet#multiline" aria-label="multiline">multiline</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<CodeSnippet text={['cd project', 'now']} class="w-full" />
+				<CodeSnippet text={["cd project", "now"]} class="w-full" />
 			{/snippet}
 			{@render demoAndCode(demo, snippetMultiline)}
 		</div>
@@ -91,11 +91,7 @@
 		<LinkH2 href="/snippet#no-prompt" aria-label="no-prompt">no prompt</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<CodeSnippet
-					prompt={false}
-					text="npm init next-app"
-					class="w-full lg:w-[300px]"
-				/>
+				<CodeSnippet prompt={false} text="npm init next-app" class="w-full lg:w-[300px]" />
 			{/snippet}
 			{@render demoAndCode(demo, snippetNoPrompt)}
 		</div>
@@ -108,7 +104,7 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<CodeSnippet
-					onCopy={() => alert('You copied the text!')}
+					onCopy={() => alert("You copied the text!")}
 					text="npm init next-app"
 					class="w-full lg:w-[300px]"
 				/>
@@ -137,8 +133,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'spinner', href: '/spinner' }}
-			next={{ title: 'split button', href: '/split-button' }}
+			previous={{ title: "spinner", href: "/spinner" }}
+			next={{ title: "split button", href: "/split-button" }}
 		/>
 	</Row>
 {/snippet}

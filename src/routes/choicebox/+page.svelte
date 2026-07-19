@@ -1,21 +1,21 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Choicebox } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Choicebox } from "$lib/index.js"
 	import {
 		choiceboxDefault,
 		choiceboxDisabled,
-		choiceboxMultiselect
-	} from '$lib/../docs/data/choicebox.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		choiceboxMultiselect,
+	} from "$lib/../docs/data/choicebox.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let value: string | string[] = $state('');
-	let value2: string | string[] = $state([]);
+	let value: string | string[] = $state("")
+	let value2: string | string[] = $state([])
 </script>
 
 <svelte:head>
@@ -32,7 +32,8 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A larger form of Radio or Checkbox, where the user has a larger tap target and more details.
+			A larger form of Radio or Checkbox, where the user has a larger tap target and more
+			details.
 		</p>
 	</Row>
 {/snippet}
@@ -118,8 +119,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'checkbox', href: '/checkbox' }}
-			next={{ title: 'collapse', href: '/collapse' }}
+			previous={{ title: "checkbox", href: "/checkbox" }}
+			next={{ title: "collapse", href: "/collapse" }}
 		/>
 	</Row>
 {/snippet}

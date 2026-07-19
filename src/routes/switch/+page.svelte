@@ -1,24 +1,24 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Switch, Tooltip } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Switch, Tooltip } from "$lib/index.js"
 	import {
 		switchDefault,
 		switchDisabled,
 		switchFullWidth,
 		switchIcon,
 		switchSize,
-		switchTooltip
-	} from '../../docs/data/switch.js';
-	import { GridSquare, ListUnordered } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		switchTooltip,
+	} from "../../docs/data/switch.js"
+	import { GridSquare, ListUnordered } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let value = $state('');
+	let value = $state("")
 </script>
 
 <svelte:head>
@@ -177,8 +177,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'status dot', href: '/status-dot' }}
-			next={{ title: 'table', href: '/table' }}
+			previous={{ title: "status dot", href: "/status-dot" }}
+			next={{ title: "table", href: "/table" }}
 		/>
 	</Row>
 {/snippet}

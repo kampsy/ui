@@ -1,17 +1,21 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import Tooltip from '$lib/tooltip/tooltip.svelte';
-	import { tooltipComponents, toolTipCustomType, toolTipDefault } from '../../docs/data/tooltip.js';
-	import Button from '$lib/button/button.svelte';
-	import { Badge } from '$lib/index.js';
-	import Spinner from '$lib/spinner/spinner.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import Tooltip from "$lib/tooltip/tooltip.svelte"
+	import {
+		tooltipComponents,
+		toolTipCustomType,
+		toolTipDefault,
+	} from "../../docs/data/tooltip.js"
+	import Button from "$lib/button/button.svelte"
+	import { Badge } from "$lib/index.js"
+	import Spinner from "$lib/spinner/spinner.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
@@ -98,7 +102,11 @@
 				</div>
 
 				<div>
-					<Tooltip text="The Evil Rabbit Jumped over the Fence" position="right" type="warning">
+					<Tooltip
+						text="The Evil Rabbit Jumped over the Fence"
+						position="right"
+						type="warning"
+					>
 						<span>Right</span>
 					</Tooltip>
 				</div>
@@ -137,7 +145,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination previous={{ title: 'toggle', href: '/toggle' }} />
+		<Pagination previous={{ title: "toggle", href: "/toggle" }} />
 	</Row>
 {/snippet}
 

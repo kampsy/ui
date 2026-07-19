@@ -1,68 +1,68 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import { Table } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import { Table } from "$lib/index.js"
 	import {
 		tableDefault,
 		tableStriped,
 		tableInteractive,
-		tableFull
-	} from '$lib/../docs/data/table.js';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		tableFull,
+	} from "$lib/../docs/data/table.js"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	const formatter = new Intl.NumberFormat('en-US', {
-		style: 'currency',
+	const formatter = new Intl.NumberFormat("en-US", {
+		style: "currency",
 		maximumFractionDigits: 2,
-		currency: 'usd'
-	});
+		currency: "usd",
+	})
 
 	function formatCurrency(amount: number): string {
-		return formatter.format(amount);
+		return formatter.format(amount)
 	}
 
 	const items = [
 		{
-			product: 'Brake Pads Set',
-			usage: '100 sets',
-			price: '$50 per set',
-			charge: 5000
+			product: "Brake Pads Set",
+			usage: "100 sets",
+			price: "$50 per set",
+			charge: 5000,
 		},
 		{
-			product: 'Oil Filters',
-			usage: '200 filters',
-			price: '$10 per filter',
-			charge: 2000
+			product: "Oil Filters",
+			usage: "200 filters",
+			price: "$10 per filter",
+			charge: 2000,
 		},
 		{
-			product: 'Car Batteries',
-			usage: '50 batteries',
-			price: '$100 per battery',
-			charge: 5000
+			product: "Car Batteries",
+			usage: "50 batteries",
+			price: "$100 per battery",
+			charge: 5000,
 		},
 		{
-			product: 'Headlight Bulbs',
-			usage: '300 bulbs',
-			price: '$15 per bulb',
-			charge: 4500
+			product: "Headlight Bulbs",
+			usage: "300 bulbs",
+			price: "$15 per bulb",
+			charge: 4500,
 		},
 		{
-			product: 'Windshield Wipers',
-			usage: '250 pairs',
-			price: '$20 per pair',
-			charge: 5000
+			product: "Windshield Wipers",
+			usage: "250 pairs",
+			price: "$20 per pair",
+			charge: 5000,
 		},
 		{
-			product: 'Spark Plugs',
-			usage: '500 sets',
-			price: '$5 per set',
-			charge: 2500
-		}
-	];
+			product: "Spark Plugs",
+			usage: "500 sets",
+			price: "$5 per set",
+			charge: 2500,
+		},
+	]
 </script>
 
 <svelte:head>
@@ -72,12 +72,12 @@
 {#snippet table()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			table
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			A semantic HTML table component
 		</p>
@@ -177,7 +177,8 @@
 
 {#snippet interactive()}
 	<Row>
-		<LinkH2 href="/table#interactive-table" aria-label="interactive-table">interactive table</LinkH2
+		<LinkH2 href="/table#interactive-table" aria-label="interactive-table"
+			>interactive table</LinkH2
 		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
@@ -239,7 +240,7 @@
 							</Table.Row>
 						</Table.Header>
 						<Table.Body interactive striped>
-							{#each items as item}
+							{#each items as item, index (index)}
 								<Table.Row>
 									<Table.Cell>{item.product}</Table.Cell>
 									<Table.Cell>{item.usage}</Table.Cell>
@@ -274,8 +275,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'switch', href: '/switch' }}
-			next={{ title: 'tabs', href: '/tabs' }}
+			previous={{ title: "switch", href: "/switch" }}
+			next={{ title: "tabs", href: "/tabs" }}
 		/>
 	</Row>
 {/snippet}

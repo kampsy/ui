@@ -7,4 +7,4 @@ export const descriptionDefault = `
 	content="Data about this section."
 	title="Section Title"
 	tooltip="Additional context about what this section refers to."
-/>`;
+/>`

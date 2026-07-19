@@ -1,4 +1,3 @@
-
 export const splitButtonDefault = `
 <script lang="ts">
 	import { SplitButton } from 'kampsy-ui';
@@ -45,9 +44,7 @@ export const splitButtonDefault = `
 			</SplitButton.Root>
 		{/each}
     </div>
-</div>`;
-
-
+</div>`
 
 export const splitButtonTypes = `
 <script lang="ts">
@@ -80,8 +77,7 @@ export const splitButtonTypes = `
 			</SplitButton.Content>
 		</SplitButton.Root>
 	{/each}
-</div>`;
-
+</div>`
 
 export const splitButtonMenuAlignment = `
 <script lang="ts">
@@ -120,4 +116,4 @@ export const splitButtonMenuAlignment = `
     		/>
     	</SplitButton.Content>
     </SplitButton.Root>
-</div>`;
+</div>`

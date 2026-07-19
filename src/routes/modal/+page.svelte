@@ -1,25 +1,25 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { Button, Modal, Text } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { Button, Modal, Text } from "$lib/index.js"
 	import {
 		modalDefault,
 		modalDisabkedActions,
 		modalSingleButton,
-		modalSticky
-	} from '../../docs/data/modal.js';
-	import { ArrowLeft } from '$lib/icons/index.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+		modalSticky,
+	} from "../../docs/data/modal.js"
+	import { ArrowLeft } from "$lib/icons/index.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
-	let active = $state(false);
-	let activeSticky = $state(false);
-	let activeSingleButton = $state(false);
-	let activeDisabled = $state(false);
+	let active = $state(false)
+	let activeSticky = $state(false)
+	let activeSingleButton = $state(false)
+	let activeDisabled = $state(false)
 </script>
 
 <svelte:head>
@@ -29,12 +29,12 @@
 {#snippet modal()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			modal
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			Display popup content that requires attention or provides additional information.
 		</p>
@@ -67,8 +67,8 @@
 								<Modal.Header>
 									<Modal.Title>Create Token</Modal.Title>
 									<Modal.Subtitle>
-										Enter a unique name for your token to differentiate it from other tokens and
-										then select the scope.
+										Enter a unique name for your token to differentiate it from other tokens
+										and then select the scope.
 									</Modal.Subtitle>
 								</Modal.Header>
 								<Text size={14}>Some content contained within the modal.</Text>
@@ -100,13 +100,15 @@
 									<Modal.Title>Create Token</Modal.Title>
 								</Modal.Header>
 								<!--Array from 1 to 30-->
-								{#each Array(60) as _, i}
+								{#each Array(60), index (index)}
 									<Text size={14}>Some content contained within the modal.</Text>
 								{/each}
 							</Modal.Body>
 							<Modal.Footer>
 								<div class="flex gap-3">
-									<Button onclick={() => (activeSticky = false)} variant="secondary">Cancel</Button>
+									<Button onclick={() => (activeSticky = false)} variant="secondary"
+										>Cancel</Button
+									>
 									<Button
 										iconPrefix={ArrowLeft}
 										onclick={() => (activeSticky = false)}
@@ -157,7 +159,9 @@
 
 {#snippet disabled()}
 	<Row>
-		<LinkH2 href="/modal#disabled-actions" aria-label="disabled-actions">disabled actions</LinkH2>
+		<LinkH2 href="/modal#disabled-actions" aria-label="disabled-actions"
+			>disabled actions</LinkH2
+		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div>
@@ -172,7 +176,9 @@
 								<Text size={14}>Some content contained within the modal.</Text>
 							</Modal.Body>
 							<Modal.Footer>
-								<Button onclick={() => (activeDisabled = false)} variant="secondary">Cancel</Button>
+								<Button onclick={() => (activeDisabled = false)} variant="secondary"
+									>Cancel</Button
+								>
 								<Button disabled onclick={() => (activeDisabled = false)}>Submit</Button>
 							</Modal.Footer>
 						</Modal.Content>
@@ -187,8 +193,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'menu', href: '/menu' }}
-			next={{ title: 'note', href: '/note' }}
+			previous={{ title: "menu", href: "/menu" }}
+			next={{ title: "note", href: "/note" }}
 		/>
 	</Row>
 {/snippet}

@@ -1,12 +1,18 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import { GridSquare, ListUnordered, Shield, ShieldGlobe, UserPlus } from '$lib/icons/index.js';
-	import { Badge, Button, Pagination, Switch } from '$lib/index.js';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import {
+		GridSquare,
+		ListUnordered,
+		Shield,
+		ShieldGlobe,
+		UserPlus,
+	} from "$lib/icons/index.js"
+	import { Badge, Button, Pagination, Switch } from "$lib/index.js"
 
-	let value = $state('');
+	let value = $state("")
 </script>
 
 <svelte:head>
@@ -23,8 +29,8 @@
 		<p
 			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
 		>
-			A Svelte 5 component library, inspired by Vercel's Geist, is thoughtfully designed to provide
-			consistent and cohesive web experiences.
+			A Svelte 5 component library, inspired by Vercel's Geist, is thoughtfully designed to
+			provide consistent and cohesive web experiences.
 		</p>
 	</Row>
 {/snippet}
@@ -602,7 +608,7 @@
 
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
-		<Pagination next={{ title: 'installation', href: '/installation' }} />
+		<Pagination next={{ title: "installation", href: "/installation" }} />
 	</Row>
 {/snippet}
 

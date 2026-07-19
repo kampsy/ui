@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { getContext, type Component, type Snippet } from 'svelte';
+	import { getContext, type Component, type Snippet } from "svelte"
 
 	interface Props {
-		onClick?: () => void | undefined;
-		prefix?: Component | undefined;
-		suffix?: Component | undefined;
-		type?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning';
-		children: Snippet;
-	};
+		onClick?: () => void | undefined
+		prefix?: Component | undefined
+		suffix?: Component | undefined
+		type?: "primary" | "secondary" | "tertiary" | "error" | "warning"
+		children: Snippet
+	}
 	let {
 		onClick = undefined,
-		type = 'tertiary',
+		type = "tertiary",
 		prefix = undefined,
 		suffix = undefined,
-		children
-	}: Props = $props();
+		children,
+	}: Props = $props()
 
 	const rootState = getContext<{
-		getIsActive: () => boolean;
-		setIsActive: (value: boolean) => void;
-	}>('menu');
+		getIsActive: () => boolean
+		setIsActive: (value: boolean) => void
+	}>("menu")
 
 	const typeObj = {
 		primary: `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 
@@ -31,17 +31,17 @@
 		error: `text-kui-light-red-800 dark:text-kui-dark-red-800 
 		hover:bg-kui-light-red-100 dark:hover:bg-kui-dark-red-100`,
 		warning: `text-kui-light-amber-800 dark:text-kui-dark-amber-800 
-		hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100`
-	};
+		hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100`,
+	}
 	let typeClass = $derived.by(() => {
-		return typeObj[type];
-	});
+		return typeObj[type]
+	})
 
 	let isSuffixClass = $derived.by(() => {
 		if (suffix) {
-			return 'justify-between';
+			return "justify-between"
 		}
-		return ''
+		return ""
 	})
 </script>
 
@@ -66,15 +66,15 @@
 <button
 	onclick={() => {
 		if (onClick) {
-			onClick();
+			onClick()
 		}
-		rootState.setIsActive(false);
+		rootState.setIsActive(false)
 	}}
-	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md 
-	py-3.5 lg:py-2.5 px-2  {typeClass}"
+	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md
+	py-3.5 lg:py-2.5 px-2 {typeClass}"
 >
 	{@render prefixSnip()}
-	<span class="first-letter:capitalize ">
+	<span class="first-letter:capitalize">
 		{@render children()}
 	</span>
 	{@render suffixSnip()}

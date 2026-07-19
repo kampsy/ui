@@ -1,31 +1,31 @@
 <script lang="ts">
-	import { Button } from '$lib/index.js';
-	import { getContext, type Snippet } from 'svelte';
-	import { fly } from 'svelte/transition';
-	import { cubicOut } from 'svelte/easing';
+	import { Button } from "$lib/index.js"
+	import { getContext, type Snippet } from "svelte"
+	import { fly } from "svelte/transition"
+	import { cubicOut } from "svelte/easing"
 
 	interface Props {
-		class?: string;
-		children: Snippet;
+		class?: string
+		children: Snippet
 	}
-	let { class: klass = '', children }: Props = $props();
+	let { class: klass = "", children }: Props = $props()
 
 	// Get the state of the select from the context
 	const rootState = getContext<{
-		size: 'tiny' | 'small' | 'medium' | 'large';
-		getIsMobile: () => boolean;
-		getIsActive: () => boolean;
-		setIsActive: (value: boolean) => void;
-		getContentPosition: () => string;
-		getTransY: () => number;
-	}>('select');
+		size: "tiny" | "small" | "medium" | "large"
+		getIsMobile: () => boolean
+		getIsActive: () => boolean
+		setIsActive: (value: boolean) => void
+		getContentPosition: () => string
+		getTransY: () => number
+	}>("select")
 </script>
 
 {#snippet mobileSnip()}
 	{#if rootState.getIsActive()}
 		<div
-			in:fly|local={{ y: '50vh', duration: 500, opacity: 1 }}
-			out:fly|local={{ y: '100vh', duration: 600, easing: cubicOut, opacity: 1 }}
+			in:fly|local={{ y: "50vh", duration: 500, opacity: 1 }}
+			out:fly|local={{ y: "100vh", duration: 600, easing: cubicOut, opacity: 1 }}
 			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
 		>
 			<div
@@ -38,7 +38,7 @@
 			<footer class="p-4">
 				<Button
 					onclick={() => {
-						rootState.setIsActive(false);
+						rootState.setIsActive(false)
 					}}
 					variant="secondary"
 					class="w-full">done</Button

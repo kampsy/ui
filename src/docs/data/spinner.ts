@@ -3,7 +3,7 @@ export const spinnerDefault = `
 	import { Spinner } from 'kampsy-ui';
 </script>
 
-<Spinner />`;
+<Spinner />`
 
 export const spinnerCustom = `
 <script lang="ts">
@@ -14,4 +14,4 @@ export const spinnerCustom = `
 	<Spinner size={12} />
 	<Spinner size={32} />
 	<Spinner size={40} />
-</div>`;
+</div>`

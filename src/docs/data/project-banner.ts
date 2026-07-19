@@ -1,5 +1,3 @@
-
-
 export const projectBannerSuccess = `
 <script lang="ts">
 	import { ProjectBanner } from 'kampsy-ui';
@@ -16,7 +14,7 @@ export const projectBannerSuccess = `
 		label="Attack Challenge Mode is enabled for this project"
 		variant="success"
 	/>
-</div>`;
+</div>`
 
 export const projectBannerWarning = `
 <script lang="ts">
@@ -47,7 +45,7 @@ export const projectBannerWarning = `
 		label={labelSnip}
 		variant="warning"
 	/>
-</div>`;
+</div>`
 
 export const projectBannerError = `
 <script lang="ts">
@@ -65,5 +63,4 @@ export const projectBannerError = `
 		label="Payment failed, update credit card information before your account is shut down"
 		variant="error"
 	/>
-</div>`;
-
+</div>`

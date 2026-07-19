@@ -1,23 +1,23 @@
 <script lang="ts">
-	import Aside from '$lib/../docs/ui/aside.svelte';
-	import Row from '$lib/../docs/ui/row.svelte';
-	import Shell from '$lib/../docs/ui/shell.svelte';
-	import { asideData } from '$lib/../docs/utils/data.js';
-	import CollapseCode from '$lib/collapse/collapseCode.svelte';
-	import type { Snippet } from 'svelte';
-	import Pagination from '$lib/pagination/pagination.svelte';
-	import { paginationDefault } from '$lib/../docs/data/pagination.js';
-	import LinkH2 from '$lib/../docs/ui/linkH2.svelte';
+	import Aside from "$lib/../docs/ui/aside.svelte"
+	import Row from "$lib/../docs/ui/row.svelte"
+	import Shell from "$lib/../docs/ui/shell.svelte"
+	import { asideData } from "$lib/../docs/utils/data.js"
+	import CollapseCode from "$lib/collapse/collapseCode.svelte"
+	import type { Snippet } from "svelte"
+	import Pagination from "$lib/pagination/pagination.svelte"
+	import { paginationDefault } from "$lib/../docs/data/pagination.js"
+	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	const prev = {
-		title: 'Home',
-		href: '#'
-	};
+		title: "Home",
+		href: "#",
+	}
 
 	const next = {
-		title: 'Introduction',
-		href: '#'
-	};
+		title: "Introduction",
+		href: "#",
+	}
 </script>
 
 <svelte:head>
@@ -67,8 +67,8 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: 'note', href: '/note' }}
-			next={{ title: 'progress', href: '/progress' }}
+			previous={{ title: "note", href: "/note" }}
+			next={{ title: "progress", href: "/progress" }}
 		/>
 	</Row>
 {/snippet}

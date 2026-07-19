@@ -8,7 +8,7 @@ export const buttonSize = `
 	<Button size="small" aria-label="small">upload</Button>
 	<Button aria-label="medium">upload</Button>
 	<Button size="large" aria-label="large">upload</Button>
-</div>`;
+</div>`
 
 export const buttonVariants = `
 <script lang="ts">
@@ -20,7 +20,7 @@ export const buttonVariants = `
 	<Button variant="tertiary" aria-label="tertiary">upload</Button>
 	<Button variant="error" aria-label="error">upload</Button>
 	<Button variant="warning" aria-label="warning">upload</Button>
-</div>`;
+</div>`
 
 export const buttonShapes = `
 <script lang="ts">
@@ -76,7 +76,7 @@ export const buttonShapes = `
 			<ArrowUp />
 		</div>
 	</Button>
-</div>`;
+</div>`
 
 export const buttonPrefixAndSuffix = `
 <script lang="ts">
@@ -88,7 +88,7 @@ export const buttonPrefixAndSuffix = `
 	<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
 	<Button iconSuffix={ArrowRight} aria-label="icon suffix">upload</Button>
 	<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight} aria-label="icon prefix and suffix">upload</Button>
-</div>`;
+</div>`
 
 export const buttonRounded = `
 <script lang="ts">
@@ -100,7 +100,7 @@ export const buttonRounded = `
 	<Button size="small" variant="secondary" rounded aria-label="small rounded-sm">upload</Button>
 	<Button variant="secondary" rounded aria-label="medium rounded-sm">upload</Button>
 	<Button size="large" variant="secondary" rounded aria-label="large rounded-sm">upload</Button>
-</div>`;
+</div>`
 
 export const buttonLoading = `
 <script lang="ts">
@@ -112,7 +112,7 @@ export const buttonLoading = `
 	<Button size="small" loading aria-label="small loading">upload</Button>
 	<Button loading aria-label="medium loading">upload</Button>
 	<Button size="large" loading aria-label="large loading">upload</Button>
-</div>`;
+</div>`
 
 export const buttonDisabled = `
 <script lang="ts">
@@ -124,4 +124,4 @@ export const buttonDisabled = `
 	<Button size="small" disabled aria-label="small disabled">upload</Button>
 	<Button disabled aria-label="medium disabled">upload</Button>
 	<Button size="large" disabled aria-label="large disabled">upload</Button>
-</div>`;
+</div>`

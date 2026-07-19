@@ -12,8 +12,7 @@ export const textSize = `
     <Text size={14}>The Evil Rabbit jumps.</Text>
     <Text size={12}>The Evil Rabbit jumps.</Text>
     <Text size={10}>The Evil Rabbit jumps.</Text>
-</div>`;
-
+</div>`
 
 export const textResponsive = `
 <script lang="ts">
@@ -22,8 +21,7 @@ export const textResponsive = `
 
 <div class="w-full">
     <Text size={{ sm: 24, md: 32, lg: 48 }}>The Evil Rabbit jumps.</Text>
-</div>`;
-
+</div>`
 
 export const textVariants = `
 <script lang="ts">
@@ -89,8 +87,7 @@ export const textVariants = `
 			{variant.replace('-', ' ')}
 		</Text>
 	{/each}
-</div>`;
-
+</div>`
 
 export const textResponsiveVariant = `
 <script lang="ts">
@@ -104,7 +101,7 @@ export const textResponsiveVariant = `
 	<Text variant={{ sm: 'copy-14', md: 'copy-16', lg: 'copy-20' }}>
 		Responsive Copy, Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 	</Text>
-</div>`;
+</div>`
 
 export const textModifiers = `
 <script lang="ts">
@@ -116,7 +113,7 @@ export const textModifiers = `
         The <strong>Evil Rabbit</strong> <em>jumps</em>
         over the <s>quick brown fox</s> <u>Lawful Meerkat</u>.
     </Text>
-</div>`;
+</div>`
 
 export const textTruncate = `
 <script lang="ts">
@@ -127,4 +124,4 @@ export const textTruncate = `
     <Text size={16} class="max-w-[100px]" truncate>
         The Evil Rabbit jumps.
     </Text>
-</div>`;
+</div>`
