@@ -4,33 +4,49 @@
 
 **Exports:**
 - `Button` - Button component
+- `ButtonProps`, `ButtonSize`, `ButtonVariant`, `ButtonShape` - types
 
-**Props:**
-- `shape`: 'circle' | 'square' | undefined
+**Props (Geist-aligned):**
 - `size`: 'tiny' | 'small' | 'medium' | 'large' (default: 'medium')
-- `variant`: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'primary')
-- `iconPrefix`: Component | undefined - Icon component to show before text
-- `iconSuffix`: Component | undefined - Icon component to show after text
-- `rounded-sm`: boolean (default: false) - Fully rounded button
-- `loading`: boolean (default: false) - Shows loading spinner
-- `disabled`: boolean (default: false)
-- `buttonElement`: HTMLButtonElement - Bindable reference to button element
-- `onclick`: (evt: Event) => void - Click handler
-- `class`: string - Additional CSS classes
-- Extends `HTMLButtonAttributes`
+- `variant`: 'default' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'default')
+- `shape`: 'square' | 'circle' | 'rounded' | undefined
+- `svgOnly`: boolean - Icon-only layout; requires aria-label or aria-labelledby
+- `prefix`: Snippet - Icon content before the label
+- `suffix`: Snippet - Icon content after the label
+- `shadow`: boolean - Soft elevation (often with shape="rounded")
+- `loading`: boolean - Keeps focus, sets aria-busy/aria-disabled, shows spinner
+- `disabled`: boolean
+- `buttonElement`: HTMLButtonElement - Bindable reference
+- `class`: ClassValue
+- `children`: Snippet
+- Extends `HTMLButtonAttributes` (default `type="button"`)
 
 **Usage:**
 ```svelte
 <script lang="ts">
 	import { Button } from 'kampsy-ui';
+	import { ArrowLeft, ArrowRight, ArrowUp } from 'kampsy-ui/icons';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" aria-label="tiny">upload</Button>
-	<Button size="small" aria-label="small">upload</Button>
-	<Button aria-label="medium">upload</Button>
-	<Button size="large" aria-label="large">upload</Button>
-</div>
+<Button size="small">Upload</Button>
+<Button variant="secondary">Upload</Button>
+
+<Button aria-label="Upload" shape="square" svgOnly>
+	<ArrowUp />
+</Button>
+
+<Button>
+	{#snippet prefix()}
+		<ArrowLeft />
+	{/snippet}
+	{#snippet suffix()}
+		<ArrowRight />
+	{/snippet}
+	Upload
+</Button>
+
+<Button variant="secondary" shape="rounded" shadow>Upload</Button>
+<Button loading>Upload</Button>
 ```
 
 ## Installation

@@ -40,10 +40,8 @@ export const menuPrefixAndSuffix = `
 
 <div class="w-full flex gap-6">
 	<Menu.Root>
-		<Menu.Button shape="square" size="small" type="secondary" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
-			<div class="w-4 h-4">
-				<MoreHorizontal />
-			</div>
+		<Menu.Button shape="square" size="small" variant="secondary" svgOnly aria-label="Actions" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
+			<MoreHorizontal />
 		</Menu.Button>
 		<Menu.Content class="w-[200px]">
 			<Menu.Item prefix={Accessibility}>Left</Menu.Item>
@@ -52,10 +50,8 @@ export const menuPrefixAndSuffix = `
 		</Menu.Content>
 	</Menu.Root>
 	<Menu.Root>
-		<Menu.Button shape="square" size="small" type="secondary" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
-			<div class="w-4 h-4">
-				<MoreHorizontal />
-			</div>
+		<Menu.Button shape="square" size="small" variant="secondary" svgOnly aria-label="Actions" aria-controls="menu" aria-expanded="false" aria-haspopup="true">
+			<MoreHorizontal />
 		</Menu.Button>
 		<Menu.Content class="w-[200px]">
 			<Menu.Item suffix={Accessibility}>Left</Menu.Item>

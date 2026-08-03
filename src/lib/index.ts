@@ -9,6 +9,7 @@ export { default as Badge } from "./badge/badge.svelte"
 
 // Button
 export { default as Button } from "./button/button.svelte"
+export type { ButtonProps, ButtonSize, ButtonVariant, ButtonShape } from "./button/types.js"
 
 // Calendar
 export { default as Calendar } from "./calendar/calendar.svelte"

@@ -139,13 +139,13 @@
 							shape="square"
 							size="small"
 							variant="secondary"
+							svgOnly
+							aria-label="Actions"
 							aria-controls="menu-3"
 							aria-expanded="false"
 							aria-haspopup="true"
 						>
-							<div class="w-4 h-4">
-								<MoreHorizontal />
-							</div>
+							<MoreHorizontal />
 						</Menu.Button>
 						<Menu.Content id="menu-3" aria-hidden="true" class="w-50">
 							<Menu.Item prefix={Accessibility}>Left</Menu.Item>
@@ -158,13 +158,13 @@
 							shape="square"
 							size="small"
 							variant="secondary"
+							svgOnly
+							aria-label="Actions"
 							aria-controls="menu-4"
 							aria-expanded="false"
 							aria-haspopup="true"
 						>
-							<div class="w-4 h-4">
-								<MoreHorizontal />
-							</div>
+							<MoreHorizontal />
 						</Menu.Button>
 						<Menu.Content id="menu-4" aria-hidden="true" class="w-50">
 							<Menu.Item suffix={Accessibility}>Left</Menu.Item>
@@ -239,8 +239,8 @@
 			size={{ sm: 14, md: 16, lg: 16 }}
 			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
 		>
-			An <RoundedCode text="aria-expanded" /> attribute, the value always being the opposite of
-			the aria-hidden value on the <RoundedCode text="Menu.Content" />.
+			An <RoundedCode text="aria-expanded" /> attribute, the value always being the opposite of the
+			aria-hidden value on the <RoundedCode text="Menu.Content" />.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}

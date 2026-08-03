@@ -109,11 +109,12 @@
 									<Button onclick={() => (activeSticky = false)} variant="secondary"
 										>Cancel</Button
 									>
-									<Button
-										iconPrefix={ArrowLeft}
-										onclick={() => (activeSticky = false)}
-										variant="secondary">Previous</Button
-									>
+									<Button onclick={() => (activeSticky = false)} variant="secondary">
+										{#snippet prefix()}
+											<ArrowLeft />
+										{/snippet}
+										Previous
+									</Button>
 								</div>
 								<Button onclick={() => (activeSticky = false)}>Submit</Button>
 							</Modal.Footer>
