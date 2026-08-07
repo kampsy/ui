@@ -10,8 +10,9 @@ export type {
 	AvatarWithIconProps,
 } from "./avatar/types.js"
 
-// Badege
-export { default as Badge } from "./badge/badge.svelte"
+// Badge
+export { Badge, badgeVariants } from "./badge/index.js"
+export type { BadgeProps, BadgeVariant, BadgeContrast, BadgeSize } from "./badge/index.js"
 
 // Button
 export { default as Button } from "./button/button.svelte"

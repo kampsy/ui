@@ -61,10 +61,10 @@
 						</Button>
 
 						<div class="flex items-center gap-1">
-							<Badge icon={Shield} size="large" variant="blue">purple</Badge>
-							<Badge icon={Shield} size="medium" variant="purple">purple</Badge>
-							<Badge icon={Shield} size="medium" variant="amber-subtle">purple</Badge>
-							<Badge icon={Shield} size="large" variant="red-subtle">purple</Badge>
+							<Badge icon={Shield} size="lg" variant="blue">purple</Badge>
+							<Badge icon={Shield} size="md" variant="purple">purple</Badge>
+							<Badge icon={Shield} size="md" variant="amber" contrast="low">purple</Badge>
+							<Badge icon={Shield} size="lg" variant="red" contrast="low">purple</Badge>
 						</div>
 
 						<Button size="small" shape="square" svgOnly aria-label="Globe">

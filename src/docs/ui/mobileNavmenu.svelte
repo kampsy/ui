@@ -26,7 +26,7 @@
 border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400 z-1000"
 		>
 			<!--Close button-->
-			<div class="absolute top-4 right-[22px] w-[40px] h-[40px] z-30">
+			<div class="absolute top-4 right-5.5 w-10 h-10 z-30">
 				<div class="w-full h-full flex items-center justify-center">
 					<button
 						onclick={() => (isOpen = false)}
