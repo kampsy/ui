@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { AsideT } from "./types.js"
-	import { page } from "$app/stores"
+	import { page } from "$app/state"
 	import { Badge } from "$lib/index.js"
 
 	interface Props {
@@ -10,7 +10,7 @@
 	let { asideDataList = undefined }: Props = $props()
 
 	const setActive = (url: string) => {
-		if ($page.url.pathname.endsWith(url)) {
+		if (page.url.pathname.endsWith(url)) {
 			return "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-gray-alpha-100 dark:bg-kui-dark-gray-alpha-100 "
 		}
 		return "text-kui-light-gray-900 dark:text-kui-dark-gray-900"

@@ -43,6 +43,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "avatar",
 				url: "/avatar",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "badge",
@@ -51,6 +55,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "button",
 				url: "/button",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "calendar",
@@ -67,10 +75,6 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "collapse",
 				url: "/collapse",
-				badge: {
-					name: "updated",
-					variant: "purple",
-				},
 			},
 			{
 				name: "description",
@@ -79,10 +83,6 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "empty state",
 				url: "/empty-state",
-				badge: {
-					name: "new",
-					variant: "blue",
-				},
 			},
 			{
 				name: "error",
@@ -95,10 +95,6 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "keyboard input",
 				url: "/keyboard-input",
-				badge: {
-					name: "new",
-					variant: "blue",
-				},
 			},
 			{
 				name: "menu",
@@ -143,10 +139,6 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "snippet",
 				url: "/snippet",
-				badge: {
-					name: "new",
-					variant: "blue",
-				},
 			},
 			{
 				name: "split button",
