@@ -2,7 +2,13 @@ const config = {
 	branches: ["main"],
 	plugins: [
 		"@semantic-release/commit-analyzer",
-		"@semantic-release/release-notes-generator",
+		"./scripts/semantic-release-pr-notes.cjs",
+		[
+			"@semantic-release/exec",
+			{
+				verifyConditionsCmd: "pnpm check",
+			},
+		],
 		[
 			"@semantic-release/git",
 			{
@@ -10,7 +16,12 @@ const config = {
 				message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
 			},
 		],
-		"@semantic-release/github",
+		[
+			"@semantic-release/github",
+			{
+				releaseBodyTemplate: "<%= nextRelease.notes %>",
+			},
+		],
 	],
 }
 module.exports = config
