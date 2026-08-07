@@ -26,32 +26,31 @@ Add the following to the layout.css file
 
 **Exports:**
 - `Avatar` - Main avatar component
-- `AvatarGroup` - Group of avatars
-- `AvatarText` - Text-based avatar components (Root, Heading, Subheading, Content)
+- `AvatarGroup` - Group of stacked avatars
+- `AvatarWithIcon` - Avatar centered around an icon snippet
+- `AvatarProps`, `AvatarMember`, `AvatarGroupProps`, `AvatarWithIconProps` - types
 
 **Usage:**
 ```svelte
-import { Avatar, AvatarGroup, AvatarText } from 'kampsy-ui';
+<script lang="ts">
+  import { Avatar, AvatarGroup, AvatarWithIcon } from 'kampsy-ui';
+  import { ArrowUpCircle } from '@lucide/svelte';
 
-// Avatar Group
-const members = [
-  { name: 'Evil Rabbit', imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64' },
-  { name: 'Evil Rabbit', imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64' }
-];
+  const members = [
+    { username: 'evilrabbit' },
+    { username: 'severinlandolt' },
+    { username: 'rauchg' },
+  ];
+</script>
 
-<AvatarGroup members={members.slice(0, 3)} size={32} />
-<AvatarGroup limit={4} {members} size={32} />
-
-// Avatar Text
-<AvatarText.Root size={40}>
-  <AvatarText.Content>
-    <AvatarText.Heading>Jese Leos</AvatarText.Heading>
-    <AvatarText.Subheading>Joined in August 2014</AvatarText.Subheading>
-  </AvatarText.Content>
-</AvatarText.Root>
-
-// Avatar Placeholder
-<Avatar placeholder size={90} />
+<div class="flex items-center gap-4">
+  <Avatar username="evilrabbit" size={32} />
+  <AvatarGroup {members} size={32} limit={4} />
+  <Avatar letter="SL" size={32} />
+  <AvatarWithIcon size={32} iconBackground>
+    {#snippet icon()}<ArrowUpCircle />{/snippet}
+  </AvatarWithIcon>
+</div>
 ```
 
 ### Badge
@@ -1291,7 +1290,7 @@ Many components follow a compound component pattern where a root component conta
 - `Kbd.*` - Keyboard input components
 - `Choicebox.*` - Choicebox components
 - `EmptyState.*` - Empty state components
-- `AvatarText.*` - Avatar text components
+- `AvatarWithIcon` - Avatar centered around an icon snippet
 
 ### Snippet-based Components
 

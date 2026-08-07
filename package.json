@@ -147,5 +147,8 @@
 			"@semantic-release/npm",
 			"@semantic-release/github"
 		]
+	},
+	"dependencies": {
+		"@lucide/svelte": "^1.28.0"
 	}
 }

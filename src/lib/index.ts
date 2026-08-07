@@ -3,6 +3,12 @@ export * from "./types/index.js"
 
 // Avatar
 export * from "./avatar/index.js"
+export type {
+	AvatarProps,
+	AvatarMember,
+	AvatarGroupProps,
+	AvatarWithIconProps,
+} from "./avatar/types.js"
 
 // Badege
 export { default as Badge } from "./badge/badge.svelte"
