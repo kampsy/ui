@@ -47,7 +47,7 @@ Add the following to the layout.css file
   <Avatar username="evilrabbit" size={32} />
   <AvatarGroup {members} size={32} limit={4} />
   <Avatar letter="SL" size={32} />
-  <AvatarWithIcon size={32} iconBackground>
+  <AvatarWithIcon size={32} iconBackground role="img" aria-label="Upload avatar">
     {#snippet icon()}<ArrowUpCircle />{/snippet}
   </AvatarWithIcon>
 </div>

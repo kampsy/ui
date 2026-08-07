@@ -88,13 +88,13 @@ export const avatarWithIcon = `
 </script>
 
 <div class="flex items-center gap-4">
-	<AvatarWithIcon size={32} iconBackground>
+	<AvatarWithIcon size={32} iconBackground role="img" aria-label="Upload avatar">
 		{#snippet icon()}<ArrowUpCircle />{/snippet}
 	</AvatarWithIcon>
-	<AvatarWithIcon size={32} iconBackground>
+	<AvatarWithIcon size={32} iconBackground role="img" aria-label="Verified avatar">
 		{#snippet icon()}<CircleCheck />{/snippet}
 	</AvatarWithIcon>
-	<AvatarWithIcon size={32} iconBackground>
+	<AvatarWithIcon size={32} iconBackground role="img" aria-label="Information avatar">
 		{#snippet icon()}<Info />{/snippet}
 	</AvatarWithIcon>
 </div>`

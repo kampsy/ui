@@ -1,4 +1,5 @@
-import type { ClassValue } from "svelte/elements"
+import type { ClassValue, HTMLAttributes } from "svelte/elements"
+import type { Snippet } from "svelte"
 
 /** Single member inside an AvatarGroup. */
 export interface AvatarMember {
@@ -44,7 +45,7 @@ export interface AvatarGroupProps {
 }
 
 /** Avatar rendered with a centered icon. */
-export interface AvatarWithIconProps {
+export interface AvatarWithIconProps extends Omit<HTMLAttributes<HTMLSpanElement>, "class"> {
 	/** Diameter in px. Default: 32 */
 	size?: number
 	icon: Snippet
@@ -53,5 +54,4 @@ export interface AvatarWithIconProps {
 	class?: ClassValue
 }
 
-import type { Snippet } from "svelte"
 export type { Snippet }

@@ -181,17 +181,17 @@
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
 				<div class="flex items-center gap-6">
-					<AvatarWithIcon size={32} iconBackground>
+					<AvatarWithIcon size={32} iconBackground role="img" aria-label="Upload avatar">
 						{#snippet icon()}
 							<CircleArrowUp />
 						{/snippet}
 					</AvatarWithIcon>
-					<AvatarWithIcon size={32} iconBackground>
+					<AvatarWithIcon size={32} iconBackground role="img" aria-label="Verified avatar">
 						{#snippet icon()}
 							<CircleCheck />
 						{/snippet}
 					</AvatarWithIcon>
-					<AvatarWithIcon size={32} iconBackground>
+					<AvatarWithIcon size={32} iconBackground role="img" aria-label="Information avatar">
 						{#snippet icon()}
 							<Info />
 						{/snippet}
