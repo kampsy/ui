@@ -24,7 +24,7 @@
 {#snippet iconSnip()}
 	{#if icon}
 		{@const Icon = icon}
-		<span class={iconSizeClass}>
+		<span class="flex items-center justify-center {iconSizeClass}">
 			<Icon />
 		</span>
 	{/if}
