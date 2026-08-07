@@ -26,32 +26,31 @@ Add the following to the layout.css file
 
 **Exports:**
 - `Avatar` - Main avatar component
-- `AvatarGroup` - Group of avatars
-- `AvatarText` - Text-based avatar components (Root, Heading, Subheading, Content)
+- `AvatarGroup` - Group of stacked avatars
+- `AvatarWithIcon` - Avatar centered around an icon snippet
+- `AvatarProps`, `AvatarMember`, `AvatarGroupProps`, `AvatarWithIconProps` - types
 
 **Usage:**
 ```svelte
-import { Avatar, AvatarGroup, AvatarText } from 'kampsy-ui';
+<script lang="ts">
+  import { Avatar, AvatarGroup, AvatarWithIcon } from 'kampsy-ui';
+  import { ArrowUpCircle } from '@lucide/svelte';
 
-// Avatar Group
-const members = [
-  { name: 'Evil Rabbit', imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64' },
-  { name: 'Evil Rabbit', imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64' }
-];
+  const members = [
+    { username: 'evilrabbit' },
+    { username: 'severinlandolt' },
+    { username: 'rauchg' },
+  ];
+</script>
 
-<AvatarGroup members={members.slice(0, 3)} size={32} />
-<AvatarGroup limit={4} {members} size={32} />
-
-// Avatar Text
-<AvatarText.Root size={40}>
-  <AvatarText.Content>
-    <AvatarText.Heading>Jese Leos</AvatarText.Heading>
-    <AvatarText.Subheading>Joined in August 2014</AvatarText.Subheading>
-  </AvatarText.Content>
-</AvatarText.Root>
-
-// Avatar Placeholder
-<Avatar placeholder size={90} />
+<div class="flex items-center gap-4">
+  <Avatar username="evilrabbit" size={32} />
+  <AvatarGroup {members} size={32} limit={4} />
+  <Avatar letter="SL" size={32} />
+  <AvatarWithIcon size={32} iconBackground role="img" aria-label="Upload avatar">
+    {#snippet icon()}<ArrowUpCircle />{/snippet}
+  </AvatarWithIcon>
+</div>
 ```
 
 ### Badge
@@ -92,63 +91,44 @@ import { Shield } from 'kampsy-ui/icons';
 
 **Exports:**
 - `Button` - Button component
+- `ButtonProps`, `ButtonSize`, `ButtonVariant`, `ButtonShape` - types
 
-**Props:**
-- `shape`: 'circle' | 'square' | undefined
+**Props (Geist-aligned):**
 - `size`: 'tiny' | 'small' | 'medium' | 'large' (default: 'medium')
-- `variant`: 'primary' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'primary')
-- `iconPrefix`: Component | undefined - Icon component to show before text
-- `iconSuffix`: Component | undefined - Icon component to show after text
-- `rounded-sm`: boolean (default: false) - Fully rounded button
-- `loading`: boolean (default: false) - Shows loading spinner
-- `disabled`: boolean (default: false)
-- `buttonElement`: HTMLButtonElement - Bindable reference to button element
-- `onclick`: (evt: Event) => void - Click handler
-- `class`: string - Additional CSS classes
-- Extends `HTMLButtonAttributes`
+- `variant`: 'default' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'default')
+- `shape`: 'square' | 'circle' | 'rounded' | undefined
+- `svgOnly`: boolean - Icon-only layout; requires aria-label or aria-labelledby
+- `prefix` / `suffix`: Snippet - Leading/trailing icon content
+- `shadow`: boolean - Soft elevation (often with shape="rounded")
+- `loading`: boolean - Keeps focus, sets aria-busy/aria-disabled, shows spinner
+- `disabled`: boolean
+- `buttonElement`: HTMLButtonElement - Bindable reference
+- `class`: ClassValue
+- `children`: Snippet
+- Extends `HTMLButtonAttributes` (default `type="button"`)
 
 **Usage:**
 ```svelte
 import { Button } from 'kampsy-ui';
 import { ArrowLeft, ArrowRight, ArrowUp } from 'kampsy-ui/icons';
 
-// Sizes
-<Button size="tiny">upload</Button>
-<Button size="small">upload</Button>
-<Button>upload</Button> <!-- medium default -->
-<Button size="large">upload</Button>
+<Button size="small">Upload</Button>
+<Button variant="secondary">Upload</Button>
 
-// Variants
-<Button variant="secondary">upload</Button>
-<Button variant="tertiary">upload</Button>
-<Button variant="error">upload</Button>
-<Button variant="warning">upload</Button>
-
-// Shapes (square/circle)
-<Button shape="square" size="tiny">
-  <div class="w-[16px] h-[16px]">
-    <ArrowUp />
-  </div>
-</Button>
-<Button shape="circle" size="large">
-  <div class="w-[16px] h-[16px]">
-    <ArrowUp />
-  </div>
+<Button shape="square" svgOnly aria-label="Upload">
+  <ArrowUp />
 </Button>
 
-// With icons
-<Button iconPrefix={ArrowLeft}>upload</Button>
-<Button iconSuffix={ArrowRight}>upload</Button>
-<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight}>upload</Button>
+<Button>
+  {#snippet prefix()}
+    <ArrowLeft />
+  {/snippet}
+  Upload
+</Button>
 
-// Rounded
-<Button rounded>upload</Button>
-
-// Loading state
-<Button loading>upload</Button>
-
-// Disabled
-<Button disabled>upload</Button>
+<Button variant="secondary" shape="rounded" shadow>Upload</Button>
+<Button loading>Upload</Button>
+<Button disabled>Upload</Button>
 ```
 
 ### Calendar
@@ -1310,7 +1290,7 @@ Many components follow a compound component pattern where a root component conta
 - `Kbd.*` - Keyboard input components
 - `Choicebox.*` - Choicebox components
 - `EmptyState.*` - Empty state components
-- `AvatarText.*` - Avatar text components
+- `AvatarWithIcon` - Avatar centered around an icon snippet
 
 ### Snippet-based Components
 

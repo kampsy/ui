@@ -49,8 +49,13 @@ export const modalSticky = `
     		</Modal.Body>
     		<Modal.Footer>
     			<div class="flex gap-3">
-					<Button onclick={() => (activeSticky = false)} type="secondary">Cancel</Button>
-					<Button prefix={ArrowLeft} onclick={() => (activeSticky = false)} type="secondary">Previous</Button>
+					<Button onclick={() => (activeSticky = false)} variant="secondary">Cancel</Button>
+					<Button onclick={() => (activeSticky = false)} variant="secondary">
+						{#snippet prefix()}
+							<ArrowLeft />
+						{/snippet}
+						Previous
+					</Button>
 				</div>
     			<Button onclick={() => (active = false)}>Submit</Button>
     		</Modal.Footer>

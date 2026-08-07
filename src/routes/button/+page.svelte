@@ -15,15 +15,11 @@
 		buttonShapes,
 		buttonSize,
 		buttonVariants,
+		buttonDisabledVariants,
 	} from "../../docs/data/button.js"
 	import type { Snippet } from "svelte"
 	import Pagination from "$lib/pagination/pagination.svelte"
 	import ArrowUp from "$lib/icons/arrow-up.svelte"
-	import { Tabs, Text } from "$lib/index.js"
-	import { fade } from "svelte/transition"
-	import { Webhook, Accessibility } from "$lib/icons/index.js"
-
-	let selected = $state("implementation")
 </script>
 
 <svelte:head>
@@ -31,29 +27,17 @@
 </svelte:head>
 
 {#snippet button()}
-	<Row bottomLine={false}>
+	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			button
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			Trigger an action or event, such as submitting a form or displaying a dialog.
 		</p>
-	</Row>
-{/snippet}
-
-{#snippet tabSnip()}
-	<Row bottomLine={false} class="py-1!">
-		<Tabs
-			bind:selected
-			tabs={[
-				{ title: "Implementation", value: "implementation", icon: Webhook },
-				{ title: "Accessibility", value: "accessibility", icon: Accessibility },
-			]}
-		/>
 	</Row>
 {/snippet}
 
@@ -62,7 +46,7 @@
 		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="w-full flex flex-wrap gap-4 justify-between">
+			<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
 				{@render demo()}
 			</div>
 		</div>
@@ -80,10 +64,10 @@
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" aria-label="tiny">upload</Button>
-				<Button size="small" aria-label="small">upload</Button>
-				<Button aria-label="medium">upload</Button>
-				<Button size="large" aria-label="large">upload</Button>
+				<Button size="tiny">Upload</Button>
+				<Button size="small">Upload</Button>
+				<Button>Upload</Button>
+				<Button size="large">Upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonSize)}
 		</div>
@@ -92,13 +76,34 @@
 
 {#snippet types()}
 	<Row>
-		<LinkH2 href="/button#variants">variants</LinkH2>
+		<LinkH2 href="/button#all-types-and-sizes-in-comparison"
+			>All Types and Sizes in comparison</LinkH2
+		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button variant="secondary" aria-label="secondary">upload</Button>
-				<Button variant="tertiary" aria-label="tertiary">upload</Button>
-				<Button variant="error" aria-label="error">upload</Button>
-				<Button variant="warning" aria-label="warning">upload</Button>
+				<div class="flex flex-col gap-6">
+					<div class="flex items-center gap-3">
+						<Button size="small" variant="default">Upload</Button>
+						<Button size="small" variant="error">Upload</Button>
+						<Button size="small" variant="warning">Upload</Button>
+						<Button size="small" variant="secondary">Upload</Button>
+						<Button size="small" variant="tertiary">Upload</Button>
+					</div>
+					<div class="flex items-center gap-3">
+						<Button variant="default">Upload</Button>
+						<Button variant="error">Upload</Button>
+						<Button variant="warning">Upload</Button>
+						<Button variant="secondary">Upload</Button>
+						<Button variant="tertiary">Upload</Button>
+					</div>
+					<div class="flex items-center gap-3">
+						<Button size="large" variant="default">Upload</Button>
+						<Button size="large" variant="error">Upload</Button>
+						<Button size="large" variant="warning">Upload</Button>
+						<Button size="large" variant="secondary">Upload</Button>
+						<Button size="large" variant="tertiary">Upload</Button>
+					</div>
+				</div>
 			{/snippet}
 			{@render demoAndCode(demo, buttonVariants)}
 		</div>
@@ -120,57 +125,41 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Icon-only buttons should include the {@render roundedCode("shape")} prop and an
+			Icon-only buttons should include the {@render roundedCode("svgOnly")} prop and an
 			{@render roundedCode("aria-label")}.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button aria-label="square tiny" shape="square" size="tiny">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="square" size="tiny" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="square small" shape="square" size="small">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="square" size="small" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="square medium" shape="square">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="square" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="square large" shape="square" size="large">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="square" size="large" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="circle tiny" shape="circle" size="tiny">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="circle" size="tiny" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="circle small" shape="circle" size="small">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="circle" size="small" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="circle medium" shape="circle">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="circle" svgOnly>
+					<ArrowUp />
 				</Button>
 
-				<Button aria-label="circle large" shape="circle" size="large">
-					<div class="w-4 h-4">
-						<ArrowUp />
-					</div>
+				<Button aria-label="Upload" shape="circle" size="large" svgOnly>
+					<ArrowUp />
 				</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonShapes)}
@@ -184,13 +173,27 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
-				<Button iconSuffix={ArrowRight} aria-label="icon suffix">upload</Button>
-				<Button
-					iconPrefix={ArrowLeft}
-					iconSuffix={ArrowRight}
-					aria-label="icon prefix and suffix">upload</Button
-				>
+				<Button>
+					{#snippet prefix()}
+						<ArrowLeft />
+					{/snippet}
+					Upload
+				</Button>
+				<Button>
+					{#snippet suffix()}
+						<ArrowRight />
+					{/snippet}
+					Upload
+				</Button>
+				<Button>
+					{#snippet prefix()}
+						<ArrowLeft />
+					{/snippet}
+					{#snippet suffix()}
+						<ArrowRight />
+					{/snippet}
+					Upload
+				</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonPrefixAndSuffix)}
 		</div>
@@ -203,23 +206,16 @@
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
 		>
-			Combination of {@render roundedCode("rounded-sm")} and the
-			{@render roundedCode("shadow-sm")} prop, often used on marketing pages.
+			Combination of {@render roundedCode('shape="rounded"')} and the
+			{@render roundedCode("shadow")} prop, often used on marketing pages.
 		</p>
 
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded-sm"
-					>upload</Button
-				>
-				<Button size="small" variant="secondary" rounded aria-label="small rounded-sm"
-					>upload</Button
-				>
-				<Button variant="secondary" rounded aria-label="medium rounded-sm">upload</Button>
-				<Button size="large" variant="secondary" rounded aria-label="large rounded-sm"
-					>upload</Button
-				>
+				<Button size="small" variant="secondary" shape="rounded" shadow>Upload</Button>
+				<Button variant="secondary" shape="rounded" shadow>Upload</Button>
+				<Button size="large" variant="secondary" shape="rounded" shadow>Upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonRounded)}
 		</div>
@@ -232,10 +228,9 @@
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" loading aria-label="tiny loading">upload</Button>
-				<Button size="small" loading aria-label="small loading">upload</Button>
-				<Button loading aria-label="medium loading">upload</Button>
-				<Button size="large" loading aria-label="large loading">upload</Button>
+				<Button size="small" loading>Upload</Button>
+				<Button loading>Upload</Button>
+				<Button size="large" loading>Upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonLoading)}
 		</div>
@@ -244,79 +239,129 @@
 
 {#snippet disabled()}
 	<Row>
-		<LinkH2 href="/button#disabled" aria-label="disabled">disabled</LinkH2>
+		<LinkH2 href="/button#disabled" aria-label="Disabled">Disabled</LinkH2>
 		<!--The example with code snippet-->
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Button size="tiny" disabled aria-label="tiny disabled">upload</Button>
-				<Button size="small" disabled aria-label="small disabled">upload</Button>
-				<Button disabled aria-label="tiny disabled">upload</Button>
-				<Button size="large" disabled>upload</Button>
+				<Button disabled size="small">Upload</Button>
+				<Button disabled>Upload</Button>
+				<Button disabled size="large">Upload</Button>
 			{/snippet}
 			{@render demoAndCode(demo, buttonDisabled)}
 		</div>
 	</Row>
 {/snippet}
 
-{#snippet accessibility()}
+{#snippet disabledVariants()}
+	<Row>
+		<LinkH2 href="/button#disabled-variants" aria-label="Disabled variants"
+			>Disabled variants</LinkH2
+		>
+		<!--The example with code snippet-->
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<Button disabled>Default</Button>
+				<Button disabled variant="secondary">Secondary</Button>
+				<Button disabled variant="tertiary">Tertiary</Button>
+				<Button disabled variant="error">Error</Button>
+				<Button disabled variant="warning">Warning</Button>
+			{/snippet}
+			{@render demoAndCode(demo, buttonDisabledVariants)}
+		</div>
+	</Row>
+{/snippet}
+
+{#snippet bestPractices()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
 		>
-			Accessibility
+			Best Practices
 		</h2>
-		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
-		>
-			This component aims to adhere to {@render roundedCode("WCAG 2.2 (level AA)")} guidelines,
-			and it is important to maintain this commitment when implementing the component across other
-			projects. This section provides guidance to support that effort.
-		</p>
-		<Text
-			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		>
-			A button that is focused should be activated using the {@render roundedCode("Space")} or {@render roundedCode(
-				"Enter",
-			)} keys.
-		</Text>
-		<Text
-			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		>
-			It is important for the button to have a clear description, which can be provided either
-			as text on the button itself or by using the {@render roundedCode("aria-label")} or {@render roundedCode(
-				"aria-labelledby",
-			)} attributes.
-		</Text>
-		<Text
-			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		>
-			If the button includes a description, it should also have an {@render roundedCode(
-				"aria-labelledby",
-			)} attribute that matches the ID of the description.
-		</Text>
-		<Text
-			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		>
-			After the button is activated, ensure that focus is set appropriately based on the type
-			of action that the button performs. For guidance, refer to the <a
-				href="https://www.w3.org/WAI/ARIA/apg/patterns/button/"
-				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900"
-				>W3C WAI-ARIA Authoring Practices Button Design Pattern</a
-			> for examples.
-		</Text>
-		<Text
-			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		>
-			In some situations, it may be important to inform the user that a button is in a pressed
-			state—such as when a button opens a contextual menu. This can be achieved by adding {@render roundedCode(
-				'aria-pressed="true"',
-			)} to the button using JavaScript when it is clicked, and removing it when necessary.
-		</Text>
+		<div class="mt-4">
+			<ul class="mt-4 list-disc">
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Use {@render roundedCode("Button")} for actions that mutate state (deploy, save, delete);
+					use {@render roundedCode("ButtonLink")} for navigation that changes the URL. Switch to
+					a <a href="/menu" class="underline">Menu</a> or
+					<a href="/split-button" class="underline">Split Button</a> when more than one related action
+					shares a row.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Default {@render roundedCode("Button")} is the primary style. Pass {@render roundedCode(
+						'variant="secondary"',
+					)} for the supporting action and {@render roundedCode('variant="error"')} for destructive
+					confirmations.
+					{@render roundedCode("primary")}, {@render roundedCode("success")}, {@render roundedCode(
+						"ghost",
+					)}, and {@render roundedCode("violet")} are not valid {@render roundedCode(
+						"variant",
+					)} values.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					For form submits, use {@render roundedCode('type="submit"')}. The HTML {@render roundedCode(
+						"type",
+					)} attribute controls the button behavior; the visual style lives on {@render roundedCode(
+						"variant",
+					)}.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Pass {@render roundedCode("loading")} instead of swapping in a spinner so the button stays
+					focusable and announces the busy state to assistive tech.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Disable a button only when the action is impossible right now (missing input,
+					insufficient permission); pair with a
+					<a href="/tooltip" class="underline">Tooltip</a> that explains why.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Title Case the label and name what happens: {@render roundedCode("Deploy Project")}, {@render roundedCode(
+						"Invite Member",
+					)}, {@render roundedCode("Rotate Key")}. Avoid bare verbs ({@render roundedCode(
+						"Submit",
+					)}) and generic confirms ({@render roundedCode("OK")}, {@render roundedCode(
+						"Confirm",
+					)}).
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Destructive buttons follow {@render roundedCode("Verb + Noun")} and pair 1:1 with their
+					toast: {@render roundedCode("Delete Project")} then
+					{@render roundedCode("Project deleted")}. Mode-switch buttons append {@render roundedCode(
+						"Instead",
+					)}: {@render roundedCode("Use a Recovery Code Instead")}.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Icon-only buttons require both {@render roundedCode("svgOnly")} and {@render roundedCode(
+						"aria-label",
+					)}; the component warns in development without them. The {@render roundedCode(
+						"aria-label",
+					)} names the action and the target ({@render roundedCode("Copy deployment URL")}),
+					not the icon ({@render roundedCode("Copy")}).
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				>
+					Don't set {@render roundedCode("aria-label")} on a button that already has visible text;
+					it overrides the label and creates a screen-reader mismatch.
+				</li>
+			</ul>
+		</div>
 	</Row>
 {/snippet}
 
@@ -331,25 +376,15 @@
 
 {#snippet cont()}
 	{@render button()}
-	{@render tabSnip()}
-
-	{#if selected == "implementation"}
-		<section transition:fade>
-			{@render size()}
-			{@render types()}
-			{@render shapes()}
-			{@render prefixAndSuffix()}
-			{@render rounded()}
-			{@render loading()}
-			{@render disabled()}
-		</section>
-	{/if}
-
-	{#if selected == "accessibility"}
-		<section transition:fade>
-			{@render accessibility()}
-		</section>
-	{/if}
+	{@render size()}
+	{@render types()}
+	{@render shapes()}
+	{@render prefixAndSuffix()}
+	{@render rounded()}
+	{@render loading()}
+	{@render disabled()}
+	{@render disabledVariants()}
+	{@render bestPractices()}
 
 	{@render prevAndNext()}
 {/snippet}

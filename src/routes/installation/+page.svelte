@@ -76,8 +76,7 @@
 		>
 			You will then see the question: {@render roundedCode(
 				"What would you like to add to your project?",
-			)} Use the arrow keys to navigate, and spacebar to select or deselect options. Choose the
-			following:
+			)} Use the arrow keys to navigate, and spacebar to select or deselect options. Choose the following:
 			{@render roundedCode("prettier")} ,
 			{@render roundedCode("eslint")} ,
 			{@render roundedCode("vitest")} ,

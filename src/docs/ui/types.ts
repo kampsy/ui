@@ -1,27 +1,12 @@
+import type { BadgeVariant } from "$lib/badge/types.js"
+
 export type AsideT = {
 	title: {
 		name: string
 		badge?:
 			| {
 					name: string
-					variant:
-						| "gray"
-						| "gray-subtle"
-						| "blue"
-						| "blue-subtle"
-						| "purple"
-						| "purple-subtle"
-						| "amber"
-						| "amber-subtle"
-						| "red"
-						| "red-subtle"
-						| "pink"
-						| "pink-subtle"
-						| "green"
-						| "green-subtle"
-						| "teal"
-						| "teal-subtle"
-						| "inverted"
+					variant: BadgeVariant
 			  }
 			| undefined
 	}
@@ -31,24 +16,7 @@ export type AsideT = {
 		badge?:
 			| {
 					name: string
-					variant:
-						| "gray"
-						| "gray-subtle"
-						| "blue"
-						| "blue-subtle"
-						| "purple"
-						| "purple-subtle"
-						| "amber"
-						| "amber-subtle"
-						| "red"
-						| "red-subtle"
-						| "pink"
-						| "pink-subtle"
-						| "green"
-						| "green-subtle"
-						| "teal"
-						| "teal-subtle"
-						| "inverted"
+					variant: BadgeVariant
 			  }
 			| undefined
 	}>

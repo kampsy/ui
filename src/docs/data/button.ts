@@ -3,11 +3,11 @@ export const buttonSize = `
 	import { Button } from 'kampsy-ui';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" aria-label="tiny">upload</Button>
-	<Button size="small" aria-label="small">upload</Button>
-	<Button aria-label="medium">upload</Button>
-	<Button size="large" aria-label="large">upload</Button>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button size="tiny" aria-label="tiny">Upload</Button>
+	<Button size="small" aria-label="small">Upload</Button>
+	<Button aria-label="medium">Upload</Button>
+	<Button size="large" aria-label="large">Upload</Button>
 </div>`
 
 export const buttonVariants = `
@@ -15,11 +15,28 @@ export const buttonVariants = `
 	import { Button } from 'kampsy-ui';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button variant="secondary" aria-label="secondary" >upload</Button>
-	<Button variant="tertiary" aria-label="tertiary">upload</Button>
-	<Button variant="error" aria-label="error">upload</Button>
-	<Button variant="warning" aria-label="warning">upload</Button>
+<div class="flex flex-col gap-6">
+	<div class="flex items-center gap-3">
+		<Button size="small" variant="default">Upload</Button>
+		<Button size="small" variant="error">Upload</Button>
+		<Button size="small" variant="warning">Upload</Button>
+		<Button size="small" variant="secondary">Upload</Button>
+		<Button size="small" variant="tertiary">Upload</Button>
+	</div>
+	<div class="flex items-center gap-3">
+		<Button variant="default">Upload</Button>
+		<Button variant="error">Upload</Button>
+		<Button variant="warning">Upload</Button>
+		<Button variant="secondary">Upload</Button>
+		<Button variant="tertiary">Upload</Button>
+	</div>
+	<div class="flex items-center gap-3">
+		<Button size="large" variant="default">Upload</Button>
+		<Button size="large" variant="error">Upload</Button>
+		<Button size="large" variant="warning">Upload</Button>
+		<Button size="large" variant="secondary">Upload</Button>
+		<Button size="large" variant="tertiary">Upload</Button>
+	</div>
 </div>`
 
 export const buttonShapes = `
@@ -28,53 +45,37 @@ export const buttonShapes = `
 	import { ArrowUp } from 'kampsy-ui/icons';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button aria-label="tiny square" shape="square" size="tiny">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button aria-label="Upload" shape="square" size="tiny" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="small square" shape="square" size="small">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="square" size="small" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="medium square" shape="square">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="square" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="large square" shape="square" size="large">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="square" size="large" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="tiny circle" shape="circle" size="tiny">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="circle" size="tiny" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="small circle" shape="circle" size="small">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="circle" size="small" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="medium circle" shape="circle">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="circle" svgOnly>
+		<ArrowUp />
 	</Button>
 
-	<Button aria-label="large circle" shape="circle" size="large">
-		<div class="w-4 h-4">
-			<ArrowUp />
-		</div>
+	<Button aria-label="Upload" shape="circle" size="large" svgOnly>
+		<ArrowUp />
 	</Button>
 </div>`
 
@@ -84,10 +85,28 @@ export const buttonPrefixAndSuffix = `
 	import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button iconPrefix={ArrowLeft} aria-label="icon prefix">upload</Button>
-	<Button iconSuffix={ArrowRight} aria-label="icon suffix">upload</Button>
-	<Button iconPrefix={ArrowLeft} iconSuffix={ArrowRight} aria-label="icon prefix and suffix">upload</Button>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button>
+		{#snippet prefix()}
+			<ArrowLeft />
+		{/snippet}
+		Upload
+	</Button>
+	<Button>
+		{#snippet suffix()}
+			<ArrowRight />
+		{/snippet}
+		Upload
+	</Button>
+	<Button>
+		{#snippet prefix()}
+			<ArrowLeft />
+		{/snippet}
+		{#snippet suffix()}
+			<ArrowRight />
+		{/snippet}
+		Upload
+	</Button>
 </div>`
 
 export const buttonRounded = `
@@ -95,11 +114,10 @@ export const buttonRounded = `
 	import { Button } from 'kampsy-ui';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" variant="secondary" rounded aria-label="tiny rounded-sm">upload</Button>
-	<Button size="small" variant="secondary" rounded aria-label="small rounded-sm">upload</Button>
-	<Button variant="secondary" rounded aria-label="medium rounded-sm">upload</Button>
-	<Button size="large" variant="secondary" rounded aria-label="large rounded-sm">upload</Button>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button size="small" variant="secondary" shape="rounded" shadow>Upload</Button>
+	<Button variant="secondary" shape="rounded" shadow>Upload</Button>
+	<Button size="large" variant="secondary" shape="rounded" shadow>Upload</Button>
 </div>`
 
 export const buttonLoading = `
@@ -107,11 +125,10 @@ export const buttonLoading = `
 	import { Button } from 'kampsy-ui';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" loading aria-label="tiny loading">upload</Button>
-	<Button size="small" loading aria-label="small loading">upload</Button>
-	<Button loading aria-label="medium loading">upload</Button>
-	<Button size="large" loading aria-label="large loading">upload</Button>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button size="small" loading>Upload</Button>
+	<Button loading>Upload</Button>
+	<Button size="large" loading>Upload</Button>
 </div>`
 
 export const buttonDisabled = `
@@ -119,9 +136,21 @@ export const buttonDisabled = `
 	import { Button } from 'kampsy-ui';
 </script>
 
-<div class="w-full flex flex-wrap gap-4 justify-between">
-	<Button size="tiny" disabled aria-label="tiny disabled">upload</Button>
-	<Button size="small" disabled aria-label="small disabled">upload</Button>
-	<Button disabled aria-label="medium disabled">upload</Button>
-	<Button size="large" disabled aria-label="large disabled">upload</Button>
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button disabled size="small">Upload</Button>
+	<Button disabled>Upload</Button>
+	<Button disabled size="large">Upload</Button>
+</div>`
+
+export const buttonDisabledVariants = `
+<script lang="ts">
+	import { Button } from 'kampsy-ui';
+</script>
+
+<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+	<Button disabled>Default</Button>
+	<Button disabled variant="secondary">Secondary</Button>
+	<Button disabled variant="tertiary">Tertiary</Button>
+	<Button disabled variant="error">Error</Button>
+	<Button disabled variant="warning">Warning</Button>
 </div>`

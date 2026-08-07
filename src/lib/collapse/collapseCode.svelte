@@ -39,7 +39,10 @@
 
 <button
 	onclick={toggleFunc}
-	class="w-full h-12 px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+	class="w-full h-12 px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000
+	 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary
+	  dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400
+	   cursor-pointer"
 >
 	<div class="flex items-center gap-x-2">
 		<div class="w-4 h-4 {rotate180} transform-gpu duration-200">

@@ -1,61 +1,58 @@
 # Avatar Component
 
-**Description:**
-Avatars represent a user or a team. Stacked avatars represent a group of people
-
 ### Avatar
 
 **Exports:**
 - `Avatar` - Main avatar component
-- `AvatarGroup` - Group of avatars
-- `AvatarText` - Text-based avatar components (Root, Heading, Subheading, Content)
+- `AvatarGroup` - Group of stacked avatars
+- `AvatarWithIcon` - Avatar centered around an icon snippet
+- `AvatarProps`, `AvatarMember`, `AvatarGroupProps`, `AvatarWithIconProps` - types
+
+**Props:**
+
+**Avatar**
+- `size`: number (default: 32)
+- `src`: string - Direct image URL
+- `username`: string - Used for pravatar.cc fallback URL and title
+- `letter`: string - 1–2 uppercase characters shown when no image resolves
+- `placeholder`: boolean - Loading shell
+- `title`: string - Accessible title for the entity
+- `class`: ClassValue
+
+**AvatarGroup**
+- `members`: `AvatarMember[]` (required)
+- `size`: number (default: 32)
+- `limit`: number - Maximum visible avatars; remaining become a +N badge
+- `reverse`: boolean - Put the last member on top
+- `overlap`: `'auto' | number` - Stacking overlap
+- `class`: ClassValue
+
+**AvatarWithIcon**
+- `size`: number (default: 32)
+- `icon`: Snippet (required)
+- `iconBackground`: boolean - Fill a subtle background
+- `class`: ClassValue
 
 **Usage:**
 ```svelte
 <script lang="ts">
-	import { AvatarGroup } from 'kampsy-ui';
+	import { Avatar, AvatarGroup, AvatarWithIcon } from 'kampsy-ui';
+	import { ArrowUpCircle } from '@lucide/svelte';
 
 	const members = [
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=rauno&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=sambecker&s=64'
-		},
-		{
-			name: 'Evil Rabbit',
-			imageLink: 'https://vercel.com/api/www/avatar?u=evilrabbit&s=64'
-		}
+		{ username: 'evilrabbit' },
+		{ username: 'severinlandolt' },
+		{ username: 'rauchg' },
 	];
 </script>
 
-<div class="flex flex-col gap-2">
-	<div class="space-y-4">
-		<div>
-			<AvatarGroup members={members.slice(0, 3)} size={32} />
-		</div>
-		<div>
-			<AvatarGroup limit={4} {members} size={32} />
-		</div>
-	</div>
+<div class="flex items-center gap-4">
+	<Avatar username="evilrabbit" size={32} />
+	<AvatarGroup {members} size={32} limit={4} />
+	<Avatar letter="SL" size={32} />
+	<AvatarWithIcon size={32} iconBackground>
+		{#snippet icon()}<ArrowUpCircle />{/snippet}
+	</AvatarWithIcon>
 </div>
 ```
 

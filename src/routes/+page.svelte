@@ -44,10 +44,8 @@
 			>
 				<div class="relative w-full min-h-[104px]">
 					<div class="flex items-center gap-4 flex-wrap">
-						<Button variant="secondary">
-							<div class="w-4 h-4">
-								<ShieldGlobe />
-							</div>
+						<Button variant="secondary" shape="square" svgOnly aria-label="Globe">
+							<ShieldGlobe />
 						</Button>
 
 						<Switch.Root bind:value name="size-default">
@@ -55,19 +53,22 @@
 							<Switch.Control icon={ListUnordered} value="output" />
 						</Switch.Root>
 
-						<Button variant="secondary" iconPrefix={UserPlus}>collaborate</Button>
+						<Button variant="secondary">
+							{#snippet prefix()}
+								<UserPlus />
+							{/snippet}
+							collaborate
+						</Button>
 
 						<div class="flex items-center gap-1">
-							<Badge icon={Shield} size="large" variant="blue">purple</Badge>
-							<Badge icon={Shield} size="medium" variant="purple">purple</Badge>
-							<Badge icon={Shield} size="medium" variant="amber-subtle">purple</Badge>
-							<Badge icon={Shield} size="large" variant="red-subtle">purple</Badge>
+							<Badge icon={Shield} size="lg" variant="blue">purple</Badge>
+							<Badge icon={Shield} size="md" variant="purple">purple</Badge>
+							<Badge icon={Shield} size="md" variant="amber" contrast="low">purple</Badge>
+							<Badge icon={Shield} size="lg" variant="red" contrast="low">purple</Badge>
 						</div>
 
-						<Button size="small">
-							<div class="w-4 h-4">
-								<ShieldGlobe />
-							</div>
+						<Button size="small" shape="square" svgOnly aria-label="Globe">
+							<ShieldGlobe />
 						</Button>
 					</div>
 					<div class="babsolute top-0 left-0 w-full h-full"></div>

@@ -3,12 +3,20 @@ export * from "./types/index.js"
 
 // Avatar
 export * from "./avatar/index.js"
+export type {
+	AvatarProps,
+	AvatarMember,
+	AvatarGroupProps,
+	AvatarWithIconProps,
+} from "./avatar/types.js"
 
-// Badege
-export { default as Badge } from "./badge/badge.svelte"
+// Badge
+export { Badge, badgeVariants } from "./badge/index.js"
+export type { BadgeProps, BadgeVariant, BadgeContrast, BadgeSize } from "./badge/index.js"
 
 // Button
 export { default as Button } from "./button/button.svelte"
+export type { ButtonProps, ButtonSize, ButtonVariant, ButtonShape } from "./button/types.js"
 
 // Calendar
 export { default as Calendar } from "./calendar/calendar.svelte"

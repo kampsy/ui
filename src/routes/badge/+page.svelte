@@ -12,11 +12,8 @@
 		badgeWithIcon,
 		badgePill,
 	} from "$lib/../docs/data/badge.js"
-	import Shield from "$lib/icons/shield.svelte"
+	import { ExternalLink, Shield } from "@lucide/svelte"
 	import Pagination from "$lib/pagination/pagination.svelte"
-	import { Tabs, Text } from "$lib/index.js"
-	import { fade } from "svelte/transition"
-	import { Webhook, Accessibility, LogoSlackColor } from "$lib/icons/index.js"
 	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 
 	const contHeading = {
@@ -24,15 +21,6 @@
 		para: `A label that emphasizes an element that requires attention, or helps categorize with other
 			similar elements.`,
 	}
-
-	let selected = $state("implementation")
-
-	const considerations = [
-		`Choose a badge with a color that semantically aligns with your intended use case.`,
-		`Avoid using color as the sole method of conveying information or actions.`,
-		`Utilize aria-label to give complete context for screen readers. For instance, you might say "gray badge.".`,
-		`If the badge represents a live status, consider using role="status" for better accessibility.`,
-	]
 </script>
 
 <svelte:head>
@@ -40,29 +28,17 @@
 </svelte:head>
 
 {#snippet badge(title: string, para: string)}
-	<Row bottomLine={false}>
+	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
 		>
 			{title}
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
 		>
 			{para}
 		</p>
-	</Row>
-{/snippet}
-
-{#snippet tabSnip()}
-	<Row bottomLine={false} class="py-1!">
-		<Tabs
-			bind:selected
-			tabs={[
-				{ title: "Implementation", value: "implementation", icon: Webhook },
-				{ title: "Accessibility", value: "accessibility", icon: Accessibility },
-			]}
-		/>
 	</Row>
 {/snippet}
 
@@ -87,46 +63,52 @@
 				<div class="flex flex-col gap-2">
 					<div class="flex gap-1 capitalize">
 						<Badge variant="gray" aria-label="gray">gray</Badge>
-						<Badge variant="gray-subtle" aria-label="gray-subtle">gray-subtle</Badge>
+						<Badge variant="gray" contrast="low" aria-label="gray-subtle">gray-subtle</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="blue" aria-label="blue">blue</Badge>
-						<Badge variant="blue-subtle" aria-label="blue-subtle">blue-subtle</Badge>
+						<Badge variant="blue" contrast="low" aria-label="blue-subtle">blue-subtle</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="purple" aria-label="purple">purple</Badge>
-						<Badge variant="purple-subtle" aria-label="purple-subtle">purple-subtle</Badge>
+						<Badge variant="purple" contrast="low" aria-label="purple-subtle"
+							>purple-subtle</Badge
+						>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="amber" aria-label="amber">amber</Badge>
-						<Badge variant="amber-subtle" aria-label="amber-subtle">amber-subtle</Badge>
+						<Badge variant="amber" contrast="low" aria-label="amber-subtle">amber-subtle</Badge
+						>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="red" aria-label="red">red</Badge>
-						<Badge variant="red-subtle" aria-label="red-subtle">red-subtle</Badge>
+						<Badge variant="red" contrast="low" aria-label="red-subtle">red-subtle</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="pink" aria-label="pink">pink</Badge>
-						<Badge variant="pink-subtle" aria-label="pink-subtle">pink-subtle</Badge>
+						<Badge variant="pink" contrast="low" aria-label="pink-subtle">pink-subtle</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="green" aria-label="green">green</Badge>
-						<Badge variant="green-subtle" aria-label="green-subtle">green-subtle</Badge>
+						<Badge variant="green" contrast="low" aria-label="green-subtle">green-subtle</Badge
+						>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="teal" aria-label="teal">teal</Badge>
-						<Badge variant="teal-subtle" aria-label="teal-subtle">teal-subtle</Badge>
+						<Badge variant="teal" contrast="low" aria-label="teal-subtle">teal-subtle</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
 						<Badge variant="inverted" aria-label="inverted">inverted</Badge>
+						<Badge variant="trial" aria-label="trial">Trial</Badge>
+						<Badge variant="turbo" aria-label="turbo">Turborepo</Badge>
 					</div>
 				</div>
 			{/snippet}
@@ -140,17 +122,17 @@
 		<LinkH2 href="/badge#sizes">Sizes</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="flex flex-col gap-2">
+				<div class="flex items-center gap-2">
 					<div class="flex gap-1 capitalize">
-						<Badge size="small" aria-label="small">small</Badge>
+						<Badge size="sm" aria-label="small">small</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
-						<Badge size="medium" aria-label="medium">medium</Badge>
+						<Badge size="md" aria-label="medium">medium</Badge>
 					</div>
 
 					<div class="flex gap-1 capitalize">
-						<Badge size="large" aria-label="large">large</Badge>
+						<Badge size="lg" aria-label="large">large</Badge>
 					</div>
 				</div>
 			{/snippet}
@@ -166,263 +148,276 @@
 			{#snippet demo()}
 				<div class="flex flex-col gap-2">
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="gray" aria-label="icon large gray"
+						<Badge icon={Shield} size="lg" variant="gray" aria-label="icon large gray"
 							>gray</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="gray" aria-label="icon medium gray"
+						<Badge icon={Shield} size="md" variant="gray" aria-label="icon medium gray"
 							>gray</Badge
 						>
-						<Badge icon={Shield} size="small" variant="gray" aria-label="icon small gray"
+						<Badge icon={Shield} size="sm" variant="gray" aria-label="icon small gray"
 							>gray</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="gray-subtle"
+							size="sm"
+							variant="gray"
+							contrast="low"
 							aria-label="icon small gray-subtle">gray</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="gray-subtle"
+							size="md"
+							variant="gray"
+							contrast="low"
 							aria-label="icon medium gray-subtle">gray</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="gray-subtle"
+							size="lg"
+							variant="gray"
+							contrast="low"
 							aria-label="icon large gray-subtle">gray</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="blue" aria-label="icon large blue"
+						<Badge icon={Shield} size="lg" variant="blue" aria-label="icon large blue"
 							>blue</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="blue" aria-label="icon medium blue"
+						<Badge icon={Shield} size="md" variant="blue" aria-label="icon medium blue"
 							>blue</Badge
 						>
-						<Badge icon={Shield} size="small" variant="blue" aria-label="icon small blue"
+						<Badge icon={Shield} size="sm" variant="blue" aria-label="icon small blue"
 							>blue</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="blue-subtle"
+							size="sm"
+							variant="blue"
+							contrast="low"
 							aria-label="icon small blue-subtle">blue</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="blue-subtle"
+							size="md"
+							variant="blue"
+							contrast="low"
 							aria-label="icon medium blue-subtle">blue</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="blue-subtle"
+							size="lg"
+							variant="blue"
+							contrast="low"
 							aria-label="icon large blue-subtle">blue</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="purple" aria-label="icon large purple"
+						<Badge icon={Shield} size="lg" variant="purple" aria-label="icon large purple"
 							>purple</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="purple" aria-label="icon medium purple"
+						<Badge icon={Shield} size="md" variant="purple" aria-label="icon medium purple"
 							>purple</Badge
 						>
-						<Badge icon={Shield} size="small" variant="purple" aria-label="icon small purple"
+						<Badge icon={Shield} size="sm" variant="purple" aria-label="icon small purple"
 							>purple</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="purple-subtle"
+							size="sm"
+							variant="purple"
+							contrast="low"
 							aria-label="icon small purple-subtle">purple</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="purple-subtle"
+							size="md"
+							variant="purple"
+							contrast="low"
 							aria-label="icon medium purple-subtle">purple</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="purple-subtle"
+							size="lg"
+							variant="purple"
+							contrast="low"
 							aria-label="icon large purple-subtle">purple</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="amber" aria-label="icon large amber"
+						<Badge icon={Shield} size="lg" variant="amber" aria-label="icon large amber"
 							>amber</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="amber" aria-label="icon medium amber"
+						<Badge icon={Shield} size="md" variant="amber" aria-label="icon medium amber"
 							>amber</Badge
 						>
-						<Badge icon={Shield} size="small" variant="amber" aria-label="icon small amber"
+						<Badge icon={Shield} size="sm" variant="amber" aria-label="icon small amber"
 							>amber</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="amber-subtle"
+							size="sm"
+							variant="amber"
+							contrast="low"
 							aria-label="icon small amber-subtle">amber</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="amber-subtle"
+							size="md"
+							variant="amber"
+							contrast="low"
 							aria-label="icon medium amber-subtle">amber</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="amber-subtle"
+							size="lg"
+							variant="amber"
+							contrast="low"
 							aria-label="icon large amber-subtle">amber</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="red" aria-label="icon large red"
+						<Badge icon={Shield} size="lg" variant="red" aria-label="icon large red">red</Badge
+						>
+						<Badge icon={Shield} size="md" variant="red" aria-label="icon medium red"
 							>red</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="red" aria-label="icon medium red"
-							>red</Badge
-						>
-						<Badge icon={Shield} size="small" variant="red" aria-label="icon small red"
-							>red</Badge
+						<Badge icon={Shield} size="sm" variant="red" aria-label="icon small red">red</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="red-subtle"
+							size="sm"
+							variant="red"
+							contrast="low"
 							aria-label="icon small red-subtle">red</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="red-subtle"
+							size="md"
+							variant="red"
+							contrast="low"
 							aria-label="icon medium red-subtle">red</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="red-subtle"
+							size="lg"
+							variant="red"
+							contrast="low"
 							aria-label="icon large red-subtle">red</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="pink" aria-label="icon large pink"
+						<Badge icon={Shield} size="lg" variant="pink" aria-label="icon large pink"
 							>pink</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="pink" aria-label="icon medium pink"
+						<Badge icon={Shield} size="md" variant="pink" aria-label="icon medium pink"
 							>pink</Badge
 						>
-						<Badge icon={Shield} size="small" variant="pink" aria-label="icon small pink"
+						<Badge icon={Shield} size="sm" variant="pink" aria-label="icon small pink"
 							>pink</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="pink-subtle"
+							size="sm"
+							variant="pink"
+							contrast="low"
 							aria-label="icon small pink-subtle">pink</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="pink-subtle"
+							size="md"
+							variant="pink"
+							contrast="low"
 							aria-label="icon medium pink-subtle">pink</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="pink-subtle"
+							size="lg"
+							variant="pink"
+							contrast="low"
 							aria-label="icon large pink-subtle">pink</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="green" aria-label="icon large green"
+						<Badge icon={Shield} size="lg" variant="green" aria-label="icon large green"
 							>green</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="green" aria-label="icon medium green"
+						<Badge icon={Shield} size="md" variant="green" aria-label="icon medium green"
 							>green</Badge
 						>
-						<Badge icon={Shield} size="small" variant="green" aria-label="icon small green"
+						<Badge icon={Shield} size="sm" variant="green" aria-label="icon small green"
 							>green</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="green-subtle"
+							size="sm"
+							variant="green"
+							contrast="low"
 							aria-label="icon small green-subtle">green</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="green-subtle"
+							size="md"
+							variant="green"
+							contrast="low"
 							aria-label="icon medium green-subtle">green</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="green-subtle"
+							size="lg"
+							variant="green"
+							contrast="low"
 							aria-label="icon large green-subtle">green</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge icon={Shield} size="large" variant="teal" aria-label="icon large teal"
+						<Badge icon={Shield} size="lg" variant="teal" aria-label="icon large teal"
 							>teal</Badge
 						>
-						<Badge icon={Shield} size="medium" variant="teal" aria-label="icon medium teal"
+						<Badge icon={Shield} size="md" variant="teal" aria-label="icon medium teal"
 							>teal</Badge
 						>
-						<Badge icon={Shield} size="small" variant="teal" aria-label="icon small teal"
+						<Badge icon={Shield} size="sm" variant="teal" aria-label="icon small teal"
 							>teal</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="small"
-							variant="teal-subtle"
+							size="sm"
+							variant="teal"
+							contrast="low"
 							aria-label="icon small teal-subtle">teal</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="medium"
-							variant="teal-subtle"
+							size="md"
+							variant="teal"
+							contrast="low"
 							aria-label="icon medium teal-subtle">teal</Badge
 						>
 						<Badge
 							icon={Shield}
-							size="large"
-							variant="teal-subtle"
+							size="lg"
+							variant="teal"
+							contrast="low"
 							aria-label="icon large teal-subtle">teal</Badge
 						>
 					</div>
 
 					<div class="flex items-center gap-1 capitalize">
-						<Badge
-							icon={Shield}
-							size="large"
-							variant="inverted"
-							aria-label="icon large inverted">inverted</Badge
+						<Badge icon={Shield} size="lg" variant="inverted" aria-label="icon large inverted"
+							>inverted</Badge
 						>
-						<Badge
-							icon={Shield}
-							size="medium"
-							variant="inverted"
-							aria-label="icon medium inverted">inverted</Badge
+						<Badge icon={Shield} size="md" variant="inverted" aria-label="icon medium inverted"
+							>inverted</Badge
 						>
-						<Badge
-							icon={Shield}
-							size="small"
-							variant="inverted"
-							aria-label="icon small inverted">inverted</Badge
+						<Badge icon={Shield} size="sm" variant="inverted" aria-label="icon small inverted"
+							>inverted</Badge
 						>
 					</div>
 				</div>
@@ -447,35 +442,35 @@
 			{#snippet demo()}
 				<div class="flex flex-col gap-4">
 					<div class="flex items-center gap-2 capitalize">
-						<Badge href="/badge#pill" size="small" variant="pill" aria-label="large pill"
+						<Badge href="/badge#pill" size="sm" variant="pill" aria-label="large pill"
 							>label</Badge
 						>
-						<Badge href="/badge#pill" size="medium" variant="pill" aria-label="medium pill"
+						<Badge href="/badge#pill" size="md" variant="pill" aria-label="medium pill"
 							>label</Badge
 						>
-						<Badge href="/badge#pill" size="large" variant="pill" aria-label="small pill"
+						<Badge href="/badge#pill" size="lg" variant="pill" aria-label="small pill"
 							>label</Badge
 						>
 					</div>
 					<div class="flex items-center gap-2 capitalize">
 						<Badge
 							href="/badge#pill"
-							icon={LogoSlackColor}
-							size="small"
+							icon={ExternalLink}
+							size="sm"
 							variant="pill"
 							aria-label="icon large pill">label</Badge
 						>
 						<Badge
 							href="/badge#pill"
-							icon={LogoSlackColor}
-							size="medium"
+							icon={ExternalLink}
+							size="md"
 							variant="pill"
 							aria-label="icon medium pill">label</Badge
 						>
 						<Badge
 							href="/badge#pill"
-							icon={LogoSlackColor}
-							size="large"
+							icon={ExternalLink}
+							size="lg"
 							variant="pill"
 							aria-label="icon small pill">label</Badge
 						>
@@ -495,28 +490,63 @@
 	</code>
 {/snippet}
 
-{#snippet accessibility()}
+{#snippet bestPractices()}
 	<Row>
-		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+		<LinkH2 href="/badge#best-practices">Best Practices</LinkH2>
+		<ul
+			class="mt-4 xl:mt-7 list-disc pl-5 space-y-2 text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[14px] md:text-[16px] leading-6"
 		>
-			Accessibility
-		</h2>
-		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
-		>
-			This component aims to adhere to {@render roundedCode("WCAG 2.2 (level AA)")} guidelines,
-			and it is important to maintain this commitment when implementing the component across other
-			projects. This section provides guidance to support that effort.
-		</p>
-		{#each considerations as para (para)}
-			<Text
-				size={{ sm: 14, md: 16, lg: 16 }}
-				class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-			>
-				{para}
-			</Text>
-		{/each}
+			<li>
+				Use Badge for short, scannable metadata that sits next to the thing it describes:
+				status, plan tier, environment, or role. One badge per row; two side by side is a sign
+				the row needs a second column.
+			</li>
+			<li>
+				For a colored dot without text, use {@render roundedCode("StatusDot")}. For clickable
+				filter chips that toggle a query, use the {@render roundedCode("pill")} variant or a small
+				{@render roundedCode("Button")}.
+			</li>
+			<li>
+				Badges are static labels. Don’t wire {@render roundedCode("on:click")} onto them; promote
+				to a {@render roundedCode("Button")} or link if the user can act on the value.
+			</li>
+			<li>
+				Keep badge content to text or {@render roundedCode("icon")} + text. Never stack two icons
+				or a child Badge inside a Badge.
+			</li>
+			<li>
+				Pair lifecycle badges ({@render roundedCode("Alpha")}, {@render roundedCode("Beta")},
+				{@render roundedCode("Early Access")}) with a {@render roundedCode("Tooltip")} that names
+				the limit, like {@render roundedCode("Alpha: API may change before GA")}.
+			</li>
+			<li>
+				Title Case, one word when possible, two max: {@render roundedCode("Active")},
+				{@render roundedCode("Pending")}, {@render roundedCode("Pro")},
+				{@render roundedCode("Enterprise Trial")}. Match the canonical API or log term:
+				{@render roundedCode("Production")} not {@render roundedCode("Prod")},
+				{@render roundedCode("Deployed")} not {@render roundedCode("Live")},
+				{@render roundedCode("Canceled")} not {@render roundedCode("Cancelled")} (the Vercel API
+				uses one L).
+			</li>
+			<li>
+				Don’t add a checkmark icon for success states or an X for errors; the variant carries
+				that signal. Map meaning to color: {@render roundedCode("green")} for healthy,
+				{@render roundedCode("red")} for error, {@render roundedCode("amber")} for warning,
+				{@render roundedCode("blue")} for informational or production, {@render roundedCode(
+					"gray",
+				)}
+				for neutral. Use {@render roundedCode('contrast="low"')} to tone any of them down on dense
+				surfaces.
+			</li>
+			<li>
+				Skip stuffing sentences inside ({@render roundedCode("Currently Active")},
+				{@render roundedCode("You are on Pro")}); the surrounding row supplies the context.
+			</li>
+			<li>
+				Set {@render roundedCode("title")} for icon-only or ambiguous badges so screen readers announce
+				the meaning. Don’t rely on color alone; the text has to be readable without it.
+			</li>
+		</ul>
 	</Row>
 {/snippet}
 
@@ -531,22 +561,14 @@
 
 {#snippet cont()}
 	{@render badge(contHeading.title, contHeading.para)}
-	{@render tabSnip()}
 
-	{#if selected == "implementation"}
-		<section transition:fade>
-			{@render variants()}
-			{@render size()}
-			{@render icons()}
-			{@render pill()}
-		</section>
-	{/if}
-
-	{#if selected == "accessibility"}
-		<section transition:fade>
-			{@render accessibility()}
-		</section>
-	{/if}
+	<section>
+		{@render variants()}
+		{@render size()}
+		{@render icons()}
+		{@render pill()}
+		{@render bestPractices()}
+	</section>
 
 	{@render prevAndNext()}
 {/snippet}
