@@ -7,7 +7,7 @@
 		sizeStyle,
 		fontSizeStyle,
 	} from "./styles.js"
-	import { resolveAvatarSrc, normalizeLetter } from "./utils.js"
+	import { resolveAvatarSrc, normalizeLetter, shouldShowImage } from "./utils.js"
 	import type { AvatarProps } from "./types.js"
 
 	let {
@@ -26,13 +26,13 @@
 	let resolvedLetter = $derived(normalizeLetter(letter))
 
 	let img = $state<HTMLImageElement>()
-	let errored = $state(false)
+	let erroredSrc = $state<string | undefined>(undefined)
 
 	function onError() {
-		errored = true
+		erroredSrc = resolvedSrc
 	}
 
-	let showImage = $derived(resolvedSrc && !errored)
+	let showImage = $derived(shouldShowImage(resolvedSrc, erroredSrc))
 	let showLetter = $derived(!showImage && resolvedLetter && !placeholder)
 	let showPlaceholder = $derived(placeholder || (!showImage && !showLetter))
 </script>

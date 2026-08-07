@@ -4,6 +4,7 @@ import {
 	normalizeLetter,
 	resolveOverlapPx,
 	vercelAvatarUrl,
+	shouldShowImage,
 } from "./utils.js"
 
 describe("vercelAvatarUrl", () => {
@@ -53,5 +54,28 @@ describe("resolveOverlapPx", () => {
 	it("auto scales with size", () => {
 		expect(resolveOverlapPx(32, "auto")).toBe(9)
 		expect(resolveOverlapPx(64, "auto")).toBe(18)
+	})
+})
+
+describe("shouldShowImage", () => {
+	it("shows image when a source is present and has not errored", () => {
+		expect(shouldShowImage("https://example.com/a.png", undefined)).toBe(true)
+	})
+
+	it("hides image when the current source is the one that failed", () => {
+		expect(shouldShowImage("https://example.com/a.png", "https://example.com/a.png")).toBe(
+			false,
+		)
+	})
+
+	it("shows a replacement source after a previous source failed", () => {
+		expect(shouldShowImage("https://example.com/b.png", "https://example.com/a.png")).toBe(
+			true,
+		)
+	})
+
+	it("hides image when no source is available", () => {
+		expect(shouldShowImage(undefined, undefined)).toBe(false)
+		expect(shouldShowImage(undefined, "https://example.com/a.png")).toBe(false)
 	})
 })

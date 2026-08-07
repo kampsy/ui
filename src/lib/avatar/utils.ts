@@ -42,3 +42,11 @@ export function resolveOverlapPx(size: number, overlap: "auto" | number | undefi
 	// auto gives a generous, evenly-spaced cluster scaled with size
 	return Math.round(size / 3.5)
 }
+
+/** Decide whether the image branch should render, scoping failures to the source that failed. */
+export function shouldShowImage(
+	resolvedSrc: string | undefined,
+	erroredSrc: string | undefined,
+): boolean {
+	return !!resolvedSrc && resolvedSrc !== erroredSrc
+}
