@@ -1,4 +1,4 @@
 # Git revisions to ignore with `git blame --ignore-revs-file=.git-blame-ignore-revs`
-# Add the SHA of the bulk Oxfmt reformat commit below after it has been committed.
-# Example:
-# <commit-sha>
+
+# Bulk Oxfmt reformat after migrating from Prettier
+25c256f7bd54de1716999aa284454346f39d8c2e
