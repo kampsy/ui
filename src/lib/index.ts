@@ -22,7 +22,8 @@ export type { ButtonProps, ButtonSize, ButtonVariant, ButtonShape } from "./butt
 export { default as Calendar } from "./calendar/calendar.svelte"
 
 // Checkbox
-export { default as Checkbox } from "./checkbox/checkbox.svelte"
+export { Checkbox } from "./checkbox/index.js"
+export type { CheckboxProps } from "./checkbox/index.js"
 
 // Choicebox
 export * as Choicebox from "./choicebox/index.js"
