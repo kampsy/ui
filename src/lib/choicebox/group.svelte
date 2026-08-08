@@ -1,37 +1,50 @@
 <script lang="ts">
 	import { randomString } from "$lib/utils/random.js"
 	import { setContext, type Snippet } from "svelte"
+	import type { HTMLFieldsetAttributes } from "svelte/elements"
 	import { createGroupState } from "./group.svelte.js"
+	import { groupRootBase, listBase, resolveGroupLabelClass } from "./styles.js"
 
-	interface Props {
+	interface Props extends Omit<HTMLFieldsetAttributes, "onchange"> {
 		type?: "radio" | "checkbox" | undefined
 		label?: string | undefined
 		value?: string | Array<string> | undefined
 		disabled?: boolean | undefined
+		showLabel?: boolean | undefined
+		listClassName?: string | undefined
+		onchange?: (value: string | Array<string>) => void
 		children?: Snippet | undefined
 	}
+
 	let {
 		type = "radio",
 		label = undefined,
 		value = $bindable(""),
 		disabled = false,
+		showLabel = true,
+		listClassName = undefined,
+		onchange = undefined,
 		children = undefined,
+		class: klass,
+		...rest
 	}: Props = $props()
 
 	const groupState = createGroupState({
 		selected: "",
 		name: randomString(8),
-		type: type,
-		disabledParent: disabled,
+		get type() {
+			return type
+		},
+		get disabledParent() {
+			return disabled
+		},
+		onchange: value => onchange?.(value),
 	})
 
 	setContext("choicebox", groupState)
 
-	let labelClass = $derived.by(() => {
-		if (disabled) {
-			return "text-kui-light-gray-900 dark:text-kui-dark-gray-900"
-		}
-		return "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+	let legendClass = $derived.by(() => {
+		return [resolveGroupLabelClass({ disabled }), !showLabel && "sr-only"]
 	})
 
 	$effect(() => {
@@ -39,15 +52,15 @@
 	})
 </script>
 
-<div class="w-full">
+<fieldset class={[groupRootBase, klass]} {...rest}>
 	{#if label}
-		<div class="mb-2 text-[13px] first-letter:capitalize {labelClass} ">
+		<legend class={legendClass}>
 			{label}
-		</div>
+		</legend>
 	{/if}
-	<div class="flex w-full gap-x-4">
+	<div class={[listBase, listClassName]}>
 		{#if children}
 			{@render children()}
 		{/if}
 	</div>
-</div>
+</fieldset>

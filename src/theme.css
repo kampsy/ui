@@ -135,11 +135,11 @@
 	--color-kui-dark-blue-300: oklch(30.86% 0.1022 255.21);
 	--color-kui-dark-blue-400: oklch(34.1% 0.121 254.74);
 	--color-kui-dark-blue-500: oklch(38.5% 0.1403 254.4);
-	--color-kui-dark-blue-600: oklch(64.94% 0.1982 251.8131841760864);
+	--color-kui-dark-blue-600: oklch(0.6494 0.1982 251.813);
 	--color-kui-dark-blue-700: oklch(57.61% 0.2321 258.23);
-	--color-kui-dark-blue-800: oklch(51.51% 0.2307 257.85);
-	--color-kui-dark-blue-900: oklch(71.7% 0.1648 250.79360374054167);
-	--color-kui-dark-blue-1000: oklch(96.75% 0.0179 242.4234217368056);
+	--color-kui-dark-blue-800: oklch(0.5151 0.2307 257.85);
+	--color-kui-dark-blue-900: oklch(0.717 0.1648 250.794);
+	--color-kui-dark-blue-1000: oklch(0.9675 0.0179 242.423);
 
 	--color-kui-dark-red-100: oklch(22.1% 0.0657 15.11);
 	--color-kui-dark-red-200: oklch(25.93% 0.0834 19.02);

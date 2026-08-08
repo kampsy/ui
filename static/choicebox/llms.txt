@@ -15,12 +15,36 @@
 </script>
 
 <div class="w-full">
-	<Choicebox.Group label="select a plan" type="radio" bind:value>
+	<Choicebox.Group
+		label="select a plan"
+		type="radio"
+		bind:value
+		onchange={(v) => console.log(v)}
+	>
 		<Choicebox.Item defaultChecked description="Free for two weeks" title="Pro Trial" value="trial" />
 		<Choicebox.Item description="Get started now" title="Pro" value="pro" />
 	</Choicebox.Group>
 </div>
 ```
+
+### Choicebox.Group props
+
+- `type` - `"radio" | "checkbox"` (default `"radio"`)
+- `label` - group label, rendered as a `<legend>`
+- `value` - bindable `string` for radio, `string[]` for checkbox
+- `disabled` - disables all items in the group
+- `showLabel` - show the label visually (`true` by default); when `false` the legend is `sr-only`
+- `listClassName` - additional classes for the items wrapper
+- `onchange` - callback fired with the new value after each selection change
+
+### Choicebox.Item props
+
+- `value` - the item value (required)
+- `title` - primary text
+- `description` - secondary text
+- `disabled` - disable this item
+- `defaultChecked` - select this item on initial render
+- `children` - custom content rendered only when the item is selected
 
 ## Installation
 
@@ -31,6 +55,28 @@ pnpm i -D kampsy-ui@latest
 ## Documentation
 
 Visit http://ui.kampsy.xyz/choicebox for full documentation and examples.
+
+## Best Practices
+
+### When to use
+- Use Choicebox when a choice benefits from a larger tap target plus a description or icon, like a framework picker, plan comparison, or deployment region with latency.
+- Single-select for mutually exclusive choices, multi-select for additive ones. Don’t mix the two within one group.
+- Cap at 4–6 tiles. Past that, switch to Select or Combobox so the page doesn’t scroll for a single field. For plain text labels with no description, use Radio.
+
+### Behavior
+- The whole tile is the click and focus target; tapping anywhere inside selects it. Don’t place nested buttons or links inside a tile that would steal the click.
+- Selected state shows a check or filled dot in the corner. The border highlight alone isn’t enough on low-contrast screens.
+- Disabled tiles need a Tooltip naming why (`Available on Pro`). A faded tile with no reason reads as broken.
+
+### Content
+- Titles are parallel: one Title Case title plus one sentence-case description per tile, ending in a period.
+- Don’t restate the title in the description. The description adds the differentiator (`$20/mo · 100 GB bandwidth`), not a synonym.
+- Icons are decorative when paired with a title; if the icon is the only label, give the tile an `aria-label` naming the choice.
+
+### Accessibility
+- Tiles render as radios or checkboxes under the hood, so keep them inside a `<fieldset>` with a `<legend>` so screen readers announce the group.
+- Arrow keys move within a single-select group, Space toggles in multi-select. Don’t override those keys with custom handlers.
+- Color is not the selection signal. Pair the highlight border with the corner check so colorblind users still see what’s active.
 
 ## License
 
