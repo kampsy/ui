@@ -1,6 +1,18 @@
 {
 	"version": 1,
 	"skills": {
+		"code-review": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"skillPath": "skills/engineering/code-review/SKILL.md",
+			"computedHash": "1d5e7242a98674635be79ab310cdda0e555d36a9903d2526ebf4263d0b7997ca"
+		},
+		"grill-me": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"skillPath": "skills/productivity/grill-me/SKILL.md",
+			"computedHash": "f361db4e15e6bfd562a9282b1dccda513910a50061f9e838ce017be9c69dde3f"
+		},
 		"migrate-oxfmt": {
 			"source": "oxc-project/oxc",
 			"sourceType": "github",
