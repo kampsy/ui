@@ -24,9 +24,9 @@
 {#if children}
 	<div class="relative h-full {bodyClass} {klass}">
 		{#if rootState.sticky}
-			<div aria-hidden="true" class="w-full h-18.25"></div>
+			<div aria-hidden="true" class="h-18.25 w-full"></div>
 		{/if}
-		<div class="modal-body p-6 scroll-smooth overflow-y-auto overscroll-contain">
+		<div class="modal-body overflow-y-auto overscroll-contain scroll-smooth p-6">
 			{@render children()}
 		</div>
 		<div aria-hidden="true" class="w-full lg:h-18.25"></div>

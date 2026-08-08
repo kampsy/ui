@@ -29,12 +29,12 @@
 <div class="flex items-center justify-between">
 	{#if !rootState.getLoading()}
 		<span
-			class="text-sm first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-sm first-letter:capitalize"
 			>{rootState.getSelected() === "" ? placeholder : rootState.getSelected()}</span
 		>
-		<div class="w-4 h-4 flex items-center justify-center">
+		<div class="flex h-4 w-4 items-center justify-center">
 			<div
-				class="w-4 h-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 transform duration-300 {rotate}"
+				class="text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 h-4 w-4 transform duration-300 {rotate}"
 			>
 				<ChevronDownSmall />
 			</div>

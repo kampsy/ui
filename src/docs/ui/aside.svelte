@@ -17,12 +17,12 @@
 	}
 </script>
 
-<div class="ui-scrollbar w-full h-full px-4 pb-3.5 pt-4 scroll-smooth overflow-y-auto">
+<div class="ui-scrollbar h-full w-full overflow-y-auto scroll-smooth px-4 pt-4 pb-3.5">
 	{#if asideDataList}
 		{#each asideDataList as asideData, index (index)}
 			<div>
 				<p
-					class="w-full h-10 flex items-center gap-2 mb-0.5 pl-3 py-1.5 text-[14px] font-medium leading-5 capitalize text-kui-black dark:text-kui-dark-gray-1000"
+					class="text-kui-black dark:text-kui-dark-gray-1000 mb-0.5 flex h-10 w-full items-center gap-2 py-1.5 pl-3 text-[14px] leading-5 font-medium capitalize"
 				>
 					{asideData?.title?.name || ""}
 					{#if asideData?.title?.badge}
@@ -37,9 +37,9 @@
 							<li class="py-0.5">
 								<a class="group" href={list?.url || "/#"}>
 									<span
-										class="w-full flex items-center gap-x-3 h-10 {setActive(
+										class="flex h-10 w-full items-center gap-x-3 {setActive(
 											list?.url || '',
-										)} capitalize group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 flex items-center rounded-md px-3 py-1.5 text-[14px] font-normal leading-5 group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000"
+										)} group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 flex items-center rounded-md px-3 py-1.5 text-[14px] leading-5 font-normal capitalize"
 										>{list?.name || ""}
 										{#if list?.badge}
 											<Badge size="sm" variant={list?.badge?.variant || "green"}

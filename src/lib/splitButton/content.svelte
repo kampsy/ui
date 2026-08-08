@@ -33,11 +33,11 @@
 		<div
 			in:fly|local={{ y: "50vh", duration: 500, opacity: 1 }}
 			out:fly|local={{ y: "100vh", duration: 600, easing: cubicOut, opacity: 1 }}
-			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-[1001]"
+			class="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary fixed bottom-0 left-0 z-[1001] w-full rounded-t-[10px] lg:bg-transparent"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg px-3 rounded-t-[10px] border-t
-				border-kui-light-gray-600 dark:border-kui-dark-gray-500 scroll-smooth overflow-y-auto"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-600 dark:border-kui-dark-gray-500 overflow-y-auto
+				scroll-smooth rounded-t-[10px] border-t px-3"
 			>
 				{@render children()}
 			</div>
@@ -53,7 +53,7 @@
 			class="absolute {rootState.getContentPosition()} {alightmentClass} z-[1000] {klass}"
 		>
 			<div
-				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg p-2 rounded-[12px] border border-kui-light-gray-200 dark:border-kui-dark-gray-400 shadow-xs scroll-smooth overflow-y-auto {klass}"
+				class="hide-scrollbar bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-y-auto scroll-smooth rounded-[12px] border p-2 shadow-xs {klass}"
 			>
 				{@render children()}
 			</div>

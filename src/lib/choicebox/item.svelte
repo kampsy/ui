@@ -138,9 +138,9 @@
 {#snippet radio()}
 	{#if type === "radio"}
 		<div
-			class="w-4 h-4 p-px rounded-full transition-colors ease-in flex items-center justify-center border {radioContClass} "
+			class="flex h-4 w-4 items-center justify-center rounded-full border p-px transition-colors ease-in {radioContClass} "
 		>
-			<div class="w-4 h-4 flex items-center justify-center">
+			<div class="flex h-4 w-4 items-center justify-center">
 				<input
 					{onchange}
 					{type}
@@ -151,7 +151,7 @@
 					{disabled}
 					class="hidden"
 				/>
-				<div class="w-2 h-2 bg-red rounded-full transition-colors ease-in {radioClass}"></div>
+				<div class="bg-red h-2 w-2 rounded-full transition-colors ease-in {radioClass}"></div>
 			</div>
 		</div>
 	{/if}
@@ -160,9 +160,9 @@
 {#snippet checkbox()}
 	{#if type === "checkbox"}
 		<div
-			class="w-4 h-4 p-px rounded-sm transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
+			class="flex h-4 w-4 items-center justify-center rounded-sm border p-px transition-colors ease-in {checkboxContClass} "
 		>
-			<div class="w-4 h-4 flex items-center justify-center">
+			<div class="flex h-4 w-4 items-center justify-center">
 				<input
 					{onchange}
 					{type}
@@ -173,7 +173,7 @@
 					{disabled}
 					class="hidden"
 				/>
-				<div class="w-2.5 h-2.5 transition-colors ease-in {checkboxClass}">
+				<div class="h-2.5 w-2.5 transition-colors ease-in {checkboxClass}">
 					<Check />
 				</div>
 			</div>
@@ -183,13 +183,13 @@
 
 <label
 	for={unique}
-	class="group w-full transition-colors ease-in border flex rounded-md {labelClass} "
+	class="group flex w-full rounded-md border transition-colors ease-in {labelClass} "
 >
-	<div class="w-full p-3 flex items-center justify-between">
+	<div class="flex w-full items-center justify-between p-3">
 		<div>
 			{#if title}
 				<p
-					class="first-letter:capitalize ransition-colors ease-in text-sm {titleClass}  font-medium leading-6"
+					class="ransition-colors text-sm ease-in first-letter:capitalize {titleClass}  leading-6 font-medium"
 				>
 					{title}
 				</p>
@@ -197,7 +197,7 @@
 
 			{#if description}
 				<p
-					class="first-letter:capitalize ransition-colors ease-in text-sm {descriptionClass} font-normal leading-6"
+					class="ransition-colors text-sm ease-in first-letter:capitalize {descriptionClass} leading-6 font-normal"
 				>
 					{description}
 				</p>

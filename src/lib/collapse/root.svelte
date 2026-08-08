@@ -14,8 +14,8 @@
 </script>
 
 <div
-	class="w-full *:border-t *:border-kui-light-gray-200 dark:*:border-kui-dark-gray-400
- last:border-b last:border-kui-light-gray-200 dark:last:border-kui-dark-gray-400"
+	class="*:border-kui-light-gray-200 dark:*:border-kui-dark-gray-400 last:border-kui-light-gray-200 dark:last:border-kui-dark-gray-400
+ w-full *:border-t last:border-b"
 >
 	{#if children}
 		{@render children()}

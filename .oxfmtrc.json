@@ -1,0 +1,16 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"trailingComma": "all",
+	"tabWidth": 2,
+	"printWidth": 95,
+	"semi": false,
+	"singleQuote": false,
+	"useTabs": true,
+	"arrowParens": "avoid",
+	"bracketSpacing": true,
+	"bracketSameLine": false,
+	"sortPackageJson": false,
+	"sortTailwindcss": true,
+	"svelte": {},
+	"ignorePatterns": ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", ".agents/"]
+}

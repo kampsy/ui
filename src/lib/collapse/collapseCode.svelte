@@ -39,26 +39,26 @@
 
 <button
 	onclick={toggleFunc}
-	class="w-full h-12 px-4 text-kui-light-gray-900 hover:text-kui-light-gray-1000
-	 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary
-	  dark:bg-kui-dark-bg-secondary {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400
+	class="text-kui-light-gray-900 hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:hover:text-kui-dark-gray-1000 bg-kui-light-bg-secondary
+	 dark:bg-kui-dark-bg-secondary h-12 w-full
+	  px-4 {border} border-kui-light-gray-200 dark:border-kui-dark-gray-400
 	   cursor-pointer"
 >
 	<div class="flex items-center gap-x-2">
-		<div class="w-4 h-4 {rotate180} transform-gpu duration-200">
+		<div class="h-4 w-4 {rotate180} transform-gpu duration-200">
 			<ChevronRightSmall />
 		</div>
-		<span class="text-sm font-normal leading-5 first-letter:capitalize"> {title} </span>
+		<span class="text-sm leading-5 font-normal first-letter:capitalize"> {title} </span>
 	</div>
 </button>
 {#if isActive}
 	<div
-		class="ui-scrollbar w-full h-auto px-6 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[13px] scroll-smoth overflow-x-auto"
+		class="ui-scrollbar text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 scroll-smoth h-auto w-full overflow-x-auto px-6 text-[13px]"
 	>
 		<div transition:slide>
 			<pre class="language-tsx">
             <code class="language-tsx">
-                <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
+                <!-- oxlint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
                 {@html highlightedCode}
             </code>
         </pre>

@@ -99,7 +99,7 @@
 <!--Checked and uncheked icons-->
 {#snippet icons()}
 	{#if icon}
-		<div class="relative w-full h-full rounded-full flex items-center justify-center">
+		<div class="relative flex h-full w-full items-center justify-center rounded-full">
 			{#if checked}
 				{@const CheckedIcon = icon.checked}
 				<div class="absolute {iconSizeClass}">
@@ -115,10 +115,10 @@
 	{/if}
 {/snippet}
 
-<label for={unique} class="inline-flex items-center gap-3 cursor-pointer">
+<label for={unique} class="inline-flex cursor-pointer items-center gap-3">
 	{#if children}
 		<span
-			class="{childLableClass} select-none text-xs text-kui-light-gray-800 dark:text-kui-dark-gray-900"
+			class="{childLableClass} text-kui-light-gray-800 dark:text-kui-dark-gray-900 text-xs select-none"
 		>
 			{@render children()}
 		</span>
@@ -137,7 +137,7 @@
 			class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}"
 		>
 			<div
-				class="absolute {sizeThumbClass} rounded-full start-[1.5px] transition-all border {thumbClass}"
+				class="absolute {sizeThumbClass} start-[1.5px] rounded-full border transition-all {thumbClass}"
 			>
 				{@render icons()}
 			</div>

@@ -28,12 +28,12 @@
 {#snippet menu()}
 	<Row bottomLine={false}>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			menu
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			Dropdown menu opened via button. Supports keyboard navigation. The position will
 			automatically adapt based on the window bounds.
@@ -55,10 +55,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl border"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="w-full flex flex-nowrap gap-4 items-center justify-between">
+			<div class="flex w-full flex-nowrap items-center justify-between gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -72,7 +72,7 @@
 	<Row>
 		<LinkH2 href="/menu#default" aria-label="default">default</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Menu extends the <a href="/button" class="underline">Button component.</a>
 		</p>
@@ -127,13 +127,13 @@
 			>prefix and suffix</LinkH2
 		>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			The trigger is still wrapped by an unstyled button.
 		</p>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full flex gap-6">
+				<div class="flex w-full gap-6">
 					<Menu.Root>
 						<Menu.Button
 							shape="square"
@@ -184,7 +184,7 @@
 		<LinkH2 href="/menu#menu-alignment" aria-label="menu alignment">menu alignment</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full flex justify-between gap-8">
+				<div class="flex w-full justify-between gap-8">
 					<Menu.Root>
 						<Menu.Button aria-controls="menu-5" aria-expanded="false" aria-haspopup="true"
 							>Actions</Menu.Button
@@ -216,12 +216,12 @@
 {#snippet howItWorks()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize"
 		>
 			How it works
 		</h2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			The dropdown menu is a secondary menu which can be applied to <RoundedCode
 				text="Menu.Button"
@@ -229,7 +229,7 @@
 		</p>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			An <RoundedCode text="aria-controls" /> attribute matching the id of the <RoundedCode
 				text="Menu.Content"
@@ -237,20 +237,20 @@
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			An <RoundedCode text="aria-expanded" /> attribute, the value always being the opposite of the
 			aria-hidden value on the <RoundedCode text="Menu.Content" />.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			An <RoundedCode text="aria-haspopup" /> with the value of true.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Keyboard interaction:
 			<Text
@@ -278,17 +278,17 @@
 {#snippet considerations()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize"
 		>
 			Considerations
 		</h2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			This component aims to adhere to
 			<a
 				href="https://www.w3.org/TR/WCAG22/"
-				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900"
+				class="text-kui-light-blue-900 dark:text-kui-dark-blue-900 underline"
 				>WCAG 2.2 (level AA)</a
 			> guidelines. Ensure this compliance is maintained when the component is integrated into other
 			projects.

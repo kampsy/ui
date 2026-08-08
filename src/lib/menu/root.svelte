@@ -51,7 +51,7 @@
 	<div
 		in:fade|local
 		out:fade|local
-		class="fixed top-0 left-0 w-full h-full bg-kui-black opacity-40 lg:hidden z-1000"
+		class="bg-kui-black fixed top-0 left-0 z-1000 h-full w-full opacity-40 lg:hidden"
 	></div>
 {/if}
 

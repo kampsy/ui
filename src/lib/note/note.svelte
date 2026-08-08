@@ -134,15 +134,15 @@
 
 <div class="w-full">
 	<div
-		class="w-full space-y-2 md:space-y-0 md:flex md:items-center md:justify-between lg:gap-x-3
+		class="w-full space-y-2 md:flex md:items-center md:justify-between md:space-y-0 lg:gap-x-3
 		class:disabled={disabled}
 		aria-disabled={disabled}
 		{contClass} {radiusClass} {sizeClass} {klass}"
 		{...rest}
 	>
 		<div class="flex items-center {iconAndTextGapClass} {textClass}">
-			<div class="w-4 h-4">
-				<div class="w-4 h-4">
+			<div class="h-4 w-4">
+				<div class="h-4 w-4">
 					{@render icon()}
 				</div>
 			</div>

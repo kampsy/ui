@@ -12,7 +12,11 @@ export type RecommendedEvents =
 	| "remove_from_cart"
 
 export type CustomEvents =
-	"pdp_start" | "pdp_experiences" | "pdp_hotels" | "pdp_rooms" | "pdp_flights"
+	| "pdp_start"
+	| "pdp_experiences"
+	| "pdp_hotels"
+	| "pdp_rooms"
+	| "pdp_flights"
 
 export interface AddPaymentInfo {
 	currency: string // Eg. "USD"

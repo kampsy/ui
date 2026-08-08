@@ -29,11 +29,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Format with Prettier
-        run: pnpm run format
+      - name: Check formatting with Oxfmt
+        run: pnpm oxfmt --check
 
-      - name: Lint with eslint
-        run: pnpm run lint
+      - name: Lint with Oxlint
+        run: pnpm oxlint
 
       - name: Check with Svelte-check
         run: pnpm run check

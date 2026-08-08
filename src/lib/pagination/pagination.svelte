@@ -36,23 +36,23 @@
 	{#if previous}
 		<a aria-label="go to previous page: {previous.title}" href={previous.href} class="group">
 			<div class="flex items-center gap-x-2">
-				<div class="w-[20px] h-[20px]"></div>
+				<div class="h-[20px] w-[20px]"></div>
 				<div
-					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 mb-[2px] text-[13px] leading-[13px] font-normal capitalize transition-colors"
 				>
 					previous
 				</div>
 			</div>
 			<div class="flex items-center gap-x-2">
 				<div
-					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
+					class="text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 flex h-[20px] w-[20px] items-center justify-center transition-colors"
 				>
-					<div class="w-4 h-4">
+					<div class="h-4 w-4">
 						<ChevronLeft />
 					</div>
 				</div>
 				<span
-					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-6 capitalize"
+					class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[16px] leading-6 font-medium capitalize"
 				>
 					{previous.title}
 				</span>
@@ -66,22 +66,22 @@
 		<a aria-label="go to next page: {next.title}" href={next.href} class="group">
 			<div class="flex items-center gap-x-2">
 				<div
-					class="mb-[2px] text-[13px] transition-colors text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 font-normal leading-[13px] capitalize"
+					class="text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 mb-[2px] text-[13px] leading-[13px] font-normal capitalize transition-colors"
 				>
 					next
 				</div>
-				<div class="w-[20px] h-[20px]"></div>
+				<div class="h-[20px] w-[20px]"></div>
 			</div>
 			<div class="flex items-center gap-x-2">
 				<span
-					class="text-[16px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium leading-6 capitalize"
+					class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[16px] leading-6 font-medium capitalize"
 				>
 					{next.title}
 				</span>
 				<div
-					class="w-[20px] h-[20px] transition-colors flex items-center justify-center text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000"
+					class="text-kui-light-gray-900 group-hover:text-kui-light-gray-1000 dark:text-kui-dark-gray-900 dark:group-hover:text-kui-dark-gray-1000 flex h-[20px] w-[20px] items-center justify-center transition-colors"
 				>
-					<div class="w-4 h-4">
+					<div class="h-4 w-4">
 						<ChevronRight />
 					</div>
 				</div>
@@ -91,7 +91,7 @@
 {/snippet}
 
 <section class="w-full">
-	<nav class="w-full flex items-center {paginationStyle} gap-x-4" aria-label="pagination">
+	<nav class="flex w-full items-center {paginationStyle} gap-x-4" aria-label="pagination">
 		{@render prevSnip()}
 		{@render nextSnip()}
 	</nav>

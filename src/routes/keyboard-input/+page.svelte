@@ -17,12 +17,12 @@
 {#snippet keyboardInputDefault()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-[48px] lg:tracking-[-2.4px]"
 		>
 			Keyboard Input
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-[30px] lg:tracking-[-0.33px]"
 		>
 			Display keyboard input that triggers an action.
 		</p>
@@ -31,10 +31,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4">
+		<div class="w-full overflow-x-auto p-4 lg:p-6">
+			<div class="flex w-full flex-wrap gap-4">
 				{@render demo()}
 			</div>
 		</div>

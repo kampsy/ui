@@ -24,14 +24,14 @@
 			in:fly|local={{ y: "50vh", duration: 500, opacity: 1 }}
 			out:fly|local={{ y: "100vh", duration: 600, easing: cubicOut, opacity: 1 }}
 			role="dialog"
-			class="fixed bottom-0 left-0 w-full rounded-t-[10px] bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary lg:bg-transparent z-1001"
+			class="bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary fixed bottom-0 left-0 z-1001 w-full rounded-t-[10px] lg:bg-transparent"
 		>
 			<div
 				use:clickOutside={() => {
 					rootState.setIsActive(false)
 				}}
-				class="w-full max-h-[80vh] rounded-t-[10px] rounded-[10px] bg-kui-light-bg dark:bg-kui-dark-bg-secondary
-				border-t border-kui-light-gray-600 dark:border-kui-dark-gray-500"
+				class="bg-kui-light-bg dark:bg-kui-dark-bg-secondary border-kui-light-gray-600 dark:border-kui-dark-gray-500 max-h-[80vh] w-full
+				rounded-[10px] rounded-t-[10px] border-t"
 			>
 				{@render children()}
 			</div>
@@ -48,8 +48,8 @@
 				rootState.setIsActive(false)
 			}}
 			role="dialog"
-			class="relative w-135 max-h-156.5 rounded-xl bg-kui-light-bg dark:bg-kui-dark-bg-secondary border
-                border-kui-light-gray-600 dark:border-kui-dark-gray-200 {klass}"
+			class="bg-kui-light-bg dark:bg-kui-dark-bg-secondary border-kui-light-gray-600 dark:border-kui-dark-gray-200 relative max-h-156.5 w-135
+                rounded-xl border {klass}"
 		>
 			{@render children()}
 		</div>

@@ -41,11 +41,11 @@
 
 <div class="w-full">
 	{#if label}
-		<div class="text-[13px] mb-2 first-letter:capitalize {labelClass} ">
+		<div class="mb-2 text-[13px] first-letter:capitalize {labelClass} ">
 			{label}
 		</div>
 	{/if}
-	<div class="w-full flex gap-x-4">
+	<div class="flex w-full gap-x-4">
 		{#if children}
 			{@render children()}
 		{/if}

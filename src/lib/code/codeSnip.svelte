@@ -13,10 +13,10 @@
 	const highlightedCode = hljs.highlight(code, { language: lang }).value
 </script>
 
-<div class="ui-scrollbar w-full h-auto px-6 text-[13px] scroll-smoth overflow-x-auto">
+<div class="ui-scrollbar scroll-smoth h-auto w-full overflow-x-auto px-6 text-[13px]">
 	<pre class={language}>
         <code class={language}>
-            <!-- eslint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
+            <!-- oxlint-disable-next-line svelte/no-at-html-tags -- safe: highlight.js escapes the code before adding highlight spans -->
             {@html highlightedCode}
         </code>
     </pre>

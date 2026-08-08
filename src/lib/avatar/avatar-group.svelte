@@ -32,7 +32,7 @@
 				username={member.username}
 				letter={member.letter}
 				title={member.title}
-				class="ring-1 ring-kui-light-bg dark:ring-kui-dark-bg"
+				class="ring-kui-light-bg dark:ring-kui-dark-bg ring-1"
 			/>
 		</div>
 	{/each}

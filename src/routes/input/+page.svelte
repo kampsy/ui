@@ -26,12 +26,12 @@
 {#snippet input()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-[48px] lg:tracking-[-2.4px]"
 		>
 			input
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-[30px] lg:tracking-[-0.33px]"
 		>
 			Retrieve text input from a user.
 		</p>
@@ -40,10 +40,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4">
+		<div class="w-full overflow-x-auto p-4 lg:p-6">
+			<div class="flex w-full flex-wrap gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 		<LinkH2 href="/input#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-1 gap-4 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
 					<Input aria-labelledby="Demo input" placeholder="small" size="small" />
 					<Input aria-labelledby="Demo input" placeholder="default" />
 					<Input aria-labelledby="Demo input" placeholder="large" size="large" />
@@ -74,13 +74,13 @@
 		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" contPrefix={ArrowCircleUp} placeholder="default" />
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" contSuffix={ArrowCircleUp} placeholder="default" />
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contPrefix="https://"
@@ -88,7 +88,7 @@
 						placeholder="default"
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contPrefix={ArrowCircleUp}
@@ -98,7 +98,7 @@
 						placeholder="default"
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" contPrefix="ui" placeholder="default" />
 				</div>
 			{/snippet}
@@ -112,13 +112,13 @@
 		<LinkH2 href="/input#disabled" aria-label="disabled">disabled</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" placeholder="Disabled with placeholder" disabled />
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input aria-labelledby="Demo" value="Disabled with placeholder" disabled />
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contPrefix={ArrowCircleUp}
@@ -126,7 +126,7 @@
 						disabled
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contSuffix={ArrowCircleUp}
@@ -134,7 +134,7 @@
 						disabled
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contPrefix="https://"
@@ -143,7 +143,7 @@
 						disabled
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo"
 						contPrefix={ArrowCircleUp}
@@ -164,7 +164,7 @@
 	<Row>
 		<LinkH2 href="/input#search" aria-label="search">search</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Automatically clears the input if escape is pressed.
 		</p>
@@ -184,7 +184,7 @@
 		<LinkH2 href="/input#error" aria-label="error">error</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo input"
 						error="An error message."
@@ -192,14 +192,14 @@
 						size="small"
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo input"
 						error="An error message."
 						placeholder="long-error@gmail.com"
 					/>
 				</div>
-				<div class="w-full grid grid-cols-1 lg:grid-cols-3">
+				<div class="grid w-full grid-cols-1 lg:grid-cols-3">
 					<Input
 						aria-labelledby="Demo input"
 						error="An error message."

@@ -161,14 +161,14 @@
 
 <span>
 	<span
-		class="w-auto group relative cursor-pointer text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 {klass}"
+		class="group text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 relative w-auto cursor-pointer {klass}"
 	>
 		{#if children}
 			{@render children?.()}
 		{/if}
 		<span
 			style={widthClass}
-			class=" invisible group-hover:visible absolute {tooltipStyle} px-3 py-1.5 text-xs text-center rounded-sm z-1000"
+			class=" invisible absolute group-hover:visible {tooltipStyle} z-1000 rounded-sm px-3 py-1.5 text-center text-xs"
 		>
 			{text || ""}
 		</span>

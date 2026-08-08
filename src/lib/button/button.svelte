@@ -69,7 +69,7 @@
 	{#if svgOnly}
 		{#if loading}
 			<span
-				class="{iconSize} animate-spin flex items-center justify-center"
+				class="{iconSize} flex animate-spin items-center justify-center"
 				aria-hidden="true"
 			>
 				<LoaderCircle />
@@ -82,7 +82,7 @@
 	{:else}
 		{#if loading}
 			<span
-				class="{iconSize} animate-spin flex items-center justify-center"
+				class="{iconSize} flex animate-spin items-center justify-center"
 				aria-hidden="true"
 			>
 				<LoaderCircle />

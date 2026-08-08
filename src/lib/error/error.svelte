@@ -47,16 +47,16 @@
 
 {#snippet withErrorPropSnip()}
 	<div
-		class="flex items-center gap-1 text-[14px] text-kui-light-red-900 dark:text-kui-dark-red-900"
+		class="text-kui-light-red-900 dark:text-kui-dark-red-900 flex items-center gap-1 text-[14px]"
 	>
 		{error?.message || ""}
 		<div
-			class=" font-medium leading-5 capitalize border-b border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800"
+			class=" border-kui-light-red-900 dark:border-kui-dark-red-900 hover:text-kui-light-red-600 dark:hover:text-kui-dark-red-800 hover:border-kui-light-red-600 dark:hover:border-kui-dark-red-800 border-b leading-5 font-medium capitalize"
 		>
 			<a href={error?.link || ""}>
 				<div class="flex items-center gap-1">
 					{error?.action || ""}
-					<div class="w-3.5 h-3.5">
+					<div class="h-3.5 w-3.5">
 						<LinkExternal />
 					</div>
 				</div>
@@ -74,7 +74,7 @@
 {/snippet}
 
 <div class="flex items-center gap-2">
-	<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
+	<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 h-4 w-4">
 		<Error />
 	</div>
 	<div>

@@ -1,6 +1,18 @@
 {
 	"version": 1,
 	"skills": {
+		"migrate-oxfmt": {
+			"source": "oxc-project/oxc",
+			"sourceType": "github",
+			"skillPath": ".agents/skills/migrate-oxfmt/SKILL.md",
+			"computedHash": "1e4b8c8de25756611de7849215f37f41654c2f0a2a3eeb63e433723c16a674d9"
+		},
+		"migrate-oxlint": {
+			"source": "oxc-project/oxc",
+			"sourceType": "github",
+			"skillPath": ".agents/skills/migrate-oxlint/SKILL.md",
+			"computedHash": "7bc6dccdcc557cdb7d887fc16c6632e685b13860d202b9c9ce5da7504f0dbe18"
+		},
 		"svelte-code-writer": {
 			"source": "sveltejs/ai-tools",
 			"sourceType": "github",

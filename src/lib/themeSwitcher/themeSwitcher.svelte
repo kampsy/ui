@@ -66,9 +66,9 @@
 
 <span>
 	<div
-		class="w-[96px] h-8 rounded-full overflow-hidden flex items-center {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="flex h-8 w-[96px] items-center overflow-hidden rounded-full {contBorder} border-kui-light-gray-200 dark:border-kui-dark-gray-400"
 	>
-		<div class="w-8 h-8">
+		<div class="h-8 w-8">
 			<input
 				{onchange}
 				checked={switcher.theme === "system"}
@@ -80,12 +80,12 @@
 			/>
 			<label
 				for="theme-switch-system-{randStr}"
-				class="w-full h-full rounded-full transition duration-0 {system} flex items-center justify-center cursor-pointer"
+				class="h-full w-full rounded-full transition duration-0 {system} flex cursor-pointer items-center justify-center"
 			>
 				<DeviceAlternative />
 			</label>
 		</div>
-		<div class="w-8 h-8">
+		<div class="h-8 w-8">
 			<input
 				{onchange}
 				checked={switcher.theme === "light"}
@@ -97,12 +97,12 @@
 			/>
 			<label
 				for="theme-switch-light-{randStr}"
-				class="w-full h-full rounded-full transition duration-0 {light} flex items-center justify-center cursor-pointer"
+				class="h-full w-full rounded-full transition duration-0 {light} flex cursor-pointer items-center justify-center"
 			>
 				<Sun />
 			</label>
 		</div>
-		<div class="w-8 h-8">
+		<div class="h-8 w-8">
 			<input
 				{onchange}
 				checked={switcher.theme === "dark"}
@@ -114,7 +114,7 @@
 			/>
 			<label
 				for="theme-switch-dark-{randStr}"
-				class="w-full h-full rounded-full transition duration-0 {dark} flex items-center justify-center cursor-pointer"
+				class="h-full w-full rounded-full transition duration-0 {dark} flex cursor-pointer items-center justify-center"
 			>
 				<Moon />
 			</label>
