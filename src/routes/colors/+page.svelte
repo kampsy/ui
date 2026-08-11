@@ -245,8 +245,8 @@
 {#snippet compactBackgrounds()}
 	<Row>
 		<LinkH2
-			href="/colors#colors-1–3:-component-backgrounds"
-			aria-label="Colors 1–3: Component Backgrounds">Colors 1–3: Component Backgrounds</LinkH2
+			href="/colors#colors-1-3:-component-backgrounds"
+			aria-label="Colors 1-3: Component Backgrounds">Colors 1-3: Component Backgrounds</LinkH2
 		>
 		<p
 			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
