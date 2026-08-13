@@ -44,7 +44,7 @@ export const choiceboxDisabled = `
 	let value2: string | string[] = $state([]);
 </script>
 
-<div class="w-full space-y-4">
+<div class="flex w-full flex-initial flex-col items-stretch justify-start gap-6">
 	<Choicebox.Group label="Choicebox group disabled" disabled type="radio" bind:value>
 		<Choicebox.Item description="Free for two weeks" title="Pro Trial" value="trial" />
 		<Choicebox.Item description="Get started now" title="Pro" value="pro" />
