@@ -90,7 +90,7 @@
 {#if rootState.getError()}
 	<div class="mt-2">
 		<div class="flex items-center gap-2">
-			<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
+			<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 h-4 w-4">
 				<Error />
 			</div>
 			<div class="font-medium {errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">

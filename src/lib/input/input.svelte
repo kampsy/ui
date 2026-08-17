@@ -121,13 +121,13 @@
 {#snippet prefixSnip()}
 	{#if contPrefix}
 		<span
-			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {prefixClass}"
+			class="text-kui-light-gray-700 dark:text-kui-dark-gray-700 flex h-full items-center px-3 {prefixClass}"
 		>
 			{#if typeof contPrefix === "string"}
 				{contPrefix}
 			{:else if typeof contPrefix === "function"}
 				{@const PrefixIcon = contPrefix}
-				<div class="w-4 h-4">
+				<div class="h-4 w-4">
 					<PrefixIcon />
 				</div>
 			{/if}
@@ -139,13 +139,13 @@
 {#snippet suffixSnip()}
 	{#if contSuffix}
 		<span
-			class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700 {suffixClass}"
+			class="text-kui-light-gray-700 dark:text-kui-dark-gray-700 flex h-full items-center px-3 {suffixClass}"
 		>
 			{#if typeof contSuffix === "string"}
 				{contSuffix}
 			{:else if typeof contSuffix === "function"}
 				{@const SuffixIcon = contSuffix}
-				<div class="w-4 h-4">
+				<div class="h-4 w-4">
 					<SuffixIcon />
 				</div>
 			{/if}
@@ -156,12 +156,12 @@
 {#snippet inputSnip()}
 	<div>
 		<div
-			class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-md bg-kui-light-bg
-			dark:bg-kui-dark-bg"
+			class="flex items-center {sizeClass} overflow-hidden border transition-all {ringClass} bg-kui-light-bg dark:bg-kui-dark-bg
+			rounded-md"
 		>
 			{@render prefixSnip()}
 
-			<div class="w-full h-full {inputContClass}">
+			<div class="h-full w-full {inputContClass}">
 				<input
 					bind:value
 					id={uid}
@@ -175,7 +175,7 @@
 					onblur={() => {
 						hasRing = false
 					}}
-					class="{inputClass} w-full h-full outline-hidden bg-transparent"
+					class="{inputClass} h-full w-full bg-transparent outline-hidden"
 					{...rest}
 				/>
 			</div>
@@ -185,7 +185,7 @@
 		{#if error}
 			<div class="mt-2">
 				<div class="flex items-center gap-2">
-					<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
+					<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 h-4 w-4">
 						<Error />
 					</div>
 					<div class="{errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">
@@ -202,7 +202,7 @@
 	{#snippet inputLabel()}
 		<label for={uid}>
 			<div
-				class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2"
+				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2 inline-block text-sm"
 			>
 				{label}
 			</div>

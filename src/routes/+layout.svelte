@@ -45,8 +45,8 @@
 
 <Analytics>
 	<main
-		class="ui-scrollbar font-inter min-h-screen overflow-x-hidden md:overflow-x-visible bg-kui-light-bg-secondary
-		dark:bg-kui-dark-bg-secondary"
+		class="ui-scrollbar font-inter bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary min-h-screen overflow-x-hidden
+		md:overflow-x-visible"
 	>
 		{@render children()}
 	</main>

@@ -31,12 +31,12 @@
 {#snippet description()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			Split Button
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			A button that offers a primary interaction coupled with a dropdown menu offering
 			additional actions.
@@ -46,10 +46,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl border"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="w-full flex flex-nowrap gap-4 items-center justify-between">
+			<div class="flex w-full flex-nowrap items-center justify-between gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 	<Row>
 		<LinkH2 href="/split-button#split-button" aria-label="split-button">default</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			The button's primary action should be the first item in the dropdown menu.
 		</p>
@@ -91,7 +91,7 @@
 							</SplitButton.Root>
 						{/each}
 					</div>
-					<div class="w-full flex flex-wrap gap-4 lg:gap-8">
+					<div class="flex w-full flex-wrap gap-4 lg:gap-8">
 						{#each sizes as size, index (index)}
 							<SplitButton.Root>
 								<SplitButton.Button
@@ -126,7 +126,7 @@
 		<LinkH2 href="/split-button#types" aria-label="types">types</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full flex flex-wrap gap-4 lg:gap-10">
+				<div class="flex w-full flex-wrap gap-4 lg:gap-10">
 					{#each sbTypes as sbType, index (index)}
 						<SplitButton.Root>
 							<SplitButton.Button onclick={() => alert("Clicked save")} type={sbType}
@@ -160,7 +160,7 @@
 		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<div class="w-full flex gap-10">
+				<div class="flex w-full gap-10">
 					<SplitButton.Root>
 						<SplitButton.Button onclick={() => alert("Clicked save")}>save</SplitButton.Button>
 						<SplitButton.Content class="w-66">

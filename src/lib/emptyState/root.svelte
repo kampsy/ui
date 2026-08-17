@@ -14,30 +14,30 @@
 
 <div
 	{...rest}
-	class="w-full px-17.5 py-12 border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
+	class="border-kui-light-gray-400 dark:border-kui-dark-gray-200 w-full rounded-lg border px-17.5 py-12"
 >
 	<div class="grid justify-items-center gap-6">
 		<!-- icon container -->
 		{#if icon}
 			{@const Icon = icon}
-			<div class="w-full flex justify-center">
+			<div class="flex w-full justify-center">
 				<div
-					class="flex items-center justify-center w-15.5 h-15 border border-kui-light-gray-400 dark:border-kui-dark-gray-200 rounded-lg"
+					class="border-kui-light-gray-400 dark:border-kui-dark-gray-200 flex h-15 w-15.5 items-center justify-center rounded-lg border"
 				>
-					<div class="w-8 h-8">
+					<div class="h-8 w-8">
 						<Icon />
 					</div>
 				</div>
 			</div>
 		{/if}
 		<!-- text cont -->
-		<div class="flex flex-col gap-2 mx-auto max-w-85">
+		<div class="mx-auto flex max-w-85 flex-col gap-2">
 			<p
-				class="text-center text-base capitalize text-kui-light-dark-gray-1000 dark:text-kui-dark-gray-1000"
+				class="text-kui-light-dark-gray-1000 dark:text-kui-dark-gray-1000 text-center text-base capitalize"
 			>
 				<span>{title}</span>
 			</p>
-			<p class="text-center text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900">
+			<p class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-center text-sm">
 				<span class="inline-block text-balance">{description}</span>
 			</p>
 		</div>

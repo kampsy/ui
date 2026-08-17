@@ -7,5 +7,5 @@
 </script>
 
 <section class={klass}>
-	<div class="w-full border-t border-kui-light-gray-200 dark:border-kui-dark-gray-400"></div>
+	<div class="border-kui-light-gray-200 dark:border-kui-dark-gray-400 w-full border-t"></div>
 </section>

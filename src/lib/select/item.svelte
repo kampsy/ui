@@ -22,19 +22,19 @@
 		rootState.setSelected(value)
 		rootState.setIsActive(false)
 	}}
-	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center rounded-xs py-1.5 px-2 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
+	class="hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100 relative flex w-full cursor-pointer items-center rounded-xs bg-transparent px-2 py-1.5 text-sm transition-colors"
 >
 	{#if rootState.getSelected() === value}
 		<!--Icon-->
 		<div transition:fade class="absolute right-2">
-			<div class="w-full h-full flex items-center justify-center">
-				<div class="w-3.5 h-3.5 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
+			<div class="flex h-full w-full items-center justify-center">
+				<div class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 h-3.5 w-3.5">
 					<Check />
 				</div>
 			</div>
 		</div>
 	{/if}
-	<span class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000">
+	<span class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 first-letter:capitalize">
 		{@render children()}
 	</span>
 </button>

@@ -39,12 +39,12 @@
 {#snippet avatar()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			avatar
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			Avatars represent a user or a team. Stacked avatars represent a group of people.
 		</p>
@@ -53,10 +53,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="w-full flex flex-wrap gap-4 justify-between">
+			<div class="flex w-full flex-wrap justify-between gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -66,7 +66,7 @@
 
 {#snippet roundedCode(rct: string)}
 	<code
-		class="px-2 py-[3.6px] rounded-md text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
 	>
 		{rct}
 	</code>
@@ -95,7 +95,7 @@
 	<Row>
 		<LinkH2 href="/avatar#stacking-order">stacking order</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			By default the first member sits on top of the stack, so the first credited author stays
 			the most prominent. Set {@render roundedCode("reverse")} to flip the order so the last member
@@ -117,7 +117,7 @@
 	<Row>
 		<LinkH2 href="/avatar#overlap">overlap</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			By default {@render roundedCode('overlap="auto"')} scales the spacing with {@render roundedCode(
 				"size",
@@ -141,7 +141,7 @@
 	<Row>
 		<LinkH2 href="/avatar#fixed-overlap">fixed overlap</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Pass a number to set the overlap in pixels instead. Lower values give more generous
 			spacing; higher values pack tighter for dense, space-constrained UI.
@@ -234,20 +234,20 @@
 {#snippet bestPractices()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize"
 		>
 			Best Practices
 		</h2>
 		<ul class="mt-4 list-disc">
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 			>
 				Use a single {@render roundedCode("Avatar")} for one person, team, or organization. For two
 				or more stacked avatars, use {@render roundedCode("AvatarGroup")} so the cluster gets correct
 				overlap, sizing, and a single accessible label.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 			>
 				Pass {@render roundedCode("src")} first and fall back to {@render roundedCode(
 					"letter",
@@ -256,7 +256,7 @@
 				)} for the loading shell, never as a permanent fallback.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 			>
 				{@render roundedCode("title")} is the literal entity name ({@render roundedCode(
 					"Acme Inc.",
@@ -266,13 +266,13 @@
 				)}.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 			>
 				Keep {@render roundedCode("letter")} uppercase and derived from the entity name. No emoji,
 				no punctuation, no {@render roundedCode("?")}.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 			>
 				Pick a size that matches adjacent type: 20–24 px next to small text, 32 px next to body
 				text, 48–64 px in headers and onboarding states.

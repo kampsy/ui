@@ -23,10 +23,10 @@ npm run preview
 ## Lint/Format Commands
 
 ```bash
-# Check code style
+# Check formatting (Oxfmt) and lint (Oxlint)
 npm run lint
 
-# Auto-format code
+# Auto-format code with Oxfmt
 npm run format
 
 # Type check

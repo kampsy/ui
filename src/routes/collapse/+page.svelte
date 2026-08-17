@@ -31,12 +31,12 @@
 {#snippet collapse()}
 	<Row bottomLine={false}>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-[48px] lg:tracking-[-2.4px]"
 		>
 			collapse
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-[30px] lg:tracking-[-0.33px]"
 		>
 			A set of headings, vertically stacked, that each reveal an related section of content.
 			Commonly referred to as an accordion.
@@ -58,10 +58,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4">
+		<div class="w-full overflow-x-auto p-4 lg:p-6">
+			<div class="flex w-full flex-wrap gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -207,7 +207,7 @@
 
 {#snippet roundedCode(rct: string)}
 	<code
-		class="px-2 py-[3.6px] rounded-md text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
 	>
 		{rct}
 	</code>
@@ -216,38 +216,38 @@
 {#snippet accessibility()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-[32px] tracking-[-0.96px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] first-letter:capitalize"
 		>
 			Accessibility
 		</h2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			This component aims to adhere to
 			<a
 				href="https://www.w3.org/TR/WCAG22/"
-				class="text-kui-light-blue-900 underline dark:text-kui-dark-blue-900"
+				class="text-kui-light-blue-900 dark:text-kui-dark-blue-900 underline"
 				>WCAG 2.2 (level AA)</a
 			> guidelines. Ensure this compliance is maintained when the component is integrated into other
 			projects.
 		</p>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Accordion headings should clearly and accurately describe the content within each
 			corresponding section.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Do not use an accordion if it conceals essential information the user needs to complete
 			actions on the page.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Ensure that the Collapse.Trigger has a {@render roundedCode('role="heading"')}
 			attribute. This heading should have an appropriate {@render roundedCode("aria-level")} designation,
@@ -255,28 +255,28 @@
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			If the accordion panel linked to the heading is visible, then the Collapse.Trigger must
 			have {@render roundedCode('aria-expanded="true"')} .
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			The Collapse.Trigger must have an {@render roundedCode("aria-controls")} attribute that points
 			to the ID of the associated accordion panel.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Add the {@render roundedCode("aria-labelledby")} attribute to Collapse.Content and set its
 			ID value to the aria-controls of Collapse.Trigger.
 		</Text>
 		<Text
 			size={{ sm: 14, md: 16, lg: 16 }}
-			class="mt-2 xl:mt-4 text-kui-light-gray-900 dark:text-kui-dark-gray-900"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 xl:mt-4"
 		>
 			Avoid keyboard traps when adding components to the accordion panel. For instance, users
 			can expand an accordion but may not be able to tab to the next focusable element.
@@ -288,7 +288,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: "choicebox", href: "/choicebox" }}
-			next={{ title: "description", href: "/description" }}
+			next={{ title: "copy button", href: "/copy-button" }}
 		/>
 	</Row>
 {/snippet}

@@ -1,0 +1,41 @@
+# Copy Button Component
+
+### CopyButton
+
+**Exports:**
+- `CopyButton` - Icon-only button that copies text to the clipboard and shows copied feedback
+
+**Props:**
+- `label`: string (default: 'Copy to clipboard') - Accessible label before copying
+- `textToCopy`: string - Text written to the clipboard
+- `size`: 'tiny' | 'small' | 'medium' | 'large' (default: 'small')
+- `variant`: 'default' | 'secondary' | 'tertiary' | 'error' | 'warning' (default: 'secondary')
+- `shape`: 'square' | 'circle' | 'rounded' (default: 'square')
+- `disabled`: boolean
+- `class`: ClassValue
+- Extends `ButtonProps` except `children`, `onclick`, `aria-label`, and `svgOnly`
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { CopyButton } from 'kampsy-ui';
+</script>
+
+<CopyButton label="Copy text" textToCopy="hello world" />
+```
+
+The copy action requires the browser Clipboard API, which is available in secure contexts such as HTTPS or localhost. The accessible label changes from `Copy to clipboard` to `Copied` after a successful copy.
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/copy-button for full documentation and examples.
+
+## License
+
+MIT License

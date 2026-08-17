@@ -20,12 +20,12 @@
 {#snippet gettingStarted()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			Getting started
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			Begin your journey with Kampsy-ui by following the quickstart guide to unlock the power
 			of interactive Svelte 5 components, seamlessly integrated with Tailwind CSS.
@@ -35,7 +35,7 @@
 
 {#snippet demoAndCodeSnip(code: string, lang = "tsx", language = "language-tsx")}
 	<div
-		class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
 		<CodeSnip {code} {lang} {language} />
 	</div>
@@ -47,7 +47,7 @@
 			>Using SvelteKit</LinkH2
 		>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			We recommend using {@render roundedCode("SvelteKit")} , the official application framework
 			from the Svelte team powered by {@render roundedCode("Vite")} .
@@ -57,14 +57,14 @@
 			{@render demoAndCodeSnip(installationSveltekit, "bash", "language-bash")}
 		</div>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			After running the above command, you’ll be asked: {@render roundedCode(
 				"Which template would you like?",
 			)} Select {@render roundedCode("SvelteKit minimal")} and press Enter.
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Next, you’ll see the prompt: {@render roundedCode("Add type checking with Typescript?")} We
 			recommend keeping the default option: {@render roundedCode(
@@ -72,7 +72,7 @@
 			)} Press Enter to confirm.
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			You will then see the question: {@render roundedCode(
 				"What would you like to add to your project?",
@@ -85,27 +85,27 @@
 			.
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			SvelteKit now includes Tailwind CSS 4 by default, which uses a simpler configuration
 			approach. Press enter to confirm
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Tailwindcss plugins (optional): For the question: {@render roundedCode(
 				"Tailwindcss: Which plugins would you like to add?",
 			)} Press Enter if no plugins are needed.
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Finally, you’ll be asked: {@render roundedCode(
 				"Which package manager do you want to install dependencies with?",
 			)} Choose {@render roundedCode("pnpm,")} as it is preferred. Press Enter to confirm.
 		</p>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Once the dependencies are installed, your SvelteKit project with Tailwindcss is ready!
 			Navigate to your project directory {@render roundedCode("cd my-app")} . From here, you can
@@ -120,7 +120,7 @@
 			>install kampsy-ui</LinkH2
 		>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Run the following command to install kampsy-ui:
 		</p>
@@ -133,7 +133,7 @@
 <!--Rounded content-->
 {#snippet roundedCode(rct: string)}
 	<code
-		class="px-2 py-[3.6px] rounded-md text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
 	>
 		{rct}
 	</code>
@@ -144,7 +144,7 @@
 		<LinkH2 href="/installation#configuration" aria-label="Configuration">Configuration</LinkH2
 		>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Add the following to your {@render roundedCode("layout.css")} file.
 		</p>

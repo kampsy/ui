@@ -94,7 +94,7 @@
 	<button
 		disabled={disabled || tab.disabled}
 		onclick={() => (selected = tab.value)}
-		class="flex items-center justify-center gap-x-[6px] transition-all text-xs {tabButtonFunc(
+		class="flex items-center justify-center gap-x-[6px] text-xs transition-all {tabButtonFunc(
 			isActive,
 			disabled,
 			tab.disabled,
@@ -102,8 +102,8 @@
 	>
 		{#if tab.icon}
 			{@const Icon = tab.icon}
-			<div class="w-4 h-4 flex items-center justify-center">
-				<div class="w-4 h-4">
+			<div class="flex h-4 w-4 items-center justify-center">
+				<div class="h-4 w-4">
 					<Icon />
 				</div>
 			</div>
@@ -112,7 +112,7 @@
 	</button>
 {/snippet}
 
-<div class="w-full flex items-center {contClass}">
+<div class="flex w-full items-center {contClass}">
 	{#if tabs}
 		{#each tabs as tab (tab.value)}
 			<div class="-mb-px">

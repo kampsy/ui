@@ -14,7 +14,7 @@
 		placeholder?: string | undefined
 		disabled?: boolean
 	}
-	// eslint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
+	// oxlint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
 	let {
 		"aria-labelledby": araiLabelledBy = undefined,
 		id = undefined,
@@ -93,8 +93,8 @@
 			autocapitalize="off"
 			autocomplete="off"
 			rows="4"
-			class=" transition-all border {textareaClass} block px-[12px] py-[10px] w-full rounded-md outline-hidden
-		 bg-kui-light-bg dark:bg-kui-dark-bg"
+			class=" border transition-all {textareaClass} bg-kui-light-bg dark:bg-kui-dark-bg block w-full rounded-md px-[12px]
+		 py-[10px] outline-hidden"
 			{placeholder}
 			{disabled}
 			onfocus={() => {
@@ -102,13 +102,12 @@
 			}}
 			onblur={() => {
 				hasRing = false
-			}}
-		></textarea>
+			}}></textarea>
 
 		{#if error}
 			<div class="mt-2">
 				<div class="flex items-center gap-2">
-					<div class="w-4 h-4 text-kui-light-red-900 dark:text-kui-dark-red-900">
+					<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 h-4 w-4">
 						<Error />
 					</div>
 					<div class="font-medium {text} text-kui-light-red-900 dark:text-kui-dark-red-900">
@@ -124,7 +123,7 @@
 {#snippet textAreaLabel()}
 	<label for={inputID}>
 		<div
-			class="inline-block text-sm text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2 inline-block text-sm"
 		>
 			{label}
 		</div>

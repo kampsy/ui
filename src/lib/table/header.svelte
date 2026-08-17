@@ -7,7 +7,7 @@
 	let { children = undefined }: Props = $props()
 </script>
 
-<thead class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+<thead class="border-kui-light-gray-200 dark:border-kui-dark-gray-400 border-b">
 	{#if children}
 		{@render children()}
 	{/if}

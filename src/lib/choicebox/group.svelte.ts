@@ -15,6 +15,7 @@ export function createGroupState(initial: {
 	name: string
 	type: "radio" | "checkbox"
 	disabledParent: boolean
+	onchange?: (value: string | Array<string>) => void
 }) {
 	let selected = $state(initial.selected)
 
@@ -23,6 +24,7 @@ export function createGroupState(initial: {
 	}
 	function set(value: string | Array<string>) {
 		selected = value
+		initial.onchange?.(value)
 	}
 
 	return {

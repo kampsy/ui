@@ -1,6 +1,30 @@
 {
 	"version": 1,
 	"skills": {
+		"code-review": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"skillPath": "skills/engineering/code-review/SKILL.md",
+			"computedHash": "1d5e7242a98674635be79ab310cdda0e555d36a9903d2526ebf4263d0b7997ca"
+		},
+		"grill-me": {
+			"source": "mattpocock/skills",
+			"sourceType": "github",
+			"skillPath": "skills/productivity/grill-me/SKILL.md",
+			"computedHash": "f361db4e15e6bfd562a9282b1dccda513910a50061f9e838ce017be9c69dde3f"
+		},
+		"migrate-oxfmt": {
+			"source": "oxc-project/oxc",
+			"sourceType": "github",
+			"skillPath": ".agents/skills/migrate-oxfmt/SKILL.md",
+			"computedHash": "1e4b8c8de25756611de7849215f37f41654c2f0a2a3eeb63e433723c16a674d9"
+		},
+		"migrate-oxlint": {
+			"source": "oxc-project/oxc",
+			"sourceType": "github",
+			"skillPath": ".agents/skills/migrate-oxlint/SKILL.md",
+			"computedHash": "7bc6dccdcc557cdb7d887fc16c6632e685b13860d202b9c9ce5da7504f0dbe18"
+		},
 		"svelte-code-writer": {
 			"source": "sveltejs/ai-tools",
 			"sourceType": "github",

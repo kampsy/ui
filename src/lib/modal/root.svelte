@@ -62,7 +62,7 @@
 	<div
 		in:fade|local={{ duration: 100 }}
 		out:fade|local={{ duration: 100 }}
-		class="fixed top-0 left-0 w-full h-full bg-kui-black opacity-40 z-1000"
+		class="bg-kui-black fixed top-0 left-0 z-1000 h-full w-full opacity-40"
 	></div>
 {/if}
 
@@ -70,7 +70,7 @@
 	<div
 		in:fade
 		out:fade
-		class="fixed top-0 left-0 w-full h-full flex items-center justify-center"
+		class="fixed top-0 left-0 flex h-full w-full items-center justify-center"
 	>
 		{@render children()}
 	</div>

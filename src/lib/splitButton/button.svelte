@@ -12,7 +12,7 @@
 		children: Snippet | undefined
 	}
 
-	// eslint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
+	// oxlint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
 	let {
 		onclick = undefined,
 		"aria-label": ariaLabel = undefined,
@@ -156,7 +156,7 @@
 	<div class="{sizeDivideClass} border-l {typeDivideClass}"></div>
 	<button aria-label={ariaLabel} onclick={toogle} type="button" {disabled} class={menuClass}>
 		<span class="flex px-[6px]">
-			<span class="w-4 h-4">
+			<span class="h-4 w-4">
 				<ChevronDown />
 			</span>
 		</span>

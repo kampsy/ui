@@ -9,7 +9,7 @@
 		disabled?: boolean | undefined
 		placeholder?: string | undefined
 	}
-	// eslint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
+	// oxlint-disable-next-line svelte/no-unused-props -- false positive: quoted renamed prop is used in the template
 	let {
 		"aria-labelledby": araiLabelledBy = undefined,
 		value = $bindable(""),
@@ -51,16 +51,16 @@
 </script>
 
 <div
-	class="flex items-center {sizeClass} overflow-hidden transition-all border {ringClass} rounded-md"
+	class="flex items-center {sizeClass} overflow-hidden border transition-all {ringClass} rounded-md"
 >
 	<span
-		class="h-full flex items-center px-3 text-kui-light-gray-700 dark:text-kui-dark-gray-700"
+		class="text-kui-light-gray-700 dark:text-kui-dark-gray-700 flex h-full items-center px-3"
 	>
-		<div class="w-4 h-4">
+		<div class="h-4 w-4">
 			<MagnifyingGlass />
 		</div>
 	</span>
-	<div class="w-full h-full pr-3">
+	<div class="h-full w-full pr-3">
 		<input
 			type="search"
 			aria-labelledby={araiLabelledBy}
@@ -73,8 +73,8 @@
 			onblur={() => {
 				hasRing = false
 			}}
-			class="w-full h-full outline-hidden bg-transparent capitalize placeholder:text-sm placeholder:text-kui-light-gray-600
-             dark:placeholder:text-kui-dark-gray-600"
+			class="placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600 h-full w-full bg-transparent capitalize outline-hidden
+             placeholder:text-sm"
 		/>
 	</div>
 </div>

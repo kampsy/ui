@@ -48,7 +48,7 @@
 {#snippet prefixSnip()}
 	{#if prefix}
 		{@const Prefix = prefix}
-		<div class="w-4 h-4 flex items-center justify-center">
+		<div class="flex h-4 w-4 items-center justify-center">
 			<Prefix />
 		</div>
 	{/if}
@@ -57,7 +57,7 @@
 {#snippet suffixSnip()}
 	{#if suffix}
 		{@const Suffix = suffix}
-		<div class="w-4 h-4 flex items-center justify-center">
+		<div class="flex h-4 w-4 items-center justify-center">
 			<Suffix />
 		</div>
 	{/if}
@@ -70,8 +70,8 @@
 		}
 		rootState.setIsActive(false)
 	}}
-	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center gap-2 {isSuffixClass} rounded-md
-	py-3.5 lg:py-2.5 px-2 {typeClass}"
+	class="relative flex w-full cursor-pointer items-center gap-2 bg-transparent text-sm transition-colors {isSuffixClass} rounded-md
+	px-2 py-3.5 lg:py-2.5 {typeClass}"
 >
 	{@render prefixSnip()}
 	<span class="first-letter:capitalize">

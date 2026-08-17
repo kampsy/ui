@@ -89,7 +89,7 @@
 <button
 	{onclick}
 	bind:this={button}
-	class="w-full flex items-center justify-between text-left bg-transparent {paddingClass}"
+	class="flex w-full items-center justify-between bg-transparent text-left {paddingClass}"
 	{...rest}
 >
 	{#if children}
@@ -99,9 +99,9 @@
 		>
 	{/if}
 	<div class="">
-		<div class="w-4 h-4 overflow-hidden">
+		<div class="h-4 w-4 overflow-hidden">
 			<div
-				class="w-4 h-4 {rotate} transform-gpu duration-200 text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+				class="h-4 w-4 {rotate} text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 transform-gpu duration-200"
 			>
 				<ChevronRight />
 			</div>

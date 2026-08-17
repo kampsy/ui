@@ -11,7 +11,7 @@
 
 {#if children}
 	<h3
-		class="text-[24px] text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 leading-[32px] font-semibold {klass}"
+		class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] leading-[32px] font-semibold {klass}"
 	>
 		{@render children()}
 	</h3>
