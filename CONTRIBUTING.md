@@ -8,7 +8,7 @@ If you need any help, feel free to reach out to [@kampsy](https://twitter.com/ka
 
 ## Table of Contents
 
-- [Contributing to shadcn-svelte](#contributing-to-kampsy-ui)
+- [Contributing to kampsy-ui](#contributing-to-kampsy-ui)
   - [Table of Contents](#table-of-contents)
   - [Ways to contribute](#ways-to-contribute)
   - [How to contribute](#how-to-contribute)
