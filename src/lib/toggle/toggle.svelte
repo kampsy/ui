@@ -36,15 +36,15 @@
 	const unique = `${randomString(4)}`
 
 	const sizeContObj = {
-		small: "w-7 h-3.5",
-		large: "w-[48px] h-[24px]",
+		small: "w-7.5 h-4",
+		large: "w-12.5 h-6.5",
 	}
 	let sizeContClass = $derived.by(() => {
 		return sizeContObj[size]
 	})
 
 	const sizeThumbObj = {
-		small: "w-[12px] h-[12px]",
+		small: "w-3 h-3",
 		large: "w-[22px] h-[22px]",
 	}
 	let sizeThumbClass = $derived.by(() => {
@@ -137,7 +137,7 @@
 			class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}"
 		>
 			<div
-				class="absolute {sizeThumbClass} start-[1.5px] rounded-full border transition-all {thumbClass}"
+				class="absolute {sizeThumbClass} rounded-full inset-s-0.5 transition-all border {thumbClass}"
 			>
 				{@render icons()}
 			</div>
