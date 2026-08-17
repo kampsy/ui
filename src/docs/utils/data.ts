@@ -57,6 +57,14 @@ export const asideData: Array<AsideT> = [
 				},
 			},
 			{
+				name: "banner",
+				url: "/banner",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "button",
 				url: "/button",
 				badge: {

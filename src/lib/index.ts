@@ -10,6 +10,10 @@ export type {
 	AvatarWithIconProps,
 } from "./avatar/types.js"
 
+// Banner
+export { Banner } from "./banner/index.js"
+export type { BannerProps } from "./banner/index.js"
+
 // Badge
 export { Badge, badgeVariants } from "./badge/index.js"
 export type { BadgeProps, BadgeVariant, BadgeContrast, BadgeSize } from "./badge/index.js"
