@@ -31,6 +31,9 @@ export * as Choicebox from "./choicebox/index.js"
 // Collapse
 export * as Collapse from "./collapse/index.js"
 
+// Copy Button
+export { CopyButton } from "./copyButton/index.js"
+
 // Description
 export { default as Description } from "./description/description.svelte"
 

@@ -89,6 +89,14 @@ export const asideData: Array<AsideT> = [
 				url: "/collapse",
 			},
 			{
+				name: "copy button",
+				url: "/copy-button",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "description",
 				url: "/description",
 			},

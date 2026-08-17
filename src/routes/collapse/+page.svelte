@@ -288,7 +288,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: "choicebox", href: "/choicebox" }}
-			next={{ title: "description", href: "/description" }}
+			next={{ title: "copy button", href: "/copy-button" }}
 		/>
 	</Row>
 {/snippet}
