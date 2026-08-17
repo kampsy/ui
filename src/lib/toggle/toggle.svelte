@@ -137,7 +137,7 @@
 			class="relative {sizeContClass} flex items-center rounded-full border {toogleContClass}"
 		>
 			<div
-				class="absolute {sizeThumbClass} rounded-full inset-s-0.5 transition-all border {thumbClass}"
+				class="absolute {sizeThumbClass} inset-s-0.5 rounded-full border transition-all {thumbClass}"
 			>
 				{@render icons()}
 			</div>
