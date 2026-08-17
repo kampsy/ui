@@ -7,7 +7,7 @@
 	let { children = undefined }: Props = $props()
 </script>
 
-<th class="h-10 px-2 text-left text-sm align-middle font-medium last:text-right">
+<th class="h-10 px-2 text-left align-middle text-sm font-medium last:text-right">
 	{#if children}
 		{@render children()}
 	{/if}

@@ -1,16 +1,36 @@
 <script lang="ts">
 	import Check from "$lib/icons/check.svelte"
-	import { randomString } from "$lib/utils/random.js"
-	import { getContext } from "svelte"
+	import { getContext, type Snippet } from "svelte"
+	import type { HTMLLabelAttributes } from "svelte/elements"
+	import {
+		resolveCheckboxCheckClass,
+		resolveCheckboxContClass,
+		resolveDescriptionClass,
+		resolveItemLabelClass,
+		resolveRadioContClass,
+		resolveRadioDotClass,
+		resolveTitleClass,
+	} from "./styles.js"
 
-	type propT = {
+	interface Props extends HTMLLabelAttributes {
 		defaultChecked?: boolean | undefined
 		disabled?: boolean | undefined
 		description?: string | undefined
 		title?: string | undefined
 		value: string
+		children?: Snippet | undefined
 	}
-	let { defaultChecked, disabled = undefined, description, title, value }: propT = $props()
+
+	let {
+		defaultChecked = false,
+		disabled = false,
+		description = undefined,
+		title = undefined,
+		value,
+		children = undefined,
+		class: klass,
+		...rest
+	}: Props = $props()
 
 	const groupState = getContext<{
 		name: string
@@ -20,160 +40,93 @@
 		set: (value: string | Array<string>) => void
 	}>("choicebox")
 
-	const { name, type, disabledParent } = groupState
+	const unique = $props.id()
 
-	// If the parent is disabled then the child is disabled
-	if (disabledParent) {
-		disabled = true
-	}
+	let isDisabled = $derived(disabled || groupState.disabledParent)
+	let isSelected = $derived.by(() => {
+		const current = groupState.get()
+		if (groupState.type === "radio") return current === value
+		return Array.isArray(current) && current.includes(value)
+	})
 
-	// If defaultChecked is set and value
-	if (defaultChecked) {
-		if (type === "radio") {
+	let defaultApplied = false
+	$effect.pre(() => {
+		if (defaultApplied || !defaultChecked) return
+		defaultApplied = true
+		if (groupState.type === "radio") {
 			groupState.set(value)
-		} else if (type === "checkbox") {
+		} else if (groupState.type === "checkbox") {
 			groupState.set([...groupState.get(), value])
 		}
-	}
+	})
 
-	const onchange = (evt: Event) => {
+	function handleChange(evt: Event) {
 		const target = evt.currentTarget as HTMLInputElement
-		if (type == "radio") {
+		if (groupState.type === "radio") {
 			groupState.set(target.value)
-		} else if (type == "checkbox") {
-			const arrStr = groupState.get() as Array<string>
+		} else if (groupState.type === "checkbox") {
+			const current = groupState.get() as Array<string>
 			const val = target.value
-			// if val is in the arrStr then remove it else add it
-			if (arrStr.includes(val)) {
-				groupState.set(arrStr.filter(item => item !== val))
+			if (current.includes(val)) {
+				groupState.set(current.filter(item => item !== val))
 			} else {
-				groupState.set([...arrStr, val])
+				groupState.set([...current, val])
 			}
 		}
 	}
 
-	// random string for unique id
-	const unique = `${randomString(4)}_${value}`
-
-	//When the selected class
-	let labelClass = $derived.by(() => {
-		// it is desabled
-		if (disabled) {
-			return ` cursor-not-allowed border-kui-light-gray-200 dark:border-kui-dark-gray-400`
-		}
-		if (groupState.get() === value || groupState.get().includes(value)) {
-			return `cursor-pointer bg-kui-light-blue-200 dark:bg-kui-dark-blue-200 border-kui-light-blue-600  dark:border-kui-dark-blue-600 
-			hover:border-kui-light-blue-700 dark:hover:border-kui-dark-blue-700`
-		}
-		return `cursor-pointer hover:bg-kui-light-gray-200 dark:hover:bg-kui-dark-gray-200 border-kui-light-gray-200 
-		dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500`
-	})
-
-	// Title text
-	let titleClass = $derived.by(() => {
-		// it is desabled
-		if (disabled) {
-			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`
-		}
-		if (groupState.get() === value || groupState.get().includes(value)) {
-			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`
-		}
-		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`
-	})
-
-	// Description text
-	let descriptionClass = $derived.by(() => {
-		// it is desabled
-		if (disabled) {
-			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`
-		}
-		if (groupState.get() === value || groupState.get().includes(value)) {
-			return `text-kui-light-blue-900 dark:text-kui-dark-blue-900`
-		}
-		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900`
-	})
-
-	// The rounded radio cont
-	let radioContClass = $derived.by(() => {
-		// it is desabled
-		if (disabled) {
-			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`
-		}
-
-		if (groupState.get() === value) {
-			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 `
-		}
-		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
-		dark:group-hover:border-kui-dark-gray-500 group-hover:bg-kui-light-bg dark:group-hover:bg-kui-dark-bg`
-	})
-
-	// The radio cont
-	let radioClass = $derived.by(() => {
-		if (groupState.get() === value) {
-			return `bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `
-		}
-		return ``
-	})
-
-	// The rounded radio cont
-	let checkboxContClass = $derived.by(() => {
-		// it is desabled
-		if (disabled) {
-			return `border-kui-light-gray-200 dark:border-kui-dark-gray-400`
-		}
-		if (groupState.get().includes(value)) {
-			return `border-kui-light-blue-900  dark:border-kui-dark-blue-900 bg-kui-light-blue-900  dark:bg-kui-dark-blue-900 `
-		}
-		return `border-kui-light-gray-200 dark:border-kui-dark-gray-200 group-hover:border-kui-light-gray-500 
-		dark:group-hover:border-kui-dark-gray-500 group-hover:bg-kui-light-bg dark:group-hover:bg-kui-dark-bg`
-	})
-	let checkboxClass = $derived.by(() => {
-		if (groupState.get().includes(value)) {
-			return `text-white dark:text-black font-bold `
-		}
-		return `text-transparent font-bold`
-	})
+	let labelClass = $derived(
+		resolveItemLabelClass({ disabled: isDisabled, selected: isSelected }),
+	)
+	let titleClass = $derived(resolveTitleClass({ disabled: isDisabled, selected: isSelected }))
+	let descriptionClass = $derived(
+		resolveDescriptionClass({ disabled: isDisabled, selected: isSelected }),
+	)
+	let radioContClass = $derived(
+		resolveRadioContClass({ disabled: isDisabled, selected: isSelected }),
+	)
+	let radioDotClass = $derived(resolveRadioDotClass({ selected: isSelected }))
+	let checkboxContClass = $derived(
+		resolveCheckboxContClass({ disabled: isDisabled, selected: isSelected }),
+	)
+	let checkboxCheckClass = $derived(resolveCheckboxCheckClass({ selected: isSelected }))
 </script>
 
 {#snippet radio()}
-	{#if type === "radio"}
-		<div
-			class="w-4 h-4 p-px rounded-full transition-colors ease-in flex items-center justify-center border {radioContClass} "
-		>
-			<div class="w-4 h-4 flex items-center justify-center">
+	{#if groupState.type === "radio"}
+		<div class={radioContClass}>
+			<div class="flex h-4 w-4 items-center justify-center">
 				<input
-					{onchange}
-					{type}
-					checked={groupState.get() == value}
+					onchange={handleChange}
+					type="radio"
+					checked={isSelected}
 					id={unique}
-					{name}
+					name={groupState.name}
 					{value}
-					{disabled}
-					class="hidden"
+					disabled={isDisabled}
+					class="peer sr-only"
 				/>
-				<div class="w-2 h-2 bg-red rounded-full transition-colors ease-in {radioClass}"></div>
+				<div class={radioDotClass}></div>
 			</div>
 		</div>
 	{/if}
 {/snippet}
 
 {#snippet checkbox()}
-	{#if type === "checkbox"}
-		<div
-			class="w-4 h-4 p-px rounded-sm transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
-		>
-			<div class="w-4 h-4 flex items-center justify-center">
+	{#if groupState.type === "checkbox"}
+		<div class={checkboxContClass}>
+			<div class="flex h-4 w-4 items-center justify-center">
 				<input
-					{onchange}
-					{type}
-					checked={groupState.get().includes(value)}
+					onchange={handleChange}
+					type="checkbox"
+					checked={isSelected}
 					id={unique}
-					{name}
+					name={groupState.name}
 					{value}
-					{disabled}
-					class="hidden"
+					disabled={isDisabled}
+					class="peer sr-only"
 				/>
-				<div class="w-2.5 h-2.5 transition-colors ease-in {checkboxClass}">
+				<div class={checkboxCheckClass}>
 					<Check />
 				</div>
 			</div>
@@ -181,26 +134,25 @@
 	{/if}
 {/snippet}
 
-<label
-	for={unique}
-	class="group w-full transition-colors ease-in border flex rounded-md {labelClass} "
->
-	<div class="w-full p-3 flex items-center justify-between">
-		<div>
+<label for={unique} class={[labelClass, klass]} {...rest}>
+	<div class="flex w-full items-center justify-between p-3">
+		<div class="w-full">
 			{#if title}
-				<p
-					class="first-letter:capitalize ransition-colors ease-in text-sm {titleClass}  font-medium leading-6"
-				>
+				<p class={titleClass}>
 					{title}
 				</p>
 			{/if}
 
 			{#if description}
-				<p
-					class="first-letter:capitalize ransition-colors ease-in text-sm {descriptionClass} font-normal leading-6"
-				>
+				<p class={descriptionClass}>
 					{description}
 				</p>
+			{/if}
+
+			{#if children && isSelected}
+				<div class="mt-2 w-full">
+					{@render children()}
+				</div>
 			{/if}
 		</div>
 		{@render radio()}

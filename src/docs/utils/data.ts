@@ -71,14 +71,30 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "checkbox",
 				url: "/checkbox",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "choicebox",
 				url: "/choicebox",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "collapse",
 				url: "/collapse",
+			},
+			{
+				name: "copy button",
+				url: "/copy-button",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
 			},
 			{
 				name: "description",

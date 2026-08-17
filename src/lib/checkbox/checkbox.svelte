@@ -1,124 +1,67 @@
 <script lang="ts">
 	import Check from "$lib/icons/check.svelte"
 	import Minus from "$lib/icons/minus.svelte"
-	import { randomString } from "$lib/utils/random.js"
-	import type { Snippet } from "svelte"
-	import type { HTMLAttributes } from "svelte/elements"
+	import {
+		resolveBoxClass,
+		resolveIconClass,
+		resolveLabelClass,
+		resolveRootClass,
+	} from "./styles.js"
+	import type { CheckboxProps } from "./types.js"
 
-	interface Props extends HTMLAttributes<HTMLInputElement> {
-		checked?: boolean | undefined
-		value?: string | undefined
-		items?: Array<string> | undefined
-		indeterminate?: boolean | undefined
-		disabled?: boolean | undefined
-		children?: Snippet
-	}
 	let {
+		id: idProp,
+		class: klass,
 		checked = $bindable(false),
-		value = undefined,
-		items = $bindable(undefined),
 		indeterminate = false,
 		disabled = false,
 		children,
-	}: Props = $props()
+		onclick,
+		...rest
+	}: CheckboxProps = $props()
 
-	// random string for unique id
-	const unique = `${randomString(4)}_${value}`
+	const fallbackId = $props.id()
+	let id = $derived(idProp ?? fallbackId)
 
-	const onchange = () => {
-		checked = !checked
-		// if checked is true add the value to the item
-		if (items && value) {
-			if (checked) {
-				items = [...items, value]
-			} else {
-				items = items.filter(item => item !== value)
-			}
+	const handleClick = (evt: MouseEvent & { currentTarget: HTMLInputElement }) => {
+		if (indeterminate) {
+			evt.preventDefault()
 		}
+		onclick?.(evt)
 	}
 
-	$effect(() => {
-		if (items && value) {
-			if (items.includes(value)) {
-				checked = true
-			}
-		}
-	})
-
-	// The rounded radio cont
-	let checkboxContClass = $derived.by(() => {
-		if (disabled) {
-			if (indeterminate) {
-				return `border-kui-light-gray-600 dark:border-kui-dark-gray-600 text-kui-light-gray-600 dark:text-kui-dark-gray-600
-				bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`
-			}
-
-			// will check for indeterminate and checked
-			if (checked) {
-				return `border-kui-light-gray-600 dark:border-kui-dark-gray-600 bg-kui-light-gray-600 dark:bg-kui-dark-gray-600`
-			}
-			return `border-kui-light-gray-500 dark:border-kui-dark-gray-500 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100`
-		}
-		// if its indeterminate
-		if (indeterminate) {
-			return `border-kui-light-gray-900 dark:border-kui-dark-gray-900`
-		}
-
-		// If checked is true
-		if (checked) {
-			return `border-kui-dark-bg-secondary  dark:border-kui-light-bg bg-kui-dark-bg-secondary  dark:bg-kui-light-bg `
-		}
-		return `border-kui-light-gray-500 dark:border-kui-dark-gray-500 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100`
-	})
-
-	let checkboxClass = $derived.by(() => {
-		if (indeterminate) {
-			return `text-kui-light-gray-900 dark:text-kui-dark-gray-900`
-		}
-		if (checked) {
-			return `text-kui-light-bg dark:text-kui-black`
-		}
-		return `text-transparent`
-	})
-
-	let textClass = $derived.by(() => {
-		if (disabled) {
-			return `text-kui-light-gray-500 dark:text-kui-dark-gray-500`
-		}
-		return `text-kui-light-gray-900 dark:text-kui-dark-gray-900`
-	})
+	let boxClass = $derived(resolveBoxClass({ checked, indeterminate, disabled }))
+	let iconClass = $derived(resolveIconClass({ checked, indeterminate, disabled }))
+	let labelClass = $derived(resolveLabelClass({ disabled }))
+	let rootClass = $derived(resolveRootClass({ disabled }))
 </script>
 
-<section class="flex">
-	<label for={unique}>
-		<div class="flex items-center gap-2 cursor-pointer">
-			<div
-				class="w-4 h-4 rounded-sm p-0.5 box-border transition-colors ease-in flex items-center justify-center border {checkboxContClass} "
-			>
-				<input
-					{onchange}
-					type="checkbox"
-					{checked}
-					id={unique}
-					{value}
-					{disabled}
-					{indeterminate}
-					class="hidden"
-				/>
-				<div class="w-4 h-4 font-bold transition-colors ease-in {checkboxClass}">
-					{#if indeterminate}
-						<Minus />
-					{:else}
-						<Check />
-					{/if}
-				</div>
-			</div>
+<label for={id} class={[rootClass, klass]}>
+	<span class="relative flex items-center justify-center">
+		<input
+			{...rest}
+			type="checkbox"
+			{id}
+			bind:checked
+			{indeterminate}
+			{disabled}
+			class="peer sr-only"
+			onclick={handleClick}
+		/>
+		<span class={boxClass} aria-hidden="true">
+			<span class={iconClass}>
+				{#if indeterminate}
+					<Minus />
+				{:else if checked}
+					<Check />
+				{/if}
+			</span>
+		</span>
+	</span>
 
-			{#if children}
-				<div class="text-sm select-none first-letter:capitalize {textClass}">
-					{@render children()}
-				</div>
-			{/if}
-		</div>
-	</label>
-</section>
+	{#if children}
+		<span class={labelClass}>
+			{@render children()}
+		</span>
+	{/if}
+</label>

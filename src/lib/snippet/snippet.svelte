@@ -126,21 +126,21 @@
 	{/each}
 {/snippet}
 
-<div class="max-w-full relative rounded-md px-3 py-2.5 border {snippetClass} {klass}">
+<div class="relative max-w-full rounded-md border px-3 py-2.5 {snippetClass} {klass}">
 	{@render preSnippet()}
 	<button
 		{onclick}
 		aria-label={isCopied ? "Copied" : "Copy to clipboard"}
-		class="absolute top-2/4 right-1 w-8 h-8 rounded-md flex items-center justify-center translate-y-[-50%]
-		hover:border hover:border-kui-light-gray-400 dark:hover:border-kui-dark-gray-400"
+		class="hover:border-kui-light-gray-400 dark:hover:border-kui-dark-gray-400 absolute top-2/4 right-1 flex h-8 w-8 translate-y-[-50%] items-center
+		justify-center rounded-md hover:border"
 	>
 		<span class="flex items-center justify-center">
-			<div class="relative w-4 h-4">
+			<div class="relative h-4 w-4">
 				{#if isCopied}
 					<div
 						in:scale|local={{ duration: 200 }}
 						out:scale|local={{ duration: 300 }}
-						class="absolute w-4 h-4"
+						class="absolute h-4 w-4"
 					>
 						<Check />
 					</div>
@@ -149,7 +149,7 @@
 					<div
 						in:scale|local={{ duration: 200 }}
 						out:scale|local={{ duration: 300 }}
-						class="absolute w-4 h-4"
+						class="absolute h-4 w-4"
 					>
 						<Copy />
 					</div>

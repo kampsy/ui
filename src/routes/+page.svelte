@@ -22,12 +22,12 @@
 {#snippet foundation()}
 	<Row>
 		<h1
-			class=" text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-[32px] lg:leading-[48px] tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class=" text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] lg:text-[40px] lg:leading-[48px] lg:tracking-[-2.4px]"
 		>
 			Kampsy-ui
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-[30px] tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-[30px] lg:tracking-[-0.33px]"
 		>
 			A Svelte 5 component library, inspired by Vercel's Geist, is thoughtfully designed to
 			provide consistent and cohesive web experiences.
@@ -36,14 +36,14 @@
 {/snippet}
 
 {#snippet grid()}
-	<section class="grid grid-cols-1 lg:grid-cols-2 box-border">
-		<div class="border-b border-r border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+	<section class="box-border grid grid-cols-1 lg:grid-cols-2">
+		<div class="border-kui-light-gray-200 dark:border-kui-dark-gray-400 border-r border-b">
 			<a
 				href="/avatar"
-				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
+				class="group hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg block h-full w-full p-[32px] transition-colors"
 			>
-				<div class="relative w-full min-h-[104px]">
-					<div class="flex items-center gap-4 flex-wrap">
+				<div class="relative min-h-[104px] w-full">
+					<div class="flex flex-wrap items-center gap-4">
 						<Button variant="secondary" shape="square" svgOnly aria-label="Globe">
 							<ShieldGlobe />
 						</Button>
@@ -71,16 +71,16 @@
 							<ShieldGlobe />
 						</Button>
 					</div>
-					<div class="babsolute top-0 left-0 w-full h-full"></div>
+					<div class="babsolute top-0 left-0 h-full w-full"></div>
 				</div>
-				<div class="mt-[32px] w-full h-[48px]">
+				<div class="mt-[32px] h-[48px] w-full">
 					<p
-						class="first-letter:capitalize text-base text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold leading-6 tracking-[-0.32px]"
+						class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-base leading-6 font-semibold tracking-[-0.32px] first-letter:capitalize"
 					>
 						components
 					</p>
 					<p
-						class="first-letter:capitalize text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-6"
+						class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-sm leading-6 first-letter:capitalize"
 					>
 						building blocks for svelte applications.
 					</p>
@@ -88,77 +88,77 @@
 			</a>
 		</div>
 
-		<div class="border-b border-kui-light-gray-200 dark:border-kui-dark-gray-400">
+		<div class="border-kui-light-gray-200 dark:border-kui-dark-gray-400 border-b">
 			<a
 				href="/colors"
-				class="w-full h-full group block p-[32px] transition-colors hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg"
+				class="group hover:bg-kui-light-bg dark:hover:bg-kui-dark-bg block h-full w-full p-[32px] transition-colors"
 			>
 				<div class="flex justify-between">
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-gray-800 dark:bg-kui-dark-gray-800"
+							class="bg-kui-light-gray-800 dark:bg-kui-dark-gray-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-blue-800 dark:bg-kui-dark-blue-800"
+							class="bg-kui-light-blue-800 dark:bg-kui-dark-blue-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-purple-800 dark:bg-kui-dark-purple-800"
+							class="bg-kui-light-purple-800 dark:bg-kui-dark-purple-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-pink-800 dark:bg-kui-dark-pink-800"
+							class="bg-kui-light-pink-800 dark:bg-kui-dark-pink-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-red-800 dark:bg-kui-dark-red-800"
+							class="bg-kui-light-red-800 dark:bg-kui-dark-red-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-amber-800 dark:bg-kui-dark-amber-800"
+							class="bg-kui-light-amber-800 dark:bg-kui-dark-amber-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-green-800 dark:bg-kui-dark-green-800"
+							class="bg-kui-light-green-800 dark:bg-kui-dark-green-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 					<div
-						class="bg-background-200 border border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full"
+						class="bg-background-200 border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400 flex h-[96px] w-8 items-center justify-center overflow-hidden rounded-full border"
 					>
 						<div
-							class="h-[72px] w-2 rounded-full bg-kui-light-teal-800 dark:bg-kui-dark-teal-800"
+							class="bg-kui-light-teal-800 dark:bg-kui-dark-teal-800 h-[72px] w-2 rounded-full"
 						></div>
 					</div>
 				</div>
-				<div class="mt-[32px] w-full h-[48px]">
+				<div class="mt-[32px] h-[48px] w-full">
 					<p
-						class="first-letter:capitalize text-base text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-semibold leading-6 tracking-[-0.32px]"
+						class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-base leading-6 font-semibold tracking-[-0.32px] first-letter:capitalize"
 					>
 						colors
 					</p>
 					<p
-						class="first-letter:capitalize text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 leading-6"
+						class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-sm leading-6 first-letter:capitalize"
 					>
 						a high contrast accessible color system.
 					</p>

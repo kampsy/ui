@@ -38,7 +38,7 @@
 		aria-valuenow={tween.current}
 		aria-valuemin="0"
 		aria-valuemax="100"
-		class="w-full h-2.5 dark:bg-kui-dark-gray-200 bg-kui-light-gray-300 rounded-full"
+		class="dark:bg-kui-dark-gray-200 bg-kui-light-gray-300 h-2.5 w-full rounded-full"
 		{...rest}
 	>
 		<div class="h-2.5 {progressClass} rounded-full" style={widthClass}></div>

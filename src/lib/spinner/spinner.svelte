@@ -14,10 +14,10 @@
 </script>
 
 <div>
-	<div style={sizeStyle} class="relative animate-spin flex items-center justify-center">
+	<div style={sizeStyle} class="relative flex animate-spin items-center justify-center">
 		<div
 			transition:fade
-			class="absolute w-full h-full text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 absolute h-full w-full"
 		>
 			<LoaderCircle />
 		</div>

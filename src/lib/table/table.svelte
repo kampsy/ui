@@ -7,7 +7,7 @@
 	let { children = undefined }: Props = $props()
 </script>
 
-<div class=" w-full text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 overflow-auto">
+<div class=" text-kui-light-gray-900 dark:text-kui-dark-gray-900 w-full overflow-auto text-sm">
 	<table class="w-full">
 		{#if children}
 			{@render children()}

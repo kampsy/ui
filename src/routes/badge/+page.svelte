@@ -30,12 +30,12 @@
 {#snippet badge(title: string, para: string)}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			{title}
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			{para}
 		</p>
@@ -44,10 +44,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
-		<div class="w-full p-4 lg:p-6 overflow-x-auto">
-			<div class="w-full flex flex-wrap gap-4 justify-between">
+		<div class="w-full overflow-x-auto p-4 lg:p-6">
+			<div class="flex w-full flex-wrap justify-between gap-4">
 				{@render demo()}
 			</div>
 		</div>
@@ -432,7 +432,7 @@
 	<Row>
 		<LinkH2 href="/badge#pill">Pill</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			A special link, not quite as prominent as a button, based on {@render roundedCode(
 				"<Badge />",
@@ -484,7 +484,7 @@
 
 {#snippet roundedCode(rct: string)}
 	<code
-		class="px-2 py-[3.6px] rounded-md text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
 	>
 		{rct}
 	</code>
@@ -494,7 +494,7 @@
 	<Row>
 		<LinkH2 href="/badge#best-practices">Best Practices</LinkH2>
 		<ul
-			class="mt-4 xl:mt-7 list-disc pl-5 space-y-2 text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[14px] md:text-[16px] leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-4 list-disc space-y-2 pl-5 text-[14px] leading-6 md:text-[16px] xl:mt-7"
 		>
 			<li>
 				Use Badge for short, scannable metadata that sits next to the thing it describes:

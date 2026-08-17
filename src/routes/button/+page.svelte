@@ -29,12 +29,12 @@
 {#snippet button()}
 	<Row>
 		<h1
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] lg:text-[40px] font-semibold leading-8 lg:leading-12 tracking-[-0.96px] lg:tracking-[-2.4px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
 			button
 		</h1>
 		<p
-			class="first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] lg:text-[20px] font-normal leading-6 lg:leading-7.5 tracking-normal lg:tracking-[-0.33px]"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
 			Trigger an action or event, such as submitting a form or displaying a dialog.
 		</p>
@@ -43,10 +43,10 @@
 
 {#snippet demoAndCode(demo: Snippet, code: string)}
 	<div
-		class="bg-kui-light-bg dark:bg-kui-dark-bg border border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-xl overflow-hidden"
+		class="bg-kui-light-bg dark:bg-kui-dark-bg border-kui-light-gray-200 dark:border-kui-dark-gray-400 overflow-hidden rounded-xl border"
 	>
 		<div class="w-full p-4 lg:p-6">
-			<div class="flex flex-col md:flex-row items-start gap-4 flex-initial">
+			<div class="flex flex-initial flex-col items-start gap-4 md:flex-row">
 				{@render demo()}
 			</div>
 		</div>
@@ -58,7 +58,7 @@
 	<Row>
 		<LinkH2 href="/button#size">size</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			The default size is medium.
 		</p>
@@ -113,7 +113,7 @@
 <!--Rounded content-->
 {#snippet roundedCode(rct: string)}
 	<code
-		class="px-2 py-[3.6px] rounded-md text-xs text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
 	>
 		{rct}
 	</code>
@@ -123,7 +123,7 @@
 	<Row>
 		<LinkH2 href="/button#shapes">shapes</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Icon-only buttons should include the {@render roundedCode("svgOnly")} prop and an
 			{@render roundedCode("aria-label")}.
@@ -204,7 +204,7 @@
 	<Row>
 		<LinkH2 href="/button#rounded">rounded</LinkH2>
 		<p
-			class="mt-2 xl:mt-4 first-letter:capitalize text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] font-normal leading-6"
+			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 text-[16px] leading-6 font-normal first-letter:capitalize xl:mt-4"
 		>
 			Combination of {@render roundedCode('shape="rounded"')} and the
 			{@render roundedCode("shadow")} prop, often used on marketing pages.
@@ -274,14 +274,14 @@
 {#snippet bestPractices()}
 	<Row>
 		<h2
-			class="first-letter:capitalize text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] font-semibold leading-8 tracking-[-0.96px] mb-3"
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize"
 		>
 			Best Practices
 		</h2>
 		<div class="mt-4">
 			<ul class="mt-4 list-disc">
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Use {@render roundedCode("Button")} for actions that mutate state (deploy, save, delete);
 					use {@render roundedCode("ButtonLink")} for navigation that changes the URL. Switch to
@@ -290,7 +290,7 @@
 					shares a row.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Default {@render roundedCode("Button")} is the primary style. Pass {@render roundedCode(
 						'variant="secondary"',
@@ -303,7 +303,7 @@
 					)} values.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					For form submits, use {@render roundedCode('type="submit"')}. The HTML {@render roundedCode(
 						"type",
@@ -312,20 +312,20 @@
 					)}.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Pass {@render roundedCode("loading")} instead of swapping in a spinner so the button stays
 					focusable and announces the busy state to assistive tech.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Disable a button only when the action is impossible right now (missing input,
 					insufficient permission); pair with a
 					<a href="/tooltip" class="underline">Tooltip</a> that explains why.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Title Case the label and name what happens: {@render roundedCode("Deploy Project")}, {@render roundedCode(
 						"Invite Member",
@@ -336,7 +336,7 @@
 					)}).
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Destructive buttons follow {@render roundedCode("Verb + Noun")} and pair 1:1 with their
 					toast: {@render roundedCode("Delete Project")} then
@@ -345,7 +345,7 @@
 					)}: {@render roundedCode("Use a Recovery Code Instead")}.
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Icon-only buttons require both {@render roundedCode("svgOnly")} and {@render roundedCode(
 						"aria-label",
@@ -355,7 +355,7 @@
 					not the icon ({@render roundedCode("Copy")}).
 				</li>
 				<li
-					class="[&_strong]:text-kui-light-gray-1000 mt-2 py-0.5 leading-6 text-kui-light-gray-900 dark:text-kui-dark-gray-900 [&_strong]:font-normal ml-8"
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
 				>
 					Don't set {@render roundedCode("aria-label")} on a button that already has visible text;
 					it overrides the label and creates a screen-reader mismatch.

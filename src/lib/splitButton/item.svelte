@@ -49,17 +49,17 @@
 		}
 		rootState.setIsActive(false)
 	}}
-	class="relative w-full cursor-pointer bg-transparent transition-colors text-sm rounded-md text-left
-	py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
+	class="hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100 relative w-full cursor-pointer rounded-md bg-transparent px-2
+	py-3.5 text-left text-sm transition-colors lg:py-2.5"
 >
 	<div>
 		{#if title}
-			<div class="text-sm {typeTitleClass} font-medium leading-5">
+			<div class="text-sm {typeTitleClass} leading-5 font-medium">
 				{title}
 			</div>
 		{/if}
 		{#if description}
-			<div class="text-sm {typeDescriptionClass} font-normal leading-5">
+			<div class="text-sm {typeDescriptionClass} leading-5 font-normal">
 				{description}
 			</div>
 		{/if}

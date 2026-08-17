@@ -34,9 +34,9 @@
 </script>
 
 {#snippet suffixSnip()}
-	<div class="w-4 h-4">
+	<div class="h-4 w-4">
 		<div
-			class="rounded-full w-4 h-4 {rotate} transform-gpu duration-200 flex items-center justify-center"
+			class="h-4 w-4 rounded-full {rotate} flex transform-gpu items-center justify-center duration-200"
 		>
 			<ChevronDownSmall />
 		</div>
@@ -44,8 +44,8 @@
 {/snippet}
 
 <div class="w-full">
-	<div class="flex items-center box-border">
-		<div class="grow border-t border-kui-light-gray-400 dark:border-kui-dark-gray-400">
+	<div class="box-border flex items-center">
+		<div class="border-kui-light-gray-400 dark:border-kui-dark-gray-400 grow border-t">
 			<!--line-->
 		</div>
 		<div class="grow-0">
@@ -53,17 +53,17 @@
 				{onclick}
 				aria-label={ariaLabel}
 				type="button"
-				class="rounded-full p-1.5 border border-kui-light-gray-400 dark:border-kui-dark-gray-400
-                hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 hover:bg-kui-light-gray-200
-                dark:hover:bg-kui-dark-gray-200 transition duration-300"
+				class="border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500 dark:hover:border-kui-dark-gray-500 hover:bg-kui-light-gray-200
+                dark:hover:bg-kui-dark-gray-200 rounded-full border
+                p-1.5 transition duration-300"
 			>
-				<div class="px-1.5 w-full flex items-center gap-1 justify-center">
-					<div class="font-medium capitalize text-sm">{buttonText}</div>
+				<div class="flex w-full items-center justify-center gap-1 px-1.5">
+					<div class="text-sm font-medium capitalize">{buttonText}</div>
 					{@render suffixSnip()}
 				</div>
 			</button>
 		</div>
-		<div class="grow border-t border-kui-light-gray-400 dark:border-kui-dark-gray-400">
+		<div class="border-kui-light-gray-400 dark:border-kui-dark-gray-400 grow border-t">
 			<!--second line-->
 		</div>
 	</div>

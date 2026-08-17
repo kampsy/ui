@@ -23,7 +23,7 @@
 {#if children}
 	<a
 		{href}
-		class="relative w-full cursor-pointer bg-transparent transition-colors text-sm flex items-center rounded-md py-3.5 lg:py-2.5 px-2 hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100"
+		class="hover:bg-kui-light-gray-100 dark:hover:bg-kui-dark-gray-100 relative flex w-full cursor-pointer items-center rounded-md bg-transparent px-2 py-3.5 text-sm transition-colors lg:py-2.5"
 	>
 		<span class="first-letter:capitalize {typeClass}">
 			{@render children()}

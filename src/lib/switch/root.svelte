@@ -57,7 +57,7 @@
 
 <div class={width}>
 	<div
-		class="flex items-center p-1 {borderRadius} border border-kui-light-gray-200 dark:border-kui-dark-gray-400"
+		class="flex items-center p-1 {borderRadius} border-kui-light-gray-200 dark:border-kui-dark-gray-400 border"
 	>
 		{#if children}
 			{@render children()}
