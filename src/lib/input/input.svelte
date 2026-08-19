@@ -1,218 +1,115 @@
 <script lang="ts">
-	import type { Component } from "svelte"
 	import Error from "$lib/icons/error.svelte"
-	import type { HTMLAttributes } from "svelte/elements"
+	import {
+		errorTextBase,
+		errorTextStyles,
+		inputTextBase,
+		resolveAdornmentClass,
+		resolveInputClass,
+		resolveInputPadding,
+	} from "./styles.js"
+	import type { InputAdornment, InputProps } from "./types.js"
 
-	interface Props extends HTMLAttributes<HTMLInputElement> {
-		name?: string | undefined
-		value?: string | undefined
-		label?: string | undefined
-		error?: string | undefined
-		size?: "small" | "medium" | "large"
-		contPrefix?: string | Component | undefined
-		prefixStyling?: boolean | undefined
-		contSuffix?: string | Component | undefined
-		suffixStyling?: boolean | undefined
-		spellcheck?: boolean | undefined
-		placeholder?: string | undefined
-		disabled?: boolean | undefined
-	}
 	let {
-		name = undefined,
+		id: idProp,
+		class: klass,
 		value = $bindable(""),
-		label = undefined,
-		error = undefined,
+		label,
+		error,
 		size = "medium",
-		contPrefix = undefined,
+		prefix,
+		suffix,
 		prefixStyling = true,
-		contSuffix = undefined,
 		suffixStyling = true,
-		spellcheck = false,
-		placeholder = undefined,
+		rounded = false,
 		disabled = false,
+		onfocus,
+		onblur,
 		...rest
-	}: Props = $props()
+	}: InputProps = $props()
 
-	// The focus and blur state of the input
+	const fallbackId = $props.id()
+	let id = $derived(idProp ?? fallbackId)
+	let errorId = $derived(`${id}-error`)
 	let hasRing = $state(false)
 
-	const uid = $props.id()
+	let inputClass = $derived(
+		resolveInputClass({
+			size,
+			rounded: rounded ?? false,
+			disabled: disabled ?? false,
+			error,
+			focused: hasRing,
+			class: klass,
+		}),
+	)
+	let inputPadding = $derived(resolveInputPadding(prefixStyling, suffixStyling))
+	let errorTextClass = $derived(`${errorTextBase} ${errorTextStyles[size]}`)
 
-	const sizeObj = {
-		small: "h-8 text-sm",
-		medium: "h-[40px] text-sm",
-		large: "h-[48px] text-base",
+	function handleFocus(event: FocusEvent & { currentTarget: HTMLInputElement }) {
+		hasRing = true
+		onfocus?.(event)
 	}
-	let sizeClass = $derived.by(() => {
-		return sizeObj[size]
-	})
 
-	// Show the ring when the input is focused
-	let ringClass = $derived.by(() => {
-		if (disabled) {
-			return `cursor-not-allowed border-kui-light-gray-400 dark:border-kui-dark-gray-400
-			bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 text-kui-light-gray-600 dark:text-kui-dark-gray-600
-			placeholder-kui-light-gray-600 dark:placeholder-kui-dark-gray-600`
-		}
-		if (error) {
-			return `border-kui-light-red-700 dark:border-kui-dark-red-700 hover:border-kui-light-gray-500
-			dark:hover:border-kui-dark-gray-500 ring ring-kui-light-red-400 dark:ring-kui-dark-red-400
-			hover:ring-0 dark:hover:ring-0 `
-		}
-		if (hasRing) {
-			return `border-kui-light-gray-700 dark:border-kui-dark-gray-700 ring ring-kui-light-gray-400
-            dark:ring-kui-dark-gray-400 hover:border-kui-light-gray-700 dark:hover:border-kui-dark-gray-700
-			placeholder:text-kui-light-gray-600 dark:placeholder:text-kui-dark-gray-600`
-		}
-		return `border-kui-light-gray-400 dark:border-kui-dark-gray-400 hover:border-kui-light-gray-500
-		dark:hover:border-kui-dark-gray-500`
-	})
-
-	let inputClass = $derived.by(() => {
-		if (disabled) {
-			return `cursor-not-allowed text-kui-light-gray-600 dark:text-kui-dark-gray-600`
-		}
-		return `text-kui-light-gray-1000 dark:text-kui-dark-gray-1000`
-	})
-
-	let inputContClass = $derived.by(() => {
-		if (prefixStyling && suffixStyling) {
-			return `px-3`
-		}
-		if (prefixStyling) {
-			return "pl-3"
-		}
-		if (suffixStyling) {
-			return "pr-3"
-		}
-		return ``
-	})
-
-	// will the prefix have a bg and a border?
-	let prefixClass = $derived.by(() => {
-		if (prefixStyling) {
-			return `bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary border-r border-kui-light-gray-200
-     dark:border-kui-dark-gray-400`
-		}
-		return ``
-	})
-
-	// will the prefix have a bg and a border?
-	let suffixClass = $derived.by(() => {
-		if (suffixStyling) {
-			return `bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary border-l border-kui-light-gray-200
-     dark:border-kui-dark-gray-400`
-		}
-		return ``
-	})
-
-	const errorTextObj = {
-		tiny: "text-[12px] leading-[16px]",
-		small: "text-[13px] leading-5",
-		medium: "text-[14px] leading-5",
-		large: "text-[16px] leading-6",
+	function handleBlur(event: FocusEvent & { currentTarget: HTMLInputElement }) {
+		hasRing = false
+		onblur?.(event)
 	}
-	let errorText = $derived.by(() => {
-		return errorTextObj[size]
-	})
 </script>
 
-<!--Prefix snippet-->
-{#snippet prefixSnip()}
-	{#if contPrefix}
-		<span
-			class="text-kui-light-gray-700 dark:text-kui-dark-gray-700 flex h-full items-center px-3 {prefixClass}"
-		>
-			{#if typeof contPrefix === "string"}
-				{contPrefix}
-			{:else if typeof contPrefix === "function"}
-				{@const PrefixIcon = contPrefix}
-				<div class="h-4 w-4">
-					<PrefixIcon />
-				</div>
-			{/if}
-		</span>
-	{/if}
-{/snippet}
-
-<!--Suffix snippet-->
-{#snippet suffixSnip()}
-	{#if contSuffix}
-		<span
-			class="text-kui-light-gray-700 dark:text-kui-dark-gray-700 flex h-full items-center px-3 {suffixClass}"
-		>
-			{#if typeof contSuffix === "string"}
-				{contSuffix}
-			{:else if typeof contSuffix === "function"}
-				{@const SuffixIcon = contSuffix}
-				<div class="h-4 w-4">
-					<SuffixIcon />
-				</div>
-			{/if}
-		</span>
-	{/if}
-{/snippet}
-
-{#snippet inputSnip()}
-	<div>
-		<div
-			class="flex items-center {sizeClass} overflow-hidden border transition-all {ringClass} bg-kui-light-bg dark:bg-kui-dark-bg
-			rounded-md"
-		>
-			{@render prefixSnip()}
-
-			<div class="h-full w-full {inputContClass}">
-				<input
-					bind:value
-					id={uid}
-					{name}
-					{spellcheck}
-					{placeholder}
-					{disabled}
-					onfocus={() => {
-						hasRing = true
-					}}
-					onblur={() => {
-						hasRing = false
-					}}
-					class="{inputClass} h-full w-full bg-transparent outline-hidden"
-					{...rest}
-				/>
-			</div>
-
-			{@render suffixSnip()}
-		</div>
-		{#if error}
-			<div class="mt-2">
-				<div class="flex items-center gap-2">
-					<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 h-4 w-4">
-						<Error />
-					</div>
-					<div class="{errorText} text-kui-light-red-900 dark:text-kui-dark-red-900">
-						{error}
-					</div>
-				</div>
+{#snippet adornment(content: InputAdornment, styled: boolean, side: "prefix" | "suffix")}
+	<span class={resolveAdornmentClass(styled, side)} aria-hidden={typeof content !== "string"}>
+		{#if typeof content === "string"}
+			{content}
+		{:else}
+			{@const Adornment = content}
+			<div class="size-4">
+				<Adornment />
 			</div>
 		{/if}
-	</div>
+	</span>
 {/snippet}
 
-<!--With a label-->
 <div>
-	{#snippet inputLabel()}
-		<label for={uid}>
-			<div
-				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2 inline-block text-sm"
-			>
-				{label}
-			</div>
-			{@render inputSnip()}
-		</label>
-	{/snippet}
-
 	{#if label}
-		{@render inputLabel()}
-	{:else}
-		{@render inputSnip()}
+		<label
+			for={id}
+			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2 inline-block text-sm"
+		>
+			{label}
+		</label>
+	{/if}
+
+	<div class={inputClass}>
+		{#if prefix}
+			{@render adornment(prefix, prefixStyling, "prefix")}
+		{/if}
+
+		<div class="h-full w-full {inputPadding}">
+			<input
+				{...rest}
+				{id}
+				bind:value
+				{disabled}
+				aria-invalid={error ? "true" : undefined}
+				aria-describedby={error ? errorId : rest["aria-describedby"]}
+				class={`${inputTextBase} ${disabled ? "text-kui-light-gray-600 dark:text-kui-dark-gray-600 cursor-not-allowed" : "text-kui-light-gray-1000 dark:text-kui-dark-gray-1000"}`}
+				onfocus={handleFocus}
+				onblur={handleBlur}
+			/>
+		</div>
+
+		{#if suffix}
+			{@render adornment(suffix, suffixStyling, "suffix")}
+		{/if}
+	</div>
+
+	{#if error}
+		<div id={errorId} class="mt-2 flex items-center gap-2">
+			<div class="text-kui-light-red-900 dark:text-kui-dark-red-900 size-4" aria-hidden="true">
+				<Error />
+			</div>
+			<div class={errorTextClass}>{error}</div>
+		</div>
 	{/if}
 </div>

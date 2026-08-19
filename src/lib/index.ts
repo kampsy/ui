@@ -51,13 +51,10 @@ export * as EmptyState from "./emptyState/index.js"
 export { default as Error } from "./error/error.svelte"
 
 // Input
-export { default as Input } from "./input/input.svelte"
+export * from "./input/index.js"
 
 // Keyboard Input
 export * as Kbd from "./keyboardInput/index.js"
-
-// SearchInput
-export { default as SearchInput } from "./input/searchInput.svelte"
 
 // Menu
 export * as Menu from "./menu/index.js"

@@ -119,6 +119,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "input",
 				url: "/input",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "keyboard input",
