@@ -25,4 +25,7 @@ export interface SearchInputProps extends Omit<
 	"prefix" | "suffix" | "type" | "value"
 > {
 	value?: string
+	prefix?: InputAdornment
+	cmdk?: boolean
+	loading?: boolean
 }

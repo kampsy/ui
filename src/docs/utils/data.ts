@@ -157,6 +157,14 @@ export const asideData: Array<AsideT> = [
 				url: "/project-banner",
 			},
 			{
+				name: "search input",
+				url: "/search-input",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "select",
 				url: "/select",
 			},

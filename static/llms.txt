@@ -384,7 +384,10 @@ import { Error } from 'kampsy-ui';
 **SearchInput Props:**
 - Accepts the same input props as `Input`, except `prefix`, `suffix`, `type`, and `value` are managed internally.
 - `value`: string (bindable, default: '')
-- Pressing `Escape` clears the current value.
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `loading`: boolean (default: false) - Shows a loading indicator
+- Pressing `Escape` or the clear button clears the current value.
 
 **Usage:**
 ```svelte
@@ -440,6 +443,53 @@ let value = $state('');
 // Search input
 <SearchInput bind:value placeholder="Search projects" />
 // Press Escape to clear the SearchInput value.
+```
+
+### SearchInput
+
+Pre-configured search input with a magnifying glass icon and clear button.
+
+**Props:**
+- `aria-label`: string - Accessible name for the search field
+- `value`: string (bindable, default: '')
+- `placeholder`: string | undefined
+- `disabled`: boolean (default: false)
+- `loading`: boolean (default: false) - Shows a loading indicator
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- Extends `InputProps` except `prefix`, `suffix`, `type`, and `value`
+
+Pressing `Escape` or the clear button clears the current value.
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+
+	let value = $state('');
+</script>
+
+<SearchInput aria-label="Search" bind:value placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk disabled placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value loading placeholder="Enter some text..." />
+```
+
+**Custom Prefix:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+	import { Sparkles } from '@lucide/svelte';
+
+	let value = $state('');
+</script>
+
+<SearchInput
+	aria-label="Search"
+	bind:value
+	prefix={Sparkles}
+	placeholder="Enter some text..."
+/>
 ```
 
 ### Keyboard Input (Kbd)

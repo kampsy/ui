@@ -1,0 +1,62 @@
+# Search Input Component
+
+### SearchInput
+
+Pre-configured search input with a magnifying glass icon and clear button.
+
+**Props:**
+- `aria-label`: string - Accessible name for the search field
+- `value`: string (bindable, default: '')
+- `placeholder`: string | undefined
+- `disabled`: boolean (default: false)
+- `loading`: boolean (default: false) - Shows a loading indicator
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- Extends `InputProps` except `prefix`, `suffix`, `type`, and `value`
+
+Pressing `Escape` or the clear button clears the current value.
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+
+	let value = $state('');
+</script>
+
+<SearchInput aria-label="Search" bind:value placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk disabled placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value loading placeholder="Enter some text..." />
+```
+
+**Custom Prefix:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+	import { Sparkles } from '@lucide/svelte';
+
+	let value = $state('');
+</script>
+
+<SearchInput
+	aria-label="Search"
+	bind:value
+	prefix={Sparkles}
+	placeholder="Enter some text..."
+/>
+```
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/search-input for full documentation and examples.
+
+## License
+
+MIT License
