@@ -58,16 +58,16 @@
 </script>
 
 {#snippet adornment(content: InputAdornment, styled: boolean, side: "prefix" | "suffix")}
-	<span class={resolveAdornmentClass(styled, side)} aria-hidden={typeof content !== "string"}>
+	<label class={resolveAdornmentClass(styled, side)} aria-hidden={typeof content !== "string"}>
 		{#if typeof content === "string"}
 			{content}
 		{:else}
 			{@const Adornment = content}
-			<div class="size-4">
+			<div class="flex size-4 items-center justify-center">
 				<Adornment />
 			</div>
 		{/if}
-	</span>
+	</label>
 {/snippet}
 
 <div>
