@@ -100,7 +100,7 @@
 		</p>
 		<ul class="mt-4 list-disc space-y-3">
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
+				class="[&_strong]:text-kui-light-gray-1000 dark:[&_strong]:text-kui-dark-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
 			>
 				<strong>Auto-install & wiring</strong> — detects the package manager, runs
 				{@render roundedCode("pnpm add -D kampsy-ui@latest")} only if missing (minimal, no
@@ -110,7 +110,7 @@
 				{@render roundedCode("kui-*")} tokens are not purged.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
+				class="[&_strong]:text-kui-light-gray-1000 dark:[&_strong]:text-kui-dark-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
 			>
 				<strong>Component catalog</strong> — 30+ components with correct import shapes ({@render roundedCode(
 					'import { Button } from "kampsy-ui"',
@@ -124,7 +124,7 @@
 				{@render roundedCode("prefix/suffix/action")} and {@render roundedCode("icon")}.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
+				class="[&_strong]:text-kui-light-gray-1000 dark:[&_strong]:text-kui-dark-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
 			>
 				<strong>Theming</strong> — every {@render roundedCode("kui-light-*")} paired with
 				{@render roundedCode("dark:kui-dark-*")} (`kui-light-gray-1000` /
@@ -135,7 +135,7 @@
 				toggle via {@render roundedCode("ThemeSwitcher")}. Tailwind v4 only.
 			</li>
 			<li
-				class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
+				class="[&_strong]:text-kui-light-gray-1000 dark:[&_strong]:text-kui-dark-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 ml-6 leading-6 [&_strong]:font-medium"
 			>
 				<strong>Patterns & recipes</strong> — auth form, team dashboard, and settings dialog
 				recipes (Input + Button + Note, Table + Pagination + Avatar + Badge, Tabs + Select +
@@ -178,8 +178,8 @@
 				<strong class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 font-medium"
 					>Scaffold & verify</strong
 				>
-				— picks the right component (Button vs Split Button vs Menu), scaffolds the page, then
-				runs {@render roundedCode("svelte-autofixer")} on the new file.
+				— picks the right component (Button vs Split Button vs Menu), scaffolds the page, then runs
+				{@render roundedCode("svelte-autofixer")} on the new file.
 			</li>
 		</ol>
 	</Row>
