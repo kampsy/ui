@@ -1,3 +1,4 @@
+import type { Component } from "svelte"
 import type { BadgeVariant } from "$lib/badge/types.js"
 
 export type AsideT = {
@@ -7,6 +8,7 @@ export type AsideT = {
 			| {
 					name: string
 					variant: BadgeVariant
+					icon?: Component
 			  }
 			| undefined
 	}
@@ -17,6 +19,7 @@ export type AsideT = {
 			| {
 					name: string
 					variant: BadgeVariant
+					icon?: Component
 			  }
 			| undefined
 	}>

@@ -1,3 +1,4 @@
+import AiSparkles from "$lib/icons/ai-sparkles.svelte"
 import type { AsideT } from "../../docs/ui/types.ts"
 
 export const asideData: Array<AsideT> = [
@@ -13,6 +14,15 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "installation",
 				url: "/installation",
+			},
+			{
+				name: "skills",
+				url: "/skills",
+				badge: {
+					name: "new",
+					variant: "green",
+					icon: AiSparkles,
+				},
 			},
 			{
 				name: "colors",
@@ -54,6 +64,14 @@ export const asideData: Array<AsideT> = [
 				badge: {
 					name: "updated",
 					variant: "purple",
+				},
+			},
+			{
+				name: "banner",
+				url: "/banner",
+				badge: {
+					name: "new",
+					variant: "green",
 				},
 			},
 			{
@@ -111,6 +129,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "input",
 				url: "/input",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "keyboard input",
@@ -145,12 +167,28 @@ export const asideData: Array<AsideT> = [
 				url: "/project-banner",
 			},
 			{
+				name: "search input",
+				url: "/search-input",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "select",
 				url: "/select",
 			},
 			{
 				name: "show more",
 				url: "/show-more",
+			},
+			{
+				name: "skeleton",
+				url: "/skeleton",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
 			},
 			{
 				name: "spinner",

@@ -12,14 +12,23 @@
 - `label`: string | undefined
 - `error`: string | undefined - Error message to display
 - `size`: 'small' | 'medium' | 'large' (default: 'medium')
-- `contPrefix`: string | Component | undefined - Prefix content (text or icon)
+- `prefix`: string | Component | undefined - Prefix content (text or icon)
 - `prefixStyling`: boolean (default: true) - Apply styling to prefix
-- `contSuffix`: string | Component | undefined - Suffix content (text or icon)
+- `suffix`: string | Component | undefined - Suffix content (text or icon)
 - `suffixStyling`: boolean (default: true) - Apply styling to suffix
-- `spellcheck`: boolean (default: false)
+- `rounded`: boolean (default: false) - Use a fully rounded input shape
+- `spellcheck`: boolean | undefined
 - `placeholder`: string | undefined
 - `disabled`: boolean (default: false)
-- Extends `HTMLAttributes<HTMLInputElement>`
+- Extends `HTMLInputAttributes`
+
+**SearchInput Props:**
+- Accepts the same input props as `Input`, except `prefix`, `suffix`, `type`, and `value` are managed internally.
+- `value`: string (bindable, default: '')
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `loading`: boolean (default: false) - Shows a loading indicator
+- Pressing `Escape` or the clear button clears the current value.
 
 **Usage:**
 ```svelte
@@ -32,10 +41,27 @@
 </script>
 
 <div class="w-full grid grid-cols-1 lg:grid-cols-3 gap-x-4">
-	<Input aria-labelledby="Demo input" bind:value={small} placeholder="small" size="small" />
-	<Input aria-labelledby="Demo input" bind:value={defaultInput} placeholder="default" />
-	<Input aria-labelledby="Demo input" bind:value={large} placeholder="large" size="large" />
+	<Input bind:value={small} placeholder="small" size="small" />
+	<Input bind:value={defaultInput} placeholder="default" />
+	<Input bind:value={large} placeholder="large" size="large" />
 </div>
+
+<Input prefix="https://" suffix=".com" bind:value placeholder="default" />
+<Input prefix="ui/" bind:value placeholder="default" />
+<Input prefix="www." rounded suffix=".com" placeholder="Label example" />
+<Input
+	prefix="www."
+	prefixStyling={false}
+	rounded
+	suffix=".com"
+	suffixStyling={false}
+	placeholder="Label example"
+/>
+
+<Input label="Project Name" bind:value placeholder="my-awesome-project" />
+<SearchInput bind:value placeholder="Search projects" />
+
+<!-- Press Escape to clear the SearchInput value. -->
 ```
 
 ## Installation

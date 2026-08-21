@@ -368,7 +368,7 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: "badge", href: "/badge" }}
+			previous={{ title: "banner", href: "/banner" }}
 			next={{ title: "calendar", href: "/calendar" }}
 		/>
 	</Row>

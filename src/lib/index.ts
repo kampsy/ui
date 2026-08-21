@@ -10,6 +10,10 @@ export type {
 	AvatarWithIconProps,
 } from "./avatar/types.js"
 
+// Banner
+export { Banner } from "./banner/index.js"
+export type { BannerProps } from "./banner/index.js"
+
 // Badge
 export { Badge, badgeVariants } from "./badge/index.js"
 export type { BadgeProps, BadgeVariant, BadgeContrast, BadgeSize } from "./badge/index.js"
@@ -47,13 +51,10 @@ export * as EmptyState from "./emptyState/index.js"
 export { default as Error } from "./error/error.svelte"
 
 // Input
-export { default as Input } from "./input/input.svelte"
+export * from "./input/index.js"
 
 // Keyboard Input
 export * as Kbd from "./keyboardInput/index.js"
-
-// SearchInput
-export { default as SearchInput } from "./input/searchInput.svelte"
 
 // Menu
 export * as Menu from "./menu/index.js"
@@ -78,6 +79,9 @@ export * as Select from "./select/index.js"
 
 // Show more
 export { default as ShowMore } from "./showMore/showMore.svelte"
+
+// Skeleton
+export * from "./skeleton/index.js"
 
 // Snippet
 export { default as CodeSnippet } from "./snippet/snippet.svelte"

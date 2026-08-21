@@ -6,28 +6,27 @@
 	import CollapseCode from "$lib/collapse/collapseCode.svelte"
 	import type { Snippet } from "svelte"
 	import Pagination from "$lib/pagination/pagination.svelte"
-	import Spinner from "$lib/spinner/spinner.svelte"
-	import { spinnerCustom, spinnerDefault } from "../../docs/data/spinner.js"
+	import Banner from "$lib/banner/banner.svelte"
+	import { bannerDefault, bannerWithButton } from "$lib/../docs/data/banner.js"
 	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
 </script>
 
 <svelte:head>
-	<title>Spinner</title>
+	<title>Banner</title>
 </svelte:head>
 
-{#snippet spinner()}
+{#snippet banner()}
 	<Row>
 		<h1
 			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-8 font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-12 lg:tracking-[-2.4px]"
 		>
-			spinner
+			banner
 		</h1>
 		<p
 			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-7.5 lg:tracking-[-0.33px]"
 		>
-			Indicate an action running in the background. Unlike the loading dots, this should
-			generally be used to indicate loading feedback in response to a user action, like for
-			buttons, pagination, etc.
+			A prominent message that spans the full width of its container to announce important
+			information.
 		</p>
 	</Row>
 {/snippet}
@@ -45,30 +44,18 @@
 	</div>
 {/snippet}
 
-{#snippet defaultSize()}
+{#snippet defaultBanner()}
 	<Row>
-		<LinkH2 href="/spinner#default-size" aria-label="default-size">default size</LinkH2>
+		<LinkH2 href="/banner#default" aria-label="default">default</LinkH2>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<Spinner />
-			{/snippet}
-			{@render demoAndCode(demo, spinnerDefault)}
-		</div>
-	</Row>
-{/snippet}
-
-{#snippet custom()}
-	<Row>
-		<LinkH2 href="/spinner#custom-size" aria-label="custom-size">custom size</LinkH2>
-		<div class="mt-4 xl:mt-7">
-			{#snippet demo()}
-				<div class="flex items-center gap-8">
-					<Spinner size={12} />
-					<Spinner size={32} />
-					<Spinner size={40} />
+				<div class="w-full">
+					<Banner button={{ href: "#", content: "Read more" }}>
+						<b>Big News</b> – New components finally available
+					</Banner>
 				</div>
 			{/snippet}
-			{@render demoAndCode(demo, spinnerCustom)}
+			{@render demoAndCode(demo, bannerDefault)}
 		</div>
 	</Row>
 {/snippet}
@@ -76,16 +63,15 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: "skeleton", href: "/skeleton" }}
-			next={{ title: "snippet", href: "/snippet" }}
+			previous={{ title: "badge", href: "/badge" }}
+			next={{ title: "button", href: "/button" }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render spinner()}
-	{@render defaultSize()}
-	{@render custom()}
+	{@render banner()}
+	{@render defaultBanner()}
 	{@render prevAndNext()}
 {/snippet}
 

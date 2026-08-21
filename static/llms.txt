@@ -371,14 +371,23 @@ import { Error } from 'kampsy-ui';
 - `label`: string | undefined
 - `error`: string | undefined - Error message to display
 - `size`: 'small' | 'medium' | 'large' (default: 'medium')
-- `contPrefix`: string | Component | undefined - Prefix content (text or icon)
+- `prefix`: string | Component | undefined - Prefix content (text or icon)
 - `prefixStyling`: boolean (default: true) - Apply styling to prefix
-- `contSuffix`: string | Component | undefined - Suffix content (text or icon)
+- `suffix`: string | Component | undefined - Suffix content (text or icon)
 - `suffixStyling`: boolean (default: true) - Apply styling to suffix
-- `spellcheck`: boolean (default: false)
+- `rounded`: boolean (default: false) - Use a fully rounded input shape
+- `spellcheck`: boolean | undefined
 - `placeholder`: string | undefined
 - `disabled`: boolean (default: false)
-- Extends `HTMLAttributes<HTMLInputElement>`
+- Extends `HTMLInputAttributes`
+
+**SearchInput Props:**
+- Accepts the same input props as `Input`, except `prefix`, `suffix`, `type`, and `value` are managed internally.
+- `value`: string (bindable, default: '')
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `loading`: boolean (default: false) - Shows a loading indicator
+- Pressing `Escape` or the clear button clears the current value.
 
 **Usage:**
 ```svelte
@@ -392,19 +401,33 @@ let value = $state('');
 <Input bind:value placeholder="large" size="large" />
 
 // With prefix/suffix (icon)
-<Input contPrefix={ArrowCircleUp} bind:value placeholder="default" />
-<Input contSuffix={ArrowCircleUp} bind:value placeholder="default" />
+<Input prefix={ArrowCircleUp} bind:value placeholder="default" />
+<Input suffix={ArrowCircleUp} bind:value placeholder="default" />
 
 // With prefix/suffix (text)
-<Input contPrefix="https://" contSuffix=".com" bind:value placeholder="default" />
+<Input prefix="https://" suffix=".com" bind:value placeholder="default" />
+<Input prefix="ui/" bind:value placeholder="default" />
 
 // Without styling on prefix/suffix
 <Input
-  contPrefix={ArrowCircleUp}
+  prefix={ArrowCircleUp}
   prefixStyling={false}
-  contSuffix={ArrowCircleUp}
+  suffix={ArrowCircleUp}
   suffixStyling={false}
   placeholder="default"
+/>
+
+// Rounded prefix and suffix
+<Input prefix="www." rounded suffix=".com" placeholder="Label example" />
+
+// Rounded prefix and suffix without styling
+<Input
+  prefix="www."
+  prefixStyling={false}
+  rounded
+  suffix=".com"
+  suffixStyling={false}
+  placeholder="Label example"
 />
 
 // Disabled
@@ -415,10 +438,58 @@ let value = $state('');
 <Input error="An error message." placeholder="long-error@gmail.com" />
 
 // With label
-<Input label="Label" bind:value placeholder="Label" />
+<Input label="Project Name" bind:value placeholder="my-awesome-project" />
 
 // Search input
-<SearchInput placeholder="Enter some text..." />
+<SearchInput bind:value placeholder="Search projects" />
+// Press Escape to clear the SearchInput value.
+```
+
+### SearchInput
+
+Pre-configured search input with a magnifying glass icon and clear button.
+
+**Props:**
+- `aria-label`: string - Accessible name for the search field
+- `value`: string (bindable, default: '')
+- `placeholder`: string | undefined
+- `disabled`: boolean (default: false)
+- `loading`: boolean (default: false) - Shows a loading indicator
+- `cmdk`: boolean (default: false) - Marks the field as a command-menu search input
+- `prefix`: string | Component | undefined - Custom prefix content; defaults to a magnifying glass icon
+- Extends `InputProps` except `prefix`, `suffix`, `type`, and `value`
+
+Pressing `Escape` or the clear button clears the current value.
+
+**Usage:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+
+	let value = $state('');
+</script>
+
+<SearchInput aria-label="Search" bind:value placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value cmdk disabled placeholder="Enter some text..." />
+<SearchInput aria-label="Search" bind:value loading placeholder="Enter some text..." />
+```
+
+**Custom Prefix:**
+```svelte
+<script lang="ts">
+	import { SearchInput } from 'kampsy-ui';
+	import { Sparkles } from '@lucide/svelte';
+
+	let value = $state('');
+</script>
+
+<SearchInput
+	aria-label="Search"
+	bind:value
+	prefix={Sparkles}
+	placeholder="Enter some text..."
+/>
 ```
 
 ### Keyboard Input (Kbd)

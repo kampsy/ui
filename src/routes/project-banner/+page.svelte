@@ -162,7 +162,7 @@
 	<Row bottomLine={false}>
 		<Pagination
 			previous={{ title: "progress", href: "/progress" }}
-			next={{ title: "select", href: "/select" }}
+			next={{ title: "search input", href: "/search-input" }}
 		/>
 	</Row>
 {/snippet}
