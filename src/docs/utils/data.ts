@@ -173,6 +173,14 @@ export const asideData: Array<AsideT> = [
 				url: "/show-more",
 			},
 			{
+				name: "skeleton",
+				url: "/skeleton",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "spinner",
 				url: "/spinner",
 			},

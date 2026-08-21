@@ -80,6 +80,9 @@ export * as Select from "./select/index.js"
 // Show more
 export { default as ShowMore } from "./showMore/showMore.svelte"
 
+// Skeleton
+export * from "./skeleton/index.js"
+
 // Snippet
 export { default as CodeSnippet } from "./snippet/snippet.svelte"
 
