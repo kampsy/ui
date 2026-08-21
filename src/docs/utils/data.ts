@@ -1,3 +1,4 @@
+import AiSparkles from "$lib/icons/ai-sparkles.svelte"
 import type { AsideT } from "../../docs/ui/types.ts"
 
 export const asideData: Array<AsideT> = [
@@ -20,6 +21,7 @@ export const asideData: Array<AsideT> = [
 				badge: {
 					name: "new",
 					variant: "green",
+					icon: AiSparkles,
 				},
 			},
 			{

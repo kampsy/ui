@@ -26,8 +26,10 @@
 				>
 					{asideData?.title?.name || ""}
 					{#if asideData?.title?.badge}
-						<Badge size="sm" variant={asideData.title?.badge?.variant || "green"}
-							>{asideData.title?.badge?.name}</Badge
+						<Badge
+							size="sm"
+							variant={asideData.title?.badge?.variant || "green"}
+							icon={asideData.title?.badge?.icon}>{asideData.title?.badge?.name}</Badge
 						>
 					{/if}
 				</p>
@@ -42,8 +44,10 @@
 										)} group-hover:bg-kui-light-gray-alpha-100 dark:group-hover:bg-kui-dark-gray-alpha-100 group-hover:text-kui-light-gray-1000 dark:group-hover:text-kui-dark-gray-1000 flex items-center rounded-md px-3 py-1.5 text-[14px] leading-5 font-normal capitalize"
 										>{list?.name || ""}
 										{#if list?.badge}
-											<Badge size="sm" variant={list?.badge?.variant || "green"}
-												>{list?.badge.name}</Badge
+											<Badge
+												size="sm"
+												variant={list?.badge?.variant || "green"}
+												icon={list?.badge?.icon}>{list?.badge.name}</Badge
 											>
 										{/if}
 									</span>
