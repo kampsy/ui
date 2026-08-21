@@ -222,14 +222,6 @@
 		<div class="mt-4 xl:mt-7">
 			{@render demoAndCodeSnip(skillsVerify, "bash", "language-bash")}
 		</div>
-		<p
-			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-4 text-[16px] leading-6 font-normal first-letter:capitalize"
-		>
-			Add a badge to your README (after this page merges to {@render roundedCode("main")}):
-		</p>
-		<div class="mt-4 xl:mt-7">
-			{@render demoAndCodeSnip(skillsBadge, "markdown", "language-markdown")}
-		</div>
 	</Row>
 {/snippet}
 
