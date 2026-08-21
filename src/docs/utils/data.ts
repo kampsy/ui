@@ -15,6 +15,14 @@ export const asideData: Array<AsideT> = [
 				url: "/installation",
 			},
 			{
+				name: "skills",
+				url: "/skills",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "colors",
 				url: "/colors",
 			},
