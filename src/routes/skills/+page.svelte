@@ -11,7 +11,7 @@
 		skillsInstallNpm,
 		skillsInstallPnpm,
 		skillsVerify,
-	} from '$lib/../docs/data/skills.js'
+	} from "$lib/../docs/data/skills.js"
 </script>
 
 <svelte:head>
