@@ -120,6 +120,7 @@ export type {
 	ToastInput,
 	ToastItem,
 	ToastOptions,
+	ToastPosition,
 	ToastType,
 } from "./toast/index.js"
 

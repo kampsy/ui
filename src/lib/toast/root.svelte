@@ -4,16 +4,26 @@
 	import Undo from "$lib/icons/undo.svelte"
 	import Button from "$lib/button/button.svelte"
 	import { toast as toastApi, toastState } from "./toast.svelte.js"
-	import type { ToastItem } from "./types.js"
+	import type { ToastItem, ToastPosition } from "./types.js"
 
 	interface Props {
 		maxToasts?: number
+		position?: ToastPosition
 	}
 
-	let { maxToasts = 3 }: Props = $props()
+	let { maxToasts = 3, position = "bottom-right" }: Props = $props()
 	$effect(() => {
 		toastState.maxToasts = maxToasts
 	})
+
+	const positionClasses: Record<ToastPosition, string> = {
+		"top-left": "top-4 left-4 flex-col sm:top-6 sm:left-6",
+		"top-center": "top-4 left-1/2 flex-col -translate-x-1/2 sm:top-6",
+		"top-right": "top-4 right-4 flex-col sm:top-6 sm:right-6",
+		"bottom-left": "bottom-4 left-4 flex-col-reverse sm:bottom-6 sm:left-6",
+		"bottom-center": "bottom-4 left-1/2 flex-col-reverse -translate-x-1/2 sm:bottom-6",
+		"bottom-right": "right-4 bottom-4 flex-col-reverse sm:right-6 sm:bottom-6",
+	}
 
 	const typeClass = {
 		message: `border-kui-light-gray-alpha-400 dark:border-kui-dark-gray-alpha-400
@@ -51,7 +61,9 @@
 </script>
 
 <div
-	class="pointer-events-none fixed right-4 bottom-4 z-1000 flex w-[calc(100%-32px)] max-w-105 flex-col-reverse gap-3 sm:right-6 sm:bottom-6"
+	class="pointer-events-none fixed z-1000 flex w-[calc(100%-32px)] max-w-105 gap-3 {positionClasses[
+		position
+	]}"
 	aria-live="polite"
 	aria-atomic="false"
 >
