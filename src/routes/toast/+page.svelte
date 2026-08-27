@@ -6,26 +6,48 @@
 	import CollapseCode from "$lib/collapse/collapseCode.svelte"
 	import type { Snippet } from "svelte"
 	import Pagination from "$lib/pagination/pagination.svelte"
-	import { ThemeSwitcher } from "$lib/index.js"
-	import { themeSwitcherDefault } from "../../docs/data/theme-switcher.js"
+	import { Toaster } from "$lib/index.js"
+	import ToastDemo from "$lib/../docs/ui/toastDemo.svelte"
+	import {
+		toastAction,
+		toastDefault,
+		toastError,
+		toastMultiLine,
+		toastPreserve,
+		toastSuccess,
+		toastUndo,
+		toastWarning,
+	} from "$lib/../docs/data/toast.js"
 	import LinkH2 from "$lib/../docs/ui/linkH2.svelte"
+
+	type ToastVariant =
+		| "default"
+		| "multi-line"
+		| "preserve"
+		| "action"
+		| "undo"
+		| "success"
+		| "warning"
+		| "error"
 </script>
 
+<Toaster />
+
 <svelte:head>
-	<title>Theme Switcher</title>
+	<title>Toast</title>
 </svelte:head>
 
-{#snippet error()}
+{#snippet intro()}
 	<Row>
 		<h1
 			class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-3 text-[24px] leading-[32px] font-semibold tracking-[-0.96px] first-letter:capitalize lg:text-[40px] lg:leading-[48px] lg:tracking-[-2.4px]"
 		>
-			theme Switcher
+			toast
 		</h1>
 		<p
 			class="text-kui-light-gray-900 dark:text-kui-dark-gray-900 text-[16px] leading-6 font-normal tracking-normal first-letter:capitalize lg:text-[20px] lg:leading-[30px] lg:tracking-[-0.33px]"
 		>
-			Component that allows users to switch between light and dark themes.
+			A succinct message that is displayed temporarily.
 		</p>
 	</Row>
 {/snippet}
@@ -43,14 +65,16 @@
 	</div>
 {/snippet}
 
-{#snippet defaultThemeSwitcher()}
+{#snippet example(title: string, code: string, variant: ToastVariant)}
 	<Row>
-		<LinkH2 href="/theme-switcher#default" aria-label="default">default</LinkH2>
+		<LinkH2 href={`/toast#${title.toLowerCase().replaceAll(" ", "-")}`} aria-label={title}
+			>{title}</LinkH2
+		>
 		<div class="mt-4 xl:mt-7">
 			{#snippet demo()}
-				<ThemeSwitcher />
+				<ToastDemo {variant} />
 			{/snippet}
-			{@render demoAndCode(demo, themeSwitcherDefault)}
+			{@render demoAndCode(demo, code)}
 		</div>
 	</Row>
 {/snippet}
@@ -58,15 +82,22 @@
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
-			previous={{ title: "textarea", href: "/textarea" }}
-			next={{ title: "toast", href: "/toast" }}
+			previous={{ title: "theme switcher", href: "/theme-switcher" }}
+			next={{ title: "toggle", href: "/toggle" }}
 		/>
 	</Row>
 {/snippet}
 
 {#snippet cont()}
-	{@render error()}
-	{@render defaultThemeSwitcher()}
+	{@render intro()}
+	{@render example("default", toastDefault, "default")}
+	{@render example("multi-line", toastMultiLine, "multi-line")}
+	{@render example("preserve", toastPreserve, "preserve")}
+	{@render example("action", toastAction, "action")}
+	{@render example("undo", toastUndo, "undo")}
+	{@render example("success", toastSuccess, "success")}
+	{@render example("warning", toastWarning, "warning")}
+	{@render example("error", toastError, "error")}
 	{@render prevAndNext()}
 {/snippet}
 

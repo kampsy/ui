@@ -113,6 +113,16 @@ export { default as Textarea } from "./textarea/textarea.svelte"
 // Theme Switcher
 export { default as ThemeSwitcher } from "./themeSwitcher/themeSwitcher.svelte"
 
+// Toast
+export { Toaster, toast } from "./toast/index.js"
+export type {
+	ToastApi,
+	ToastInput,
+	ToastItem,
+	ToastOptions,
+	ToastType,
+} from "./toast/index.js"
+
 // Toggle
 export { default as Toggle } from "./toggle/toggle.svelte"
 

@@ -231,6 +231,14 @@ export const asideData: Array<AsideT> = [
 				url: "/theme-switcher",
 			},
 			{
+				name: "toast",
+				url: "/toast",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
+			},
+			{
 				name: "toggle",
 				url: "/toggle",
 			},
