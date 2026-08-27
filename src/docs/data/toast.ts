@@ -3,13 +3,18 @@ export const toastDefault = `
 	import { Toaster, toast } from 'kampsy-ui';
 </script>
 
-<!-- Available positions: top-left, top-center, top-right,
-bottom-left, bottom-center, bottom-right -->
-<Toaster position="bottom-right"/>
+<Toaster position="bottom-right" />
 
 <button onclick={() => toast('The Evil Rabbit jumped over the fence.')}>
 	Give me a toast
 </button>`
+
+export const toastPositioning = `
+import { Toaster } from 'kampsy-ui';
+
+<!-- Available positions: top-left, top-center, top-right,
+bottom-left, bottom-center, bottom-right -->
+<Toaster position="top-center" />`
 
 export const toastMultiLine = `
 toast(

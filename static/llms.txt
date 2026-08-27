@@ -131,6 +131,38 @@ import { ArrowLeft, ArrowRight, ArrowUp } from 'kampsy-ui/icons';
 <Button disabled>Upload</Button>
 ```
 
+# Toast
+
+**Exports:** `Toaster`, `toast`, `ToastApi`, `ToastInput`, `ToastItem`, `ToastOptions`, `ToastPosition`, `ToastType`
+
+Render one `Toaster` near the application root, then use the global `toast` API:
+
+```svelte
+<script lang="ts">
+  import { Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+<button onclick={() => toast('Project saved')}>Save project</button>
+```
+
+`Toaster.position` accepts `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, or `bottom-right` (default: `bottom-right`). `maxToasts` defaults to `3`.
+
+```svelte
+toast.success('Domain added');
+toast.warning('Deployment has skipped routes');
+toast.error("Couldn't verify domain. Try again.");
+toast('Project archived', { preserve: true });
+
+const id = toast('Project archived', {
+  action: 'Undo',
+  onAction: () => undoArchive()
+});
+toast.dismiss(id);
+```
+
+Use Toast for non-blocking acknowledgements of user-initiated actions. Keep field validation in the `Input`, and use `Note` or `Banner` for persistent warnings. Toasts auto-dismiss after 5 seconds unless `preserve` is set. Keep messages concise, sentence case, and use a recovery step for errors. Keep the `aria-live="polite"` region and ensure actions remain keyboard reachable.
+
 ### Calendar
 
 **Exports:**

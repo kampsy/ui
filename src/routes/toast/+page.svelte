@@ -13,6 +13,7 @@
 		toastDefault,
 		toastError,
 		toastMultiLine,
+		toastPositioning,
 		toastPreserve,
 		toastSuccess,
 		toastUndo,
@@ -22,6 +23,7 @@
 
 	type ToastVariant =
 		| "default"
+		| "positioning"
 		| "multi-line"
 		| "preserve"
 		| "action"
@@ -227,6 +229,7 @@
 {#snippet cont()}
 	{@render intro()}
 	{@render example("default", toastDefault, "default")}
+	{@render example("positioning", toastPositioning, "positioning")}
 	{@render example("multi-line", toastMultiLine, "multi-line")}
 	{@render example("preserve", toastPreserve, "preserve")}
 	{@render example("action", toastAction, "action")}

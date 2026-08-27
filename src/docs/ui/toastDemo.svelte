@@ -4,6 +4,7 @@
 	interface Props {
 		variant?:
 			| "default"
+			| "positioning"
 			| "multi-line"
 			| "preserve"
 			| "action"
