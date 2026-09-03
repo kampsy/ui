@@ -1,6 +1,6 @@
 import type { ClassValue } from "svelte/elements"
 
-export const modalBackdrop = "bg-kui-black fixed top-0 left-0 z-1000 h-full w-full opacity-40"
+export const modalBackdrop = `fixed top-0 left-0 z-1000 h-full w-full bg-kui-light-bg/70 dark:bg-kui-dark-bg/70`
 
 export const modalDialog =
 	"fixed inset-0 m-0 h-full w-full max-h-none max-w-none border-0 bg-transparent p-0"
@@ -9,13 +9,13 @@ export const modalViewport =
 	"fixed top-0 left-0 flex h-full w-full items-center justify-center"
 
 export const modalMobileShell =
-	"bg-kui-light-bg-secondary dark:bg-kui-dark-bg-secondary fixed bottom-0 left-0 z-1001 w-full rounded-t-[10px] lg:bg-transparent"
+	"bg-kui-light-bg/70 dark:bg-kui-dark-bg/70 fixed bottom-0 left-0 z-1001 w-full rounded-t-[10px] lg:bg-transparent"
 
 export const modalMobileContent =
-	"bg-kui-light-bg dark:bg-kui-dark-bg-secondary border-kui-light-gray-600 dark:border-kui-dark-gray-500 max-h-[80vh] w-full rounded-[10px] rounded-t-[10px] border-t"
+	"bg-kui-light-bg dark:bg-kui-dark-bg-secondary border-kui-light-gray-500 dark:border-kui-dark-gray-400! max-h-[80vh] w-full rounded-[10px] rounded-t-[10px] border-t"
 
-export const modalDesktopContent =
-	"bg-kui-light-bg dark:bg-kui-dark-bg-secondary border-kui-light-gray-600 dark:border-kui-dark-gray-400 relative max-h-156.5 w-135 rounded-xl border"
+export const modalDesktopContent = `bg-kui-light-bg dark:bg-kui-dark-bg-secondary border border-kui-light-gray-500 dark:border-kui-dark-gray-400! 
+	relative max-h-156.5 w-135 rounded-xl`
 
 export const modalBody = "modal-body overflow-y-auto overscroll-contain scroll-smooth p-6"
 
