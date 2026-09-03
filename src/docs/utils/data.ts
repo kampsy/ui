@@ -145,6 +145,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "modal",
 				url: "/modal",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "note",

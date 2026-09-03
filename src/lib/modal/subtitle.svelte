@@ -1,19 +1,19 @@
 <script lang="ts">
-	import type { Snippet } from "svelte"
+	import { getContext } from "svelte"
+	import type { ModalSectionProps } from "./types.js"
+	import { modalSubtitle } from "./styles.js"
 
-	interface Props {
-		class?: string
-		children: Snippet | undefined
-	}
+	let { class: klass, children }: ModalSectionProps = $props()
+	const rootState = getContext<{
+		getDescriptionId: () => string
+		setHasDescription: (value: boolean) => void
+	}>("modal")
 
-	let { class: klass = "", children }: Props = $props()
+	$effect(() => rootState.setHasDescription(Boolean(children)))
 </script>
 
 {#if children}
-	<p
-		aria-labelledby="modal-subtitle"
-		class="text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mt-6 leading-6 {klass}"
-	>
+	<p id={rootState.getDescriptionId()} class={[modalSubtitle, klass]}>
 		{@render children()}
 	</p>
 {/if}

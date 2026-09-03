@@ -6,3 +6,6 @@ export { default as Title } from "./title.svelte"
 export { default as Subtitle } from "./subtitle.svelte"
 export { default as Footer } from "./footer.svelte"
 export { default as Action } from "./action.svelte"
+export { default as Inset } from "./inset.svelte"
+
+export type { ModalContentProps, ModalRootProps, ModalSectionProps } from "./types.js"

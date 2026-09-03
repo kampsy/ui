@@ -10,6 +10,7 @@
 	import {
 		modalDefault,
 		modalDisabkedActions,
+		modalInset,
 		modalSingleButton,
 		modalSticky,
 	} from "../../docs/data/modal.js"
@@ -20,6 +21,7 @@
 	let activeSticky = $state(false)
 	let activeSingleButton = $state(false)
 	let activeDisabled = $state(false)
+	let activeInset = $state(false)
 </script>
 
 <svelte:head>
@@ -191,6 +193,42 @@
 	</Row>
 {/snippet}
 
+{#snippet inset()}
+	<Row>
+		<LinkH2 href="/modal#inset" aria-label="inset">inset</LinkH2>
+		<div class="mt-4 xl:mt-7">
+			{#snippet demo()}
+				<div>
+					<Button onclick={() => (activeInset = true)} size="small">Open Modal</Button>
+					<Modal.Root bind:active={activeInset}>
+						<Modal.Content>
+							<Modal.Body>
+								<Modal.Header>
+									<Modal.Title>Create Token</Modal.Title>
+									<Modal.Subtitle>This is a modal.</Modal.Subtitle>
+								</Modal.Header>
+								<Modal.Inset>
+									<Text size={14}>Content within the inset.</Text>
+								</Modal.Inset>
+								<div class="pt-5">
+									<Text size={14}>Content outside the inset.</Text>
+								</div>
+							</Modal.Body>
+							<Modal.Footer>
+								<Button onclick={() => (activeInset = false)} variant="secondary"
+									>Cancel</Button
+								>
+								<Button onclick={() => (activeInset = false)}>Submit</Button>
+							</Modal.Footer>
+						</Modal.Content>
+					</Modal.Root>
+				</div>
+			{/snippet}
+			{@render demoAndCode(demo, modalInset)}
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -206,6 +244,7 @@
 	{@render sticky()}
 	{@render singleButton()}
 	{@render disabled()}
+	{@render inset()}
 	{@render prevAndNext()}
 {/snippet}
 

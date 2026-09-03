@@ -1,18 +1,19 @@
 <script lang="ts">
-	import type { Snippet } from "svelte"
+	import { getContext } from "svelte"
+	import type { ModalSectionProps } from "./types.js"
+	import { modalTitle } from "./styles.js"
 
-	interface Props {
-		class?: string | undefined
-		children: Snippet | undefined
-	}
+	let { class: klass, children }: ModalSectionProps = $props()
+	const rootState = getContext<{
+		getTitleId: () => string
+		setHasTitle: (value: boolean) => void
+	}>("modal")
 
-	let { class: klass = "", children }: Props = $props()
+	$effect(() => rootState.setHasTitle(Boolean(children)))
 </script>
 
 {#if children}
-	<h3
-		class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] leading-[32px] font-semibold {klass}"
-	>
+	<h3 id={rootState.getTitleId()} class={[modalTitle, klass]}>
 		{@render children()}
 	</h3>
 {/if}

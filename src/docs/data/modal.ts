@@ -114,3 +114,34 @@ export const modalDisabkedActions = `
     	</Modal.Content>
     </Modal.Root>
 </div>`
+
+export const modalInset = `
+<script lang="ts">
+	import { Button, Modal, Text } from 'kampsy-ui';
+
+	let active = $state(false);
+</script>
+
+<div>
+	<Button onclick={() => (active = true)} size="small">Open Modal</Button>
+    <Modal.Root bind:active>
+    	<Modal.Content>
+    		<Modal.Body>
+    			<Modal.Header>
+    				<Modal.Title>Create Token</Modal.Title>
+    				<Modal.Subtitle>This is a modal.</Modal.Subtitle>
+    			</Modal.Header>
+    			<Modal.Inset>
+    				<Text size={14}>Content within the inset.</Text>
+    			</Modal.Inset>
+    			<div class="pt-5">
+    				<Text size={14}>Content outside the inset.</Text>
+    			</div>
+    		</Modal.Body>
+    		<Modal.Footer>
+    			<Button onclick={() => (active = false)} variant="secondary">Cancel</Button>
+    			<Button onclick={() => (active = false)}>Submit</Button>
+    		</Modal.Footer>
+    	</Modal.Content>
+    </Modal.Root>
+</div>`
