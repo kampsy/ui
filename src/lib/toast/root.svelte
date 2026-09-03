@@ -4,6 +4,7 @@
 	import Undo from "$lib/icons/undo.svelte"
 	import Button from "$lib/button/button.svelte"
 	import { toast as toastApi, toastState } from "./toast.svelte.js"
+	import { portalToTopLayer } from "./portal.js"
 	import type { ToastItem, ToastPosition } from "./types.js"
 
 	interface Props {
@@ -61,6 +62,8 @@
 </script>
 
 <div
+	{@attach portalToTopLayer}
+	data-toast-host
 	class="pointer-events-none fixed z-1000 flex w-[calc(100%-32px)] max-w-105 gap-3 {positionClasses[
 		position
 	]}"

@@ -408,6 +408,7 @@ import { Error } from 'kampsy-ui';
 - `suffix`: string | Component | undefined - Suffix content (text or icon)
 - `suffixStyling`: boolean (default: true) - Apply styling to suffix
 - `rounded`: boolean (default: false) - Use a fully rounded input shape
+- `inputElement`: HTMLInputElement (bindable) - Reference to the underlying input element
 - `spellcheck`: boolean | undefined
 - `placeholder`: string | undefined
 - `disabled`: boolean (default: false)
@@ -670,6 +671,66 @@ let active = $state(false);
     <Text size={14}>Content outside the inset.</Text>
   </div>
 </Modal.Body>
+
+// Focus an input on open
+let name = $state('');
+let inputElement = $state<HTMLInputElement>();
+<Modal.Root bind:active initialFocus={inputElement}>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Invite Member</Modal.Title>
+      <Modal.Subtitle>On both desktop and the mobile bottom sheet, the Name field receives focus when the Modal opens so the user can start typing immediately.</Modal.Subtitle>
+    </Modal.Header>
+    <Input label="Name" placeholder="Jane Doe" bind:value={name} bind:inputElement />
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+    <Button onclick={() => (active = false)}>Send Invite</Button>
+  </Modal.Footer>
+</Modal.Root>
+
+// Mobile sheet with inputs
+let email = $state('');
+<Modal.Root bind:active>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Invite Member</Modal.Title>
+      <Modal.Subtitle>On a mobile viewport this opens as a bottom sheet. Verify that both inputs receive focus and accept keyboard input.</Modal.Subtitle>
+    </Modal.Header>
+    <div class="flex flex-col gap-3">
+      <Input label="Name" placeholder="Jane Doe" bind:value={name} />
+      <Input label="Email" placeholder="jane@example.com" bind:value={email} />
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+    <Button onclick={() => (active = false)}>Send Invite</Button>
+  </Modal.Footer>
+</Modal.Root>
+
+// Toasts and focus trap
+<Toaster />
+let activeToasts = $state(false);
+<Modal.Root bind:active={activeToasts}>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Toasts and Focus Trap</Modal.Title>
+      <Modal.Subtitle>The Modal traps focus, so Tab stays within it. Toasts still render above the Modal and remain interactive — trigger one, then click its action. The Modal stays open and focus returns to it.</Modal.Subtitle>
+    </Modal.Header>
+    <div class="flex flex-col gap-3">
+      <Button
+        onclick={() => toast('Project link copied', { action: 'Undo', onAction: () => toast('Copy reverted') })}
+        size="small"
+        variant="secondary"
+      >
+        Show Toast
+      </Button>
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (activeToasts = false)}>Done</Button>
+  </Modal.Footer>
+</Modal.Root>
 ```
 
 ### Note

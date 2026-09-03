@@ -19,7 +19,10 @@
 			class={modalMobileShell}
 		>
 			<div
-				use:clickOutside={() => rootState.getDismissible() && rootState.setIsActive(false)}
+				use:clickOutside={event =>
+					rootState.getDismissible() &&
+					!(event.target as Element)?.closest?.("[data-toast-host]") &&
+					rootState.setIsActive(false)}
 				class={modalMobileContent}
 			>
 				{@render children()}
@@ -33,7 +36,10 @@
 		<div
 			in:scale|local={{ duration: 200 }}
 			out:scale|local={{ duration: 300 }}
-			use:clickOutside={() => rootState.getDismissible() && rootState.setIsActive(false)}
+			use:clickOutside={event =>
+				rootState.getDismissible() &&
+				!(event.target as Element)?.closest?.("[data-toast-host]") &&
+				rootState.setIsActive(false)}
 			class={resolveModalContentClass(klass)}
 		>
 			{@render children()}

@@ -25,13 +25,13 @@ export const modalStickyHeader =
 export const modalDefaultHeader = "mb-6"
 
 export const modalFooter =
-	"border-kui-light-gray-400 dark:border-kui-dark-gray-400 bg-kui-light-bg-secondary dark:bg-kui-dark-bg sticky inset-x-0 bottom-0 box-border flex items-center justify-between rounded-b-xl border-t p-4 drop-shadow-xs lg:absolute"
+	"border-kui-light-gray-400 dark:border-kui-dark-gray-400 bg-kui-light-bg-secondary dark:bg-kui-dark-bg sticky inset-x-0 bottom-0 box-border flex items-center justify-between rounded-b-xl border-t p-3 drop-shadow-xs lg:absolute"
 
 export const modalTitle =
-	"text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[24px] leading-[32px] font-semibold"
+	"text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 text-[20px] leading-[32px] font-semibold"
 
 export const modalSubtitle =
-	"text-md text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mt-6 leading-6"
+	"text-sm text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 mb-1 leading-6"
 
 export function resolveModalContentClass(klass?: ClassValue): ClassValue {
 	return [modalDesktopContent, klass]
