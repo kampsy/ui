@@ -366,6 +366,160 @@
 	</Row>
 {/snippet}
 
+{#snippet roundedCode(value: string)}
+	<code
+		class="text-kui-light-gray-900 bg-kui-light-gray-100 dark:bg-kui-dark-gray-100 dark:text-kui-dark-gray-900 border-kui-light-gray-200 dark:border-kui-dark-gray-400 rounded-md border px-2 py-[3.6px] text-xs"
+	>
+		{value}
+	</code>
+{/snippet}
+
+{#snippet bestPractices()}
+	<Row>
+		<LinkH2 href="/modal#best-practices" aria-label="best practices">best practices</LinkH2>
+		<div class="mt-4">
+			<h3
+				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mb-2 text-[16px] leading-6 font-semibold tracking-[-0.16px]"
+			>
+				When to use
+			</h3>
+			<ul class="mt-2 list-disc">
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Use {@render roundedCode("Modal")} when a decision must block the rest of the page. For
+					persistent associated context where the underlying page stays readable, use
+					{@render roundedCode("Sheet")} on desktop or {@render roundedCode("Drawer")} on mobile.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Confirm destructive actions in a {@render roundedCode("Modal")}. {@render roundedCode(
+						"Drawer",
+					)} and {@render roundedCode("Sheet")} don't fully dim the page, so they read as too soft
+					for a delete or revoke.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Skip {@render roundedCode("Modal")} for routine create flows that have a dedicated page;
+					route to the page instead.
+				</li>
+			</ul>
+
+			<h3
+				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mt-6 mb-2 text-[16px] leading-6 font-semibold tracking-[-0.16px]"
+			>
+				Behavior
+			</h3>
+			<ul class="mt-2 list-disc">
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Default focus to {@render roundedCode("Cancel")} on any destructive {@render roundedCode(
+						"Modal",
+					)}. Enter must never trigger the destructive action without a typed confirmation.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Allow Escape and outside-click to dismiss non-destructive modals; gate dismissal on
+					destructive ones with unsaved input.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Trap focus inside the {@render roundedCode("Modal")} while it's open and return focus to
+					the trigger after close. Restore body scroll on the same tick the modal unmounts.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					For high-stakes destructive actions, gate the primary button on a typed match of the
+					resource name.
+				</li>
+			</ul>
+
+			<h3
+				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mt-6 mb-2 text-[16px] leading-6 font-semibold tracking-[-0.16px]"
+			>
+				Content
+			</h3>
+			<ul class="mt-2 list-disc">
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					{@render roundedCode("Modal.Title")} is a Title Case statement, never a question.
+					{@render roundedCode("Transfer Project")} is correct; {@render roundedCode(
+						"Transfer Project?",
+					)} is wrong.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Body copy is sentence case, one to three sentences. State the consequence first, then
+					any cascade.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Primary button is {@render roundedCode("Verb + Noun")} and matches the title verb. Never
+					{@render roundedCode("Confirm")}, {@render roundedCode("OK")}, or a bare verb on a
+					destructive primary.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					The cancel literal stays {@render roundedCode("Cancel")}. Acknowledgment-only modals
+					use {@render roundedCode("Done")}, never {@render roundedCode("OK")} or
+					{@render roundedCode("Close")}.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Close irreversible bodies with {@render roundedCode("This cannot be undone.")}; close
+					cascade-only bodies with {@render roundedCode("Some effects cannot be undone.")}.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Pair the success toast verb one-to-one with the primary button:
+					{@render roundedCode("Delete Project")} button, {@render roundedCode(
+						"Project deleted",
+					)} toast.
+				</li>
+			</ul>
+
+			<h3
+				class="text-kui-light-gray-1000 dark:text-kui-dark-gray-1000 mt-6 mb-2 text-[16px] leading-6 font-semibold tracking-[-0.16px]"
+			>
+				Accessibility
+			</h3>
+			<ul class="mt-2 list-disc">
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Set {@render roundedCode("aria-labelledby")} to the {@render roundedCode(
+						"Modal.Title",
+					)} id so screen readers announce the title on open.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					Keep the cancel button literally {@render roundedCode("Cancel")} so screen-reader users
+					hear a stable dismissal label across destructive flows.
+				</li>
+				<li
+					class="[&_strong]:text-kui-light-gray-1000 text-kui-light-gray-900 dark:text-kui-dark-gray-900 mt-2 ml-8 py-0.5 leading-6 [&_strong]:font-normal"
+				>
+					After an error inside the {@render roundedCode("Modal")}, keep focus inside so the
+					user can retry; after success, return focus to the trigger.
+				</li>
+			</ul>
+		</div>
+	</Row>
+{/snippet}
+
 {#snippet prevAndNext()}
 	<Row bottomLine={false}>
 		<Pagination
@@ -385,6 +539,7 @@
 	{@render focusInput()}
 	{@render mobileInputs()}
 	{@render toastsFocusTrap()}
+	{@render bestPractices()}
 	{@render prevAndNext()}
 {/snippet}
 
