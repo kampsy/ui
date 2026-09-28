@@ -1,32 +1,19 @@
 <script lang="ts">
-	import { getContext, type Snippet } from "svelte"
+	import { getContext } from "svelte"
+	import type { ModalContext, ModalSectionProps } from "./types.js"
+	import { modalBody } from "./styles.js"
 
-	interface Props {
-		class?: string
-		children: Snippet | undefined
-	}
+	let { class: klass, children }: ModalSectionProps = $props()
 
-	let { class: klass = "", children }: Props = $props()
-
-	const rootState = getContext<{
-		sticky: boolean
-	}>("modal")
-
-	let bodyClass = $derived.by(() => {
-		if (rootState.sticky) {
-			return ""
-		} else {
-			return ""
-		}
-	})
+	const rootState = getContext<ModalContext>("modal")
 </script>
 
 {#if children}
-	<div class="relative h-full {bodyClass} {klass}">
-		{#if rootState.sticky}
+	<div class={["relative h-full", klass]}>
+		{#if rootState.getSticky()}
 			<div aria-hidden="true" class="h-18.25 w-full"></div>
 		{/if}
-		<div class="modal-body overflow-y-auto overscroll-contain scroll-smooth p-6">
+		<div class={modalBody}>
 			{@render children()}
 		</div>
 		<div aria-hidden="true" class="w-full lg:h-18.25"></div>

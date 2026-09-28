@@ -215,7 +215,22 @@ Settings page with tabs, select, and a destructive modal.
 </div>
 ```
 
-Destructive copy follows Button docs best practice: `Delete workspace` button → toast `Workspace deleted`.
+Destructive copy follows Button and Toast best practices: `Delete workspace` button → toast `Workspace deleted`. Use a toast for the non-blocking completion acknowledgement, and keep any recovery or failure details persistent in the page or a `Note`.
+
+### Toast feedback
+
+Render one `Toaster` near the application root and call `toast` from the action handler:
+
+```svelte
+<script lang="ts">
+  import { Button, Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+<Button onclick={() => toast.success('Workspace saved')}>Save workspace</Button>
+```
+
+Use `toast.error` only for concise errors that include a recovery step. Keep field-level errors in the relevant `Input` and persistent warnings in a `Note` or `Banner`.
 
 ---
 

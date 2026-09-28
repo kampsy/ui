@@ -1,6 +1,6 @@
 ---
 name: kampsy-ui
-description: Consumer guide to build UIs with kampsy-ui (Svelte 5 + Tailwind v4, Geist-inspired). Use when installing kampsy-ui, picking components, or scaffolding pages/forms/dashboards in a consumer SvelteKit app. Covers setup with auto-install, 30+ components, kui tokens, snippet APIs, and compound patterns.
+description: Consumer guide to build UIs with kampsy-ui (Svelte 5 + Tailwind v4, Geist-inspired). Use when installing kampsy-ui, picking components, or scaffolding pages/forms/dashboards in a consumer SvelteKit app. Covers setup with auto-install, 30+ components, kui tokens, snippet APIs, compound patterns, and Toast feedback.
 ---
 
 # kampsy-ui — Build UIs as a Consumer
@@ -11,7 +11,7 @@ description: Consumer guide to build UIs with kampsy-ui (Svelte 5 + Tailwind v4,
 
 Trigger when the user asks to:
 - `use kampsy-ui`, `add kampsy-ui`, `install kampsy-ui`
-- build any UI with `Button`, `Input`, `Modal`, `Table`, `Select`, `Tabs`, `Badge`, `Note`, `Avatar`, etc.
+- build any UI with `Button`, `Input`, `Modal`, `Table`, `Select`, `Tabs`, `Badge`, `Note`, `Toast`, `Avatar`, etc.
 - scaffold a form, dashboard, auth page, settings page, or data list
 - fix missing `kui-*` styles / dark mode / Tailwind purge issues
 
@@ -71,7 +71,7 @@ Reference: `kampsy-ui` exports `"."` → `dist/index.js`, `"./icons"` → `dist/
 
 | Shape | How to import | Components |
 |-------|---------------|------------|
-| **Single/default** | `import { Button } from 'kampsy-ui'` | `Badge`, `Banner`, `Button`, `Calendar`, `Checkbox`, `CopyButton`, `Description`, `Error`, `Input` (+ `SearchInput`), `Note`, `Pagination`, `Progress`, `ProjectBanner`, `ShowMore`, `Skeleton` (+ `Skeleton.Text`), `CodeSnippet`, `Spinner`, `StatusDot`, `Text`, `TextGradient`, `Textarea`, `ThemeSwitcher`, `Toggle`, `Tooltip`, `Tabs`, `Avatar` (single) |
+| **Single/default** | `import { Button } from 'kampsy-ui'` | `Badge`, `Banner`, `Button`, `Calendar`, `Checkbox`, `CopyButton`, `Description`, `Error`, `Input` (+ `SearchInput`), `Note`, `Pagination`, `Progress`, `ProjectBanner`, `ShowMore`, `Skeleton` (+ `Skeleton.Text`), `CodeSnippet`, `Spinner`, `StatusDot`, `Text`, `TextGradient`, `Textarea`, `ThemeSwitcher`, `Toast` (`Toaster` + `toast`), `Toggle`, `Tooltip`, `Tabs`, `Avatar` (single) |
 | **Namespace/compound** | `import * as Modal from 'kampsy-ui'` then `<Modal.Root>` | `Avatar` (also has `Avatar.Group`/`AvatarWithIcon`), `Choicebox`, `Collapse`, `Kbd` (`KeyboardInput`), `Menu`, `Modal`, `Select`, `SplitButton`, `Switch`, `Table`, `EmptyState` |
 | **Icons** | `import { ArrowRight } from 'kampsy-ui/icons'` | 80+ icons (see `references/components.md#icons`) — also `import ArrowRight from 'kampsy-ui/icons'` works |
 
@@ -84,7 +84,7 @@ Reference: `kampsy-ui` exports `"."` → `dist/index.js`, `"./icons"` → `dist/
 | Action / submit | `Button` | `import { Button } from 'kampsy-ui'` |
 | Form field | `Input` `Textarea` `Checkbox` `Select` | See shapes above |
 | Choice / radio | `Choicebox` , `Toggle` | `import * as Choicebox from 'kampsy-ui'` |
-| Feedback / callout | `Note` `Banner` `Badge` | `import { Badge, Banner } from 'kampsy-ui'` ; `import Note from 'kampsy-ui'` |
+| Feedback / callout | `Note` `Banner` `Badge` `Toast` | `import { Badge, Banner, Toaster, toast } from 'kampsy-ui'` ; `import Note from 'kampsy-ui'` |
 | Overlay / dialog | `Modal` | `import * as Modal from 'kampsy-ui'` |
 | Disclosure | `Collapse` | `import * as Collapse from 'kampsy-ui'` |
 | Navigation | `Tabs` `Menu` | `import Tabs from 'kampsy-ui'` ; `import * as Menu from 'kampsy-ui'` |
@@ -103,6 +103,11 @@ Reference: `kampsy-ui` exports `"."` → `dist/index.js`, `"./icons"` → `dist/
 - `Input.size`: `tiny|small|medium|large` (+ `rounded?:boolean`, `prefix/suffix: string|Component`, `error?:string`, `label?:string`)
 - `Tabs.type`: `default|secondary`
 - `Checkbox`: `checked` bind, `indeterminate`, `disabled`
+- `Toaster.position`: `top-left|top-center|top-right|bottom-left|bottom-center|bottom-right` (default `bottom-right`)
+- `Toaster.maxToasts`: number (default `3`)
+- `toast(text, options?)`, `toast.success`, `toast.warning`, `toast.error`: return a toast id
+- `toast.dismiss(id)`: dismiss a toast by id
+- `ToastOptions`: `preserve`, `duration` (milliseconds), `class`, `action` + `onAction`, or `onUndoAction`
 - Icons are **Components**, not strings; `Button`/`Badge` decorators are **Snippets** except `Badge.icon` which is `Component`.
 
 ### Step 3 — Scaffold with correct Svelte 5 + snippet syntax
@@ -113,7 +118,7 @@ Reference: `kampsy-ui` exports `"."` → `dist/index.js`, `"./icons"` → `dist/
 
 ```svelte
 <script lang="ts">
-  import { Button, Input, Badge, Note } from 'kampsy-ui';
+  import { Button, Input, Badge, Note, Toaster, toast } from 'kampsy-ui';
   import { ArrowLeft, ArrowRight } from 'kampsy-ui/icons';
   let value = $state('');
   let loading = $state(false);
@@ -143,7 +148,31 @@ Reference: `kampsy-ui` exports `"."` → `dist/index.js`, `"./icons"` → `dist/
   Project deployed
   {#snippet action()}<Button size="tiny" variant="secondary">View</Button>{/snippet}
 </Note>
+
+<!-- Toast: render one Toaster near the application root -->
+<Toaster position="bottom-right" />
+<Button onclick={() => toast.success('Project deployed')}>Deploy</Button>
 ```
+
+#### Toast usage and best practices
+
+```svelte
+<script lang="ts">
+  import { Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+
+<button onclick={() => toast('Project saved')}>Save project</button>
+```
+
+- Use Toast for non-blocking acknowledgements of user-initiated actions.
+- Keep field validation in `Input`; use `Note` or `Banner` for persistent warnings.
+- Toasts auto-dismiss after 5 seconds. Use `{ preserve: true }` only when the user must read or act before dismissal.
+- Use concise sentence-case messages. Completion copy follows `Noun + past participle`, such as `Project saved`.
+- Error messages should include a recovery step, such as `Couldn't verify domain. Try again.`
+- Keep the polite `aria-live` announcement and ensure action and dismiss controls remain keyboard reachable.
+- Use `onUndoAction` only for safe rollbacks and label the action `Undo`.
 
 #### Pattern B — Compound / namespace components (context-based)
 

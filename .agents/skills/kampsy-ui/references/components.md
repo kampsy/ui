@@ -119,6 +119,52 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 </Note>
 ```
 
+### Toast — `import { Toaster, toast } from 'kampsy-ui'`
+
+Render one `Toaster` near the application root. Toasts are displayed where the `Toaster` is mounted.
+
+```ts
+type ToastPosition = 'top-left'|'top-center'|'top-right'|'bottom-left'|'bottom-center'|'bottom-right'
+type ToastType = 'message'|'success'|'warning'|'error'
+interface ToastOptions {
+  preserve?: boolean
+  duration?: number // milliseconds, default 5000
+  class?: string
+  action?: string
+  onAction?: () => void
+  onUndoAction?: () => void
+}
+interface ToasterProps {
+  position?: ToastPosition // default 'bottom-right'
+  maxToasts?: number // default 3
+}
+```
+
+```svelte
+<script lang="ts">
+  import { Button, Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+
+<Button onclick={() => toast('Project saved')}>Save project</Button>
+<Button onclick={() => toast.success('Domain added')}>Add domain</Button>
+<Button onclick={() => toast.warning('Deployment has skipped routes')}>Deploy</Button>
+<Button onclick={() => toast.error("Couldn't verify domain. Try again.")}>Verify domain</Button>
+```
+
+```svelte
+toast('Project archived', { preserve: true });
+
+const id = toast('Project archived', {
+  action: 'Undo',
+  onAction: () => undoArchive()
+});
+toast.dismiss(id);
+```
+
+Use Toast for non-blocking acknowledgements, not field validation or persistent configuration warnings. Keep messages concise and sentence case. Completion messages use `Noun + past participle`; errors include a recovery step. Keep the polite live region and keyboard-reachable actions. Use `onUndoAction` only for safe rollbacks and label the action `Undo`.
+
 ### Input — `import { Input, SearchInput } from 'kampsy-ui'` (`src/lib/input/types.ts:4-31`, `src/lib/input/input.svelte:13-29`)
 
 ```ts
@@ -336,5 +382,5 @@ Badge uses `icon={Information}` (Component). Button uses snippets: `{#snippet pr
 
 ## Copy-paste sources
 
-- Raw code strings: `src/docs/data/button.ts`, `src/docs/data/input.ts`, `src/docs/data/badge.ts`, `src/docs/data/modal.ts`, `src/docs/data/select.ts`, `src/docs/data/table.ts`, `src/docs/data/tabs.ts`, `src/docs/data/note.ts`, `src/docs/data/avatar.ts`, `src/docs/data/collapse.ts`, `src/docs/data/menu.ts`, `src/docs/data/checkbox.ts`, etc.
+- Raw code strings: `src/docs/data/button.ts`, `src/docs/data/input.ts`, `src/docs/data/badge.ts`, `src/docs/data/modal.ts`, `src/docs/data/select.ts`, `src/docs/data/table.ts`, `src/docs/data/tabs.ts`, `src/docs/data/note.ts`, `src/docs/data/avatar.ts`, `src/docs/data/collapse.ts`, `src/docs/data/menu.ts`, `src/docs/data/checkbox.ts`, `src/docs/data/toast.ts`, etc.
 - Rendered pages + Best Practices: `src/routes/button/+page.svelte:274-366` (9 Button rules), similar per route.

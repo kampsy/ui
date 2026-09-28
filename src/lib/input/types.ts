@@ -13,6 +13,7 @@ export interface InputProps extends Omit<
 	label?: string
 	error?: string
 	size?: InputSize
+	inputElement?: HTMLInputElement
 	prefix?: InputAdornment
 	suffix?: InputAdornment
 	prefixStyling?: boolean

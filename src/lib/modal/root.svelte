@@ -1,59 +1,112 @@
 <script lang="ts">
-	import { setContext, type Snippet } from "svelte"
+	import { setContext, tick } from "svelte"
 	import { createModalState } from "./root.svelte.js"
 	import { preventScroll } from "$lib/utils/general.js"
 	import { fade } from "svelte/transition"
+	import type { ModalRootProps } from "./types.js"
+	import { modalBackdrop, modalDialog, modalViewport } from "./styles.js"
 
-	interface Props {
-		active: boolean
-		sticky?: boolean
-		children: Snippet
-	}
-	let { active = $bindable(false), sticky = false, children }: Props = $props()
+	let {
+		active = $bindable(false),
+		sticky = false,
+		dismissible = true,
+		initialFocus,
+		children,
+	}: ModalRootProps = $props()
 
 	let dialog: HTMLDialogElement
+	let closeTimeout: ReturnType<typeof setTimeout> | undefined
+	let restoreElement: HTMLElement | null = null
+	const modalId = $props.id()
 
 	const rootState = createModalState({
 		isMobile: false,
 		isActive: active,
-		sticky: sticky,
+		getSticky: () => sticky,
+		titleId: `${modalId}-title`,
+		descriptionId: `${modalId}-description`,
+		getDismissible: () => dismissible,
+		onActiveChange: value => (active = value),
 	})
 
 	setContext("modal", rootState)
 
 	$effect(() => {
-		active = rootState.getIsActive()
-	})
+		clearTimeout(closeTimeout)
 
-	$effect(() => {
 		if (active) {
-			dialog.showModal()
+			if (!restoreElement && document.activeElement instanceof HTMLElement) {
+				restoreElement = document.activeElement
+			}
+			if (!dialog.open) dialog.showModal()
 			rootState.setIsActive(true)
 			preventScroll(active)
+			tick().then(() => {
+				if (!active) return
+				const target = initialFocus ?? getFocusableElements()[0] ?? dialog
+				target.focus()
+			})
 		} else {
 			rootState.setIsActive(false)
-			const id = setTimeout(() => {
+			closeTimeout = setTimeout(() => {
 				dialog.close()
-				clearTimeout(id)
+				closeTimeout = undefined
+				restoreElement?.focus()
+				restoreElement = null
 			}, 250)
 			preventScroll(active)
 		}
+
+		return () => clearTimeout(closeTimeout)
 	})
 
-	$effect(() => {
-		if (window.innerWidth < 767) {
-			rootState.setIsMobile(true)
-		} else {
-			rootState.setIsMobile(false)
+	function handleClose() {
+		active = false
+	}
+
+	function handleCancel(event: Event) {
+		if (!rootState.getDismissible()) {
+			event.preventDefault()
+			return
 		}
-		// update when the user is resizing the window
-		window.addEventListener("resize", () => {
-			if (window.innerWidth < 767) {
-				rootState.setIsMobile(true)
-			} else {
-				rootState.setIsMobile(false)
-			}
-		})
+		active = false
+	}
+
+	function getFocusableElements() {
+		return Array.from(
+			dialog.querySelectorAll<HTMLElement>(
+				'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+			),
+		).filter(element => !element.closest("[data-toast-host]"))
+	}
+
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.key !== "Tab") return
+
+		const focusable = getFocusableElements()
+		if (!focusable.length) {
+			event.preventDefault()
+			dialog.focus()
+			return
+		}
+
+		const first = focusable[0]
+		const last = focusable[focusable.length - 1]
+		if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault()
+			last.focus()
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault()
+			first.focus()
+		}
+	}
+
+	$effect(() => {
+		const updateViewport = () => rootState.setIsMobile(window.innerWidth < 767)
+		updateViewport()
+		window.addEventListener("resize", updateViewport)
+
+		return () => window.removeEventListener("resize", updateViewport)
 	})
 </script>
 
@@ -62,16 +115,22 @@
 	<div
 		in:fade|local={{ duration: 100 }}
 		out:fade|local={{ duration: 100 }}
-		class="bg-kui-black fixed top-0 left-0 z-1000 h-full w-full opacity-40"
+		class={modalBackdrop}
 	></div>
 {/if}
 
-<dialog bind:this={dialog}>
-	<div
-		in:fade
-		out:fade
-		class="fixed top-0 left-0 flex h-full w-full items-center justify-center"
-	>
+<dialog
+	bind:this={dialog}
+	class={modalDialog}
+	aria-describedby={rootState.getHasDescription() ? rootState.getDescriptionId() : undefined}
+	aria-label={rootState.getHasTitle() ? undefined : "Modal"}
+	aria-labelledby={rootState.getHasTitle() ? rootState.getTitleId() : undefined}
+	oncancel={handleCancel}
+	onclose={handleClose}
+	onkeydown={handleKeydown}
+	tabindex="-1"
+>
+	<div in:fade out:fade class={modalViewport}>
 		{@render children()}
 	</div>
 </dialog>

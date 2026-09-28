@@ -17,6 +17,7 @@
 		label,
 		error,
 		size = "medium",
+		inputElement = $bindable(),
 		prefix,
 		suffix,
 		prefixStyling = true,
@@ -89,6 +90,7 @@
 			<input
 				{...rest}
 				{id}
+				bind:this={inputElement}
 				bind:value
 				{disabled}
 				aria-invalid={error ? "true" : undefined}

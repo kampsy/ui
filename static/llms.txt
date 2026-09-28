@@ -131,6 +131,38 @@ import { ArrowLeft, ArrowRight, ArrowUp } from 'kampsy-ui/icons';
 <Button disabled>Upload</Button>
 ```
 
+### Toast
+
+**Exports:** `Toaster`, `toast`, `ToastApi`, `ToastInput`, `ToastItem`, `ToastOptions`, `ToastPosition`, `ToastType`
+
+Render one `Toaster` near the application root, then use the global `toast` API:
+
+```svelte
+<script lang="ts">
+  import { Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+<button onclick={() => toast('Project saved')}>Save project</button>
+```
+
+`Toaster.position` accepts `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, or `bottom-right` (default: `bottom-right`). `maxToasts` defaults to `3`.
+
+```svelte
+toast.success('Domain added');
+toast.warning('Deployment has skipped routes');
+toast.error("Couldn't verify domain. Try again.");
+toast('Project archived', { preserve: true });
+
+const id = toast('Project archived', {
+  action: 'Undo',
+  onAction: () => undoArchive()
+});
+toast.dismiss(id);
+```
+
+Use Toast for non-blocking acknowledgements of user-initiated actions. Keep field validation in the `Input`, and use `Note` or `Banner` for persistent warnings. Toasts auto-dismiss after 5 seconds unless `preserve` is set. Keep messages concise, sentence case, and use a recovery step for errors. Keep the `aria-live="polite"` region and ensure actions remain keyboard reachable.
+
 ### Calendar
 
 **Exports:**
@@ -376,6 +408,7 @@ import { Error } from 'kampsy-ui';
 - `suffix`: string | Component | undefined - Suffix content (text or icon)
 - `suffixStyling`: boolean (default: true) - Apply styling to suffix
 - `rounded`: boolean (default: false) - Use a fully rounded input shape
+- `inputElement`: HTMLInputElement (bindable) - Reference to the underlying input element
 - `spellcheck`: boolean | undefined
 - `placeholder`: string | undefined
 - `disabled`: boolean (default: false)
@@ -568,6 +601,7 @@ import { MoreHorizontal, Accessibility } from 'kampsy-ui/icons';
 - `Modal.Subtitle` - Modal subtitle
 - `Modal.Footer` - Modal footer
 - `Modal.Action` - Modal action button
+- `Modal.Inset` - Inset content section
 
 **Usage:**
 ```svelte
@@ -623,6 +657,80 @@ let active = $state(false);
   <Button onclick={() => (active = false)} type="secondary">Cancel</Button>
   <Button disabled onclick={() => (active = false)}>Submit</Button>
 </Modal.Footer>
+
+// Inset content
+<Modal.Body>
+  <Modal.Header>
+    <Modal.Title>Create Token</Modal.Title>
+    <Modal.Subtitle>This is a modal.</Modal.Subtitle>
+  </Modal.Header>
+  <Modal.Inset>
+    <Text size={14}>Content within the inset.</Text>
+  </Modal.Inset>
+  <div class="pt-5">
+    <Text size={14}>Content outside the inset.</Text>
+  </div>
+</Modal.Body>
+
+// Focus an input on open
+let name = $state('');
+let inputElement = $state<HTMLInputElement>();
+<Modal.Root bind:active initialFocus={inputElement}>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Invite Member</Modal.Title>
+      <Modal.Subtitle>On both desktop and the mobile bottom sheet, the Name field receives focus when the Modal opens so the user can start typing immediately.</Modal.Subtitle>
+    </Modal.Header>
+    <Input label="Name" placeholder="Jane Doe" bind:value={name} bind:inputElement />
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+    <Button onclick={() => (active = false)}>Send Invite</Button>
+  </Modal.Footer>
+</Modal.Root>
+
+// Mobile sheet with inputs
+let email = $state('');
+<Modal.Root bind:active>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Invite Member</Modal.Title>
+      <Modal.Subtitle>On a mobile viewport this opens as a bottom sheet. Verify that both inputs receive focus and accept keyboard input.</Modal.Subtitle>
+    </Modal.Header>
+    <div class="flex flex-col gap-3">
+      <Input label="Name" placeholder="Jane Doe" bind:value={name} />
+      <Input label="Email" placeholder="jane@example.com" bind:value={email} />
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (active = false)} type="secondary">Cancel</Button>
+    <Button onclick={() => (active = false)}>Send Invite</Button>
+  </Modal.Footer>
+</Modal.Root>
+
+// Toasts and focus trap
+<Toaster />
+let activeToasts = $state(false);
+<Modal.Root bind:active={activeToasts}>
+  <Modal.Body>
+    <Modal.Header>
+      <Modal.Title>Toasts and Focus Trap</Modal.Title>
+      <Modal.Subtitle>The Modal traps focus, so Tab stays within it. Toasts still render above the Modal and remain interactive — trigger one, then click its action. The Modal stays open and focus returns to it.</Modal.Subtitle>
+    </Modal.Header>
+    <div class="flex flex-col gap-3">
+      <Button
+        onclick={() => toast('Project link copied', { action: 'Undo', onAction: () => toast('Copy reverted') })}
+        size="small"
+        variant="secondary"
+      >
+        Show Toast
+      </Button>
+    </div>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button onclick={() => (activeToasts = false)}>Done</Button>
+  </Modal.Footer>
+</Modal.Root>
 ```
 
 ### Note

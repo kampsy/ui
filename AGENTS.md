@@ -8,64 +8,68 @@ Svelte 5 UI component library using TypeScript, TailwindCSS v4, and Vite. Compon
 
 ```bash
 # Development server
-npm run dev
+pnpm dev
 
 # Build for production
-npm run build
+pnpm build
 
 # Build package only
-npm run package
+pnpm package
 
 # Preview production build
-npm run preview
+pnpm preview
 ```
 
 ## Lint/Format Commands
 
 ```bash
 # Check formatting (Oxfmt) and lint (Oxlint)
-npm run lint
+pnpm lint
 
 # Auto-format code with Oxfmt
-npm run format
+pnpm format
 
 # Type check
-npm run check
+pnpm check
 
 # Type check with watch mode
-npm run check:watch
+pnpm check:watch
 ```
 
 ## Test Commands
 
 ```bash
 # Run all tests
-npm run test
+pnpm test
 
 # Unit tests only (Vitest)
-npm run test:unit
+pnpm test:unit
 
 # Run single unit test file
-npx vitest run src/path/to/file.test.ts
+pnpm exec vitest run src/path/to/file.test.ts
 
 # Run unit tests in watch mode
-npx vitest
+pnpm exec vitest
 
 # Integration tests only (Playwright)
-npm run test:integration
+pnpm test:integration
 
 # Run single integration test
-npx playwright test tests/test.ts
+pnpm exec playwright test tests/test.ts
 ```
 
 ## Code Style Guidelines
 
-### Formatting
+### Formatting (mirrors `.oxfmtrc.json`)
 
-- **Indentation**: Tabs (not spaces)
-- **Quotes**: Single quotes
-- **Trailing commas**: None
-- **Print width**: 100 characters
+- **Indentation**: Tabs, `tabWidth: 2`
+- **Quotes**: Double (`singleQuote: false`)
+- **Semicolons**: None (`semi: false`)
+- **Trailing commas**: All
+- **Print width**: 95 characters
+- **Arrow parens**: Avoid
+- **Bracket spacing**: True, brackets on new line
+- **Sort Tailwind classes**: True
 - **Line endings**: Unix-style (LF)
 
 ### TypeScript
@@ -149,6 +153,15 @@ import LoaderCircle from "$lib/icons/loader-circle.svelte"
 - Provide default values for optional props
 - Validate prop values with TypeScript unions
 - Use early returns in snippets for conditional rendering
+
+### Lint Suppressions
+
+- Never suppress lint, `svelte-check`, or type errors with comments (`eslint-disable`, `oxlint-disable`, `svelte-ignore`, `@ts-ignore`, `@ts-expect-error`, etc.).
+- Fix the root cause instead. If a rule is wrong globally, change config (`.oxlintrc.json`, `tsconfig.json`) with justification — don't silence per-line.
+
+### Pre-commit Verification
+
+- Always run `pnpm format`, then `pnpm lint`, then `pnpm check` before committing. All three must be clean.
 
 ### Exports
 

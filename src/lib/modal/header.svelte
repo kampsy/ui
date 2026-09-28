@@ -1,28 +1,15 @@
 <script lang="ts">
-	import { getContext, type Snippet } from "svelte"
+	import { getContext } from "svelte"
+	import type { ModalContext, ModalSectionProps } from "./types.js"
+	import { resolveModalHeaderClass } from "./styles.js"
 
-	interface Props {
-		children: Snippet | undefined
-	}
+	let { class: klass, children }: ModalSectionProps = $props()
 
-	let { children }: Props = $props()
-
-	const rootState = getContext<{
-		sticky: boolean
-	}>("modal")
-
-	let headerClass = $derived.by(() => {
-		if (rootState.sticky) {
-			return `absolute inset-x-0 top-0  w-full px-[24px] py-[20px]  bg-kui-light-bg-secondary dark:bg-kui-dark-bg
-			rounded-t-[12px] border-b border-kui-light-gray-200 dark:border-kui-dark-gray-200 drop-shadow-xs`
-		} else {
-			return "mb-6"
-		}
-	})
+	const rootState = getContext<ModalContext>("modal")
 </script>
 
 {#if children}
-	<header aria-labelledby="modal-title" class={headerClass}>
+	<header class={[resolveModalHeaderClass(rootState.getSticky()), klass]}>
 		{@render children()}
 	</header>
 {/if}

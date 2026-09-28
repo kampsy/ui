@@ -145,6 +145,10 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "modal",
 				url: "/modal",
+				badge: {
+					name: "updated",
+					variant: "purple",
+				},
 			},
 			{
 				name: "note",
@@ -229,6 +233,14 @@ export const asideData: Array<AsideT> = [
 			{
 				name: "theme switcher",
 				url: "/theme-switcher",
+			},
+			{
+				name: "toast",
+				url: "/toast",
+				badge: {
+					name: "new",
+					variant: "green",
+				},
 			},
 			{
 				name: "toggle",

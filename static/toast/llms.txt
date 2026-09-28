@@ -1,0 +1,93 @@
+# Toast Component
+
+### Toast
+
+**Exports:**
+- `Toaster` - Renders the shared toast queue
+- `toast` - Global toast API
+- `ToastApi`, `ToastInput`, `ToastItem`, `ToastOptions`, `ToastPosition`, `ToastType` - types
+
+**Setup:**
+
+Render one `Toaster` near the root of the application. Toasts are displayed where the
+`Toaster` is mounted.
+
+```svelte
+<script lang="ts">
+	import { Toaster, toast } from 'kampsy-ui';
+</script>
+
+<Toaster position="bottom-right" />
+
+<button onclick={() => toast('Project saved')}>
+	Save project
+</button>
+```
+
+**Toaster props:**
+- `position`: `'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'` (default: `'bottom-right'`)
+- `maxToasts`: number (default: `3`)
+
+**Toast API:**
+- `toast(text, options?)` - Add a neutral message toast and return its id
+- `toast.success(text, options?)` - Add a success toast
+- `toast.warning(text, options?)` - Add a warning toast
+- `toast.error(text, options?)` - Add an error toast
+- `toast.dismiss(id)` - Dismiss a toast by id
+
+**Options:**
+- `preserve`: boolean - Keep the toast visible until dismissed (default: `false`)
+- `duration`: number - Auto-dismiss delay in milliseconds (default: `5000`)
+- `class`: string - Additional classes for the toast
+- `action`: string - Visible action label
+- `onAction`: `() => void` - Callback for the action
+- `onUndoAction`: `() => void` - Callback for an Undo action
+
+```svelte
+toast('Project archived', { preserve: true });
+
+toast('Deployment canceled', {
+	action: 'View deployment',
+	onAction: () => console.log('view deployment'),
+});
+
+const id = toast.error("Couldn't verify domain. Try again.");
+toast.dismiss(id);
+```
+
+## Best Practices
+
+### When to use
+- Use Toast for non-blocking acknowledgements of user-initiated actions, such as `Domain added`, `Project archived`, or `Deployment canceled`.
+- Do not use a toast alone for billing failures, permission denials, or build failures that require investigation. Pair it with a persistent recovery step and stable identifier.
+- Keep field validation beside the `Input`; use a persistent `Note` or `Banner` for configuration warnings.
+
+### Behavior
+- Toasts auto-dismiss by default. Use `preserve: true` only when the user must read or act on the message before it disappears.
+- Undo snackbars should stay visible for 5–10 seconds and use one `Undo` action. Use `onUndoAction` only when rollback is safe.
+- Do not stack toasts to narrate one asynchronous flow. Show one message at the terminal step.
+
+### Content
+- Use one sentence, sentence case, and no trailing period for a single-sentence toast.
+- Completion messages follow `Noun + past participle`: `Blob deleted`, `Domain added`, `Environment variable saved`.
+- Error messages use two sentences and end with a recovery step: `Couldn't verify domain. Try again.`
+- Match the toast verb to the triggering action: `Delete Project` becomes `Project deleted`.
+
+### Accessibility
+- Keep the toast region polite with `aria-live="polite"`.
+- Keep action and dismiss controls keyboard reachable.
+- Do not put primary navigation inside a toast because transient content can disappear before keyboard users reach it.
+
+## Installation
+
+```bash
+pnpm i -D kampsy-ui@latest
+```
+
+## Documentation
+
+Visit http://ui.kampsy.xyz/toast for full documentation and examples.
+
+## License
+
+MIT License
