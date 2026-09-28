@@ -131,7 +131,7 @@ import { ArrowLeft, ArrowRight, ArrowUp } from 'kampsy-ui/icons';
 <Button disabled>Upload</Button>
 ```
 
-# Toast
+### Toast
 
 **Exports:** `Toaster`, `toast`, `ToastApi`, `ToastInput`, `ToastItem`, `ToastOptions`, `ToastPosition`, `ToastType`
 
