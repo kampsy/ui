@@ -1,7 +1,8 @@
 import type { Attachment } from "svelte/attachments"
 
 function getTopLayerHost(): HTMLElement {
-	return document.querySelector<HTMLDialogElement>("dialog[open]") ?? document.body
+	const dialogs = document.querySelectorAll<HTMLDialogElement>("dialog[open]")
+	return dialogs.item(dialogs.length - 1) ?? document.body
 }
 
 export const portalToTopLayer: Attachment<HTMLElement> = (node: HTMLElement) => {
