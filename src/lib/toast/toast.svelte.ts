@@ -1,4 +1,5 @@
-import type { ToastApi, ToastInput, ToastItem, ToastOptions, ToastType } from "./types.js"
+import { SvelteMap } from "svelte/reactivity"
+import type { ToastApi, ToastInput, ToastItem, ToastType } from "./types.js"
 
 export const toastState = $state({
 	toasts: [] as ToastItem[],
@@ -6,7 +7,7 @@ export const toastState = $state({
 })
 
 let sequence = 0
-const timers = new Map<string, ReturnType<typeof setTimeout>>()
+const timers = new SvelteMap<string, ReturnType<typeof setTimeout>>()
 
 function dismiss(id: string) {
 	const timer = timers.get(id)
